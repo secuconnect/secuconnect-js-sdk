@@ -1,0 +1,27 @@
+{
+  "name": "secu_connect_api",
+  "version": "0.1.0",
+  "description": "ERROR_UNKNOWN",
+  "license": "Unlicense",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "browser": {
+    "fs": false
+  },
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "md5": "2.2.1",
+    "superagent": "3.8.3"
+  },
+  "devDependencies": {
+    "babel-core": "6.26.3",
+    "babel-jest": "^22.4.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "jest": "^22.4.2",
+    "regenerator-runtime": "^0.11.1"
+  }
+}
