@@ -1,4 +1,4 @@
-# SecuconnectApi.OpenHours
+# SecuconnectJsSdk.OpenHours
 
 ## Properties
 Name | Type | Description | Notes

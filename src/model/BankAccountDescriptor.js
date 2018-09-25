@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The BankAccountDescriptor model module.
 * @module model/BankAccountDescriptor
-* @version 2.0.0
 */
 export default class BankAccountDescriptor {
     /**

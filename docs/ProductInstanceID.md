@@ -1,4 +1,4 @@
-# SecuconnectApi.ProductInstanceID
+# SecuconnectJsSdk.ProductInstanceID
 
 ## Properties
 Name | Type | Description | Notes

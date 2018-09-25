@@ -1,4 +1,4 @@
-# SecuconnectApi.SmartDevicesDTOPrepaidTid
+# SecuconnectJsSdk.SmartDevicesDTOPrepaidTid
 
 ## Properties
 Name | Type | Description | Notes

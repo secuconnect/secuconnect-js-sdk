@@ -9,7 +9,6 @@ import ProductInstanceUID from './ProductInstanceUID';
 /**
 * The PaymentContractsProductModel model module.
 * @module model/PaymentContractsProductModel
-* @version 2.0.0
 */
 export default class PaymentContractsProductModel {
     /**

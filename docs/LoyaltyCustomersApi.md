@@ -1,4 +1,4 @@
-# SecuconnectApi.LoyaltyCustomersApi
+# SecuconnectJsSdk.LoyaltyCustomersApi
 
 All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
@@ -24,16 +24,16 @@ Add loyalty customer
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyCustomersApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyCustomersApi();
 
-let body = new SecuconnectApi.LoyaltyCustomersDTO(); // LoyaltyCustomersDTO | loyalty Customer container properties
+let body = new SecuconnectJsSdk.LoyaltyCustomersDTO(); // LoyaltyCustomersDTO | loyalty Customer container properties
 
 apiInstance.addCustomer(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -72,14 +72,14 @@ Assigns LoyaltyPaymentContainer to customer
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyCustomersApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyCustomersApi();
 
 let loyaltyCustomerId = "loyaltyCustomerId_example"; // String | Loyalty customer id
 
@@ -123,14 +123,14 @@ check if there are duplicated customers for a given merchant
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyCustomersApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyCustomersApi();
 
 let loyaltyCustomerId = "loyaltyCustomerId_example"; // String | Loyalty customer id
 
@@ -171,14 +171,14 @@ Get a list of loyalty customers
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyCustomersApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyCustomersApi();
 
 let opts = { 
   'count': 56, // Number | The number of items to return.
@@ -228,14 +228,14 @@ Get loyalty customer for a specific id
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyCustomersApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyCustomersApi();
 
 let loyaltyCustomerId = "loyaltyCustomerId_example"; // String | Search one loyalty customer by provided id
 
@@ -276,14 +276,14 @@ Removes an assigned LoyaltyPaymentContainer from customer
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyCustomersApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyCustomersApi();
 
 let loyaltyCustomerId = "loyaltyCustomerId_example"; // String | Loyalty customer id
 
@@ -327,14 +327,14 @@ Remove assigned loyalty customer
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyCustomersApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyCustomersApi();
 
 let loyaltyCustomerId = "loyaltyCustomerId_example"; // String | Loyalty customer id
 
@@ -375,18 +375,18 @@ Function to update customer&#39;s data
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyCustomersApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyCustomersApi();
 
 let loyaltyCustomerId = "loyaltyCustomerId_example"; // String | loyalty Customer Id CUS_XXX
 
-let body = new SecuconnectApi.LoyaltyCustomersDTO(); // LoyaltyCustomersDTO | loyalty Customer container properties
+let body = new SecuconnectJsSdk.LoyaltyCustomersDTO(); // LoyaltyCustomersDTO | loyalty Customer container properties
 
 apiInstance.updateCustomer(loyaltyCustomerId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);

@@ -1,4 +1,4 @@
-# SecuconnectApi.GeneralMerchantsCheckoutOptionsShipping
+# SecuconnectJsSdk.GeneralMerchantsCheckoutOptionsShipping
 
 ## Properties
 Name | Type | Description | Notes

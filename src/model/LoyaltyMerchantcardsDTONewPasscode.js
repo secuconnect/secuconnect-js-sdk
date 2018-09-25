@@ -9,7 +9,6 @@ import LoyaltyMerchantcardsDTOValidateMerchantCard from './LoyaltyMerchantcardsD
 /**
 * The LoyaltyMerchantcardsDTONewPasscode model module.
 * @module model/LoyaltyMerchantcardsDTONewPasscode
-* @version 2.0.0
 */
 export default class LoyaltyMerchantcardsDTONewPasscode {
     /**

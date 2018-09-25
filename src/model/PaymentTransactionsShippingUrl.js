@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The PaymentTransactionsShippingUrl model module.
 * @module model/PaymentTransactionsShippingUrl
-* @version 2.0.0
 */
 export default class PaymentTransactionsShippingUrl {
     /**

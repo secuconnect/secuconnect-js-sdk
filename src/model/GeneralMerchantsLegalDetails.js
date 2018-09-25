@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The GeneralMerchantsLegalDetails model module.
 * @module model/GeneralMerchantsLegalDetails
-* @version 2.0.0
 */
 export default class GeneralMerchantsLegalDetails {
     /**

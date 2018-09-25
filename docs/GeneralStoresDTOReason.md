@@ -1,4 +1,4 @@
-# SecuconnectApi.GeneralStoresDTOReason
+# SecuconnectJsSdk.GeneralStoresDTOReason
 
 ## Properties
 Name | Type | Description | Notes

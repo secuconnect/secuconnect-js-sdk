@@ -1,4 +1,4 @@
-# SecuconnectApi.PaymentContainersList
+# SecuconnectJsSdk.PaymentContainersList
 
 ## Properties
 Name | Type | Description | Notes

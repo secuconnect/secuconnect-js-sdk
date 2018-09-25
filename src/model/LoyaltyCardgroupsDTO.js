@@ -9,7 +9,6 @@ import LoyaltyCardgroupsDTOMerchant from './LoyaltyCardgroupsDTOMerchant';
 /**
 * The LoyaltyCardgroupsDTO model module.
 * @module model/LoyaltyCardgroupsDTO
-* @version 2.0.0
 */
 export default class LoyaltyCardgroupsDTO {
     /**

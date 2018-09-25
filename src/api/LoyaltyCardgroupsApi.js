@@ -9,7 +9,6 @@ import ProductExceptionPayload from '../model/ProductExceptionPayload';
 /**
 * LoyaltyCardgroups service.
 * @module api/LoyaltyCardgroupsApi
-* @version 2.0.0
 */
 export default class LoyaltyCardgroupsApi {
 

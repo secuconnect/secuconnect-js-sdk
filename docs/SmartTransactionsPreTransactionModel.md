@@ -1,4 +1,4 @@
-# SecuconnectApi.SmartTransactionsPreTransactionModel
+# SecuconnectJsSdk.SmartTransactionsPreTransactionModel
 
 ## Properties
 Name | Type | Description | Notes

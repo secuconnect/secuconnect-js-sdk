@@ -9,7 +9,6 @@ import GeoAddress from './GeoAddress';
 /**
 * The GeneralMerchantsUser model module.
 * @module model/GeneralMerchantsUser
-* @version 2.0.0
 */
 export default class GeneralMerchantsUser {
     /**

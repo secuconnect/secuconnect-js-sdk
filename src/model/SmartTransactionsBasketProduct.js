@@ -9,7 +9,6 @@ import SmartTransactionsBasketProductGroup from './SmartTransactionsBasketProduc
 /**
 * The SmartTransactionsBasketProduct model module.
 * @module model/SmartTransactionsBasketProduct
-* @version 2.0.0
 */
 export default class SmartTransactionsBasketProduct {
     /**

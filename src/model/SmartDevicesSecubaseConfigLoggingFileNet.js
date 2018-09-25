@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The SmartDevicesSecubaseConfigLoggingFileNet model module.
 * @module model/SmartDevicesSecubaseConfigLoggingFileNet
-* @version 2.0.0
 */
 export default class SmartDevicesSecubaseConfigLoggingFileNet {
     /**

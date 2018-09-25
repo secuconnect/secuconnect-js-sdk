@@ -14,7 +14,6 @@ import SecupayTransactionProductModelUsedPaymentInstrument from './SecupayTransa
 /**
 * The SecupayTransactionProductModel model module.
 * @module model/SecupayTransactionProductModel
-* @version 2.0.0
 */
 export default class SecupayTransactionProductModel {
     /**

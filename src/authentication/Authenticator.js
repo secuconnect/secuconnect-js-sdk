@@ -3,7 +3,6 @@ import ApiClient from "../ApiClient";
 /**
  * Authenticator service.
  * @module authentication/Authenticator
- * @version 2.0
  */
 export default class Authenticator {
   constructor (credentials, apiClient) {

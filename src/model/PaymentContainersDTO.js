@@ -10,7 +10,6 @@ import PaymentContainersDTOPrivate from './PaymentContainersDTOPrivate';
 /**
 * The PaymentContainersDTO model module.
 * @module model/PaymentContainersDTO
-* @version 2.0.0
 */
 export default class PaymentContainersDTO {
     /**

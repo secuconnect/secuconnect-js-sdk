@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The SmartDevicesDTOSecubaseConfig model module.
 * @module model/SmartDevicesDTOSecubaseConfig
-* @version 2.0.0
 */
 export default class SmartDevicesDTOSecubaseConfig {
     /**

@@ -1,4 +1,4 @@
-# SecuconnectApi.GeneralMerchantsProductModel
+# SecuconnectJsSdk.GeneralMerchantsProductModel
 
 ## Properties
 Name | Type | Description | Notes

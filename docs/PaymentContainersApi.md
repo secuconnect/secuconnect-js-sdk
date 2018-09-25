@@ -1,4 +1,4 @@
-# SecuconnectApi.PaymentContainersApi
+# SecuconnectJsSdk.PaymentContainersApi
 
 All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
@@ -6,10 +6,10 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**paymentContainersGet**](PaymentContainersApi.md#paymentContainersGet) | **GET** /Payment/Containers | GET Payment/Containers
 [**paymentContainersGetById**](PaymentContainersApi.md#paymentContainersGetById) | **GET** /Payment/Containers/{paymentContainerId} | GET Payment/Containers/{paymentContainerId}
-[**paymentContainersPaymentContainerIdAssignSecondaryPaymentContainerIdDelete**](PaymentContainersApi.md#paymentContainersPaymentContainerIdAssignSecondaryPaymentContainerIdDelete) | **DELETE** /Payment/Containers/{paymentContainerId}/assign/{secondaryPaymentContainerId} | DELETE Payment/Containers/{paymentContainerId}/assign/{secondaryPaymentContainerId}
-[**paymentContainersPaymentContainerIdAssignSecondaryPaymentContainerIdPost**](PaymentContainersApi.md#paymentContainersPaymentContainerIdAssignSecondaryPaymentContainerIdPost) | **POST** /Payment/Containers/{paymentContainerId}/assign/{secondaryPaymentContainerId} | POST Payment/Containers/{paymentContainerId}/assign/{secondaryPaymentContainerId}
-[**paymentContainersPaymentContainerIdDelete**](PaymentContainersApi.md#paymentContainersPaymentContainerIdDelete) | **DELETE** /Payment/Containers/{paymentContainerId} | DELETE Payment/Containers/{paymentContainerId}
-[**paymentContainersPaymentContainerIdPut**](PaymentContainersApi.md#paymentContainersPaymentContainerIdPut) | **PUT** /Payment/Containers/{paymentContainerId} | PUT Payment/Containers/{paymentContainerId}
+[**paymentContainersIdAssignSecondaryIdDelete**](PaymentContainersApi.md#paymentContainersIdAssignSecondaryIdDelete) | **DELETE** /Payment/Containers/{paymentContainerId}/assign/{secondaryPaymentContainerId} | DELETE Payment/Containers/{paymentContainerId}/assign/{secondaryPaymentContainerId}
+[**paymentContainersIdAssignSecondaryIdPost**](PaymentContainersApi.md#paymentContainersIdAssignSecondaryIdPost) | **POST** /Payment/Containers/{paymentContainerId}/assign/{secondaryPaymentContainerId} | POST Payment/Containers/{paymentContainerId}/assign/{secondaryPaymentContainerId}
+[**paymentContainersIdDelete**](PaymentContainersApi.md#paymentContainersIdDelete) | **DELETE** /Payment/Containers/{paymentContainerId} | DELETE Payment/Containers/{paymentContainerId}
+[**paymentContainersIdPut**](PaymentContainersApi.md#paymentContainersIdPut) | **PUT** /Payment/Containers/{paymentContainerId} | PUT Payment/Containers/{paymentContainerId}
 [**paymentContainersPost**](PaymentContainersApi.md#paymentContainersPost) | **POST** /Payment/Containers | POST Payment/Containers
 
 
@@ -23,14 +23,14 @@ Get a list of payment containers
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.PaymentContainersApi();
+let apiInstance = new SecuconnectJsSdk.PaymentContainersApi();
 
 let opts = { 
   'count': 56, // Number | The number of items to return.
@@ -80,14 +80,14 @@ Get all payment containers
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.PaymentContainersApi();
+let apiInstance = new SecuconnectJsSdk.PaymentContainersApi();
 
 let paymentContainerId = "paymentContainerId_example"; // String | Search one by provided id
 
@@ -118,9 +118,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="paymentContainersPaymentContainerIdAssignSecondaryPaymentContainerIdDelete"></a>
-# **paymentContainersPaymentContainerIdAssignSecondaryPaymentContainerIdDelete**
-> [PaymentContainersProductModel] paymentContainersPaymentContainerIdAssignSecondaryPaymentContainerIdDelete(paymentContainerId, secondaryPaymentContainerId)
+<a name="paymentContainersIdAssignSecondaryIdDelete"></a>
+# **paymentContainersIdAssignSecondaryIdDelete**
+> [PaymentContainersProductModel] paymentContainersIdAssignSecondaryIdDelete(paymentContainerId, secondaryPaymentContainerId)
 
 DELETE Payment/Containers/{paymentContainerId}/assign/{secondaryPaymentContainerId}
 
@@ -128,20 +128,20 @@ Removes an existing payment container assignment
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.PaymentContainersApi();
+let apiInstance = new SecuconnectJsSdk.PaymentContainersApi();
 
 let paymentContainerId = "paymentContainerId_example"; // String | Payment container id
 
 let secondaryPaymentContainerId = "secondaryPaymentContainerId_example"; // String | Id for which container is currently assigned to
 
-apiInstance.paymentContainersPaymentContainerIdAssignSecondaryPaymentContainerIdDelete(paymentContainerId, secondaryPaymentContainerId).then((data) => {
+apiInstance.paymentContainersIdAssignSecondaryIdDelete(paymentContainerId, secondaryPaymentContainerId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -169,9 +169,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="paymentContainersPaymentContainerIdAssignSecondaryPaymentContainerIdPost"></a>
-# **paymentContainersPaymentContainerIdAssignSecondaryPaymentContainerIdPost**
-> PaymentContainersProductModel paymentContainersPaymentContainerIdAssignSecondaryPaymentContainerIdPost(paymentContainerId, secondaryPaymentContainerId)
+<a name="paymentContainersIdAssignSecondaryIdPost"></a>
+# **paymentContainersIdAssignSecondaryIdPost**
+> PaymentContainersProductModel paymentContainersIdAssignSecondaryIdPost(paymentContainerId, secondaryPaymentContainerId)
 
 POST Payment/Containers/{paymentContainerId}/assign/{secondaryPaymentContainerId}
 
@@ -179,20 +179,20 @@ Assign an existing payment container to ...
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.PaymentContainersApi();
+let apiInstance = new SecuconnectJsSdk.PaymentContainersApi();
 
 let paymentContainerId = "paymentContainerId_example"; // String | Payment container id
 
 let secondaryPaymentContainerId = "secondaryPaymentContainerId_example"; // String | Id to which container will be assigned
 
-apiInstance.paymentContainersPaymentContainerIdAssignSecondaryPaymentContainerIdPost(paymentContainerId, secondaryPaymentContainerId).then((data) => {
+apiInstance.paymentContainersIdAssignSecondaryIdPost(paymentContainerId, secondaryPaymentContainerId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -220,9 +220,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="paymentContainersPaymentContainerIdDelete"></a>
-# **paymentContainersPaymentContainerIdDelete**
-> [PaymentContainersProductModel] paymentContainersPaymentContainerIdDelete(paymentContainerId)
+<a name="paymentContainersIdDelete"></a>
+# **paymentContainersIdDelete**
+> [PaymentContainersProductModel] paymentContainersIdDelete(paymentContainerId)
 
 DELETE Payment/Containers/{paymentContainerId}
 
@@ -230,18 +230,18 @@ Delete payment container
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.PaymentContainersApi();
+let apiInstance = new SecuconnectJsSdk.PaymentContainersApi();
 
 let paymentContainerId = "paymentContainerId_example"; // String | Payment container id
 
-apiInstance.paymentContainersPaymentContainerIdDelete(paymentContainerId).then((data) => {
+apiInstance.paymentContainersIdDelete(paymentContainerId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -268,9 +268,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="paymentContainersPaymentContainerIdPut"></a>
-# **paymentContainersPaymentContainerIdPut**
-> PaymentContainersProductModel paymentContainersPaymentContainerIdPut(paymentContainerId, body)
+<a name="paymentContainersIdPut"></a>
+# **paymentContainersIdPut**
+> PaymentContainersProductModel paymentContainersIdPut(paymentContainerId, body)
 
 PUT Payment/Containers/{paymentContainerId}
 
@@ -278,20 +278,20 @@ Update payment container
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.PaymentContainersApi();
+let apiInstance = new SecuconnectJsSdk.PaymentContainersApi();
 
 let paymentContainerId = "paymentContainerId_example"; // String | Payment container id
 
-let body = new SecuconnectApi.PaymentContainersDTO(); // PaymentContainersDTO | Payment container properties
+let body = new SecuconnectJsSdk.PaymentContainersDTO(); // PaymentContainersDTO | Payment container properties
 
-apiInstance.paymentContainersPaymentContainerIdPut(paymentContainerId, body).then((data) => {
+apiInstance.paymentContainersIdPut(paymentContainerId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -329,16 +329,16 @@ Add new containers
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.PaymentContainersApi();
+let apiInstance = new SecuconnectJsSdk.PaymentContainersApi();
 
-let body = new SecuconnectApi.PaymentContainersDTO(); // PaymentContainersDTO | Payment container properties
+let body = new SecuconnectJsSdk.PaymentContainersDTO(); // PaymentContainersDTO | Payment container properties
 
 apiInstance.paymentContainersPost(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);

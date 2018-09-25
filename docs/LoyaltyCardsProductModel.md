@@ -1,4 +1,4 @@
-# SecuconnectApi.LoyaltyCardsProductModel
+# SecuconnectJsSdk.LoyaltyCardsProductModel
 
 ## Properties
 Name | Type | Description | Notes

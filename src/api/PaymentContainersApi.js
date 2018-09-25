@@ -8,7 +8,6 @@ import ProductExceptionPayload from '../model/ProductExceptionPayload';
 /**
 * PaymentContainers service.
 * @module api/PaymentContainersApi
-* @version 2.0.0
 */
 export default class PaymentContainersApi {
 
@@ -144,17 +143,17 @@ export default class PaymentContainersApi {
      * @param {String} secondaryPaymentContainerId Id for which container is currently assigned to
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PaymentContainersProductModel>} and HTTP response
      */
-    paymentContainersPaymentContainerIdAssignSecondaryPaymentContainerIdDeleteWithHttpInfo(paymentContainerId, secondaryPaymentContainerId) {
+    paymentContainersIdAssignSecondaryIdDeleteWithHttpInfo(paymentContainerId, secondaryPaymentContainerId) {
       let postBody = null;
 
       // verify the required parameter 'paymentContainerId' is set
       if (paymentContainerId === undefined || paymentContainerId === null) {
-        throw new Error("Missing the required parameter 'paymentContainerId' when calling paymentContainersPaymentContainerIdAssignSecondaryPaymentContainerIdDelete");
+        throw new Error("Missing the required parameter 'paymentContainerId' when calling paymentContainersIdAssignSecondaryIdDelete");
       }
 
       // verify the required parameter 'secondaryPaymentContainerId' is set
       if (secondaryPaymentContainerId === undefined || secondaryPaymentContainerId === null) {
-        throw new Error("Missing the required parameter 'secondaryPaymentContainerId' when calling paymentContainersPaymentContainerIdAssignSecondaryPaymentContainerIdDelete");
+        throw new Error("Missing the required parameter 'secondaryPaymentContainerId' when calling paymentContainersIdAssignSecondaryIdDelete");
       }
 
 
@@ -188,8 +187,8 @@ export default class PaymentContainersApi {
      * @param {String} secondaryPaymentContainerId Id for which container is currently assigned to
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PaymentContainersProductModel>}
      */
-    paymentContainersPaymentContainerIdAssignSecondaryPaymentContainerIdDelete(paymentContainerId, secondaryPaymentContainerId) {
-      return this.paymentContainersPaymentContainerIdAssignSecondaryPaymentContainerIdDeleteWithHttpInfo(paymentContainerId, secondaryPaymentContainerId)
+    paymentContainersIdAssignSecondaryIdDelete(paymentContainerId, secondaryPaymentContainerId) {
+      return this.paymentContainersIdAssignSecondaryIdDeleteWithHttpInfo(paymentContainerId, secondaryPaymentContainerId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -203,17 +202,17 @@ export default class PaymentContainersApi {
      * @param {String} secondaryPaymentContainerId Id to which container will be assigned
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentContainersProductModel} and HTTP response
      */
-    paymentContainersPaymentContainerIdAssignSecondaryPaymentContainerIdPostWithHttpInfo(paymentContainerId, secondaryPaymentContainerId) {
+    paymentContainersIdAssignSecondaryIdPostWithHttpInfo(paymentContainerId, secondaryPaymentContainerId) {
       let postBody = null;
 
       // verify the required parameter 'paymentContainerId' is set
       if (paymentContainerId === undefined || paymentContainerId === null) {
-        throw new Error("Missing the required parameter 'paymentContainerId' when calling paymentContainersPaymentContainerIdAssignSecondaryPaymentContainerIdPost");
+        throw new Error("Missing the required parameter 'paymentContainerId' when calling paymentContainersIdAssignSecondaryIdPost");
       }
 
       // verify the required parameter 'secondaryPaymentContainerId' is set
       if (secondaryPaymentContainerId === undefined || secondaryPaymentContainerId === null) {
-        throw new Error("Missing the required parameter 'secondaryPaymentContainerId' when calling paymentContainersPaymentContainerIdAssignSecondaryPaymentContainerIdPost");
+        throw new Error("Missing the required parameter 'secondaryPaymentContainerId' when calling paymentContainersIdAssignSecondaryIdPost");
       }
 
 
@@ -247,8 +246,8 @@ export default class PaymentContainersApi {
      * @param {String} secondaryPaymentContainerId Id to which container will be assigned
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentContainersProductModel}
      */
-    paymentContainersPaymentContainerIdAssignSecondaryPaymentContainerIdPost(paymentContainerId, secondaryPaymentContainerId) {
-      return this.paymentContainersPaymentContainerIdAssignSecondaryPaymentContainerIdPostWithHttpInfo(paymentContainerId, secondaryPaymentContainerId)
+    paymentContainersIdAssignSecondaryIdPost(paymentContainerId, secondaryPaymentContainerId) {
+      return this.paymentContainersIdAssignSecondaryIdPostWithHttpInfo(paymentContainerId, secondaryPaymentContainerId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -261,12 +260,12 @@ export default class PaymentContainersApi {
      * @param {String} paymentContainerId Payment container id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PaymentContainersProductModel>} and HTTP response
      */
-    paymentContainersPaymentContainerIdDeleteWithHttpInfo(paymentContainerId) {
+    paymentContainersIdDeleteWithHttpInfo(paymentContainerId) {
       let postBody = null;
 
       // verify the required parameter 'paymentContainerId' is set
       if (paymentContainerId === undefined || paymentContainerId === null) {
-        throw new Error("Missing the required parameter 'paymentContainerId' when calling paymentContainersPaymentContainerIdDelete");
+        throw new Error("Missing the required parameter 'paymentContainerId' when calling paymentContainersIdDelete");
       }
 
 
@@ -298,8 +297,8 @@ export default class PaymentContainersApi {
      * @param {String} paymentContainerId Payment container id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PaymentContainersProductModel>}
      */
-    paymentContainersPaymentContainerIdDelete(paymentContainerId) {
-      return this.paymentContainersPaymentContainerIdDeleteWithHttpInfo(paymentContainerId)
+    paymentContainersIdDelete(paymentContainerId) {
+      return this.paymentContainersIdDeleteWithHttpInfo(paymentContainerId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -313,17 +312,17 @@ export default class PaymentContainersApi {
      * @param {module:model/PaymentContainersDTO} body Payment container properties
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentContainersProductModel} and HTTP response
      */
-    paymentContainersPaymentContainerIdPutWithHttpInfo(paymentContainerId, body) {
+    paymentContainersIdPutWithHttpInfo(paymentContainerId, body) {
       let postBody = body;
 
       // verify the required parameter 'paymentContainerId' is set
       if (paymentContainerId === undefined || paymentContainerId === null) {
-        throw new Error("Missing the required parameter 'paymentContainerId' when calling paymentContainersPaymentContainerIdPut");
+        throw new Error("Missing the required parameter 'paymentContainerId' when calling paymentContainersIdPut");
       }
 
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling paymentContainersPaymentContainerIdPut");
+        throw new Error("Missing the required parameter 'body' when calling paymentContainersIdPut");
       }
 
 
@@ -356,8 +355,8 @@ export default class PaymentContainersApi {
      * @param {module:model/PaymentContainersDTO} body Payment container properties
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentContainersProductModel}
      */
-    paymentContainersPaymentContainerIdPut(paymentContainerId, body) {
-      return this.paymentContainersPaymentContainerIdPutWithHttpInfo(paymentContainerId, body)
+    paymentContainersIdPut(paymentContainerId, body) {
+      return this.paymentContainersIdPutWithHttpInfo(paymentContainerId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

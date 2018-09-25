@@ -1,4 +1,4 @@
-# SecuconnectApi.LoyaltyCardsDTOAccount
+# SecuconnectJsSdk.LoyaltyCardsDTOAccount
 
 ## Properties
 Name | Type | Description | Notes

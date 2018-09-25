@@ -12,7 +12,6 @@ import SmartDevicesSecubaseConfig from '../model/SmartDevicesSecubaseConfig';
 /**
 * SmartDevices service.
 * @module api/SmartDevicesApi
-* @version 2.0.0
 */
 export default class SmartDevicesApi {
 

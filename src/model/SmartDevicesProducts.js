@@ -10,7 +10,6 @@ import SmartDeviceProductsPrepaid from './SmartDeviceProductsPrepaid';
 /**
 * The SmartDevicesProducts model module.
 * @module model/SmartDevicesProducts
-* @version 2.0.0
 */
 export default class SmartDevicesProducts {
     /**

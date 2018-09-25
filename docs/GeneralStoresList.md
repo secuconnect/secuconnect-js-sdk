@@ -1,4 +1,4 @@
-# SecuconnectApi.GeneralStoresList
+# SecuconnectJsSdk.GeneralStoresList
 
 ## Properties
 Name | Type | Description | Notes

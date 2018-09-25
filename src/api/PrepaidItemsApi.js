@@ -6,7 +6,6 @@ import PrepaidItemsProductModel from '../model/PrepaidItemsProductModel';
 /**
 * PrepaidItems service.
 * @module api/PrepaidItemsApi
-* @version 2.0.0
 */
 export default class PrepaidItemsApi {
 

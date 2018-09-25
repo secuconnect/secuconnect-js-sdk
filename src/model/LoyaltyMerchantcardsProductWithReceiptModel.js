@@ -16,7 +16,6 @@ import ReceiptTypeValue from './ReceiptTypeValue';
 /**
 * The LoyaltyMerchantcardsProductWithReceiptModel model module.
 * @module model/LoyaltyMerchantcardsProductWithReceiptModel
-* @version 2.0.0
 */
 export default class LoyaltyMerchantcardsProductWithReceiptModel {
     /**

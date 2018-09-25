@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The SecupayTransactionProductModelTransferAccount model module.
 * @module model/SecupayTransactionProductModelTransferAccount
-* @version 2.0.0
 */
 export default class SecupayTransactionProductModelTransferAccount {
     /**

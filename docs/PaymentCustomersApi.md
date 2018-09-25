@@ -1,4 +1,4 @@
-# SecuconnectApi.PaymentCustomersApi
+# SecuconnectJsSdk.PaymentCustomersApi
 
 All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**paymentCustomersGet**](PaymentCustomersApi.md#paymentCustomersGet) | **GET** /Payment/Customers | GET Payment/Customers
 [**paymentCustomersGetById**](PaymentCustomersApi.md#paymentCustomersGetById) | **GET** /Payment/Customers/{paymentCustomerId} | GET Payment/Customers/{paymentCustomerId}
-[**paymentCustomersPaymentCustomerIdDelete**](PaymentCustomersApi.md#paymentCustomersPaymentCustomerIdDelete) | **DELETE** /Payment/Customers/{paymentCustomerId} | DELETE Payment/Customers/{paymentCustomerId}
-[**paymentCustomersPaymentCustomerIdPut**](PaymentCustomersApi.md#paymentCustomersPaymentCustomerIdPut) | **PUT** /Payment/Customers/{paymentCustomerId} | PUT Payment/Customers/{paymentCustomerId}
+[**paymentCustomersIdDelete**](PaymentCustomersApi.md#paymentCustomersIdDelete) | **DELETE** /Payment/Customers/{paymentCustomerId} | DELETE Payment/Customers/{paymentCustomerId}
+[**paymentCustomersIdPut**](PaymentCustomersApi.md#paymentCustomersIdPut) | **PUT** /Payment/Customers/{paymentCustomerId} | PUT Payment/Customers/{paymentCustomerId}
 [**paymentCustomersPost**](PaymentCustomersApi.md#paymentCustomersPost) | **POST** /Payment/Customers | POST Payment/Customers
 
 
@@ -21,14 +21,14 @@ Get a list of payment customers
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.PaymentCustomersApi();
+let apiInstance = new SecuconnectJsSdk.PaymentCustomersApi();
 
 let opts = { 
   'count': 56, // Number | The number of items to return.
@@ -78,14 +78,14 @@ Get all payment customers
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.PaymentCustomersApi();
+let apiInstance = new SecuconnectJsSdk.PaymentCustomersApi();
 
 let paymentCustomerId = "paymentCustomerId_example"; // String | Payment customer id
 
@@ -116,9 +116,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="paymentCustomersPaymentCustomerIdDelete"></a>
-# **paymentCustomersPaymentCustomerIdDelete**
-> [PaymentCustomersProductModel] paymentCustomersPaymentCustomerIdDelete(paymentCustomerId)
+<a name="paymentCustomersIdDelete"></a>
+# **paymentCustomersIdDelete**
+> [PaymentCustomersProductModel] paymentCustomersIdDelete(paymentCustomerId)
 
 DELETE Payment/Customers/{paymentCustomerId}
 
@@ -126,18 +126,18 @@ Delete payment customer
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.PaymentCustomersApi();
+let apiInstance = new SecuconnectJsSdk.PaymentCustomersApi();
 
 let paymentCustomerId = "paymentCustomerId_example"; // String | Payment customer id
 
-apiInstance.paymentCustomersPaymentCustomerIdDelete(paymentCustomerId).then((data) => {
+apiInstance.paymentCustomersIdDelete(paymentCustomerId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -164,9 +164,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="paymentCustomersPaymentCustomerIdPut"></a>
-# **paymentCustomersPaymentCustomerIdPut**
-> PaymentCustomersProductModel paymentCustomersPaymentCustomerIdPut(paymentCustomerId, body)
+<a name="paymentCustomersIdPut"></a>
+# **paymentCustomersIdPut**
+> PaymentCustomersProductModel paymentCustomersIdPut(paymentCustomerId, body)
 
 PUT Payment/Customers/{paymentCustomerId}
 
@@ -174,20 +174,20 @@ Update payment customer
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.PaymentCustomersApi();
+let apiInstance = new SecuconnectJsSdk.PaymentCustomersApi();
 
 let paymentCustomerId = "paymentCustomerId_example"; // String | Payment customer id
 
-let body = new SecuconnectApi.PaymentCustomersDTO(); // PaymentCustomersDTO | Payment customer properties
+let body = new SecuconnectJsSdk.PaymentCustomersDTO(); // PaymentCustomersDTO | Payment customer properties
 
-apiInstance.paymentCustomersPaymentCustomerIdPut(paymentCustomerId, body).then((data) => {
+apiInstance.paymentCustomersIdPut(paymentCustomerId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -225,16 +225,16 @@ Add new customer
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.PaymentCustomersApi();
+let apiInstance = new SecuconnectJsSdk.PaymentCustomersApi();
 
-let body = new SecuconnectApi.PaymentCustomersDTO(); // PaymentCustomersDTO | Payment customer properties
+let body = new SecuconnectJsSdk.PaymentCustomersDTO(); // PaymentCustomersDTO | Payment customer properties
 
 apiInstance.paymentCustomersPost(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);

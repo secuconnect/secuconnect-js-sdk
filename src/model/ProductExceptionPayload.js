@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The ProductExceptionPayload model module.
 * @module model/ProductExceptionPayload
-* @version 2.0.0
 */
 export default class ProductExceptionPayload {
     /**

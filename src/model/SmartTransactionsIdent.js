@@ -9,7 +9,6 @@ import LoyaltyMerchantcardsProductModel from './LoyaltyMerchantcardsProductModel
 /**
 * The SmartTransactionsIdent model module.
 * @module model/SmartTransactionsIdent
-* @version 2.0.0
 */
 export default class SmartTransactionsIdent {
     /**

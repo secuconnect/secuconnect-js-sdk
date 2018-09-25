@@ -1,4 +1,4 @@
-# SecuconnectApi.BankAccountDescriptor
+# SecuconnectJsSdk.BankAccountDescriptor
 
 ## Properties
 Name | Type | Description | Notes

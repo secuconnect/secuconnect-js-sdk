@@ -9,7 +9,6 @@ import ProductExceptionPayload from '../model/ProductExceptionPayload';
 /**
 * PaymentTransactions service.
 * @module api/PaymentTransactionsApi
-* @version 2.0.0
 */
 export default class PaymentTransactionsApi {
 
@@ -144,12 +143,12 @@ export default class PaymentTransactionsApi {
      * @param {String} paymentTransactionId Payment transaction id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PaymentTransactionsCancelList>} and HTTP response
      */
-    paymentTransactionsPaymentTransactionIdCancelPostWithHttpInfo(paymentTransactionId) {
+    paymentTransactionsIdCancelPostWithHttpInfo(paymentTransactionId) {
       let postBody = null;
 
       // verify the required parameter 'paymentTransactionId' is set
       if (paymentTransactionId === undefined || paymentTransactionId === null) {
-        throw new Error("Missing the required parameter 'paymentTransactionId' when calling paymentTransactionsPaymentTransactionIdCancelPost");
+        throw new Error("Missing the required parameter 'paymentTransactionId' when calling paymentTransactionsIdCancelPost");
       }
 
 
@@ -181,8 +180,8 @@ export default class PaymentTransactionsApi {
      * @param {String} paymentTransactionId Payment transaction id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PaymentTransactionsCancelList>}
      */
-    paymentTransactionsPaymentTransactionIdCancelPost(paymentTransactionId) {
-      return this.paymentTransactionsPaymentTransactionIdCancelPostWithHttpInfo(paymentTransactionId)
+    paymentTransactionsIdCancelPost(paymentTransactionId) {
+      return this.paymentTransactionsIdCancelPostWithHttpInfo(paymentTransactionId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -195,12 +194,12 @@ export default class PaymentTransactionsApi {
      * @param {String} paymentTransactionId Payment transaction id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentTransactionsShippingUrl} and HTTP response
      */
-    paymentTransactionsPaymentTransactionIdShippingUrlGetWithHttpInfo(paymentTransactionId) {
+    paymentTransactionsIdShippingUrlGetWithHttpInfo(paymentTransactionId) {
       let postBody = null;
 
       // verify the required parameter 'paymentTransactionId' is set
       if (paymentTransactionId === undefined || paymentTransactionId === null) {
-        throw new Error("Missing the required parameter 'paymentTransactionId' when calling paymentTransactionsPaymentTransactionIdShippingUrlGet");
+        throw new Error("Missing the required parameter 'paymentTransactionId' when calling paymentTransactionsIdShippingUrlGet");
       }
 
 
@@ -232,8 +231,8 @@ export default class PaymentTransactionsApi {
      * @param {String} paymentTransactionId Payment transaction id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentTransactionsShippingUrl}
      */
-    paymentTransactionsPaymentTransactionIdShippingUrlGet(paymentTransactionId) {
-      return this.paymentTransactionsPaymentTransactionIdShippingUrlGetWithHttpInfo(paymentTransactionId)
+    paymentTransactionsIdShippingUrlGet(paymentTransactionId) {
+      return this.paymentTransactionsIdShippingUrlGetWithHttpInfo(paymentTransactionId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

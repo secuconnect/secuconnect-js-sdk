@@ -13,7 +13,6 @@ import SmartTransactionsPickupOptions from './SmartTransactionsPickupOptions';
 /**
 * The SmartTransactionsDTO model module.
 * @module model/SmartTransactionsDTO
-* @version 2.0.0
 */
 export default class SmartTransactionsDTO {
     /**

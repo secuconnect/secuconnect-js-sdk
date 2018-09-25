@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The LoyaltyStoregroupsDTO model module.
 * @module model/LoyaltyStoregroupsDTO
-* @version 2.0.0
 */
 export default class LoyaltyStoregroupsDTO {
     /**

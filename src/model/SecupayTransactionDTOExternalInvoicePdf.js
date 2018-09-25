@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The SecupayTransactionDTOExternalInvoicePdf model module.
 * @module model/SecupayTransactionDTOExternalInvoicePdf
-* @version 2.0.0
 */
 export default class SecupayTransactionDTOExternalInvoicePdf {
     /**

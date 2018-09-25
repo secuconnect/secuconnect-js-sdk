@@ -9,7 +9,6 @@ import Contact from './Contact';
 /**
 * The PaymentCustomersDTO model module.
 * @module model/PaymentCustomersDTO
-* @version 2.0.0
 */
 export default class PaymentCustomersDTO {
     /**

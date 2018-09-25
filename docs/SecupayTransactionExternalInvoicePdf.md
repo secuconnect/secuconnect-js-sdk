@@ -1,4 +1,4 @@
-# SecuconnectApi.SecupayTransactionExternalInvoicePdf
+# SecuconnectJsSdk.SecupayTransactionExternalInvoicePdf
 
 ## Properties
 Name | Type | Description | Notes

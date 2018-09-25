@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The SmartDevicesDTOPrepaidTid model module.
 * @module model/SmartDevicesDTOPrepaidTid
-* @version 2.0.0
 */
 export default class SmartDevicesDTOPrepaidTid {
     /**

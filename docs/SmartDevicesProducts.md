@@ -1,4 +1,4 @@
-# SecuconnectApi.SmartDevicesProducts
+# SecuconnectJsSdk.SmartDevicesProducts
 
 ## Properties
 Name | Type | Description | Notes

@@ -9,7 +9,6 @@ import DayTime from './DayTime';
 /**
 * The OpenHours model module.
 * @module model/OpenHours
-* @version 2.0.0
 */
 export default class OpenHours {
     /**

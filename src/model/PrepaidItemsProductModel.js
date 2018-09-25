@@ -9,7 +9,6 @@ import ItemGroup from './ItemGroup';
 /**
 * The PrepaidItemsProductModel model module.
 * @module model/PrepaidItemsProductModel
-* @version 2.0.0
 */
 export default class PrepaidItemsProductModel {
     /**

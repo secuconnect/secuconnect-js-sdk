@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The LoyaltyCardgroupsDTOMerchant model module.
 * @module model/LoyaltyCardgroupsDTOMerchant
-* @version 2.0.0
 */
 export default class LoyaltyCardgroupsDTOMerchant {
     /**

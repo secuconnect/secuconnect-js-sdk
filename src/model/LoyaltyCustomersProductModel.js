@@ -11,7 +11,6 @@ import ProductInstanceUID from './ProductInstanceUID';
 /**
 * The LoyaltyCustomersProductModel model module.
 * @module model/LoyaltyCustomersProductModel
-* @version 2.0.0
 */
 export default class LoyaltyCustomersProductModel {
     /**

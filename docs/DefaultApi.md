@@ -1,4 +1,4 @@
-# SecuconnectApi.DefaultApi
+# SecuconnectJsSdk.DefaultApi
 
 All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
@@ -17,14 +17,14 @@ Assign external invoice pdf
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.DefaultApi();
+let apiInstance = new SecuconnectJsSdk.DefaultApi();
 
 let paymentMethod = "paymentMethod_example"; // String | Payment method (debit, prepay, ...)
 
@@ -32,7 +32,7 @@ let paymentId = "paymentId_example"; // String | Payment id
 
 let documentId = "documentId_example"; // String | Document id
 
-let body = new SecuconnectApi.SecupayTransactionDTOExternalInvoicePdf(); // SecupayTransactionDTOExternalInvoicePdf | Request body for assigning external invoice pdf
+let body = new SecuconnectJsSdk.SecupayTransactionDTOExternalInvoicePdf(); // SecupayTransactionDTOExternalInvoicePdf | Request body for assigning external invoice pdf
 
 apiInstance.assignExternalInvoicePdf(paymentMethod, paymentId, documentId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);

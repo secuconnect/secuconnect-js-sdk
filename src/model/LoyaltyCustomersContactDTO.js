@@ -9,7 +9,6 @@ import Address from './Address';
 /**
 * The LoyaltyCustomersContactDTO model module.
 * @module model/LoyaltyCustomersContactDTO
-* @version 2.0.0
 */
 export default class LoyaltyCustomersContactDTO {
     /**

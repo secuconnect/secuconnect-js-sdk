@@ -1,4 +1,4 @@
-# SecuconnectApi.LoyaltySalesApi
+# SecuconnectJsSdk.LoyaltySalesApi
 
 All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
@@ -18,14 +18,14 @@ Get cardgroups by merchant id
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltySalesApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltySalesApi();
 
 let generalMerchantId = "generalMerchantId_example"; // String | Search by provided id
 
@@ -66,14 +66,14 @@ Get DECODED virtual terminal id by DECODED store id
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltySalesApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltySalesApi();
 
 let generalStoresId = "generalStoresId_example"; // String | DECODED store id
 

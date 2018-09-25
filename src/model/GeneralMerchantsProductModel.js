@@ -15,7 +15,6 @@ import ParentModel from './ParentModel';
 /**
 * The GeneralMerchantsProductModel model module.
 * @module model/GeneralMerchantsProductModel
-* @version 2.0.0
 */
 export default class GeneralMerchantsProductModel {
     /**

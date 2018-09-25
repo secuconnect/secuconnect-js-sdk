@@ -1,4 +1,4 @@
-# SecuconnectApi.InvitedBy
+# SecuconnectJsSdk.InvitedBy
 
 ## Properties
 Name | Type | Description | Notes

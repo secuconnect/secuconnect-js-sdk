@@ -4,7 +4,6 @@ import AuthenticationCredentials from './AuthenticationCredentials';
 /**
  * OAuthApplicationUserCredentials service.
  * @module authentication/OAuthApplicationUserCredentials
- * @version 2.0
  */
 
 export default class OAuthApplicationUserCredentials extends AuthenticationCredentials {

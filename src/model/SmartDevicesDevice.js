@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The SmartDevicesDevice model module.
 * @module model/SmartDevicesDevice
-* @version 2.0.0
 */
 export default class SmartDevicesDevice {
     /**

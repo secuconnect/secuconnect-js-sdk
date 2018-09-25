@@ -9,7 +9,6 @@ import SmartTransactionsBonusProducts from './SmartTransactionsBonusProducts';
 /**
 * The SmartTransactionsPreTransactionModel model module.
 * @module model/SmartTransactionsPreTransactionModel
-* @version 2.0.0
 */
 export default class SmartTransactionsPreTransactionModel {
     /**

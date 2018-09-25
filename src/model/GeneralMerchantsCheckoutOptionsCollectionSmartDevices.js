@@ -9,7 +9,6 @@ import Store from './Store';
 /**
 * The GeneralMerchantsCheckoutOptionsCollectionSmartDevices model module.
 * @module model/GeneralMerchantsCheckoutOptionsCollectionSmartDevices
-* @version 2.0.0
 */
 export default class GeneralMerchantsCheckoutOptionsCollectionSmartDevices {
     /**

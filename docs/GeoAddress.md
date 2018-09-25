@@ -1,4 +1,4 @@
-# SecuconnectApi.GeoAddress
+# SecuconnectJsSdk.GeoAddress
 
 ## Properties
 Name | Type | Description | Notes

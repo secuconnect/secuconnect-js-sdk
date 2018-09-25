@@ -9,7 +9,6 @@ import GeneralStoresProductModel from './GeneralStoresProductModel';
 /**
 * The GeneralStoresList model module.
 * @module model/GeneralStoresList
-* @version 2.0.0
 */
 export default class GeneralStoresList {
     /**

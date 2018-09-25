@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The SmartTransactionsBonusProducts model module.
 * @module model/SmartTransactionsBonusProducts
-* @version 2.0.0
 */
 export default class SmartTransactionsBonusProducts {
     /**

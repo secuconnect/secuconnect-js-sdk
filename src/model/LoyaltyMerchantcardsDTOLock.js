@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The LoyaltyMerchantcardsDTOLock model module.
 * @module model/LoyaltyMerchantcardsDTOLock
-* @version 2.0.0
 */
 export default class LoyaltyMerchantcardsDTOLock {
     /**

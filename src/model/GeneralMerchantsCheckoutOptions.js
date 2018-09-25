@@ -10,7 +10,6 @@ import GeneralMerchantsCheckoutOptionsShipping from './GeneralMerchantsCheckoutO
 /**
 * The GeneralMerchantsCheckoutOptions model module.
 * @module model/GeneralMerchantsCheckoutOptions
-* @version 2.0.0
 */
 export default class GeneralMerchantsCheckoutOptions {
     /**

@@ -9,7 +9,6 @@ import SecupayTransactionExternalInvoicePdfDocument from './SecupayTransactionEx
 /**
 * The SecupayTransactionExternalInvoicePdf model module.
 * @module model/SecupayTransactionExternalInvoicePdf
-* @version 2.0.0
 */
 export default class SecupayTransactionExternalInvoicePdf {
     /**

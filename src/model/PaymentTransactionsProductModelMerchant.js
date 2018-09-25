@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The PaymentTransactionsProductModelMerchant model module.
 * @module model/PaymentTransactionsProductModelMerchant
-* @version 2.0.0
 */
 export default class PaymentTransactionsProductModelMerchant {
     /**

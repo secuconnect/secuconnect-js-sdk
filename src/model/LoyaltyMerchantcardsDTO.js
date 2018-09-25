@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The LoyaltyMerchantcardsDTO model module.
 * @module model/LoyaltyMerchantcardsDTO
-* @version 2.0.0
 */
 export default class LoyaltyMerchantcardsDTO {
     /**

@@ -7,7 +7,6 @@ import SecupayTransactionProductModel from '../model/SecupayTransactionProductMo
 /**
 * PaymentSecupayPrepays service.
 * @module api/PaymentSecupayPrepaysApi
-* @version 2.0.0
 */
 export default class PaymentSecupayPrepaysApi {
 

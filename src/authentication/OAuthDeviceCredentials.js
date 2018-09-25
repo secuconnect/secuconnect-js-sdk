@@ -4,7 +4,6 @@ import AuthenticationCredentials from './AuthenticationCredentials';
 /**
  * OAuthDeviceCredentials service.
  * @module authentication/OAuthDeviceCredentials
- * @version 2.0
  */
 
 export default class OAuthDeviceCredentials extends AuthenticationCredentials {

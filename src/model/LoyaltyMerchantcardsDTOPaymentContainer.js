@@ -9,7 +9,6 @@ import PaymentInformation from './PaymentInformation';
 /**
 * The LoyaltyMerchantcardsDTOPaymentContainer model module.
 * @module model/LoyaltyMerchantcardsDTOPaymentContainer
-* @version 2.0.0
 */
 export default class LoyaltyMerchantcardsDTOPaymentContainer {
     /**

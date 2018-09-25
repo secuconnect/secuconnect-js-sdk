@@ -9,7 +9,6 @@ import ProductInstanceUID from './ProductInstanceUID';
 /**
 * The SmartTransactionsMerchant model module.
 * @module model/SmartTransactionsMerchant
-* @version 2.0.0
 */
 export default class SmartTransactionsMerchant {
     /**

@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The AssignedBy model module.
 * @module model/AssignedBy
-* @version 2.0.0
 */
 export default class AssignedBy {
     /**

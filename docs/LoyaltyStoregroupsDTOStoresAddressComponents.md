@@ -1,4 +1,4 @@
-# SecuconnectApi.LoyaltyStoregroupsDTOStoresAddressComponents
+# SecuconnectJsSdk.LoyaltyStoregroupsDTOStoresAddressComponents
 
 ## Properties
 Name | Type | Description | Notes

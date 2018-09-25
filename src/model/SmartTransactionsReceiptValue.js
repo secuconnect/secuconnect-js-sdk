@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The SmartTransactionsReceiptValue model module.
 * @module model/SmartTransactionsReceiptValue
-* @version 2.0.0
 */
 export default class SmartTransactionsReceiptValue {
     /**

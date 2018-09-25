@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The AddressComponents model module.
 * @module model/AddressComponents
-* @version 2.0.0
 */
 export default class AddressComponents {
     /**

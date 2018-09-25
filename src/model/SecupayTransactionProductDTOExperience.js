@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The SecupayTransactionProductDTOExperience model module.
 * @module model/SecupayTransactionProductDTOExperience
-* @version 2.0.0
 */
 export default class SecupayTransactionProductDTOExperience {
     /**

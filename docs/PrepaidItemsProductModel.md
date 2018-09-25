@@ -1,4 +1,4 @@
-# SecuconnectApi.PrepaidItemsProductModel
+# SecuconnectJsSdk.PrepaidItemsProductModel
 
 ## Properties
 Name | Type | Description | Notes

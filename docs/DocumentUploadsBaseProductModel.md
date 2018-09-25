@@ -1,4 +1,4 @@
-# SecuconnectApi.DocumentUploadsBaseProductModel
+# SecuconnectJsSdk.DocumentUploadsBaseProductModel
 
 ## Properties
 Name | Type | Description | Notes

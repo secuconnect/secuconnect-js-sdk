@@ -9,7 +9,6 @@ import PaymentCustomersProductModel from './PaymentCustomersProductModel';
 /**
 * The PaymentCustomersList model module.
 * @module model/PaymentCustomersList
-* @version 2.0.0
 */
 export default class PaymentCustomersList {
     /**

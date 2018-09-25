@@ -13,7 +13,6 @@ import ProductInstanceUID from './ProductInstanceUID';
 /**
 * The GeneralStoresProductModel model module.
 * @module model/GeneralStoresProductModel
-* @version 2.0.0
 */
 export default class GeneralStoresProductModel {
     /**

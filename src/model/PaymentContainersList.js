@@ -9,7 +9,6 @@ import PaymentContainersProductModel from './PaymentContainersProductModel';
 /**
 * The PaymentContainersList model module.
 * @module model/PaymentContainersList
-* @version 2.0.0
 */
 export default class PaymentContainersList {
     /**

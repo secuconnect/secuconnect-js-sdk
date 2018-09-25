@@ -1,4 +1,4 @@
-# SecuconnectApi.PaymentTransactionsProductModelDetails
+# SecuconnectJsSdk.PaymentTransactionsProductModelDetails
 
 ## Properties
 Name | Type | Description | Notes

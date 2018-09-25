@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The ReceiptValue model module.
 * @module model/ReceiptValue
-* @version 2.0.0
 */
 export default class ReceiptValue {
     /**

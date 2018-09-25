@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The LoyaltyCustomersRemoved model module.
 * @module model/LoyaltyCustomersRemoved
-* @version 2.0.0
 */
 export default class LoyaltyCustomersRemoved {
     /**

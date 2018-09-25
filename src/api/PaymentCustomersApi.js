@@ -8,7 +8,6 @@ import ProductExceptionPayload from '../model/ProductExceptionPayload';
 /**
 * PaymentCustomers service.
 * @module api/PaymentCustomersApi
-* @version 2.0.0
 */
 export default class PaymentCustomersApi {
 
@@ -143,12 +142,12 @@ export default class PaymentCustomersApi {
      * @param {String} paymentCustomerId Payment customer id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PaymentCustomersProductModel>} and HTTP response
      */
-    paymentCustomersPaymentCustomerIdDeleteWithHttpInfo(paymentCustomerId) {
+    paymentCustomersIdDeleteWithHttpInfo(paymentCustomerId) {
       let postBody = null;
 
       // verify the required parameter 'paymentCustomerId' is set
       if (paymentCustomerId === undefined || paymentCustomerId === null) {
-        throw new Error("Missing the required parameter 'paymentCustomerId' when calling paymentCustomersPaymentCustomerIdDelete");
+        throw new Error("Missing the required parameter 'paymentCustomerId' when calling paymentCustomersIdDelete");
       }
 
 
@@ -180,8 +179,8 @@ export default class PaymentCustomersApi {
      * @param {String} paymentCustomerId Payment customer id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PaymentCustomersProductModel>}
      */
-    paymentCustomersPaymentCustomerIdDelete(paymentCustomerId) {
-      return this.paymentCustomersPaymentCustomerIdDeleteWithHttpInfo(paymentCustomerId)
+    paymentCustomersIdDelete(paymentCustomerId) {
+      return this.paymentCustomersIdDeleteWithHttpInfo(paymentCustomerId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -195,17 +194,17 @@ export default class PaymentCustomersApi {
      * @param {module:model/PaymentCustomersDTO} body Payment customer properties
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentCustomersProductModel} and HTTP response
      */
-    paymentCustomersPaymentCustomerIdPutWithHttpInfo(paymentCustomerId, body) {
+    paymentCustomersIdPutWithHttpInfo(paymentCustomerId, body) {
       let postBody = body;
 
       // verify the required parameter 'paymentCustomerId' is set
       if (paymentCustomerId === undefined || paymentCustomerId === null) {
-        throw new Error("Missing the required parameter 'paymentCustomerId' when calling paymentCustomersPaymentCustomerIdPut");
+        throw new Error("Missing the required parameter 'paymentCustomerId' when calling paymentCustomersIdPut");
       }
 
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling paymentCustomersPaymentCustomerIdPut");
+        throw new Error("Missing the required parameter 'body' when calling paymentCustomersIdPut");
       }
 
 
@@ -238,8 +237,8 @@ export default class PaymentCustomersApi {
      * @param {module:model/PaymentCustomersDTO} body Payment customer properties
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentCustomersProductModel}
      */
-    paymentCustomersPaymentCustomerIdPut(paymentCustomerId, body) {
-      return this.paymentCustomersPaymentCustomerIdPutWithHttpInfo(paymentCustomerId, body)
+    paymentCustomersIdPut(paymentCustomerId, body) {
+      return this.paymentCustomersIdPutWithHttpInfo(paymentCustomerId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -8,7 +8,6 @@ import ProductExceptionPayload from '../model/ProductExceptionPayload';
 /**
 * GeneralMerchants service.
 * @module api/GeneralMerchantsApi
-* @version 2.0.0
 */
 export default class GeneralMerchantsApi {
 

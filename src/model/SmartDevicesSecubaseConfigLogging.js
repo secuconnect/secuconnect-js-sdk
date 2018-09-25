@@ -9,7 +9,6 @@ import SmartDevicesSecubaseConfigLoggingFileNet from './SmartDevicesSecubaseConf
 /**
 * The SmartDevicesSecubaseConfigLogging model module.
 * @module model/SmartDevicesSecubaseConfigLogging
-* @version 2.0.0
 */
 export default class SmartDevicesSecubaseConfigLogging {
     /**

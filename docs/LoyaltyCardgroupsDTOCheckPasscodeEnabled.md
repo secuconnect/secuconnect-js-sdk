@@ -1,4 +1,4 @@
-# SecuconnectApi.LoyaltyCardgroupsDTOCheckPasscodeEnabled
+# SecuconnectJsSdk.LoyaltyCardgroupsDTOCheckPasscodeEnabled
 
 ## Properties
 Name | Type | Description | Notes

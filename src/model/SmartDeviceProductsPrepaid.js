@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The SmartDeviceProductsPrepaid model module.
 * @module model/SmartDeviceProductsPrepaid
-* @version 2.0.0
 */
 export default class SmartDeviceProductsPrepaid {
     /**

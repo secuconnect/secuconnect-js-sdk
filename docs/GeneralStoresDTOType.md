@@ -1,4 +1,4 @@
-# SecuconnectApi.GeneralStoresDTOType
+# SecuconnectJsSdk.GeneralStoresDTOType
 
 ## Properties
 Name | Type | Description | Notes

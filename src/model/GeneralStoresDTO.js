@@ -10,7 +10,6 @@ import OpenHours from './OpenHours';
 /**
 * The GeneralStoresDTO model module.
 * @module model/GeneralStoresDTO
-* @version 2.0.0
 */
 export default class GeneralStoresDTO {
     /**

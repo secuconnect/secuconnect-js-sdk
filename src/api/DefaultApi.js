@@ -7,7 +7,6 @@ import SecupayTransactionExternalInvoicePdf from '../model/SecupayTransactionExt
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 2.0.0
 */
 export default class DefaultApi {
 

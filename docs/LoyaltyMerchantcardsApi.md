@@ -1,4 +1,4 @@
-# SecuconnectApi.LoyaltyMerchantcardsApi
+# SecuconnectJsSdk.LoyaltyMerchantcardsApi
 
 All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
@@ -36,16 +36,16 @@ Add new loyalty merchant card
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyMerchantcardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyMerchantcardsApi();
 
-let body = new SecuconnectApi.LoyaltyMerchantcardsDTO(); // LoyaltyMerchantcardsDTO | Loyalty merchant card properties
+let body = new SecuconnectJsSdk.LoyaltyMerchantcardsDTO(); // LoyaltyMerchantcardsDTO | Loyalty merchant card properties
 
 apiInstance.addMerchantCard(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -84,18 +84,18 @@ Check CSC
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyMerchantcardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyMerchantcardsApi();
 
 let loyaltyMerchantCardId = "loyaltyMerchantCardId_example"; // String | Loyalty merchant card id
 
-let body = new SecuconnectApi.LoyaltyMerchantcardsDTOCsc(); // LoyaltyMerchantcardsDTOCsc | Information about card
+let body = new SecuconnectJsSdk.LoyaltyMerchantcardsDTOCsc(); // LoyaltyMerchantcardsDTOCsc | Information about card
 
 apiInstance.checkCsc(loyaltyMerchantCardId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -135,18 +135,18 @@ Function to check the Passcode card with cardnumber
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyMerchantcardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyMerchantcardsApi();
 
 let loyaltyMerchantCardId = "loyaltyMerchantCardId_example"; // String | Loyalty merchant card id
 
-let body = new SecuconnectApi.LoyaltyMerchantcardsDTOCheckPasscode(); // LoyaltyMerchantcardsDTOCheckPasscode | Information about card
+let body = new SecuconnectJsSdk.LoyaltyMerchantcardsDTOCheckPasscode(); // LoyaltyMerchantcardsDTOCheckPasscode | Information about card
 
 apiInstance.checkPassCode(loyaltyMerchantCardId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -186,20 +186,20 @@ Function to create multiple merchantcards for given merchant with given cardgrou
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyMerchantcardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyMerchantcardsApi();
 
 let generalMerchantId = "generalMerchantId_example"; // String | General merchant id
 
 let loyaltyCardgroupId = "loyaltyCardgroupId_example"; // String | Loyalty card group id
 
-let body = new SecuconnectApi.LoyaltyMerchantcardsDTOCardsAmount(); // LoyaltyMerchantcardsDTOCardsAmount | Cards amount
+let body = new SecuconnectJsSdk.LoyaltyMerchantcardsDTOCardsAmount(); // LoyaltyMerchantcardsDTOCardsAmount | Cards amount
 
 apiInstance.createMerchantcards(generalMerchantId, loyaltyCardgroupId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -240,18 +240,18 @@ Execute transaction from SDK
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyMerchantcardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyMerchantcardsApi();
 
 let loyaltyMerchantCardId = "loyaltyMerchantCardId_example"; // String | Loyalty merchant card id
 
-let body = new SecuconnectApi.LoyaltyMerchantcardsDTOTransaction(); // LoyaltyMerchantcardsDTOTransaction | Transaction properties
+let body = new SecuconnectJsSdk.LoyaltyMerchantcardsDTOTransaction(); // LoyaltyMerchantcardsDTOTransaction | Transaction properties
 
 apiInstance.executeTransaction(loyaltyMerchantCardId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -291,14 +291,14 @@ Get a list of loyalty merchant cards
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyMerchantcardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyMerchantcardsApi();
 
 let opts = { 
   'count': 56, // Number | The number of items to return.
@@ -348,14 +348,14 @@ Get loyalty merchant card lock information for a specific id
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyMerchantcardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyMerchantcardsApi();
 
 let loyaltyMerchantCardId = "loyaltyMerchantCardId_example"; // String | Loyalty merchant card id
 
@@ -396,14 +396,14 @@ Get loyalty merchant card for a specific id
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyMerchantcardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyMerchantcardsApi();
 
 let loyaltyMerchantCardId = "loyaltyMerchantCardId_example"; // String | Search one by provided id
 
@@ -444,14 +444,14 @@ Get raw merchant card id for merchant id and card id
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyMerchantcardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyMerchantcardsApi();
 
 let generalMerchantId = "generalMerchantId_example"; // String | Merchant id
 
@@ -495,14 +495,14 @@ Get virtual terminal data for merchant
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyMerchantcardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyMerchantcardsApi();
 
 let loyaltyMerchantCardId = "loyaltyMerchantCardId_example"; // String | Merchant card id
 
@@ -546,18 +546,18 @@ Lock merchant card
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyMerchantcardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyMerchantcardsApi();
 
 let loyaltyMerchantCardId = "loyaltyMerchantCardId_example"; // String | Loyalty merchant card id
 
-let body = new SecuconnectApi.LoyaltyMerchantcardsDTOLock(); // LoyaltyMerchantcardsDTOLock | Information about lock
+let body = new SecuconnectJsSdk.LoyaltyMerchantcardsDTOLock(); // LoyaltyMerchantcardsDTOLock | Information about lock
 
 apiInstance.lock(loyaltyMerchantCardId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -597,18 +597,18 @@ Function to save new given passcode for given merchantcard identified by cardnum
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyMerchantcardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyMerchantcardsApi();
 
 let loyaltyMerchantCardId = "loyaltyMerchantCardId_example"; // String | Loyalty merchant card id
 
-let body = new SecuconnectApi.LoyaltyMerchantcardsDTONewPasscode(); // LoyaltyMerchantcardsDTONewPasscode | Information about card
+let body = new SecuconnectJsSdk.LoyaltyMerchantcardsDTONewPasscode(); // LoyaltyMerchantcardsDTONewPasscode | Information about card
 
 apiInstance.newPassCode(loyaltyMerchantCardId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -648,18 +648,18 @@ Register new customer for a card
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyMerchantcardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyMerchantcardsApi();
 
 let loyaltyMerchantCardId = "loyaltyMerchantCardId_example"; // String | Loyalty merchant card id
 
-let body = new SecuconnectApi.LoyaltyCustomersDTO(); // LoyaltyCustomersDTO | Loyalty customer properties
+let body = new SecuconnectJsSdk.LoyaltyCustomersDTO(); // LoyaltyCustomersDTO | Loyalty customer properties
 
 apiInstance.registerCustomer(loyaltyMerchantCardId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -699,14 +699,14 @@ Delete loyalty merchant card
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyMerchantcardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyMerchantcardsApi();
 
 let loyaltyMerchantCardId = "loyaltyMerchantCardId_example"; // String | Loyalty merchant card id
 
@@ -747,18 +747,18 @@ Function to reset a passcode for given merchantcard
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyMerchantcardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyMerchantcardsApi();
 
 let loyaltyMerchantCardId = "loyaltyMerchantCardId_example"; // String | Loyalty merchant card id
 
-let body = new SecuconnectApi.LoyaltyMerchantcardsDTOResetPasscode(); // LoyaltyMerchantcardsDTOResetPasscode | Information about card
+let body = new SecuconnectJsSdk.LoyaltyMerchantcardsDTOResetPasscode(); // LoyaltyMerchantcardsDTOResetPasscode | Information about card
 
 apiInstance.resetPassCode(loyaltyMerchantCardId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -798,14 +798,14 @@ Set loyalty customer for a loyalty merchant card
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyMerchantcardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyMerchantcardsApi();
 
 let loyaltyMerchantCardId = "loyaltyMerchantCardId_example"; // String | Loyalty merchant card id
 
@@ -849,18 +849,18 @@ Unlock merchant card
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyMerchantcardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyMerchantcardsApi();
 
 let loyaltyMerchantCardId = "loyaltyMerchantCardId_example"; // String | Loyalty merchant card id
 
-let body = new SecuconnectApi.LoyaltyMerchantcardsDTOLock(); // LoyaltyMerchantcardsDTOLock | Information about unlock
+let body = new SecuconnectJsSdk.LoyaltyMerchantcardsDTOLock(); // LoyaltyMerchantcardsDTOLock | Information about unlock
 
 apiInstance.unlock(loyaltyMerchantCardId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -900,14 +900,14 @@ Update loyalty card group
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyMerchantcardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyMerchantcardsApi();
 
 let loyaltyMerchantCardId = "loyaltyMerchantCardId_example"; // String | Loyalty merchant card id
 
@@ -951,18 +951,18 @@ Update loyalty merchant card
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyMerchantcardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyMerchantcardsApi();
 
 let loyaltyMerchantCardId = "loyaltyMerchantCardId_example"; // String | Loyalty merchant card id
 
-let body = new SecuconnectApi.LoyaltyMerchantcardsDTO(); // LoyaltyMerchantcardsDTO | Loyalty merchant card properties
+let body = new SecuconnectJsSdk.LoyaltyMerchantcardsDTO(); // LoyaltyMerchantcardsDTO | Loyalty merchant card properties
 
 apiInstance.updateMerchantCard(loyaltyMerchantCardId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -1002,18 +1002,18 @@ Function to check the merchant card
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyMerchantcardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyMerchantcardsApi();
 
 let loyaltyMerchantCardId = "loyaltyMerchantCardId_example"; // String | Loyalty merchant card id
 
-let body = new SecuconnectApi.LoyaltyMerchantcardsDTOValidateMerchantCard(); // LoyaltyMerchantcardsDTOValidateMerchantCard | Information about card
+let body = new SecuconnectJsSdk.LoyaltyMerchantcardsDTOValidateMerchantCard(); // LoyaltyMerchantcardsDTOValidateMerchantCard | Information about card
 
 apiInstance.validateMerchantCard(loyaltyMerchantCardId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);

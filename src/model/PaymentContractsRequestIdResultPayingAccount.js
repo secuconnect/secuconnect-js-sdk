@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The PaymentContractsRequestIdResultPayingAccount model module.
 * @module model/PaymentContractsRequestIdResultPayingAccount
-* @version 2.0.0
 */
 export default class PaymentContractsRequestIdResultPayingAccount {
     /**

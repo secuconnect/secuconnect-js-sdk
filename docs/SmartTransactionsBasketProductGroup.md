@@ -1,4 +1,4 @@
-# SecuconnectApi.SmartTransactionsBasketProductGroup
+# SecuconnectJsSdk.SmartTransactionsBasketProductGroup
 
 ## Properties
 Name | Type | Description | Notes

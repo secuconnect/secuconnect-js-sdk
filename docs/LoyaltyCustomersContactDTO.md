@@ -1,4 +1,4 @@
-# SecuconnectApi.LoyaltyCustomersContactDTO
+# SecuconnectJsSdk.LoyaltyCustomersContactDTO
 
 ## Properties
 Name | Type | Description | Notes

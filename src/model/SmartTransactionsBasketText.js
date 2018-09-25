@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The SmartTransactionsBasketText model module.
 * @module model/SmartTransactionsBasketText
-* @version 2.0.0
 */
 export default class SmartTransactionsBasketText {
     /**

@@ -13,7 +13,6 @@ import Store from './Store';
 /**
 * The PrepaidSalesProductModel model module.
 * @module model/PrepaidSalesProductModel
-* @version 2.0.0
 */
 export default class PrepaidSalesProductModel {
     /**

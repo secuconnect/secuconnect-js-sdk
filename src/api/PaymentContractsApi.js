@@ -9,7 +9,6 @@ import ProductExceptionPayload from '../model/ProductExceptionPayload';
 /**
 * PaymentContracts service.
 * @module api/PaymentContractsApi
-* @version 2.0.0
 */
 export default class PaymentContractsApi {
 
@@ -144,12 +143,12 @@ export default class PaymentContractsApi {
      * @param {String} paymentContractId Contract identifier
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentContractsProductModel} and HTTP response
      */
-    paymentContractsPaymentContractIdClonePostWithHttpInfo(paymentContractId) {
+    paymentContractsIdClonePostWithHttpInfo(paymentContractId) {
       let postBody = null;
 
       // verify the required parameter 'paymentContractId' is set
       if (paymentContractId === undefined || paymentContractId === null) {
-        throw new Error("Missing the required parameter 'paymentContractId' when calling paymentContractsPaymentContractIdClonePost");
+        throw new Error("Missing the required parameter 'paymentContractId' when calling paymentContractsIdClonePost");
       }
 
 
@@ -181,8 +180,8 @@ export default class PaymentContractsApi {
      * @param {String} paymentContractId Contract identifier
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentContractsProductModel}
      */
-    paymentContractsPaymentContractIdClonePost(paymentContractId) {
-      return this.paymentContractsPaymentContractIdClonePostWithHttpInfo(paymentContractId)
+    paymentContractsIdClonePost(paymentContractId) {
+      return this.paymentContractsIdClonePostWithHttpInfo(paymentContractId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -195,12 +194,12 @@ export default class PaymentContractsApi {
      * @param {String} paymentContractId Payment contract id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PaymentContractsProductModel>} and HTTP response
      */
-    paymentContractsPaymentContractIdDeleteWithHttpInfo(paymentContractId) {
+    paymentContractsIdDeleteWithHttpInfo(paymentContractId) {
       let postBody = null;
 
       // verify the required parameter 'paymentContractId' is set
       if (paymentContractId === undefined || paymentContractId === null) {
-        throw new Error("Missing the required parameter 'paymentContractId' when calling paymentContractsPaymentContractIdDelete");
+        throw new Error("Missing the required parameter 'paymentContractId' when calling paymentContractsIdDelete");
       }
 
 
@@ -232,8 +231,8 @@ export default class PaymentContractsApi {
      * @param {String} paymentContractId Payment contract id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PaymentContractsProductModel>}
      */
-    paymentContractsPaymentContractIdDelete(paymentContractId) {
-      return this.paymentContractsPaymentContractIdDeleteWithHttpInfo(paymentContractId)
+    paymentContractsIdDelete(paymentContractId) {
+      return this.paymentContractsIdDeleteWithHttpInfo(paymentContractId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -246,12 +245,12 @@ export default class PaymentContractsApi {
      * @param {String} paymentContractId Contract identifier
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<'String'>} and HTTP response
      */
-    paymentContractsPaymentContractIdPaymentMethodsGetWithHttpInfo(paymentContractId) {
+    paymentContractsIdPaymentMethodsGetWithHttpInfo(paymentContractId) {
       let postBody = null;
 
       // verify the required parameter 'paymentContractId' is set
       if (paymentContractId === undefined || paymentContractId === null) {
-        throw new Error("Missing the required parameter 'paymentContractId' when calling paymentContractsPaymentContractIdPaymentMethodsGet");
+        throw new Error("Missing the required parameter 'paymentContractId' when calling paymentContractsIdPaymentMethodsGet");
       }
 
 
@@ -283,8 +282,8 @@ export default class PaymentContractsApi {
      * @param {String} paymentContractId Contract identifier
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<'String'>}
      */
-    paymentContractsPaymentContractIdPaymentMethodsGet(paymentContractId) {
-      return this.paymentContractsPaymentContractIdPaymentMethodsGetWithHttpInfo(paymentContractId)
+    paymentContractsIdPaymentMethodsGet(paymentContractId) {
+      return this.paymentContractsIdPaymentMethodsGetWithHttpInfo(paymentContractId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -298,17 +297,17 @@ export default class PaymentContractsApi {
      * @param {module:model/PaymentContractsDTO} body Payment contract properties
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentContractsProductModel} and HTTP response
      */
-    paymentContractsPaymentContractIdPutWithHttpInfo(paymentContractId, body) {
+    paymentContractsIdPutWithHttpInfo(paymentContractId, body) {
       let postBody = body;
 
       // verify the required parameter 'paymentContractId' is set
       if (paymentContractId === undefined || paymentContractId === null) {
-        throw new Error("Missing the required parameter 'paymentContractId' when calling paymentContractsPaymentContractIdPut");
+        throw new Error("Missing the required parameter 'paymentContractId' when calling paymentContractsIdPut");
       }
 
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling paymentContractsPaymentContractIdPut");
+        throw new Error("Missing the required parameter 'body' when calling paymentContractsIdPut");
       }
 
 
@@ -341,8 +340,8 @@ export default class PaymentContractsApi {
      * @param {module:model/PaymentContractsDTO} body Payment contract properties
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentContractsProductModel}
      */
-    paymentContractsPaymentContractIdPut(paymentContractId, body) {
-      return this.paymentContractsPaymentContractIdPutWithHttpInfo(paymentContractId, body)
+    paymentContractsIdPut(paymentContractId, body) {
+      return this.paymentContractsIdPutWithHttpInfo(paymentContractId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -355,12 +354,12 @@ export default class PaymentContractsApi {
      * @param {String} paymentContractId Contract identifier
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentContractsRequestIdResult} and HTTP response
      */
-    paymentContractsPaymentContractIdRequestIdPostWithHttpInfo(paymentContractId) {
+    paymentContractsIdRequestIdPostWithHttpInfo(paymentContractId) {
       let postBody = null;
 
       // verify the required parameter 'paymentContractId' is set
       if (paymentContractId === undefined || paymentContractId === null) {
-        throw new Error("Missing the required parameter 'paymentContractId' when calling paymentContractsPaymentContractIdRequestIdPost");
+        throw new Error("Missing the required parameter 'paymentContractId' when calling paymentContractsIdRequestIdPost");
       }
 
 
@@ -392,8 +391,8 @@ export default class PaymentContractsApi {
      * @param {String} paymentContractId Contract identifier
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentContractsRequestIdResult}
      */
-    paymentContractsPaymentContractIdRequestIdPost(paymentContractId) {
-      return this.paymentContractsPaymentContractIdRequestIdPostWithHttpInfo(paymentContractId)
+    paymentContractsIdRequestIdPost(paymentContractId) {
+      return this.paymentContractsIdRequestIdPostWithHttpInfo(paymentContractId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

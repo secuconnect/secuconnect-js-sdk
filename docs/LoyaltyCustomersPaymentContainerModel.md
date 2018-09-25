@@ -1,4 +1,4 @@
-# SecuconnectApi.LoyaltyCustomersPaymentContainerModel
+# SecuconnectJsSdk.LoyaltyCustomersPaymentContainerModel
 
 ## Properties
 Name | Type | Description | Notes

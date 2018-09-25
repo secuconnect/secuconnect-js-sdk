@@ -1,4 +1,4 @@
-# SecuconnectApi.SmartTransactionsApi
+# SecuconnectJsSdk.SmartTransactionsApi
 
 All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
@@ -26,16 +26,16 @@ Create new smart transaction
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.SmartTransactionsApi();
+let apiInstance = new SecuconnectJsSdk.SmartTransactionsApi();
 
-let smartTransactionProperties = new SecuconnectApi.SmartTransactionsDTO(); // SmartTransactionsDTO | Smart transaction properties
+let smartTransactionProperties = new SecuconnectJsSdk.SmartTransactionsDTO(); // SmartTransactionsDTO | Smart transaction properties
 
 apiInstance.addTransaction(smartTransactionProperties).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -74,14 +74,14 @@ Method to cancel the transaction with given idn
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.SmartTransactionsApi();
+let apiInstance = new SecuconnectJsSdk.SmartTransactionsApi();
 
 let smartTransactionId = "smartTransactionId_example"; // String | Smart transaction id
 
@@ -122,14 +122,14 @@ Starts Cancel &#39;Cash&#39; transaction on Terminal with &#39;receipt_number&#3
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.SmartTransactionsApi();
+let apiInstance = new SecuconnectJsSdk.SmartTransactionsApi();
 
 let smartTransactionId = "smartTransactionId_example"; // String | Smart transaction id
 
@@ -170,14 +170,14 @@ Starts extended Diagnose on Terminal, this method is normally called by SDK&#39;
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.SmartTransactionsApi();
+let apiInstance = new SecuconnectJsSdk.SmartTransactionsApi();
 
 let smartDeviceId = "smartDeviceId_example"; // String | Smart device id
 
@@ -218,14 +218,14 @@ Get a list of smart transactions
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.SmartTransactionsApi();
+let apiInstance = new SecuconnectJsSdk.SmartTransactionsApi();
 
 let opts = { 
   'count': 56, // Number | The number of items to return.
@@ -275,14 +275,14 @@ Get one smart transaction for a specific id
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.SmartTransactionsApi();
+let apiInstance = new SecuconnectJsSdk.SmartTransactionsApi();
 
 let smartTransactionId = "smartTransactionId_example"; // String | Smart transaction id
 
@@ -323,14 +323,14 @@ Function that checks balance of merchantcard from ident and if possible creates 
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.SmartTransactionsApi();
+let apiInstance = new SecuconnectJsSdk.SmartTransactionsApi();
 
 let smartTransactionId = "smartTransactionId_example"; // String | Smart transaction id
 
@@ -371,14 +371,14 @@ Starts End of Day Report on Terminal, this method is normally called by SDK&#39;
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.SmartTransactionsApi();
+let apiInstance = new SecuconnectJsSdk.SmartTransactionsApi();
 
 let smartDeviceId = "smartDeviceId_example"; // String | Smart device id
 
@@ -419,14 +419,14 @@ Start smart transaction with given payment method
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.SmartTransactionsApi();
+let apiInstance = new SecuconnectJsSdk.SmartTransactionsApi();
 
 let smartTransactionId = "smartTransactionId_example"; // String | Smart transaction id
 
@@ -470,18 +470,18 @@ Update smart transaction
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.SmartTransactionsApi();
+let apiInstance = new SecuconnectJsSdk.SmartTransactionsApi();
 
 let smartTransactionId = "smartTransactionId_example"; // String | Smart transaction id
 
-let smartTransactionProperties = new SecuconnectApi.SmartTransactionsDTO(); // SmartTransactionsDTO | Smart transaction properties
+let smartTransactionProperties = new SecuconnectJsSdk.SmartTransactionsDTO(); // SmartTransactionsDTO | Smart transaction properties
 
 apiInstance.updateTransaction(smartTransactionId, smartTransactionProperties).then((data) => {
   console.log('API called successfully. Returned data: ' + data);

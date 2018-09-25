@@ -1,4 +1,4 @@
-# SecuconnectApi.SmartDevicesDTO
+# SecuconnectJsSdk.SmartDevicesDTO
 
 ## Properties
 Name | Type | Description | Notes

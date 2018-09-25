@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The PrepaidSalesItem model module.
 * @module model/PrepaidSalesItem
-* @version 2.0.0
 */
 export default class PrepaidSalesItem {
     /**

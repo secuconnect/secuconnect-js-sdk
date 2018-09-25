@@ -1,4 +1,4 @@
-# SecuconnectApi.PaymentTransactionsCancelList
+# SecuconnectJsSdk.PaymentTransactionsCancelList
 
 ## Properties
 Name | Type | Description | Notes

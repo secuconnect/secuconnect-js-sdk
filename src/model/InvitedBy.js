@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The InvitedBy model module.
 * @module model/InvitedBy
-* @version 2.0.0
 */
 export default class InvitedBy {
     /**

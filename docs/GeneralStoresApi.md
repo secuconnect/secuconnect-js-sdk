@@ -1,4 +1,4 @@
-# SecuconnectApi.GeneralStoresApi
+# SecuconnectJsSdk.GeneralStoresApi
 
 All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
@@ -23,16 +23,16 @@ Create general store
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.GeneralStoresApi();
+let apiInstance = new SecuconnectJsSdk.GeneralStoresApi();
 
-let body = new SecuconnectApi.GeneralStoresDTO(); // GeneralStoresDTO | General store properties
+let body = new SecuconnectJsSdk.GeneralStoresDTO(); // GeneralStoresDTO | General store properties
 
 apiInstance.addStore(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -71,14 +71,14 @@ Assign some object to general store
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.GeneralStoresApi();
+let apiInstance = new SecuconnectJsSdk.GeneralStoresApi();
 
 let generalStoreId = "generalStoreId_example"; // String | General store id
 
@@ -122,18 +122,18 @@ Check in
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.GeneralStoresApi();
+let apiInstance = new SecuconnectJsSdk.GeneralStoresApi();
 
 let generalStoreId = "generalStoreId_example"; // String | General store id
 
-let body = new SecuconnectApi.GeneralStoresDTOType(); // GeneralStoresDTOType | Type
+let body = new SecuconnectJsSdk.GeneralStoresDTOType(); // GeneralStoresDTOType | Type
 
 apiInstance.checkIn(generalStoreId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -173,14 +173,14 @@ Get a list of general stores
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.GeneralStoresApi();
+let apiInstance = new SecuconnectJsSdk.GeneralStoresApi();
 
 let opts = { 
   'count': 56, // Number | The number of items to return.
@@ -230,14 +230,14 @@ Get one general store for a specific id
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.GeneralStoresApi();
+let apiInstance = new SecuconnectJsSdk.GeneralStoresApi();
 
 let generalStoreId = "generalStoreId_example"; // String | General store id
 
@@ -278,19 +278,19 @@ Set default flag on general store
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.GeneralStoresApi();
+let apiInstance = new SecuconnectJsSdk.GeneralStoresApi();
 
 let generalStoreId = "generalStoreId_example"; // String | General store id
 
 let opts = { 
-  'body': new SecuconnectApi.GeneralStoresDTOReason() // GeneralStoresDTOReason | Reason
+  'body': new SecuconnectJsSdk.GeneralStoresDTOReason() // GeneralStoresDTOReason | Reason
 };
 apiInstance.setDefault(generalStoreId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -330,18 +330,18 @@ Update general store
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.GeneralStoresApi();
+let apiInstance = new SecuconnectJsSdk.GeneralStoresApi();
 
 let generalStoreId = "generalStoreId_example"; // String | General store id
 
-let body = new SecuconnectApi.GeneralStoresDTO(); // GeneralStoresDTO | General store properties
+let body = new SecuconnectJsSdk.GeneralStoresDTO(); // GeneralStoresDTO | General store properties
 
 apiInstance.updateStore(generalStoreId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);

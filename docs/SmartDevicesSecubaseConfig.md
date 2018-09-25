@@ -1,4 +1,4 @@
-# SecuconnectApi.SmartDevicesSecubaseConfig
+# SecuconnectJsSdk.SmartDevicesSecubaseConfig
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SecuconnectApi.Store
+# SecuconnectJsSdk.Store
 
 ## Properties
 Name | Type | Description | Notes

@@ -10,7 +10,6 @@ import LoyaltyDTOStore from './LoyaltyDTOStore';
 /**
 * The LoyaltyStoregroupsProductModel model module.
 * @module model/LoyaltyStoregroupsProductModel
-* @version 2.0.0
 */
 export default class LoyaltyStoregroupsProductModel {
     /**

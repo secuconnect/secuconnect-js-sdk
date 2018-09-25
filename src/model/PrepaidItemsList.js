@@ -9,7 +9,6 @@ import PrepaidItemsProductModel from './PrepaidItemsProductModel';
 /**
 * The PrepaidItemsList model module.
 * @module model/PrepaidItemsList
-* @version 2.0.0
 */
 export default class PrepaidItemsList {
     /**

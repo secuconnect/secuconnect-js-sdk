@@ -1,4 +1,4 @@
-# SecuconnectApi.LoyaltyMerchantcardsDTOCsc
+# SecuconnectJsSdk.LoyaltyMerchantcardsDTOCsc
 
 ## Properties
 Name | Type | Description | Notes

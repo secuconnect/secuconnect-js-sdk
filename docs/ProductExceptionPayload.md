@@ -1,4 +1,4 @@
-# SecuconnectApi.ProductExceptionPayload
+# SecuconnectJsSdk.ProductExceptionPayload
 
 ## Properties
 Name | Type | Description | Notes

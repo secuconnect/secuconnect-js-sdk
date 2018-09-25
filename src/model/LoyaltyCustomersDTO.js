@@ -9,7 +9,6 @@ import Contact from './Contact';
 /**
 * The LoyaltyCustomersDTO model module.
 * @module model/LoyaltyCustomersDTO
-* @version 2.0.0
 */
 export default class LoyaltyCustomersDTO {
     /**

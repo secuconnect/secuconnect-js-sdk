@@ -1,4 +1,4 @@
-# SecuconnectApi.SmartTransactionsMerchant
+# SecuconnectJsSdk.SmartTransactionsMerchant
 
 ## Properties
 Name | Type | Description | Notes

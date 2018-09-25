@@ -1,4 +1,4 @@
-# SecuconnectApi.PaymentTransactionsShippingUrl
+# SecuconnectJsSdk.PaymentTransactionsShippingUrl
 
 ## Properties
 Name | Type | Description | Notes

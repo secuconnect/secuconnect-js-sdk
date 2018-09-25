@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The SmartTransactionsBasketProductGroup model module.
 * @module model/SmartTransactionsBasketProductGroup
-* @version 2.0.0
 */
 export default class SmartTransactionsBasketProductGroup {
     /**

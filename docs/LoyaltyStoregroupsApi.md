@@ -1,4 +1,4 @@
-# SecuconnectApi.LoyaltyStoregroupsApi
+# SecuconnectJsSdk.LoyaltyStoregroupsApi
 
 All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
@@ -21,16 +21,16 @@ Add new loyalty store group
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyStoregroupsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyStoregroupsApi();
 
-let body = new SecuconnectApi.LoyaltyStoregroupsDTO(); // LoyaltyStoregroupsDTO | Loyalty store group properties
+let body = new SecuconnectJsSdk.LoyaltyStoregroupsDTO(); // LoyaltyStoregroupsDTO | Loyalty store group properties
 
 apiInstance.addStoreGroup(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -69,14 +69,14 @@ Get a list of loyalty store groups
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyStoregroupsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyStoregroupsApi();
 
 let opts = { 
   'count': 56, // Number | The number of items to return.
@@ -126,14 +126,14 @@ Get loyalty store group for a specific id
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyStoregroupsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyStoregroupsApi();
 
 let loyaltyStoreGroupId = "loyaltyStoreGroupId_example"; // String | loyalty store group id
 
@@ -174,14 +174,14 @@ Remove loyalty store group
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyStoregroupsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyStoregroupsApi();
 
 let loyaltyStoreGroupId = "loyaltyStoreGroupId_example"; // String | Loyalty store group id
 
@@ -222,18 +222,18 @@ Update loyalty store group
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyStoregroupsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyStoregroupsApi();
 
 let loyaltyStoreGroupId = "loyaltyStoreGroupId_example"; // String | Loyalty store group id
 
-let body = new SecuconnectApi.LoyaltyStoregroupsDTO(); // LoyaltyStoregroupsDTO | Loyalty store group properties
+let body = new SecuconnectJsSdk.LoyaltyStoregroupsDTO(); // LoyaltyStoregroupsDTO | Loyalty store group properties
 
 apiInstance.updateStoreGroup(loyaltyStoreGroupId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);

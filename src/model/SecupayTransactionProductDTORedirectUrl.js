@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The SecupayTransactionProductDTORedirectUrl model module.
 * @module model/SecupayTransactionProductDTORedirectUrl
-* @version 2.0.0
 */
 export default class SecupayTransactionProductDTORedirectUrl {
     /**

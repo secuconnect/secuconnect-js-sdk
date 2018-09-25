@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The GeneralMerchantsUrls model module.
 * @module model/GeneralMerchantsUrls
-* @version 2.0.0
 */
 export default class GeneralMerchantsUrls {
     /**

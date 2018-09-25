@@ -1,4 +1,4 @@
-# SecuconnectApi.AssignedBy
+# SecuconnectJsSdk.AssignedBy
 
 ## Properties
 Name | Type | Description | Notes

@@ -10,7 +10,6 @@ import FileCache from "./cache/FileCache";
  * @alias module:ApiClient
  * @class
  * @module ApiClient
- * @version 2.0.0
  */
 export default class ApiClient {
     constructor() {

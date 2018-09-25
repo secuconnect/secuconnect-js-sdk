@@ -10,7 +10,6 @@ import ProductExceptionPayload from '../model/ProductExceptionPayload';
 /**
 * GeneralStores service.
 * @module api/GeneralStoresApi
-* @version 2.0.0
 */
 export default class GeneralStoresApi {
 

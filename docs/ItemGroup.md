@@ -1,4 +1,4 @@
-# SecuconnectApi.ItemGroup
+# SecuconnectJsSdk.ItemGroup
 
 ## Properties
 Name | Type | Description | Notes

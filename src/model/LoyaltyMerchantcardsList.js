@@ -9,7 +9,6 @@ import LoyaltyMerchantcardsProductModel from './LoyaltyMerchantcardsProductModel
 /**
 * The LoyaltyMerchantcardsList model module.
 * @module model/LoyaltyMerchantcardsList
-* @version 2.0.0
 */
 export default class LoyaltyMerchantcardsList {
     /**

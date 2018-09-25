@@ -9,7 +9,6 @@ import GeneralMerchantsCheckoutOptionsCollectionSmartDevices from './GeneralMerc
 /**
 * The GeneralMerchantsCheckoutOptionsCollection model module.
 * @module model/GeneralMerchantsCheckoutOptionsCollection
-* @version 2.0.0
 */
 export default class GeneralMerchantsCheckoutOptionsCollection {
     /**

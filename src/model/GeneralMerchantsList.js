@@ -9,7 +9,6 @@ import GeneralMerchantsProductModel from './GeneralMerchantsProductModel';
 /**
 * The GeneralMerchantsList model module.
 * @module model/GeneralMerchantsList
-* @version 2.0.0
 */
 export default class GeneralMerchantsList {
     /**

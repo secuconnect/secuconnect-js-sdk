@@ -1,4 +1,4 @@
-# SecuconnectApi.SmartDeviceProductsPrepaid
+# SecuconnectJsSdk.SmartDeviceProductsPrepaid
 
 ## Properties
 Name | Type | Description | Notes

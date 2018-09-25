@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The GeneralStoresDTOReason model module.
 * @module model/GeneralStoresDTOReason
-* @version 2.0.0
 */
 export default class GeneralStoresDTOReason {
     /**

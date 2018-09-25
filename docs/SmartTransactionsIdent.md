@@ -1,4 +1,4 @@
-# SecuconnectApi.SmartTransactionsIdent
+# SecuconnectJsSdk.SmartTransactionsIdent
 
 ## Properties
 Name | Type | Description | Notes

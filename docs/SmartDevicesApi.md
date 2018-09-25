@@ -1,4 +1,4 @@
-# SecuconnectApi.SmartDevicesApi
+# SecuconnectJsSdk.SmartDevicesApi
 
 All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
@@ -24,16 +24,16 @@ Create new smart device
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.SmartDevicesApi();
+let apiInstance = new SecuconnectJsSdk.SmartDevicesApi();
 
-let smartDeviceProperties = new SecuconnectApi.SmartDevicesDTO(); // SmartDevicesDTO | Smart device properties
+let smartDeviceProperties = new SecuconnectJsSdk.SmartDevicesDTO(); // SmartDevicesDTO | Smart device properties
 
 apiInstance.addDevice(smartDeviceProperties).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -72,18 +72,18 @@ Create prepaid tid
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.SmartDevicesApi();
+let apiInstance = new SecuconnectJsSdk.SmartDevicesApi();
 
 let smartDeviceId = "smartDeviceId_example"; // String | Smart device id
 
-let prepaidTidProperties = new SecuconnectApi.SmartDevicesDTOPrepaidTid(); // SmartDevicesDTOPrepaidTid | Prepaid tid properties
+let prepaidTidProperties = new SecuconnectJsSdk.SmartDevicesDTOPrepaidTid(); // SmartDevicesDTOPrepaidTid | Prepaid tid properties
 
 apiInstance.createPrepaidTid(smartDeviceId, prepaidTidProperties).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -123,14 +123,14 @@ Create virtual device
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.SmartDevicesApi();
+let apiInstance = new SecuconnectJsSdk.SmartDevicesApi();
 
 let smartDeviceId = "smartDeviceId_example"; // String | Smart device id
 
@@ -171,14 +171,14 @@ Get a list of smart devices
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.SmartDevicesApi();
+let apiInstance = new SecuconnectJsSdk.SmartDevicesApi();
 
 let opts = { 
   'count': 56, // Number | The number of items to return.
@@ -228,14 +228,14 @@ Get one smart device for a specific id
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.SmartDevicesApi();
+let apiInstance = new SecuconnectJsSdk.SmartDevicesApi();
 
 let smartDeviceId = "smartDeviceId_example"; // String | Smart device id
 
@@ -276,14 +276,14 @@ Get single routing
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.SmartDevicesApi();
+let apiInstance = new SecuconnectJsSdk.SmartDevicesApi();
 
 let smartDeviceId = "smartDeviceId_example"; // String | Smart device id
 
@@ -327,18 +327,18 @@ Get secubase config
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.SmartDevicesApi();
+let apiInstance = new SecuconnectJsSdk.SmartDevicesApi();
 
 let smartDeviceId = "smartDeviceId_example"; // String | Smart device id
 
-let secubaseConfigProperties = new SecuconnectApi.SmartDevicesDTOSecubaseConfig(); // SmartDevicesDTOSecubaseConfig | Secubase config properties
+let secubaseConfigProperties = new SecuconnectJsSdk.SmartDevicesDTOSecubaseConfig(); // SmartDevicesDTOSecubaseConfig | Secubase config properties
 
 apiInstance.getSecubaseConfig(smartDeviceId, secubaseConfigProperties).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -378,18 +378,18 @@ Update smart device
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.SmartDevicesApi();
+let apiInstance = new SecuconnectJsSdk.SmartDevicesApi();
 
 let smartDeviceId = "smartDeviceId_example"; // String | Smart device id
 
-let smartDeviceProperties = new SecuconnectApi.SmartDevicesDTO(); // SmartDevicesDTO | Smart device properties
+let smartDeviceProperties = new SecuconnectJsSdk.SmartDevicesDTO(); // SmartDevicesDTO | Smart device properties
 
 apiInstance.updateDevice(smartDeviceId, smartDeviceProperties).then((data) => {
   console.log('API called successfully. Returned data: ' + data);

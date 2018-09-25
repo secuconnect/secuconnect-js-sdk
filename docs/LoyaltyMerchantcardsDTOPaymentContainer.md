@@ -1,4 +1,4 @@
-# SecuconnectApi.LoyaltyMerchantcardsDTOPaymentContainer
+# SecuconnectJsSdk.LoyaltyMerchantcardsDTOPaymentContainer
 
 ## Properties
 Name | Type | Description | Notes

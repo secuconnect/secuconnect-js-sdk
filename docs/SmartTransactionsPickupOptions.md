@@ -1,4 +1,4 @@
-# SecuconnectApi.SmartTransactionsPickupOptions
+# SecuconnectJsSdk.SmartTransactionsPickupOptions
 
 ## Properties
 Name | Type | Description | Notes

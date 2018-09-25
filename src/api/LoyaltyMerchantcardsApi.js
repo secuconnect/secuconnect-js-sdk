@@ -20,7 +20,6 @@ import VirtualTerminalData from '../model/VirtualTerminalData';
 /**
 * LoyaltyMerchantcards service.
 * @module api/LoyaltyMerchantcardsApi
-* @version 2.0.0
 */
 export default class LoyaltyMerchantcardsApi {
 

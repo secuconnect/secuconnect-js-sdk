@@ -1,4 +1,4 @@
-# SecuconnectApi.SecupayTransactionProductModelRedirectUrl
+# SecuconnectJsSdk.SecupayTransactionProductModelRedirectUrl
 
 ## Properties
 Name | Type | Description | Notes

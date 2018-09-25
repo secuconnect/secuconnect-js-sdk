@@ -9,7 +9,6 @@ import PaymentContractsProductModel from './PaymentContractsProductModel';
 /**
 * The PaymentContractsList model module.
 * @module model/PaymentContractsList
-* @version 2.0.0
 */
 export default class PaymentContractsList {
     /**

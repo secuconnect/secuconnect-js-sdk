@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The PaymentContainersDTOPrivate model module.
 * @module model/PaymentContainersDTOPrivate
-* @version 2.0.0
 */
 export default class PaymentContainersDTOPrivate {
     /**

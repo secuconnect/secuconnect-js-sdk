@@ -9,7 +9,6 @@ import SmartTransactionsProductModel from '../model/SmartTransactionsProductMode
 /**
 * SmartTransactions service.
 * @module api/SmartTransactionsApi
-* @version 2.0.0
 */
 export default class SmartTransactionsApi {
 

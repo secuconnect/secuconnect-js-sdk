@@ -9,7 +9,6 @@ import ProductInstanceUID from './ProductInstanceUID';
 /**
 * The SmartTransactionsPickupOptions model module.
 * @module model/SmartTransactionsPickupOptions
-* @version 2.0.0
 */
 export default class SmartTransactionsPickupOptions {
     /**

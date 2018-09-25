@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The SecupayTransactionProductDTOSubscription model module.
 * @module model/SecupayTransactionProductDTOSubscription
-* @version 2.0.0
 */
 export default class SecupayTransactionProductDTOSubscription {
     /**

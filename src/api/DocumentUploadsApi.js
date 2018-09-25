@@ -8,7 +8,6 @@ import ProductExceptionPayload from '../model/ProductExceptionPayload';
 /**
 * DocumentUploads service.
 * @module api/DocumentUploadsApi
-* @version 2.0.0
 */
 export default class DocumentUploadsApi {
 

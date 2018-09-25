@@ -11,7 +11,6 @@ import PaymentTransactionsProductModelMerchant from './PaymentTransactionsProduc
 /**
 * The PaymentTransactionsProductModel model module.
 * @module model/PaymentTransactionsProductModel
-* @version 2.0.0
 */
 export default class PaymentTransactionsProductModel {
     /**

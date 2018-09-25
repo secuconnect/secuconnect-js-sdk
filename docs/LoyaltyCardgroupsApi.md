@@ -1,4 +1,4 @@
-# SecuconnectApi.LoyaltyCardgroupsApi
+# SecuconnectJsSdk.LoyaltyCardgroupsApi
 
 All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
@@ -21,16 +21,16 @@ Add loyalty card group
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyCardgroupsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyCardgroupsApi();
 
-let body = new SecuconnectApi.LoyaltyCardgroupsDTO(); // LoyaltyCardgroupsDTO | Loyalty card group properties
+let body = new SecuconnectJsSdk.LoyaltyCardgroupsDTO(); // LoyaltyCardgroupsDTO | Loyalty card group properties
 
 apiInstance.addCardGroup(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -69,19 +69,19 @@ Check whether passcode check is enabled
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyCardgroupsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyCardgroupsApi();
 
 let loyaltyCardGroupId = "loyaltyCardGroupId_example"; // String | Loyalty card group id
 
 let opts = { 
-  'body': new SecuconnectApi.LoyaltyCardgroupsDTOCheckPasscodeEnabled() // LoyaltyCardgroupsDTOCheckPasscodeEnabled | Check passcode details
+  'body': new SecuconnectJsSdk.LoyaltyCardgroupsDTOCheckPasscodeEnabled() // LoyaltyCardgroupsDTOCheckPasscodeEnabled | Check passcode details
 };
 apiInstance.checkPassCodeEnabled(loyaltyCardGroupId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -121,14 +121,14 @@ Get a list of loyalty card groups
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyCardgroupsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyCardgroupsApi();
 
 let opts = { 
   'count': 56, // Number | The number of items to return.
@@ -178,14 +178,14 @@ Get loyalty card group for a specific id
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyCardgroupsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyCardgroupsApi();
 
 let loyaltyCardGroupId = "loyaltyCardGroupId_example"; // String | Search one by provided id
 
@@ -226,18 +226,18 @@ Update loyalty card group
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyCardgroupsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyCardgroupsApi();
 
 let loyaltyCardGroupId = "loyaltyCardGroupId_example"; // String | Loyalty card group id
 
-let body = new SecuconnectApi.LoyaltyCardgroupsDTO(); // LoyaltyCardgroupsDTO | Loyalty card group properties
+let body = new SecuconnectJsSdk.LoyaltyCardgroupsDTO(); // LoyaltyCardgroupsDTO | Loyalty card group properties
 
 apiInstance.updateCardGroup(loyaltyCardGroupId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);

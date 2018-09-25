@@ -12,7 +12,6 @@ import Store from './Store';
 /**
 * The SmartDevicesProductModel model module.
 * @module model/SmartDevicesProductModel
-* @version 2.0.0
 */
 export default class SmartDevicesProductModel {
     /**

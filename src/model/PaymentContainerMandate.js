@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The PaymentContainerMandate model module.
 * @module model/PaymentContainerMandate
-* @version 2.0.0
 */
 export default class PaymentContainerMandate {
     /**

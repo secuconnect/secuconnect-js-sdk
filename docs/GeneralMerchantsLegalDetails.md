@@ -1,4 +1,4 @@
-# SecuconnectApi.GeneralMerchantsLegalDetails
+# SecuconnectJsSdk.GeneralMerchantsLegalDetails
 
 ## Properties
 Name | Type | Description | Notes

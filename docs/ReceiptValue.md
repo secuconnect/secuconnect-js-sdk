@@ -1,4 +1,4 @@
-# SecuconnectApi.ReceiptValue
+# SecuconnectJsSdk.ReceiptValue
 
 ## Properties
 Name | Type | Description | Notes

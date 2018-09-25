@@ -9,7 +9,6 @@ import BankAccountDescriptor from './BankAccountDescriptor';
 /**
 * The SecupayTransactionProductModelUsedPaymentInstrument model module.
 * @module model/SecupayTransactionProductModelUsedPaymentInstrument
-* @version 2.0.0
 */
 export default class SecupayTransactionProductModelUsedPaymentInstrument {
     /**

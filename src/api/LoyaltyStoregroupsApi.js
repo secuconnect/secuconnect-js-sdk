@@ -8,7 +8,6 @@ import ProductExceptionPayload from '../model/ProductExceptionPayload';
 /**
 * LoyaltyStoregroups service.
 * @module api/LoyaltyStoregroupsApi
-* @version 2.0.0
 */
 export default class LoyaltyStoregroupsApi {
 

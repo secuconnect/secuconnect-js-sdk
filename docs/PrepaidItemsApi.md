@@ -1,4 +1,4 @@
-# SecuconnectApi.PrepaidItemsApi
+# SecuconnectJsSdk.PrepaidItemsApi
 
 All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
@@ -18,14 +18,14 @@ Get a list of prepaid items
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.PrepaidItemsApi();
+let apiInstance = new SecuconnectJsSdk.PrepaidItemsApi();
 
 let opts = { 
   'count': 56, // Number | The number of items to return.
@@ -75,14 +75,14 @@ Get one prepaid item for a specific id
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.PrepaidItemsApi();
+let apiInstance = new SecuconnectJsSdk.PrepaidItemsApi();
 
 let prepaidItemId = "prepaidItemId_example"; // String | Prepaid item id
 

@@ -9,7 +9,6 @@ import LoyaltyCardsDTOAccount from './LoyaltyCardsDTOAccount';
 /**
 * The LoyaltyCardsProductModel model module.
 * @module model/LoyaltyCardsProductModel
-* @version 2.0.0
 */
 export default class LoyaltyCardsProductModel {
     /**

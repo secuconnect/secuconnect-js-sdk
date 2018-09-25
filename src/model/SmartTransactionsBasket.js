@@ -10,7 +10,6 @@ import SmartTransactionsBasketText from './SmartTransactionsBasketText';
 /**
 * The SmartTransactionsBasket model module.
 * @module model/SmartTransactionsBasket
-* @version 2.0.0
 */
 export default class SmartTransactionsBasket {
     /**

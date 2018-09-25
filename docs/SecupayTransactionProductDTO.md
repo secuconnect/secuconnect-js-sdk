@@ -1,4 +1,4 @@
-# SecuconnectApi.SecupayTransactionProductDTO
+# SecuconnectJsSdk.SecupayTransactionProductDTO
 
 ## Properties
 Name | Type | Description | Notes

@@ -9,7 +9,6 @@ import BankAccountDescriptor from './BankAccountDescriptor';
 /**
 * The LoyaltyCustomersPaymentContainerModel model module.
 * @module model/LoyaltyCustomersPaymentContainerModel
-* @version 2.0.0
 */
 export default class LoyaltyCustomersPaymentContainerModel {
     /**

@@ -1,4 +1,4 @@
-# SecuconnectApi.PaymentContainersDTOCustomer
+# SecuconnectJsSdk.PaymentContainersDTOCustomer
 
 ## Properties
 Name | Type | Description | Notes

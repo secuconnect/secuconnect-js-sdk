@@ -1,4 +1,4 @@
-# SecuconnectApi.ParentModel
+# SecuconnectJsSdk.ParentModel
 
 ## Properties
 Name | Type | Description | Notes

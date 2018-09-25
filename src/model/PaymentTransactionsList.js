@@ -9,7 +9,6 @@ import PaymentTransactionsProductModel from './PaymentTransactionsProductModel';
 /**
 * The PaymentTransactionsList model module.
 * @module model/PaymentTransactionsList
-* @version 2.0.0
 */
 export default class PaymentTransactionsList {
     /**

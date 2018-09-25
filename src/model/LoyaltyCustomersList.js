@@ -9,7 +9,6 @@ import LoyaltyCustomersProductModel from './LoyaltyCustomersProductModel';
 /**
 * The LoyaltyCustomersList model module.
 * @module model/LoyaltyCustomersList
-* @version 2.0.0
 */
 export default class LoyaltyCustomersList {
     /**

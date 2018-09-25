@@ -9,7 +9,6 @@ import DocumentUploadsBaseProductModel from './DocumentUploadsBaseProductModel';
 /**
 * The DocumentUploadsProductModel model module.
 * @module model/DocumentUploadsProductModel
-* @version 2.0.0
 */
 export default class DocumentUploadsProductModel {
     /**

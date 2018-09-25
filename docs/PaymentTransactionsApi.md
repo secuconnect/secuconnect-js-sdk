@@ -1,4 +1,4 @@
-# SecuconnectApi.PaymentTransactionsApi
+# SecuconnectJsSdk.PaymentTransactionsApi
 
 All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**paymentTransactionsGet**](PaymentTransactionsApi.md#paymentTransactionsGet) | **GET** /Payment/Transactions | GET Payment/Transactions
 [**paymentTransactionsGetById**](PaymentTransactionsApi.md#paymentTransactionsGetById) | **GET** /Payment/Transactions/{paymentTransactionId} | GET Payment/Transactions/{paymentTransactionId}
-[**paymentTransactionsPaymentTransactionIdCancelPost**](PaymentTransactionsApi.md#paymentTransactionsPaymentTransactionIdCancelPost) | **POST** /Payment/Transactions/{paymentTransactionId}/cancel | POST Payment/Transactions/{paymentTransactionId}/cancel
-[**paymentTransactionsPaymentTransactionIdShippingUrlGet**](PaymentTransactionsApi.md#paymentTransactionsPaymentTransactionIdShippingUrlGet) | **GET** /Payment/Transactions/{paymentTransactionId}/ShippingUrl | GET Payment/Transactions/{paymentTransactionId}/ShippingUrl
+[**paymentTransactionsIdCancelPost**](PaymentTransactionsApi.md#paymentTransactionsIdCancelPost) | **POST** /Payment/Transactions/{paymentTransactionId}/cancel | POST Payment/Transactions/{paymentTransactionId}/cancel
+[**paymentTransactionsIdShippingUrlGet**](PaymentTransactionsApi.md#paymentTransactionsIdShippingUrlGet) | **GET** /Payment/Transactions/{paymentTransactionId}/ShippingUrl | GET Payment/Transactions/{paymentTransactionId}/ShippingUrl
 
 
 <a name="paymentTransactionsGet"></a>
@@ -20,14 +20,14 @@ Get a list of payment transactions
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.PaymentTransactionsApi();
+let apiInstance = new SecuconnectJsSdk.PaymentTransactionsApi();
 
 let opts = { 
   'count': 56, // Number | The number of items to return.
@@ -77,14 +77,14 @@ Get all payment transactions
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.PaymentTransactionsApi();
+let apiInstance = new SecuconnectJsSdk.PaymentTransactionsApi();
 
 let paymentTransactionId = "paymentTransactionId_example"; // String | Payment transaction id
 
@@ -115,9 +115,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="paymentTransactionsPaymentTransactionIdCancelPost"></a>
-# **paymentTransactionsPaymentTransactionIdCancelPost**
-> [PaymentTransactionsCancelList] paymentTransactionsPaymentTransactionIdCancelPost(paymentTransactionId)
+<a name="paymentTransactionsIdCancelPost"></a>
+# **paymentTransactionsIdCancelPost**
+> [PaymentTransactionsCancelList] paymentTransactionsIdCancelPost(paymentTransactionId)
 
 POST Payment/Transactions/{paymentTransactionId}/cancel
 
@@ -125,18 +125,18 @@ Cancel a payment transaction
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.PaymentTransactionsApi();
+let apiInstance = new SecuconnectJsSdk.PaymentTransactionsApi();
 
 let paymentTransactionId = "paymentTransactionId_example"; // String | Payment transaction id
 
-apiInstance.paymentTransactionsPaymentTransactionIdCancelPost(paymentTransactionId).then((data) => {
+apiInstance.paymentTransactionsIdCancelPost(paymentTransactionId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -163,9 +163,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="paymentTransactionsPaymentTransactionIdShippingUrlGet"></a>
-# **paymentTransactionsPaymentTransactionIdShippingUrlGet**
-> PaymentTransactionsShippingUrl paymentTransactionsPaymentTransactionIdShippingUrlGet(paymentTransactionId)
+<a name="paymentTransactionsIdShippingUrlGet"></a>
+# **paymentTransactionsIdShippingUrlGet**
+> PaymentTransactionsShippingUrl paymentTransactionsIdShippingUrlGet(paymentTransactionId)
 
 GET Payment/Transactions/{paymentTransactionId}/ShippingUrl
 
@@ -173,18 +173,18 @@ Get the url where you can fill the shipping information
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.PaymentTransactionsApi();
+let apiInstance = new SecuconnectJsSdk.PaymentTransactionsApi();
 
 let paymentTransactionId = "paymentTransactionId_example"; // String | Payment transaction id
 
-apiInstance.paymentTransactionsPaymentTransactionIdShippingUrlGet(paymentTransactionId).then((data) => {
+apiInstance.paymentTransactionsIdShippingUrlGet(paymentTransactionId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);

@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The LoyaltyMerchantcardsValidateMerchantCard model module.
 * @module model/LoyaltyMerchantcardsValidateMerchantCard
-* @version 2.0.0
 */
 export default class LoyaltyMerchantcardsValidateMerchantCard {
     /**

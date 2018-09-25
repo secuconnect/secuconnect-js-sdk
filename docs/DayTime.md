@@ -1,4 +1,4 @@
-# SecuconnectApi.DayTime
+# SecuconnectJsSdk.DayTime
 
 ## Properties
 Name | Type | Description | Notes

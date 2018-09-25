@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The VirtualTerminalData model module.
 * @module model/VirtualTerminalData
-* @version 2.0.0
 */
 export default class VirtualTerminalData {
     /**

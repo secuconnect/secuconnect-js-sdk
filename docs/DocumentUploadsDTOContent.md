@@ -1,4 +1,4 @@
-# SecuconnectApi.DocumentUploadsDTOContent
+# SecuconnectJsSdk.DocumentUploadsDTOContent
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SecuconnectApi.PaymentInformation
+# SecuconnectJsSdk.PaymentInformation
 
 ## Properties
 Name | Type | Description | Notes

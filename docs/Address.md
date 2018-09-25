@@ -1,4 +1,4 @@
-# SecuconnectApi.Address
+# SecuconnectJsSdk.Address
 
 ## Properties
 Name | Type | Description | Notes

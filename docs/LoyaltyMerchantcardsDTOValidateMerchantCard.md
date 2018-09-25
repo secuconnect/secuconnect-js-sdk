@@ -1,4 +1,4 @@
-# SecuconnectApi.LoyaltyMerchantcardsDTOValidateMerchantCard
+# SecuconnectJsSdk.LoyaltyMerchantcardsDTOValidateMerchantCard
 
 ## Properties
 Name | Type | Description | Notes

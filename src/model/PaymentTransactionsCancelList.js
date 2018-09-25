@@ -9,7 +9,6 @@ import PaymentTransactionsProductModel from './PaymentTransactionsProductModel';
 /**
 * The PaymentTransactionsCancelList model module.
 * @module model/PaymentTransactionsCancelList
-* @version 2.0.0
 */
 export default class PaymentTransactionsCancelList {
     /**

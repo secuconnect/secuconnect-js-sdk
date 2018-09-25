@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The ProductInstanceID model module.
 * @module model/ProductInstanceID
-* @version 2.0.0
 */
 export default class ProductInstanceID {
     /**

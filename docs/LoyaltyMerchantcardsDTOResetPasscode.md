@@ -1,4 +1,4 @@
-# SecuconnectApi.LoyaltyMerchantcardsDTOResetPasscode
+# SecuconnectJsSdk.LoyaltyMerchantcardsDTOResetPasscode
 
 ## Properties
 Name | Type | Description | Notes

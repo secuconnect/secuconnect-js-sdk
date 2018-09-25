@@ -1,4 +1,4 @@
-# SecuconnectApi.SmartDevicesSecubaseConfigLoggingFileNet
+# SecuconnectJsSdk.SmartDevicesSecubaseConfigLoggingFileNet
 
 ## Properties
 Name | Type | Description | Notes

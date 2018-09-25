@@ -1,4 +1,4 @@
-# SecuconnectApi.PaymentSecupayPrepaysApi
+# SecuconnectJsSdk.PaymentSecupayPrepaysApi
 
 All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
@@ -19,14 +19,14 @@ Function to cancel the transaction
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.PaymentSecupayPrepaysApi();
+let apiInstance = new SecuconnectJsSdk.PaymentSecupayPrepaysApi();
 
 let paymentPrepayId = "paymentPrepayId_example"; // String | Payment prepay id
 
@@ -67,14 +67,14 @@ Get the details of a payment transaction
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.PaymentSecupayPrepaysApi();
+let apiInstance = new SecuconnectJsSdk.PaymentSecupayPrepaysApi();
 
 let paymentPrepayId = "paymentPrepayId_example"; // String | Payment prepay id
 
@@ -115,17 +115,17 @@ Start a prepay payment transaction
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.PaymentSecupayPrepaysApi();
+let apiInstance = new SecuconnectJsSdk.PaymentSecupayPrepaysApi();
 
 let opts = { 
-  'body': new SecuconnectApi.SecupayTransactionProductDTO() // SecupayTransactionProductDTO | Prepay payment transaction input properties
+  'body': new SecuconnectJsSdk.SecupayTransactionProductDTO() // SecupayTransactionProductDTO | Prepay payment transaction input properties
 };
 apiInstance.paymentSecupayprepaysPost(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);

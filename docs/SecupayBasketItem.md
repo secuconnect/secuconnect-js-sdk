@@ -1,4 +1,4 @@
-# SecuconnectApi.SecupayBasketItem
+# SecuconnectJsSdk.SecupayBasketItem
 
 ## Properties
 Name | Type | Description | Notes

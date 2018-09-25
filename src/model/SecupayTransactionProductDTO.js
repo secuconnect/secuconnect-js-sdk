@@ -14,7 +14,6 @@ import SecupayTransactionProductDTOSubscription from './SecupayTransactionProduc
 /**
 * The SecupayTransactionProductDTO model module.
 * @module model/SecupayTransactionProductDTO
-* @version 2.0.0
 */
 export default class SecupayTransactionProductDTO {
     /**

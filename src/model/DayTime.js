@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The DayTime model module.
 * @module model/DayTime
-* @version 2.0.0
 */
 export default class DayTime {
     /**

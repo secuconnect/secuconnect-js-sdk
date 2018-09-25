@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The LoyaltyMerchantcardsDTOResetPasscode model module.
 * @module model/LoyaltyMerchantcardsDTOResetPasscode
-* @version 2.0.0
 */
 export default class LoyaltyMerchantcardsDTOResetPasscode {
     /**

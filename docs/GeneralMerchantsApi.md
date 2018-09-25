@@ -1,4 +1,4 @@
-# SecuconnectApi.GeneralMerchantsApi
+# SecuconnectJsSdk.GeneralMerchantsApi
 
 All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
@@ -19,14 +19,14 @@ Get a list of general merchants
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.GeneralMerchantsApi();
+let apiInstance = new SecuconnectJsSdk.GeneralMerchantsApi();
 
 let opts = { 
   'count': 56, // Number | The number of items to return.
@@ -76,14 +76,14 @@ Get one general merchant for a specific id
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.GeneralMerchantsApi();
+let apiInstance = new SecuconnectJsSdk.GeneralMerchantsApi();
 
 let generalMerchantId = "generalMerchantId_example"; // String | General merchant id
 
@@ -124,18 +124,18 @@ Update general merchant
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.GeneralMerchantsApi();
+let apiInstance = new SecuconnectJsSdk.GeneralMerchantsApi();
 
 let generalMerchantId = "generalMerchantId_example"; // String | General merchant id
 
-let body = new SecuconnectApi.GeneralMerchantsDTO(); // GeneralMerchantsDTO | General merchant properties
+let body = new SecuconnectJsSdk.GeneralMerchantsDTO(); // GeneralMerchantsDTO | General merchant properties
 
 apiInstance.updateMerchant(generalMerchantId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);

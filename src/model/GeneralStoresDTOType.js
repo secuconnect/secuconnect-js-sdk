@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The GeneralStoresDTOType model module.
 * @module model/GeneralStoresDTOType
-* @version 2.0.0
 */
 export default class GeneralStoresDTOType {
     /**

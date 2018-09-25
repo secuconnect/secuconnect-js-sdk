@@ -9,7 +9,6 @@ import SmartDevicesProductModel from './SmartDevicesProductModel';
 /**
 * The SmartDevicesList1 model module.
 * @module model/SmartDevicesList1
-* @version 2.0.0
 */
 export default class SmartDevicesList1 {
     /**

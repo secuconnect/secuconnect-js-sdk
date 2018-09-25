@@ -1,4 +1,4 @@
-# SecuconnectApi.LoyaltyCustomersRemoved
+# SecuconnectJsSdk.LoyaltyCustomersRemoved
 
 ## Properties
 Name | Type | Description | Notes

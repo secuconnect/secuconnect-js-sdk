@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The GeneralMerchantsCheckoutOptionsShipping model module.
 * @module model/GeneralMerchantsCheckoutOptionsShipping
-* @version 2.0.0
 */
 export default class GeneralMerchantsCheckoutOptionsShipping {
     /**

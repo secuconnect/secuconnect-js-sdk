@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The DocumentUploadsDTOContent model module.
 * @module model/DocumentUploadsDTOContent
-* @version 2.0.0
 */
 export default class DocumentUploadsDTOContent {
     /**

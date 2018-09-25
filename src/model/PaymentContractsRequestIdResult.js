@@ -10,7 +10,6 @@ import PaymentContractsRequestIdResultPayingAccount from './PaymentContractsRequ
 /**
 * The PaymentContractsRequestIdResult model module.
 * @module model/PaymentContractsRequestIdResult
-* @version 2.0.0
 */
 export default class PaymentContractsRequestIdResult {
     /**

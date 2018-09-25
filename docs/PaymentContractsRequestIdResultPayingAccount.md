@@ -1,4 +1,4 @@
-# SecuconnectApi.PaymentContractsRequestIdResultPayingAccount
+# SecuconnectJsSdk.PaymentContractsRequestIdResultPayingAccount
 
 ## Properties
 Name | Type | Description | Notes

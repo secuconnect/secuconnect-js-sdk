@@ -1,4 +1,4 @@
-# SecuconnectApi.LoyaltyDTOStore
+# SecuconnectJsSdk.LoyaltyDTOStore
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SecuconnectApi.PrepaidSalesItem
+# SecuconnectJsSdk.PrepaidSalesItem
 
 ## Properties
 Name | Type | Description | Notes

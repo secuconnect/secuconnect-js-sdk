@@ -9,7 +9,6 @@ import SmartTransactionsProductModel from './SmartTransactionsProductModel';
 /**
 * The SmartTransactionsList model module.
 * @module model/SmartTransactionsList
-* @version 2.0.0
 */
 export default class SmartTransactionsList {
     /**

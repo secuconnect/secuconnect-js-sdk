@@ -9,7 +9,6 @@ import Address from './Address';
 /**
 * The Contact model module.
 * @module model/Contact
-* @version 2.0.0
 */
 export default class Contact {
     /**

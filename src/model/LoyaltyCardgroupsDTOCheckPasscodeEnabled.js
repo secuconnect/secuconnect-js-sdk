@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The LoyaltyCardgroupsDTOCheckPasscodeEnabled model module.
 * @module model/LoyaltyCardgroupsDTOCheckPasscodeEnabled
-* @version 2.0.0
 */
 export default class LoyaltyCardgroupsDTOCheckPasscodeEnabled {
     /**

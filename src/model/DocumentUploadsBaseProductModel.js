@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The DocumentUploadsBaseProductModel model module.
 * @module model/DocumentUploadsBaseProductModel
-* @version 2.0.0
 */
 export default class DocumentUploadsBaseProductModel {
     /**

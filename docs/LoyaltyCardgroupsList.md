@@ -1,4 +1,4 @@
-# SecuconnectApi.LoyaltyCardgroupsList
+# SecuconnectJsSdk.LoyaltyCardgroupsList
 
 ## Properties
 Name | Type | Description | Notes

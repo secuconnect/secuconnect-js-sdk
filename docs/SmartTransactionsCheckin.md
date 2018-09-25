@@ -1,4 +1,4 @@
-# SecuconnectApi.SmartTransactionsCheckin
+# SecuconnectJsSdk.SmartTransactionsCheckin
 
 ## Properties
 Name | Type | Description | Notes

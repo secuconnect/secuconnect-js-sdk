@@ -9,7 +9,6 @@ import LoyaltyStoregroupsDTOStoresAddressComponents from './LoyaltyStoregroupsDT
 /**
 * The LoyaltyDTOStore model module.
 * @module model/LoyaltyDTOStore
-* @version 2.0.0
 */
 export default class LoyaltyDTOStore {
     /**

@@ -11,7 +11,6 @@ import GeneralMerchantsUrls from './GeneralMerchantsUrls';
 /**
 * The GeneralMerchantsDTO model module.
 * @module model/GeneralMerchantsDTO
-* @version 2.0.0
 */
 export default class GeneralMerchantsDTO {
     /**

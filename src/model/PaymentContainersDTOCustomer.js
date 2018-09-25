@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The PaymentContainersDTOCustomer model module.
 * @module model/PaymentContainersDTOCustomer
-* @version 2.0.0
 */
 export default class PaymentContainersDTOCustomer {
     /**

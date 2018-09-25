@@ -1,4 +1,4 @@
-# SecuconnectApi.AddressComponents
+# SecuconnectJsSdk.AddressComponents
 
 ## Properties
 Name | Type | Description | Notes

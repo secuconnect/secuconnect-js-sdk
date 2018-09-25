@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The ParentModel model module.
 * @module model/ParentModel
-* @version 2.0.0
 */
 export default class ParentModel {
     /**

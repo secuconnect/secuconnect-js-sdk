@@ -1,4 +1,4 @@
-# SecuconnectApi.GeneralMerchantsDTO
+# SecuconnectJsSdk.GeneralMerchantsDTO
 
 ## Properties
 Name | Type | Description | Notes

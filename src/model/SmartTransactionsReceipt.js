@@ -9,7 +9,6 @@ import SmartTransactionsReceiptValue from './SmartTransactionsReceiptValue';
 /**
 * The SmartTransactionsReceipt model module.
 * @module model/SmartTransactionsReceipt
-* @version 2.0.0
 */
 export default class SmartTransactionsReceipt {
     /**

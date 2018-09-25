@@ -9,7 +9,6 @@ import AddressComponents from './AddressComponents';
 /**
 * The GeoAddress model module.
 * @module model/GeoAddress
-* @version 2.0.0
 */
 export default class GeoAddress {
     /**

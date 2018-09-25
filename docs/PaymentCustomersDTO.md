@@ -1,4 +1,4 @@
-# SecuconnectApi.PaymentCustomersDTO
+# SecuconnectJsSdk.PaymentCustomersDTO
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SecuconnectApi.Contact
+# SecuconnectJsSdk.Contact
 
 ## Properties
 Name | Type | Description | Notes

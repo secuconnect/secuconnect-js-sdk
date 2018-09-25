@@ -1,4 +1,4 @@
-# SecuconnectApi.LoyaltyCardsApi
+# SecuconnectJsSdk.LoyaltyCardsApi
 
 All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
@@ -20,14 +20,14 @@ Assign loyalty card to specific user account
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyCardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyCardsApi();
 
 let loyaltyCardId = "loyaltyCardId_example"; // String | Loyalty card id
 
@@ -75,14 +75,14 @@ Get a list of loyalty cards
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyCardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyCardsApi();
 
 let opts = { 
   'count': 56, // Number | The number of items to return.
@@ -132,14 +132,14 @@ Get loyalty card for a specific id
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyCardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyCardsApi();
 
 let loyaltyCardId = "loyaltyCardId_example"; // String | Search one loyalty card by provided id
 
@@ -180,14 +180,14 @@ Remove assigned loyalty card from specific user account
 
 ### Example
 ```javascript
-import SecuconnectApi from 'secuconnect_api';
-let defaultClient = SecuconnectApi.ApiClient.instance;
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuconnectApi.LoyaltyCardsApi();
+let apiInstance = new SecuconnectJsSdk.LoyaltyCardsApi();
 
 let loyaltyCardId = "loyaltyCardId_example"; // String | Loyalty card id
 

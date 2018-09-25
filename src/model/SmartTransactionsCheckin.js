@@ -8,7 +8,6 @@ import ApiClient from '../ApiClient';
 /**
 * The SmartTransactionsCheckin model module.
 * @module model/SmartTransactionsCheckin
-* @version 2.0.0
 */
 export default class SmartTransactionsCheckin {
     /**

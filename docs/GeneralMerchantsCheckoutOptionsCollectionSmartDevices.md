@@ -1,4 +1,4 @@
-# SecuconnectApi.GeneralMerchantsCheckoutOptionsCollectionSmartDevices
+# SecuconnectJsSdk.GeneralMerchantsCheckoutOptionsCollectionSmartDevices
 
 ## Properties
 Name | Type | Description | Notes

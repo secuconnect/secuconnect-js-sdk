@@ -1,4 +1,4 @@
-# SecuconnectApi.SmartTransactionsReceiptValue
+# SecuconnectJsSdk.SmartTransactionsReceiptValue
 
 ## Properties
 Name | Type | Description | Notes

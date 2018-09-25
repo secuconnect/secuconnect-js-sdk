@@ -1,4 +1,4 @@
-# SecuconnectApi.VirtualTerminalData
+# SecuconnectJsSdk.VirtualTerminalData
 
 ## Properties
 Name | Type | Description | Notes

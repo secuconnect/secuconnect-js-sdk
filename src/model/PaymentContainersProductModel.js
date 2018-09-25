@@ -13,7 +13,6 @@ import ProductInstanceUID from './ProductInstanceUID';
 /**
 * The PaymentContainersProductModel model module.
 * @module model/PaymentContainersProductModel
-* @version 2.0.0
 */
 export default class PaymentContainersProductModel {
     /**

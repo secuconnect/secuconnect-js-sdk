@@ -10,7 +10,6 @@ import ReceiptValue from './ReceiptValue';
 /**
 * The ReceiptTypeValue model module.
 * @module model/ReceiptTypeValue
-* @version 2.0.0
 */
 export default class ReceiptTypeValue {
     /**

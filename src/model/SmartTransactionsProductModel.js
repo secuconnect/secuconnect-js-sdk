@@ -17,7 +17,6 @@ import SmartTransactionsReceipt from './SmartTransactionsReceipt';
 /**
 * The SmartTransactionsProductModel model module.
 * @module model/SmartTransactionsProductModel
-* @version 2.0.0
 */
 export default class SmartTransactionsProductModel {
     /**

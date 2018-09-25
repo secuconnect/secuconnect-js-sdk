@@ -1,4 +1,4 @@
-# SecuconnectApi.SmartTransactionsDTO
+# SecuconnectJsSdk.SmartTransactionsDTO
 
 ## Properties
 Name | Type | Description | Notes

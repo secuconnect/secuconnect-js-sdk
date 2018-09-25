@@ -174,9 +174,9 @@ import SmartTransactionsApi from './api/SmartTransactionsApi';
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
 * <pre>
-* var SecuconnectApi = require('index'); // See note below*.
-* var xxxSvc = new SecuconnectApi.XxxApi(); // Allocate the API class we're going to use.
-* var yyyModel = new SecuconnectApi.Yyy(); // Construct a model instance.
+* var SecuconnectJsSdk = require('index'); // See note below*.
+* var xxxSvc = new SecuconnectJsSdk.XxxApi(); // Allocate the API class we're going to use.
+* var yyyModel = new SecuconnectJsSdk.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -188,8 +188,8 @@ import SmartTransactionsApi from './api/SmartTransactionsApi';
 * <p>
 * A non-AMD browser application (discouraged) might do something like this:
 * <pre>
-* var xxxSvc = new SecuconnectApi.XxxApi(); // Allocate the API class we're going to use.
-* var yyy = new SecuconnectApi.Yyy(); // Construct a model instance.
+* var xxxSvc = new SecuconnectJsSdk.XxxApi(); // Allocate the API class we're going to use.
+* var yyy = new SecuconnectJsSdk.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -197,7 +197,6 @@ import SmartTransactionsApi from './api/SmartTransactionsApi';
 * </pre>
 * </p>
 * @module index
-* @version 2.0.0
 */
 export {
     /**
