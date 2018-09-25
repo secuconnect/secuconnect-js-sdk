@@ -1,4 +1,4 @@
-# SecuConnectApi.PaymentContainerMandate
+# SecuconnectApi.PaymentContainerMandate
 
 ## Properties
 Name | Type | Description | Notes

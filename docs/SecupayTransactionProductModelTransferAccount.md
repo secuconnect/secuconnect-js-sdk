@@ -1,4 +1,4 @@
-# SecuConnectApi.SecupayTransactionProductModelTransferAccount
+# SecuconnectApi.SecupayTransactionProductModelTransferAccount
 
 ## Properties
 Name | Type | Description | Notes

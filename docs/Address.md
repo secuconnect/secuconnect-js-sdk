@@ -1,4 +1,4 @@
-# SecuConnectApi.Address
+# SecuconnectApi.Address
 
 ## Properties
 Name | Type | Description | Notes

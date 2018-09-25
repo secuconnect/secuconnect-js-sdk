@@ -1,4 +1,4 @@
-# SwaggerJsClient.PaymentTransactionsShippingUrl
+# SecuconnectApi.PaymentTransactionsShippingUrl
 
 ## Properties
 Name | Type | Description | Notes

@@ -11,7 +11,7 @@
  *
  */
 import SecupayTransactionProductDTO from "../../src/model/SecupayTransactionProductDTO";
-import PaymentCustomersDTOContact from "../../src/model/PaymentCustomersDTOContact";
+import Contact from "../../src/model/Contact";
 import PaymentCustomersDTO from "../../src/model/PaymentCustomersDTO";
 import SecupayTransactionProductDTORedirectUrl from "../../src/model/SecupayTransactionProductDTORedirectUrl";
 import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCredentials } from '../Globals';
@@ -55,7 +55,7 @@ import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCre
     prepayApi.apiClient.authentications.oauth_token.accessToken = accessToken;
     customerApi.apiClient.authentications.oauth_token.accessToken = accessToken;
 
-    let contact = new PaymentCustomersDTOContact();
+    let contact = new Contact();
     contact.forename = 'John';
     contact.surname = 'Doe';
     contact.companyname = 'Example Inc.';

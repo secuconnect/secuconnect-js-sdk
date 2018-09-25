@@ -1,4 +1,4 @@
-# SecuConnectApi.SecupayBasketItem
+# SecuconnectApi.SecupayBasketItem
 
 ## Properties
 Name | Type | Description | Notes

@@ -66,7 +66,7 @@ import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCre
         customerAPI.apiClient.authentications.oauth_token.accessToken = authenticator.getToken();
 
         var customerDTO = new SecuConnectApi.PaymentCustomersDTO();
-        var contact = new SecuConnectApi.PaymentCustomersDTOContact();
+        var contact = new SecuConnectApi.Contact();
         var address = new SecuConnectApi.Address();
         customerDTO.contact = contact;
         contact.surname = "John R.";

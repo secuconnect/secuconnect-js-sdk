@@ -1,4 +1,4 @@
-# SwaggerJsClient.PaymentContainersList
+# SecuconnectApi.PaymentContainersList
 
 ## Properties
 Name | Type | Description | Notes

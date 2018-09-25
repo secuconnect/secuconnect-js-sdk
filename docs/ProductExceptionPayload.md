@@ -1,4 +1,4 @@
-# SecuConnectApi.ProductExceptionPayload
+# SecuconnectApi.ProductExceptionPayload
 
 ## Properties
 Name | Type | Description | Notes

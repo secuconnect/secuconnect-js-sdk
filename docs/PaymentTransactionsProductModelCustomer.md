@@ -1,4 +1,4 @@
-# SecuConnectApi.PaymentTransactionsProductModelCustomer
+# SecuconnectApi.PaymentTransactionsProductModelCustomer
 
 ## Properties
 Name | Type | Description | Notes

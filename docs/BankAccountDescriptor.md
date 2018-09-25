@@ -1,4 +1,4 @@
-# SecuConnectApi.BankAccountDescriptor
+# SecuconnectApi.BankAccountDescriptor
 
 ## Properties
 Name | Type | Description | Notes

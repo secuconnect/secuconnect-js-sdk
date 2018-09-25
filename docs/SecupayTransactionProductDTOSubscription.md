@@ -1,4 +1,4 @@
-# SecuConnectApi.SecupayTransactionProductDTOSubscription
+# SecuconnectApi.SecupayTransactionProductDTOSubscription
 
 ## Properties
 Name | Type | Description | Notes

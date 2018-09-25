@@ -1,4 +1,4 @@
-# SecuConnectApi.PaymentContainersDTOPrivate
+# SecuconnectApi.PaymentContainersDTOPrivate
 
 ## Properties
 Name | Type | Description | Notes

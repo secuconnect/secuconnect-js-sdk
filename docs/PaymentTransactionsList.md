@@ -1,4 +1,4 @@
-# SwaggerJsClient.PaymentTransactionsList
+# SecuconnectApi.PaymentTransactionsList
 
 ## Properties
 Name | Type | Description | Notes

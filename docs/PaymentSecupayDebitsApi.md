@@ -1,36 +1,36 @@
-# SecuConnectApi.PaymentSecupayDebitsApi
+# SecuconnectApi.PaymentSecupayDebitsApi
 
-All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2/*
+All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**paymentSecupayDebitsCancelById**](PaymentSecupayDebitsApi.md#paymentSecupayDebitsCancelById) | **POST** Payment/Secupaydebits/{hash}/cancel | 
-[**paymentSecupayDebitsGetById**](PaymentSecupayDebitsApi.md#paymentSecupayDebitsGetById) | **GET** Payment/Secupaydebits/{hash} | 
-[**paymentSecupaydebitsPost**](PaymentSecupayDebitsApi.md#paymentSecupaydebitsPost) | **POST** Payment/Secupaydebits | 
+[**paymentSecupayDebitsCancelById**](PaymentSecupayDebitsApi.md#paymentSecupayDebitsCancelById) | **POST** /Payment/Secupaydebits/{paymentDebitId}/cancel | POST Payment/Secupaydebits/{paymentDebitId}/cancel
+[**paymentSecupayDebitsGetById**](PaymentSecupayDebitsApi.md#paymentSecupayDebitsGetById) | **GET** /Payment/Secupaydebits/{paymentDebitId} | GET Payment/Secupaydebits/{paymentDebitId}
+[**paymentSecupaydebitsPost**](PaymentSecupayDebitsApi.md#paymentSecupaydebitsPost) | **POST** /Payment/Secupaydebits | POST Payment/Secupaydebits
 
 
 <a name="paymentSecupayDebitsCancelById"></a>
 # **paymentSecupayDebitsCancelById**
-> Object paymentSecupayDebitsCancelById(hash)
+> Object paymentSecupayDebitsCancelById(paymentDebitId)
 
-POST Payment/Secupaydebits/{id}/cancel
+POST Payment/Secupaydebits/{paymentDebitId}/cancel
 
 Function to cancel the transaction
 
 ### Example
 ```javascript
-import SecuConnectApi from 'secu_connect_api';
-let defaultClient = SecuConnectApi.ApiClient.instance;
+import SecuconnectApi from 'secuconnect_api';
+let defaultClient = SecuconnectApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuConnectApi.PaymentSecupayDebitsApi();
+let apiInstance = new SecuconnectApi.PaymentSecupayDebitsApi();
 
-let hash = "hash_example"; // String | Transaction hash
+let paymentDebitId = "paymentDebitId_example"; // String | Payment debit id
 
-apiInstance.paymentSecupayDebitsCancelById(hash).then((data) => {
+apiInstance.paymentSecupayDebitsCancelById(paymentDebitId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -42,7 +42,7 @@ apiInstance.paymentSecupayDebitsCancelById(hash).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **hash** | **String**| Transaction hash | 
+ **paymentDebitId** | **String**| Payment debit id | 
 
 ### Return type
 
@@ -59,26 +59,26 @@ Name | Type | Description  | Notes
 
 <a name="paymentSecupayDebitsGetById"></a>
 # **paymentSecupayDebitsGetById**
-> SecupayTransactionProductModel paymentSecupayDebitsGetById(hash)
+> SecupayTransactionProductModel paymentSecupayDebitsGetById(paymentDebitId)
 
-
+GET Payment/Secupaydebits/{paymentDebitId}
 
 Get the details of a payment transaction
 
 ### Example
 ```javascript
-import SecuConnectApi from 'secu_connect_api';
-let defaultClient = SecuConnectApi.ApiClient.instance;
+import SecuconnectApi from 'secuconnect_api';
+let defaultClient = SecuconnectApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuConnectApi.PaymentSecupayDebitsApi();
+let apiInstance = new SecuconnectApi.PaymentSecupayDebitsApi();
 
-let hash = "hash_example"; // String | Payment transaction ID
+let paymentDebitId = "paymentDebitId_example"; // String | Payment debit id
 
-apiInstance.paymentSecupayDebitsGetById(hash).then((data) => {
+apiInstance.paymentSecupayDebitsGetById(paymentDebitId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -90,7 +90,7 @@ apiInstance.paymentSecupayDebitsGetById(hash).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **hash** | **String**| Payment transaction ID | 
+ **paymentDebitId** | **String**| Payment debit id | 
 
 ### Return type
 
@@ -115,17 +115,17 @@ Start a debit payment transaction
 
 ### Example
 ```javascript
-import SecuConnectApi from 'secu_connect_api';
-let defaultClient = SecuConnectApi.ApiClient.instance;
+import SecuconnectApi from 'secuconnect_api';
+let defaultClient = SecuconnectApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuConnectApi.PaymentSecupayDebitsApi();
+let apiInstance = new SecuconnectApi.PaymentSecupayDebitsApi();
 
 let opts = { 
-  'body': new SecuConnectApi.SecupayTransactionProductDTO() // SecupayTransactionProductDTO | Debit payment transaction input properties
+  'body': new SecuconnectApi.SecupayTransactionProductDTO() // SecupayTransactionProductDTO | Debit payment transaction input properties
 };
 apiInstance.paymentSecupaydebitsPost(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);

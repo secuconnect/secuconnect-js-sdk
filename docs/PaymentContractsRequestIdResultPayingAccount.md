@@ -1,4 +1,4 @@
-# SwaggerJsClient.PaymentContractsRequestIdResultPayingAccount
+# SecuconnectApi.PaymentContractsRequestIdResultPayingAccount
 
 ## Properties
 Name | Type | Description | Notes

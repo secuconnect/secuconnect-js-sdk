@@ -1,0 +1,40 @@
+# SecuconnectApi.SmartTransactionsProductModel
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**_object** | **String** | Object of smart transaction | [optional] 
+**id** | **String** | Id of smart transaction | [optional] 
+**status** | **String** | Status of smart transaction | [optional] 
+**merchant** | [**SmartTransactionsMerchant**](SmartTransactionsMerchant.md) | Merchant | [optional] 
+**contract** | [**ProductInstanceUID**](ProductInstanceUID.md) | Contract | [optional] 
+**marketplaceContract** | [**ProductInstanceUID**](ProductInstanceUID.md) | Marketplace contract | [optional] 
+**customer** | [**LoyaltyCustomersProductModel**](LoyaltyCustomersProductModel.md) | Customer | [optional] 
+**checkin** | [**SmartTransactionsCheckin**](SmartTransactionsCheckin.md) | Check in | [optional] 
+**merchantRef** | **String** | Merchant ref | [optional] 
+**transactionRef** | **String** | Transaction ref | [optional] 
+**store** | [**ProductInstanceUID**](ProductInstanceUID.md) | Store | [optional] 
+**deviceSource** | [**ProductInstanceUID**](ProductInstanceUID.md) | Device source | [optional] 
+**deviceDestination** | [**ProductInstanceUID**](ProductInstanceUID.md) | Device destination | [optional] 
+**created** | **Date** | Created at date | [optional] 
+**updated** | **Date** | Updated at date | [optional] 
+**receiptNumber** | **Number** | Receipt number | [optional] 
+**receipt** | [**[SmartTransactionsReceipt]**](SmartTransactionsReceipt.md) | Receipt | [optional] 
+**receiptMerchant** | **String** | Receipt merchant | [optional] 
+**receiptMerchantPrint** | **Boolean** | Receipt merchant print | [optional] 
+**basketInfo** | [**SmartTransactionsBasketInfo**](SmartTransactionsBasketInfo.md) | Basket info | [optional] 
+**basket** | [**SmartTransactionsBasket**](SmartTransactionsBasket.md) | Basket | [optional] 
+**idents** | [**[SmartTransactionsIdent]**](SmartTransactionsIdent.md) | Idents | [optional] 
+**taxRate** | **Number** | Tax rate | [optional] 
+**taxAmount** | **Number** | Tax amount | [optional] 
+**cashier** | **String** | Cashier | [optional] 
+**market** | **String** | Market | [optional] 
+**orderOption** | **String** | Order option | [optional] 
+**pickupOptions** | [**SmartTransactionsPickupOptions**](SmartTransactionsPickupOptions.md) | Pickup options | [optional] 
+**product** | **String** | Product | [optional] 
+**transId** | **Number** | Transaction id | [optional] 
+**paymentMethod** | **String** | Payment method | [optional] 
+**transactions** | [**ProductInstanceUID**](ProductInstanceUID.md) | Transactions | [optional] 
+**lastVisitedPage** | **String** | Last visited page | [optional] 
+
+

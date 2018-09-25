@@ -1,4 +1,4 @@
-# SecuConnectApi.ProductInstanceUID
+# SecuconnectApi.ProductInstanceUID
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SecuConnectApi.SecupayTransactionProductDTOExperience
+# SecuconnectApi.SecupayTransactionProductDTOExperience
 
 ## Properties
 Name | Type | Description | Notes

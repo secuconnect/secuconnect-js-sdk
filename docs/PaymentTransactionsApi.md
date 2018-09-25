@@ -1,13 +1,13 @@
-# SecuConnectApi.PaymentTransactionsApi
+# SecuconnectApi.PaymentTransactionsApi
 
-All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2/*
+All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**paymentTransactionsGet**](PaymentTransactionsApi.md#paymentTransactionsGet) | **GET** Payment/Transactions | GET Payment/Transactions
-[**paymentTransactionsGetById**](PaymentTransactionsApi.md#paymentTransactionsGetById) | **GET** Payment/Transactions/{id} | GET Payment/Transactions/{id}
-[**paymentTransactionsIdCancelPost**](PaymentTransactionsApi.md#paymentTransactionsIdCancelPost) | **POST** Payment/Transactions/{id}/cancel | POST Payment/Transactions/{id}/cancel
-[**paymentTransactionsIdShippingUrlGet**](PaymentTransactionsApi.md#paymentTransactionsIdShippingUrlGet) | **GET** Payment/Transactions/{id}/ShippingUrl | GET Payment/Transactions/{id}/ShippingUrl
+[**paymentTransactionsGet**](PaymentTransactionsApi.md#paymentTransactionsGet) | **GET** /Payment/Transactions | GET Payment/Transactions
+[**paymentTransactionsGetById**](PaymentTransactionsApi.md#paymentTransactionsGetById) | **GET** /Payment/Transactions/{paymentTransactionId} | GET Payment/Transactions/{paymentTransactionId}
+[**paymentTransactionsPaymentTransactionIdCancelPost**](PaymentTransactionsApi.md#paymentTransactionsPaymentTransactionIdCancelPost) | **POST** /Payment/Transactions/{paymentTransactionId}/cancel | POST Payment/Transactions/{paymentTransactionId}/cancel
+[**paymentTransactionsPaymentTransactionIdShippingUrlGet**](PaymentTransactionsApi.md#paymentTransactionsPaymentTransactionIdShippingUrlGet) | **GET** /Payment/Transactions/{paymentTransactionId}/ShippingUrl | GET Payment/Transactions/{paymentTransactionId}/ShippingUrl
 
 
 <a name="paymentTransactionsGet"></a>
@@ -20,14 +20,14 @@ Get a list of payment transactions
 
 ### Example
 ```javascript
-import SecuConnectApi from 'secu_connect_api';
-let defaultClient = SecuConnectApi.ApiClient.instance;
+import SecuconnectApi from 'secuconnect_api';
+let defaultClient = SecuconnectApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuConnectApi.PaymentTransactionsApi();
+let apiInstance = new SecuconnectApi.PaymentTransactionsApi();
 
 let opts = { 
   'count': 56, // Number | The number of items to return.
@@ -69,26 +69,26 @@ Name | Type | Description  | Notes
 
 <a name="paymentTransactionsGetById"></a>
 # **paymentTransactionsGetById**
-> PaymentTransactionsProductModel paymentTransactionsGetById(id)
+> PaymentTransactionsProductModel paymentTransactionsGetById(paymentTransactionId)
 
-GET Payment/Transactions/{id}
+GET Payment/Transactions/{paymentTransactionId}
 
 Get all payment transactions
 
 ### Example
 ```javascript
-import SecuConnectApi from 'secu_connect_api';
-let defaultClient = SecuConnectApi.ApiClient.instance;
+import SecuconnectApi from 'secuconnect_api';
+let defaultClient = SecuconnectApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuConnectApi.PaymentTransactionsApi();
+let apiInstance = new SecuconnectApi.PaymentTransactionsApi();
 
-let id = "id_example"; // String | Search one by provided id
+let paymentTransactionId = "paymentTransactionId_example"; // String | Payment transaction id
 
-apiInstance.paymentTransactionsGetById(id).then((data) => {
+apiInstance.paymentTransactionsGetById(paymentTransactionId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -100,7 +100,7 @@ apiInstance.paymentTransactionsGetById(id).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Search one by provided id | 
+ **paymentTransactionId** | **String**| Payment transaction id | 
 
 ### Return type
 
@@ -115,28 +115,28 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="paymentTransactionsIdCancelPost"></a>
-# **paymentTransactionsIdCancelPost**
-> [PaymentTransactionsCancelList] paymentTransactionsIdCancelPost(id)
+<a name="paymentTransactionsPaymentTransactionIdCancelPost"></a>
+# **paymentTransactionsPaymentTransactionIdCancelPost**
+> [PaymentTransactionsCancelList] paymentTransactionsPaymentTransactionIdCancelPost(paymentTransactionId)
 
-POST Payment/Transactions/{id}/cancel
+POST Payment/Transactions/{paymentTransactionId}/cancel
 
 Cancel a payment transaction
 
 ### Example
 ```javascript
-import SecuConnectApi from 'secu_connect_api';
-let defaultClient = SecuConnectApi.ApiClient.instance;
+import SecuconnectApi from 'secuconnect_api';
+let defaultClient = SecuconnectApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuConnectApi.PaymentTransactionsApi();
+let apiInstance = new SecuconnectApi.PaymentTransactionsApi();
 
-let id = "id_example"; // String | Transaction identifier
+let paymentTransactionId = "paymentTransactionId_example"; // String | Payment transaction id
 
-apiInstance.paymentTransactionsIdCancelPost(id).then((data) => {
+apiInstance.paymentTransactionsPaymentTransactionIdCancelPost(paymentTransactionId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -148,7 +148,7 @@ apiInstance.paymentTransactionsIdCancelPost(id).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Transaction identifier | 
+ **paymentTransactionId** | **String**| Payment transaction id | 
 
 ### Return type
 
@@ -163,28 +163,28 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="paymentTransactionsIdShippingUrlGet"></a>
-# **paymentTransactionsIdShippingUrlGet**
-> PaymentTransactionsShippingUrl paymentTransactionsIdShippingUrlGet(id)
+<a name="paymentTransactionsPaymentTransactionIdShippingUrlGet"></a>
+# **paymentTransactionsPaymentTransactionIdShippingUrlGet**
+> PaymentTransactionsShippingUrl paymentTransactionsPaymentTransactionIdShippingUrlGet(paymentTransactionId)
 
-GET Payment/Transactions/{id}/ShippingUrl
+GET Payment/Transactions/{paymentTransactionId}/ShippingUrl
 
 Get the url where you can fill the shipping information
 
 ### Example
 ```javascript
-import SecuConnectApi from 'secu_connect_api';
-let defaultClient = SecuConnectApi.ApiClient.instance;
+import SecuconnectApi from 'secuconnect_api';
+let defaultClient = SecuconnectApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuConnectApi.PaymentTransactionsApi();
+let apiInstance = new SecuconnectApi.PaymentTransactionsApi();
 
-let id = "id_example"; // String | Transaction identifier
+let paymentTransactionId = "paymentTransactionId_example"; // String | Payment transaction id
 
-apiInstance.paymentTransactionsIdShippingUrlGet(id).then((data) => {
+apiInstance.paymentTransactionsPaymentTransactionIdShippingUrlGet(paymentTransactionId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -196,7 +196,7 @@ apiInstance.paymentTransactionsIdShippingUrlGet(id).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Transaction identifier | 
+ **paymentTransactionId** | **String**| Payment transaction id | 
 
 ### Return type
 

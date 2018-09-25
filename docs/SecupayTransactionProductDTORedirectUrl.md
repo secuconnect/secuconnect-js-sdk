@@ -1,4 +1,4 @@
-# SecuConnectApi.SecupayTransactionProductDTORedirectUrl
+# SecuconnectApi.SecupayTransactionProductDTORedirectUrl
 
 ## Properties
 Name | Type | Description | Notes

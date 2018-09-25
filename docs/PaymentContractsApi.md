@@ -1,17 +1,17 @@
-# SecuConnectApi.PaymentContractsApi
+# SecuconnectApi.PaymentContractsApi
 
-All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2/*
+All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**paymentContractsGet**](PaymentContractsApi.md#paymentContractsGet) | **GET** Payment/Contracts | GET Payment/Contracts
-[**paymentContractsGetById**](PaymentContractsApi.md#paymentContractsGetById) | **GET** Payment/Contracts/{id} | GET Payment/Contracts/{id}
-[**paymentContractsIdClonePost**](PaymentContractsApi.md#paymentContractsIdClonePost) | **POST** Payment/Contracts/{id}/clone | POST Payment/Contracts/{id}/clone
-[**paymentContractsIdDelete**](PaymentContractsApi.md#paymentContractsIdDelete) | **DELETE** Payment/Contracts/{id} | DELETE Payment/Contracts/{id}
-[**paymentContractsIdPaymentMethodsGet**](PaymentContractsApi.md#paymentContractsIdPaymentMethodsGet) | **GET** Payment/Contracts/{id}/PaymentMethods | GET Payment/Contracts/{id}/PaymentMethods
-[**paymentContractsIdPut**](PaymentContractsApi.md#paymentContractsIdPut) | **PUT** Payment/Contracts/{id} | PUT Payment/Contracts/{id}
-[**paymentContractsIdRequestIdPost**](PaymentContractsApi.md#paymentContractsIdRequestIdPost) | **POST** Payment/Contracts/{id}/requestId | POST Payment/Contracts/{id}/requestId
-[**paymentContractsPost**](PaymentContractsApi.md#paymentContractsPost) | **POST** Payment/Contracts | POST Payment/Contracts
+[**paymentContractsGet**](PaymentContractsApi.md#paymentContractsGet) | **GET** /Payment/Contracts | GET Payment/Contracts
+[**paymentContractsGetById**](PaymentContractsApi.md#paymentContractsGetById) | **GET** /Payment/Contracts/{paymentContractId} | GET Payment/Contracts/{paymentContractId}
+[**paymentContractsPaymentContractIdClonePost**](PaymentContractsApi.md#paymentContractsPaymentContractIdClonePost) | **POST** /Payment/Contracts/{paymentContractId}/clone | POST Payment/Contracts/{paymentContractId}/clone
+[**paymentContractsPaymentContractIdDelete**](PaymentContractsApi.md#paymentContractsPaymentContractIdDelete) | **DELETE** /Payment/Contracts/{paymentContractId} | DELETE Payment/Contracts/{paymentContractId}
+[**paymentContractsPaymentContractIdPaymentMethodsGet**](PaymentContractsApi.md#paymentContractsPaymentContractIdPaymentMethodsGet) | **GET** /Payment/Contracts/{paymentContractId}/PaymentMethods | GET Payment/Contracts/{paymentContractId}/PaymentMethods
+[**paymentContractsPaymentContractIdPut**](PaymentContractsApi.md#paymentContractsPaymentContractIdPut) | **PUT** /Payment/Contracts/{paymentContractId} | PUT Payment/Contracts/{paymentContractId}
+[**paymentContractsPaymentContractIdRequestIdPost**](PaymentContractsApi.md#paymentContractsPaymentContractIdRequestIdPost) | **POST** /Payment/Contracts/{paymentContractId}/requestId | POST Payment/Contracts/{paymentContractId}/requestId
+[**paymentContractsPost**](PaymentContractsApi.md#paymentContractsPost) | **POST** /Payment/Contracts | POST Payment/Contracts
 
 
 <a name="paymentContractsGet"></a>
@@ -24,14 +24,14 @@ Get a list of payment contracts
 
 ### Example
 ```javascript
-import SecuConnectApi from 'secu_connect_api';
-let defaultClient = SecuConnectApi.ApiClient.instance;
+import SecuconnectApi from 'secuconnect_api';
+let defaultClient = SecuconnectApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuConnectApi.PaymentContractsApi();
+let apiInstance = new SecuconnectApi.PaymentContractsApi();
 
 let opts = { 
   'count': 56, // Number | The number of items to return.
@@ -73,26 +73,26 @@ Name | Type | Description  | Notes
 
 <a name="paymentContractsGetById"></a>
 # **paymentContractsGetById**
-> PaymentContractsProductModel paymentContractsGetById(id)
+> PaymentContractsProductModel paymentContractsGetById(paymentContractId)
 
-GET Payment/Contracts/{id}
+GET Payment/Contracts/{paymentContractId}
 
 Get all payment contracts
 
 ### Example
 ```javascript
-import SecuConnectApi from 'secu_connect_api';
-let defaultClient = SecuConnectApi.ApiClient.instance;
+import SecuconnectApi from 'secuconnect_api';
+let defaultClient = SecuconnectApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuConnectApi.PaymentContractsApi();
+let apiInstance = new SecuconnectApi.PaymentContractsApi();
 
-let id = "id_example"; // String | Search one by provided id
+let paymentContractId = "paymentContractId_example"; // String | Search one by provided id
 
-apiInstance.paymentContractsGetById(id).then((data) => {
+apiInstance.paymentContractsGetById(paymentContractId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -104,7 +104,7 @@ apiInstance.paymentContractsGetById(id).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Search one by provided id | 
+ **paymentContractId** | **String**| Search one by provided id | 
 
 ### Return type
 
@@ -119,28 +119,28 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="paymentContractsIdClonePost"></a>
-# **paymentContractsIdClonePost**
-> PaymentContractsProductModel paymentContractsIdClonePost(id)
+<a name="paymentContractsPaymentContractIdClonePost"></a>
+# **paymentContractsPaymentContractIdClonePost**
+> PaymentContractsProductModel paymentContractsPaymentContractIdClonePost(paymentContractId)
 
-POST Payment/Contracts/{id}/clone
+POST Payment/Contracts/{paymentContractId}/clone
 
 Clone an existing payment contract
 
 ### Example
 ```javascript
-import SecuConnectApi from 'secu_connect_api';
-let defaultClient = SecuConnectApi.ApiClient.instance;
+import SecuconnectApi from 'secuconnect_api';
+let defaultClient = SecuconnectApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuConnectApi.PaymentContractsApi();
+let apiInstance = new SecuconnectApi.PaymentContractsApi();
 
-let id = "id_example"; // String | Contract identifier
+let paymentContractId = "paymentContractId_example"; // String | Contract identifier
 
-apiInstance.paymentContractsIdClonePost(id).then((data) => {
+apiInstance.paymentContractsPaymentContractIdClonePost(paymentContractId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -152,7 +152,7 @@ apiInstance.paymentContractsIdClonePost(id).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Contract identifier | 
+ **paymentContractId** | **String**| Contract identifier | 
 
 ### Return type
 
@@ -167,28 +167,28 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="paymentContractsIdDelete"></a>
-# **paymentContractsIdDelete**
-> [PaymentContractsProductModel] paymentContractsIdDelete(id)
+<a name="paymentContractsPaymentContractIdDelete"></a>
+# **paymentContractsPaymentContractIdDelete**
+> [PaymentContractsProductModel] paymentContractsPaymentContractIdDelete(paymentContractId)
 
-DELETE Payment/Contracts/{id}
+DELETE Payment/Contracts/{paymentContractId}
 
 Delete payment contract
 
 ### Example
 ```javascript
-import SecuConnectApi from 'secu_connect_api';
-let defaultClient = SecuConnectApi.ApiClient.instance;
+import SecuconnectApi from 'secuconnect_api';
+let defaultClient = SecuconnectApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuConnectApi.PaymentContractsApi();
+let apiInstance = new SecuconnectApi.PaymentContractsApi();
 
-let id = "id_example"; // String | Payment contract id
+let paymentContractId = "paymentContractId_example"; // String | Payment contract id
 
-apiInstance.paymentContractsIdDelete(id).then((data) => {
+apiInstance.paymentContractsPaymentContractIdDelete(paymentContractId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -200,7 +200,7 @@ apiInstance.paymentContractsIdDelete(id).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Payment contract id | 
+ **paymentContractId** | **String**| Payment contract id | 
 
 ### Return type
 
@@ -215,28 +215,28 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="paymentContractsIdPaymentMethodsGet"></a>
-# **paymentContractsIdPaymentMethodsGet**
-> [&#39;String&#39;] paymentContractsIdPaymentMethodsGet(id)
+<a name="paymentContractsPaymentContractIdPaymentMethodsGet"></a>
+# **paymentContractsPaymentContractIdPaymentMethodsGet**
+> [&#39;String&#39;] paymentContractsPaymentContractIdPaymentMethodsGet(paymentContractId)
 
-GET Payment/Contracts/{id}/PaymentMethods
+GET Payment/Contracts/{paymentContractId}/PaymentMethods
 
 Get available payment methods for given contract
 
 ### Example
 ```javascript
-import SecuConnectApi from 'secu_connect_api';
-let defaultClient = SecuConnectApi.ApiClient.instance;
+import SecuconnectApi from 'secuconnect_api';
+let defaultClient = SecuconnectApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuConnectApi.PaymentContractsApi();
+let apiInstance = new SecuconnectApi.PaymentContractsApi();
 
-let id = "id_example"; // String | Contract identifier
+let paymentContractId = "paymentContractId_example"; // String | Contract identifier
 
-apiInstance.paymentContractsIdPaymentMethodsGet(id).then((data) => {
+apiInstance.paymentContractsPaymentContractIdPaymentMethodsGet(paymentContractId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -248,7 +248,7 @@ apiInstance.paymentContractsIdPaymentMethodsGet(id).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Contract identifier | 
+ **paymentContractId** | **String**| Contract identifier | 
 
 ### Return type
 
@@ -263,30 +263,30 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="paymentContractsIdPut"></a>
-# **paymentContractsIdPut**
-> PaymentContractsProductModel paymentContractsIdPut(id, body)
+<a name="paymentContractsPaymentContractIdPut"></a>
+# **paymentContractsPaymentContractIdPut**
+> PaymentContractsProductModel paymentContractsPaymentContractIdPut(paymentContractId, body)
 
-PUT Payment/Contracts/{id}
+PUT Payment/Contracts/{paymentContractId}
 
 Update payment contract
 
 ### Example
 ```javascript
-import SecuConnectApi from 'secu_connect_api';
-let defaultClient = SecuConnectApi.ApiClient.instance;
+import SecuconnectApi from 'secuconnect_api';
+let defaultClient = SecuconnectApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuConnectApi.PaymentContractsApi();
+let apiInstance = new SecuconnectApi.PaymentContractsApi();
 
-let id = "id_example"; // String | Payment contract id
+let paymentContractId = "paymentContractId_example"; // String | Payment contract id
 
-let body = new SecuConnectApi.PaymentContractsDTO(); // PaymentContractsDTO | Payment contract properties
+let body = new SecuconnectApi.PaymentContractsDTO(); // PaymentContractsDTO | Payment contract properties
 
-apiInstance.paymentContractsIdPut(id, body).then((data) => {
+apiInstance.paymentContractsPaymentContractIdPut(paymentContractId, body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -298,7 +298,7 @@ apiInstance.paymentContractsIdPut(id, body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Payment contract id | 
+ **paymentContractId** | **String**| Payment contract id | 
  **body** | [**PaymentContractsDTO**](PaymentContractsDTO.md)| Payment contract properties | 
 
 ### Return type
@@ -314,28 +314,28 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="paymentContractsIdRequestIdPost"></a>
-# **paymentContractsIdRequestIdPost**
-> PaymentContractsRequestIdResult paymentContractsIdRequestIdPost(id)
+<a name="paymentContractsPaymentContractIdRequestIdPost"></a>
+# **paymentContractsPaymentContractIdRequestIdPost**
+> PaymentContractsRequestIdResult paymentContractsPaymentContractIdRequestIdPost(paymentContractId)
 
-POST Payment/Contracts/{id}/requestId
+POST Payment/Contracts/{paymentContractId}/requestId
 
 This method clones your payment contract, so that you can use this to separate the merchants of your marketplace. (Needs to be activated))
 
 ### Example
 ```javascript
-import SecuConnectApi from 'secu_connect_api';
-let defaultClient = SecuConnectApi.ApiClient.instance;
+import SecuconnectApi from 'secuconnect_api';
+let defaultClient = SecuconnectApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuConnectApi.PaymentContractsApi();
+let apiInstance = new SecuconnectApi.PaymentContractsApi();
 
-let id = "id_example"; // String | Contract identifier
+let paymentContractId = "paymentContractId_example"; // String | Contract identifier
 
-apiInstance.paymentContractsIdRequestIdPost(id).then((data) => {
+apiInstance.paymentContractsPaymentContractIdRequestIdPost(paymentContractId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -347,7 +347,7 @@ apiInstance.paymentContractsIdRequestIdPost(id).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Contract identifier | 
+ **paymentContractId** | **String**| Contract identifier | 
 
 ### Return type
 
@@ -372,16 +372,16 @@ Add new contract
 
 ### Example
 ```javascript
-import SecuConnectApi from 'secu_connect_api';
-let defaultClient = SecuConnectApi.ApiClient.instance;
+import SecuconnectApi from 'secuconnect_api';
+let defaultClient = SecuconnectApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth_token
 let oauth_token = defaultClient.authentications['oauth_token'];
 oauth_token.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SecuConnectApi.PaymentContractsApi();
+let apiInstance = new SecuconnectApi.PaymentContractsApi();
 
-let body = new SecuConnectApi.PaymentContractsDTO(); // PaymentContractsDTO | Payment contracts properties
+let body = new SecuconnectApi.PaymentContractsDTO(); // PaymentContractsDTO | Payment contracts properties
 
 apiInstance.paymentContractsPost(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);

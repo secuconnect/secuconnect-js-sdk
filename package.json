@@ -1,7 +1,6 @@
 {
-  "name": "secu_connect_api",
-  "version": "0.1.0",
-  "description": "ERROR_UNKNOWN",
+  "name": "secuconnect_api",
+  "version": "2.0.0",
   "license": "Unlicense",
   "main": "src/index.js",
   "scripts": {
@@ -9,6 +8,9 @@
   },
   "browser": {
     "fs": false
+  },
+  "jest": {
+    "testURL": "https://localhost"
   },
   "dependencies": {
     "babel": "^6.23.0",

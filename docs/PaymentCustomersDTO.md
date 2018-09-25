@@ -1,8 +1,8 @@
-# SecuConnectApi.PaymentCustomersDTO
+# SecuconnectApi.PaymentCustomersDTO
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**contact** | [**PaymentCustomersDTOContact**](PaymentCustomersDTOContact.md) | PaymentCustomersDTO | [optional] 
+**contact** | [**Contact**](Contact.md) | PaymentCustomersDTO | [optional] 
 
 
