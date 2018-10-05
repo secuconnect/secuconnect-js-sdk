@@ -1,6 +1,8 @@
 
 import ApiClient from "../ApiClient";
 import PaymentContractsDTO from '../model/PaymentContractsDTO';
+import PaymentContractsDTOClone from '../model/PaymentContractsDTOClone';
+import PaymentContractsDTORequestId from '../model/PaymentContractsDTORequestId';
 import PaymentContractsList from '../model/PaymentContractsList';
 import PaymentContractsProductModel from '../model/PaymentContractsProductModel';
 import PaymentContractsRequestIdResult from '../model/PaymentContractsRequestIdResult';
@@ -23,6 +25,64 @@ export default class PaymentContractsApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+
+    /**
+     * POST Payment/Contracts/{paymentContractId}/clone
+     * Clone an existing payment contract
+     * @param {String} paymentContractId Contract identifier
+     * @param {module:model/PaymentContractsDTOClone} body Payment contract clone properties
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentContractsProductModel} and HTTP response
+     */
+    cloneWithHttpInfo(paymentContractId, body) {
+      let postBody = body;
+
+      // verify the required parameter 'paymentContractId' is set
+      if (paymentContractId === undefined || paymentContractId === null) {
+        throw new Error("Missing the required parameter 'paymentContractId' when calling clone");
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling clone");
+      }
+
+
+      let pathParams = {
+        'paymentContractId': paymentContractId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['oauth_token'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = PaymentContractsProductModel;
+
+      return this.apiClient.callApi(
+        '/Payment/Contracts/{paymentContractId}/clone', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * POST Payment/Contracts/{paymentContractId}/clone
+     * Clone an existing payment contract
+     * @param {String} paymentContractId Contract identifier
+     * @param {module:model/PaymentContractsDTOClone} body Payment contract clone properties
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentContractsProductModel}
+     */
+    clone(paymentContractId, body) {
+      return this.cloneWithHttpInfo(paymentContractId, body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
 
 
     /**
@@ -131,57 +191,6 @@ export default class PaymentContractsApi {
      */
     paymentContractsGetById(paymentContractId) {
       return this.paymentContractsGetByIdWithHttpInfo(paymentContractId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * POST Payment/Contracts/{paymentContractId}/clone
-     * Clone an existing payment contract
-     * @param {String} paymentContractId Contract identifier
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentContractsProductModel} and HTTP response
-     */
-    paymentContractsIdClonePostWithHttpInfo(paymentContractId) {
-      let postBody = null;
-
-      // verify the required parameter 'paymentContractId' is set
-      if (paymentContractId === undefined || paymentContractId === null) {
-        throw new Error("Missing the required parameter 'paymentContractId' when calling paymentContractsIdClonePost");
-      }
-
-
-      let pathParams = {
-        'paymentContractId': paymentContractId
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['oauth_token'];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = PaymentContractsProductModel;
-
-      return this.apiClient.callApi(
-        '/Payment/Contracts/{paymentContractId}/clone', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * POST Payment/Contracts/{paymentContractId}/clone
-     * Clone an existing payment contract
-     * @param {String} paymentContractId Contract identifier
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentContractsProductModel}
-     */
-    paymentContractsIdClonePost(paymentContractId) {
-      return this.paymentContractsIdClonePostWithHttpInfo(paymentContractId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -349,57 +358,6 @@ export default class PaymentContractsApi {
 
 
     /**
-     * POST Payment/Contracts/{paymentContractId}/requestId
-     * This method clones your payment contract, so that you can use this to separate the merchants of your marketplace. (Needs to be activated))
-     * @param {String} paymentContractId Contract identifier
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentContractsRequestIdResult} and HTTP response
-     */
-    paymentContractsIdRequestIdPostWithHttpInfo(paymentContractId) {
-      let postBody = null;
-
-      // verify the required parameter 'paymentContractId' is set
-      if (paymentContractId === undefined || paymentContractId === null) {
-        throw new Error("Missing the required parameter 'paymentContractId' when calling paymentContractsIdRequestIdPost");
-      }
-
-
-      let pathParams = {
-        'paymentContractId': paymentContractId
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['oauth_token'];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = PaymentContractsRequestIdResult;
-
-      return this.apiClient.callApi(
-        '/Payment/Contracts/{paymentContractId}/requestId', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * POST Payment/Contracts/{paymentContractId}/requestId
-     * This method clones your payment contract, so that you can use this to separate the merchants of your marketplace. (Needs to be activated))
-     * @param {String} paymentContractId Contract identifier
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentContractsRequestIdResult}
-     */
-    paymentContractsIdRequestIdPost(paymentContractId) {
-      return this.paymentContractsIdRequestIdPostWithHttpInfo(paymentContractId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * POST Payment/Contracts
      * Add new contract
      * @param {module:model/PaymentContractsDTO} body Payment contracts properties
@@ -443,6 +401,64 @@ export default class PaymentContractsApi {
      */
     paymentContractsPost(body) {
       return this.paymentContractsPostWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * POST Payment/Contracts/{paymentContractId}/requestId
+     * This method clones your payment contract, so that you can use this to separate the merchants of your marketplace. (Needs to be activated))
+     * @param {String} paymentContractId Contract identifier of the parent
+     * @param {module:model/PaymentContractsDTORequestId} body Payment contract request id properties
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentContractsRequestIdResult} and HTTP response
+     */
+    requestIdWithHttpInfo(paymentContractId, body) {
+      let postBody = body;
+
+      // verify the required parameter 'paymentContractId' is set
+      if (paymentContractId === undefined || paymentContractId === null) {
+        throw new Error("Missing the required parameter 'paymentContractId' when calling requestId");
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling requestId");
+      }
+
+
+      let pathParams = {
+        'paymentContractId': paymentContractId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['oauth_token'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = PaymentContractsRequestIdResult;
+
+      return this.apiClient.callApi(
+        '/Payment/Contracts/{paymentContractId}/requestId', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * POST Payment/Contracts/{paymentContractId}/requestId
+     * This method clones your payment contract, so that you can use this to separate the merchants of your marketplace. (Needs to be activated))
+     * @param {String} paymentContractId Contract identifier of the parent
+     * @param {module:model/PaymentContractsDTORequestId} body Payment contract request id properties
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentContractsRequestIdResult}
+     */
+    requestId(paymentContractId, body) {
+      return this.requestIdWithHttpInfo(paymentContractId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

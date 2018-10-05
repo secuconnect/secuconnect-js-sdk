@@ -43,6 +43,9 @@ export default class Address {
             
             
 
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], 'String');
+            }
             if (data.hasOwnProperty('street')) {
                 obj['street'] = ApiClient.convertToType(data['street'], 'String');
             }
@@ -62,6 +65,11 @@ export default class Address {
         return obj;
     }
 
+    /**
+    * Type
+    * @member {String} type
+    */
+    type = undefined;
     /**
     * Street
     * @member {String} street

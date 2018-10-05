@@ -30,6 +30,7 @@ import GeneralStoresDTOType from './model/GeneralStoresDTOType';
 import GeneralStoresList from './model/GeneralStoresList';
 import GeneralStoresProductModel from './model/GeneralStoresProductModel';
 import GeoAddress from './model/GeoAddress';
+import GeoAddressGeometry from './model/GeoAddressGeometry';
 import InvitedBy from './model/InvitedBy';
 import ItemGroup from './model/ItemGroup';
 import LoyaltyCardgroupsDTO from './model/LoyaltyCardgroupsDTO';
@@ -73,10 +74,12 @@ import PaymentContainersDTOPrivate from './model/PaymentContainersDTOPrivate';
 import PaymentContainersList from './model/PaymentContainersList';
 import PaymentContainersProductModel from './model/PaymentContainersProductModel';
 import PaymentContractsDTO from './model/PaymentContractsDTO';
+import PaymentContractsDTOClone from './model/PaymentContractsDTOClone';
+import PaymentContractsDTOIFrameOpts from './model/PaymentContractsDTOIFrameOpts';
+import PaymentContractsDTORequestId from './model/PaymentContractsDTORequestId';
 import PaymentContractsList from './model/PaymentContractsList';
 import PaymentContractsProductModel from './model/PaymentContractsProductModel';
 import PaymentContractsRequestIdResult from './model/PaymentContractsRequestIdResult';
-import PaymentContractsRequestIdResultPayingAccount from './model/PaymentContractsRequestIdResultPayingAccount';
 import PaymentCustomersDTO from './model/PaymentCustomersDTO';
 import PaymentCustomersList from './model/PaymentCustomersList';
 import PaymentCustomersProductModel from './model/PaymentCustomersProductModel';
@@ -99,6 +102,8 @@ import ProductInstanceUID from './model/ProductInstanceUID';
 import ReceiptType from './model/ReceiptType';
 import ReceiptValue from './model/ReceiptValue';
 import SecupayBasketItem from './model/SecupayBasketItem';
+import SecupayTransactionCancelDTO from './model/SecupayTransactionCancelDTO';
+import SecupayTransactionCaptureDTO from './model/SecupayTransactionCaptureDTO';
 import SecupayTransactionDTOExternalInvoicePdf from './model/SecupayTransactionDTOExternalInvoicePdf';
 import SecupayTransactionExternalInvoicePdf from './model/SecupayTransactionExternalInvoicePdf';
 import SecupayTransactionExternalInvoicePdfDocument from './model/SecupayTransactionExternalInvoicePdfDocument';
@@ -111,6 +116,9 @@ import SecupayTransactionProductModel from './model/SecupayTransactionProductMod
 import SecupayTransactionProductModelRedirectUrl from './model/SecupayTransactionProductModelRedirectUrl';
 import SecupayTransactionProductModelTransferAccount from './model/SecupayTransactionProductModelTransferAccount';
 import SecupayTransactionProductModelUsedPaymentInstrument from './model/SecupayTransactionProductModelUsedPaymentInstrument';
+import SecupayTransactionReverseAccrualDTO from './model/SecupayTransactionReverseAccrualDTO';
+import SecupayTransactionSetShippingInformationDTO from './model/SecupayTransactionSetShippingInformationDTO';
+import SecupayTransactionUpdateBasketDTO from './model/SecupayTransactionUpdateBasketDTO';
 import SmartDeviceProductsEnabled from './model/SmartDeviceProductsEnabled';
 import SmartDeviceProductsPrepaid from './model/SmartDeviceProductsPrepaid';
 import SmartDevicesDTO from './model/SmartDevicesDTO';
@@ -146,7 +154,6 @@ import LoyaltyMerchantcardsDTONewPasscode from './model/LoyaltyMerchantcardsDTON
 import LoyaltyMerchantcardsProductWithReceiptModel from './model/LoyaltyMerchantcardsProductWithReceiptModel';
 import ReceiptTypeValue from './model/ReceiptTypeValue';
 import SmartTransactionsMerchant from './model/SmartTransactionsMerchant';
-import DefaultApi from './api/DefaultApi';
 import DocumentUploadsApi from './api/DocumentUploadsApi';
 import GeneralMerchantsApi from './api/GeneralMerchantsApi';
 import GeneralStoresApi from './api/GeneralStoresApi';
@@ -384,6 +391,12 @@ export {
      * @property {module:model/GeoAddress}
      */
     GeoAddress,
+
+    /**
+     * The GeoAddressGeometry model constructor.
+     * @property {module:model/GeoAddressGeometry}
+     */
+    GeoAddressGeometry,
 
     /**
      * The InvitedBy model constructor.
@@ -644,6 +657,24 @@ export {
     PaymentContractsDTO,
 
     /**
+     * The PaymentContractsDTOClone model constructor.
+     * @property {module:model/PaymentContractsDTOClone}
+     */
+    PaymentContractsDTOClone,
+
+    /**
+     * The PaymentContractsDTOIFrameOpts model constructor.
+     * @property {module:model/PaymentContractsDTOIFrameOpts}
+     */
+    PaymentContractsDTOIFrameOpts,
+
+    /**
+     * The PaymentContractsDTORequestId model constructor.
+     * @property {module:model/PaymentContractsDTORequestId}
+     */
+    PaymentContractsDTORequestId,
+
+    /**
      * The PaymentContractsList model constructor.
      * @property {module:model/PaymentContractsList}
      */
@@ -660,12 +691,6 @@ export {
      * @property {module:model/PaymentContractsRequestIdResult}
      */
     PaymentContractsRequestIdResult,
-
-    /**
-     * The PaymentContractsRequestIdResultPayingAccount model constructor.
-     * @property {module:model/PaymentContractsRequestIdResultPayingAccount}
-     */
-    PaymentContractsRequestIdResultPayingAccount,
 
     /**
      * The PaymentCustomersDTO model constructor.
@@ -800,6 +825,18 @@ export {
     SecupayBasketItem,
 
     /**
+     * The SecupayTransactionCancelDTO model constructor.
+     * @property {module:model/SecupayTransactionCancelDTO}
+     */
+    SecupayTransactionCancelDTO,
+
+    /**
+     * The SecupayTransactionCaptureDTO model constructor.
+     * @property {module:model/SecupayTransactionCaptureDTO}
+     */
+    SecupayTransactionCaptureDTO,
+
+    /**
      * The SecupayTransactionDTOExternalInvoicePdf model constructor.
      * @property {module:model/SecupayTransactionDTOExternalInvoicePdf}
      */
@@ -870,6 +907,24 @@ export {
      * @property {module:model/SecupayTransactionProductModelUsedPaymentInstrument}
      */
     SecupayTransactionProductModelUsedPaymentInstrument,
+
+    /**
+     * The SecupayTransactionReverseAccrualDTO model constructor.
+     * @property {module:model/SecupayTransactionReverseAccrualDTO}
+     */
+    SecupayTransactionReverseAccrualDTO,
+
+    /**
+     * The SecupayTransactionSetShippingInformationDTO model constructor.
+     * @property {module:model/SecupayTransactionSetShippingInformationDTO}
+     */
+    SecupayTransactionSetShippingInformationDTO,
+
+    /**
+     * The SecupayTransactionUpdateBasketDTO model constructor.
+     * @property {module:model/SecupayTransactionUpdateBasketDTO}
+     */
+    SecupayTransactionUpdateBasketDTO,
 
     /**
      * The SmartDeviceProductsEnabled model constructor.
@@ -1080,12 +1135,6 @@ export {
      * @property {module:model/SmartTransactionsMerchant}
      */
     SmartTransactionsMerchant,
-
-    /**
-    * The DefaultApi service constructor.
-    * @property {module:api/DefaultApi}
-    */
-    DefaultApi,
 
     /**
     * The DocumentUploadsApi service constructor.

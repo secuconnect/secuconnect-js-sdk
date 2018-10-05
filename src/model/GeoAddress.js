@@ -1,6 +1,7 @@
 
 import ApiClient from '../ApiClient';
 import AddressComponents from './AddressComponents';
+import GeoAddressGeometry from './GeoAddressGeometry';
 
 
 
@@ -53,7 +54,7 @@ export default class GeoAddress {
                 obj['address_formatted'] = ApiClient.convertToType(data['address_formatted'], 'String');
             }
             if (data.hasOwnProperty('geometry')) {
-                obj['geometry'] = ApiClient.convertToType(data['geometry'], 'String');
+                obj['geometry'] = GeoAddressGeometry.constructFromObject(data['geometry']);
             }
         }
         return obj;
@@ -75,8 +76,7 @@ export default class GeoAddress {
     */
     address_formatted = undefined;
     /**
-    * Geometry
-    * @member {String} geometry
+    * @member {module:model/GeoAddressGeometry} geometry
     */
     geometry = undefined;
 

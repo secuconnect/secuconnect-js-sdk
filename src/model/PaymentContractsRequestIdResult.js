@@ -1,7 +1,7 @@
 
 import ApiClient from '../ApiClient';
 import PaymentContractsProductModel from './PaymentContractsProductModel';
-import PaymentContractsRequestIdResultPayingAccount from './PaymentContractsRequestIdResultPayingAccount';
+import PaymentInformation from './PaymentInformation';
 
 
 
@@ -50,8 +50,8 @@ export default class PaymentContractsRequestIdResult {
             if (data.hasOwnProperty('apikey')) {
                 obj['apikey'] = ApiClient.convertToType(data['apikey'], 'String');
             }
-            if (data.hasOwnProperty('paying_account')) {
-                obj['paying_account'] = PaymentContractsRequestIdResultPayingAccount.constructFromObject(data['paying_account']);
+            if (data.hasOwnProperty('payin_account')) {
+                obj['payin_account'] = PaymentInformation.constructFromObject(data['payin_account']);
             }
         }
         return obj;
@@ -68,9 +68,10 @@ export default class PaymentContractsRequestIdResult {
     */
     apikey = undefined;
     /**
-    * @member {module:model/PaymentContractsRequestIdResultPayingAccount} paying_account
+    * The bank account you can use for pay in.
+    * @member {module:model/PaymentInformation} payin_account
     */
-    paying_account = undefined;
+    payin_account = undefined;
 
 
 

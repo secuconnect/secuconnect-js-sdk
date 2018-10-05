@@ -74,7 +74,7 @@ export default class Contact {
                 obj['fax'] = ApiClient.convertToType(data['fax'], 'String');
             }
             if (data.hasOwnProperty('dob')) {
-                obj['dob'] = ApiClient.convertToType(data['dob'], 'Date');
+                obj['dob'] = ApiClient.convertToType(data['dob'], 'String');
             }
             if (data.hasOwnProperty('picture')) {
                 obj['picture'] = ApiClient.convertToType(data['picture'], 'String');
@@ -147,7 +147,7 @@ export default class Contact {
     fax = undefined;
     /**
     * Date of birth
-    * @member {Date} dob
+    * @member {String} dob
     */
     dob = undefined;
     /**

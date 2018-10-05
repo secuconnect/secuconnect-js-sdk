@@ -79,6 +79,12 @@ export default class SecupayBasketItem {
             if (data.hasOwnProperty('contract_id')) {
                 obj['contract_id'] = ApiClient.convertToType(data['contract_id'], 'String');
             }
+            if (data.hasOwnProperty('reference_id')) {
+                obj['reference_id'] = ApiClient.convertToType(data['reference_id'], 'String');
+            }
+            if (data.hasOwnProperty('sub_basket')) {
+                obj['sub_basket'] = ApiClient.convertToType(data['sub_basket'], [SecupayBasketItem]);
+            }
         }
         return obj;
     }
@@ -86,10 +92,11 @@ export default class SecupayBasketItem {
     /**
     * Category of item
     * @member {String} item_type
+    * @default 'article'
     */
-    item_type = undefined;
+    item_type = 'article';
     /**
-    * Article number, if item is of article category
+    * Article number of item
     * @member {String} article_number
     */
     article_number = undefined;
@@ -143,6 +150,16 @@ export default class SecupayBasketItem {
     * @member {String} contract_id
     */
     contract_id = undefined;
+    /**
+    * Reference id - must be unique for the entire basket
+    * @member {String} reference_id
+    */
+    reference_id = undefined;
+    /**
+    * Mixed-Basket: All basket items for one merchant.
+    * @member {Array.<module:model/SecupayBasketItem>} sub_basket
+    */
+    sub_basket = undefined;
 
 
 
