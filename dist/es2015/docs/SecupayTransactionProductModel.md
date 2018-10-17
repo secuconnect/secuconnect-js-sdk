@@ -22,5 +22,6 @@ Name | Type | Description | Notes
 **redirectUrl** | [**SecupayTransactionProductModelRedirectUrl**](SecupayTransactionProductModelRedirectUrl.md) |  | [optional] 
 **iframeUrl** | **String** | The url of the payment checkout iframe | [optional] 
 **container** | [**PaymentContainersProductModel**](PaymentContainersProductModel.md) | The container object | [optional] 
+**subTransactions** | [**[SecupaySubTransactionProductModel]**](SecupaySubTransactionProductModel.md) | A list of sub-transactions (for mixed basket) | [optional] 
 
 

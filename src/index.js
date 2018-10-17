@@ -102,6 +102,7 @@ import ProductInstanceUID from './model/ProductInstanceUID';
 import ReceiptType from './model/ReceiptType';
 import ReceiptValue from './model/ReceiptValue';
 import SecupayBasketItem from './model/SecupayBasketItem';
+import SecupaySubTransactionProductModel from './model/SecupaySubTransactionProductModel';
 import SecupayTransactionCancelDTO from './model/SecupayTransactionCancelDTO';
 import SecupayTransactionCaptureDTO from './model/SecupayTransactionCaptureDTO';
 import SecupayTransactionDTOExternalInvoicePdf from './model/SecupayTransactionDTOExternalInvoicePdf';
@@ -174,7 +175,15 @@ import PaymentTransactionsApi from './api/PaymentTransactionsApi';
 import PrepaidItemsApi from './api/PrepaidItemsApi';
 import SmartDevicesApi from './api/SmartDevicesApi';
 import SmartTransactionsApi from './api/SmartTransactionsApi';
-
+import StompClient from './stomp/StompClient';
+import StompSmartTransactionsApi from './stomp/api/StompSmartTransactionsApi';
+import Environments from './stomp/StompGlobals';
+import FrameCommands from './stomp/StompGlobals';
+import Frame from './stomp/frame/Frame';
+import Stomp from './stomp/main/Stomp';
+import BrowserSocket from './stomp/socket/BrowserSocket';
+import NodeSocket from './stomp/socket/NodeSocket';
+import SocketProvider from './stomp/socket/SocketProvider';
 
 /**
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
@@ -825,6 +834,12 @@ export {
     SecupayBasketItem,
 
     /**
+     * The SecupaySubTransactionProductModel model constructor.
+     * @property {module:model/SecupaySubTransactionProductModel}
+     */
+    SecupaySubTransactionProductModel,
+
+    /**
      * The SecupayTransactionCancelDTO model constructor.
      * @property {module:model/SecupayTransactionCancelDTO}
      */
@@ -1065,6 +1080,12 @@ export {
     SmartTransactionsList,
 
     /**
+     * The SmartTransactionsMerchant model constructor.
+     * @property {module:model/SmartTransactionsMerchant}
+     */
+    SmartTransactionsMerchant,
+
+    /**
      * The SmartTransactionsPickupOptions model constructor.
      * @property {module:model/SmartTransactionsPickupOptions}
      */
@@ -1129,12 +1150,6 @@ export {
      * @property {module:model/ReceiptTypeValue}
      */
     ReceiptTypeValue,
-
-    /**
-     * The SmartTransactionsMerchant model constructor.
-     * @property {module:model/SmartTransactionsMerchant}
-     */
-    SmartTransactionsMerchant,
 
     /**
     * The DocumentUploadsApi service constructor.
@@ -1254,5 +1269,15 @@ export {
     * The SmartTransactionsApi service constructor.
     * @property {module:api/SmartTransactionsApi}
     */
-    SmartTransactionsApi
+    SmartTransactionsApi,
+
+    StompClient,
+    StompSmartTransactionsApi,
+    Environments,
+    FrameCommands,
+    Frame,
+    Stomp,
+    BrowserSocket,
+    NodeSocket,
+    SocketProvider
 };

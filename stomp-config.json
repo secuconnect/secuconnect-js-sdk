@@ -1,0 +1,16 @@
+{
+  "host": "connect-testing.secupay-ag.de",
+  "node_env": {
+    "port": "61614", 
+    "vhost": "" 
+  },
+  "browser_env": {
+    "port": "15671", 
+    "vhost": "/stomp/websocket"
+  },
+  "headers": {
+    "content_type": "application/json",
+    "reply_to": "/temp-queue/main",
+    "ack": "client-individual"
+  }
+}

@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -6,11 +6,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _events = require('events');
+var _events = require("events");
 
-var _Frame = require('../frame/Frame');
+var _Frame = require("../frame/Frame");
 
 var _Frame2 = _interopRequireDefault(_Frame);
+
+var _StompGlobals = require("../StompGlobals");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38,7 +40,7 @@ var Stomp = function (_EventEmitter) {
     }
 
     _createClass(Stomp, [{
-        key: 'connect',
+        key: "connect",
         value: function connect() {
             var _this2 = this;
 
@@ -79,7 +81,7 @@ var Stomp = function (_EventEmitter) {
             this.socket.connect();
         }
     }, {
-        key: 'send',
+        key: "send",
         value: function send(command, headers, body, want_receipt) {
             var frame = new _Frame2.default(command, headers, body, want_receipt);
 
@@ -90,7 +92,7 @@ var Stomp = function (_EventEmitter) {
             }
         }
     }, {
-        key: 'disconnect',
+        key: "disconnect",
         value: function disconnect() {
             this.socket.end();
 
@@ -101,23 +103,23 @@ var Stomp = function (_EventEmitter) {
             console.log('disconnect called');
         }
     }, {
-        key: 'handleFrame',
+        key: "handleFrame",
         value: function handleFrame(frame) {
             switch (frame.command) {
-                case "MESSAGE":
+                case _StompGlobals.StompFrameCommands.MESSAGE:
                     console.log('Recived message from broker');
                     this.emit('message', frame);
                     break;
-                case "RECEIPT":
+                case _StompGlobals.StompFrameCommands.RECEIPT:
                     console.log('Received receipt');
                     this.emit('receipt', frame);
                     break;
-                case "CONNECTED":
+                case _StompGlobals.StompFrameCommands.CONNECTED:
                     console.log('Connected to Stomp broker');
                     this.session = frame.headers['session'];
                     this.emit('connected', frame);
                     break;
-                case "ERROR":
+                case _StompGlobals.StompFrameCommands.ERROR:
                     console.warn('Received error message');
                     this.emit('error', frame);
                     break;

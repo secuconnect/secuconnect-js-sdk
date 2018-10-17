@@ -1,186 +1,3 @@
-var ApiClient;
-var DocumentUploadsApi;
-var GeneralMerchantsApi;
-var GeneralStoresApi;
-var LoyaltyCardgroupsApi;
-var LoyaltyCardsApi;
-var LoyaltyCustomersApi;
-var LoyaltyMerchantcardsApi;
-var LoyaltySalesApi;
-var LoyaltyStoregroupsApi;
-var PaymentContainersApi;
-var PaymentContractsApi;
-var PaymentCustomersApi;
-var PaymentSecupayCreditcardsApi;
-var PaymentSecupayDebitsApi;
-var PaymentSecupayInvoicesApi;
-var PaymentSecupayPrepaysApi;
-var PaymentTransactionsApi;
-var PrepaidItemsApi;
-var SmartDevicesApi;
-var SmartTransactionsApi;
-var AuthenticationCredentials;
-var Authenticator;
-var OAuthApplicationUserCredentials;
-var OAuthClientCredentials;
-var OAuthDeviceCredentials;
-var SDKCache;
-var Address;
-var AddressComponents;
-var AssignedBy;
-var BankAccountDescriptor;
-var Contact;
-var DayTime;
-var DocumentUploadsBaseProductModel;
-var DocumentUploadsDTOContent;
-var DocumentUploadsProductModel;
-var GeneralMerchantsCheckoutOptions;
-var GeneralMerchantsCheckoutOptionsCollection;
-var GeneralMerchantsCheckoutOptionsCollectionSmartDevices;
-var GeneralMerchantsCheckoutOptionsShipping;
-var GeneralMerchantsDTO;
-var GeneralMerchantsLegalDetails;
-var GeneralMerchantsList;
-var GeneralMerchantsProductModel;
-var GeneralMerchantsUrls;
-var GeneralMerchantsUser;
-var GeneralStoresDTO;
-var GeneralStoresDTOReason;
-var GeneralStoresDTOType;
-var GeneralStoresList;
-var GeneralStoresProductModel;
-var GeoAddress;
-var GeoAddressGeometry;
-var InvitedBy;
-var ItemGroup;
-var LoyaltyCardgroupsDTO;
-var LoyaltyCardgroupsDTOCheckPasscodeEnabled;
-var LoyaltyCardgroupsDTOMerchant;
-var LoyaltyCardgroupsList;
-var LoyaltyCardgroupsProductModel;
-var LoyaltyCardsDTOAccount;
-var LoyaltyCardsList;
-var LoyaltyCardsProductModel;
-var LoyaltyCustomersContactDTO;
-var LoyaltyCustomersDTO;
-var LoyaltyCustomersList;
-var LoyaltyCustomersPaymentContainerModel;
-var LoyaltyCustomersProductModel;
-var LoyaltyCustomersRemoved;
-var LoyaltyDTOMerchant;
-var LoyaltyDTOStore;
-var LoyaltyMerchantcardsDTO;
-var LoyaltyMerchantcardsDTOCardsAmount;
-var LoyaltyMerchantcardsDTOCheckPasscode;
-var LoyaltyMerchantcardsDTOCsc;
-var LoyaltyMerchantcardsDTOLock;
-var LoyaltyMerchantcardsDTONewPasscode;
-var LoyaltyMerchantcardsDTOPaymentContainer;
-var LoyaltyMerchantcardsDTOResetPasscode;
-var LoyaltyMerchantcardsDTOTransaction;
-var LoyaltyMerchantcardsDTOValidateMerchantCard;
-var LoyaltyMerchantcardsList;
-var LoyaltyMerchantcardsProductModel;
-var LoyaltyMerchantcardsProductWithReceiptModel;
-var LoyaltyMerchantcardsValidateMerchantCard;
-var LoyaltyStoregroupsDTO;
-var LoyaltyStoregroupsDTOStoresAddressComponents;
-var LoyaltyStoregroupsList;
-var LoyaltyStoregroupsProductModel;
-var OpenHours;
-var ParentModel;
-var PaymentContainerMandate;
-var PaymentContainersDTO;
-var PaymentContainersDTOCustomer;
-var PaymentContainersDTOPrivate;
-var PaymentContainersList;
-var PaymentContainersProductModel;
-var PaymentContractsDTO;
-var PaymentContractsDTOClone;
-var PaymentContractsDTOIFrameOpts;
-var PaymentContractsDTORequestId;
-var PaymentContractsList;
-var PaymentContractsProductModel;
-var PaymentContractsRequestIdResult;
-var PaymentCustomersDTO;
-var PaymentCustomersList;
-var PaymentCustomersProductModel;
-var PaymentInformation;
-var PaymentTransactionsCancelList;
-var PaymentTransactionsList;
-var PaymentTransactionsProductModel;
-var PaymentTransactionsProductModelCustomer;
-var PaymentTransactionsProductModelDetails;
-var PaymentTransactionsProductModelMerchant;
-var PaymentTransactionsShippingUrl;
-var PrepaidItemsList;
-var PrepaidItemsProductModel;
-var PrepaidSalesItem;
-var PrepaidSalesProductModel;
-var PrepaidSalesSmartDevice;
-var ProductExceptionPayload;
-var ProductInstanceID;
-var ProductInstanceUID;
-var ReceiptType;
-var ReceiptTypeValue;
-var ReceiptValue;
-var SecupayBasketItem;
-var SecupaySubTransactionProductModel;
-var SecupayTransactionCancelDTO;
-var SecupayTransactionCaptureDTO;
-var SecupayTransactionDTOExternalInvoicePdf;
-var SecupayTransactionExternalInvoicePdf;
-var SecupayTransactionExternalInvoicePdfDocument;
-var SecupayTransactionProductDTO;
-var SecupayTransactionProductDTOExperience;
-var SecupayTransactionProductDTOOptData;
-var SecupayTransactionProductDTORedirectUrl;
-var SecupayTransactionProductDTOSubscription;
-var SecupayTransactionProductModel;
-var SecupayTransactionProductModelRedirectUrl;
-var SecupayTransactionProductModelTransferAccount;
-var SecupayTransactionProductModelUsedPaymentInstrument;
-var SecupayTransactionReverseAccrualDTO;
-var SecupayTransactionSetShippingInformationDTO;
-var SecupayTransactionUpdateBasketDTO;
-var SmartDeviceProductsEnabled;
-var SmartDeviceProductsPrepaid;
-var SmartDevicesDTO;
-var SmartDevicesDTOPrepaidTid;
-var SmartDevicesDTOSecubaseConfig;
-var SmartDevicesDevice;
-var SmartDevicesList;
-var SmartDevicesList1;
-var SmartDevicesProductModel;
-var SmartDevicesProducts;
-var SmartDevicesSecubaseConfig;
-var SmartDevicesSecubaseConfigLogging;
-var SmartDevicesSecubaseConfigLoggingFileNet;
-var SmartTransactionsBasket;
-var SmartTransactionsBasketInfo;
-var SmartTransactionsBasketProduct;
-var SmartTransactionsBasketProductGroup;
-var SmartTransactionsBasketText;
-var SmartTransactionsBonusProducts;
-var SmartTransactionsCheckin;
-var SmartTransactionsDTO;
-var SmartTransactionsIdent;
-var SmartTransactionsList;
-var SmartTransactionsMerchant;
-var SmartTransactionsPickupOptions;
-var SmartTransactionsPreTransactionModel;
-var SmartTransactionsProductModel;
-var SmartTransactionsReceipt;
-var SmartTransactionsReceiptValue;
-var Store;
-var VirtualTerminalData;
-var StompClient;
-var StompSmartTransactionsApi;
-var Frame;
-var BrowserSocket;
-var NodeSocket;
-var SocketProvider;
-
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 
 },{}],2:[function(require,module,exports){
@@ -5294,7 +5111,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * @class
  * @module ApiClient
  */
-ApiClient = function () {
+var ApiClient = function () {
     function ApiClient() {
         _classCallCheck(this, ApiClient);
 
@@ -5588,9 +5405,9 @@ ApiClient = function () {
                             break;
                         case 'oauth2':
                             if (auth.accessToken) {
-                                // return auth.accessToken.then(function (token) {
-                                    request.set({ 'Authorization': 'Bearer ' + auth.accessToken });
-                                // });
+                                return auth.accessToken.then(function (token) {
+                                    request.set({ 'Authorization': 'Bearer ' + token.access_token });
+                                });
                             }
 
                             break;
@@ -5942,7 +5759,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * DocumentUploads service.
 * @module api/DocumentUploadsApi
 */
-DocumentUploadsApi = function () {
+var DocumentUploadsApi = function () {
 
   /**
   * Constructs a new DocumentUploadsApi. 
@@ -6092,7 +5909,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * GeneralMerchants service.
 * @module api/GeneralMerchantsApi
 */
-GeneralMerchantsApi = function () {
+var GeneralMerchantsApi = function () {
 
   /**
   * Constructs a new GeneralMerchantsApi. 
@@ -6316,7 +6133,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * GeneralStores service.
 * @module api/GeneralStoresApi
 */
-GeneralStoresApi = function () {
+var GeneralStoresApi = function () {
 
   /**
   * Constructs a new GeneralStoresApi. 
@@ -6742,7 +6559,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * LoyaltyCardgroups service.
 * @module api/LoyaltyCardgroupsApi
 */
-LoyaltyCardgroupsApi = function () {
+var LoyaltyCardgroupsApi = function () {
 
   /**
   * Constructs a new LoyaltyCardgroupsApi. 
@@ -7051,7 +6868,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * LoyaltyCards service.
 * @module api/LoyaltyCardsApi
 */
-LoyaltyCardsApi = function () {
+var LoyaltyCardsApi = function () {
 
   /**
   * Constructs a new LoyaltyCardsApi. 
@@ -7332,7 +7149,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * LoyaltyCustomers service.
 * @module api/LoyaltyCustomersApi
 */
-LoyaltyCustomersApi = function () {
+var LoyaltyCustomersApi = function () {
 
   /**
   * Constructs a new LoyaltyCustomersApi. 
@@ -7845,7 +7662,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * LoyaltyMerchantcards service.
 * @module api/LoyaltyMerchantcardsApi
 */
-LoyaltyMerchantcardsApi = function () {
+var LoyaltyMerchantcardsApi = function () {
 
   /**
   * Constructs a new LoyaltyMerchantcardsApi. 
@@ -8960,7 +8777,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * LoyaltySales service.
 * @module api/LoyaltySalesApi
 */
-LoyaltySalesApi = function () {
+var LoyaltySalesApi = function () {
 
   /**
   * Constructs a new LoyaltySalesApi. 
@@ -9112,7 +8929,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * LoyaltyStoregroups service.
 * @module api/LoyaltyStoregroupsApi
 */
-LoyaltyStoregroupsApi = function () {
+var LoyaltyStoregroupsApi = function () {
 
   /**
   * Constructs a new LoyaltyStoregroupsApi. 
@@ -9420,7 +9237,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * PaymentContainers service.
 * @module api/PaymentContainersApi
 */
-PaymentContainersApi = function () {
+var PaymentContainersApi = function () {
 
   /**
   * Constructs a new PaymentContainersApi. 
@@ -9850,7 +9667,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * PaymentContracts service.
 * @module api/PaymentContractsApi
 */
-PaymentContractsApi = function () {
+var PaymentContractsApi = function () {
 
   /**
   * Constructs a new PaymentContractsApi. 
@@ -10313,7 +10130,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * PaymentCustomers service.
 * @module api/PaymentCustomersApi
 */
-PaymentCustomersApi = function () {
+var PaymentCustomersApi = function () {
 
   /**
   * Constructs a new PaymentCustomersApi. 
@@ -10645,7 +10462,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * PaymentSecupayCreditcards service.
 * @module api/PaymentSecupayCreditcardsApi
 */
-PaymentSecupayCreditcardsApi = function () {
+var PaymentSecupayCreditcardsApi = function () {
 
   /**
   * Constructs a new PaymentSecupayCreditcardsApi. 
@@ -11240,7 +11057,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * PaymentSecupayDebits service.
 * @module api/PaymentSecupayDebitsApi
 */
-PaymentSecupayDebitsApi = function () {
+var PaymentSecupayDebitsApi = function () {
 
   /**
   * Constructs a new PaymentSecupayDebitsApi. 
@@ -11835,7 +11652,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * PaymentSecupayInvoices service.
 * @module api/PaymentSecupayInvoicesApi
 */
-PaymentSecupayInvoicesApi = function () {
+var PaymentSecupayInvoicesApi = function () {
 
   /**
   * Constructs a new PaymentSecupayInvoicesApi. 
@@ -12430,7 +12247,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * PaymentSecupayPrepays service.
 * @module api/PaymentSecupayPrepaysApi
 */
-PaymentSecupayPrepaysApi = function () {
+var PaymentSecupayPrepaysApi = function () {
 
   /**
   * Constructs a new PaymentSecupayPrepaysApi. 
@@ -13005,7 +12822,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * PaymentTransactions service.
 * @module api/PaymentTransactionsApi
 */
-PaymentTransactionsApi = function () {
+var PaymentTransactionsApi = function () {
 
   /**
   * Constructs a new PaymentTransactionsApi. 
@@ -13253,7 +13070,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * PrepaidItems service.
 * @module api/PrepaidItemsApi
 */
-PrepaidItemsApi = function () {
+var PrepaidItemsApi = function () {
 
   /**
   * Constructs a new PrepaidItemsApi. 
@@ -13431,7 +13248,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * SmartDevices service.
 * @module api/SmartDevicesApi
 */
-SmartDevicesApi = function () {
+var SmartDevicesApi = function () {
 
   /**
   * Constructs a new SmartDevicesApi. 
@@ -13906,7 +13723,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * SmartTransactions service.
 * @module api/SmartTransactionsApi
 */
-SmartTransactionsApi = function () {
+var SmartTransactionsApi = function () {
 
   /**
   * Constructs a new SmartTransactionsApi. 
@@ -14431,7 +14248,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-AuthenticationCredentials = function () {
+var AuthenticationCredentials = function () {
     function AuthenticationCredentials() {
         _classCallCheck(this, AuthenticationCredentials);
     }
@@ -14474,7 +14291,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * Authenticator service.
  * @module authentication/Authenticator
  */
-Authenticator = function () {
+var Authenticator = function () {
   function Authenticator(credentials, apiClient) {
     _classCallCheck(this, Authenticator);
 
@@ -14485,20 +14302,33 @@ Authenticator = function () {
   _createClass(Authenticator, [{
     key: 'getToken',
     value: function getToken() {
-          this.apiClient.basePath = 'https://connect-testing.secupay-ag.de/';
-          return this.apiClient.callApi('oauth/token', //path
+      var _this = this;
+
+      return this.apiClient.cachePool.exists(this.credentials.getUniqueKey()).then(function (exists) {
+        if (exists) {
+          return _this.apiClient.cachePool.getItem(_this.credentials.getUniqueKey());
+        } else {
+          _this.apiClient.basePath = 'https://connect-testing.secupay-ag.de/';
+          return _this.apiClient.callApi('oauth/token', //path
           'POST', //httpMethod
           {}, //pathParams
           {}, //queryParams
           { 'Content-Type': 'application/json' }, //headerParams
           {}, //formParams
-          this.credentials.getCredentials(), //bodyParam
+          _this.credentials.getCredentials(), //bodyParam
           [], //authNames
           [], //contentTypes
           [] //accepts
           //returnType
           ).then(function (response) {
             return response.response.body;
+          }).then(function (value) {
+            _this.apiClient.cachePool.setItem(_this.credentials.getUniqueKey(), value);
+            return value;
+          }).catch(function (err) {
+            console.log(err);
+          });
+        }
       }).catch(function (err) {
         console.log(err);
       });
@@ -14539,7 +14369,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * @module authentication/OAuthApplicationUserCredentials
  */
 
-OAuthApplicationUserCredentials = function (_AuthenticationCreden) {
+var OAuthApplicationUserCredentials = function (_AuthenticationCreden) {
     _inherits(OAuthApplicationUserCredentials, _AuthenticationCreden);
 
     function OAuthApplicationUserCredentials() {
@@ -14605,7 +14435,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * @module authentication/OAuthClientCredentials
  */
 
-OAuthClientCredentials = function (_AuthenticationCreden) {
+var OAuthClientCredentials = function (_AuthenticationCreden) {
     _inherits(OAuthClientCredentials, _AuthenticationCreden);
 
     function OAuthClientCredentials() {
@@ -14667,7 +14497,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * @module authentication/OAuthDeviceCredentials
  */
 
-OAuthDeviceCredentials = function (_AuthenticationCreden) {
+var OAuthDeviceCredentials = function (_AuthenticationCreden) {
     _inherits(OAuthDeviceCredentials, _AuthenticationCreden);
 
     function OAuthDeviceCredentials() {
@@ -14843,7 +14673,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-SDKCache = function () {
+var SDKCache = function () {
   function SDKCache() {
     _classCallCheck(this, SDKCache);
   }
@@ -15871,7 +15701,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The Address model module.
 * @module model/Address
 */
-Address = function () {
+var Address = function () {
     /**
     * Constructs a new <code>Address</code>.
     * Address
@@ -15984,7 +15814,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The AddressComponents model module.
 * @module model/AddressComponents
 */
-AddressComponents = function () {
+var AddressComponents = function () {
     /**
     * Constructs a new <code>AddressComponents</code>.
     * @alias module:model/AddressComponents
@@ -16069,7 +15899,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The AssignedBy model module.
 * @module model/AssignedBy
 */
-AssignedBy = function () {
+var AssignedBy = function () {
     /**
     * Constructs a new <code>AssignedBy</code>.
     * @alias module:model/AssignedBy
@@ -16154,7 +15984,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The BankAccountDescriptor model module.
 * @module model/BankAccountDescriptor
 */
-BankAccountDescriptor = function () {
+var BankAccountDescriptor = function () {
     /**
     * Constructs a new <code>BankAccountDescriptor</code>.
     * Bank account data like owner, iban, bic and bank name
@@ -16253,7 +16083,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The Contact model module.
 * @module model/Contact
 */
-Contact = function () {
+var Contact = function () {
     /**
     * Constructs a new <code>Contact</code>.
     * @alias module:model/Contact
@@ -16455,7 +16285,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The DayTime model module.
 * @module model/DayTime
 */
-DayTime = function () {
+var DayTime = function () {
     /**
     * Constructs a new <code>DayTime</code>.
     * Day and time
@@ -16532,7 +16362,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The DocumentUploadsBaseProductModel model module.
 * @module model/DocumentUploadsBaseProductModel
 */
-DocumentUploadsBaseProductModel = function () {
+var DocumentUploadsBaseProductModel = function () {
     /**
     * Constructs a new <code>DocumentUploadsBaseProductModel</code>.
     * @alias module:model/DocumentUploadsBaseProductModel
@@ -16617,7 +16447,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The DocumentUploadsDTOContent model module.
 * @module model/DocumentUploadsDTOContent
 */
-DocumentUploadsDTOContent = function () {
+var DocumentUploadsDTOContent = function () {
     /**
     * Constructs a new <code>DocumentUploadsDTOContent</code>.
     * @alias module:model/DocumentUploadsDTOContent
@@ -16688,7 +16518,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The DocumentUploadsProductModel model module.
 * @module model/DocumentUploadsProductModel
 */
-DocumentUploadsProductModel = function () {
+var DocumentUploadsProductModel = function () {
     /**
     * Constructs a new <code>DocumentUploadsProductModel</code>.
     * @alias module:model/DocumentUploadsProductModel
@@ -16807,7 +16637,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The GeneralMerchantsCheckoutOptions model module.
 * @module model/GeneralMerchantsCheckoutOptions
 */
-GeneralMerchantsCheckoutOptions = function () {
+var GeneralMerchantsCheckoutOptions = function () {
     /**
     * Constructs a new <code>GeneralMerchantsCheckoutOptions</code>.
     * @alias module:model/GeneralMerchantsCheckoutOptions
@@ -16896,7 +16726,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The GeneralMerchantsCheckoutOptionsCollection model module.
 * @module model/GeneralMerchantsCheckoutOptionsCollection
 */
-GeneralMerchantsCheckoutOptionsCollection = function () {
+var GeneralMerchantsCheckoutOptionsCollection = function () {
     /**
     * Constructs a new <code>GeneralMerchantsCheckoutOptionsCollection</code>.
     * @alias module:model/GeneralMerchantsCheckoutOptionsCollection
@@ -16976,7 +16806,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The GeneralMerchantsCheckoutOptionsCollectionSmartDevices model module.
 * @module model/GeneralMerchantsCheckoutOptionsCollectionSmartDevices
 */
-GeneralMerchantsCheckoutOptionsCollectionSmartDevices = function () {
+var GeneralMerchantsCheckoutOptionsCollectionSmartDevices = function () {
     /**
     * Constructs a new <code>GeneralMerchantsCheckoutOptionsCollectionSmartDevices</code>.
     * @alias module:model/GeneralMerchantsCheckoutOptionsCollectionSmartDevices
@@ -17070,7 +16900,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The GeneralMerchantsCheckoutOptionsShipping model module.
 * @module model/GeneralMerchantsCheckoutOptionsShipping
 */
-GeneralMerchantsCheckoutOptionsShipping = function () {
+var GeneralMerchantsCheckoutOptionsShipping = function () {
     /**
     * Constructs a new <code>GeneralMerchantsCheckoutOptionsShipping</code>.
     * @alias module:model/GeneralMerchantsCheckoutOptionsShipping
@@ -17149,7 +16979,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The GeneralMerchantsDTO model module.
 * @module model/GeneralMerchantsDTO
 */
-GeneralMerchantsDTO = function () {
+var GeneralMerchantsDTO = function () {
     /**
     * Constructs a new <code>GeneralMerchantsDTO</code>.
     * @alias module:model/GeneralMerchantsDTO
@@ -17234,7 +17064,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The GeneralMerchantsLegalDetails model module.
 * @module model/GeneralMerchantsLegalDetails
 */
-GeneralMerchantsLegalDetails = function () {
+var GeneralMerchantsLegalDetails = function () {
     /**
     * Constructs a new <code>GeneralMerchantsLegalDetails</code>.
     * @alias module:model/GeneralMerchantsLegalDetails
@@ -17332,7 +17162,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The GeneralMerchantsList model module.
 * @module model/GeneralMerchantsList
 */
-GeneralMerchantsList = function () {
+var GeneralMerchantsList = function () {
     /**
     * Constructs a new <code>GeneralMerchantsList</code>.
     * @alias module:model/GeneralMerchantsList
@@ -17436,7 +17266,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The GeneralMerchantsProductModel model module.
 * @module model/GeneralMerchantsProductModel
 */
-GeneralMerchantsProductModel = function () {
+var GeneralMerchantsProductModel = function () {
     /**
     * Constructs a new <code>GeneralMerchantsProductModel</code>.
     * @alias module:model/GeneralMerchantsProductModel
@@ -17593,7 +17423,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The GeneralMerchantsUrls model module.
 * @module model/GeneralMerchantsUrls
 */
-GeneralMerchantsUrls = function () {
+var GeneralMerchantsUrls = function () {
     /**
     * Constructs a new <code>GeneralMerchantsUrls</code>.
     * @alias module:model/GeneralMerchantsUrls
@@ -17673,7 +17503,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The GeneralMerchantsUser model module.
 * @module model/GeneralMerchantsUser
 */
-GeneralMerchantsUser = function () {
+var GeneralMerchantsUser = function () {
     /**
     * Constructs a new <code>GeneralMerchantsUser</code>.
     * @alias module:model/GeneralMerchantsUser
@@ -17784,7 +17614,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The GeneralStoresDTO model module.
 * @module model/GeneralStoresDTO
 */
-GeneralStoresDTO = function () {
+var GeneralStoresDTO = function () {
     /**
     * Constructs a new <code>GeneralStoresDTO</code>.
     * @alias module:model/GeneralStoresDTO
@@ -17905,7 +17735,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The GeneralStoresDTOReason model module.
 * @module model/GeneralStoresDTOReason
 */
-GeneralStoresDTOReason = function () {
+var GeneralStoresDTOReason = function () {
     /**
     * Constructs a new <code>GeneralStoresDTOReason</code>.
     * @alias module:model/GeneralStoresDTOReason
@@ -17972,7 +17802,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The GeneralStoresDTOType model module.
 * @module model/GeneralStoresDTOType
 */
-GeneralStoresDTOType = function () {
+var GeneralStoresDTOType = function () {
     /**
     * Constructs a new <code>GeneralStoresDTOType</code>.
     * @alias module:model/GeneralStoresDTOType
@@ -18043,7 +17873,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The GeneralStoresList model module.
 * @module model/GeneralStoresList
 */
-GeneralStoresList = function () {
+var GeneralStoresList = function () {
     /**
     * Constructs a new <code>GeneralStoresList</code>.
     * @alias module:model/GeneralStoresList
@@ -18139,7 +17969,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The GeneralStoresProductModel model module.
 * @module model/GeneralStoresProductModel
 */
-GeneralStoresProductModel = function () {
+var GeneralStoresProductModel = function () {
     /**
     * Constructs a new <code>GeneralStoresProductModel</code>.
     * @alias module:model/GeneralStoresProductModel
@@ -18448,7 +18278,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The GeoAddress model module.
 * @module model/GeoAddress
 */
-GeoAddress = function () {
+var GeoAddress = function () {
     /**
     * Constructs a new <code>GeoAddress</code>.
     * @alias module:model/GeoAddress
@@ -18541,7 +18371,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The GeoAddressGeometry model module.
 * @module model/GeoAddressGeometry
 */
-GeoAddressGeometry = function () {
+var GeoAddressGeometry = function () {
     /**
     * Constructs a new <code>GeoAddressGeometry</code>.
     * Geometry
@@ -18618,7 +18448,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The InvitedBy model module.
 * @module model/InvitedBy
 */
-InvitedBy = function () {
+var InvitedBy = function () {
     /**
     * Constructs a new <code>InvitedBy</code>.
     * @alias module:model/InvitedBy
@@ -18703,7 +18533,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The ItemGroup model module.
 * @module model/ItemGroup
 */
-ItemGroup = function () {
+var ItemGroup = function () {
     /**
     * Constructs a new <code>ItemGroup</code>.
     * @alias module:model/ItemGroup
@@ -18810,7 +18640,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyCardgroupsDTO model module.
 * @module model/LoyaltyCardgroupsDTO
 */
-LoyaltyCardgroupsDTO = function () {
+var LoyaltyCardgroupsDTO = function () {
     /**
     * Constructs a new <code>LoyaltyCardgroupsDTO</code>.
     * @alias module:model/LoyaltyCardgroupsDTO
@@ -18913,7 +18743,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyCardgroupsDTOCheckPasscodeEnabled model module.
 * @module model/LoyaltyCardgroupsDTOCheckPasscodeEnabled
 */
-LoyaltyCardgroupsDTOCheckPasscodeEnabled = function () {
+var LoyaltyCardgroupsDTOCheckPasscodeEnabled = function () {
     /**
     * Constructs a new <code>LoyaltyCardgroupsDTOCheckPasscodeEnabled</code>.
     * @alias module:model/LoyaltyCardgroupsDTOCheckPasscodeEnabled
@@ -18989,7 +18819,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyCardgroupsDTOMerchant model module.
 * @module model/LoyaltyCardgroupsDTOMerchant
 */
-LoyaltyCardgroupsDTOMerchant = function () {
+var LoyaltyCardgroupsDTOMerchant = function () {
     /**
     * Constructs a new <code>LoyaltyCardgroupsDTOMerchant</code>.
     * @alias module:model/LoyaltyCardgroupsDTOMerchant
@@ -19060,7 +18890,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyCardgroupsList model module.
 * @module model/LoyaltyCardgroupsList
 */
-LoyaltyCardgroupsList = function () {
+var LoyaltyCardgroupsList = function () {
     /**
     * Constructs a new <code>LoyaltyCardgroupsList</code>.
     * @alias module:model/LoyaltyCardgroupsList
@@ -19140,7 +18970,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyCardgroupsProductModel model module.
 * @module model/LoyaltyCardgroupsProductModel
 */
-LoyaltyCardgroupsProductModel = function () {
+var LoyaltyCardgroupsProductModel = function () {
     /**
     * Constructs a new <code>LoyaltyCardgroupsProductModel</code>.
     * @alias module:model/LoyaltyCardgroupsProductModel
@@ -19261,7 +19091,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyCardsDTOAccount model module.
 * @module model/LoyaltyCardsDTOAccount
 */
-LoyaltyCardsDTOAccount = function () {
+var LoyaltyCardsDTOAccount = function () {
     /**
     * Constructs a new <code>LoyaltyCardsDTOAccount</code>.
     * @alias module:model/LoyaltyCardsDTOAccount
@@ -19341,7 +19171,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyCardsList model module.
 * @module model/LoyaltyCardsList
 */
-LoyaltyCardsList = function () {
+var LoyaltyCardsList = function () {
     /**
     * Constructs a new <code>LoyaltyCardsList</code>.
     * @alias module:model/LoyaltyCardsList
@@ -19421,7 +19251,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyCardsProductModel model module.
 * @module model/LoyaltyCardsProductModel
 */
-LoyaltyCardsProductModel = function () {
+var LoyaltyCardsProductModel = function () {
     /**
     * Constructs a new <code>LoyaltyCardsProductModel</code>.
     * @alias module:model/LoyaltyCardsProductModel
@@ -19528,7 +19358,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyCustomersContactDTO model module.
 * @module model/LoyaltyCustomersContactDTO
 */
-LoyaltyCustomersContactDTO = function () {
+var LoyaltyCustomersContactDTO = function () {
     /**
     * Constructs a new <code>LoyaltyCustomersContactDTO</code>.
     * @alias module:model/LoyaltyCustomersContactDTO
@@ -19635,7 +19465,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyCustomersDTO model module.
 * @module model/LoyaltyCustomersDTO
 */
-LoyaltyCustomersDTO = function () {
+var LoyaltyCustomersDTO = function () {
     /**
     * Constructs a new <code>LoyaltyCustomersDTO</code>.
     * @alias module:model/LoyaltyCustomersDTO
@@ -19760,7 +19590,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyCustomersList model module.
 * @module model/LoyaltyCustomersList
 */
-LoyaltyCustomersList = function () {
+var LoyaltyCustomersList = function () {
     /**
     * Constructs a new <code>LoyaltyCustomersList</code>.
     * @alias module:model/LoyaltyCustomersList
@@ -19840,7 +19670,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyCustomersPaymentContainerModel model module.
 * @module model/LoyaltyCustomersPaymentContainerModel
 */
-LoyaltyCustomersPaymentContainerModel = function () {
+var LoyaltyCustomersPaymentContainerModel = function () {
     /**
     * Constructs a new <code>LoyaltyCustomersPaymentContainerModel</code>.
     * @alias module:model/LoyaltyCustomersPaymentContainerModel
@@ -19955,7 +19785,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyCustomersProductModel model module.
 * @module model/LoyaltyCustomersProductModel
 */
-LoyaltyCustomersProductModel = function () {
+var LoyaltyCustomersProductModel = function () {
     /**
     * Constructs a new <code>LoyaltyCustomersProductModel</code>.
     * @alias module:model/LoyaltyCustomersProductModel
@@ -20121,7 +19951,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyCustomersRemoved model module.
 * @module model/LoyaltyCustomersRemoved
 */
-LoyaltyCustomersRemoved = function () {
+var LoyaltyCustomersRemoved = function () {
     /**
     * Constructs a new <code>LoyaltyCustomersRemoved</code>.
     * @alias module:model/LoyaltyCustomersRemoved
@@ -20188,7 +20018,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyDTOMerchant model module.
 * @module model/LoyaltyDTOMerchant
 */
-LoyaltyDTOMerchant = function () {
+var LoyaltyDTOMerchant = function () {
     /**
     * Constructs a new <code>LoyaltyDTOMerchant</code>.
     * @alias module:model/LoyaltyDTOMerchant
@@ -20268,7 +20098,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyDTOStore model module.
 * @module model/LoyaltyDTOStore
 */
-LoyaltyDTOStore = function () {
+var LoyaltyDTOStore = function () {
     /**
     * Constructs a new <code>LoyaltyDTOStore</code>.
     * @alias module:model/LoyaltyDTOStore
@@ -20389,7 +20219,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyMerchantcardsDTO model module.
 * @module model/LoyaltyMerchantcardsDTO
 */
-LoyaltyMerchantcardsDTO = function () {
+var LoyaltyMerchantcardsDTO = function () {
     /**
     * Constructs a new <code>LoyaltyMerchantcardsDTO</code>.
     * @alias module:model/LoyaltyMerchantcardsDTO
@@ -20492,7 +20322,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyMerchantcardsDTOCardsAmount model module.
 * @module model/LoyaltyMerchantcardsDTOCardsAmount
 */
-LoyaltyMerchantcardsDTOCardsAmount = function () {
+var LoyaltyMerchantcardsDTOCardsAmount = function () {
     /**
     * Constructs a new <code>LoyaltyMerchantcardsDTOCardsAmount</code>.
     * @alias module:model/LoyaltyMerchantcardsDTOCardsAmount
@@ -20559,7 +20389,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyMerchantcardsDTOCheckPasscode model module.
 * @module model/LoyaltyMerchantcardsDTOCheckPasscode
 */
-LoyaltyMerchantcardsDTOCheckPasscode = function () {
+var LoyaltyMerchantcardsDTOCheckPasscode = function () {
     /**
     * Constructs a new <code>LoyaltyMerchantcardsDTOCheckPasscode</code>.
     * @alias module:model/LoyaltyMerchantcardsDTOCheckPasscode
@@ -20635,7 +20465,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyMerchantcardsDTOCsc model module.
 * @module model/LoyaltyMerchantcardsDTOCsc
 */
-LoyaltyMerchantcardsDTOCsc = function () {
+var LoyaltyMerchantcardsDTOCsc = function () {
     /**
     * Constructs a new <code>LoyaltyMerchantcardsDTOCsc</code>.
     * @alias module:model/LoyaltyMerchantcardsDTOCsc
@@ -20711,7 +20541,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyMerchantcardsDTOLock model module.
 * @module model/LoyaltyMerchantcardsDTOLock
 */
-LoyaltyMerchantcardsDTOLock = function () {
+var LoyaltyMerchantcardsDTOLock = function () {
     /**
     * Constructs a new <code>LoyaltyMerchantcardsDTOLock</code>.
     * @alias module:model/LoyaltyMerchantcardsDTOLock
@@ -20800,7 +20630,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyMerchantcardsDTONewPasscode model module.
 * @module model/LoyaltyMerchantcardsDTONewPasscode
 */
-LoyaltyMerchantcardsDTONewPasscode = function () {
+var LoyaltyMerchantcardsDTONewPasscode = function () {
     /**
     * Constructs a new <code>LoyaltyMerchantcardsDTONewPasscode</code>.
     * @alias module:model/LoyaltyMerchantcardsDTONewPasscode
@@ -20891,7 +20721,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyMerchantcardsDTOPaymentContainer model module.
 * @module model/LoyaltyMerchantcardsDTOPaymentContainer
 */
-LoyaltyMerchantcardsDTOPaymentContainer = function () {
+var LoyaltyMerchantcardsDTOPaymentContainer = function () {
     /**
     * Constructs a new <code>LoyaltyMerchantcardsDTOPaymentContainer</code>.
     * @alias module:model/LoyaltyMerchantcardsDTOPaymentContainer
@@ -20985,7 +20815,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyMerchantcardsDTOResetPasscode model module.
 * @module model/LoyaltyMerchantcardsDTOResetPasscode
 */
-LoyaltyMerchantcardsDTOResetPasscode = function () {
+var LoyaltyMerchantcardsDTOResetPasscode = function () {
     /**
     * Constructs a new <code>LoyaltyMerchantcardsDTOResetPasscode</code>.
     * @alias module:model/LoyaltyMerchantcardsDTOResetPasscode
@@ -21061,7 +20891,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyMerchantcardsDTOTransaction model module.
 * @module model/LoyaltyMerchantcardsDTOTransaction
 */
-LoyaltyMerchantcardsDTOTransaction = function () {
+var LoyaltyMerchantcardsDTOTransaction = function () {
     /**
     * Constructs a new <code>LoyaltyMerchantcardsDTOTransaction</code>.
     * @alias module:model/LoyaltyMerchantcardsDTOTransaction
@@ -21200,7 +21030,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyMerchantcardsDTOValidateMerchantCard model module.
 * @module model/LoyaltyMerchantcardsDTOValidateMerchantCard
 */
-LoyaltyMerchantcardsDTOValidateMerchantCard = function () {
+var LoyaltyMerchantcardsDTOValidateMerchantCard = function () {
     /**
     * Constructs a new <code>LoyaltyMerchantcardsDTOValidateMerchantCard</code>.
     * @alias module:model/LoyaltyMerchantcardsDTOValidateMerchantCard
@@ -21280,7 +21110,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyMerchantcardsList model module.
 * @module model/LoyaltyMerchantcardsList
 */
-LoyaltyMerchantcardsList = function () {
+var LoyaltyMerchantcardsList = function () {
     /**
     * Constructs a new <code>LoyaltyMerchantcardsList</code>.
     * @alias module:model/LoyaltyMerchantcardsList
@@ -21376,7 +21206,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyMerchantcardsProductModel model module.
 * @module model/LoyaltyMerchantcardsProductModel
 */
-LoyaltyMerchantcardsProductModel = function () {
+var LoyaltyMerchantcardsProductModel = function () {
     /**
     * Constructs a new <code>LoyaltyMerchantcardsProductModel</code>.
     * @alias module:model/LoyaltyMerchantcardsProductModel
@@ -21637,7 +21467,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyMerchantcardsProductWithReceiptModel model module.
 * @module model/LoyaltyMerchantcardsProductWithReceiptModel
 */
-LoyaltyMerchantcardsProductWithReceiptModel = function () {
+var LoyaltyMerchantcardsProductWithReceiptModel = function () {
     /**
     * Constructs a new <code>LoyaltyMerchantcardsProductWithReceiptModel</code>.
     * @alias module:model/LoyaltyMerchantcardsProductWithReceiptModel
@@ -21835,7 +21665,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyMerchantcardsValidateMerchantCard model module.
 * @module model/LoyaltyMerchantcardsValidateMerchantCard
 */
-LoyaltyMerchantcardsValidateMerchantCard = function () {
+var LoyaltyMerchantcardsValidateMerchantCard = function () {
     /**
     * Constructs a new <code>LoyaltyMerchantcardsValidateMerchantCard</code>.
     * @alias module:model/LoyaltyMerchantcardsValidateMerchantCard
@@ -21920,7 +21750,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyStoregroupsDTO model module.
 * @module model/LoyaltyStoregroupsDTO
 */
-LoyaltyStoregroupsDTO = function () {
+var LoyaltyStoregroupsDTO = function () {
     /**
     * Constructs a new <code>LoyaltyStoregroupsDTO</code>.
     * @alias module:model/LoyaltyStoregroupsDTO
@@ -22005,7 +21835,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyStoregroupsDTOStoresAddressComponents model module.
 * @module model/LoyaltyStoregroupsDTOStoresAddressComponents
 */
-LoyaltyStoregroupsDTOStoresAddressComponents = function () {
+var LoyaltyStoregroupsDTOStoresAddressComponents = function () {
     /**
     * Constructs a new <code>LoyaltyStoregroupsDTOStoresAddressComponents</code>.
     * @alias module:model/LoyaltyStoregroupsDTOStoresAddressComponents
@@ -22094,7 +21924,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyStoregroupsList model module.
 * @module model/LoyaltyStoregroupsList
 */
-LoyaltyStoregroupsList = function () {
+var LoyaltyStoregroupsList = function () {
     /**
     * Constructs a new <code>LoyaltyStoregroupsList</code>.
     * @alias module:model/LoyaltyStoregroupsList
@@ -22178,7 +22008,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The LoyaltyStoregroupsProductModel model module.
 * @module model/LoyaltyStoregroupsProductModel
 */
-LoyaltyStoregroupsProductModel = function () {
+var LoyaltyStoregroupsProductModel = function () {
     /**
     * Constructs a new <code>LoyaltyStoregroupsProductModel</code>.
     * @alias module:model/LoyaltyStoregroupsProductModel
@@ -22294,7 +22124,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The OpenHours model module.
 * @module model/OpenHours
 */
-OpenHours = function () {
+var OpenHours = function () {
     /**
     * Constructs a new <code>OpenHours</code>.
     * Open hours
@@ -22371,7 +22201,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The ParentModel model module.
 * @module model/ParentModel
 */
-ParentModel = function () {
+var ParentModel = function () {
     /**
     * Constructs a new <code>ParentModel</code>.
     * @alias module:model/ParentModel
@@ -22456,7 +22286,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentContainerMandate model module.
 * @module model/PaymentContainerMandate
 */
-PaymentContainerMandate = function () {
+var PaymentContainerMandate = function () {
     /**
     * Constructs a new <code>PaymentContainerMandate</code>.
     * @alias module:model/PaymentContainerMandate
@@ -22576,7 +22406,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentContainersDTO model module.
 * @module model/PaymentContainersDTO
 */
-PaymentContainersDTO = function () {
+var PaymentContainersDTO = function () {
     /**
     * Constructs a new <code>PaymentContainersDTO</code>.
     * @alias module:model/PaymentContainersDTO
@@ -22659,7 +22489,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentContainersDTOCustomer model module.
 * @module model/PaymentContainersDTOCustomer
 */
-PaymentContainersDTOCustomer = function () {
+var PaymentContainersDTOCustomer = function () {
     /**
     * Constructs a new <code>PaymentContainersDTOCustomer</code>.
     * The customer of this payment container
@@ -22727,7 +22557,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentContainersDTOPrivate model module.
 * @module model/PaymentContainersDTOPrivate
 */
-PaymentContainersDTOPrivate = function () {
+var PaymentContainersDTOPrivate = function () {
     /**
     * Constructs a new <code>PaymentContainersDTOPrivate</code>.
     * 
@@ -22817,7 +22647,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentContainersList model module.
 * @module model/PaymentContainersList
 */
-PaymentContainersList = function () {
+var PaymentContainersList = function () {
     /**
     * Constructs a new <code>PaymentContainersList</code>.
     * @alias module:model/PaymentContainersList
@@ -22913,7 +22743,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentContainersProductModel model module.
 * @module model/PaymentContainersProductModel
 */
-PaymentContainersProductModel = function () {
+var PaymentContainersProductModel = function () {
     /**
     * Constructs a new <code>PaymentContainersProductModel</code>.
     * @alias module:model/PaymentContainersProductModel
@@ -23070,7 +22900,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentContractsDTO model module.
 * @module model/PaymentContractsDTO
 */
-PaymentContractsDTO = function () {
+var PaymentContractsDTO = function () {
     /**
     * Constructs a new <code>PaymentContractsDTO</code>.
     * @alias module:model/PaymentContractsDTO
@@ -23258,7 +23088,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentContractsDTOClone model module.
 * @module model/PaymentContractsDTOClone
 */
-PaymentContractsDTOClone = function () {
+var PaymentContractsDTOClone = function () {
     /**
     * Constructs a new <code>PaymentContractsDTOClone</code>.
     * @alias module:model/PaymentContractsDTOClone
@@ -23398,7 +23228,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentContractsDTOIFrameOpts model module.
 * @module model/PaymentContractsDTOIFrameOpts
 */
-PaymentContractsDTOIFrameOpts = function () {
+var PaymentContractsDTOIFrameOpts = function () {
     /**
     * Constructs a new <code>PaymentContractsDTOIFrameOpts</code>.
     * @alias module:model/PaymentContractsDTOIFrameOpts
@@ -23514,7 +23344,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentContractsDTORequestId model module.
 * @module model/PaymentContractsDTORequestId
 */
-PaymentContractsDTORequestId = function () {
+var PaymentContractsDTORequestId = function () {
     /**
     * Constructs a new <code>PaymentContractsDTORequestId</code>.
     * @alias module:model/PaymentContractsDTORequestId
@@ -23622,7 +23452,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentContractsList model module.
 * @module model/PaymentContractsList
 */
-PaymentContractsList = function () {
+var PaymentContractsList = function () {
     /**
     * Constructs a new <code>PaymentContractsList</code>.
     * @alias module:model/PaymentContractsList
@@ -23702,7 +23532,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentContractsProductModel model module.
 * @module model/PaymentContractsProductModel
 */
-PaymentContractsProductModel = function () {
+var PaymentContractsProductModel = function () {
     /**
     * Constructs a new <code>PaymentContractsProductModel</code>.
     * @alias module:model/PaymentContractsProductModel
@@ -23841,7 +23671,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentContractsRequestIdResult model module.
 * @module model/PaymentContractsRequestIdResult
 */
-PaymentContractsRequestIdResult = function () {
+var PaymentContractsRequestIdResult = function () {
     /**
     * Constructs a new <code>PaymentContractsRequestIdResult</code>.
     * @alias module:model/PaymentContractsRequestIdResult
@@ -23930,7 +23760,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentCustomersDTO model module.
 * @module model/PaymentCustomersDTO
 */
-PaymentCustomersDTO = function () {
+var PaymentCustomersDTO = function () {
     /**
     * Constructs a new <code>PaymentCustomersDTO</code>.
     * @alias module:model/PaymentCustomersDTO
@@ -24001,7 +23831,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentCustomersList model module.
 * @module model/PaymentCustomersList
 */
-PaymentCustomersList = function () {
+var PaymentCustomersList = function () {
     /**
     * Constructs a new <code>PaymentCustomersList</code>.
     * @alias module:model/PaymentCustomersList
@@ -24085,7 +23915,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentCustomersProductModel model module.
 * @module model/PaymentCustomersProductModel
 */
-PaymentCustomersProductModel = function () {
+var PaymentCustomersProductModel = function () {
     /**
     * Constructs a new <code>PaymentCustomersProductModel</code>.
     * @alias module:model/PaymentCustomersProductModel
@@ -24197,7 +24027,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentInformation model module.
 * @module model/PaymentInformation
 */
-PaymentInformation = function () {
+var PaymentInformation = function () {
     /**
     * Constructs a new <code>PaymentInformation</code>.
     * Payment information
@@ -24287,7 +24117,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentTransactionsCancelList model module.
 * @module model/PaymentTransactionsCancelList
 */
-PaymentTransactionsCancelList = function () {
+var PaymentTransactionsCancelList = function () {
     /**
     * Constructs a new <code>PaymentTransactionsCancelList</code>.
     * @alias module:model/PaymentTransactionsCancelList
@@ -24367,7 +24197,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentTransactionsList model module.
 * @module model/PaymentTransactionsList
 */
-PaymentTransactionsList = function () {
+var PaymentTransactionsList = function () {
     /**
     * Constructs a new <code>PaymentTransactionsList</code>.
     * @alias module:model/PaymentTransactionsList
@@ -24455,7 +24285,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentTransactionsProductModel model module.
 * @module model/PaymentTransactionsProductModel
 */
-PaymentTransactionsProductModel = function () {
+var PaymentTransactionsProductModel = function () {
     /**
     * Constructs a new <code>PaymentTransactionsProductModel</code>.
     * @alias module:model/PaymentTransactionsProductModel
@@ -24663,7 +24493,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentTransactionsProductModelCustomer model module.
 * @module model/PaymentTransactionsProductModelCustomer
 */
-PaymentTransactionsProductModelCustomer = function () {
+var PaymentTransactionsProductModelCustomer = function () {
     /**
     * Constructs a new <code>PaymentTransactionsProductModelCustomer</code>.
     * PaymentTransactionsProductModel
@@ -24785,7 +24615,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentTransactionsProductModelDetails model module.
 * @module model/PaymentTransactionsProductModelDetails
 */
-PaymentTransactionsProductModelDetails = function () {
+var PaymentTransactionsProductModelDetails = function () {
     /**
     * Constructs a new <code>PaymentTransactionsProductModelDetails</code>.
     * Transaction details
@@ -24916,7 +24746,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentTransactionsProductModelMerchant model module.
 * @module model/PaymentTransactionsProductModelMerchant
 */
-PaymentTransactionsProductModelMerchant = function () {
+var PaymentTransactionsProductModelMerchant = function () {
     /**
     * Constructs a new <code>PaymentTransactionsProductModelMerchant</code>.
     * Merchant information
@@ -25002,7 +24832,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PaymentTransactionsShippingUrl model module.
 * @module model/PaymentTransactionsShippingUrl
 */
-PaymentTransactionsShippingUrl = function () {
+var PaymentTransactionsShippingUrl = function () {
     /**
     * Constructs a new <code>PaymentTransactionsShippingUrl</code>.
     * @alias module:model/PaymentTransactionsShippingUrl
@@ -25073,7 +24903,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PrepaidItemsList model module.
 * @module model/PrepaidItemsList
 */
-PrepaidItemsList = function () {
+var PrepaidItemsList = function () {
     /**
     * Constructs a new <code>PrepaidItemsList</code>.
     * @alias module:model/PrepaidItemsList
@@ -25153,7 +24983,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PrepaidItemsProductModel model module.
 * @module model/PrepaidItemsProductModel
 */
-PrepaidItemsProductModel = function () {
+var PrepaidItemsProductModel = function () {
     /**
     * Constructs a new <code>PrepaidItemsProductModel</code>.
     * @alias module:model/PrepaidItemsProductModel
@@ -25337,7 +25167,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PrepaidSalesItem model module.
 * @module model/PrepaidSalesItem
 */
-PrepaidSalesItem = function () {
+var PrepaidSalesItem = function () {
     /**
     * Constructs a new <code>PrepaidSalesItem</code>.
     * @alias module:model/PrepaidSalesItem
@@ -25460,7 +25290,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PrepaidSalesProductModel model module.
 * @module model/PrepaidSalesProductModel
 */
-PrepaidSalesProductModel = function () {
+var PrepaidSalesProductModel = function () {
     /**
     * Constructs a new <code>PrepaidSalesProductModel</code>.
     * @alias module:model/PrepaidSalesProductModel
@@ -25761,7 +25591,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The PrepaidSalesSmartDevice model module.
 * @module model/PrepaidSalesSmartDevice
 */
-PrepaidSalesSmartDevice = function () {
+var PrepaidSalesSmartDevice = function () {
     /**
     * Constructs a new <code>PrepaidSalesSmartDevice</code>.
     * @alias module:model/PrepaidSalesSmartDevice
@@ -25855,7 +25685,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The ProductExceptionPayload model module.
 * @module model/ProductExceptionPayload
 */
-ProductExceptionPayload = function () {
+var ProductExceptionPayload = function () {
     /**
     * Constructs a new <code>ProductExceptionPayload</code>.
     * Payload of exceptions returned by API
@@ -25968,7 +25798,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The ProductInstanceID model module.
 * @module model/ProductInstanceID
 */
-ProductInstanceID = function () {
+var ProductInstanceID = function () {
     /**
     * Constructs a new <code>ProductInstanceID</code>.
     * Product instance id, uniquely identifying instance of Product
@@ -26036,7 +25866,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The ProductInstanceUID model module.
 * @module model/ProductInstanceUID
 */
-ProductInstanceUID = function () {
+var ProductInstanceUID = function () {
     /**
     * Constructs a new <code>ProductInstanceUID</code>.
     * Product name and instance id, uniquely identifying instance of Product
@@ -26113,7 +25943,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The ReceiptType model module.
 * @module model/ReceiptType
 */
-ReceiptType = function () {
+var ReceiptType = function () {
     /**
     * Constructs a new <code>ReceiptType</code>.
     * @alias module:model/ReceiptType
@@ -26188,7 +26018,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The ReceiptTypeValue model module.
 * @module model/ReceiptTypeValue
 */
-ReceiptTypeValue = function () {
+var ReceiptTypeValue = function () {
     /**
     * Constructs a new <code>ReceiptTypeValue</code>.
     * @alias module:model/ReceiptTypeValue
@@ -26269,7 +26099,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The ReceiptValue model module.
 * @module model/ReceiptValue
 */
-ReceiptValue = function () {
+var ReceiptValue = function () {
     /**
     * Constructs a new <code>ReceiptValue</code>.
     * @alias module:model/ReceiptValue
@@ -26372,7 +26202,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SecupayBasketItem model module.
 * @module model/SecupayBasketItem
 */
-SecupayBasketItem = function () {
+var SecupayBasketItem = function () {
     /**
     * Constructs a new <code>SecupayBasketItem</code>.
     * Item describing single position in basket in transaction
@@ -26558,7 +26388,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SecupaySubTransactionProductModel model module.
 * @module model/SecupaySubTransactionProductModel
 */
-SecupaySubTransactionProductModel = function () {
+var SecupaySubTransactionProductModel = function () {
     /**
     * Constructs a new <code>SecupaySubTransactionProductModel</code>.
     * @alias module:model/SecupaySubTransactionProductModel
@@ -26643,7 +26473,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SecupayTransactionCancelDTO model module.
 * @module model/SecupayTransactionCancelDTO
 */
-SecupayTransactionCancelDTO = function () {
+var SecupayTransactionCancelDTO = function () {
     /**
     * Constructs a new <code>SecupayTransactionCancelDTO</code>.
     * @alias module:model/SecupayTransactionCancelDTO
@@ -26729,7 +26559,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SecupayTransactionCaptureDTO model module.
 * @module model/SecupayTransactionCaptureDTO
 */
-SecupayTransactionCaptureDTO = function () {
+var SecupayTransactionCaptureDTO = function () {
     /**
     * Constructs a new <code>SecupayTransactionCaptureDTO</code>.
     * @alias module:model/SecupayTransactionCaptureDTO
@@ -26796,7 +26626,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SecupayTransactionDTOExternalInvoicePdf model module.
 * @module model/SecupayTransactionDTOExternalInvoicePdf
 */
-SecupayTransactionDTOExternalInvoicePdf = function () {
+var SecupayTransactionDTOExternalInvoicePdf = function () {
     /**
     * Constructs a new <code>SecupayTransactionDTOExternalInvoicePdf</code>.
     * @alias module:model/SecupayTransactionDTOExternalInvoicePdf
@@ -26867,7 +26697,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SecupayTransactionExternalInvoicePdf model module.
 * @module model/SecupayTransactionExternalInvoicePdf
 */
-SecupayTransactionExternalInvoicePdf = function () {
+var SecupayTransactionExternalInvoicePdf = function () {
     /**
     * Constructs a new <code>SecupayTransactionExternalInvoicePdf</code>.
     * @alias module:model/SecupayTransactionExternalInvoicePdf
@@ -26933,7 +26763,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SecupayTransactionExternalInvoicePdfDocument model module.
 * @module model/SecupayTransactionExternalInvoicePdfDocument
 */
-SecupayTransactionExternalInvoicePdfDocument = function () {
+var SecupayTransactionExternalInvoicePdfDocument = function () {
     /**
     * Constructs a new <code>SecupayTransactionExternalInvoicePdfDocument</code>.
     * Information about the saved document
@@ -27061,7 +26891,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SecupayTransactionProductDTO model module.
 * @module model/SecupayTransactionProductDTO
 */
-SecupayTransactionProductDTO = function () {
+var SecupayTransactionProductDTO = function () {
     /**
     * Constructs a new <code>SecupayTransactionProductDTO</code>.
     * @alias module:model/SecupayTransactionProductDTO
@@ -27250,7 +27080,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SecupayTransactionProductDTOExperience model module.
 * @module model/SecupayTransactionProductDTOExperience
 */
-SecupayTransactionProductDTOExperience = function () {
+var SecupayTransactionProductDTOExperience = function () {
     /**
     * Constructs a new <code>SecupayTransactionProductDTOExperience</code>.
     * Customer experience score
@@ -27327,7 +27157,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SecupayTransactionProductDTOOptData model module.
 * @module model/SecupayTransactionProductDTOOptData
 */
-SecupayTransactionProductDTOOptData = function () {
+var SecupayTransactionProductDTOOptData = function () {
     /**
     * Constructs a new <code>SecupayTransactionProductDTOOptData</code>.
     * Options for customizing the checkout page
@@ -27404,7 +27234,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SecupayTransactionProductDTORedirectUrl model module.
 * @module model/SecupayTransactionProductDTORedirectUrl
 */
-SecupayTransactionProductDTORedirectUrl = function () {
+var SecupayTransactionProductDTORedirectUrl = function () {
     /**
     * Constructs a new <code>SecupayTransactionProductDTORedirectUrl</code>.
     * A list of redirect urls used for the payment checkout page
@@ -27490,7 +27320,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SecupayTransactionProductDTOSubscription model module.
 * @module model/SecupayTransactionProductDTOSubscription
 */
-SecupayTransactionProductDTOSubscription = function () {
+var SecupayTransactionProductDTOSubscription = function () {
     /**
     * Constructs a new <code>SecupayTransactionProductDTOSubscription</code>.
     * Recurring payments
@@ -27595,7 +27425,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SecupayTransactionProductModel model module.
 * @module model/SecupayTransactionProductModel
 */
-SecupayTransactionProductModel = function () {
+var SecupayTransactionProductModel = function () {
     /**
     * Constructs a new <code>SecupayTransactionProductModel</code>.
     * @alias module:model/SecupayTransactionProductModel
@@ -27830,7 +27660,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SecupayTransactionProductModelRedirectUrl model module.
 * @module model/SecupayTransactionProductModelRedirectUrl
 */
-SecupayTransactionProductModelRedirectUrl = function () {
+var SecupayTransactionProductModelRedirectUrl = function () {
     /**
     * Constructs a new <code>SecupayTransactionProductModelRedirectUrl</code>.
     * A list of redirect urls used for the payment checkout page
@@ -27925,7 +27755,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SecupayTransactionProductModelTransferAccount model module.
 * @module model/SecupayTransactionProductModelTransferAccount
 */
-SecupayTransactionProductModelTransferAccount = function () {
+var SecupayTransactionProductModelTransferAccount = function () {
     /**
     * Constructs a new <code>SecupayTransactionProductModelTransferAccount</code>.
     * The bank account the payer needs to use for his transfer
@@ -28033,7 +27863,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SecupayTransactionProductModelUsedPaymentInstrument model module.
 * @module model/SecupayTransactionProductModelUsedPaymentInstrument
 */
-SecupayTransactionProductModelUsedPaymentInstrument = function () {
+var SecupayTransactionProductModelUsedPaymentInstrument = function () {
     /**
     * Constructs a new <code>SecupayTransactionProductModelUsedPaymentInstrument</code>.
     * The payment data which has the payer used (like bank account, credit card, ...). This data is always masked.
@@ -28110,7 +27940,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SecupayTransactionReverseAccrualDTO model module.
 * @module model/SecupayTransactionReverseAccrualDTO
 */
-SecupayTransactionReverseAccrualDTO = function () {
+var SecupayTransactionReverseAccrualDTO = function () {
     /**
     * Constructs a new <code>SecupayTransactionReverseAccrualDTO</code>.
     * @alias module:model/SecupayTransactionReverseAccrualDTO
@@ -28178,7 +28008,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SecupayTransactionSetShippingInformationDTO model module.
 * @module model/SecupayTransactionSetShippingInformationDTO
 */
-SecupayTransactionSetShippingInformationDTO = function () {
+var SecupayTransactionSetShippingInformationDTO = function () {
     /**
     * Constructs a new <code>SecupayTransactionSetShippingInformationDTO</code>.
     * @alias module:model/SecupayTransactionSetShippingInformationDTO
@@ -28267,7 +28097,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SecupayTransactionUpdateBasketDTO model module.
 * @module model/SecupayTransactionUpdateBasketDTO
 */
-SecupayTransactionUpdateBasketDTO = function () {
+var SecupayTransactionUpdateBasketDTO = function () {
     /**
     * Constructs a new <code>SecupayTransactionUpdateBasketDTO</code>.
     * @alias module:model/SecupayTransactionUpdateBasketDTO
@@ -28343,7 +28173,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartDeviceProductsEnabled model module.
 * @module model/SmartDeviceProductsEnabled
 */
-SmartDeviceProductsEnabled = function () {
+var SmartDeviceProductsEnabled = function () {
     /**
     * Constructs a new <code>SmartDeviceProductsEnabled</code>.
     * @alias module:model/SmartDeviceProductsEnabled
@@ -28410,7 +28240,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartDeviceProductsPrepaid model module.
 * @module model/SmartDeviceProductsPrepaid
 */
-SmartDeviceProductsPrepaid = function () {
+var SmartDeviceProductsPrepaid = function () {
     /**
     * Constructs a new <code>SmartDeviceProductsPrepaid</code>.
     * @alias module:model/SmartDeviceProductsPrepaid
@@ -28504,7 +28334,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartDevicesDTO model module.
 * @module model/SmartDevicesDTO
 */
-SmartDevicesDTO = function () {
+var SmartDevicesDTO = function () {
     /**
     * Constructs a new <code>SmartDevicesDTO</code>.
     * @alias module:model/SmartDevicesDTO
@@ -28652,7 +28482,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartDevicesDTOPrepaidTid model module.
 * @module model/SmartDevicesDTOPrepaidTid
 */
-SmartDevicesDTOPrepaidTid = function () {
+var SmartDevicesDTOPrepaidTid = function () {
     /**
     * Constructs a new <code>SmartDevicesDTOPrepaidTid</code>.
     * @alias module:model/SmartDevicesDTOPrepaidTid
@@ -28728,7 +28558,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartDevicesDTOSecubaseConfig model module.
 * @module model/SmartDevicesDTOSecubaseConfig
 */
-SmartDevicesDTOSecubaseConfig = function () {
+var SmartDevicesDTOSecubaseConfig = function () {
     /**
     * Constructs a new <code>SmartDevicesDTOSecubaseConfig</code>.
     * @alias module:model/SmartDevicesDTOSecubaseConfig
@@ -28813,7 +28643,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartDevicesDevice model module.
 * @module model/SmartDevicesDevice
 */
-SmartDevicesDevice = function () {
+var SmartDevicesDevice = function () {
     /**
     * Constructs a new <code>SmartDevicesDevice</code>.
     * @alias module:model/SmartDevicesDevice
@@ -28902,7 +28732,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartDevicesList model module.
 * @module model/SmartDevicesList
 */
-SmartDevicesList = function () {
+var SmartDevicesList = function () {
     /**
     * Constructs a new <code>SmartDevicesList</code>.
     * @alias module:model/SmartDevicesList
@@ -28982,7 +28812,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartDevicesList1 model module.
 * @module model/SmartDevicesList1
 */
-SmartDevicesList1 = function () {
+var SmartDevicesList1 = function () {
     /**
     * Constructs a new <code>SmartDevicesList1</code>.
     * @alias module:model/SmartDevicesList1
@@ -29074,7 +28904,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartDevicesProductModel model module.
 * @module model/SmartDevicesProductModel
 */
-SmartDevicesProductModel = function () {
+var SmartDevicesProductModel = function () {
     /**
     * Constructs a new <code>SmartDevicesProductModel</code>.
     * @alias module:model/SmartDevicesProductModel
@@ -29302,7 +29132,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartDevicesProducts model module.
 * @module model/SmartDevicesProducts
 */
-SmartDevicesProducts = function () {
+var SmartDevicesProducts = function () {
     /**
     * Constructs a new <code>SmartDevicesProducts</code>.
     * @alias module:model/SmartDevicesProducts
@@ -29427,7 +29257,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartDevicesSecubaseConfig model module.
 * @module model/SmartDevicesSecubaseConfig
 */
-SmartDevicesSecubaseConfig = function () {
+var SmartDevicesSecubaseConfig = function () {
     /**
     * Constructs a new <code>SmartDevicesSecubaseConfig</code>.
     * @alias module:model/SmartDevicesSecubaseConfig
@@ -29507,7 +29337,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartDevicesSecubaseConfigLogging model module.
 * @module model/SmartDevicesSecubaseConfigLogging
 */
-SmartDevicesSecubaseConfigLogging = function () {
+var SmartDevicesSecubaseConfigLogging = function () {
     /**
     * Constructs a new <code>SmartDevicesSecubaseConfigLogging</code>.
     * @alias module:model/SmartDevicesSecubaseConfigLogging
@@ -29583,7 +29413,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartDevicesSecubaseConfigLoggingFileNet model module.
 * @module model/SmartDevicesSecubaseConfigLoggingFileNet
 */
-SmartDevicesSecubaseConfigLoggingFileNet = function () {
+var SmartDevicesSecubaseConfigLoggingFileNet = function () {
     /**
     * Constructs a new <code>SmartDevicesSecubaseConfigLoggingFileNet</code>.
     * @alias module:model/SmartDevicesSecubaseConfigLoggingFileNet
@@ -29667,7 +29497,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartTransactionsBasket model module.
 * @module model/SmartTransactionsBasket
 */
-SmartTransactionsBasket = function () {
+var SmartTransactionsBasket = function () {
     /**
     * Constructs a new <code>SmartTransactionsBasket</code>.
     * @alias module:model/SmartTransactionsBasket
@@ -29743,7 +29573,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartTransactionsBasketInfo model module.
 * @module model/SmartTransactionsBasketInfo
 */
-SmartTransactionsBasketInfo = function () {
+var SmartTransactionsBasketInfo = function () {
     /**
     * Constructs a new <code>SmartTransactionsBasketInfo</code>.
     * @alias module:model/SmartTransactionsBasketInfo
@@ -29832,7 +29662,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartTransactionsBasketProduct model module.
 * @module model/SmartTransactionsBasketProduct
 */
-SmartTransactionsBasketProduct = function () {
+var SmartTransactionsBasketProduct = function () {
     /**
     * Constructs a new <code>SmartTransactionsBasketProduct</code>.
     * @alias module:model/SmartTransactionsBasketProduct
@@ -29971,7 +29801,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartTransactionsBasketProductGroup model module.
 * @module model/SmartTransactionsBasketProductGroup
 */
-SmartTransactionsBasketProductGroup = function () {
+var SmartTransactionsBasketProductGroup = function () {
     /**
     * Constructs a new <code>SmartTransactionsBasketProductGroup</code>.
     * @alias module:model/SmartTransactionsBasketProductGroup
@@ -30056,7 +29886,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartTransactionsBasketText model module.
 * @module model/SmartTransactionsBasketText
 */
-SmartTransactionsBasketText = function () {
+var SmartTransactionsBasketText = function () {
     /**
     * Constructs a new <code>SmartTransactionsBasketText</code>.
     * @alias module:model/SmartTransactionsBasketText
@@ -30141,7 +29971,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartTransactionsBonusProducts model module.
 * @module model/SmartTransactionsBonusProducts
 */
-SmartTransactionsBonusProducts = function () {
+var SmartTransactionsBonusProducts = function () {
     /**
     * Constructs a new <code>SmartTransactionsBonusProducts</code>.
     * @alias module:model/SmartTransactionsBonusProducts
@@ -30262,7 +30092,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartTransactionsCheckin model module.
 * @module model/SmartTransactionsCheckin
 */
-SmartTransactionsCheckin = function () {
+var SmartTransactionsCheckin = function () {
     /**
     * Constructs a new <code>SmartTransactionsCheckin</code>.
     * @alias module:model/SmartTransactionsCheckin
@@ -30367,7 +30197,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartTransactionsDTO model module.
 * @module model/SmartTransactionsDTO
 */
-SmartTransactionsDTO = function () {
+var SmartTransactionsDTO = function () {
     /**
     * Constructs a new <code>SmartTransactionsDTO</code>.
     * @alias module:model/SmartTransactionsDTO
@@ -30618,7 +30448,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartTransactionsIdent model module.
 * @module model/SmartTransactionsIdent
 */
-SmartTransactionsIdent = function () {
+var SmartTransactionsIdent = function () {
     /**
     * Constructs a new <code>SmartTransactionsIdent</code>.
     * @alias module:model/SmartTransactionsIdent
@@ -30752,7 +30582,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartTransactionsList model module.
 * @module model/SmartTransactionsList
 */
-SmartTransactionsList = function () {
+var SmartTransactionsList = function () {
     /**
     * Constructs a new <code>SmartTransactionsList</code>.
     * @alias module:model/SmartTransactionsList
@@ -30828,7 +30658,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * The SmartTransactionsMerchant model module.
  * @module model/SmartTransactionsMerchant
  */
-SmartTransactionsMerchant = function () {
+var SmartTransactionsMerchant = function () {
   /**
    * Constructs a new <code>SmartTransactionsMerchant</code>.
    * @alias module:model/SmartTransactionsMerchant
@@ -30917,7 +30747,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartTransactionsPickupOptions model module.
 * @module model/SmartTransactionsPickupOptions
 */
-SmartTransactionsPickupOptions = function () {
+var SmartTransactionsPickupOptions = function () {
     /**
     * Constructs a new <code>SmartTransactionsPickupOptions</code>.
     * @alias module:model/SmartTransactionsPickupOptions
@@ -31006,7 +30836,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartTransactionsPreTransactionModel model module.
 * @module model/SmartTransactionsPreTransactionModel
 */
-SmartTransactionsPreTransactionModel = function () {
+var SmartTransactionsPreTransactionModel = function () {
     /**
     * Constructs a new <code>SmartTransactionsPreTransactionModel</code>.
     * @alias module:model/SmartTransactionsPreTransactionModel
@@ -31118,7 +30948,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartTransactionsProductModel model module.
 * @module model/SmartTransactionsProductModel
 */
-SmartTransactionsProductModel = function () {
+var SmartTransactionsProductModel = function () {
     /**
     * Constructs a new <code>SmartTransactionsProductModel</code>.
     * @alias module:model/SmartTransactionsProductModel
@@ -31477,7 +31307,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartTransactionsReceipt model module.
 * @module model/SmartTransactionsReceipt
 */
-SmartTransactionsReceipt = function () {
+var SmartTransactionsReceipt = function () {
     /**
     * Constructs a new <code>SmartTransactionsReceipt</code>.
     * @alias module:model/SmartTransactionsReceipt
@@ -31553,7 +31383,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The SmartTransactionsReceiptValue model module.
 * @module model/SmartTransactionsReceiptValue
 */
-SmartTransactionsReceiptValue = function () {
+var SmartTransactionsReceiptValue = function () {
     /**
     * Constructs a new <code>SmartTransactionsReceiptValue</code>.
     * @alias module:model/SmartTransactionsReceiptValue
@@ -31647,7 +31477,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The Store model module.
 * @module model/Store
 */
-Store = function () {
+var Store = function () {
     /**
     * Constructs a new <code>Store</code>.
     * @alias module:model/Store
@@ -31741,7 +31571,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * The VirtualTerminalData model module.
 * @module model/VirtualTerminalData
 */
-VirtualTerminalData = function () {
+var VirtualTerminalData = function () {
     /**
     * Constructs a new <code>VirtualTerminalData</code>.
     * @alias module:model/VirtualTerminalData
@@ -31852,7 +31682,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-StompClient = function () {
+var StompClient = function () {
     function StompClient(token, env) {
         var debugMode = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
 
@@ -31882,3 +31712,821 @@ StompClient = function () {
     _createClass(StompClient, [{
         key: 'getToken',
         value: function getToken() {
+            return this.token;
+        }
+    }, {
+        key: 'connect',
+        value: function connect() {
+            var _this = this;
+
+            return new Promise(function (resolve, reject) {
+                // possible situations while connecting to socket
+                _this.stomp.on('socket-error', function (error) {
+                    console.error('Unexpected socket error' + error);
+
+                    reject(error);
+                });
+
+                _this.stomp.on('disconnected', function (error) {
+                    if (error) {
+                        console.error('Disconnected from Stomp with error: ' + error);
+                    } else {
+                        console.log('Disconnected from Stomp');
+                    }
+
+                    reject(error);
+                });
+
+                // possible situations while connecting to stomp broker
+                _this.stomp.on('error', function (frame) {
+                    console.error('Error: ' + frame.body);
+
+                    reject(frame);
+                });
+
+                _this.stomp.on('connected', function (frame) {
+                    // if successfully connected then set proper listeners for soceket and stomp
+                    _this.stomp.on('socket-error', function (error) {
+                        console.log('Unexpected socket error' + error);
+                    });
+
+                    _this.stomp.on('disconnected', function (error) {
+                        if (error) {
+                            console.log('Disconnected from Stomp with error: ' + error);
+                        } else {
+                            console.log('Disconnected from Stomp');
+                        }
+                    });
+
+                    _this.stomp.on('error', function (frame) {
+                        console.error('Error: ' + frame.body);
+                    });
+
+                    _this.stomp.on('receipt', function (frame) {
+                        console.log('Received receipt: ' + frame.headers['receipt-id']);
+                    });
+
+                    _this.stomp.on('message', function (frame) {
+                        console.log('Received message: ' + frame.body);
+                    });
+
+                    resolve(frame);
+                });
+
+                // try connecting
+                _this.stomp.connect();
+            });
+        }
+    }, {
+        key: 'sendMessage',
+        value: function sendMessage(destination, body, want_receipt) {
+            var headers = this.prepareHeaders();
+            headers['destination'] = destination;
+            this.stomp.send('SEND', headers, body, want_receipt);
+        }
+    }, {
+        key: 'subscribe',
+        value: function subscribe(destination, headers) {
+            headers['session'] = this.session;
+            headers['destination'] = destination;
+            this.stomp.send('SUBSCRIBE', headers);
+        }
+    }, {
+        key: 'unsubscribe',
+        value: function unsubscribe(destination, headers) {
+            headers['session'] = this.session;
+            headers['destination'] = destination;
+            this.stomp.send('UNSUBSCRIBE', headers);
+        }
+    }, {
+        key: 'ack',
+        value: function ack(message_id) {
+            send('ACK', { 'message-id': message_id });
+        }
+    }, {
+        key: 'nack',
+        value: function nack(message_id) {
+            send('NACK', { 'message-id': message_id });
+        }
+    }, {
+        key: 'begin',
+        value: function begin() {
+            // generating random number (the multiplier '99999999999' has to be fairly big)
+            var transaction_id = Math.floor(Math.random() * 99999999999).toString();
+            send('BEGIN', { 'transaction': transaction_id });
+            return transaction_id;
+        }
+    }, {
+        key: 'commit',
+        value: function commit(transaction_id) {
+            send('COMMIT', { 'transaction': transaction_id });
+        }
+    }, {
+        key: 'abort',
+        value: function abort(transaction_id) {
+            send('ABORT', { 'transaction': transaction_id });
+        }
+    }, {
+        key: 'setDisconnectedListener',
+        value: function setDisconnectedListener(listener) {
+            if (this['disconnected']) {
+                this.stomp.removeListener('disconnected', this['disconnected']);
+            }
+            this['disconnected'] = listener;
+            this.stomp.on('disconnected', this['disconnected']);
+        }
+    }, {
+        key: 'setSocketErrorListener',
+        value: function setSocketErrorListener(listener) {
+            if (this['socket-error']) {
+                this.stomp.removeListener('socket-error', this['socket-error']);
+            }
+            this['socket-error'] = listener;
+            this.stomp.on('socket-error', this['socket-error']);
+        }
+    }, {
+        key: 'setMessageListener',
+        value: function setMessageListener(listener) {
+            if (this['message']) {
+                this.stomp.removeListener('message', this['message']);
+            }
+            this['message'] = listener;
+            this.stomp.on('message', this['message']);
+        }
+    }, {
+        key: 'setReceiptListener',
+        value: function setReceiptListener(listener) {
+            if (this['receipt']) {
+                this.stomp.removeListener('receipt', this['receipt']);
+            }
+            this['receipt'] = listener;
+            this.stomp.on('receipt', this['receipt']);
+        }
+    }, {
+        key: 'setErrorListener',
+        value: function setErrorListener(listener) {
+            if (this['error']) {
+                this.stomp.removeListener('error', this['error']);
+            }
+            this['error'] = listener;
+            this.stomp.on('error', this['error']);
+        }
+    }, {
+        key: 'generateCorrelationId',
+        value: function generateCorrelationId() {
+            var date = new Date();
+            var startUniquePart = Math.random().toString(36).substr(2, 115);
+            var endUniquePart = Math.random().toString(36).substr(2, 115);
+
+            return startUniquePart + '-' + date.toISOString().replace(/ /g, '') + '-' + endUniquePart;
+        }
+    }, {
+        key: 'prepareHeaders',
+        value: function prepareHeaders() {
+            return {
+                "content-type": config.headers.content_type,
+                "reply-to": config.headers.reply_to,
+                "user-id": this.getToken(),
+                "correlation-id": this.generateCorrelationId(),
+                "ack": config.headers.ack
+            };
+        }
+    }]);
+
+    return StompClient;
+}();
+
+exports.default = StompClient;
+;
+},{"../../stomp-config.json":207,"./StompGlobals":200,"./main/Stomp":203,"./socket/SocketProvider":206}],200:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var StompFrameCommands = exports.StompFrameCommands = {
+    CONNECTED: 'CONNECTED',
+    MESSAGE: 'MESSAGE',
+    RECEIPT: 'RECEIPT',
+    ERROR: 'ERROR'
+};
+
+var Environments = exports.Environments = {
+    NODE: 'NODE',
+    BROWSER: 'BROWSER'
+};
+
+var ResponseStatus = exports.ResponseStatus = {
+    ok: 'ok',
+    error: 'error'
+};
+},{}],201:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _StompClient = require("../StompClient");
+
+var _StompClient2 = _interopRequireDefault(_StompClient);
+
+var _ApiClient = require("../../ApiClient");
+
+var _ApiClient2 = _interopRequireDefault(_ApiClient);
+
+var _SmartTransactionsProductModel = require("../../model/SmartTransactionsProductModel");
+
+var _SmartTransactionsProductModel2 = _interopRequireDefault(_SmartTransactionsProductModel);
+
+var _StompGlobals = require("../StompGlobals");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var StompSmartTransactionsApi = function () {
+    function StompSmartTransactionsApi(stompClient) {
+        _classCallCheck(this, StompSmartTransactionsApi);
+
+        if (stompClient instanceof _StompClient2.default) {
+            this.destination = ["/exchange/connect.api/api:", ":Smart.Transactions"];
+            this.stompClient = stompClient;
+            this.connected = this.stompClient.connect();
+        } else {
+            throw 'StompSmartTransactionsApi requires StompClient class';
+        }
+    }
+
+    _createClass(StompSmartTransactionsApi, [{
+        key: "addTransaction",
+        value: function addTransaction(smartTransactionProperties) {
+            var _this = this;
+
+            return new Promise(function (resolve, reject) {
+                _this.connected.then(function (connectedFrame) {
+                    _this.stompClient.sendMessage(_this.destination[0] + 'add' + _this.destination[1], JSON.stringify({
+                        'data': smartTransactionProperties }));
+
+                    _this.stompClient.setMessageListener(function (frame) {
+                        var response = JSON.parse(frame.body);
+
+                        if (response.status === _StompGlobals.ResponseStatus.ok) {
+                            var smartTransaction = _ApiClient2.default.convertToType(response.data, _SmartTransactionsProductModel2.default);
+                            resolve(smartTransaction);
+                        } else {
+                            reject(response.error_details);
+                        }
+                    });
+                });
+            });
+        }
+    }, {
+        key: "updateTransaction",
+        value: function updateTransaction(smartTransactionId, smartTransactionProperties) {
+            var _this2 = this;
+
+            return new Promise(function (resolve, reject) {
+                _this2.connected.then(function () {
+                    _this2.stompClient.sendMessage(_this2.destination[0] + 'update' + _this2.destination[1], JSON.stringify({
+                        'pid': smartTransactionId,
+                        'data': smartTransactionProperties
+                    }));
+
+                    _this2.stompClient.setMessageListener(function (frame) {
+                        var response = JSON.parse(frame.body);
+
+                        if (response.status === _StompGlobals.ResponseStatus.ok) {
+                            var smartTransaction = _ApiClient2.default.convertToType(response.data, _SmartTransactionsProductModel2.default);
+                            resolve(smartTransaction);
+                        } else {
+                            reject(response.error_details);
+                        }
+                    });
+                });
+            });
+        }
+    }, {
+        key: "startTransaction",
+        value: function startTransaction(smartTransactionId, paymentMethod) {
+            var _this3 = this;
+
+            return new Promise(function (resolve, reject) {
+                _this3.connected.then(function () {
+                    _this3.stompClient.sendMessage(_this3.destination[0] + 'update' + _this3.destination[1] + 'Start', JSON.stringify({
+                        'pid': smartTransactionId,
+                        'sid': paymentMethod
+                    }));
+
+                    _this3.stompClient.setMessageListener(function (frame) {
+                        var response = JSON.parse(frame.body);
+
+                        if (response.status === _StompGlobals.ResponseStatus.ok) {
+                            var smartTransaction = _ApiClient2.default.convertToType(response.data, _SmartTransactionsProductModel2.default);
+                            resolve(smartTransaction);
+                        } else {
+                            reject(response.error_details);
+                        }
+                    });
+                });
+            });
+        }
+    }, {
+        key: "preTransaction",
+        value: function preTransaction(smartTransactionId) {
+            var _this4 = this;
+
+            return new Promise(function (resolve, reject) {
+                _this4.connected.then(function () {
+                    _this4.stompClient.sendMessage(_this4.destination[0] + 'update' + _this4.destination[1] + 'Pretransaction', JSON.stringify({
+                        'pid': smartTransactionId
+                    }));
+
+                    _this4.stompClient.setMessageListener(function (frame) {
+                        var response = JSON.parse(frame.body);
+
+                        if (response.status === _StompGlobals.ResponseStatus.ok) {
+                            var smartTransaction = _ApiClient2.default.convertToType(response.data, _SmartTransactionsProductModel2.default);
+                            resolve(smartTransaction);
+                        } else {
+                            reject(response.error_details);
+                        }
+                    });
+                });
+            });
+        }
+    }]);
+
+    return StompSmartTransactionsApi;
+}();
+
+exports.default = StompSmartTransactionsApi;
+},{"../../ApiClient":21,"../../model/SmartTransactionsProductModel":194,"../StompClient":199,"../StompGlobals":200}],202:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Frame = function () {
+    function Frame(command, headers, body, want_receipt) {
+        _classCallCheck(this, Frame);
+
+        this.command = command || '';
+        this.headers = headers || {};
+        this.body = body || '';
+
+        if (want_receipt) {
+            this.headers['receipt'] = Math.floor(Math.random() * 99999999999).toString() + this.headers['session'] ? "-" + this.headers['session'] : '';
+        }
+    }
+
+    _createClass(Frame, [{
+        key: 'toString',
+        value: function toString() {
+            var frame = this.command + "\n";
+
+            for (var key in this.headers) {
+                frame += key + ':' + this.headers[key] + '\n';
+            }
+
+            if (this.body) {
+                frame += '\n' + this.body;
+            }
+
+            return frame + '\n\x00';
+        }
+    }, {
+        key: 'parseChunk',
+        value: function parseChunk(chunk) {
+            chunk = chunk.toString('utf8', 0, chunk.length);
+
+            this.command = chunk.split('\n')[0];
+            chunk = chunk.slice(this.command.length + 1, chunk.length).split('\n\n');
+
+            var headers_split = chunk[0].split('\n');
+            for (var i = 0; i < headers_split.length; i++) {
+                var header = headers_split[i].split(':');
+                if (header.length > 1) {
+                    this.headers[header[0].trim()] = header[1].trim();
+                }
+            }
+            this.headers['bytes_message'] = 'content-length' in this.headers;
+
+            this.body = chunk.slice(1, chunk.length);
+
+            return this;
+        }
+    }]);
+
+    return Frame;
+}();
+
+exports.default = Frame;
+;
+},{}],203:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _events = require("events");
+
+var _Frame = require("../frame/Frame");
+
+var _Frame2 = _interopRequireDefault(_Frame);
+
+var _StompGlobals = require("../StompGlobals");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Stomp = function (_EventEmitter) {
+    _inherits(Stomp, _EventEmitter);
+
+    function Stomp(login, passcode, socket) {
+        _classCallCheck(this, Stomp);
+
+        var _this = _possibleConstructorReturn(this, (Stomp.__proto__ || Object.getPrototypeOf(Stomp)).call(this));
+
+        _events.EventEmitter.call(_this);
+
+        _this.login = login; // broker's user login
+        _this.passcode = passcode; // broker's user passcode (password)
+        _this.socket = socket; // socket used to connect to broker
+        _this.session = null; // session id
+        return _this;
+    }
+
+    _createClass(Stomp, [{
+        key: "connect",
+        value: function connect() {
+            var _this2 = this;
+
+            this.socket.addOnOpenListener(function () {
+                console.log('Connecting to Stomp');
+                var headers = {};
+                headers['login'] = _this2.login;
+                headers['passcode'] = _this2.passcode;
+
+                _this2.send('CONNECT', headers);
+            });
+
+            this.socket.addOnMessageListener(function (data) {
+                var frames = data.split('\0\n');
+
+                if (frames.length == 1) {
+                    frames = data.split('\0');
+                    if (frames.length == 1) {
+                        console.error('Unexpected error when receiving data chunk from broker: ' + data, true);
+                    }
+                }
+                frames.pop();
+
+                var frame = null;
+                while (frame = frames.shift()) {
+                    _this2.handleFrame(new _Frame2.default().parseChunk(frame));
+                }
+            });
+
+            this.socket.addOnErrorListener(function (error) {
+                _this2.emit("socket-error", error);
+            });
+
+            this.socket.addOnCloseListener(function (error) {
+                _this2.emit("disconnected", error);
+            });
+
+            this.socket.connect();
+        }
+    }, {
+        key: "send",
+        value: function send(command, headers, body, want_receipt) {
+            var frame = new _Frame2.default(command, headers, body, want_receipt);
+
+            console.log('sending frame:\n' + frame.toString());
+
+            if (this.socket.write(frame.toString()) === false) {
+                console.log('Write buffered');
+            }
+        }
+    }, {
+        key: "disconnect",
+        value: function disconnect() {
+            this.socket.end();
+
+            if (this.socket.readyState == 'readOnly') {
+                this.socket.destroy();
+            }
+
+            console.log('disconnect called');
+        }
+    }, {
+        key: "handleFrame",
+        value: function handleFrame(frame) {
+            switch (frame.command) {
+                case _StompGlobals.StompFrameCommands.MESSAGE:
+                    console.log('Recived message from broker');
+                    this.emit('message', frame);
+                    break;
+                case _StompGlobals.StompFrameCommands.RECEIPT:
+                    console.log('Received receipt');
+                    this.emit('receipt', frame);
+                    break;
+                case _StompGlobals.StompFrameCommands.CONNECTED:
+                    console.log('Connected to Stomp broker');
+                    this.session = frame.headers['session'];
+                    this.emit('connected', frame);
+                    break;
+                case _StompGlobals.StompFrameCommands.ERROR:
+                    console.warn('Received error message');
+                    this.emit('error', frame);
+                    break;
+                default:
+                    console.error("Unknown command: " + frame.command, true);
+            }
+        }
+    }]);
+
+    return Stomp;
+}(_events.EventEmitter);
+
+exports.default = Stomp;
+;
+},{"../StompGlobals":200,"../frame/Frame":202,"events":5}],204:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var BrowserSocket = function () {
+    function BrowserSocket(host, port, vhost) {
+        _classCallCheck(this, BrowserSocket);
+
+        this.url = 'wss://' + host + ':' + port + vhost;
+        this.connected = false;
+    }
+
+    _createClass(BrowserSocket, [{
+        key: 'connect',
+        value: function connect() {
+            this.socket = new WebSocket(this.url);
+            this.socket.onmessage = this.onmessage;
+            this.socket.onerror = this.onerror;
+            this.socket.onclose = this.onclose;
+            this.socket.binaryType = "arraybuffer";
+            this.socket.onopen = this.onopen;
+        }
+    }, {
+        key: 'addOnOpenListener',
+        value: function addOnOpenListener(onOpen) {
+            var _this = this;
+
+            this.onopen = function () {
+                _this.connected = true;
+                console.log('Connected to socket');
+                onOpen();
+            };
+        }
+    }, {
+        key: 'addOnMessageListener',
+        value: function addOnMessageListener(onMessage) {
+            this.onmessage = function (messageEvent) {
+                console.log('Received data on socket');
+                onMessage(messageEvent.data);
+            };
+        }
+    }, {
+        key: 'addOnErrorListener',
+        value: function addOnErrorListener(onError) {
+            this.onerror = function (error) {
+                console.error('Socket error');
+                onError(error);
+            };
+        }
+    }, {
+        key: 'addOnCloseListener',
+        value: function addOnCloseListener(onClose) {
+            this.onclose = function (error) {
+                console.log('Closing socket');
+                onClose(error);
+            };
+        }
+    }, {
+        key: 'close',
+        value: function close() {
+            if (this.connected) {
+                this.socket.close();
+                this.connected = false;
+            }
+        }
+    }, {
+        key: 'write',
+        value: function write(chunk) {
+            if (this.connected) {
+                this.socket.send(chunk);
+            } else {
+                throw 'can not write to an unopened socket';
+            }
+        }
+    }]);
+
+    return BrowserSocket;
+}();
+
+exports.default = BrowserSocket;
+},{}],205:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _net = require('net');
+
+var _net2 = _interopRequireDefault(_net);
+
+var _tls = require('tls');
+
+var _tls2 = _interopRequireDefault(_tls);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var NodeSocket = function () {
+    function NodeSocket(host, port, vhost) {
+        _classCallCheck(this, NodeSocket);
+
+        this.host = host;
+        this.port = port;
+        this.vhost = vhost;
+        this.connected = false;
+    }
+
+    _createClass(NodeSocket, [{
+        key: 'connect',
+        value: function connect() {
+            var _this = this;
+
+            this.socket = _tls2.default.connect(this.port, this.host, {}, function () {
+                if (_this.socket.authorized) {
+                    _this.socket.on('data', _this.onmessage);
+                    _this.socket.on('error', _this.onerror);
+                    _this.socket.on('close', _this.onclose);
+                    _this.onopen();
+                } else {
+                    _this.onerror(socket.authorizationError);
+                    _this.close();
+                }
+            });
+        }
+    }, {
+        key: 'addOnOpenListener',
+        value: function addOnOpenListener(onOpen) {
+            var _this2 = this;
+
+            this.onopen = function () {
+                _this2.connected = true;
+                console.log('Connected to socket');
+                onOpen();
+            };
+        }
+    }, {
+        key: 'addOnMessageListener',
+        value: function addOnMessageListener(onMessage) {
+            this.onmessage = function (binaryData) {
+                console.log('Received data on socket');
+                onMessage('' + binaryData);
+            };
+        }
+    }, {
+        key: 'addOnErrorListener',
+        value: function addOnErrorListener(onError) {
+            this.onerror = function (error) {
+                console.error('Socket error');
+                onError(error);
+            };
+        }
+    }, {
+        key: 'addOnCloseListener',
+        value: function addOnCloseListener(onClose) {
+            this.onclose = function (error) {
+                console.log('Closing socket');
+                onClose(error);
+            };
+        }
+    }, {
+        key: 'close',
+        value: function close() {
+            if (this.connected) {
+                socket.end();
+                if (socket.readyState == 'readOnly') {
+                    socket.destroy();
+                }
+                this.connected = false;
+            }
+        }
+    }, {
+        key: 'write',
+        value: function write(chunk) {
+            if (this.connected) {
+                this.socket.write(chunk);
+            } else {
+                throw 'cannot write to an unopened socket';
+            }
+        }
+    }]);
+
+    return NodeSocket;
+}();
+
+exports.default = NodeSocket;
+},{"net":1,"tls":1}],206:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _StompGlobals = require("../StompGlobals");
+
+var _BrowserSocket = require("../socket/BrowserSocket");
+
+var _BrowserSocket2 = _interopRequireDefault(_BrowserSocket);
+
+var _NodeSocket = require("../socket/NodeSocket");
+
+var _NodeSocket2 = _interopRequireDefault(_NodeSocket);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var SocketProvider = function () {
+    function SocketProvider(host, port, vhost) {
+        _classCallCheck(this, SocketProvider);
+
+        this.host = host;
+        this.port = port;
+        this.vhost = vhost;
+    }
+
+    _createClass(SocketProvider, [{
+        key: "createSocket",
+        value: function createSocket(env) {
+            switch (env) {
+                case _StompGlobals.Environments.NODE:
+                    return new _NodeSocket2.default(this.host, this.port, this.vhost);
+                default:
+                    // defaults to browser env
+                    return new _BrowserSocket2.default(this.host, this.port, this.vhost);
+            }
+        }
+    }]);
+
+    return SocketProvider;
+}();
+
+exports.default = SocketProvider;
+},{"../StompGlobals":200,"../socket/BrowserSocket":204,"../socket/NodeSocket":205}],207:[function(require,module,exports){
+module.exports={
+  "host": "connect-testing.secupay-ag.de",
+  "node_env": {
+    "port": "61614", 
+    "vhost": "" 
+  },
+  "browser_env": {
+    "port": "15671", 
+    "vhost": "/stomp/websocket"
+  },
+  "headers": {
+    "content_type": "application/json",
+    "reply_to": "/temp-queue/main",
+    "ack": "client-individual"
+  }
+}
+},{}]},{},[49]);

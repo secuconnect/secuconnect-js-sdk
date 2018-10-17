@@ -1,17 +1,17 @@
 export default class BrowserSocket {
 
-    constructor(secureConnection, host, port, vhost) {
-        this.url = (secureConnection ? 'wss://' : 'ws://') + host + ':' + port + vhost;
+    constructor(host, port, vhost) {
+        this.url = 'wss://' + host + ':' + port + vhost;
         this.connected = false;
     }
 
     connect() {
         this.socket = new WebSocket(this.url);
-        this.socket.onopen = this.onopen;
         this.socket.onmessage = this.onmessage;
         this.socket.onerror = this.onerror;
         this.socket.onclose = this.onclose;
         this.socket.binaryType = "arraybuffer";
+        this.socket.onopen = this.onopen;
     }
 
     addOnOpenListener(onOpen) {

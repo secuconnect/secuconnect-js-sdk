@@ -31,7 +31,7 @@ var Frame = function () {
             }
 
             if (this.body) {
-                frame += '\n' + body;
+                frame += '\n' + this.body;
             }
 
             return frame + '\n\x00';

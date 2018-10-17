@@ -1,5 +1,6 @@
 import { EventEmitter } from "events";
 import Frame from '../frame/Frame';
+import { StompFrameCommands } from "../StompGlobals";
 
 export default class Stomp extends EventEmitter {
 
@@ -73,20 +74,20 @@ export default class Stomp extends EventEmitter {
 
     handleFrame(frame) {
         switch (frame.command) {
-            case "MESSAGE":
+            case StompFrameCommands.MESSAGE:
                 console.log('Recived message from broker');
                 this.emit('message', frame);
                 break;
-            case "RECEIPT":
+            case StompFrameCommands.RECEIPT:
                 console.log('Received receipt');
                 this.emit('receipt', frame);
                 break;
-            case "CONNECTED":
+            case StompFrameCommands.CONNECTED:
                 console.log('Connected to Stomp broker');
                 this.session = frame.headers['session'];
                 this.emit('connected', frame);
                 break;
-            case "ERROR":
+            case StompFrameCommands.ERROR:
                 console.warn('Received error message');
                 this.emit('error', frame);
                 break;

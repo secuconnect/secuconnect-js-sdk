@@ -3,6 +3,7 @@ import ApiClient from '../ApiClient';
 import PaymentContainersProductModel from './PaymentContainersProductModel';
 import PaymentCustomersProductModel from './PaymentCustomersProductModel';
 import SecupayBasketItem from './SecupayBasketItem';
+import SecupaySubTransactionProductModel from './SecupaySubTransactionProductModel';
 import SecupayTransactionProductModelRedirectUrl from './SecupayTransactionProductModelRedirectUrl';
 import SecupayTransactionProductModelTransferAccount from './SecupayTransactionProductModelTransferAccount';
 import SecupayTransactionProductModelUsedPaymentInstrument from './SecupayTransactionProductModelUsedPaymentInstrument';
@@ -105,6 +106,9 @@ export default class SecupayTransactionProductModel {
             if (data.hasOwnProperty('container')) {
                 obj['container'] = PaymentContainersProductModel.constructFromObject(data['container']);
             }
+            if (data.hasOwnProperty('sub_transactions')) {
+                obj['sub_transactions'] = ApiClient.convertToType(data['sub_transactions'], [SecupaySubTransactionProductModel]);
+            }
         }
         return obj;
     }
@@ -201,6 +205,11 @@ export default class SecupayTransactionProductModel {
     * @member {module:model/PaymentContainersProductModel} container
     */
     container = undefined;
+    /**
+    * A list of sub-transactions (for mixed basket)
+    * @member {Array.<module:model/SecupaySubTransactionProductModel>} sub_transactions
+    */
+    sub_transactions = undefined;
 
 
 

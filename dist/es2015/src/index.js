@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.SmartTransactionsApi = exports.SmartDevicesApi = exports.PrepaidItemsApi = exports.PaymentTransactionsApi = exports.PaymentSecupayPrepaysApi = exports.PaymentSecupayInvoicesApi = exports.PaymentSecupayDebitsApi = exports.PaymentSecupayCreditcardsApi = exports.PaymentCustomersApi = exports.PaymentContractsApi = exports.PaymentContainersApi = exports.LoyaltyStoregroupsApi = exports.LoyaltySalesApi = exports.LoyaltyMerchantcardsApi = exports.LoyaltyCustomersApi = exports.LoyaltyCardsApi = exports.LoyaltyCardgroupsApi = exports.GeneralStoresApi = exports.GeneralMerchantsApi = exports.DocumentUploadsApi = exports.SmartTransactionsMerchant = exports.ReceiptTypeValue = exports.LoyaltyMerchantcardsProductWithReceiptModel = exports.LoyaltyMerchantcardsDTONewPasscode = exports.DocumentUploadsProductModel = exports.VirtualTerminalData = exports.Store = exports.SmartTransactionsReceiptValue = exports.SmartTransactionsReceipt = exports.SmartTransactionsProductModel = exports.SmartTransactionsPreTransactionModel = exports.SmartTransactionsPickupOptions = exports.SmartTransactionsList = exports.SmartTransactionsIdent = exports.SmartTransactionsDTO = exports.SmartTransactionsCheckin = exports.SmartTransactionsBonusProducts = exports.SmartTransactionsBasketText = exports.SmartTransactionsBasketProductGroup = exports.SmartTransactionsBasketProduct = exports.SmartTransactionsBasketInfo = exports.SmartTransactionsBasket = exports.SmartDevicesSecubaseConfigLoggingFileNet = exports.SmartDevicesSecubaseConfigLogging = exports.SmartDevicesSecubaseConfig = exports.SmartDevicesProducts = exports.SmartDevicesProductModel = exports.SmartDevicesList1 = exports.SmartDevicesList = exports.SmartDevicesDevice = exports.SmartDevicesDTOSecubaseConfig = exports.SmartDevicesDTOPrepaidTid = exports.SmartDevicesDTO = exports.SmartDeviceProductsPrepaid = exports.SmartDeviceProductsEnabled = exports.SecupayTransactionUpdateBasketDTO = exports.SecupayTransactionSetShippingInformationDTO = exports.SecupayTransactionReverseAccrualDTO = exports.SecupayTransactionProductModelUsedPaymentInstrument = exports.SecupayTransactionProductModelTransferAccount = exports.SecupayTransactionProductModelRedirectUrl = exports.SecupayTransactionProductModel = exports.SecupayTransactionProductDTOSubscription = exports.SecupayTransactionProductDTORedirectUrl = exports.SecupayTransactionProductDTOOptData = exports.SecupayTransactionProductDTOExperience = exports.SecupayTransactionProductDTO = exports.SecupayTransactionExternalInvoicePdfDocument = exports.SecupayTransactionExternalInvoicePdf = exports.SecupayTransactionDTOExternalInvoicePdf = exports.SecupayTransactionCaptureDTO = exports.SecupayTransactionCancelDTO = exports.SecupayBasketItem = exports.ReceiptValue = exports.ReceiptType = undefined;
+exports.SocketProvider = exports.NodeSocket = exports.BrowserSocket = exports.Stomp = exports.Frame = exports.FrameCommands = exports.Environments = exports.StompSmartTransactionsApi = exports.StompClient = exports.SmartTransactionsApi = exports.SmartDevicesApi = exports.PrepaidItemsApi = exports.PaymentTransactionsApi = exports.PaymentSecupayPrepaysApi = exports.PaymentSecupayInvoicesApi = exports.PaymentSecupayDebitsApi = exports.PaymentSecupayCreditcardsApi = exports.PaymentCustomersApi = exports.PaymentContractsApi = exports.PaymentContainersApi = exports.LoyaltyStoregroupsApi = exports.LoyaltySalesApi = exports.LoyaltyMerchantcardsApi = exports.LoyaltyCustomersApi = exports.LoyaltyCardsApi = exports.LoyaltyCardgroupsApi = exports.GeneralStoresApi = exports.GeneralMerchantsApi = exports.DocumentUploadsApi = exports.ReceiptTypeValue = exports.LoyaltyMerchantcardsProductWithReceiptModel = exports.LoyaltyMerchantcardsDTONewPasscode = exports.DocumentUploadsProductModel = exports.VirtualTerminalData = exports.Store = exports.SmartTransactionsReceiptValue = exports.SmartTransactionsReceipt = exports.SmartTransactionsProductModel = exports.SmartTransactionsPreTransactionModel = exports.SmartTransactionsPickupOptions = exports.SmartTransactionsMerchant = exports.SmartTransactionsList = exports.SmartTransactionsIdent = exports.SmartTransactionsDTO = exports.SmartTransactionsCheckin = exports.SmartTransactionsBonusProducts = exports.SmartTransactionsBasketText = exports.SmartTransactionsBasketProductGroup = exports.SmartTransactionsBasketProduct = exports.SmartTransactionsBasketInfo = exports.SmartTransactionsBasket = exports.SmartDevicesSecubaseConfigLoggingFileNet = exports.SmartDevicesSecubaseConfigLogging = exports.SmartDevicesSecubaseConfig = exports.SmartDevicesProducts = exports.SmartDevicesProductModel = exports.SmartDevicesList1 = exports.SmartDevicesList = exports.SmartDevicesDevice = exports.SmartDevicesDTOSecubaseConfig = exports.SmartDevicesDTOPrepaidTid = exports.SmartDevicesDTO = exports.SmartDeviceProductsPrepaid = exports.SmartDeviceProductsEnabled = exports.SecupayTransactionUpdateBasketDTO = exports.SecupayTransactionSetShippingInformationDTO = exports.SecupayTransactionReverseAccrualDTO = exports.SecupayTransactionProductModelUsedPaymentInstrument = exports.SecupayTransactionProductModelTransferAccount = exports.SecupayTransactionProductModelRedirectUrl = exports.SecupayTransactionProductModel = exports.SecupayTransactionProductDTOSubscription = exports.SecupayTransactionProductDTORedirectUrl = exports.SecupayTransactionProductDTOOptData = exports.SecupayTransactionProductDTOExperience = exports.SecupayTransactionProductDTO = exports.SecupayTransactionExternalInvoicePdfDocument = exports.SecupayTransactionExternalInvoicePdf = exports.SecupayTransactionDTOExternalInvoicePdf = exports.SecupayTransactionCaptureDTO = exports.SecupayTransactionCancelDTO = exports.SecupaySubTransactionProductModel = exports.SecupayBasketItem = exports.ReceiptValue = exports.ReceiptType = undefined;
 exports.ProductInstanceUID = exports.ProductInstanceID = exports.ProductExceptionPayload = exports.PrepaidSalesSmartDevice = exports.PrepaidSalesProductModel = exports.PrepaidSalesItem = exports.PrepaidItemsProductModel = exports.PrepaidItemsList = exports.PaymentTransactionsShippingUrl = exports.PaymentTransactionsProductModelMerchant = exports.PaymentTransactionsProductModelDetails = exports.PaymentTransactionsProductModelCustomer = exports.PaymentTransactionsProductModel = exports.PaymentTransactionsList = exports.PaymentTransactionsCancelList = exports.PaymentInformation = exports.PaymentCustomersProductModel = exports.PaymentCustomersList = exports.PaymentCustomersDTO = exports.PaymentContractsRequestIdResult = exports.PaymentContractsProductModel = exports.PaymentContractsList = exports.PaymentContractsDTORequestId = exports.PaymentContractsDTOIFrameOpts = exports.PaymentContractsDTOClone = exports.PaymentContractsDTO = exports.PaymentContainersProductModel = exports.PaymentContainersList = exports.PaymentContainersDTOPrivate = exports.PaymentContainersDTOCustomer = exports.PaymentContainersDTO = exports.PaymentContainerMandate = exports.ParentModel = exports.OpenHours = exports.LoyaltyStoregroupsProductModel = exports.LoyaltyStoregroupsList = exports.LoyaltyStoregroupsDTOStoresAddressComponents = exports.LoyaltyStoregroupsDTO = exports.LoyaltyMerchantcardsValidateMerchantCard = exports.LoyaltyMerchantcardsProductModel = exports.LoyaltyMerchantcardsList = exports.LoyaltyMerchantcardsDTOValidateMerchantCard = exports.LoyaltyMerchantcardsDTOTransaction = exports.LoyaltyMerchantcardsDTOResetPasscode = exports.LoyaltyMerchantcardsDTOPaymentContainer = exports.LoyaltyMerchantcardsDTOLock = exports.LoyaltyMerchantcardsDTOCsc = exports.LoyaltyMerchantcardsDTOCheckPasscode = exports.LoyaltyMerchantcardsDTOCardsAmount = exports.LoyaltyMerchantcardsDTO = exports.LoyaltyDTOStore = exports.LoyaltyDTOMerchant = exports.LoyaltyCustomersRemoved = exports.LoyaltyCustomersProductModel = exports.LoyaltyCustomersPaymentContainerModel = exports.LoyaltyCustomersList = exports.LoyaltyCustomersDTO = exports.LoyaltyCustomersContactDTO = exports.LoyaltyCardsProductModel = exports.LoyaltyCardsList = exports.LoyaltyCardsDTOAccount = exports.LoyaltyCardgroupsProductModel = exports.LoyaltyCardgroupsList = exports.LoyaltyCardgroupsDTOMerchant = exports.LoyaltyCardgroupsDTOCheckPasscodeEnabled = exports.LoyaltyCardgroupsDTO = exports.ItemGroup = exports.InvitedBy = exports.GeoAddressGeometry = exports.GeoAddress = exports.GeneralStoresProductModel = exports.GeneralStoresList = exports.GeneralStoresDTOType = exports.GeneralStoresDTOReason = exports.GeneralStoresDTO = exports.GeneralMerchantsUser = exports.GeneralMerchantsUrls = exports.GeneralMerchantsProductModel = exports.GeneralMerchantsList = exports.GeneralMerchantsLegalDetails = exports.GeneralMerchantsDTO = exports.GeneralMerchantsCheckoutOptionsShipping = exports.GeneralMerchantsCheckoutOptionsCollectionSmartDevices = exports.GeneralMerchantsCheckoutOptionsCollection = exports.GeneralMerchantsCheckoutOptions = exports.DocumentUploadsDTOContent = exports.DocumentUploadsBaseProductModel = exports.DayTime = exports.Contact = exports.BankAccountDescriptor = exports.AssignedBy = exports.AddressComponents = exports.Address = exports.FileCache = exports.SDKCache = exports.OAuthDeviceCredentials = exports.OAuthClientCredentials = exports.OAuthApplicationUserCredentials = exports.Authenticator = exports.ApiClient = undefined;
 
 var _ApiClient = require('./ApiClient');
@@ -418,6 +418,10 @@ var _SecupayBasketItem = require('./model/SecupayBasketItem');
 
 var _SecupayBasketItem2 = _interopRequireDefault(_SecupayBasketItem);
 
+var _SecupaySubTransactionProductModel = require('./model/SecupaySubTransactionProductModel');
+
+var _SecupaySubTransactionProductModel2 = _interopRequireDefault(_SecupaySubTransactionProductModel);
+
 var _SecupayTransactionCancelDTO = require('./model/SecupayTransactionCancelDTO');
 
 var _SecupayTransactionCancelDTO2 = _interopRequireDefault(_SecupayTransactionCancelDTO);
@@ -706,6 +710,38 @@ var _SmartTransactionsApi = require('./api/SmartTransactionsApi');
 
 var _SmartTransactionsApi2 = _interopRequireDefault(_SmartTransactionsApi);
 
+var _StompClient = require('./stomp/StompClient');
+
+var _StompClient2 = _interopRequireDefault(_StompClient);
+
+var _StompSmartTransactionsApi = require('./stomp/api/StompSmartTransactionsApi');
+
+var _StompSmartTransactionsApi2 = _interopRequireDefault(_StompSmartTransactionsApi);
+
+var _StompGlobals = require('./stomp/StompGlobals');
+
+var _StompGlobals2 = _interopRequireDefault(_StompGlobals);
+
+var _Frame = require('./stomp/frame/Frame');
+
+var _Frame2 = _interopRequireDefault(_Frame);
+
+var _Stomp = require('./stomp/main/Stomp');
+
+var _Stomp2 = _interopRequireDefault(_Stomp);
+
+var _BrowserSocket = require('./stomp/socket/BrowserSocket');
+
+var _BrowserSocket2 = _interopRequireDefault(_BrowserSocket);
+
+var _NodeSocket = require('./stomp/socket/NodeSocket');
+
+var _NodeSocket2 = _interopRequireDefault(_NodeSocket);
+
+var _SocketProvider = require('./stomp/socket/SocketProvider');
+
+var _SocketProvider2 = _interopRequireDefault(_SocketProvider);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
@@ -840,6 +876,7 @@ exports.ProductInstanceUID = _ProductInstanceUID2.default;
 exports.ReceiptType = _ReceiptType2.default;
 exports.ReceiptValue = _ReceiptValue2.default;
 exports.SecupayBasketItem = _SecupayBasketItem2.default;
+exports.SecupaySubTransactionProductModel = _SecupaySubTransactionProductModel2.default;
 exports.SecupayTransactionCancelDTO = _SecupayTransactionCancelDTO2.default;
 exports.SecupayTransactionCaptureDTO = _SecupayTransactionCaptureDTO2.default;
 exports.SecupayTransactionDTOExternalInvoicePdf = _SecupayTransactionDTOExternalInvoicePdf2.default;
@@ -880,6 +917,7 @@ exports.SmartTransactionsCheckin = _SmartTransactionsCheckin2.default;
 exports.SmartTransactionsDTO = _SmartTransactionsDTO2.default;
 exports.SmartTransactionsIdent = _SmartTransactionsIdent2.default;
 exports.SmartTransactionsList = _SmartTransactionsList2.default;
+exports.SmartTransactionsMerchant = _SmartTransactionsMerchant2.default;
 exports.SmartTransactionsPickupOptions = _SmartTransactionsPickupOptions2.default;
 exports.SmartTransactionsPreTransactionModel = _SmartTransactionsPreTransactionModel2.default;
 exports.SmartTransactionsProductModel = _SmartTransactionsProductModel2.default;
@@ -891,7 +929,6 @@ exports.DocumentUploadsProductModel = _DocumentUploadsProductModel2.default;
 exports.LoyaltyMerchantcardsDTONewPasscode = _LoyaltyMerchantcardsDTONewPasscode2.default;
 exports.LoyaltyMerchantcardsProductWithReceiptModel = _LoyaltyMerchantcardsProductWithReceiptModel2.default;
 exports.ReceiptTypeValue = _ReceiptTypeValue2.default;
-exports.SmartTransactionsMerchant = _SmartTransactionsMerchant2.default;
 exports.DocumentUploadsApi = _DocumentUploadsApi2.default;
 exports.GeneralMerchantsApi = _GeneralMerchantsApi2.default;
 exports.GeneralStoresApi = _GeneralStoresApi2.default;
@@ -912,3 +949,12 @@ exports.PaymentTransactionsApi = _PaymentTransactionsApi2.default;
 exports.PrepaidItemsApi = _PrepaidItemsApi2.default;
 exports.SmartDevicesApi = _SmartDevicesApi2.default;
 exports.SmartTransactionsApi = _SmartTransactionsApi2.default;
+exports.StompClient = _StompClient2.default;
+exports.StompSmartTransactionsApi = _StompSmartTransactionsApi2.default;
+exports.Environments = _StompGlobals2.default;
+exports.FrameCommands = _StompGlobals2.default;
+exports.Frame = _Frame2.default;
+exports.Stomp = _Stomp2.default;
+exports.BrowserSocket = _BrowserSocket2.default;
+exports.NodeSocket = _NodeSocket2.default;
+exports.SocketProvider = _SocketProvider2.default;

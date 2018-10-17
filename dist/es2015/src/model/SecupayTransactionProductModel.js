@@ -22,6 +22,10 @@ var _SecupayBasketItem = require('./SecupayBasketItem');
 
 var _SecupayBasketItem2 = _interopRequireDefault(_SecupayBasketItem);
 
+var _SecupaySubTransactionProductModel = require('./SecupaySubTransactionProductModel');
+
+var _SecupaySubTransactionProductModel2 = _interopRequireDefault(_SecupaySubTransactionProductModel);
+
 var _SecupayTransactionProductModelRedirectUrl = require('./SecupayTransactionProductModelRedirectUrl');
 
 var _SecupayTransactionProductModelRedirectUrl2 = _interopRequireDefault(_SecupayTransactionProductModelRedirectUrl);
@@ -71,6 +75,7 @@ var SecupayTransactionProductModel = function () {
         this.redirect_url = undefined;
         this.iframe_url = undefined;
         this.container = undefined;
+        this.sub_transactions = undefined;
     }
 
     /**
@@ -144,6 +149,9 @@ var SecupayTransactionProductModel = function () {
                 }
                 if (data.hasOwnProperty('container')) {
                     obj['container'] = _PaymentContainersProductModel2.default.constructFromObject(data['container']);
+                }
+                if (data.hasOwnProperty('sub_transactions')) {
+                    obj['sub_transactions'] = _ApiClient2.default.convertToType(data['sub_transactions'], [_SecupaySubTransactionProductModel2.default]);
                 }
             }
             return obj;
@@ -239,6 +247,11 @@ var SecupayTransactionProductModel = function () {
         /**
         * The container object
         * @member {module:model/PaymentContainersProductModel} container
+        */
+
+        /**
+        * A list of sub-transactions (for mixed basket)
+        * @member {Array.<module:model/SecupaySubTransactionProductModel>} sub_transactions
         */
 
     }]);

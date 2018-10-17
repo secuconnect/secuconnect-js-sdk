@@ -3,8 +3,7 @@ import tls from 'tls';
 
 export default class NodeSocket {
 
-    constructor(secureConnection, host, port, vhost) {
-        this.secureConnection = secureConnection;
+    constructor(host, port, vhost) {
         this.host = host;
         this.port = port;
         this.vhost = vhost;
@@ -12,26 +11,17 @@ export default class NodeSocket {
     }
 
     connect() {
-        if (this.secureConnection) {
-            this.socket = tls.connect(this.port, this.host, {}, () => {
-                if (!this.socket.authorized) {
-                    this.onerror(socket.authorizationError);
-                    this.close();
-                } else {
-                    this.socket.on('data', this.onmessage);
-                    this.socket.on('error', this.onerror);
-                    this.socket.on('close', this.onclose);
-                    this.onopen();
-                }
-            });
-        } else {
-            this.socket = new net.Socket();
-            this.socket.on('connect', this.onopen);
-            this.socket.on('data', this.onmessage);
-            this.socket.on('error', this.onerror);
-            this.socket.on('close', this.onclose);
-            this.socket.connect(this.port, this.host);
-        }
+        this.socket = tls.connect(this.port, this.host, {}, () => {
+            if (this.socket.authorized) {
+                this.socket.on('data', this.onmessage);
+                this.socket.on('error', this.onerror);
+                this.socket.on('close', this.onclose);
+                this.onopen();
+            } else {
+                this.onerror(socket.authorizationError);
+                this.close();
+            }
+        });
     }
 
     addOnOpenListener(onOpen) {
@@ -77,7 +67,7 @@ export default class NodeSocket {
         if (this.connected) {
             this.socket.write(chunk);
         } else {
-            throw 'can not write to an unopened socket';
+            throw 'cannot write to an unopened socket';
         }
     }
 }

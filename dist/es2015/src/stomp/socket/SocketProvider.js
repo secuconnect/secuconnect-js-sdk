@@ -6,9 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Environment = require("../environment/Environment");
-
-var _Environment2 = _interopRequireDefault(_Environment);
+var _StompGlobals = require("../StompGlobals");
 
 var _BrowserSocket = require("../socket/BrowserSocket");
 
@@ -23,23 +21,23 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var SocketProvider = function () {
-    function SocketProvider(secureConnection, host) {
+    function SocketProvider(host, port, vhost) {
         _classCallCheck(this, SocketProvider);
 
-        this.env = new _Environment2.default();
-        this.secureConnection = secureConnection;
         this.host = host;
+        this.port = port;
+        this.vhost = vhost;
     }
 
     _createClass(SocketProvider, [{
         key: "createSocket",
         value: function createSocket(env) {
             switch (env) {
-                case this.env.NODE:
-                    return new _NodeSocket2.default(this.secureConnection, this.host, 61614, '');
+                case _StompGlobals.Environments.NODE:
+                    return new _NodeSocket2.default(this.host, this.port, this.vhost);
                 default:
                     // defaults to browser env
-                    return new _BrowserSocket2.default(this.secureConnection, this.host, 15671, '/stomp/websocket');
+                    return new _BrowserSocket2.default(this.host, this.port, this.vhost);
             }
         }
     }]);
