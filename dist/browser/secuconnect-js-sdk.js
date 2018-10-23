@@ -26383,7 +26383,7 @@ SecupayBasketItem = function () {
     function SecupayBasketItem() {
         _classCallCheck(this, SecupayBasketItem);
 
-        this.item_type = 'article';
+        this.item_type = undefined;
         this.article_number = undefined;
         this.quantity = undefined;
         this.name = undefined;
@@ -26463,7 +26463,6 @@ SecupayBasketItem = function () {
         /**
         * Category of item
         * @member {String} item_type
-        * @default 'article'
         */
 
         /**
@@ -31829,6 +31828,7 @@ exports.default = VirtualTerminalData;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.StompFactory = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -31853,9 +31853,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 StompClient = function () {
-    function StompClient(token, env) {
-        var debugMode = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-
+    function StompClient(token, env, debugMode) {
         _classCallCheck(this, StompClient);
 
         if (token === undefined) throw 'token is not a valid value';
@@ -31882,3 +31880,846 @@ StompClient = function () {
     _createClass(StompClient, [{
         key: 'getToken',
         value: function getToken() {
+            return this.token;
+        }
+    }, {
+        key: 'connect',
+        value: function connect() {
+            var _this = this;
+
+            return new Promise(function (resolve, reject) {
+                // possible situations while connecting to socket
+                _this.stomp.on('socket-error', function (error) {
+                    console.error('Unexpected socket error' + error);
+
+                    reject(error);
+                });
+
+                _this.stomp.on('disconnected', function (error) {
+                    if (error) {
+                        console.error('Disconnected from Stomp with error: ' + error);
+                    } else {
+                        console.log('Disconnected from Stomp');
+                    }
+
+                    reject(error);
+                });
+
+                // possible situations while connecting to stomp broker
+                _this.stomp.on('error', function (frame) {
+                    console.error('Error: ' + frame.body);
+
+                    reject(frame);
+                });
+
+                _this.stomp.on('connected', function (frame) {
+                    // if successfully connected then set proper listeners for soceket and stomp
+                    _this.stomp.on('socket-error', function (error) {
+                        console.log('Unexpected socket error' + error);
+                    });
+
+                    _this.stomp.on('disconnected', function (error) {
+                        if (error) {
+                            console.log('Disconnected from Stomp with error: ' + error);
+                        } else {
+                            console.log('Disconnected from Stomp');
+                        }
+                    });
+
+                    _this.stomp.on('error', function (frame) {
+                        console.error('Error: ' + frame.body);
+                    });
+
+                    _this.stomp.on('receipt', function (frame) {
+                        console.log('Received receipt: ' + frame.headers['receipt-id']);
+                    });
+
+                    _this.stomp.on('message', function (frame) {
+                        console.log('Received message: ' + frame.body);
+                    });
+
+                    resolve(frame);
+                });
+
+                // try connecting
+                _this.stomp.connect();
+            });
+        }
+    }, {
+        key: 'sendMessage',
+        value: function sendMessage(destination, body, want_receipt) {
+            var headers = this.prepareHeaders();
+            headers['destination'] = destination;
+            this.stomp.send('SEND', headers, body, want_receipt);
+        }
+    }, {
+        key: 'subscribe',
+        value: function subscribe(destination, headers) {
+            headers['session'] = this.session;
+            headers['destination'] = destination;
+            this.stomp.send('SUBSCRIBE', headers);
+        }
+    }, {
+        key: 'unsubscribe',
+        value: function unsubscribe(destination, headers) {
+            headers['session'] = this.session;
+            headers['destination'] = destination;
+            this.stomp.send('UNSUBSCRIBE', headers);
+        }
+    }, {
+        key: 'ack',
+        value: function ack(message_id) {
+            send('ACK', { 'message-id': message_id });
+        }
+    }, {
+        key: 'nack',
+        value: function nack(message_id) {
+            send('NACK', { 'message-id': message_id });
+        }
+    }, {
+        key: 'begin',
+        value: function begin() {
+            // generating random number (the multiplier '99999999999' has to be fairly big)
+            var transaction_id = Math.floor(Math.random() * 99999999999).toString();
+            send('BEGIN', { 'transaction': transaction_id });
+            return transaction_id;
+        }
+    }, {
+        key: 'commit',
+        value: function commit(transaction_id) {
+            send('COMMIT', { 'transaction': transaction_id });
+        }
+    }, {
+        key: 'abort',
+        value: function abort(transaction_id) {
+            send('ABORT', { 'transaction': transaction_id });
+        }
+    }, {
+        key: 'setDisconnectedListener',
+        value: function setDisconnectedListener(listener) {
+            if (this['disconnected']) {
+                this.stomp.removeListener('disconnected', this['disconnected']);
+            }
+            this['disconnected'] = listener;
+            this.stomp.on('disconnected', this['disconnected']);
+        }
+    }, {
+        key: 'setSocketErrorListener',
+        value: function setSocketErrorListener(listener) {
+            if (this['socket-error']) {
+                this.stomp.removeListener('socket-error', this['socket-error']);
+            }
+            this['socket-error'] = listener;
+            this.stomp.on('socket-error', this['socket-error']);
+        }
+    }, {
+        key: 'setMessageListener',
+        value: function setMessageListener(listener) {
+            if (this['message']) {
+                this.stomp.removeListener('message', this['message']);
+            }
+            this['message'] = listener;
+            this.stomp.on('message', this['message']);
+        }
+    }, {
+        key: 'setReceiptListener',
+        value: function setReceiptListener(listener) {
+            if (this['receipt']) {
+                this.stomp.removeListener('receipt', this['receipt']);
+            }
+            this['receipt'] = listener;
+            this.stomp.on('receipt', this['receipt']);
+        }
+    }, {
+        key: 'setErrorListener',
+        value: function setErrorListener(listener) {
+            if (this['error']) {
+                this.stomp.removeListener('error', this['error']);
+            }
+            this['error'] = listener;
+            this.stomp.on('error', this['error']);
+        }
+    }, {
+        key: 'generateCorrelationId',
+        value: function generateCorrelationId() {
+            var date = new Date();
+            var startUniquePart = Math.random().toString(36).substr(2, 115);
+            var endUniquePart = Math.random().toString(36).substr(2, 115);
+
+            return startUniquePart + '-' + date.toISOString().replace(/ /g, '') + '-' + endUniquePart;
+        }
+    }, {
+        key: 'prepareHeaders',
+        value: function prepareHeaders() {
+            return {
+                "content-type": config.headers.content_type,
+                "reply-to": config.headers.reply_to,
+                "user-id": this.getToken(),
+                "correlation-id": this.generateCorrelationId(),
+                "ack": config.headers.ack
+            };
+        }
+    }]);
+
+    return StompClient;
+}();
+
+;
+
+var StompFactory = exports.StompFactory = {
+    getInstance: function getInstance(token, env) {
+        var debugMode = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+        if (StompFactory.hasOwnProperty('instance')) {
+            return StompFactory.instance;
+        } else {
+            StompFactory.instance = new StompClient(token, env, debugMode);
+            StompFactory.instance.constructor = undefined;
+            Object.freeze(StompFactory);
+            return StompFactory.instance;
+        }
+    }
+};
+},{"../../stomp-config.json":207,"./StompGlobals":200,"./main/Stomp":203,"./socket/SocketProvider":206}],200:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var StompFrameCommands = exports.StompFrameCommands = {
+    CONNECTED: 'CONNECTED',
+    MESSAGE: 'MESSAGE',
+    RECEIPT: 'RECEIPT',
+    ERROR: 'ERROR'
+};
+
+var Environments = exports.Environments = {
+    NODE: 'NODE',
+    BROWSER: 'BROWSER'
+};
+
+var ResponseStatus = exports.ResponseStatus = {
+    ok: 'ok',
+    error: 'error'
+};
+},{}],201:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _StompClient = require("../StompClient");
+
+var _ApiClient = require("../../ApiClient");
+
+var _ApiClient2 = _interopRequireDefault(_ApiClient);
+
+var _SmartTransactionsProductModel = require("../../model/SmartTransactionsProductModel");
+
+var _SmartTransactionsProductModel2 = _interopRequireDefault(_SmartTransactionsProductModel);
+
+var _StompGlobals = require("../StompGlobals");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+StompSmartTransactionsApi = function () {
+    function StompSmartTransactionsApi(authenticator) {
+        var _this = this;
+
+        var stompClient = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+
+        _classCallCheck(this, StompSmartTransactionsApi);
+
+        this.destination = ["/exchange/connect.api/api:", ":Smart.Transactions"];
+        this.authenticator = authenticator;
+
+        if (stompClient != null && stompClient instanceof StompClient) {
+            this.stompClient = stompClient;
+            this.connected = this.stompClient.connect();
+        } else {
+            this.connected = new Promise(function (resolve, reject) {
+                _this.authenticator.getToken().then(function (token) {
+                    _this.stompClient = _StompClient.StompFactory.getInstance(token.access_token, _StompGlobals.Environments.BROWSER);
+                    _this.stompClient.connect().then(function (connectedFrame) {
+                        resolve(connectedFrame);
+                    });
+                });
+            });
+        }
+    }
+
+    _createClass(StompSmartTransactionsApi, [{
+        key: "addTransaction",
+        value: function addTransaction(smartTransactionProperties) {
+            var _this2 = this;
+
+            return new Promise(function (resolve, reject) {
+                _this2.connected.then(function (connectedFrame) {
+                    _this2.stompClient.sendMessage(_this2.destination[0] + 'add' + _this2.destination[1], JSON.stringify({
+                        'data': smartTransactionProperties }));
+
+                    _this2.stompClient.setMessageListener(function (frame) {
+                        var response = JSON.parse(frame.body);
+
+                        if (response.status === _StompGlobals.ResponseStatus.ok) {
+                            var smartTransaction = _ApiClient2.default.convertToType(response.data, _SmartTransactionsProductModel2.default);
+                            resolve(smartTransaction);
+                        } else {
+                            reject(response.error_details);
+                        }
+                    });
+                });
+            });
+        }
+    }, {
+        key: "updateTransaction",
+        value: function updateTransaction(smartTransactionId, smartTransactionProperties) {
+            var _this3 = this;
+
+            return new Promise(function (resolve, reject) {
+                _this3.connected.then(function () {
+                    _this3.stompClient.sendMessage(_this3.destination[0] + 'update' + _this3.destination[1], JSON.stringify({
+                        'pid': smartTransactionId,
+                        'data': smartTransactionProperties
+                    }));
+
+                    _this3.stompClient.setMessageListener(function (frame) {
+                        var response = JSON.parse(frame.body);
+
+                        if (response.status === _StompGlobals.ResponseStatus.ok) {
+                            var smartTransaction = _ApiClient2.default.convertToType(response.data, _SmartTransactionsProductModel2.default);
+                            resolve(smartTransaction);
+                        } else {
+                            reject(response.error_details);
+                        }
+                    });
+                });
+            });
+        }
+    }, {
+        key: "startTransaction",
+        value: function startTransaction(smartTransactionId, paymentMethod) {
+            var _this4 = this;
+
+            return new Promise(function (resolve, reject) {
+                _this4.connected.then(function () {
+                    _this4.stompClient.sendMessage(_this4.destination[0] + 'update' + _this4.destination[1] + 'Start', JSON.stringify({
+                        'pid': smartTransactionId,
+                        'sid': paymentMethod
+                    }));
+
+                    _this4.stompClient.setMessageListener(function (frame) {
+                        var response = JSON.parse(frame.body);
+
+                        if (response.status === _StompGlobals.ResponseStatus.ok) {
+                            var smartTransaction = _ApiClient2.default.convertToType(response.data, _SmartTransactionsProductModel2.default);
+                            resolve(smartTransaction);
+                        } else {
+                            reject(response.error_details);
+                        }
+                    });
+                });
+            });
+        }
+    }, {
+        key: "preTransaction",
+        value: function preTransaction(smartTransactionId) {
+            var _this5 = this;
+
+            return new Promise(function (resolve, reject) {
+                _this5.connected.then(function () {
+                    _this5.stompClient.sendMessage(_this5.destination[0] + 'update' + _this5.destination[1] + 'Pretransaction', JSON.stringify({
+                        'pid': smartTransactionId
+                    }));
+
+                    _this5.stompClient.setMessageListener(function (frame) {
+                        var response = JSON.parse(frame.body);
+
+                        if (response.status === _StompGlobals.ResponseStatus.ok) {
+                            var smartTransaction = _ApiClient2.default.convertToType(response.data, _SmartTransactionsProductModel2.default);
+                            resolve(smartTransaction);
+                        } else {
+                            reject(response.error_details);
+                        }
+                    });
+                });
+            });
+        }
+    }]);
+
+    return StompSmartTransactionsApi;
+}();
+
+exports.default = StompSmartTransactionsApi;
+},{"../../ApiClient":21,"../../model/SmartTransactionsProductModel":194,"../StompClient":199,"../StompGlobals":200}],202:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+Frame = function () {
+    function Frame(command, headers, body, want_receipt) {
+        _classCallCheck(this, Frame);
+
+        this.command = command || '';
+        this.headers = headers || {};
+        this.body = body || '';
+
+        if (want_receipt) {
+            this.headers['receipt'] = Math.floor(Math.random() * 99999999999).toString() + this.headers['session'] ? "-" + this.headers['session'] : '';
+        }
+    }
+
+    _createClass(Frame, [{
+        key: 'toString',
+        value: function toString() {
+            var frame = this.command + "\n";
+
+            for (var key in this.headers) {
+                frame += key + ':' + this.headers[key] + '\n';
+            }
+
+            if (this.body) {
+                frame += '\n' + this.body;
+            }
+
+            return frame + '\n\x00';
+        }
+    }, {
+        key: 'parseChunk',
+        value: function parseChunk(chunk) {
+            chunk = chunk.toString('utf8', 0, chunk.length);
+
+            this.command = chunk.split('\n')[0];
+            chunk = chunk.slice(this.command.length + 1, chunk.length).split('\n\n');
+
+            var headers_split = chunk[0].split('\n');
+            for (var i = 0; i < headers_split.length; i++) {
+                var header = headers_split[i].split(':');
+                if (header.length > 1) {
+                    this.headers[header[0].trim()] = header[1].trim();
+                }
+            }
+            this.headers['bytes_message'] = 'content-length' in this.headers;
+
+            this.body = chunk.slice(1, chunk.length);
+
+            return this;
+        }
+    }]);
+
+    return Frame;
+}();
+
+exports.default = Frame;
+;
+},{}],203:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _events = require("events");
+
+var _Frame = require("../frame/Frame");
+
+var _Frame2 = _interopRequireDefault(_Frame);
+
+var _StompGlobals = require("../StompGlobals");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Stomp = function (_EventEmitter) {
+    _inherits(Stomp, _EventEmitter);
+
+    function Stomp(login, passcode, socket) {
+        _classCallCheck(this, Stomp);
+
+        var _this = _possibleConstructorReturn(this, (Stomp.__proto__ || Object.getPrototypeOf(Stomp)).call(this));
+
+        _events.EventEmitter.call(_this);
+
+        _this.login = login; // broker's user login
+        _this.passcode = passcode; // broker's user passcode (password)
+        _this.socket = socket; // socket used to connect to broker
+        _this.session = null; // session id
+        return _this;
+    }
+
+    _createClass(Stomp, [{
+        key: "connect",
+        value: function connect() {
+            var _this2 = this;
+
+            this.socket.addOnOpenListener(function () {
+                console.log('Connecting to Stomp');
+                var headers = {};
+                headers['login'] = _this2.login;
+                headers['passcode'] = _this2.passcode;
+
+                _this2.send('CONNECT', headers);
+            });
+
+            this.socket.addOnMessageListener(function (data) {
+                var frames = data.split('\0\n');
+
+                if (frames.length == 1) {
+                    frames = data.split('\0');
+                    if (frames.length == 1) {
+                        console.error('Unexpected error when receiving data chunk from broker: ' + data, true);
+                    }
+                }
+                frames.pop();
+
+                var frame = null;
+                while (frame = frames.shift()) {
+                    _this2.handleFrame(new _Frame2.default().parseChunk(frame));
+                }
+            });
+
+            this.socket.addOnErrorListener(function (error) {
+                _this2.emit("socket-error", error);
+            });
+
+            this.socket.addOnCloseListener(function (error) {
+                _this2.emit("disconnected", error);
+            });
+
+            this.socket.connect();
+        }
+    }, {
+        key: "send",
+        value: function send(command, headers, body, want_receipt) {
+            var frame = new _Frame2.default(command, headers, body, want_receipt);
+
+            console.log('sending frame:\n' + frame.toString());
+
+            if (this.socket.write(frame.toString()) === false) {
+                console.log('Write buffered');
+            }
+        }
+    }, {
+        key: "disconnect",
+        value: function disconnect() {
+            this.socket.end();
+
+            if (this.socket.readyState == 'readOnly') {
+                this.socket.destroy();
+            }
+
+            console.log('disconnect called');
+        }
+    }, {
+        key: "handleFrame",
+        value: function handleFrame(frame) {
+            switch (frame.command) {
+                case _StompGlobals.StompFrameCommands.MESSAGE:
+                    console.log('Recived message from broker');
+                    this.emit('message', frame);
+                    break;
+                case _StompGlobals.StompFrameCommands.RECEIPT:
+                    console.log('Received receipt');
+                    this.emit('receipt', frame);
+                    break;
+                case _StompGlobals.StompFrameCommands.CONNECTED:
+                    console.log('Connected to Stomp broker');
+                    this.session = frame.headers['session'];
+                    this.emit('connected', frame);
+                    break;
+                case _StompGlobals.StompFrameCommands.ERROR:
+                    console.warn('Received error message');
+                    this.emit('error', frame);
+                    break;
+                default:
+                    console.error("Unknown command: " + frame.command, true);
+            }
+        }
+    }]);
+
+    return Stomp;
+}(_events.EventEmitter);
+
+exports.default = Stomp;
+;
+},{"../StompGlobals":200,"../frame/Frame":202,"events":5}],204:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+BrowserSocket = function () {
+    function BrowserSocket(host, port, vhost) {
+        _classCallCheck(this, BrowserSocket);
+
+        this.url = 'wss://' + host + ':' + port + vhost;
+        this.connected = false;
+    }
+
+    _createClass(BrowserSocket, [{
+        key: 'connect',
+        value: function connect() {
+            this.socket = new WebSocket(this.url);
+            this.socket.onmessage = this.onmessage;
+            this.socket.onerror = this.onerror;
+            this.socket.onclose = this.onclose;
+            this.socket.binaryType = "arraybuffer";
+            this.socket.onopen = this.onopen;
+        }
+    }, {
+        key: 'addOnOpenListener',
+        value: function addOnOpenListener(onOpen) {
+            var _this = this;
+
+            this.onopen = function () {
+                _this.connected = true;
+                console.log('Connected to socket');
+                onOpen();
+            };
+        }
+    }, {
+        key: 'addOnMessageListener',
+        value: function addOnMessageListener(onMessage) {
+            this.onmessage = function (messageEvent) {
+                console.log('Received data on socket');
+                onMessage(messageEvent.data);
+            };
+        }
+    }, {
+        key: 'addOnErrorListener',
+        value: function addOnErrorListener(onError) {
+            this.onerror = function (error) {
+                console.error('Socket error');
+                onError(error);
+            };
+        }
+    }, {
+        key: 'addOnCloseListener',
+        value: function addOnCloseListener(onClose) {
+            this.onclose = function (error) {
+                console.log('Closing socket');
+                onClose(error);
+            };
+        }
+    }, {
+        key: 'close',
+        value: function close() {
+            if (this.connected) {
+                this.socket.close();
+                this.connected = false;
+            }
+        }
+    }, {
+        key: 'write',
+        value: function write(chunk) {
+            if (this.connected) {
+                this.socket.send(chunk);
+            } else {
+                throw 'can not write to an unopened socket';
+            }
+        }
+    }]);
+
+    return BrowserSocket;
+}();
+
+exports.default = BrowserSocket;
+},{}],205:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _net = require('net');
+
+var _net2 = _interopRequireDefault(_net);
+
+var _tls = require('tls');
+
+var _tls2 = _interopRequireDefault(_tls);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+NodeSocket = function () {
+    function NodeSocket(host, port, vhost) {
+        _classCallCheck(this, NodeSocket);
+
+        this.host = host;
+        this.port = port;
+        this.vhost = vhost;
+        this.connected = false;
+    }
+
+    _createClass(NodeSocket, [{
+        key: 'connect',
+        value: function connect() {
+            var _this = this;
+
+            this.socket = _tls2.default.connect(this.port, this.host, {}, function () {
+                if (_this.socket.authorized) {
+                    _this.socket.on('data', _this.onmessage);
+                    _this.socket.on('error', _this.onerror);
+                    _this.socket.on('close', _this.onclose);
+                    _this.onopen();
+                } else {
+                    _this.onerror(socket.authorizationError);
+                    _this.close();
+                }
+            });
+        }
+    }, {
+        key: 'addOnOpenListener',
+        value: function addOnOpenListener(onOpen) {
+            var _this2 = this;
+
+            this.onopen = function () {
+                _this2.connected = true;
+                console.log('Connected to socket');
+                onOpen();
+            };
+        }
+    }, {
+        key: 'addOnMessageListener',
+        value: function addOnMessageListener(onMessage) {
+            this.onmessage = function (binaryData) {
+                console.log('Received data on socket');
+                onMessage('' + binaryData);
+            };
+        }
+    }, {
+        key: 'addOnErrorListener',
+        value: function addOnErrorListener(onError) {
+            this.onerror = function (error) {
+                console.error('Socket error');
+                onError(error);
+            };
+        }
+    }, {
+        key: 'addOnCloseListener',
+        value: function addOnCloseListener(onClose) {
+            this.onclose = function (error) {
+                console.log('Closing socket');
+                onClose(error);
+            };
+        }
+    }, {
+        key: 'close',
+        value: function close() {
+            if (this.connected) {
+                socket.end();
+                if (socket.readyState == 'readOnly') {
+                    socket.destroy();
+                }
+                this.connected = false;
+            }
+        }
+    }, {
+        key: 'write',
+        value: function write(chunk) {
+            if (this.connected) {
+                this.socket.write(chunk);
+            } else {
+                throw 'cannot write to an unopened socket';
+            }
+        }
+    }]);
+
+    return NodeSocket;
+}();
+
+exports.default = NodeSocket;
+},{"net":1,"tls":1}],206:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _StompGlobals = require("../StompGlobals");
+
+var _BrowserSocket = require("../socket/BrowserSocket");
+
+var _BrowserSocket2 = _interopRequireDefault(_BrowserSocket);
+
+var _NodeSocket = require("../socket/NodeSocket");
+
+var _NodeSocket2 = _interopRequireDefault(_NodeSocket);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+SocketProvider = function () {
+    function SocketProvider(host, port, vhost) {
+        _classCallCheck(this, SocketProvider);
+
+        this.host = host;
+        this.port = port;
+        this.vhost = vhost;
+    }
+
+    _createClass(SocketProvider, [{
+        key: "createSocket",
+        value: function createSocket(env) {
+            switch (env) {
+                case _StompGlobals.Environments.NODE:
+                    return new _NodeSocket2.default(this.host, this.port, this.vhost);
+                default:
+                    // defaults to browser env
+                    return new _BrowserSocket2.default(this.host, this.port, this.vhost);
+            }
+        }
+    }]);
+
+    return SocketProvider;
+}();
+
+exports.default = SocketProvider;
+},{"../StompGlobals":200,"../socket/BrowserSocket":204,"../socket/NodeSocket":205}],207:[function(require,module,exports){
+module.exports={
+  "host": "connect-testing.secupay-ag.de",
+  "node_env": {
+    "port": "61614", 
+    "vhost": "" 
+  },
+  "browser_env": {
+    "port": "15671", 
+    "vhost": "/stomp/websocket"
+  },
+  "headers": {
+    "content_type": "application/json",
+    "reply_to": "/temp-queue/main",
+    "ack": "client-individual"
+  }
+}
+},{}]},{},[49]);
