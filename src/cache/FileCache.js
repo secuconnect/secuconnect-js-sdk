@@ -15,30 +15,28 @@ export default class FileCache extends SDKCache {
 
       fs.exists(path, (exists) => {
         if (exists) {
-          this.readFromFile(key)
-            .then((item) => {
-              let now = new Date();
-              now = Math.round(now.getTime() / 1000);
-
-              let createdAt = new Date(item.createdAt);
-              createdAt = Math.round(createdAt.getTime() / 1000);
-
-              let difference = now - createdAt;
-
-              if (item.expires_in-30 > difference) {
-                resolve(true);
-              } else {
-                resolve(false);
-              }
-            })
-            .catch((err) => {
-              console.log(err);
-            });
+          resolve(true);
         } else {
           resolve(false);
         }
       });
     });
+  }
+
+  isExpired(item) {
+      let now = new Date();
+      now = Math.round(now.getTime() / 1000);
+
+      let createdAt = new Date(item.createdAt);
+      createdAt = Math.round(createdAt.getTime() / 1000);
+
+      let difference = now - createdAt;
+
+      if (item.expires_in-30 > difference) {
+          return false;
+      } else {
+          return true;
+      }
   }
 
   setItem(key, value) {

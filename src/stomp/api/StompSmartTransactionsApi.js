@@ -1,16 +1,26 @@
-import StompClient from "../StompClient";
+import { StompFactory } from "../StompClient";
 import ApiClient from "../../ApiClient";
 import SmartTransactionsProductModel from "../../model/SmartTransactionsProductModel";
-import { ResponseStatus, StompFrameCommands } from "../StompGlobals";
+import { ResponseStatus, Environments } from "../StompGlobals";
 
 export default class StompSmartTransactionsApi {
-    constructor(stompClient) {
-        if (stompClient instanceof StompClient) {
-            this.destination = ["/exchange/connect.api/api:", ":Smart.Transactions"];
+    
+    constructor(authenticator, stompClient = null) {
+        this.destination = ["/exchange/connect.api/api:", ":Smart.Transactions"];
+        this.authenticator = authenticator;
+        
+        if (stompClient != null && stompClient instanceof StompClient) {
             this.stompClient = stompClient;
             this.connected = this.stompClient.connect();
         } else {
-            throw 'StompSmartTransactionsApi requires StompClient class';
+            this.connected = new Promise((resolve, reject) => {
+                this.authenticator.getToken().then((token) => {
+                    this.stompClient = StompFactory.getInstance(token.access_token, Environments.BROWSER);
+                    this.stompClient.connect().then((connectedFrame) => {
+                        resolve(connectedFrame);
+                    });
+                });
+            });
         }
     }
 

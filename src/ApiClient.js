@@ -1,7 +1,8 @@
 
 import superagent from "superagent";
 import querystring from "querystring";
-import FileCache from "./cache/FileCache";
+import ImitationDevicePrinter from "./printer/ImitationDevicePrinter";
+import SDKCache from "./cache/SDKCache";
 
 /**
  * Manages low level client-server communications, parameter marshalling, etc. There should not be any need for an
@@ -49,7 +50,7 @@ export default class ApiClient {
          * @default true
          */
         this.cache = true;
-        this.cachePool = new FileCache();
+        this.cachePool = new SDKCache();
 
         /**
          * If set to true, the client will save the cookies from each server
@@ -57,6 +58,13 @@ export default class ApiClient {
          * @default false
          */
         this.enableCookies = false;
+
+        /**
+         * Printer to show user code.
+         *
+         * @type {ImitationDevicePrinter}
+         */
+        this.printer = new ImitationDevicePrinter();
 
         /*
          * Used to save and return cookies in a node.js (non-browser) setting,
@@ -555,6 +563,32 @@ export default class ApiClient {
             }
         }
     };
+
+    getCachePool() {
+        return this.cachePool;
+    }
+
+    setCachePool(cachePool) {
+        this.cachePool = cachePool;
+    }
+
+    /**
+     * Getter for printer.
+     *
+     * @returns {ImitationDevicePrinter}
+     */
+    getPrinter() {
+        return this.printer;
+    }
+
+    /**
+     * Setter for printer.
+     *
+     * @param printer
+     */
+    setPrinter(printer) {
+        this.printer = printer;
+    }
 }
 
 /**

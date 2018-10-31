@@ -7,18 +7,39 @@ import AuthenticationCredentials from './AuthenticationCredentials';
  */
 
 export default class OAuthDeviceCredentials extends AuthenticationCredentials {
-    static from(clientId, clientSecret, deviceUuid) {
-        var credentials = new OAuthDeviceCredentials();
-        credentials.credentials = {
-            'grant_type': 'device',
-            'client_id': clientId,
-            'client_secret': clientSecret,
-            'uuid': deviceUuid
-        };
+    static from(clientId, clientSecret, codeToken) {
+        let credentials = this.createBasicCredentials(clientId, clientSecret);
+        credentials.credentials.code = codeToken.device_code;
+        credentials.credentials.codeToken = codeToken;
+
+        return credentials;
+    }
+
+    static fromUuid(clientId, clientSecret, uuid) {
+        let credentials = this.createBasicCredentials(clientId, clientSecret);
+        credentials.credentials.uuid = uuid;
+
         return credentials;
     }
 
     getUniqueKey() {
-        return md5(this.credentials.grant_type + this.credentials.client_id + this.credentials.uuid);
+        let textualKey = this.credentials.grant_type + this.credentials.client_id;
+
+        if (this.credentials.uuid !== undefined) {
+            textualKey = textualKey + this.credentials.uuid;
+        }
+
+        return md5(textualKey);
+    }
+
+    static createBasicCredentials(clientId, clientSecret) {
+        let credentials = new OAuthDeviceCredentials();
+        credentials.credentials = {
+            'grant_type': 'device',
+            'client_id': clientId,
+            'client_secret': clientSecret
+        };
+
+        return credentials;
     }
 }
