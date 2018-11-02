@@ -24129,7 +24129,7 @@ SecupayBasketItem = function () {
     function SecupayBasketItem() {
         _classCallCheck(this, SecupayBasketItem);
 
-        this.item_type = 'article';
+        this.item_type = undefined;
         this.article_number = undefined;
         this.quantity = undefined;
         this.name = undefined;
@@ -24209,7 +24209,6 @@ SecupayBasketItem = function () {
         /**
         * Category of item
         * @member {String} item_type
-        * @default 'article'
         */
 
         /**
