@@ -3,8 +3,8 @@ import SocketProvider from './socket/SocketProvider';
 import * as config from "../../stomp-config.json";
 import { Environments } from './StompGlobals';
 
-export default class StompClient {
-    constructor(token, env, debugMode = false) {
+class StompClient {
+    constructor(token, env, debugMode) {
         if (token === undefined) throw 'token is not a valid value';
         if (config.host === '' || config.host === undefined) throw 'invalid host in stomp config';
         if (config.headers.content_type === '' || config.headers.content_type === undefined) throw 'invalid content_type in stomp config';
@@ -189,3 +189,16 @@ export default class StompClient {
         };
     }
 };
+
+export const StompFactory = {
+    getInstance: (token, env, debugMode = false) => {
+        if (StompFactory.hasOwnProperty('instance')) {
+            return StompFactory.instance;
+        } else {
+            StompFactory.instance = new StompClient(token, env, debugMode);
+            StompFactory.instance.constructor = undefined;
+            Object.freeze(StompFactory);
+            return StompFactory.instance;
+        }
+    }
+}

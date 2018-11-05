@@ -3,6 +3,10 @@ export default class AuthenticationCredentials {
         return this.credentials;
     }
 
+    setCredentials(credentials) {
+        this.credentials = credentials;
+    }
+
     getUniqueKey() {
     }
 }

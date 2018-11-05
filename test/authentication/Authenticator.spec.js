@@ -1,5 +1,6 @@
 
 import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCredentials } from '../Globals';
+import FileCache from "../../src/cache/FileCache";
 
 (function(root, factory) {
     if (typeof define === 'function' && define.amd) {
@@ -50,6 +51,10 @@ import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCre
                         OAuthApplicationUserCredentials.device,
                         OAuthApplicationUserCredentials.deviceName
                     ));
+
+                let fileCache = new FileCache();
+                authenticator.getApiClient().setCachePool(fileCache);
+
                 return authenticator.getToken()
                     .then((token) => {
                         expect(typeof token).toBe('object');
@@ -65,6 +70,10 @@ import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCre
                         OAuthClientCredentials.clientId,
                         OAuthClientCredentials.clientSecret
                     ));
+
+                let fileCache = new FileCache();
+                authenticator.getApiClient().setCachePool(fileCache);
+
                 return authenticator.getToken()
                     .then((token) => {
                         expect(typeof token).toBe('object');
@@ -73,7 +82,7 @@ import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCre
                     });
             });
         });
-        describe('OAuthDeviceCredentials', function() {
+        describe.skip('OAuthDeviceCredentials', function() {
             it('should allow acquiring token', function() {
                 var authenticator = new SecuConnectApi.Authenticator(
                     SecuConnectApi.OAuthDeviceCredentials.from(
@@ -81,6 +90,10 @@ import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCre
                         OAuthDeviceCredentials.clientSecret,
                         OAuthDeviceCredentials.deviceUuid
                     ));
+
+                let fileCache = new FileCache();
+                authenticator.getApiClient().setCachePool(fileCache);
+
                 return authenticator.getToken()
                     .then((token) => {
                         expect(typeof token).toBe('object');
@@ -90,5 +103,4 @@ import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCre
             });
         });
     });
-
 }));
