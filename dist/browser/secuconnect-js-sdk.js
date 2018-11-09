@@ -24144,10 +24144,9 @@ SecupayBasketItem = function () {
             if (data) {
                 obj = obj || new SecupayBasketItem();
 
-                //
-                // if (data.hasOwnProperty('item_type')) {
-                //     obj['item_type'] = ApiClient.convertToType(data['item_type'], 'String');
-                // }
+                if (data.hasOwnProperty('item_type')) {
+                    obj['item_type'] = _ApiClient2.default.convertToType(data['item_type'], 'String');
+                }
                 if (data.hasOwnProperty('article_number')) {
                     obj['article_number'] = _ApiClient2.default.convertToType(data['article_number'], 'String');
                 }
@@ -29927,17 +29926,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _StompClient = require("../StompClient");
 
-var _ApiClient = require("../../ApiClient");
-
-var _ApiClient2 = _interopRequireDefault(_ApiClient);
-
-var _SmartTransactionsProductModel = require("../../model/SmartTransactionsProductModel");
-
-var _SmartTransactionsProductModel2 = _interopRequireDefault(_SmartTransactionsProductModel);
-
 var _StompGlobals = require("../StompGlobals");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -29946,6 +29935,7 @@ StompSmartTransactionsApi = function () {
         var _this = this;
 
         var stompClient = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+        var environment = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _StompGlobals.Environments.BROWSER;
 
         _classCallCheck(this, StompSmartTransactionsApi);
 
@@ -29956,11 +29946,15 @@ StompSmartTransactionsApi = function () {
             this.stompClient = stompClient;
             this.connected = this.stompClient.connect();
         } else {
-            this.connected = new Promise(function (resolve, reject) {
+            this.connected = new Promise(function (resolve) {
                 _this.authenticator.getToken().then(function (token) {
-                    _this.stompClient = _StompClient.StompFactory.getInstance(token.access_token, _StompGlobals.Environments.BROWSER);
+                    _this.stompClient = _StompClient.StompFactory.getInstance(token.access_token, environment);
                     _this.stompClient.connect().then(function (connectedFrame) {
-                        resolve(connectedFrame);
+                        if (connectedFrame) {
+                            resolve(connectedFrame);
+                        } else {
+                            reject('Connection error');
+                        }
                     });
                 });
             });
@@ -29968,100 +29962,57 @@ StompSmartTransactionsApi = function () {
     }
 
     _createClass(StompSmartTransactionsApi, [{
-        key: "addTransaction",
-        value: function addTransaction(smartTransactionProperties) {
+        key: "getConnectedStompClient",
+        value: function getConnectedStompClient() {
             var _this2 = this;
 
-            return new Promise(function (resolve, reject) {
-                _this2.connected.then(function (connectedFrame) {
-                    _this2.stompClient.sendMessage(_this2.destination[0] + 'add' + _this2.destination[1], JSON.stringify({
-                        'data': smartTransactionProperties }));
+            return this.connected.then(function () {
+                return _this2.stompClient;
+            });
+        }
+    }, {
+        key: "addTransaction",
+        value: function addTransaction(smartTransactionProperties) {
+            var _this3 = this;
 
-                    _this2.stompClient.setMessageListener(function (frame) {
-                        var response = JSON.parse(frame.body);
-
-                        if (response.status === _StompGlobals.ResponseStatus.ok) {
-                            var smartTransaction = _ApiClient2.default.convertToType(response.data, _SmartTransactionsProductModel2.default);
-                            resolve(smartTransaction);
-                        } else {
-                            reject(response.error_details);
-                        }
-                    });
-                });
+            this.connected.then(function () {
+                _this3.stompClient.sendMessage(_this3.destination[0] + 'add' + _this3.destination[1], JSON.stringify({
+                    'data': smartTransactionProperties }));
             });
         }
     }, {
         key: "updateTransaction",
         value: function updateTransaction(smartTransactionId, smartTransactionProperties) {
-            var _this3 = this;
+            var _this4 = this;
 
-            return new Promise(function (resolve, reject) {
-                _this3.connected.then(function () {
-                    _this3.stompClient.sendMessage(_this3.destination[0] + 'update' + _this3.destination[1], JSON.stringify({
-                        'pid': smartTransactionId,
-                        'data': smartTransactionProperties
-                    }));
-
-                    _this3.stompClient.setMessageListener(function (frame) {
-                        var response = JSON.parse(frame.body);
-
-                        if (response.status === _StompGlobals.ResponseStatus.ok) {
-                            var smartTransaction = _ApiClient2.default.convertToType(response.data, _SmartTransactionsProductModel2.default);
-                            resolve(smartTransaction);
-                        } else {
-                            reject(response.error_details);
-                        }
-                    });
-                });
+            this.connected.then(function () {
+                _this4.stompClient.sendMessage(_this4.destination[0] + 'update' + _this4.destination[1], JSON.stringify({
+                    'pid': smartTransactionId,
+                    'data': smartTransactionProperties
+                }));
             });
         }
     }, {
         key: "startTransaction",
         value: function startTransaction(smartTransactionId, paymentMethod) {
-            var _this4 = this;
+            var _this5 = this;
 
-            return new Promise(function (resolve, reject) {
-                _this4.connected.then(function () {
-                    _this4.stompClient.sendMessage(_this4.destination[0] + 'add' + _this4.destination[1] + '.Start', JSON.stringify({
-                        'pid': smartTransactionId,
-                        'sid': paymentMethod
-                    }));
-
-                    _this4.stompClient.setMessageListener(function (frame) {
-                        var response = JSON.parse(frame.body);
-
-                        if (response.status === _StompGlobals.ResponseStatus.ok) {
-                            var smartTransaction = _ApiClient2.default.convertToType(response.data, _SmartTransactionsProductModel2.default);
-                            resolve(smartTransaction);
-                        } else {
-                            reject(response.error_details);
-                        }
-                    });
-                });
+            this.connected.then(function () {
+                _this5.stompClient.sendMessage(_this5.destination[0] + 'add' + _this5.destination[1] + '.Start', JSON.stringify({
+                    'pid': smartTransactionId,
+                    'sid': paymentMethod
+                }));
             });
         }
     }, {
         key: "preTransaction",
         value: function preTransaction(smartTransactionId) {
-            var _this5 = this;
+            var _this6 = this;
 
-            return new Promise(function (resolve, reject) {
-                _this5.connected.then(function () {
-                    _this5.stompClient.sendMessage(_this5.destination[0] + 'add' + _this5.destination[1] + '.Pretransaction', JSON.stringify({
-                        'pid': smartTransactionId
-                    }));
-
-                    _this5.stompClient.setMessageListener(function (frame) {
-                        var response = JSON.parse(frame.body);
-
-                        if (response.status === _StompGlobals.ResponseStatus.ok) {
-                            var smartTransaction = _ApiClient2.default.convertToType(response.data, _SmartTransactionsProductModel2.default);
-                            resolve(smartTransaction);
-                        } else {
-                            reject(response.error_details);
-                        }
-                    });
-                });
+            this.connected.then(function () {
+                _this6.stompClient.sendMessage(_this6.destination[0] + 'add' + _this6.destination[1] + '.Pretransaction', JSON.stringify({
+                    'pid': smartTransactionId
+                }));
             });
         }
     }]);
@@ -30070,7 +30021,7 @@ StompSmartTransactionsApi = function () {
 }();
 
 exports.default = StompSmartTransactionsApi;
-},{"../../ApiClient":12,"../../model/SmartTransactionsProductModel":186,"../StompClient":193,"../StompGlobals":194}],196:[function(require,module,exports){
+},{"../StompClient":193,"../StompGlobals":194}],196:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
