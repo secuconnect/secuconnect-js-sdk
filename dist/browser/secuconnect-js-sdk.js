@@ -25,7 +25,6 @@ var OAuthApplicationUserCredentials;
 var OAuthClientCredentials;
 var OAuthDeviceCredentials;
 var OAuthRefreshCredentials;
-var BrowserCache;
 var FileCache;
 var SDKCache;
 var Address;
@@ -178,6 +177,12 @@ var SmartTransactionsReceiptValue;
 var Store;
 var VirtualTerminalData;
 var Printer;
+var StompClient;
+var StompSmartTransactionsApi;
+var Frame;
+var BrowserSocket;
+var NodeSocket;
+var SocketProvider;
 
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 var charenc = {
@@ -3222,7 +3227,7 @@ ApiClient.CollectionFormatEnum = {
 exports.default = ApiClient;
 ApiClient.instance = new ApiClient();
 }).call(this,require("buffer").Buffer)
-},{"./cache/SDKCache":41,"./printer/ImitationDevicePrinter":192,"buffer":196,"fs":195,"querystring":200,"superagent":7}],13:[function(require,module,exports){
+},{"./cache/SDKCache":40,"./printer/ImitationDevicePrinter":191,"buffer":205,"fs":204,"querystring":210,"superagent":7}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3372,7 +3377,7 @@ DocumentUploadsApi = function () {
 }();
 
 exports.default = DocumentUploadsApi;
-},{"../ApiClient":12,"../model/DocumentUploadsBaseProductModel":49,"../model/DocumentUploadsDTOContent":50,"../model/DocumentUploadsProductModel":51,"../model/ProductExceptionPayload":136}],14:[function(require,module,exports){
+},{"../ApiClient":12,"../model/DocumentUploadsBaseProductModel":48,"../model/DocumentUploadsDTOContent":49,"../model/DocumentUploadsProductModel":50,"../model/ProductExceptionPayload":135}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3588,7 +3593,7 @@ GeneralMerchantsApi = function () {
 }();
 
 exports.default = GeneralMerchantsApi;
-},{"../ApiClient":12,"../model/GeneralMerchantsDTO":56,"../model/GeneralMerchantsList":58,"../model/GeneralMerchantsProductModel":59,"../model/ProductExceptionPayload":136}],15:[function(require,module,exports){
+},{"../ApiClient":12,"../model/GeneralMerchantsDTO":55,"../model/GeneralMerchantsList":57,"../model/GeneralMerchantsProductModel":58,"../model/ProductExceptionPayload":135}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -4018,7 +4023,7 @@ GeneralStoresApi = function () {
 }();
 
 exports.default = GeneralStoresApi;
-},{"../ApiClient":12,"../model/GeneralStoresDTO":62,"../model/GeneralStoresDTOReason":63,"../model/GeneralStoresDTOType":64,"../model/GeneralStoresList":65,"../model/GeneralStoresProductModel":66,"../model/ProductExceptionPayload":136}],16:[function(require,module,exports){
+},{"../ApiClient":12,"../model/GeneralStoresDTO":61,"../model/GeneralStoresDTOReason":62,"../model/GeneralStoresDTOType":63,"../model/GeneralStoresList":64,"../model/GeneralStoresProductModel":65,"../model/ProductExceptionPayload":135}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -4335,7 +4340,7 @@ LoyaltyCardgroupsApi = function () {
 }();
 
 exports.default = LoyaltyCardgroupsApi;
-},{"../ApiClient":12,"../model/LoyaltyCardgroupsDTO":71,"../model/LoyaltyCardgroupsDTOCheckPasscodeEnabled":72,"../model/LoyaltyCardgroupsList":74,"../model/LoyaltyCardgroupsProductModel":75,"../model/ProductExceptionPayload":136}],17:[function(require,module,exports){
+},{"../ApiClient":12,"../model/LoyaltyCardgroupsDTO":70,"../model/LoyaltyCardgroupsDTOCheckPasscodeEnabled":71,"../model/LoyaltyCardgroupsList":73,"../model/LoyaltyCardgroupsProductModel":74,"../model/ProductExceptionPayload":135}],17:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -4608,7 +4613,7 @@ LoyaltyCardsApi = function () {
 }();
 
 exports.default = LoyaltyCardsApi;
-},{"../ApiClient":12,"../model/LoyaltyCardsList":77,"../model/LoyaltyCardsProductModel":78,"../model/ProductExceptionPayload":136}],18:[function(require,module,exports){
+},{"../ApiClient":12,"../model/LoyaltyCardsList":76,"../model/LoyaltyCardsProductModel":77,"../model/ProductExceptionPayload":135}],18:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5077,7 +5082,7 @@ LoyaltyCustomersApi = function () {
 }();
 
 exports.default = LoyaltyCustomersApi;
-},{"../ApiClient":12,"../model/LoyaltyCustomersDTO":80,"../model/LoyaltyCustomersList":81,"../model/LoyaltyCustomersProductModel":83,"../model/LoyaltyCustomersRemoved":84,"../model/ProductExceptionPayload":136}],19:[function(require,module,exports){
+},{"../ApiClient":12,"../model/LoyaltyCustomersDTO":79,"../model/LoyaltyCustomersList":80,"../model/LoyaltyCustomersProductModel":82,"../model/LoyaltyCustomersRemoved":83,"../model/ProductExceptionPayload":135}],19:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -6248,7 +6253,7 @@ LoyaltyMerchantcardsApi = function () {
 }();
 
 exports.default = LoyaltyMerchantcardsApi;
-},{"../ApiClient":12,"../model/LoyaltyCustomersDTO":80,"../model/LoyaltyMerchantcardsDTO":87,"../model/LoyaltyMerchantcardsDTOCardsAmount":88,"../model/LoyaltyMerchantcardsDTOCheckPasscode":89,"../model/LoyaltyMerchantcardsDTOCsc":90,"../model/LoyaltyMerchantcardsDTOLock":91,"../model/LoyaltyMerchantcardsDTONewPasscode":92,"../model/LoyaltyMerchantcardsDTOResetPasscode":94,"../model/LoyaltyMerchantcardsDTOTransaction":95,"../model/LoyaltyMerchantcardsDTOValidateMerchantCard":96,"../model/LoyaltyMerchantcardsList":97,"../model/LoyaltyMerchantcardsProductModel":98,"../model/LoyaltyMerchantcardsProductWithReceiptModel":99,"../model/LoyaltyMerchantcardsValidateMerchantCard":100,"../model/ProductExceptionPayload":136,"../model/VirtualTerminalData":191}],20:[function(require,module,exports){
+},{"../ApiClient":12,"../model/LoyaltyCustomersDTO":79,"../model/LoyaltyMerchantcardsDTO":86,"../model/LoyaltyMerchantcardsDTOCardsAmount":87,"../model/LoyaltyMerchantcardsDTOCheckPasscode":88,"../model/LoyaltyMerchantcardsDTOCsc":89,"../model/LoyaltyMerchantcardsDTOLock":90,"../model/LoyaltyMerchantcardsDTONewPasscode":91,"../model/LoyaltyMerchantcardsDTOResetPasscode":93,"../model/LoyaltyMerchantcardsDTOTransaction":94,"../model/LoyaltyMerchantcardsDTOValidateMerchantCard":95,"../model/LoyaltyMerchantcardsList":96,"../model/LoyaltyMerchantcardsProductModel":97,"../model/LoyaltyMerchantcardsProductWithReceiptModel":98,"../model/LoyaltyMerchantcardsValidateMerchantCard":99,"../model/ProductExceptionPayload":135,"../model/VirtualTerminalData":190}],20:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -6392,7 +6397,7 @@ LoyaltySalesApi = function () {
 }();
 
 exports.default = LoyaltySalesApi;
-},{"../ApiClient":12,"../model/LoyaltyCardgroupsProductModel":75,"../model/ProductExceptionPayload":136}],21:[function(require,module,exports){
+},{"../ApiClient":12,"../model/LoyaltyCardgroupsProductModel":74,"../model/ProductExceptionPayload":135}],21:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -6700,7 +6705,7 @@ LoyaltyStoregroupsApi = function () {
 }();
 
 exports.default = LoyaltyStoregroupsApi;
-},{"../ApiClient":12,"../model/LoyaltyStoregroupsDTO":101,"../model/LoyaltyStoregroupsList":103,"../model/LoyaltyStoregroupsProductModel":104,"../model/ProductExceptionPayload":136}],22:[function(require,module,exports){
+},{"../ApiClient":12,"../model/LoyaltyStoregroupsDTO":100,"../model/LoyaltyStoregroupsList":102,"../model/LoyaltyStoregroupsProductModel":103,"../model/ProductExceptionPayload":135}],22:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7118,7 +7123,7 @@ PaymentContainersApi = function () {
 }();
 
 exports.default = PaymentContainersApi;
-},{"../ApiClient":12,"../model/PaymentContainersDTO":108,"../model/PaymentContainersList":111,"../model/PaymentContainersProductModel":112,"../model/ProductExceptionPayload":136}],23:[function(require,module,exports){
+},{"../ApiClient":12,"../model/PaymentContainersDTO":107,"../model/PaymentContainersList":110,"../model/PaymentContainersProductModel":111,"../model/ProductExceptionPayload":135}],23:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7593,7 +7598,7 @@ PaymentContractsApi = function () {
 }();
 
 exports.default = PaymentContractsApi;
-},{"../ApiClient":12,"../model/PaymentContractsDTO":113,"../model/PaymentContractsDTOClone":114,"../model/PaymentContractsDTORequestId":116,"../model/PaymentContractsList":117,"../model/PaymentContractsProductModel":118,"../model/PaymentContractsRequestIdResult":119,"../model/ProductExceptionPayload":136}],24:[function(require,module,exports){
+},{"../ApiClient":12,"../model/PaymentContractsDTO":112,"../model/PaymentContractsDTOClone":113,"../model/PaymentContractsDTORequestId":115,"../model/PaymentContractsList":116,"../model/PaymentContractsProductModel":117,"../model/PaymentContractsRequestIdResult":118,"../model/ProductExceptionPayload":135}],24:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7901,7 +7906,7 @@ PaymentCustomersApi = function () {
 }();
 
 exports.default = PaymentCustomersApi;
-},{"../ApiClient":12,"../model/PaymentCustomersDTO":120,"../model/PaymentCustomersList":121,"../model/PaymentCustomersProductModel":122,"../model/ProductExceptionPayload":136}],25:[function(require,module,exports){
+},{"../ApiClient":12,"../model/PaymentCustomersDTO":119,"../model/PaymentCustomersList":120,"../model/PaymentCustomersProductModel":121,"../model/ProductExceptionPayload":135}],25:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -8496,7 +8501,7 @@ PaymentSecupayCreditcardsApi = function () {
 }();
 
 exports.default = PaymentSecupayCreditcardsApi;
-},{"../ApiClient":12,"../model/ProductExceptionPayload":136,"../model/SecupayTransactionCancelDTO":144,"../model/SecupayTransactionCaptureDTO":145,"../model/SecupayTransactionDTOExternalInvoicePdf":146,"../model/SecupayTransactionExternalInvoicePdf":147,"../model/SecupayTransactionProductDTO":149,"../model/SecupayTransactionProductModel":154,"../model/SecupayTransactionReverseAccrualDTO":158,"../model/SecupayTransactionSetShippingInformationDTO":159,"../model/SecupayTransactionUpdateBasketDTO":160}],26:[function(require,module,exports){
+},{"../ApiClient":12,"../model/ProductExceptionPayload":135,"../model/SecupayTransactionCancelDTO":143,"../model/SecupayTransactionCaptureDTO":144,"../model/SecupayTransactionDTOExternalInvoicePdf":145,"../model/SecupayTransactionExternalInvoicePdf":146,"../model/SecupayTransactionProductDTO":148,"../model/SecupayTransactionProductModel":153,"../model/SecupayTransactionReverseAccrualDTO":157,"../model/SecupayTransactionSetShippingInformationDTO":158,"../model/SecupayTransactionUpdateBasketDTO":159}],26:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -9091,7 +9096,7 @@ PaymentSecupayDebitsApi = function () {
 }();
 
 exports.default = PaymentSecupayDebitsApi;
-},{"../ApiClient":12,"../model/ProductExceptionPayload":136,"../model/SecupayTransactionCancelDTO":144,"../model/SecupayTransactionCaptureDTO":145,"../model/SecupayTransactionDTOExternalInvoicePdf":146,"../model/SecupayTransactionExternalInvoicePdf":147,"../model/SecupayTransactionProductDTO":149,"../model/SecupayTransactionProductModel":154,"../model/SecupayTransactionReverseAccrualDTO":158,"../model/SecupayTransactionSetShippingInformationDTO":159,"../model/SecupayTransactionUpdateBasketDTO":160}],27:[function(require,module,exports){
+},{"../ApiClient":12,"../model/ProductExceptionPayload":135,"../model/SecupayTransactionCancelDTO":143,"../model/SecupayTransactionCaptureDTO":144,"../model/SecupayTransactionDTOExternalInvoicePdf":145,"../model/SecupayTransactionExternalInvoicePdf":146,"../model/SecupayTransactionProductDTO":148,"../model/SecupayTransactionProductModel":153,"../model/SecupayTransactionReverseAccrualDTO":157,"../model/SecupayTransactionSetShippingInformationDTO":158,"../model/SecupayTransactionUpdateBasketDTO":159}],27:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -9686,7 +9691,7 @@ PaymentSecupayInvoicesApi = function () {
 }();
 
 exports.default = PaymentSecupayInvoicesApi;
-},{"../ApiClient":12,"../model/ProductExceptionPayload":136,"../model/SecupayTransactionCancelDTO":144,"../model/SecupayTransactionCaptureDTO":145,"../model/SecupayTransactionDTOExternalInvoicePdf":146,"../model/SecupayTransactionExternalInvoicePdf":147,"../model/SecupayTransactionProductDTO":149,"../model/SecupayTransactionProductModel":154,"../model/SecupayTransactionReverseAccrualDTO":158,"../model/SecupayTransactionSetShippingInformationDTO":159,"../model/SecupayTransactionUpdateBasketDTO":160}],28:[function(require,module,exports){
+},{"../ApiClient":12,"../model/ProductExceptionPayload":135,"../model/SecupayTransactionCancelDTO":143,"../model/SecupayTransactionCaptureDTO":144,"../model/SecupayTransactionDTOExternalInvoicePdf":145,"../model/SecupayTransactionExternalInvoicePdf":146,"../model/SecupayTransactionProductDTO":148,"../model/SecupayTransactionProductModel":153,"../model/SecupayTransactionReverseAccrualDTO":157,"../model/SecupayTransactionSetShippingInformationDTO":158,"../model/SecupayTransactionUpdateBasketDTO":159}],28:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -10281,7 +10286,7 @@ PaymentSecupayPrepaysApi = function () {
 }();
 
 exports.default = PaymentSecupayPrepaysApi;
-},{"../ApiClient":12,"../model/ProductExceptionPayload":136,"../model/SecupayTransactionCancelDTO":144,"../model/SecupayTransactionCaptureDTO":145,"../model/SecupayTransactionDTOExternalInvoicePdf":146,"../model/SecupayTransactionExternalInvoicePdf":147,"../model/SecupayTransactionProductDTO":149,"../model/SecupayTransactionProductModel":154,"../model/SecupayTransactionReverseAccrualDTO":158,"../model/SecupayTransactionSetShippingInformationDTO":159,"../model/SecupayTransactionUpdateBasketDTO":160}],29:[function(require,module,exports){
+},{"../ApiClient":12,"../model/ProductExceptionPayload":135,"../model/SecupayTransactionCancelDTO":143,"../model/SecupayTransactionCaptureDTO":144,"../model/SecupayTransactionDTOExternalInvoicePdf":145,"../model/SecupayTransactionExternalInvoicePdf":146,"../model/SecupayTransactionProductDTO":148,"../model/SecupayTransactionProductModel":153,"../model/SecupayTransactionReverseAccrualDTO":157,"../model/SecupayTransactionSetShippingInformationDTO":158,"../model/SecupayTransactionUpdateBasketDTO":159}],29:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -10541,7 +10546,7 @@ PaymentTransactionsApi = function () {
 }();
 
 exports.default = PaymentTransactionsApi;
-},{"../ApiClient":12,"../model/PaymentTransactionsCancelList":124,"../model/PaymentTransactionsList":125,"../model/PaymentTransactionsProductModel":126,"../model/PaymentTransactionsShippingUrl":130,"../model/ProductExceptionPayload":136}],30:[function(require,module,exports){
+},{"../ApiClient":12,"../model/PaymentTransactionsCancelList":123,"../model/PaymentTransactionsList":124,"../model/PaymentTransactionsProductModel":125,"../model/PaymentTransactionsShippingUrl":129,"../model/ProductExceptionPayload":135}],30:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -10695,7 +10700,7 @@ PrepaidItemsApi = function () {
 }();
 
 exports.default = PrepaidItemsApi;
-},{"../ApiClient":12,"../model/PrepaidItemsList":131,"../model/PrepaidItemsProductModel":132}],31:[function(require,module,exports){
+},{"../ApiClient":12,"../model/PrepaidItemsList":130,"../model/PrepaidItemsProductModel":131}],31:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -11182,7 +11187,7 @@ SmartDevicesApi = function () {
 }();
 
 exports.default = SmartDevicesApi;
-},{"../ApiClient":12,"../model/ProductExceptionPayload":136,"../model/SmartDevicesDTO":163,"../model/SmartDevicesDTOPrepaidTid":164,"../model/SmartDevicesDTOSecubaseConfig":165,"../model/SmartDevicesList":167,"../model/SmartDevicesList1":168,"../model/SmartDevicesProductModel":169,"../model/SmartDevicesSecubaseConfig":171}],32:[function(require,module,exports){
+},{"../ApiClient":12,"../model/ProductExceptionPayload":135,"../model/SmartDevicesDTO":162,"../model/SmartDevicesDTOPrepaidTid":163,"../model/SmartDevicesDTOSecubaseConfig":164,"../model/SmartDevicesList":166,"../model/SmartDevicesList1":167,"../model/SmartDevicesProductModel":168,"../model/SmartDevicesSecubaseConfig":170}],32:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -11737,7 +11742,7 @@ SmartTransactionsApi = function () {
 }();
 
 exports.default = SmartTransactionsApi;
-},{"../ApiClient":12,"../model/ProductExceptionPayload":136,"../model/SmartTransactionsDTO":181,"../model/SmartTransactionsList":183,"../model/SmartTransactionsPreTransactionModel":186,"../model/SmartTransactionsProductModel":187}],33:[function(require,module,exports){
+},{"../ApiClient":12,"../model/ProductExceptionPayload":135,"../model/SmartTransactionsDTO":180,"../model/SmartTransactionsList":182,"../model/SmartTransactionsPreTransactionModel":185,"../model/SmartTransactionsProductModel":186}],33:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12412,62 +12417,6 @@ OAuthRefreshCredentials = function (_AuthenticationCreden) {
 
 exports.default = OAuthRefreshCredentials;
 },{"./AuthenticationCredentials":33,"md5":5}],39:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _SDKCache2 = require("./SDKCache");
-
-var _SDKCache3 = _interopRequireDefault(_SDKCache2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-BrowserCache = function (_SDKCache) {
-    _inherits(BrowserCache, _SDKCache);
-
-    function BrowserCache() {
-        _classCallCheck(this, BrowserCache);
-
-        return _possibleConstructorReturn(this, (BrowserCache.__proto__ || Object.getPrototypeOf(BrowserCache)).call(this));
-    }
-
-    _createClass(BrowserCache, [{
-        key: "exists",
-        value: function exists(key) {
-            return new Promise(function (resolve) {
-                resolve(false);
-            });
-        }
-    }, {
-        key: "isExpired",
-        value: function isExpired(item) {
-            return false;
-        }
-    }, {
-        key: "setItem",
-        value: function setItem(key, value) {}
-    }, {
-        key: "getItem",
-        value: function getItem(key) {
-            return key;
-        }
-    }]);
-
-    return BrowserCache;
-}(_SDKCache3.default);
-
-exports.default = BrowserCache;
-},{"./SDKCache":41}],40:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12601,7 +12550,7 @@ FileCache = function (_SDKCache) {
 }(_SDKCache3.default);
 
 exports.default = FileCache;
-},{"./SDKCache":41,"fs":195}],41:[function(require,module,exports){
+},{"./SDKCache":40,"fs":204}],40:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12671,14 +12620,14 @@ SDKCache = function () {
 }();
 
 exports.default = SDKCache;
-},{}],42:[function(require,module,exports){
+},{}],41:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.SmartTransactionsApi = exports.SmartDevicesApi = exports.PrepaidItemsApi = exports.PaymentTransactionsApi = exports.PaymentSecupayPrepaysApi = exports.PaymentSecupayInvoicesApi = exports.PaymentSecupayDebitsApi = exports.PaymentSecupayCreditcardsApi = exports.PaymentCustomersApi = exports.PaymentContractsApi = exports.PaymentContainersApi = exports.LoyaltyStoregroupsApi = exports.LoyaltySalesApi = exports.LoyaltyMerchantcardsApi = exports.LoyaltyCustomersApi = exports.LoyaltyCardsApi = exports.LoyaltyCardgroupsApi = exports.GeneralStoresApi = exports.GeneralMerchantsApi = exports.DocumentUploadsApi = exports.SmartTransactionsMerchant = exports.ReceiptTypeValue = exports.LoyaltyMerchantcardsProductWithReceiptModel = exports.LoyaltyMerchantcardsDTONewPasscode = exports.DocumentUploadsProductModel = exports.VirtualTerminalData = exports.Store = exports.SmartTransactionsReceiptValue = exports.SmartTransactionsReceipt = exports.SmartTransactionsProductModel = exports.SmartTransactionsPreTransactionModel = exports.SmartTransactionsPickupOptions = exports.SmartTransactionsList = exports.SmartTransactionsIdent = exports.SmartTransactionsDTO = exports.SmartTransactionsCheckin = exports.SmartTransactionsBonusProducts = exports.SmartTransactionsBasketText = exports.SmartTransactionsBasketProductGroup = exports.SmartTransactionsBasketProduct = exports.SmartTransactionsBasketInfo = exports.SmartTransactionsBasket = exports.SmartDevicesSecubaseConfigLoggingFileNet = exports.SmartDevicesSecubaseConfigLogging = exports.SmartDevicesSecubaseConfig = exports.SmartDevicesProducts = exports.SmartDevicesProductModel = exports.SmartDevicesList1 = exports.SmartDevicesList = exports.SmartDevicesDevice = exports.SmartDevicesDTOSecubaseConfig = exports.SmartDevicesDTOPrepaidTid = exports.SmartDevicesDTO = exports.SmartDeviceProductsPrepaid = exports.SmartDeviceProductsEnabled = exports.SecupayTransactionUpdateBasketDTO = exports.SecupayTransactionSetShippingInformationDTO = exports.SecupayTransactionReverseAccrualDTO = exports.SecupayTransactionProductModelUsedPaymentInstrument = exports.SecupayTransactionProductModelTransferAccount = exports.SecupayTransactionProductModelRedirectUrl = exports.SecupayTransactionProductModel = exports.SecupayTransactionProductDTOSubscription = exports.SecupayTransactionProductDTORedirectUrl = exports.SecupayTransactionProductDTOOptData = exports.SecupayTransactionProductDTOExperience = exports.SecupayTransactionProductDTO = exports.SecupayTransactionExternalInvoicePdfDocument = exports.SecupayTransactionExternalInvoicePdf = exports.SecupayTransactionDTOExternalInvoicePdf = exports.SecupayTransactionCaptureDTO = exports.SecupayTransactionCancelDTO = exports.SecupaySubTransactionProductModel = exports.SecupayBasketItem = exports.ReceiptValue = exports.ReceiptType = exports.ProductInstanceUID = undefined;
-exports.ProductInstanceID = exports.ProductExceptionPayload = exports.PrepaidSalesSmartDevice = exports.PrepaidSalesProductModel = exports.PrepaidSalesItem = exports.PrepaidItemsProductModel = exports.PrepaidItemsList = exports.PaymentTransactionsShippingUrl = exports.PaymentTransactionsProductModelMerchant = exports.PaymentTransactionsProductModelDetails = exports.PaymentTransactionsProductModelCustomer = exports.PaymentTransactionsProductModel = exports.PaymentTransactionsList = exports.PaymentTransactionsCancelList = exports.PaymentInformation = exports.PaymentCustomersProductModel = exports.PaymentCustomersList = exports.PaymentCustomersDTO = exports.PaymentContractsRequestIdResult = exports.PaymentContractsProductModel = exports.PaymentContractsList = exports.PaymentContractsDTORequestId = exports.PaymentContractsDTOIFrameOpts = exports.PaymentContractsDTOClone = exports.PaymentContractsDTO = exports.PaymentContainersProductModel = exports.PaymentContainersList = exports.PaymentContainersDTOPrivate = exports.PaymentContainersDTOCustomer = exports.PaymentContainersDTO = exports.PaymentContainerMandate = exports.ParentModel = exports.OpenHours = exports.LoyaltyStoregroupsProductModel = exports.LoyaltyStoregroupsList = exports.LoyaltyStoregroupsDTOStoresAddressComponents = exports.LoyaltyStoregroupsDTO = exports.LoyaltyMerchantcardsValidateMerchantCard = exports.LoyaltyMerchantcardsProductModel = exports.LoyaltyMerchantcardsList = exports.LoyaltyMerchantcardsDTOValidateMerchantCard = exports.LoyaltyMerchantcardsDTOTransaction = exports.LoyaltyMerchantcardsDTOResetPasscode = exports.LoyaltyMerchantcardsDTOPaymentContainer = exports.LoyaltyMerchantcardsDTOLock = exports.LoyaltyMerchantcardsDTOCsc = exports.LoyaltyMerchantcardsDTOCheckPasscode = exports.LoyaltyMerchantcardsDTOCardsAmount = exports.LoyaltyMerchantcardsDTO = exports.LoyaltyDTOStore = exports.LoyaltyDTOMerchant = exports.LoyaltyCustomersRemoved = exports.LoyaltyCustomersProductModel = exports.LoyaltyCustomersPaymentContainerModel = exports.LoyaltyCustomersList = exports.LoyaltyCustomersDTO = exports.LoyaltyCustomersContactDTO = exports.LoyaltyCardsProductModel = exports.LoyaltyCardsList = exports.LoyaltyCardsDTOAccount = exports.LoyaltyCardgroupsProductModel = exports.LoyaltyCardgroupsList = exports.LoyaltyCardgroupsDTOMerchant = exports.LoyaltyCardgroupsDTOCheckPasscodeEnabled = exports.LoyaltyCardgroupsDTO = exports.ItemGroup = exports.InvitedBy = exports.GeoAddressGeometry = exports.GeoAddress = exports.GeneralStoresProductModel = exports.GeneralStoresList = exports.GeneralStoresDTOType = exports.GeneralStoresDTOReason = exports.GeneralStoresDTO = exports.GeneralMerchantsUser = exports.GeneralMerchantsUrls = exports.GeneralMerchantsProductModel = exports.GeneralMerchantsList = exports.GeneralMerchantsLegalDetails = exports.GeneralMerchantsDTO = exports.GeneralMerchantsCheckoutOptionsShipping = exports.GeneralMerchantsCheckoutOptionsCollectionSmartDevices = exports.GeneralMerchantsCheckoutOptionsCollection = exports.GeneralMerchantsCheckoutOptions = exports.DocumentUploadsDTOContent = exports.DocumentUploadsBaseProductModel = exports.DayTime = exports.Contact = exports.BankAccountDescriptor = exports.AssignedBy = exports.AddressComponents = exports.Address = exports.BrowserCache = exports.FileCache = exports.SDKCache = exports.OAuthDeviceCredentials = exports.OAuthClientCredentials = exports.OAuthApplicationUserCredentials = exports.Authenticator = exports.ApiClient = undefined;
+exports.SocketProvider = exports.NodeSocket = exports.BrowserSocket = exports.Stomp = exports.Frame = exports.FrameCommands = exports.Environments = exports.StompSmartTransactionsApi = exports.StompClient = exports.SmartTransactionsApi = exports.SmartDevicesApi = exports.PrepaidItemsApi = exports.PaymentTransactionsApi = exports.PaymentSecupayPrepaysApi = exports.PaymentSecupayInvoicesApi = exports.PaymentSecupayDebitsApi = exports.PaymentSecupayCreditcardsApi = exports.PaymentCustomersApi = exports.PaymentContractsApi = exports.PaymentContainersApi = exports.LoyaltyStoregroupsApi = exports.LoyaltySalesApi = exports.LoyaltyMerchantcardsApi = exports.LoyaltyCustomersApi = exports.LoyaltyCardsApi = exports.LoyaltyCardgroupsApi = exports.GeneralStoresApi = exports.GeneralMerchantsApi = exports.DocumentUploadsApi = exports.ReceiptTypeValue = exports.LoyaltyMerchantcardsProductWithReceiptModel = exports.LoyaltyMerchantcardsDTONewPasscode = exports.DocumentUploadsProductModel = exports.VirtualTerminalData = exports.Store = exports.SmartTransactionsReceiptValue = exports.SmartTransactionsReceipt = exports.SmartTransactionsProductModel = exports.SmartTransactionsPreTransactionModel = exports.SmartTransactionsPickupOptions = exports.SmartTransactionsMerchant = exports.SmartTransactionsList = exports.SmartTransactionsIdent = exports.SmartTransactionsDTO = exports.SmartTransactionsCheckin = exports.SmartTransactionsBonusProducts = exports.SmartTransactionsBasketText = exports.SmartTransactionsBasketProductGroup = exports.SmartTransactionsBasketProduct = exports.SmartTransactionsBasketInfo = exports.SmartTransactionsBasket = exports.SmartDevicesSecubaseConfigLoggingFileNet = exports.SmartDevicesSecubaseConfigLogging = exports.SmartDevicesSecubaseConfig = exports.SmartDevicesProducts = exports.SmartDevicesProductModel = exports.SmartDevicesList1 = exports.SmartDevicesList = exports.SmartDevicesDevice = exports.SmartDevicesDTOSecubaseConfig = exports.SmartDevicesDTOPrepaidTid = exports.SmartDevicesDTO = exports.SmartDeviceProductsPrepaid = exports.SmartDeviceProductsEnabled = exports.SecupayTransactionUpdateBasketDTO = exports.SecupayTransactionSetShippingInformationDTO = exports.SecupayTransactionReverseAccrualDTO = exports.SecupayTransactionProductModelUsedPaymentInstrument = exports.SecupayTransactionProductModelTransferAccount = exports.SecupayTransactionProductModelRedirectUrl = exports.SecupayTransactionProductModel = exports.SecupayTransactionProductDTOSubscription = exports.SecupayTransactionProductDTORedirectUrl = exports.SecupayTransactionProductDTOOptData = exports.SecupayTransactionProductDTOExperience = exports.SecupayTransactionProductDTO = exports.SecupayTransactionExternalInvoicePdfDocument = exports.SecupayTransactionExternalInvoicePdf = exports.SecupayTransactionDTOExternalInvoicePdf = exports.SecupayTransactionCaptureDTO = exports.SecupayTransactionCancelDTO = exports.SecupaySubTransactionProductModel = exports.SecupayBasketItem = exports.ReceiptValue = exports.ReceiptType = undefined;
+exports.ProductInstanceUID = exports.ProductInstanceID = exports.ProductExceptionPayload = exports.PrepaidSalesSmartDevice = exports.PrepaidSalesProductModel = exports.PrepaidSalesItem = exports.PrepaidItemsProductModel = exports.PrepaidItemsList = exports.PaymentTransactionsShippingUrl = exports.PaymentTransactionsProductModelMerchant = exports.PaymentTransactionsProductModelDetails = exports.PaymentTransactionsProductModelCustomer = exports.PaymentTransactionsProductModel = exports.PaymentTransactionsList = exports.PaymentTransactionsCancelList = exports.PaymentInformation = exports.PaymentCustomersProductModel = exports.PaymentCustomersList = exports.PaymentCustomersDTO = exports.PaymentContractsRequestIdResult = exports.PaymentContractsProductModel = exports.PaymentContractsList = exports.PaymentContractsDTORequestId = exports.PaymentContractsDTOIFrameOpts = exports.PaymentContractsDTOClone = exports.PaymentContractsDTO = exports.PaymentContainersProductModel = exports.PaymentContainersList = exports.PaymentContainersDTOPrivate = exports.PaymentContainersDTOCustomer = exports.PaymentContainersDTO = exports.PaymentContainerMandate = exports.ParentModel = exports.OpenHours = exports.LoyaltyStoregroupsProductModel = exports.LoyaltyStoregroupsList = exports.LoyaltyStoregroupsDTOStoresAddressComponents = exports.LoyaltyStoregroupsDTO = exports.LoyaltyMerchantcardsValidateMerchantCard = exports.LoyaltyMerchantcardsProductModel = exports.LoyaltyMerchantcardsList = exports.LoyaltyMerchantcardsDTOValidateMerchantCard = exports.LoyaltyMerchantcardsDTOTransaction = exports.LoyaltyMerchantcardsDTOResetPasscode = exports.LoyaltyMerchantcardsDTOPaymentContainer = exports.LoyaltyMerchantcardsDTOLock = exports.LoyaltyMerchantcardsDTOCsc = exports.LoyaltyMerchantcardsDTOCheckPasscode = exports.LoyaltyMerchantcardsDTOCardsAmount = exports.LoyaltyMerchantcardsDTO = exports.LoyaltyDTOStore = exports.LoyaltyDTOMerchant = exports.LoyaltyCustomersRemoved = exports.LoyaltyCustomersProductModel = exports.LoyaltyCustomersPaymentContainerModel = exports.LoyaltyCustomersList = exports.LoyaltyCustomersDTO = exports.LoyaltyCustomersContactDTO = exports.LoyaltyCardsProductModel = exports.LoyaltyCardsList = exports.LoyaltyCardsDTOAccount = exports.LoyaltyCardgroupsProductModel = exports.LoyaltyCardgroupsList = exports.LoyaltyCardgroupsDTOMerchant = exports.LoyaltyCardgroupsDTOCheckPasscodeEnabled = exports.LoyaltyCardgroupsDTO = exports.ItemGroup = exports.InvitedBy = exports.GeoAddressGeometry = exports.GeoAddress = exports.GeneralStoresProductModel = exports.GeneralStoresList = exports.GeneralStoresDTOType = exports.GeneralStoresDTOReason = exports.GeneralStoresDTO = exports.GeneralMerchantsUser = exports.GeneralMerchantsUrls = exports.GeneralMerchantsProductModel = exports.GeneralMerchantsList = exports.GeneralMerchantsLegalDetails = exports.GeneralMerchantsDTO = exports.GeneralMerchantsCheckoutOptionsShipping = exports.GeneralMerchantsCheckoutOptionsCollectionSmartDevices = exports.GeneralMerchantsCheckoutOptionsCollection = exports.GeneralMerchantsCheckoutOptions = exports.DocumentUploadsDTOContent = exports.DocumentUploadsBaseProductModel = exports.DayTime = exports.Contact = exports.BankAccountDescriptor = exports.AssignedBy = exports.AddressComponents = exports.Address = exports.FileCache = exports.SDKCache = exports.OAuthDeviceCredentials = exports.OAuthClientCredentials = exports.OAuthApplicationUserCredentials = exports.Authenticator = exports.ApiClient = undefined;
 
 var _ApiClient = require('./ApiClient');
 
@@ -12707,10 +12656,6 @@ var _SDKCache2 = _interopRequireDefault(_SDKCache);
 var _FileCache = require('./cache/FileCache');
 
 var _FileCache2 = _interopRequireDefault(_FileCache);
-
-var _BrowserCache = require('./cache/BrowserCache');
-
-var _BrowserCache2 = _interopRequireDefault(_BrowserCache);
 
 var _Address = require('./model/Address');
 
@@ -13388,6 +13333,38 @@ var _SmartTransactionsApi = require('./api/SmartTransactionsApi');
 
 var _SmartTransactionsApi2 = _interopRequireDefault(_SmartTransactionsApi);
 
+var _StompClient = require('./stomp/StompClient');
+
+var _StompClient2 = _interopRequireDefault(_StompClient);
+
+var _StompSmartTransactionsApi = require('./stomp/api/StompSmartTransactionsApi');
+
+var _StompSmartTransactionsApi2 = _interopRequireDefault(_StompSmartTransactionsApi);
+
+var _StompGlobals = require('./stomp/StompGlobals');
+
+var _StompGlobals2 = _interopRequireDefault(_StompGlobals);
+
+var _Frame = require('./stomp/frame/Frame');
+
+var _Frame2 = _interopRequireDefault(_Frame);
+
+var _Stomp = require('./stomp/main/Stomp');
+
+var _Stomp2 = _interopRequireDefault(_Stomp);
+
+var _BrowserSocket = require('./stomp/socket/BrowserSocket');
+
+var _BrowserSocket2 = _interopRequireDefault(_BrowserSocket);
+
+var _NodeSocket = require('./stomp/socket/NodeSocket');
+
+var _NodeSocket2 = _interopRequireDefault(_NodeSocket);
+
+var _SocketProvider = require('./stomp/socket/SocketProvider');
+
+var _SocketProvider2 = _interopRequireDefault(_SocketProvider);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
@@ -13426,7 +13403,6 @@ exports.OAuthClientCredentials = _OAuthClientCredentials2.default;
 exports.OAuthDeviceCredentials = _OAuthDeviceCredentials2.default;
 exports.SDKCache = _SDKCache2.default;
 exports.FileCache = _FileCache2.default;
-exports.BrowserCache = _BrowserCache2.default;
 exports.Address = _Address2.default;
 exports.AddressComponents = _AddressComponents2.default;
 exports.AssignedBy = _AssignedBy2.default;
@@ -13564,6 +13540,7 @@ exports.SmartTransactionsCheckin = _SmartTransactionsCheckin2.default;
 exports.SmartTransactionsDTO = _SmartTransactionsDTO2.default;
 exports.SmartTransactionsIdent = _SmartTransactionsIdent2.default;
 exports.SmartTransactionsList = _SmartTransactionsList2.default;
+exports.SmartTransactionsMerchant = _SmartTransactionsMerchant2.default;
 exports.SmartTransactionsPickupOptions = _SmartTransactionsPickupOptions2.default;
 exports.SmartTransactionsPreTransactionModel = _SmartTransactionsPreTransactionModel2.default;
 exports.SmartTransactionsProductModel = _SmartTransactionsProductModel2.default;
@@ -13575,7 +13552,6 @@ exports.DocumentUploadsProductModel = _DocumentUploadsProductModel2.default;
 exports.LoyaltyMerchantcardsDTONewPasscode = _LoyaltyMerchantcardsDTONewPasscode2.default;
 exports.LoyaltyMerchantcardsProductWithReceiptModel = _LoyaltyMerchantcardsProductWithReceiptModel2.default;
 exports.ReceiptTypeValue = _ReceiptTypeValue2.default;
-exports.SmartTransactionsMerchant = _SmartTransactionsMerchant2.default;
 exports.DocumentUploadsApi = _DocumentUploadsApi2.default;
 exports.GeneralMerchantsApi = _GeneralMerchantsApi2.default;
 exports.GeneralStoresApi = _GeneralStoresApi2.default;
@@ -13596,7 +13572,16 @@ exports.PaymentTransactionsApi = _PaymentTransactionsApi2.default;
 exports.PrepaidItemsApi = _PrepaidItemsApi2.default;
 exports.SmartDevicesApi = _SmartDevicesApi2.default;
 exports.SmartTransactionsApi = _SmartTransactionsApi2.default;
-},{"./ApiClient":12,"./api/DocumentUploadsApi":13,"./api/GeneralMerchantsApi":14,"./api/GeneralStoresApi":15,"./api/LoyaltyCardgroupsApi":16,"./api/LoyaltyCardsApi":17,"./api/LoyaltyCustomersApi":18,"./api/LoyaltyMerchantcardsApi":19,"./api/LoyaltySalesApi":20,"./api/LoyaltyStoregroupsApi":21,"./api/PaymentContainersApi":22,"./api/PaymentContractsApi":23,"./api/PaymentCustomersApi":24,"./api/PaymentSecupayCreditcardsApi":25,"./api/PaymentSecupayDebitsApi":26,"./api/PaymentSecupayInvoicesApi":27,"./api/PaymentSecupayPrepaysApi":28,"./api/PaymentTransactionsApi":29,"./api/PrepaidItemsApi":30,"./api/SmartDevicesApi":31,"./api/SmartTransactionsApi":32,"./authentication/Authenticator":34,"./authentication/OAuthApplicationUserCredentials":35,"./authentication/OAuthClientCredentials":36,"./authentication/OAuthDeviceCredentials":37,"./cache/BrowserCache":39,"./cache/FileCache":40,"./cache/SDKCache":41,"./model/Address":43,"./model/AddressComponents":44,"./model/AssignedBy":45,"./model/BankAccountDescriptor":46,"./model/Contact":47,"./model/DayTime":48,"./model/DocumentUploadsBaseProductModel":49,"./model/DocumentUploadsDTOContent":50,"./model/DocumentUploadsProductModel":51,"./model/GeneralMerchantsCheckoutOptions":52,"./model/GeneralMerchantsCheckoutOptionsCollection":53,"./model/GeneralMerchantsCheckoutOptionsCollectionSmartDevices":54,"./model/GeneralMerchantsCheckoutOptionsShipping":55,"./model/GeneralMerchantsDTO":56,"./model/GeneralMerchantsLegalDetails":57,"./model/GeneralMerchantsList":58,"./model/GeneralMerchantsProductModel":59,"./model/GeneralMerchantsUrls":60,"./model/GeneralMerchantsUser":61,"./model/GeneralStoresDTO":62,"./model/GeneralStoresDTOReason":63,"./model/GeneralStoresDTOType":64,"./model/GeneralStoresList":65,"./model/GeneralStoresProductModel":66,"./model/GeoAddress":67,"./model/GeoAddressGeometry":68,"./model/InvitedBy":69,"./model/ItemGroup":70,"./model/LoyaltyCardgroupsDTO":71,"./model/LoyaltyCardgroupsDTOCheckPasscodeEnabled":72,"./model/LoyaltyCardgroupsDTOMerchant":73,"./model/LoyaltyCardgroupsList":74,"./model/LoyaltyCardgroupsProductModel":75,"./model/LoyaltyCardsDTOAccount":76,"./model/LoyaltyCardsList":77,"./model/LoyaltyCardsProductModel":78,"./model/LoyaltyCustomersContactDTO":79,"./model/LoyaltyCustomersDTO":80,"./model/LoyaltyCustomersList":81,"./model/LoyaltyCustomersPaymentContainerModel":82,"./model/LoyaltyCustomersProductModel":83,"./model/LoyaltyCustomersRemoved":84,"./model/LoyaltyDTOMerchant":85,"./model/LoyaltyDTOStore":86,"./model/LoyaltyMerchantcardsDTO":87,"./model/LoyaltyMerchantcardsDTOCardsAmount":88,"./model/LoyaltyMerchantcardsDTOCheckPasscode":89,"./model/LoyaltyMerchantcardsDTOCsc":90,"./model/LoyaltyMerchantcardsDTOLock":91,"./model/LoyaltyMerchantcardsDTONewPasscode":92,"./model/LoyaltyMerchantcardsDTOPaymentContainer":93,"./model/LoyaltyMerchantcardsDTOResetPasscode":94,"./model/LoyaltyMerchantcardsDTOTransaction":95,"./model/LoyaltyMerchantcardsDTOValidateMerchantCard":96,"./model/LoyaltyMerchantcardsList":97,"./model/LoyaltyMerchantcardsProductModel":98,"./model/LoyaltyMerchantcardsProductWithReceiptModel":99,"./model/LoyaltyMerchantcardsValidateMerchantCard":100,"./model/LoyaltyStoregroupsDTO":101,"./model/LoyaltyStoregroupsDTOStoresAddressComponents":102,"./model/LoyaltyStoregroupsList":103,"./model/LoyaltyStoregroupsProductModel":104,"./model/OpenHours":105,"./model/ParentModel":106,"./model/PaymentContainerMandate":107,"./model/PaymentContainersDTO":108,"./model/PaymentContainersDTOCustomer":109,"./model/PaymentContainersDTOPrivate":110,"./model/PaymentContainersList":111,"./model/PaymentContainersProductModel":112,"./model/PaymentContractsDTO":113,"./model/PaymentContractsDTOClone":114,"./model/PaymentContractsDTOIFrameOpts":115,"./model/PaymentContractsDTORequestId":116,"./model/PaymentContractsList":117,"./model/PaymentContractsProductModel":118,"./model/PaymentContractsRequestIdResult":119,"./model/PaymentCustomersDTO":120,"./model/PaymentCustomersList":121,"./model/PaymentCustomersProductModel":122,"./model/PaymentInformation":123,"./model/PaymentTransactionsCancelList":124,"./model/PaymentTransactionsList":125,"./model/PaymentTransactionsProductModel":126,"./model/PaymentTransactionsProductModelCustomer":127,"./model/PaymentTransactionsProductModelDetails":128,"./model/PaymentTransactionsProductModelMerchant":129,"./model/PaymentTransactionsShippingUrl":130,"./model/PrepaidItemsList":131,"./model/PrepaidItemsProductModel":132,"./model/PrepaidSalesItem":133,"./model/PrepaidSalesProductModel":134,"./model/PrepaidSalesSmartDevice":135,"./model/ProductExceptionPayload":136,"./model/ProductInstanceID":137,"./model/ProductInstanceUID":138,"./model/ReceiptType":139,"./model/ReceiptTypeValue":140,"./model/ReceiptValue":141,"./model/SecupayBasketItem":142,"./model/SecupaySubTransactionProductModel":143,"./model/SecupayTransactionCancelDTO":144,"./model/SecupayTransactionCaptureDTO":145,"./model/SecupayTransactionDTOExternalInvoicePdf":146,"./model/SecupayTransactionExternalInvoicePdf":147,"./model/SecupayTransactionExternalInvoicePdfDocument":148,"./model/SecupayTransactionProductDTO":149,"./model/SecupayTransactionProductDTOExperience":150,"./model/SecupayTransactionProductDTOOptData":151,"./model/SecupayTransactionProductDTORedirectUrl":152,"./model/SecupayTransactionProductDTOSubscription":153,"./model/SecupayTransactionProductModel":154,"./model/SecupayTransactionProductModelRedirectUrl":155,"./model/SecupayTransactionProductModelTransferAccount":156,"./model/SecupayTransactionProductModelUsedPaymentInstrument":157,"./model/SecupayTransactionReverseAccrualDTO":158,"./model/SecupayTransactionSetShippingInformationDTO":159,"./model/SecupayTransactionUpdateBasketDTO":160,"./model/SmartDeviceProductsEnabled":161,"./model/SmartDeviceProductsPrepaid":162,"./model/SmartDevicesDTO":163,"./model/SmartDevicesDTOPrepaidTid":164,"./model/SmartDevicesDTOSecubaseConfig":165,"./model/SmartDevicesDevice":166,"./model/SmartDevicesList":167,"./model/SmartDevicesList1":168,"./model/SmartDevicesProductModel":169,"./model/SmartDevicesProducts":170,"./model/SmartDevicesSecubaseConfig":171,"./model/SmartDevicesSecubaseConfigLogging":172,"./model/SmartDevicesSecubaseConfigLoggingFileNet":173,"./model/SmartTransactionsBasket":174,"./model/SmartTransactionsBasketInfo":175,"./model/SmartTransactionsBasketProduct":176,"./model/SmartTransactionsBasketProductGroup":177,"./model/SmartTransactionsBasketText":178,"./model/SmartTransactionsBonusProducts":179,"./model/SmartTransactionsCheckin":180,"./model/SmartTransactionsDTO":181,"./model/SmartTransactionsIdent":182,"./model/SmartTransactionsList":183,"./model/SmartTransactionsMerchant":184,"./model/SmartTransactionsPickupOptions":185,"./model/SmartTransactionsPreTransactionModel":186,"./model/SmartTransactionsProductModel":187,"./model/SmartTransactionsReceipt":188,"./model/SmartTransactionsReceiptValue":189,"./model/Store":190,"./model/VirtualTerminalData":191}],43:[function(require,module,exports){
+exports.StompClient = _StompClient2.default;
+exports.StompSmartTransactionsApi = _StompSmartTransactionsApi2.default;
+exports.Environments = _StompGlobals2.default;
+exports.FrameCommands = _StompGlobals2.default;
+exports.Frame = _Frame2.default;
+exports.Stomp = _Stomp2.default;
+exports.BrowserSocket = _BrowserSocket2.default;
+exports.NodeSocket = _NodeSocket2.default;
+exports.SocketProvider = _SocketProvider2.default;
+},{"./ApiClient":12,"./api/DocumentUploadsApi":13,"./api/GeneralMerchantsApi":14,"./api/GeneralStoresApi":15,"./api/LoyaltyCardgroupsApi":16,"./api/LoyaltyCardsApi":17,"./api/LoyaltyCustomersApi":18,"./api/LoyaltyMerchantcardsApi":19,"./api/LoyaltySalesApi":20,"./api/LoyaltyStoregroupsApi":21,"./api/PaymentContainersApi":22,"./api/PaymentContractsApi":23,"./api/PaymentCustomersApi":24,"./api/PaymentSecupayCreditcardsApi":25,"./api/PaymentSecupayDebitsApi":26,"./api/PaymentSecupayInvoicesApi":27,"./api/PaymentSecupayPrepaysApi":28,"./api/PaymentTransactionsApi":29,"./api/PrepaidItemsApi":30,"./api/SmartDevicesApi":31,"./api/SmartTransactionsApi":32,"./authentication/Authenticator":34,"./authentication/OAuthApplicationUserCredentials":35,"./authentication/OAuthClientCredentials":36,"./authentication/OAuthDeviceCredentials":37,"./cache/FileCache":39,"./cache/SDKCache":40,"./model/Address":42,"./model/AddressComponents":43,"./model/AssignedBy":44,"./model/BankAccountDescriptor":45,"./model/Contact":46,"./model/DayTime":47,"./model/DocumentUploadsBaseProductModel":48,"./model/DocumentUploadsDTOContent":49,"./model/DocumentUploadsProductModel":50,"./model/GeneralMerchantsCheckoutOptions":51,"./model/GeneralMerchantsCheckoutOptionsCollection":52,"./model/GeneralMerchantsCheckoutOptionsCollectionSmartDevices":53,"./model/GeneralMerchantsCheckoutOptionsShipping":54,"./model/GeneralMerchantsDTO":55,"./model/GeneralMerchantsLegalDetails":56,"./model/GeneralMerchantsList":57,"./model/GeneralMerchantsProductModel":58,"./model/GeneralMerchantsUrls":59,"./model/GeneralMerchantsUser":60,"./model/GeneralStoresDTO":61,"./model/GeneralStoresDTOReason":62,"./model/GeneralStoresDTOType":63,"./model/GeneralStoresList":64,"./model/GeneralStoresProductModel":65,"./model/GeoAddress":66,"./model/GeoAddressGeometry":67,"./model/InvitedBy":68,"./model/ItemGroup":69,"./model/LoyaltyCardgroupsDTO":70,"./model/LoyaltyCardgroupsDTOCheckPasscodeEnabled":71,"./model/LoyaltyCardgroupsDTOMerchant":72,"./model/LoyaltyCardgroupsList":73,"./model/LoyaltyCardgroupsProductModel":74,"./model/LoyaltyCardsDTOAccount":75,"./model/LoyaltyCardsList":76,"./model/LoyaltyCardsProductModel":77,"./model/LoyaltyCustomersContactDTO":78,"./model/LoyaltyCustomersDTO":79,"./model/LoyaltyCustomersList":80,"./model/LoyaltyCustomersPaymentContainerModel":81,"./model/LoyaltyCustomersProductModel":82,"./model/LoyaltyCustomersRemoved":83,"./model/LoyaltyDTOMerchant":84,"./model/LoyaltyDTOStore":85,"./model/LoyaltyMerchantcardsDTO":86,"./model/LoyaltyMerchantcardsDTOCardsAmount":87,"./model/LoyaltyMerchantcardsDTOCheckPasscode":88,"./model/LoyaltyMerchantcardsDTOCsc":89,"./model/LoyaltyMerchantcardsDTOLock":90,"./model/LoyaltyMerchantcardsDTONewPasscode":91,"./model/LoyaltyMerchantcardsDTOPaymentContainer":92,"./model/LoyaltyMerchantcardsDTOResetPasscode":93,"./model/LoyaltyMerchantcardsDTOTransaction":94,"./model/LoyaltyMerchantcardsDTOValidateMerchantCard":95,"./model/LoyaltyMerchantcardsList":96,"./model/LoyaltyMerchantcardsProductModel":97,"./model/LoyaltyMerchantcardsProductWithReceiptModel":98,"./model/LoyaltyMerchantcardsValidateMerchantCard":99,"./model/LoyaltyStoregroupsDTO":100,"./model/LoyaltyStoregroupsDTOStoresAddressComponents":101,"./model/LoyaltyStoregroupsList":102,"./model/LoyaltyStoregroupsProductModel":103,"./model/OpenHours":104,"./model/ParentModel":105,"./model/PaymentContainerMandate":106,"./model/PaymentContainersDTO":107,"./model/PaymentContainersDTOCustomer":108,"./model/PaymentContainersDTOPrivate":109,"./model/PaymentContainersList":110,"./model/PaymentContainersProductModel":111,"./model/PaymentContractsDTO":112,"./model/PaymentContractsDTOClone":113,"./model/PaymentContractsDTOIFrameOpts":114,"./model/PaymentContractsDTORequestId":115,"./model/PaymentContractsList":116,"./model/PaymentContractsProductModel":117,"./model/PaymentContractsRequestIdResult":118,"./model/PaymentCustomersDTO":119,"./model/PaymentCustomersList":120,"./model/PaymentCustomersProductModel":121,"./model/PaymentInformation":122,"./model/PaymentTransactionsCancelList":123,"./model/PaymentTransactionsList":124,"./model/PaymentTransactionsProductModel":125,"./model/PaymentTransactionsProductModelCustomer":126,"./model/PaymentTransactionsProductModelDetails":127,"./model/PaymentTransactionsProductModelMerchant":128,"./model/PaymentTransactionsShippingUrl":129,"./model/PrepaidItemsList":130,"./model/PrepaidItemsProductModel":131,"./model/PrepaidSalesItem":132,"./model/PrepaidSalesProductModel":133,"./model/PrepaidSalesSmartDevice":134,"./model/ProductExceptionPayload":135,"./model/ProductInstanceID":136,"./model/ProductInstanceUID":137,"./model/ReceiptType":138,"./model/ReceiptTypeValue":139,"./model/ReceiptValue":140,"./model/SecupayBasketItem":141,"./model/SecupaySubTransactionProductModel":142,"./model/SecupayTransactionCancelDTO":143,"./model/SecupayTransactionCaptureDTO":144,"./model/SecupayTransactionDTOExternalInvoicePdf":145,"./model/SecupayTransactionExternalInvoicePdf":146,"./model/SecupayTransactionExternalInvoicePdfDocument":147,"./model/SecupayTransactionProductDTO":148,"./model/SecupayTransactionProductDTOExperience":149,"./model/SecupayTransactionProductDTOOptData":150,"./model/SecupayTransactionProductDTORedirectUrl":151,"./model/SecupayTransactionProductDTOSubscription":152,"./model/SecupayTransactionProductModel":153,"./model/SecupayTransactionProductModelRedirectUrl":154,"./model/SecupayTransactionProductModelTransferAccount":155,"./model/SecupayTransactionProductModelUsedPaymentInstrument":156,"./model/SecupayTransactionReverseAccrualDTO":157,"./model/SecupayTransactionSetShippingInformationDTO":158,"./model/SecupayTransactionUpdateBasketDTO":159,"./model/SmartDeviceProductsEnabled":160,"./model/SmartDeviceProductsPrepaid":161,"./model/SmartDevicesDTO":162,"./model/SmartDevicesDTOPrepaidTid":163,"./model/SmartDevicesDTOSecubaseConfig":164,"./model/SmartDevicesDevice":165,"./model/SmartDevicesList":166,"./model/SmartDevicesList1":167,"./model/SmartDevicesProductModel":168,"./model/SmartDevicesProducts":169,"./model/SmartDevicesSecubaseConfig":170,"./model/SmartDevicesSecubaseConfigLogging":171,"./model/SmartDevicesSecubaseConfigLoggingFileNet":172,"./model/SmartTransactionsBasket":173,"./model/SmartTransactionsBasketInfo":174,"./model/SmartTransactionsBasketProduct":175,"./model/SmartTransactionsBasketProductGroup":176,"./model/SmartTransactionsBasketText":177,"./model/SmartTransactionsBonusProducts":178,"./model/SmartTransactionsCheckin":179,"./model/SmartTransactionsDTO":180,"./model/SmartTransactionsIdent":181,"./model/SmartTransactionsList":182,"./model/SmartTransactionsMerchant":183,"./model/SmartTransactionsPickupOptions":184,"./model/SmartTransactionsPreTransactionModel":185,"./model/SmartTransactionsProductModel":186,"./model/SmartTransactionsReceipt":187,"./model/SmartTransactionsReceiptValue":188,"./model/Store":189,"./model/VirtualTerminalData":190,"./stomp/StompClient":193,"./stomp/StompGlobals":194,"./stomp/api/StompSmartTransactionsApi":195,"./stomp/frame/Frame":196,"./stomp/main/Stomp":197,"./stomp/socket/BrowserSocket":198,"./stomp/socket/NodeSocket":199,"./stomp/socket/SocketProvider":200}],42:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13709,7 +13694,7 @@ Address = function () {
 }();
 
 exports.default = Address;
-},{"../ApiClient":12}],44:[function(require,module,exports){
+},{"../ApiClient":12}],43:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13794,7 +13779,7 @@ AddressComponents = function () {
 }();
 
 exports.default = AddressComponents;
-},{"../ApiClient":12}],45:[function(require,module,exports){
+},{"../ApiClient":12}],44:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13879,7 +13864,7 @@ AssignedBy = function () {
 }();
 
 exports.default = AssignedBy;
-},{"../ApiClient":12}],46:[function(require,module,exports){
+},{"../ApiClient":12}],45:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13974,7 +13959,7 @@ BankAccountDescriptor = function () {
 }();
 
 exports.default = BankAccountDescriptor;
-},{"../ApiClient":12}],47:[function(require,module,exports){
+},{"../ApiClient":12}],46:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14180,7 +14165,7 @@ Contact = function () {
 }();
 
 exports.default = Contact;
-},{"../ApiClient":12,"./Address":43}],48:[function(require,module,exports){
+},{"../ApiClient":12,"./Address":42}],47:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14257,7 +14242,7 @@ DayTime = function () {
 }();
 
 exports.default = DayTime;
-},{"../ApiClient":12}],49:[function(require,module,exports){
+},{"../ApiClient":12}],48:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14342,7 +14327,7 @@ DocumentUploadsBaseProductModel = function () {
 }();
 
 exports.default = DocumentUploadsBaseProductModel;
-},{"../ApiClient":12}],50:[function(require,module,exports){
+},{"../ApiClient":12}],49:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14409,7 +14394,7 @@ DocumentUploadsDTOContent = function () {
 }();
 
 exports.default = DocumentUploadsDTOContent;
-},{"../ApiClient":12}],51:[function(require,module,exports){
+},{"../ApiClient":12}],50:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14524,7 +14509,7 @@ DocumentUploadsProductModel = function () {
 }();
 
 exports.default = DocumentUploadsProductModel;
-},{"../ApiClient":12,"./DocumentUploadsBaseProductModel":49}],52:[function(require,module,exports){
+},{"../ApiClient":12,"./DocumentUploadsBaseProductModel":48}],51:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14617,7 +14602,7 @@ GeneralMerchantsCheckoutOptions = function () {
 }();
 
 exports.default = GeneralMerchantsCheckoutOptions;
-},{"../ApiClient":12,"./GeneralMerchantsCheckoutOptionsCollection":53,"./GeneralMerchantsCheckoutOptionsShipping":55}],53:[function(require,module,exports){
+},{"../ApiClient":12,"./GeneralMerchantsCheckoutOptionsCollection":52,"./GeneralMerchantsCheckoutOptionsShipping":54}],52:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14697,7 +14682,7 @@ GeneralMerchantsCheckoutOptionsCollection = function () {
 }();
 
 exports.default = GeneralMerchantsCheckoutOptionsCollection;
-},{"../ApiClient":12,"./GeneralMerchantsCheckoutOptionsCollectionSmartDevices":54}],54:[function(require,module,exports){
+},{"../ApiClient":12,"./GeneralMerchantsCheckoutOptionsCollectionSmartDevices":53}],53:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14795,7 +14780,7 @@ GeneralMerchantsCheckoutOptionsCollectionSmartDevices = function () {
 }();
 
 exports.default = GeneralMerchantsCheckoutOptionsCollectionSmartDevices;
-},{"../ApiClient":12,"./Store":190}],55:[function(require,module,exports){
+},{"../ApiClient":12,"./Store":189}],54:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14862,7 +14847,7 @@ GeneralMerchantsCheckoutOptionsShipping = function () {
 }();
 
 exports.default = GeneralMerchantsCheckoutOptionsShipping;
-},{"../ApiClient":12}],56:[function(require,module,exports){
+},{"../ApiClient":12}],55:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14959,7 +14944,7 @@ GeneralMerchantsDTO = function () {
 }();
 
 exports.default = GeneralMerchantsDTO;
-},{"../ApiClient":12,"./GeneralMerchantsCheckoutOptions":52,"./GeneralMerchantsLegalDetails":57,"./GeneralMerchantsUrls":60}],57:[function(require,module,exports){
+},{"../ApiClient":12,"./GeneralMerchantsCheckoutOptions":51,"./GeneralMerchantsLegalDetails":56,"./GeneralMerchantsUrls":59}],56:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -15053,7 +15038,7 @@ GeneralMerchantsLegalDetails = function () {
 }();
 
 exports.default = GeneralMerchantsLegalDetails;
-},{"../ApiClient":12}],58:[function(require,module,exports){
+},{"../ApiClient":12}],57:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -15133,7 +15118,7 @@ GeneralMerchantsList = function () {
 }();
 
 exports.default = GeneralMerchantsList;
-},{"../ApiClient":12,"./GeneralMerchantsProductModel":59}],59:[function(require,module,exports){
+},{"../ApiClient":12,"./GeneralMerchantsProductModel":58}],58:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -15318,7 +15303,7 @@ GeneralMerchantsProductModel = function () {
 }();
 
 exports.default = GeneralMerchantsProductModel;
-},{"../ApiClient":12,"./AssignedBy":45,"./GeneralMerchantsCheckoutOptions":52,"./GeneralMerchantsLegalDetails":57,"./GeneralMerchantsUrls":60,"./GeneralMerchantsUser":61,"./InvitedBy":69,"./ParentModel":106}],60:[function(require,module,exports){
+},{"../ApiClient":12,"./AssignedBy":44,"./GeneralMerchantsCheckoutOptions":51,"./GeneralMerchantsLegalDetails":56,"./GeneralMerchantsUrls":59,"./GeneralMerchantsUser":60,"./InvitedBy":68,"./ParentModel":105}],59:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -15394,7 +15379,7 @@ GeneralMerchantsUrls = function () {
 }();
 
 exports.default = GeneralMerchantsUrls;
-},{"../ApiClient":12}],61:[function(require,module,exports){
+},{"../ApiClient":12}],60:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -15501,7 +15486,7 @@ GeneralMerchantsUser = function () {
 }();
 
 exports.default = GeneralMerchantsUser;
-},{"../ApiClient":12,"./GeoAddress":67}],62:[function(require,module,exports){
+},{"../ApiClient":12,"./GeoAddress":66}],61:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -15630,7 +15615,7 @@ GeneralStoresDTO = function () {
 }();
 
 exports.default = GeneralStoresDTO;
-},{"../ApiClient":12,"./Address":43,"./OpenHours":105}],63:[function(require,module,exports){
+},{"../ApiClient":12,"./Address":42,"./OpenHours":104}],62:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -15697,7 +15682,7 @@ GeneralStoresDTOReason = function () {
 }();
 
 exports.default = GeneralStoresDTOReason;
-},{"../ApiClient":12}],64:[function(require,module,exports){
+},{"../ApiClient":12}],63:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -15764,7 +15749,7 @@ GeneralStoresDTOType = function () {
 }();
 
 exports.default = GeneralStoresDTOType;
-},{"../ApiClient":12}],65:[function(require,module,exports){
+},{"../ApiClient":12}],64:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -15844,7 +15829,7 @@ GeneralStoresList = function () {
 }();
 
 exports.default = GeneralStoresList;
-},{"../ApiClient":12,"./GeneralStoresProductModel":66}],66:[function(require,module,exports){
+},{"../ApiClient":12,"./GeneralStoresProductModel":65}],65:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -16165,7 +16150,7 @@ GeneralStoresProductModel = function () {
 }();
 
 exports.default = GeneralStoresProductModel;
-},{"../ApiClient":12,"./AddressComponents":44,"./AssignedBy":45,"./InvitedBy":69,"./OpenHours":105,"./ProductInstanceUID":138}],67:[function(require,module,exports){
+},{"../ApiClient":12,"./AddressComponents":43,"./AssignedBy":44,"./InvitedBy":68,"./OpenHours":104,"./ProductInstanceUID":137}],66:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -16266,7 +16251,7 @@ GeoAddress = function () {
 }();
 
 exports.default = GeoAddress;
-},{"../ApiClient":12,"./AddressComponents":44,"./GeoAddressGeometry":68}],68:[function(require,module,exports){
+},{"../ApiClient":12,"./AddressComponents":43,"./GeoAddressGeometry":67}],67:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -16343,7 +16328,7 @@ GeoAddressGeometry = function () {
 }();
 
 exports.default = GeoAddressGeometry;
-},{"../ApiClient":12}],69:[function(require,module,exports){
+},{"../ApiClient":12}],68:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -16428,7 +16413,7 @@ InvitedBy = function () {
 }();
 
 exports.default = InvitedBy;
-},{"../ApiClient":12}],70:[function(require,module,exports){
+},{"../ApiClient":12}],69:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -16531,7 +16516,7 @@ ItemGroup = function () {
 }();
 
 exports.default = ItemGroup;
-},{"../ApiClient":12}],71:[function(require,module,exports){
+},{"../ApiClient":12}],70:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -16638,7 +16623,7 @@ LoyaltyCardgroupsDTO = function () {
 }();
 
 exports.default = LoyaltyCardgroupsDTO;
-},{"../ApiClient":12,"./LoyaltyCardgroupsDTOMerchant":73}],72:[function(require,module,exports){
+},{"../ApiClient":12,"./LoyaltyCardgroupsDTOMerchant":72}],71:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -16714,7 +16699,7 @@ LoyaltyCardgroupsDTOCheckPasscodeEnabled = function () {
 }();
 
 exports.default = LoyaltyCardgroupsDTOCheckPasscodeEnabled;
-},{"../ApiClient":12}],73:[function(require,module,exports){
+},{"../ApiClient":12}],72:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -16781,7 +16766,7 @@ LoyaltyCardgroupsDTOMerchant = function () {
 }();
 
 exports.default = LoyaltyCardgroupsDTOMerchant;
-},{"../ApiClient":12}],74:[function(require,module,exports){
+},{"../ApiClient":12}],73:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -16861,7 +16846,7 @@ LoyaltyCardgroupsList = function () {
 }();
 
 exports.default = LoyaltyCardgroupsList;
-},{"../ApiClient":12,"./LoyaltyCardgroupsProductModel":75}],75:[function(require,module,exports){
+},{"../ApiClient":12,"./LoyaltyCardgroupsProductModel":74}],74:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -16986,7 +16971,7 @@ LoyaltyCardgroupsProductModel = function () {
 }();
 
 exports.default = LoyaltyCardgroupsProductModel;
-},{"../ApiClient":12,"./LoyaltyCardgroupsDTOMerchant":73}],76:[function(require,module,exports){
+},{"../ApiClient":12,"./LoyaltyCardgroupsDTOMerchant":72}],75:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17062,7 +17047,7 @@ LoyaltyCardsDTOAccount = function () {
 }();
 
 exports.default = LoyaltyCardsDTOAccount;
-},{"../ApiClient":12}],77:[function(require,module,exports){
+},{"../ApiClient":12}],76:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17142,7 +17127,7 @@ LoyaltyCardsList = function () {
 }();
 
 exports.default = LoyaltyCardsList;
-},{"../ApiClient":12,"./LoyaltyCardsProductModel":78}],78:[function(require,module,exports){
+},{"../ApiClient":12,"./LoyaltyCardsProductModel":77}],77:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17249,7 +17234,7 @@ LoyaltyCardsProductModel = function () {
 }();
 
 exports.default = LoyaltyCardsProductModel;
-},{"../ApiClient":12,"./LoyaltyCardsDTOAccount":76}],79:[function(require,module,exports){
+},{"../ApiClient":12,"./LoyaltyCardsDTOAccount":75}],78:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17356,7 +17341,7 @@ LoyaltyCustomersContactDTO = function () {
 }();
 
 exports.default = LoyaltyCustomersContactDTO;
-},{"../ApiClient":12,"./Address":43}],80:[function(require,module,exports){
+},{"../ApiClient":12,"./Address":42}],79:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17481,7 +17466,7 @@ LoyaltyCustomersDTO = function () {
 }();
 
 exports.default = LoyaltyCustomersDTO;
-},{"../ApiClient":12,"./Contact":47}],81:[function(require,module,exports){
+},{"../ApiClient":12,"./Contact":46}],80:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17561,7 +17546,7 @@ LoyaltyCustomersList = function () {
 }();
 
 exports.default = LoyaltyCustomersList;
-},{"../ApiClient":12,"./LoyaltyCustomersProductModel":83}],82:[function(require,module,exports){
+},{"../ApiClient":12,"./LoyaltyCustomersProductModel":82}],81:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17668,7 +17653,7 @@ LoyaltyCustomersPaymentContainerModel = function () {
 }();
 
 exports.default = LoyaltyCustomersPaymentContainerModel;
-},{"../ApiClient":12,"./BankAccountDescriptor":46}],83:[function(require,module,exports){
+},{"../ApiClient":12,"./BankAccountDescriptor":45}],82:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17846,7 +17831,7 @@ LoyaltyCustomersProductModel = function () {
 }();
 
 exports.default = LoyaltyCustomersProductModel;
-},{"../ApiClient":12,"./Contact":47,"./LoyaltyCustomersPaymentContainerModel":82,"./ProductInstanceUID":138}],84:[function(require,module,exports){
+},{"../ApiClient":12,"./Contact":46,"./LoyaltyCustomersPaymentContainerModel":81,"./ProductInstanceUID":137}],83:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17913,7 +17898,7 @@ LoyaltyCustomersRemoved = function () {
 }();
 
 exports.default = LoyaltyCustomersRemoved;
-},{"../ApiClient":12}],85:[function(require,module,exports){
+},{"../ApiClient":12}],84:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17989,7 +17974,7 @@ LoyaltyDTOMerchant = function () {
 }();
 
 exports.default = LoyaltyDTOMerchant;
-},{"../ApiClient":12}],86:[function(require,module,exports){
+},{"../ApiClient":12}],85:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18114,7 +18099,7 @@ LoyaltyDTOStore = function () {
 }();
 
 exports.default = LoyaltyDTOStore;
-},{"../ApiClient":12,"./LoyaltyStoregroupsDTOStoresAddressComponents":102}],87:[function(require,module,exports){
+},{"../ApiClient":12,"./LoyaltyStoregroupsDTOStoresAddressComponents":101}],86:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18217,7 +18202,7 @@ LoyaltyMerchantcardsDTO = function () {
 }();
 
 exports.default = LoyaltyMerchantcardsDTO;
-},{"../ApiClient":12}],88:[function(require,module,exports){
+},{"../ApiClient":12}],87:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18284,7 +18269,7 @@ LoyaltyMerchantcardsDTOCardsAmount = function () {
 }();
 
 exports.default = LoyaltyMerchantcardsDTOCardsAmount;
-},{"../ApiClient":12}],89:[function(require,module,exports){
+},{"../ApiClient":12}],88:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18360,7 +18345,7 @@ LoyaltyMerchantcardsDTOCheckPasscode = function () {
 }();
 
 exports.default = LoyaltyMerchantcardsDTOCheckPasscode;
-},{"../ApiClient":12}],90:[function(require,module,exports){
+},{"../ApiClient":12}],89:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18436,7 +18421,7 @@ LoyaltyMerchantcardsDTOCsc = function () {
 }();
 
 exports.default = LoyaltyMerchantcardsDTOCsc;
-},{"../ApiClient":12}],91:[function(require,module,exports){
+},{"../ApiClient":12}],90:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18521,7 +18506,7 @@ LoyaltyMerchantcardsDTOLock = function () {
 }();
 
 exports.default = LoyaltyMerchantcardsDTOLock;
-},{"../ApiClient":12}],92:[function(require,module,exports){
+},{"../ApiClient":12}],91:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18612,7 +18597,7 @@ LoyaltyMerchantcardsDTONewPasscode = function () {
 }();
 
 exports.default = LoyaltyMerchantcardsDTONewPasscode;
-},{"../ApiClient":12,"./LoyaltyMerchantcardsDTOValidateMerchantCard":96}],93:[function(require,module,exports){
+},{"../ApiClient":12,"./LoyaltyMerchantcardsDTOValidateMerchantCard":95}],92:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18710,7 +18695,7 @@ LoyaltyMerchantcardsDTOPaymentContainer = function () {
 }();
 
 exports.default = LoyaltyMerchantcardsDTOPaymentContainer;
-},{"../ApiClient":12,"./PaymentInformation":123}],94:[function(require,module,exports){
+},{"../ApiClient":12,"./PaymentInformation":122}],93:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18786,7 +18771,7 @@ LoyaltyMerchantcardsDTOResetPasscode = function () {
 }();
 
 exports.default = LoyaltyMerchantcardsDTOResetPasscode;
-},{"../ApiClient":12}],95:[function(require,module,exports){
+},{"../ApiClient":12}],94:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18925,7 +18910,7 @@ LoyaltyMerchantcardsDTOTransaction = function () {
 }();
 
 exports.default = LoyaltyMerchantcardsDTOTransaction;
-},{"../ApiClient":12}],96:[function(require,module,exports){
+},{"../ApiClient":12}],95:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19001,7 +18986,7 @@ LoyaltyMerchantcardsDTOValidateMerchantCard = function () {
 }();
 
 exports.default = LoyaltyMerchantcardsDTOValidateMerchantCard;
-},{"../ApiClient":12}],97:[function(require,module,exports){
+},{"../ApiClient":12}],96:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19081,7 +19066,7 @@ LoyaltyMerchantcardsList = function () {
 }();
 
 exports.default = LoyaltyMerchantcardsList;
-},{"../ApiClient":12,"./LoyaltyMerchantcardsProductModel":98}],98:[function(require,module,exports){
+},{"../ApiClient":12,"./LoyaltyMerchantcardsProductModel":97}],97:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19330,7 +19315,7 @@ LoyaltyMerchantcardsProductModel = function () {
 }();
 
 exports.default = LoyaltyMerchantcardsProductModel;
-},{"../ApiClient":12,"./LoyaltyCardgroupsProductModel":75,"./LoyaltyCardsProductModel":78,"./LoyaltyCustomersProductModel":83,"./LoyaltyMerchantcardsDTOPaymentContainer":93,"./ProductInstanceUID":138}],99:[function(require,module,exports){
+},{"../ApiClient":12,"./LoyaltyCardgroupsProductModel":74,"./LoyaltyCardsProductModel":77,"./LoyaltyCustomersProductModel":82,"./LoyaltyMerchantcardsDTOPaymentContainer":92,"./ProductInstanceUID":137}],98:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19560,7 +19545,7 @@ LoyaltyMerchantcardsProductWithReceiptModel = function () {
 }();
 
 exports.default = LoyaltyMerchantcardsProductWithReceiptModel;
-},{"../ApiClient":12,"./LoyaltyCardgroupsProductModel":75,"./LoyaltyCardsProductModel":78,"./LoyaltyCustomersProductModel":83,"./LoyaltyMerchantcardsDTOPaymentContainer":93,"./LoyaltyMerchantcardsProductModel":98,"./ProductInstanceUID":138,"./ReceiptType":139,"./ReceiptTypeValue":140}],100:[function(require,module,exports){
+},{"../ApiClient":12,"./LoyaltyCardgroupsProductModel":74,"./LoyaltyCardsProductModel":77,"./LoyaltyCustomersProductModel":82,"./LoyaltyMerchantcardsDTOPaymentContainer":92,"./LoyaltyMerchantcardsProductModel":97,"./ProductInstanceUID":137,"./ReceiptType":138,"./ReceiptTypeValue":139}],99:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19645,7 +19630,7 @@ LoyaltyMerchantcardsValidateMerchantCard = function () {
 }();
 
 exports.default = LoyaltyMerchantcardsValidateMerchantCard;
-},{"../ApiClient":12}],101:[function(require,module,exports){
+},{"../ApiClient":12}],100:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19730,7 +19715,7 @@ LoyaltyStoregroupsDTO = function () {
 }();
 
 exports.default = LoyaltyStoregroupsDTO;
-},{"../ApiClient":12}],102:[function(require,module,exports){
+},{"../ApiClient":12}],101:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19815,7 +19800,7 @@ LoyaltyStoregroupsDTOStoresAddressComponents = function () {
 }();
 
 exports.default = LoyaltyStoregroupsDTOStoresAddressComponents;
-},{"../ApiClient":12}],103:[function(require,module,exports){
+},{"../ApiClient":12}],102:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19895,7 +19880,7 @@ LoyaltyStoregroupsList = function () {
 }();
 
 exports.default = LoyaltyStoregroupsList;
-},{"../ApiClient":12,"./LoyaltyStoregroupsProductModel":104}],104:[function(require,module,exports){
+},{"../ApiClient":12,"./LoyaltyStoregroupsProductModel":103}],103:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20015,7 +20000,7 @@ LoyaltyStoregroupsProductModel = function () {
 }();
 
 exports.default = LoyaltyStoregroupsProductModel;
-},{"../ApiClient":12,"./LoyaltyDTOMerchant":85,"./LoyaltyDTOStore":86}],105:[function(require,module,exports){
+},{"../ApiClient":12,"./LoyaltyDTOMerchant":84,"./LoyaltyDTOStore":85}],104:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20096,7 +20081,7 @@ OpenHours = function () {
 }();
 
 exports.default = OpenHours;
-},{"../ApiClient":12,"./DayTime":48}],106:[function(require,module,exports){
+},{"../ApiClient":12,"./DayTime":47}],105:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20181,7 +20166,7 @@ ParentModel = function () {
 }();
 
 exports.default = ParentModel;
-},{"../ApiClient":12}],107:[function(require,module,exports){
+},{"../ApiClient":12}],106:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20293,7 +20278,7 @@ PaymentContainerMandate = function () {
 }();
 
 exports.default = PaymentContainerMandate;
-},{"../ApiClient":12}],108:[function(require,module,exports){
+},{"../ApiClient":12}],107:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20384,7 +20369,7 @@ PaymentContainersDTO = function () {
 }();
 
 exports.default = PaymentContainersDTO;
-},{"../ApiClient":12,"./PaymentContainersDTOCustomer":109,"./PaymentContainersDTOPrivate":110}],109:[function(require,module,exports){
+},{"../ApiClient":12,"./PaymentContainersDTOCustomer":108,"./PaymentContainersDTOPrivate":109}],108:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20452,7 +20437,7 @@ PaymentContainersDTOCustomer = function () {
 }();
 
 exports.default = PaymentContainersDTOCustomer;
-},{"../ApiClient":12}],110:[function(require,module,exports){
+},{"../ApiClient":12}],109:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20538,7 +20523,7 @@ PaymentContainersDTOPrivate = function () {
 }();
 
 exports.default = PaymentContainersDTOPrivate;
-},{"../ApiClient":12}],111:[function(require,module,exports){
+},{"../ApiClient":12}],110:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20618,7 +20603,7 @@ PaymentContainersList = function () {
 }();
 
 exports.default = PaymentContainersList;
-},{"../ApiClient":12,"./PaymentContainersProductModel":112}],112:[function(require,module,exports){
+},{"../ApiClient":12,"./PaymentContainersProductModel":111}],111:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20795,7 +20780,7 @@ PaymentContainersProductModel = function () {
 }();
 
 exports.default = PaymentContainersProductModel;
-},{"../ApiClient":12,"./BankAccountDescriptor":46,"./PaymentContainerMandate":107,"./PaymentContractsProductModel":118,"./PaymentCustomersProductModel":122,"./ProductInstanceUID":138}],113:[function(require,module,exports){
+},{"../ApiClient":12,"./BankAccountDescriptor":45,"./PaymentContainerMandate":106,"./PaymentContractsProductModel":117,"./PaymentCustomersProductModel":121,"./ProductInstanceUID":137}],112:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20979,7 +20964,7 @@ PaymentContractsDTO = function () {
 }();
 
 exports.default = PaymentContractsDTO;
-},{"../ApiClient":12}],114:[function(require,module,exports){
+},{"../ApiClient":12}],113:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21123,7 +21108,7 @@ PaymentContractsDTOClone = function () {
 }();
 
 exports.default = PaymentContractsDTOClone;
-},{"../ApiClient":12,"./PaymentInformation":123}],115:[function(require,module,exports){
+},{"../ApiClient":12,"./PaymentInformation":122}],114:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21227,7 +21212,7 @@ PaymentContractsDTOIFrameOpts = function () {
 }();
 
 exports.default = PaymentContractsDTOIFrameOpts;
-},{"../ApiClient":12}],116:[function(require,module,exports){
+},{"../ApiClient":12}],115:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21343,7 +21328,7 @@ PaymentContractsDTORequestId = function () {
 }();
 
 exports.default = PaymentContractsDTORequestId;
-},{"../ApiClient":12,"./Contact":47,"./PaymentContractsDTOIFrameOpts":115,"./PaymentInformation":123}],117:[function(require,module,exports){
+},{"../ApiClient":12,"./Contact":46,"./PaymentContractsDTOIFrameOpts":114,"./PaymentInformation":122}],116:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21423,7 +21408,7 @@ PaymentContractsList = function () {
 }();
 
 exports.default = PaymentContractsList;
-},{"../ApiClient":12,"./PaymentContractsProductModel":118}],118:[function(require,module,exports){
+},{"../ApiClient":12,"./PaymentContractsProductModel":117}],117:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21558,7 +21543,7 @@ PaymentContractsProductModel = function () {
 }();
 
 exports.default = PaymentContractsProductModel;
-},{"../ApiClient":12,"./ProductInstanceUID":138}],119:[function(require,module,exports){
+},{"../ApiClient":12,"./ProductInstanceUID":137}],118:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21651,7 +21636,7 @@ PaymentContractsRequestIdResult = function () {
 }();
 
 exports.default = PaymentContractsRequestIdResult;
-},{"../ApiClient":12,"./PaymentContractsProductModel":118,"./PaymentInformation":123}],120:[function(require,module,exports){
+},{"../ApiClient":12,"./PaymentContractsProductModel":117,"./PaymentInformation":122}],119:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21722,7 +21707,7 @@ PaymentCustomersDTO = function () {
 }();
 
 exports.default = PaymentCustomersDTO;
-},{"../ApiClient":12,"./Contact":47}],121:[function(require,module,exports){
+},{"../ApiClient":12,"./Contact":46}],120:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21802,7 +21787,7 @@ PaymentCustomersList = function () {
 }();
 
 exports.default = PaymentCustomersList;
-},{"../ApiClient":12,"./PaymentCustomersProductModel":122}],122:[function(require,module,exports){
+},{"../ApiClient":12,"./PaymentCustomersProductModel":121}],121:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21922,7 +21907,7 @@ PaymentCustomersProductModel = function () {
 }();
 
 exports.default = PaymentCustomersProductModel;
-},{"../ApiClient":12,"./Contact":47,"./ProductInstanceUID":138}],123:[function(require,module,exports){
+},{"../ApiClient":12,"./Contact":46,"./ProductInstanceUID":137}],122:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22008,7 +21993,7 @@ PaymentInformation = function () {
 }();
 
 exports.default = PaymentInformation;
-},{"../ApiClient":12}],124:[function(require,module,exports){
+},{"../ApiClient":12}],123:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22088,7 +22073,7 @@ PaymentTransactionsCancelList = function () {
 }();
 
 exports.default = PaymentTransactionsCancelList;
-},{"../ApiClient":12,"./PaymentTransactionsProductModel":126}],125:[function(require,module,exports){
+},{"../ApiClient":12,"./PaymentTransactionsProductModel":125}],124:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22168,7 +22153,7 @@ PaymentTransactionsList = function () {
 }();
 
 exports.default = PaymentTransactionsList;
-},{"../ApiClient":12,"./PaymentTransactionsProductModel":126}],126:[function(require,module,exports){
+},{"../ApiClient":12,"./PaymentTransactionsProductModel":125}],125:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22388,7 +22373,7 @@ PaymentTransactionsProductModel = function () {
 }();
 
 exports.default = PaymentTransactionsProductModel;
-},{"../ApiClient":12,"./PaymentTransactionsProductModelCustomer":127,"./PaymentTransactionsProductModelDetails":128,"./PaymentTransactionsProductModelMerchant":129}],127:[function(require,module,exports){
+},{"../ApiClient":12,"./PaymentTransactionsProductModelCustomer":126,"./PaymentTransactionsProductModelDetails":127,"./PaymentTransactionsProductModelMerchant":128}],126:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22510,7 +22495,7 @@ PaymentTransactionsProductModelCustomer = function () {
 }();
 
 exports.default = PaymentTransactionsProductModelCustomer;
-},{"../ApiClient":12}],128:[function(require,module,exports){
+},{"../ApiClient":12}],127:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22641,7 +22626,7 @@ PaymentTransactionsProductModelDetails = function () {
 }();
 
 exports.default = PaymentTransactionsProductModelDetails;
-},{"../ApiClient":12}],129:[function(require,module,exports){
+},{"../ApiClient":12}],128:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22727,7 +22712,7 @@ PaymentTransactionsProductModelMerchant = function () {
 }();
 
 exports.default = PaymentTransactionsProductModelMerchant;
-},{"../ApiClient":12}],130:[function(require,module,exports){
+},{"../ApiClient":12}],129:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22794,7 +22779,7 @@ PaymentTransactionsShippingUrl = function () {
 }();
 
 exports.default = PaymentTransactionsShippingUrl;
-},{"../ApiClient":12}],131:[function(require,module,exports){
+},{"../ApiClient":12}],130:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22874,7 +22859,7 @@ PrepaidItemsList = function () {
 }();
 
 exports.default = PrepaidItemsList;
-},{"../ApiClient":12,"./PrepaidItemsProductModel":132}],132:[function(require,module,exports){
+},{"../ApiClient":12,"./PrepaidItemsProductModel":131}],131:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23062,7 +23047,7 @@ PrepaidItemsProductModel = function () {
 }();
 
 exports.default = PrepaidItemsProductModel;
-},{"../ApiClient":12,"./ItemGroup":70}],133:[function(require,module,exports){
+},{"../ApiClient":12,"./ItemGroup":69}],132:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23165,7 +23150,7 @@ PrepaidSalesItem = function () {
 }();
 
 exports.default = PrepaidSalesItem;
-},{"../ApiClient":12}],134:[function(require,module,exports){
+},{"../ApiClient":12}],133:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23486,7 +23471,7 @@ PrepaidSalesProductModel = function () {
 }();
 
 exports.default = PrepaidSalesProductModel;
-},{"../ApiClient":12,"./ItemGroup":70,"./PrepaidSalesItem":133,"./PrepaidSalesSmartDevice":135,"./ProductInstanceUID":138,"./Store":190}],135:[function(require,module,exports){
+},{"../ApiClient":12,"./ItemGroup":69,"./PrepaidSalesItem":132,"./PrepaidSalesSmartDevice":134,"./ProductInstanceUID":137,"./Store":189}],134:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23580,7 +23565,7 @@ PrepaidSalesSmartDevice = function () {
 }();
 
 exports.default = PrepaidSalesSmartDevice;
-},{"../ApiClient":12}],136:[function(require,module,exports){
+},{"../ApiClient":12}],135:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23693,7 +23678,7 @@ ProductExceptionPayload = function () {
 }();
 
 exports.default = ProductExceptionPayload;
-},{"../ApiClient":12}],137:[function(require,module,exports){
+},{"../ApiClient":12}],136:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23761,7 +23746,7 @@ ProductInstanceID = function () {
 }();
 
 exports.default = ProductInstanceID;
-},{"../ApiClient":12}],138:[function(require,module,exports){
+},{"../ApiClient":12}],137:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23838,7 +23823,7 @@ ProductInstanceUID = function () {
 }();
 
 exports.default = ProductInstanceUID;
-},{"../ApiClient":12}],139:[function(require,module,exports){
+},{"../ApiClient":12}],138:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23905,7 +23890,7 @@ ReceiptType = function () {
 }();
 
 exports.default = ReceiptType;
-},{"../ApiClient":12}],140:[function(require,module,exports){
+},{"../ApiClient":12}],139:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23994,7 +23979,7 @@ ReceiptTypeValue = function () {
 }();
 
 exports.default = ReceiptTypeValue;
-},{"../ApiClient":12,"./ReceiptType":139,"./ReceiptValue":141}],141:[function(require,module,exports){
+},{"../ApiClient":12,"./ReceiptType":138,"./ReceiptValue":140}],140:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24097,11 +24082,11 @@ ReceiptValue = function () {
 }();
 
 exports.default = ReceiptValue;
-},{"../ApiClient":12}],142:[function(require,module,exports){
+},{"../ApiClient":12}],141:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -24115,174 +24100,174 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SecupayBasketItem model module.
-* @module model/SecupayBasketItem
-*/
+ * The SecupayBasketItem model module.
+ * @module model/SecupayBasketItem
+ */
 SecupayBasketItem = function () {
-    /**
-    * Constructs a new <code>SecupayBasketItem</code>.
-    * Item describing single position in basket in transaction
-    * @alias module:model/SecupayBasketItem
-    * @class
-    */
+  /**
+   * Constructs a new <code>SecupayBasketItem</code>.
+   * Item describing single position in basket in transaction
+   * @alias module:model/SecupayBasketItem
+   * @class
+   */
 
-    function SecupayBasketItem() {
-        _classCallCheck(this, SecupayBasketItem);
+  function SecupayBasketItem() {
+    _classCallCheck(this, SecupayBasketItem);
 
-        this.item_type = undefined;
-        this.article_number = undefined;
-        this.quantity = undefined;
-        this.name = undefined;
-        this.model = undefined;
-        this.ean = undefined;
-        this.tax = undefined;
-        this.total = undefined;
-        this.price = undefined;
-        this.apikey = undefined;
-        this.transaction_hash = undefined;
-        this.contract_id = undefined;
-        this.reference_id = undefined;
-        this.sub_basket = undefined;
+    this.article_number = undefined;
+    this.quantity = undefined;
+    this.name = undefined;
+    this.model = undefined;
+    this.ean = undefined;
+    this.tax = undefined;
+    this.total = undefined;
+    this.price = undefined;
+    this.apikey = undefined;
+    this.transaction_hash = undefined;
+    this.contract_id = undefined;
+    this.reference_id = undefined;
+    this.sub_basket = undefined;
+  }
+
+  /**
+   * Constructs a <code>SecupayBasketItem</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/SecupayBasketItem} obj Optional instance to populate.
+   * @return {module:model/SecupayBasketItem} The populated <code>SecupayBasketItem</code> instance.
+   */
+
+
+  _createClass(SecupayBasketItem, null, [{
+    key: 'constructFromObject',
+    value: function constructFromObject(data, obj) {
+      if (data) {
+        obj = obj || new SecupayBasketItem();
+
+        if (data.hasOwnProperty('item_type')) {
+          obj['item_type'] = _ApiClient2.default.convertToType(data['item_type'], 'String');
+        }
+        if (data.hasOwnProperty('article_number')) {
+          obj['article_number'] = _ApiClient2.default.convertToType(data['article_number'], 'String');
+        }
+        if (data.hasOwnProperty('quantity')) {
+          obj['quantity'] = _ApiClient2.default.convertToType(data['quantity'], 'Number');
+        }
+        if (data.hasOwnProperty('name')) {
+          obj['name'] = _ApiClient2.default.convertToType(data['name'], 'String');
+        }
+        if (data.hasOwnProperty('model')) {
+          obj['model'] = _ApiClient2.default.convertToType(data['model'], 'String');
+        }
+        if (data.hasOwnProperty('ean')) {
+          obj['ean'] = _ApiClient2.default.convertToType(data['ean'], 'String');
+        }
+        if (data.hasOwnProperty('tax')) {
+          obj['tax'] = _ApiClient2.default.convertToType(data['tax'], 'String');
+        }
+        if (data.hasOwnProperty('total')) {
+          obj['total'] = _ApiClient2.default.convertToType(data['total'], 'Number');
+        }
+        if (data.hasOwnProperty('price')) {
+          obj['price'] = _ApiClient2.default.convertToType(data['price'], 'Number');
+        }
+        if (data.hasOwnProperty('apikey')) {
+          obj['apikey'] = _ApiClient2.default.convertToType(data['apikey'], 'String');
+        }
+        if (data.hasOwnProperty('transaction_hash')) {
+          obj['transaction_hash'] = _ApiClient2.default.convertToType(data['transaction_hash'], 'String');
+        }
+        if (data.hasOwnProperty('contract_id')) {
+          obj['contract_id'] = _ApiClient2.default.convertToType(data['contract_id'], 'String');
+        }
+        if (data.hasOwnProperty('reference_id')) {
+          obj['reference_id'] = _ApiClient2.default.convertToType(data['reference_id'], 'String');
+        }
+        if (data.hasOwnProperty('sub_basket')) {
+          obj['sub_basket'] = _ApiClient2.default.convertToType(data['sub_basket'], [SecupayBasketItem]);
+        }
+      }
+      return obj;
     }
 
     /**
-    * Constructs a <code>SecupayBasketItem</code> from a plain JavaScript object, optionally creating a new instance.
-    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-    * @param {Object} data The plain JavaScript object bearing properties of interest.
-    * @param {module:model/SecupayBasketItem} obj Optional instance to populate.
-    * @return {module:model/SecupayBasketItem} The populated <code>SecupayBasketItem</code> instance.
-    */
+     * Category of item
+     * @member {String} item_type
+     * @default 'article'
+     */
+    // item_type = 'article';
+    /**
+     * Article number of item
+     * @member {String} article_number
+     */
 
+    /**
+     * Quantity of articles in item
+     * @member {Number} quantity
+     */
 
-    _createClass(SecupayBasketItem, null, [{
-        key: 'constructFromObject',
-        value: function constructFromObject(data, obj) {
-            if (data) {
-                obj = obj || new SecupayBasketItem();
+    /**
+     * Descriptive name of item
+     * @member {String} name
+     */
 
-                if (data.hasOwnProperty('item_type')) {
-                    obj['item_type'] = _ApiClient2.default.convertToType(data['item_type'], 'String');
-                }
-                if (data.hasOwnProperty('article_number')) {
-                    obj['article_number'] = _ApiClient2.default.convertToType(data['article_number'], 'String');
-                }
-                if (data.hasOwnProperty('quantity')) {
-                    obj['quantity'] = _ApiClient2.default.convertToType(data['quantity'], 'Number');
-                }
-                if (data.hasOwnProperty('name')) {
-                    obj['name'] = _ApiClient2.default.convertToType(data['name'], 'String');
-                }
-                if (data.hasOwnProperty('model')) {
-                    obj['model'] = _ApiClient2.default.convertToType(data['model'], 'String');
-                }
-                if (data.hasOwnProperty('ean')) {
-                    obj['ean'] = _ApiClient2.default.convertToType(data['ean'], 'String');
-                }
-                if (data.hasOwnProperty('tax')) {
-                    obj['tax'] = _ApiClient2.default.convertToType(data['tax'], 'String');
-                }
-                if (data.hasOwnProperty('total')) {
-                    obj['total'] = _ApiClient2.default.convertToType(data['total'], 'Number');
-                }
-                if (data.hasOwnProperty('price')) {
-                    obj['price'] = _ApiClient2.default.convertToType(data['price'], 'Number');
-                }
-                if (data.hasOwnProperty('apikey')) {
-                    obj['apikey'] = _ApiClient2.default.convertToType(data['apikey'], 'String');
-                }
-                if (data.hasOwnProperty('transaction_hash')) {
-                    obj['transaction_hash'] = _ApiClient2.default.convertToType(data['transaction_hash'], 'String');
-                }
-                if (data.hasOwnProperty('contract_id')) {
-                    obj['contract_id'] = _ApiClient2.default.convertToType(data['contract_id'], 'String');
-                }
-                if (data.hasOwnProperty('reference_id')) {
-                    obj['reference_id'] = _ApiClient2.default.convertToType(data['reference_id'], 'String');
-                }
-                if (data.hasOwnProperty('sub_basket')) {
-                    obj['sub_basket'] = _ApiClient2.default.convertToType(data['sub_basket'], [SecupayBasketItem]);
-                }
-            }
-            return obj;
-        }
+    /**
+     * Model of item
+     * @member {String} model
+     */
 
-        /**
-        * Category of item
-        * @member {String} item_type
-        */
+    /**
+     * EAN, European Article Number
+     * @member {String} ean
+     */
 
-        /**
-        * Article number of item
-        * @member {String} article_number
-        */
+    /**
+     * Applicable tax in percentages
+     * @member {String} tax
+     */
 
-        /**
-        * Quantity of articles in item
-        * @member {Number} quantity
-        */
+    /**
+     * Total price
+     * @member {Number} total
+     */
 
-        /**
-        * Descriptive name of item
-        * @member {String} name
-        */
+    /**
+     * Price of single article, if item is of article category
+     * @member {Number} price
+     */
 
-        /**
-        * Model of item
-        * @member {String} model
-        */
+    /**
+     * Special param for stakeholder payments
+     * @member {String} apikey
+     */
 
-        /**
-        * EAN, European Article Number
-        * @member {String} ean
-        */
+    /**
+     * Special param for payout payments
+     * @member {String} transaction_hash
+     */
 
-        /**
-        * Applicable tax in percentages
-        * @member {String} tax
-        */
+    /**
+     * Contract id - Special param for stakeholder payments
+     * @member {String} contract_id
+     */
 
-        /**
-        * Total price
-        * @member {Number} total
-        */
+    /**
+     * Reference id - must be unique for the entire basket
+     * @member {String} reference_id
+     */
 
-        /**
-        * Price of single article, if item is of article category
-        * @member {Number} price
-        */
+    /**
+     * Mixed-Basket: All basket items for one merchant.
+     * @member {Array.<module:model/SecupayBasketItem>} sub_basket
+     */
 
-        /**
-        * Special param for stakeholder payments
-        * @member {String} apikey
-        */
+  }]);
 
-        /**
-        * Special param for payout payments
-        * @member {String} transaction_hash
-        */
-
-        /**
-        * Contract id - Special param for stakeholder payments
-        * @member {String} contract_id
-        */
-
-        /**
-        * Reference id - must be unique for the entire basket
-        * @member {String} reference_id
-        */
-
-        /**
-        * Mixed-Basket: All basket items for one merchant.
-        * @member {Array.<module:model/SecupayBasketItem>} sub_basket
-        */
-
-    }]);
-
-    return SecupayBasketItem;
+  return SecupayBasketItem;
 }();
 
 exports.default = SecupayBasketItem;
-},{"../ApiClient":12}],143:[function(require,module,exports){
+},{"../ApiClient":12}],142:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24367,7 +24352,7 @@ SecupaySubTransactionProductModel = function () {
 }();
 
 exports.default = SecupaySubTransactionProductModel;
-},{"../ApiClient":12}],144:[function(require,module,exports){
+},{"../ApiClient":12}],143:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24453,7 +24438,7 @@ SecupayTransactionCancelDTO = function () {
 }();
 
 exports.default = SecupayTransactionCancelDTO;
-},{"../ApiClient":12}],145:[function(require,module,exports){
+},{"../ApiClient":12}],144:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24520,7 +24505,7 @@ SecupayTransactionCaptureDTO = function () {
 }();
 
 exports.default = SecupayTransactionCaptureDTO;
-},{"../ApiClient":12}],146:[function(require,module,exports){
+},{"../ApiClient":12}],145:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24587,7 +24572,7 @@ SecupayTransactionDTOExternalInvoicePdf = function () {
 }();
 
 exports.default = SecupayTransactionDTOExternalInvoicePdf;
-},{"../ApiClient":12}],147:[function(require,module,exports){
+},{"../ApiClient":12}],146:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24657,7 +24642,7 @@ SecupayTransactionExternalInvoicePdf = function () {
 }();
 
 exports.default = SecupayTransactionExternalInvoicePdf;
-},{"../ApiClient":12,"./SecupayTransactionExternalInvoicePdfDocument":148}],148:[function(require,module,exports){
+},{"../ApiClient":12,"./SecupayTransactionExternalInvoicePdfDocument":147}],147:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24761,7 +24746,7 @@ SecupayTransactionExternalInvoicePdfDocument = function () {
 }();
 
 exports.default = SecupayTransactionExternalInvoicePdfDocument;
-},{"../ApiClient":12}],149:[function(require,module,exports){
+},{"../ApiClient":12}],148:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24974,7 +24959,7 @@ SecupayTransactionProductDTO = function () {
 }();
 
 exports.default = SecupayTransactionProductDTO;
-},{"../ApiClient":12,"./PaymentCustomersProductModel":122,"./SecupayBasketItem":142,"./SecupayTransactionProductDTOExperience":150,"./SecupayTransactionProductDTOOptData":151,"./SecupayTransactionProductDTORedirectUrl":152,"./SecupayTransactionProductDTOSubscription":153}],150:[function(require,module,exports){
+},{"../ApiClient":12,"./PaymentCustomersProductModel":121,"./SecupayBasketItem":141,"./SecupayTransactionProductDTOExperience":149,"./SecupayTransactionProductDTOOptData":150,"./SecupayTransactionProductDTORedirectUrl":151,"./SecupayTransactionProductDTOSubscription":152}],149:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25051,7 +25036,7 @@ SecupayTransactionProductDTOExperience = function () {
 }();
 
 exports.default = SecupayTransactionProductDTOExperience;
-},{"../ApiClient":12}],151:[function(require,module,exports){
+},{"../ApiClient":12}],150:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25128,7 +25113,7 @@ SecupayTransactionProductDTOOptData = function () {
 }();
 
 exports.default = SecupayTransactionProductDTOOptData;
-},{"../ApiClient":12}],152:[function(require,module,exports){
+},{"../ApiClient":12}],151:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25214,7 +25199,7 @@ SecupayTransactionProductDTORedirectUrl = function () {
 }();
 
 exports.default = SecupayTransactionProductDTORedirectUrl;
-},{"../ApiClient":12}],153:[function(require,module,exports){
+},{"../ApiClient":12}],152:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25291,7 +25276,7 @@ SecupayTransactionProductDTOSubscription = function () {
 }();
 
 exports.default = SecupayTransactionProductDTOSubscription;
-},{"../ApiClient":12}],154:[function(require,module,exports){
+},{"../ApiClient":12}],153:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25554,7 +25539,7 @@ SecupayTransactionProductModel = function () {
 }();
 
 exports.default = SecupayTransactionProductModel;
-},{"../ApiClient":12,"./PaymentContainersProductModel":112,"./PaymentCustomersProductModel":122,"./SecupayBasketItem":142,"./SecupaySubTransactionProductModel":143,"./SecupayTransactionProductModelRedirectUrl":155,"./SecupayTransactionProductModelTransferAccount":156,"./SecupayTransactionProductModelUsedPaymentInstrument":157}],155:[function(require,module,exports){
+},{"../ApiClient":12,"./PaymentContainersProductModel":111,"./PaymentCustomersProductModel":121,"./SecupayBasketItem":141,"./SecupaySubTransactionProductModel":142,"./SecupayTransactionProductModelRedirectUrl":154,"./SecupayTransactionProductModelTransferAccount":155,"./SecupayTransactionProductModelUsedPaymentInstrument":156}],154:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25649,7 +25634,7 @@ SecupayTransactionProductModelRedirectUrl = function () {
 }();
 
 exports.default = SecupayTransactionProductModelRedirectUrl;
-},{"../ApiClient":12}],156:[function(require,module,exports){
+},{"../ApiClient":12}],155:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25753,7 +25738,7 @@ SecupayTransactionProductModelTransferAccount = function () {
 }();
 
 exports.default = SecupayTransactionProductModelTransferAccount;
-},{"../ApiClient":12}],157:[function(require,module,exports){
+},{"../ApiClient":12}],156:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25834,7 +25819,7 @@ SecupayTransactionProductModelUsedPaymentInstrument = function () {
 }();
 
 exports.default = SecupayTransactionProductModelUsedPaymentInstrument;
-},{"../ApiClient":12,"./BankAccountDescriptor":46}],158:[function(require,module,exports){
+},{"../ApiClient":12,"./BankAccountDescriptor":45}],157:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25902,7 +25887,7 @@ SecupayTransactionReverseAccrualDTO = function () {
 }();
 
 exports.default = SecupayTransactionReverseAccrualDTO;
-},{"../ApiClient":12}],159:[function(require,module,exports){
+},{"../ApiClient":12}],158:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25987,7 +25972,7 @@ SecupayTransactionSetShippingInformationDTO = function () {
 }();
 
 exports.default = SecupayTransactionSetShippingInformationDTO;
-},{"../ApiClient":12}],160:[function(require,module,exports){
+},{"../ApiClient":12}],159:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26067,7 +26052,7 @@ SecupayTransactionUpdateBasketDTO = function () {
 }();
 
 exports.default = SecupayTransactionUpdateBasketDTO;
-},{"../ApiClient":12,"./SecupayBasketItem":142}],161:[function(require,module,exports){
+},{"../ApiClient":12,"./SecupayBasketItem":141}],160:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26134,7 +26119,7 @@ SmartDeviceProductsEnabled = function () {
 }();
 
 exports.default = SmartDeviceProductsEnabled;
-},{"../ApiClient":12}],162:[function(require,module,exports){
+},{"../ApiClient":12}],161:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26228,7 +26213,7 @@ SmartDeviceProductsPrepaid = function () {
 }();
 
 exports.default = SmartDeviceProductsPrepaid;
-},{"../ApiClient":12}],163:[function(require,module,exports){
+},{"../ApiClient":12}],162:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26376,7 +26361,7 @@ SmartDevicesDTO = function () {
 }();
 
 exports.default = SmartDevicesDTO;
-},{"../ApiClient":12}],164:[function(require,module,exports){
+},{"../ApiClient":12}],163:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26452,7 +26437,7 @@ SmartDevicesDTOPrepaidTid = function () {
 }();
 
 exports.default = SmartDevicesDTOPrepaidTid;
-},{"../ApiClient":12}],165:[function(require,module,exports){
+},{"../ApiClient":12}],164:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26537,7 +26522,7 @@ SmartDevicesDTOSecubaseConfig = function () {
 }();
 
 exports.default = SmartDevicesDTOSecubaseConfig;
-},{"../ApiClient":12}],166:[function(require,module,exports){
+},{"../ApiClient":12}],165:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26622,7 +26607,7 @@ SmartDevicesDevice = function () {
 }();
 
 exports.default = SmartDevicesDevice;
-},{"../ApiClient":12}],167:[function(require,module,exports){
+},{"../ApiClient":12}],166:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26702,7 +26687,7 @@ SmartDevicesList = function () {
 }();
 
 exports.default = SmartDevicesList;
-},{"../ApiClient":12,"./SmartDevicesProductModel":169}],168:[function(require,module,exports){
+},{"../ApiClient":12,"./SmartDevicesProductModel":168}],167:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26782,7 +26767,7 @@ SmartDevicesList1 = function () {
 }();
 
 exports.default = SmartDevicesList1;
-},{"../ApiClient":12,"./SmartDevicesProductModel":169}],169:[function(require,module,exports){
+},{"../ApiClient":12,"./SmartDevicesProductModel":168}],168:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27018,7 +27003,7 @@ SmartDevicesProductModel = function () {
 }();
 
 exports.default = SmartDevicesProductModel;
-},{"../ApiClient":12,"./ProductInstanceUID":138,"./SmartDevicesDevice":166,"./SmartDevicesProducts":170,"./Store":190}],170:[function(require,module,exports){
+},{"../ApiClient":12,"./ProductInstanceUID":137,"./SmartDevicesDevice":165,"./SmartDevicesProducts":169,"./Store":189}],169:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27147,7 +27132,7 @@ SmartDevicesProducts = function () {
 }();
 
 exports.default = SmartDevicesProducts;
-},{"../ApiClient":12,"./SmartDeviceProductsEnabled":161,"./SmartDeviceProductsPrepaid":162}],171:[function(require,module,exports){
+},{"../ApiClient":12,"./SmartDeviceProductsEnabled":160,"./SmartDeviceProductsPrepaid":161}],170:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27227,7 +27212,7 @@ SmartDevicesSecubaseConfig = function () {
 }();
 
 exports.default = SmartDevicesSecubaseConfig;
-},{"../ApiClient":12,"./SmartDevicesSecubaseConfigLogging":172}],172:[function(require,module,exports){
+},{"../ApiClient":12,"./SmartDevicesSecubaseConfigLogging":171}],171:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27307,7 +27292,7 @@ SmartDevicesSecubaseConfigLogging = function () {
 }();
 
 exports.default = SmartDevicesSecubaseConfigLogging;
-},{"../ApiClient":12,"./SmartDevicesSecubaseConfigLoggingFileNet":173}],173:[function(require,module,exports){
+},{"../ApiClient":12,"./SmartDevicesSecubaseConfigLoggingFileNet":172}],172:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27383,7 +27368,7 @@ SmartDevicesSecubaseConfigLoggingFileNet = function () {
 }();
 
 exports.default = SmartDevicesSecubaseConfigLoggingFileNet;
-},{"../ApiClient":12}],174:[function(require,module,exports){
+},{"../ApiClient":12}],173:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27467,7 +27452,7 @@ SmartTransactionsBasket = function () {
 }();
 
 exports.default = SmartTransactionsBasket;
-},{"../ApiClient":12,"./SmartTransactionsBasketProduct":176,"./SmartTransactionsBasketText":178}],175:[function(require,module,exports){
+},{"../ApiClient":12,"./SmartTransactionsBasketProduct":175,"./SmartTransactionsBasketText":177}],174:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27552,7 +27537,7 @@ SmartTransactionsBasketInfo = function () {
 }();
 
 exports.default = SmartTransactionsBasketInfo;
-},{"../ApiClient":12}],176:[function(require,module,exports){
+},{"../ApiClient":12}],175:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27695,7 +27680,7 @@ SmartTransactionsBasketProduct = function () {
 }();
 
 exports.default = SmartTransactionsBasketProduct;
-},{"../ApiClient":12,"./SmartTransactionsBasketProductGroup":177}],177:[function(require,module,exports){
+},{"../ApiClient":12,"./SmartTransactionsBasketProductGroup":176}],176:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27780,7 +27765,7 @@ SmartTransactionsBasketProductGroup = function () {
 }();
 
 exports.default = SmartTransactionsBasketProductGroup;
-},{"../ApiClient":12}],178:[function(require,module,exports){
+},{"../ApiClient":12}],177:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27865,7 +27850,7 @@ SmartTransactionsBasketText = function () {
 }();
 
 exports.default = SmartTransactionsBasketText;
-},{"../ApiClient":12}],179:[function(require,module,exports){
+},{"../ApiClient":12}],178:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27986,7 +27971,7 @@ SmartTransactionsBonusProducts = function () {
 }();
 
 exports.default = SmartTransactionsBonusProducts;
-},{"../ApiClient":12}],180:[function(require,module,exports){
+},{"../ApiClient":12}],179:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28071,7 +28056,7 @@ SmartTransactionsCheckin = function () {
 }();
 
 exports.default = SmartTransactionsCheckin;
-},{"../ApiClient":12}],181:[function(require,module,exports){
+},{"../ApiClient":12}],180:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28338,7 +28323,7 @@ SmartTransactionsDTO = function () {
 }();
 
 exports.default = SmartTransactionsDTO;
-},{"../ApiClient":12,"./ProductInstanceID":137,"./SmartTransactionsBasket":174,"./SmartTransactionsBasketInfo":175,"./SmartTransactionsIdent":182,"./SmartTransactionsPickupOptions":185}],182:[function(require,module,exports){
+},{"../ApiClient":12,"./ProductInstanceID":136,"./SmartTransactionsBasket":173,"./SmartTransactionsBasketInfo":174,"./SmartTransactionsIdent":181,"./SmartTransactionsPickupOptions":184}],181:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28472,7 +28457,7 @@ SmartTransactionsIdent = function () {
 }();
 
 exports.default = SmartTransactionsIdent;
-},{"../ApiClient":12,"./LoyaltyMerchantcardsProductModel":98}],183:[function(require,module,exports){
+},{"../ApiClient":12,"./LoyaltyMerchantcardsProductModel":97}],182:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28552,7 +28537,7 @@ SmartTransactionsList = function () {
 }();
 
 exports.default = SmartTransactionsList;
-},{"../ApiClient":12,"./SmartTransactionsProductModel":187}],184:[function(require,module,exports){
+},{"../ApiClient":12,"./SmartTransactionsProductModel":186}],183:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28637,7 +28622,7 @@ SmartTransactionsMerchant = function () {
 }();
 
 exports.default = SmartTransactionsMerchant;
-},{"../ApiClient":12}],185:[function(require,module,exports){
+},{"../ApiClient":12}],184:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28726,7 +28711,7 @@ SmartTransactionsPickupOptions = function () {
 }();
 
 exports.default = SmartTransactionsPickupOptions;
-},{"../ApiClient":12,"./ProductInstanceUID":138}],186:[function(require,module,exports){
+},{"../ApiClient":12,"./ProductInstanceUID":137}],185:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28806,7 +28791,7 @@ SmartTransactionsPreTransactionModel = function () {
 }();
 
 exports.default = SmartTransactionsPreTransactionModel;
-},{"../ApiClient":12,"./SmartTransactionsBonusProducts":179}],187:[function(require,module,exports){
+},{"../ApiClient":12,"./SmartTransactionsBonusProducts":178}],186:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -29197,7 +29182,7 @@ SmartTransactionsProductModel = function () {
 }();
 
 exports.default = SmartTransactionsProductModel;
-},{"../ApiClient":12,"./LoyaltyCustomersProductModel":83,"./ProductInstanceUID":138,"./SmartTransactionsBasket":174,"./SmartTransactionsBasketInfo":175,"./SmartTransactionsCheckin":180,"./SmartTransactionsIdent":182,"./SmartTransactionsMerchant":184,"./SmartTransactionsPickupOptions":185,"./SmartTransactionsReceipt":188}],188:[function(require,module,exports){
+},{"../ApiClient":12,"./LoyaltyCustomersProductModel":82,"./ProductInstanceUID":137,"./SmartTransactionsBasket":173,"./SmartTransactionsBasketInfo":174,"./SmartTransactionsCheckin":179,"./SmartTransactionsIdent":181,"./SmartTransactionsMerchant":183,"./SmartTransactionsPickupOptions":184,"./SmartTransactionsReceipt":187}],187:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -29277,7 +29262,7 @@ SmartTransactionsReceipt = function () {
 }();
 
 exports.default = SmartTransactionsReceipt;
-},{"../ApiClient":12,"./SmartTransactionsReceiptValue":189}],189:[function(require,module,exports){
+},{"../ApiClient":12,"./SmartTransactionsReceiptValue":188}],188:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -29371,7 +29356,7 @@ SmartTransactionsReceiptValue = function () {
 }();
 
 exports.default = SmartTransactionsReceiptValue;
-},{"../ApiClient":12}],190:[function(require,module,exports){
+},{"../ApiClient":12}],189:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -29465,7 +29450,7 @@ Store = function () {
 }();
 
 exports.default = Store;
-},{"../ApiClient":12}],191:[function(require,module,exports){
+},{"../ApiClient":12}],190:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -29568,7 +29553,7 @@ VirtualTerminalData = function () {
 }();
 
 exports.default = VirtualTerminalData;
-},{"../ApiClient":12}],192:[function(require,module,exports){
+},{"../ApiClient":12}],191:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -29619,7 +29604,7 @@ var ImitationDevicePrinter = function (_Printer) {
 }(_Printer3.default);
 
 exports.default = ImitationDevicePrinter;
-},{"./Printer":193}],193:[function(require,module,exports){
+},{"./Printer":192}],192:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29650,7 +29635,891 @@ Printer = function () {
 }();
 
 exports.default = Printer;
-},{}],194:[function(require,module,exports){
+},{}],193:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.StompFactory = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _Stomp = require('./main/Stomp');
+
+var _Stomp2 = _interopRequireDefault(_Stomp);
+
+var _SocketProvider = require('./socket/SocketProvider');
+
+var _SocketProvider2 = _interopRequireDefault(_SocketProvider);
+
+var _stompConfig = require('../../stomp-config.json');
+
+var config = _interopRequireWildcard(_stompConfig);
+
+var _StompGlobals = require('./StompGlobals');
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+StompClient = function () {
+    function StompClient(token, env, debugMode) {
+        _classCallCheck(this, StompClient);
+
+        this.SESSION_REFRESH_INTERVAL = 120000;
+
+        if (token === undefined) throw 'token is not a valid value';
+        if (config.host === '' || config.host === undefined) throw 'invalid host in stomp config';
+        if (config.headers.content_type === '' || config.headers.content_type === undefined) throw 'invalid content_type in stomp config';
+        if (config.headers.reply_to === '' || config.headers.reply_to === undefined) throw 'invalid reply_to in stomp config';
+        if (config.headers.ack === '' || config.headers.ack === undefined) throw 'invalid ack in stomp config';
+
+        if (env === _StompGlobals.Environments.NODE) {
+            this.socketProvider = new _SocketProvider2.default(config.host, config.node_env.port, config.node_env.vhost);
+        } else {
+            this.socketProvider = new _SocketProvider2.default(config.host, config.browser_env.port, config.browser_env.vhost);
+        }
+
+        this.socket = this.socketProvider.createSocket(env);
+        this.stomp = new _Stomp2.default(token, token, this.socket);
+        this.token = token;
+
+        if (!debugMode) {
+            console.log = function () {};
+        }
+    }
+
+    // this is session refresh interval given in milliseconds
+
+
+    _createClass(StompClient, [{
+        key: 'getToken',
+        value: function getToken() {
+            return this.token;
+        }
+    }, {
+        key: 'connect',
+        value: function connect() {
+            var _this = this;
+
+            return new Promise(function (resolve, reject) {
+                // possible situations while connecting to socket
+                _this.stomp.on('socket-error', function (error) {
+                    console.error('Unexpected socket error' + error);
+
+                    reject(error);
+                });
+
+                _this.stomp.on('disconnected', function (error) {
+                    if (error) {
+                        console.error('Disconnected from Stomp with error: ' + error);
+                    } else {
+                        console.log('Disconnected from Stomp');
+                    }
+
+                    reject(error);
+                });
+
+                // possible situations while connecting to stomp broker
+                _this.stomp.on('error', function (frame) {
+                    console.error('Error: ' + frame.body);
+
+                    reject(frame);
+                });
+
+                _this.stomp.on('connected', function (frame) {
+                    _this.refreshAuthSession();
+
+                    // if successfully connected then set proper listeners for soceket and stomp
+                    _this.stomp.on('socket-error', function (error) {
+                        console.log('Unexpected socket error' + error);
+                    });
+
+                    _this.stomp.on('disconnected', function (error) {
+                        if (error) {
+                            console.log('Disconnected from Stomp with error: ' + error);
+                        } else {
+                            console.log('Disconnected from Stomp');
+                        }
+                    });
+
+                    _this.stomp.on('error', function (frame) {
+                        console.error('Error: ' + frame.body);
+                    });
+
+                    _this.stomp.on('receipt', function (frame) {
+                        console.log('Received receipt: ' + frame.headers['receipt-id']);
+                    });
+
+                    _this.stomp.on('message', function (frame) {
+                        console.log('Received message: ' + frame.body);
+                    });
+
+                    resolve(frame);
+                });
+
+                // try connecting
+                _this.stomp.connect();
+            });
+        }
+    }, {
+        key: 'refreshAuthSession',
+        value: function refreshAuthSession() {
+            var _this2 = this;
+
+            var destination = '/exchange/connect.api/api:add:Auth.Sessions.refresh';
+            var body = JSON.stringify({
+                "method": "Auth.Sessions.refresh",
+                "action": "exec",
+                "pid": "me",
+                "sid": null,
+                "query": null,
+                "data": {
+                    "refresh_interval": 120
+                },
+                "action_id": "CID_12250"
+            });
+
+            this.sendMessage(destination, body);
+            setInterval(function () {
+                return _this2.sendMessage(destination, body);
+            }, this.SESSION_REFRESH_INTERVAL);
+        }
+    }, {
+        key: 'sendMessage',
+        value: function sendMessage(destination, body, want_receipt) {
+            var headers = this.prepareHeaders();
+            headers['destination'] = destination;
+            this.stomp.send('SEND', headers, body, want_receipt);
+        }
+    }, {
+        key: 'subscribe',
+        value: function subscribe(destination, headers) {
+            headers['session'] = this.session;
+            headers['destination'] = destination;
+            this.stomp.send('SUBSCRIBE', headers);
+        }
+    }, {
+        key: 'unsubscribe',
+        value: function unsubscribe(destination, headers) {
+            headers['session'] = this.session;
+            headers['destination'] = destination;
+            this.stomp.send('UNSUBSCRIBE', headers);
+        }
+    }, {
+        key: 'ack',
+        value: function ack(message_id) {
+            send('ACK', { 'message-id': message_id });
+        }
+    }, {
+        key: 'nack',
+        value: function nack(message_id) {
+            send('NACK', { 'message-id': message_id });
+        }
+    }, {
+        key: 'begin',
+        value: function begin() {
+            // generating random number (the multiplier '99999999999' has to be fairly big)
+            var transaction_id = Math.floor(Math.random() * 99999999999).toString();
+            send('BEGIN', { 'transaction': transaction_id });
+            return transaction_id;
+        }
+    }, {
+        key: 'commit',
+        value: function commit(transaction_id) {
+            send('COMMIT', { 'transaction': transaction_id });
+        }
+    }, {
+        key: 'abort',
+        value: function abort(transaction_id) {
+            send('ABORT', { 'transaction': transaction_id });
+        }
+    }, {
+        key: 'setDisconnectedListener',
+        value: function setDisconnectedListener(listener) {
+            if (this['disconnected']) {
+                this.stomp.removeListener('disconnected', this['disconnected']);
+            }
+            this['disconnected'] = listener;
+            this.stomp.on('disconnected', this['disconnected']);
+        }
+    }, {
+        key: 'setSocketErrorListener',
+        value: function setSocketErrorListener(listener) {
+            if (this['socket-error']) {
+                this.stomp.removeListener('socket-error', this['socket-error']);
+            }
+            this['socket-error'] = listener;
+            this.stomp.on('socket-error', this['socket-error']);
+        }
+    }, {
+        key: 'setMessageListener',
+        value: function setMessageListener(listener) {
+            if (this['message']) {
+                this.stomp.removeListener('message', this['message']);
+            }
+            this['message'] = listener;
+            this.stomp.on('message', this['message']);
+        }
+    }, {
+        key: 'setReceiptListener',
+        value: function setReceiptListener(listener) {
+            if (this['receipt']) {
+                this.stomp.removeListener('receipt', this['receipt']);
+            }
+            this['receipt'] = listener;
+            this.stomp.on('receipt', this['receipt']);
+        }
+    }, {
+        key: 'setErrorListener',
+        value: function setErrorListener(listener) {
+            if (this['error']) {
+                this.stomp.removeListener('error', this['error']);
+            }
+            this['error'] = listener;
+            this.stomp.on('error', this['error']);
+        }
+    }, {
+        key: 'generateCorrelationId',
+        value: function generateCorrelationId() {
+            var date = new Date();
+            var startUniquePart = Math.random().toString(36).substr(2, 115);
+            var endUniquePart = Math.random().toString(36).substr(2, 115);
+
+            return startUniquePart + '-' + date.toISOString().replace(/ /g, '') + '-' + endUniquePart;
+        }
+    }, {
+        key: 'prepareHeaders',
+        value: function prepareHeaders() {
+            return {
+                "content-type": config.headers.content_type,
+                "reply-to": config.headers.reply_to,
+                "user-id": this.getToken(),
+                "correlation-id": this.generateCorrelationId(),
+                "ack": config.headers.ack
+            };
+        }
+    }]);
+
+    return StompClient;
+}();
+
+;
+
+var StompFactory = exports.StompFactory = {
+    getInstance: function getInstance(token, env) {
+        var debugMode = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+        if (StompFactory.hasOwnProperty('instance')) {
+            return StompFactory.instance;
+        } else {
+            StompFactory.instance = new StompClient(token, env, debugMode);
+            StompFactory.instance.constructor = undefined;
+            Object.freeze(StompFactory);
+            return StompFactory.instance;
+        }
+    }
+};
+},{"../../stomp-config.json":201,"./StompGlobals":194,"./main/Stomp":197,"./socket/SocketProvider":200}],194:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var StompFrameCommands = exports.StompFrameCommands = {
+    CONNECTED: 'CONNECTED',
+    MESSAGE: 'MESSAGE',
+    RECEIPT: 'RECEIPT',
+    ERROR: 'ERROR'
+};
+
+var Environments = exports.Environments = {
+    NODE: 'NODE',
+    BROWSER: 'BROWSER'
+};
+
+var ResponseStatus = exports.ResponseStatus = {
+    ok: 'ok',
+    error: 'error'
+};
+},{}],195:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _StompClient = require("../StompClient");
+
+var _StompGlobals = require("../StompGlobals");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+StompSmartTransactionsApi = function () {
+    function StompSmartTransactionsApi(authenticator) {
+        var _this = this;
+
+        var stompClient = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+        var environment = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _StompGlobals.Environments.BROWSER;
+
+        _classCallCheck(this, StompSmartTransactionsApi);
+
+        this.destination = ["/exchange/connect.api/api:", ":Smart.Transactions"];
+        this.authenticator = authenticator;
+
+        if (stompClient != null && stompClient instanceof StompClient) {
+            this.stompClient = stompClient;
+            this.connected = this.stompClient.connect();
+        } else {
+            this.connected = new Promise(function (resolve) {
+                _this.authenticator.getToken().then(function (token) {
+                    _this.stompClient = _StompClient.StompFactory.getInstance(token.access_token, environment);
+                    _this.stompClient.connect().then(function (connectedFrame) {
+                        if (connectedFrame) {
+                            resolve(connectedFrame);
+                        } else {
+                            reject('Connection error');
+                        }
+                    });
+                });
+            });
+        }
+    }
+
+    _createClass(StompSmartTransactionsApi, [{
+        key: "getConnectedStompClient",
+        value: function getConnectedStompClient() {
+            var _this2 = this;
+
+            return this.connected.then(function () {
+                return _this2.stompClient;
+            });
+        }
+    }, {
+        key: "addTransaction",
+        value: function addTransaction(smartTransactionProperties) {
+            var _this3 = this;
+
+            this.connected.then(function () {
+                _this3.stompClient.sendMessage(_this3.destination[0] + 'add' + _this3.destination[1], JSON.stringify({
+                    'data': smartTransactionProperties }));
+            });
+        }
+    }, {
+        key: "updateTransaction",
+        value: function updateTransaction(smartTransactionId, smartTransactionProperties) {
+            var _this4 = this;
+
+            this.connected.then(function () {
+                _this4.stompClient.sendMessage(_this4.destination[0] + 'update' + _this4.destination[1], JSON.stringify({
+                    'pid': smartTransactionId,
+                    'data': smartTransactionProperties
+                }));
+            });
+        }
+    }, {
+        key: "startTransaction",
+        value: function startTransaction(smartTransactionId, paymentMethod) {
+            var _this5 = this;
+
+            this.connected.then(function () {
+                _this5.stompClient.sendMessage(_this5.destination[0] + 'add' + _this5.destination[1] + '.Start', JSON.stringify({
+                    'pid': smartTransactionId,
+                    'sid': paymentMethod
+                }));
+            });
+        }
+    }, {
+        key: "preTransaction",
+        value: function preTransaction(smartTransactionId) {
+            var _this6 = this;
+
+            this.connected.then(function () {
+                _this6.stompClient.sendMessage(_this6.destination[0] + 'add' + _this6.destination[1] + '.Pretransaction', JSON.stringify({
+                    'pid': smartTransactionId
+                }));
+            });
+        }
+    }]);
+
+    return StompSmartTransactionsApi;
+}();
+
+exports.default = StompSmartTransactionsApi;
+},{"../StompClient":193,"../StompGlobals":194}],196:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+Frame = function () {
+    function Frame(command, headers, body, want_receipt) {
+        _classCallCheck(this, Frame);
+
+        this.command = command || '';
+        this.headers = headers || {};
+        this.body = body || '';
+
+        if (want_receipt) {
+            this.headers['receipt'] = Math.floor(Math.random() * 99999999999).toString() + this.headers['session'] ? "-" + this.headers['session'] : '';
+        }
+    }
+
+    _createClass(Frame, [{
+        key: 'toString',
+        value: function toString() {
+            var frame = this.command + "\n";
+
+            for (var key in this.headers) {
+                frame += key + ':' + this.headers[key] + '\n';
+            }
+
+            if (this.body) {
+                frame += '\n' + this.body;
+            }
+
+            return frame + '\n\x00';
+        }
+    }, {
+        key: 'parseChunk',
+        value: function parseChunk(chunk) {
+            chunk = chunk.toString('utf8', 0, chunk.length);
+
+            this.command = chunk.split('\n')[0];
+            chunk = chunk.slice(this.command.length + 1, chunk.length).split('\n\n');
+
+            var headers_split = chunk[0].split('\n');
+            for (var i = 0; i < headers_split.length; i++) {
+                var header = headers_split[i].split(':');
+                if (header.length > 1) {
+                    this.headers[header[0].trim()] = header[1].trim();
+                }
+            }
+            this.headers['bytes_message'] = 'content-length' in this.headers;
+
+            this.body = chunk.slice(1, chunk.length);
+
+            return this;
+        }
+    }]);
+
+    return Frame;
+}();
+
+exports.default = Frame;
+;
+},{}],197:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _events = require("events");
+
+var _Frame = require("../frame/Frame");
+
+var _Frame2 = _interopRequireDefault(_Frame);
+
+var _StompGlobals = require("../StompGlobals");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Stomp = function (_EventEmitter) {
+    _inherits(Stomp, _EventEmitter);
+
+    function Stomp(login, passcode, socket) {
+        _classCallCheck(this, Stomp);
+
+        var _this = _possibleConstructorReturn(this, (Stomp.__proto__ || Object.getPrototypeOf(Stomp)).call(this));
+
+        _events.EventEmitter.call(_this);
+
+        _this.login = login; // broker's user login
+        _this.passcode = passcode; // broker's user passcode (password)
+        _this.socket = socket; // socket used to connect to broker
+        _this.session = null; // session id
+        return _this;
+    }
+
+    _createClass(Stomp, [{
+        key: "connect",
+        value: function connect() {
+            var _this2 = this;
+
+            this.socket.addOnOpenListener(function () {
+                console.log('Connecting to Stomp');
+                var headers = {};
+                headers['login'] = _this2.login;
+                headers['passcode'] = _this2.passcode;
+
+                _this2.send('CONNECT', headers);
+            });
+
+            this.socket.addOnMessageListener(function (data) {
+                var frames = data.split('\0\n');
+
+                if (frames.length == 1) {
+                    frames = data.split('\0');
+                    if (frames.length == 1) {
+                        console.error('Unexpected error when receiving data chunk from broker: ' + data, true);
+                    }
+                }
+                frames.pop();
+
+                var frame = null;
+                while (frame = frames.shift()) {
+                    _this2.handleFrame(new _Frame2.default().parseChunk(frame));
+                }
+            });
+
+            this.socket.addOnErrorListener(function (error) {
+                _this2.emit("socket-error", error);
+            });
+
+            this.socket.addOnCloseListener(function (error) {
+                _this2.emit("disconnected", error);
+            });
+
+            this.socket.connect();
+        }
+    }, {
+        key: "send",
+        value: function send(command, headers, body, want_receipt) {
+            var frame = new _Frame2.default(command, headers, body, want_receipt);
+
+            console.log('sending frame:\n' + frame.toString());
+
+            if (this.socket.write(frame.toString()) === false) {
+                console.log('Write buffered');
+            }
+        }
+    }, {
+        key: "disconnect",
+        value: function disconnect() {
+            this.socket.end();
+
+            if (this.socket.readyState == 'readOnly') {
+                this.socket.destroy();
+            }
+
+            console.log('disconnect called');
+        }
+    }, {
+        key: "handleFrame",
+        value: function handleFrame(frame) {
+            switch (frame.command) {
+                case _StompGlobals.StompFrameCommands.MESSAGE:
+                    console.log('Recived message from broker');
+                    this.emit('message', frame);
+                    break;
+                case _StompGlobals.StompFrameCommands.RECEIPT:
+                    console.log('Received receipt');
+                    this.emit('receipt', frame);
+                    break;
+                case _StompGlobals.StompFrameCommands.CONNECTED:
+                    console.log('Connected to Stomp broker');
+                    this.session = frame.headers['session'];
+                    this.emit('connected', frame);
+                    break;
+                case _StompGlobals.StompFrameCommands.ERROR:
+                    console.warn('Received error message');
+                    this.emit('error', frame);
+                    break;
+                default:
+                    console.error("Unknown command: " + frame.command, true);
+            }
+        }
+    }]);
+
+    return Stomp;
+}(_events.EventEmitter);
+
+exports.default = Stomp;
+;
+},{"../StompGlobals":194,"../frame/Frame":196,"events":206}],198:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+BrowserSocket = function () {
+    function BrowserSocket(host, port, vhost) {
+        _classCallCheck(this, BrowserSocket);
+
+        this.url = 'wss://' + host + ':' + port + vhost;
+        this.connected = false;
+    }
+
+    _createClass(BrowserSocket, [{
+        key: 'connect',
+        value: function connect() {
+            this.socket = new WebSocket(this.url);
+            this.socket.onmessage = this.onmessage;
+            this.socket.onerror = this.onerror;
+            this.socket.onclose = this.onclose;
+            this.socket.binaryType = "arraybuffer";
+            this.socket.onopen = this.onopen;
+        }
+    }, {
+        key: 'addOnOpenListener',
+        value: function addOnOpenListener(onOpen) {
+            var _this = this;
+
+            this.onopen = function () {
+                _this.connected = true;
+                console.log('Connected to socket');
+                onOpen();
+            };
+        }
+    }, {
+        key: 'addOnMessageListener',
+        value: function addOnMessageListener(onMessage) {
+            this.onmessage = function (messageEvent) {
+                console.log('Received data on socket');
+                onMessage(messageEvent.data);
+            };
+        }
+    }, {
+        key: 'addOnErrorListener',
+        value: function addOnErrorListener(onError) {
+            this.onerror = function (error) {
+                console.error('Socket error');
+                onError(error);
+            };
+        }
+    }, {
+        key: 'addOnCloseListener',
+        value: function addOnCloseListener(onClose) {
+            this.onclose = function (error) {
+                console.log('Closing socket');
+                onClose(error);
+            };
+        }
+    }, {
+        key: 'close',
+        value: function close() {
+            if (this.connected) {
+                this.socket.close();
+                this.connected = false;
+            }
+        }
+    }, {
+        key: 'write',
+        value: function write(chunk) {
+            if (this.connected) {
+                this.socket.send(chunk);
+            } else {
+                throw 'can not write to an unopened socket';
+            }
+        }
+    }]);
+
+    return BrowserSocket;
+}();
+
+exports.default = BrowserSocket;
+},{}],199:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _net = require('net');
+
+var _net2 = _interopRequireDefault(_net);
+
+var _tls = require('tls');
+
+var _tls2 = _interopRequireDefault(_tls);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+NodeSocket = function () {
+    function NodeSocket(host, port, vhost) {
+        _classCallCheck(this, NodeSocket);
+
+        this.host = host;
+        this.port = port;
+        this.vhost = vhost;
+        this.connected = false;
+    }
+
+    _createClass(NodeSocket, [{
+        key: 'connect',
+        value: function connect() {
+            var _this = this;
+
+            this.socket = _tls2.default.connect(this.port, this.host, {}, function () {
+                if (_this.socket.authorized) {
+                    _this.socket.on('data', _this.onmessage);
+                    _this.socket.on('error', _this.onerror);
+                    _this.socket.on('close', _this.onclose);
+                    _this.onopen();
+                } else {
+                    _this.onerror(socket.authorizationError);
+                    _this.close();
+                }
+            });
+        }
+    }, {
+        key: 'addOnOpenListener',
+        value: function addOnOpenListener(onOpen) {
+            var _this2 = this;
+
+            this.onopen = function () {
+                _this2.connected = true;
+                console.log('Connected to socket');
+                onOpen();
+            };
+        }
+    }, {
+        key: 'addOnMessageListener',
+        value: function addOnMessageListener(onMessage) {
+            this.onmessage = function (binaryData) {
+                console.log('Received data on socket');
+                onMessage('' + binaryData);
+            };
+        }
+    }, {
+        key: 'addOnErrorListener',
+        value: function addOnErrorListener(onError) {
+            this.onerror = function (error) {
+                console.error('Socket error');
+                onError(error);
+            };
+        }
+    }, {
+        key: 'addOnCloseListener',
+        value: function addOnCloseListener(onClose) {
+            this.onclose = function (error) {
+                console.log('Closing socket');
+                onClose(error);
+            };
+        }
+    }, {
+        key: 'close',
+        value: function close() {
+            if (this.connected) {
+                socket.end();
+                if (socket.readyState == 'readOnly') {
+                    socket.destroy();
+                }
+                this.connected = false;
+            }
+        }
+    }, {
+        key: 'write',
+        value: function write(chunk) {
+            if (this.connected) {
+                this.socket.write(chunk);
+            } else {
+                throw 'cannot write to an unopened socket';
+            }
+        }
+    }]);
+
+    return NodeSocket;
+}();
+
+exports.default = NodeSocket;
+},{"net":202,"tls":202}],200:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _StompGlobals = require("../StompGlobals");
+
+var _BrowserSocket = require("../socket/BrowserSocket");
+
+var _BrowserSocket2 = _interopRequireDefault(_BrowserSocket);
+
+var _NodeSocket = require("../socket/NodeSocket");
+
+var _NodeSocket2 = _interopRequireDefault(_NodeSocket);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+SocketProvider = function () {
+    function SocketProvider(host, port, vhost) {
+        _classCallCheck(this, SocketProvider);
+
+        this.host = host;
+        this.port = port;
+        this.vhost = vhost;
+    }
+
+    _createClass(SocketProvider, [{
+        key: "createSocket",
+        value: function createSocket(env) {
+            switch (env) {
+                case _StompGlobals.Environments.NODE:
+                    return new _NodeSocket2.default(this.host, this.port, this.vhost);
+                default:
+                    // defaults to browser env
+                    return new _BrowserSocket2.default(this.host, this.port, this.vhost);
+            }
+        }
+    }]);
+
+    return SocketProvider;
+}();
+
+exports.default = SocketProvider;
+},{"../StompGlobals":194,"../socket/BrowserSocket":198,"../socket/NodeSocket":199}],201:[function(require,module,exports){
+module.exports={
+  "host": "connect-testing.secupay-ag.de",
+  "node_env": {
+    "port": "61614", 
+    "vhost": "" 
+  },
+  "browser_env": {
+    "port": "15671", 
+    "vhost": "/stomp/websocket"
+  },
+  "headers": {
+    "content_type": "application/json",
+    "reply_to": "/temp-queue/main",
+    "ack": "client-individual"
+  }
+}
+},{}],202:[function(require,module,exports){
+
+},{}],203:[function(require,module,exports){
 'use strict'
 
 exports.byteLength = byteLength
@@ -29803,9 +30672,9 @@ function fromByteArray (uint8) {
   return parts.join('')
 }
 
-},{}],195:[function(require,module,exports){
-
-},{}],196:[function(require,module,exports){
+},{}],204:[function(require,module,exports){
+arguments[4][202][0].apply(exports,arguments)
+},{"dup":202}],205:[function(require,module,exports){
 /*!
  * The buffer module from node.js, for the browser.
  *
@@ -31584,7 +32453,532 @@ function numberIsNaN (obj) {
   return obj !== obj // eslint-disable-line no-self-compare
 }
 
-},{"base64-js":194,"ieee754":197}],197:[function(require,module,exports){
+},{"base64-js":203,"ieee754":207}],206:[function(require,module,exports){
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+var objectCreate = Object.create || objectCreatePolyfill
+var objectKeys = Object.keys || objectKeysPolyfill
+var bind = Function.prototype.bind || functionBindPolyfill
+
+function EventEmitter() {
+  if (!this._events || !Object.prototype.hasOwnProperty.call(this, '_events')) {
+    this._events = objectCreate(null);
+    this._eventsCount = 0;
+  }
+
+  this._maxListeners = this._maxListeners || undefined;
+}
+module.exports = EventEmitter;
+
+// Backwards-compat with node 0.10.x
+EventEmitter.EventEmitter = EventEmitter;
+
+EventEmitter.prototype._events = undefined;
+EventEmitter.prototype._maxListeners = undefined;
+
+// By default EventEmitters will print a warning if more than 10 listeners are
+// added to it. This is a useful default which helps finding memory leaks.
+var defaultMaxListeners = 10;
+
+var hasDefineProperty;
+try {
+  var o = {};
+  if (Object.defineProperty) Object.defineProperty(o, 'x', { value: 0 });
+  hasDefineProperty = o.x === 0;
+} catch (err) { hasDefineProperty = false }
+if (hasDefineProperty) {
+  Object.defineProperty(EventEmitter, 'defaultMaxListeners', {
+    enumerable: true,
+    get: function() {
+      return defaultMaxListeners;
+    },
+    set: function(arg) {
+      // check whether the input is a positive number (whose value is zero or
+      // greater and not a NaN).
+      if (typeof arg !== 'number' || arg < 0 || arg !== arg)
+        throw new TypeError('"defaultMaxListeners" must be a positive number');
+      defaultMaxListeners = arg;
+    }
+  });
+} else {
+  EventEmitter.defaultMaxListeners = defaultMaxListeners;
+}
+
+// Obviously not all Emitters should be limited to 10. This function allows
+// that to be increased. Set to zero for unlimited.
+EventEmitter.prototype.setMaxListeners = function setMaxListeners(n) {
+  if (typeof n !== 'number' || n < 0 || isNaN(n))
+    throw new TypeError('"n" argument must be a positive number');
+  this._maxListeners = n;
+  return this;
+};
+
+function $getMaxListeners(that) {
+  if (that._maxListeners === undefined)
+    return EventEmitter.defaultMaxListeners;
+  return that._maxListeners;
+}
+
+EventEmitter.prototype.getMaxListeners = function getMaxListeners() {
+  return $getMaxListeners(this);
+};
+
+// These standalone emit* functions are used to optimize calling of event
+// handlers for fast cases because emit() itself often has a variable number of
+// arguments and can be deoptimized because of that. These functions always have
+// the same number of arguments and thus do not get deoptimized, so the code
+// inside them can execute faster.
+function emitNone(handler, isFn, self) {
+  if (isFn)
+    handler.call(self);
+  else {
+    var len = handler.length;
+    var listeners = arrayClone(handler, len);
+    for (var i = 0; i < len; ++i)
+      listeners[i].call(self);
+  }
+}
+function emitOne(handler, isFn, self, arg1) {
+  if (isFn)
+    handler.call(self, arg1);
+  else {
+    var len = handler.length;
+    var listeners = arrayClone(handler, len);
+    for (var i = 0; i < len; ++i)
+      listeners[i].call(self, arg1);
+  }
+}
+function emitTwo(handler, isFn, self, arg1, arg2) {
+  if (isFn)
+    handler.call(self, arg1, arg2);
+  else {
+    var len = handler.length;
+    var listeners = arrayClone(handler, len);
+    for (var i = 0; i < len; ++i)
+      listeners[i].call(self, arg1, arg2);
+  }
+}
+function emitThree(handler, isFn, self, arg1, arg2, arg3) {
+  if (isFn)
+    handler.call(self, arg1, arg2, arg3);
+  else {
+    var len = handler.length;
+    var listeners = arrayClone(handler, len);
+    for (var i = 0; i < len; ++i)
+      listeners[i].call(self, arg1, arg2, arg3);
+  }
+}
+
+function emitMany(handler, isFn, self, args) {
+  if (isFn)
+    handler.apply(self, args);
+  else {
+    var len = handler.length;
+    var listeners = arrayClone(handler, len);
+    for (var i = 0; i < len; ++i)
+      listeners[i].apply(self, args);
+  }
+}
+
+EventEmitter.prototype.emit = function emit(type) {
+  var er, handler, len, args, i, events;
+  var doError = (type === 'error');
+
+  events = this._events;
+  if (events)
+    doError = (doError && events.error == null);
+  else if (!doError)
+    return false;
+
+  // If there is no 'error' event listener then throw.
+  if (doError) {
+    if (arguments.length > 1)
+      er = arguments[1];
+    if (er instanceof Error) {
+      throw er; // Unhandled 'error' event
+    } else {
+      // At least give some kind of context to the user
+      var err = new Error('Unhandled "error" event. (' + er + ')');
+      err.context = er;
+      throw err;
+    }
+    return false;
+  }
+
+  handler = events[type];
+
+  if (!handler)
+    return false;
+
+  var isFn = typeof handler === 'function';
+  len = arguments.length;
+  switch (len) {
+      // fast cases
+    case 1:
+      emitNone(handler, isFn, this);
+      break;
+    case 2:
+      emitOne(handler, isFn, this, arguments[1]);
+      break;
+    case 3:
+      emitTwo(handler, isFn, this, arguments[1], arguments[2]);
+      break;
+    case 4:
+      emitThree(handler, isFn, this, arguments[1], arguments[2], arguments[3]);
+      break;
+      // slower
+    default:
+      args = new Array(len - 1);
+      for (i = 1; i < len; i++)
+        args[i - 1] = arguments[i];
+      emitMany(handler, isFn, this, args);
+  }
+
+  return true;
+};
+
+function _addListener(target, type, listener, prepend) {
+  var m;
+  var events;
+  var existing;
+
+  if (typeof listener !== 'function')
+    throw new TypeError('"listener" argument must be a function');
+
+  events = target._events;
+  if (!events) {
+    events = target._events = objectCreate(null);
+    target._eventsCount = 0;
+  } else {
+    // To avoid recursion in the case that type === "newListener"! Before
+    // adding it to the listeners, first emit "newListener".
+    if (events.newListener) {
+      target.emit('newListener', type,
+          listener.listener ? listener.listener : listener);
+
+      // Re-assign `events` because a newListener handler could have caused the
+      // this._events to be assigned to a new object
+      events = target._events;
+    }
+    existing = events[type];
+  }
+
+  if (!existing) {
+    // Optimize the case of one listener. Don't need the extra array object.
+    existing = events[type] = listener;
+    ++target._eventsCount;
+  } else {
+    if (typeof existing === 'function') {
+      // Adding the second element, need to change to array.
+      existing = events[type] =
+          prepend ? [listener, existing] : [existing, listener];
+    } else {
+      // If we've already got an array, just append.
+      if (prepend) {
+        existing.unshift(listener);
+      } else {
+        existing.push(listener);
+      }
+    }
+
+    // Check for listener leak
+    if (!existing.warned) {
+      m = $getMaxListeners(target);
+      if (m && m > 0 && existing.length > m) {
+        existing.warned = true;
+        var w = new Error('Possible EventEmitter memory leak detected. ' +
+            existing.length + ' "' + String(type) + '" listeners ' +
+            'added. Use emitter.setMaxListeners() to ' +
+            'increase limit.');
+        w.name = 'MaxListenersExceededWarning';
+        w.emitter = target;
+        w.type = type;
+        w.count = existing.length;
+        if (typeof console === 'object' && console.warn) {
+          console.warn('%s: %s', w.name, w.message);
+        }
+      }
+    }
+  }
+
+  return target;
+}
+
+EventEmitter.prototype.addListener = function addListener(type, listener) {
+  return _addListener(this, type, listener, false);
+};
+
+EventEmitter.prototype.on = EventEmitter.prototype.addListener;
+
+EventEmitter.prototype.prependListener =
+    function prependListener(type, listener) {
+      return _addListener(this, type, listener, true);
+    };
+
+function onceWrapper() {
+  if (!this.fired) {
+    this.target.removeListener(this.type, this.wrapFn);
+    this.fired = true;
+    switch (arguments.length) {
+      case 0:
+        return this.listener.call(this.target);
+      case 1:
+        return this.listener.call(this.target, arguments[0]);
+      case 2:
+        return this.listener.call(this.target, arguments[0], arguments[1]);
+      case 3:
+        return this.listener.call(this.target, arguments[0], arguments[1],
+            arguments[2]);
+      default:
+        var args = new Array(arguments.length);
+        for (var i = 0; i < args.length; ++i)
+          args[i] = arguments[i];
+        this.listener.apply(this.target, args);
+    }
+  }
+}
+
+function _onceWrap(target, type, listener) {
+  var state = { fired: false, wrapFn: undefined, target: target, type: type, listener: listener };
+  var wrapped = bind.call(onceWrapper, state);
+  wrapped.listener = listener;
+  state.wrapFn = wrapped;
+  return wrapped;
+}
+
+EventEmitter.prototype.once = function once(type, listener) {
+  if (typeof listener !== 'function')
+    throw new TypeError('"listener" argument must be a function');
+  this.on(type, _onceWrap(this, type, listener));
+  return this;
+};
+
+EventEmitter.prototype.prependOnceListener =
+    function prependOnceListener(type, listener) {
+      if (typeof listener !== 'function')
+        throw new TypeError('"listener" argument must be a function');
+      this.prependListener(type, _onceWrap(this, type, listener));
+      return this;
+    };
+
+// Emits a 'removeListener' event if and only if the listener was removed.
+EventEmitter.prototype.removeListener =
+    function removeListener(type, listener) {
+      var list, events, position, i, originalListener;
+
+      if (typeof listener !== 'function')
+        throw new TypeError('"listener" argument must be a function');
+
+      events = this._events;
+      if (!events)
+        return this;
+
+      list = events[type];
+      if (!list)
+        return this;
+
+      if (list === listener || list.listener === listener) {
+        if (--this._eventsCount === 0)
+          this._events = objectCreate(null);
+        else {
+          delete events[type];
+          if (events.removeListener)
+            this.emit('removeListener', type, list.listener || listener);
+        }
+      } else if (typeof list !== 'function') {
+        position = -1;
+
+        for (i = list.length - 1; i >= 0; i--) {
+          if (list[i] === listener || list[i].listener === listener) {
+            originalListener = list[i].listener;
+            position = i;
+            break;
+          }
+        }
+
+        if (position < 0)
+          return this;
+
+        if (position === 0)
+          list.shift();
+        else
+          spliceOne(list, position);
+
+        if (list.length === 1)
+          events[type] = list[0];
+
+        if (events.removeListener)
+          this.emit('removeListener', type, originalListener || listener);
+      }
+
+      return this;
+    };
+
+EventEmitter.prototype.removeAllListeners =
+    function removeAllListeners(type) {
+      var listeners, events, i;
+
+      events = this._events;
+      if (!events)
+        return this;
+
+      // not listening for removeListener, no need to emit
+      if (!events.removeListener) {
+        if (arguments.length === 0) {
+          this._events = objectCreate(null);
+          this._eventsCount = 0;
+        } else if (events[type]) {
+          if (--this._eventsCount === 0)
+            this._events = objectCreate(null);
+          else
+            delete events[type];
+        }
+        return this;
+      }
+
+      // emit removeListener for all listeners on all events
+      if (arguments.length === 0) {
+        var keys = objectKeys(events);
+        var key;
+        for (i = 0; i < keys.length; ++i) {
+          key = keys[i];
+          if (key === 'removeListener') continue;
+          this.removeAllListeners(key);
+        }
+        this.removeAllListeners('removeListener');
+        this._events = objectCreate(null);
+        this._eventsCount = 0;
+        return this;
+      }
+
+      listeners = events[type];
+
+      if (typeof listeners === 'function') {
+        this.removeListener(type, listeners);
+      } else if (listeners) {
+        // LIFO order
+        for (i = listeners.length - 1; i >= 0; i--) {
+          this.removeListener(type, listeners[i]);
+        }
+      }
+
+      return this;
+    };
+
+function _listeners(target, type, unwrap) {
+  var events = target._events;
+
+  if (!events)
+    return [];
+
+  var evlistener = events[type];
+  if (!evlistener)
+    return [];
+
+  if (typeof evlistener === 'function')
+    return unwrap ? [evlistener.listener || evlistener] : [evlistener];
+
+  return unwrap ? unwrapListeners(evlistener) : arrayClone(evlistener, evlistener.length);
+}
+
+EventEmitter.prototype.listeners = function listeners(type) {
+  return _listeners(this, type, true);
+};
+
+EventEmitter.prototype.rawListeners = function rawListeners(type) {
+  return _listeners(this, type, false);
+};
+
+EventEmitter.listenerCount = function(emitter, type) {
+  if (typeof emitter.listenerCount === 'function') {
+    return emitter.listenerCount(type);
+  } else {
+    return listenerCount.call(emitter, type);
+  }
+};
+
+EventEmitter.prototype.listenerCount = listenerCount;
+function listenerCount(type) {
+  var events = this._events;
+
+  if (events) {
+    var evlistener = events[type];
+
+    if (typeof evlistener === 'function') {
+      return 1;
+    } else if (evlistener) {
+      return evlistener.length;
+    }
+  }
+
+  return 0;
+}
+
+EventEmitter.prototype.eventNames = function eventNames() {
+  return this._eventsCount > 0 ? Reflect.ownKeys(this._events) : [];
+};
+
+// About 1.5x faster than the two-arg version of Array#splice().
+function spliceOne(list, index) {
+  for (var i = index, k = i + 1, n = list.length; k < n; i += 1, k += 1)
+    list[i] = list[k];
+  list.pop();
+}
+
+function arrayClone(arr, n) {
+  var copy = new Array(n);
+  for (var i = 0; i < n; ++i)
+    copy[i] = arr[i];
+  return copy;
+}
+
+function unwrapListeners(arr) {
+  var ret = new Array(arr.length);
+  for (var i = 0; i < ret.length; ++i) {
+    ret[i] = arr[i].listener || arr[i];
+  }
+  return ret;
+}
+
+function objectCreatePolyfill(proto) {
+  var F = function() {};
+  F.prototype = proto;
+  return new F;
+}
+function objectKeysPolyfill(obj) {
+  var keys = [];
+  for (var k in obj) if (Object.prototype.hasOwnProperty.call(obj, k)) {
+    keys.push(k);
+  }
+  return k;
+}
+function functionBindPolyfill(context) {
+  var fn = this;
+  return function () {
+    return fn.apply(context, arguments);
+  };
+}
+
+},{}],207:[function(require,module,exports){
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
   var eLen = (nBytes * 8) - mLen - 1
@@ -31670,7 +33064,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],198:[function(require,module,exports){
+},{}],208:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -31756,7 +33150,7 @@ var isArray = Array.isArray || function (xs) {
   return Object.prototype.toString.call(xs) === '[object Array]';
 };
 
-},{}],199:[function(require,module,exports){
+},{}],209:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -31843,10 +33237,10 @@ var objectKeys = Object.keys || function (obj) {
   return res;
 };
 
-},{}],200:[function(require,module,exports){
+},{}],210:[function(require,module,exports){
 'use strict';
 
 exports.decode = exports.parse = require('./decode');
 exports.encode = exports.stringify = require('./encode');
 
-},{"./decode":198,"./encode":199}]},{},[42]);
+},{"./decode":208,"./encode":209}]},{},[41]);

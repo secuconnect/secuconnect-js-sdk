@@ -1,0 +1,83 @@
+<script src="secuconnect-js-sdk.js"></script>
+<script type="text/javascript" src="my-browser-cache.js"></script>
+
+<script>
+
+// create authenticator with credentials
+var authenticator = new Authenticator(
+    OAuthDeviceCredentials.fromUuid(
+        '',
+        '',
+        ''
+    )
+);
+
+var myBrowserCache = new MyBrowserCache();
+authenticator.getApiClient().setCachePool(myBrowserCache);
+
+// create stomp api instance (You need to pass the authenticator here)
+var api = new StompSmartTransactionsApi(authenticator);
+
+// create some data to send
+var ident = new SmartTransactionsIdent();
+ident.type = 'card';
+ident.value = 9991234567890;
+
+var item = new SecupayBasketItem();
+item.id = 1;
+item.quantity = 6;
+item.priceOne = 5;
+item.desc = 'Apples';
+item.tax = 7;
+
+var basketInfo = new SmartTransactionsBasketInfo();
+basketInfo.sum = 30;
+basketInfo.currency = 'EUR';
+
+var basket = new SmartTransactionsBasket();
+basket.products = [item];
+
+// convert created data to 
+var smartTransactionDTO = new SmartTransactionsDTO();
+smartTransactionDTO.idents = [ident];
+smartTransactionDTO.basket = basket;
+smartTransactionDTO.basket_info = basketInfo;
+smartTransactionDTO.merchantRef = 'Kunde12345';
+smartTransactionDTO.transactionRef = 'Beleg12345';
+
+let promiseFlow = new Promise((resolve => {
+
+    // setting listener for received messages
+    api.getConnectedStompClient().then((connectedStompClient) => {
+        connectedStompClient.setMessageListener((frame) => {
+            let response = JSON.parse(frame.body);
+
+            if (response.status === 'ok') {
+                console.info(response.data);
+                resolve(response.data);
+            } else {
+                console.error(response.error_details);
+            }
+        });
+    });
+
+    // add new smart transaction
+    api.addTransaction(smartTransactionDTO);
+
+}));
+
+promiseFlow.then((createdSmartTransaction) => {
+    smartTransactionDTO.merchantRef = 'Kunde234235';
+    smartTransactionDTO.transactionRef = 'Beleg4536676';
+
+    // update smart transaction
+    api.updateTransaction(createdSmartTransaction.id, smartTransactionDTO);
+});
+
+promiseFlow.then((updatedSmartTransaction) => {
+
+    // start smart transaction
+    api.startTransaction(updatedSmartTransaction.id, 'demo');
+});
+
+</script>
