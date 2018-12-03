@@ -4,6 +4,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 var _Globals = require('../Globals');
 
+var _FileCache = require('../../src/cache/FileCache');
+
+var _FileCache2 = _interopRequireDefault(_FileCache);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD.
@@ -39,6 +45,10 @@ var _Globals = require('../Globals');
         describe('OAuthApplicationUserCredentials', function () {
             it('should allow acquiring token', function () {
                 var authenticator = new SecuConnectApi.Authenticator(SecuConnectApi.OAuthApplicationUserCredentials.from(_Globals.OAuthApplicationUserCredentials.clientId, _Globals.OAuthApplicationUserCredentials.clientSecret, _Globals.OAuthApplicationUserCredentials.username, _Globals.OAuthApplicationUserCredentials.password, _Globals.OAuthApplicationUserCredentials.device, _Globals.OAuthApplicationUserCredentials.deviceName));
+
+                var fileCache = new _FileCache2.default();
+                authenticator.getApiClient().setCachePool(fileCache);
+
                 return authenticator.getToken().then(function (token) {
                     expect(typeof token === 'undefined' ? 'undefined' : _typeof(token)).toBe('object');
                     expect(token).toHaveProperty('expires_in');
@@ -49,6 +59,10 @@ var _Globals = require('../Globals');
         describe('OAuthClientCredentials', function () {
             it('should allow acquiring token', function () {
                 var authenticator = new SecuConnectApi.Authenticator(SecuConnectApi.OAuthClientCredentials.from(_Globals.OAuthClientCredentials.clientId, _Globals.OAuthClientCredentials.clientSecret));
+
+                var fileCache = new _FileCache2.default();
+                authenticator.getApiClient().setCachePool(fileCache);
+
                 return authenticator.getToken().then(function (token) {
                     expect(typeof token === 'undefined' ? 'undefined' : _typeof(token)).toBe('object');
                     expect(token).toHaveProperty('expires_in');
@@ -56,9 +70,13 @@ var _Globals = require('../Globals');
                 });
             });
         });
-        describe('OAuthDeviceCredentials', function () {
+        describe.skip('OAuthDeviceCredentials', function () {
             it('should allow acquiring token', function () {
                 var authenticator = new SecuConnectApi.Authenticator(SecuConnectApi.OAuthDeviceCredentials.from(_Globals.OAuthDeviceCredentials.clientId, _Globals.OAuthDeviceCredentials.clientSecret, _Globals.OAuthDeviceCredentials.deviceUuid));
+
+                var fileCache = new _FileCache2.default();
+                authenticator.getApiClient().setCachePool(fileCache);
+
                 return authenticator.getToken().then(function (token) {
                     expect(typeof token === 'undefined' ? 'undefined' : _typeof(token)).toBe('object');
                     expect(token).toHaveProperty('expires_in');

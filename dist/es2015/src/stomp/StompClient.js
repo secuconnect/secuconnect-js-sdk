@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.StompFactory = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -27,9 +28,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var StompClient = function () {
-    function StompClient(token, env) {
-        var debugMode = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-
+    function StompClient(token, env, debugMode) {
         _classCallCheck(this, StompClient);
 
         if (token === undefined) throw 'token is not a valid value';
@@ -240,5 +239,19 @@ var StompClient = function () {
     return StompClient;
 }();
 
-exports.default = StompClient;
 ;
+
+var StompFactory = exports.StompFactory = {
+    getInstance: function getInstance(token, env) {
+        var debugMode = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+        if (StompFactory.hasOwnProperty('instance')) {
+            return StompFactory.instance;
+        } else {
+            StompFactory.instance = new StompClient(token, env, debugMode);
+            StompFactory.instance.constructor = undefined;
+            Object.freeze(StompFactory);
+            return StompFactory.instance;
+        }
+    }
+};

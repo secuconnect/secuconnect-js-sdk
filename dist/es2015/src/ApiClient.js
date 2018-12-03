@@ -16,9 +16,13 @@ var _querystring = require("querystring");
 
 var _querystring2 = _interopRequireDefault(_querystring);
 
-var _FileCache = require("./cache/FileCache");
+var _ImitationDevicePrinter = require("./printer/ImitationDevicePrinter");
 
-var _FileCache2 = _interopRequireDefault(_FileCache);
+var _ImitationDevicePrinter2 = _interopRequireDefault(_ImitationDevicePrinter);
+
+var _SDKCache = require("./cache/SDKCache");
+
+var _SDKCache2 = _interopRequireDefault(_SDKCache);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -71,7 +75,7 @@ var ApiClient = function () {
          * @default true
          */
         this.cache = true;
-        this.cachePool = new _FileCache2.default();
+        this.cachePool = new _SDKCache2.default();
 
         /**
          * If set to true, the client will save the cookies from each server
@@ -79,6 +83,13 @@ var ApiClient = function () {
          * @default false
          */
         this.enableCookies = false;
+
+        /**
+         * Printer to show user code.
+         *
+         * @type {ImitationDevicePrinter}
+         */
+        this.printer = new _ImitationDevicePrinter2.default();
 
         /*
          * Used to save and return cookies in a node.js (non-browser) setting,
@@ -503,6 +514,40 @@ var ApiClient = function () {
         * @returns {Date} The parsed date object.
         */
 
+    }, {
+        key: "getCachePool",
+        value: function getCachePool() {
+            return this.cachePool;
+        }
+    }, {
+        key: "setCachePool",
+        value: function setCachePool(cachePool) {
+            this.cachePool = cachePool;
+        }
+
+        /**
+         * Getter for printer.
+         *
+         * @returns {ImitationDevicePrinter}
+         */
+
+    }, {
+        key: "getPrinter",
+        value: function getPrinter() {
+            return this.printer;
+        }
+
+        /**
+         * Setter for printer.
+         *
+         * @param printer
+         */
+
+    }, {
+        key: "setPrinter",
+        value: function setPrinter(printer) {
+            this.printer = printer;
+        }
     }], [{
         key: "parseDate",
         value: function parseDate(str) {

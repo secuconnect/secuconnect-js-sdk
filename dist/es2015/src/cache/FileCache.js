@@ -46,28 +46,29 @@ var FileCache = function (_SDKCache) {
 
         fs.exists(path, function (exists) {
           if (exists) {
-            _this2.readFromFile(key).then(function (item) {
-              var now = new Date();
-              now = Math.round(now.getTime() / 1000);
-
-              var createdAt = new Date(item.createdAt);
-              createdAt = Math.round(createdAt.getTime() / 1000);
-
-              var difference = now - createdAt;
-
-              if (item.expires_in - 30 > difference) {
-                resolve(true);
-              } else {
-                resolve(false);
-              }
-            }).catch(function (err) {
-              console.log(err);
-            });
+            resolve(true);
           } else {
             resolve(false);
           }
         });
       });
+    }
+  }, {
+    key: 'isExpired',
+    value: function isExpired(item) {
+      var now = new Date();
+      now = Math.round(now.getTime() / 1000);
+
+      var createdAt = new Date(item.createdAt);
+      createdAt = Math.round(createdAt.getTime() / 1000);
+
+      var difference = now - createdAt;
+
+      if (item.expires_in - 30 > difference) {
+        return false;
+      } else {
+        return true;
+      }
     }
   }, {
     key: 'setItem',

@@ -15,7 +15,7 @@ var SDKCache = function () {
 
   /**
    * This function checks whether key exists.
-   * If key exists and isn't expire, then returns true in other case returns false.
+   * If key exists returns true in other case returns false.
    *
    * @param key
    * @returns {boolean}
@@ -25,6 +25,19 @@ var SDKCache = function () {
   _createClass(SDKCache, [{
     key: "exists",
     value: function exists(key) {
+      return false;
+    }
+
+    /**
+     * This function checks whether item is expired.
+     * If item is expired returns true in other case returns false.
+     *
+     * @returns {boolean}
+     */
+
+  }, {
+    key: "isExpired",
+    value: function isExpired(item) {
       return false;
     }
 
