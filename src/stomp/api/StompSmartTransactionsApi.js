@@ -1,124 +1,81 @@
 import { StompFactory } from "../StompClient";
-import ApiClient from "../../ApiClient";
-import SmartTransactionsProductModel from "../../model/SmartTransactionsProductModel";
-import { ResponseStatus, Environments } from "../StompGlobals";
+import { Environments } from "../StompGlobals";
 
 export default class StompSmartTransactionsApi {
-    
-    constructor(authenticator, stompClient = null) {
+
+    constructor(authenticator, stompClient = null, environment = Environments.BROWSER) {
         this.destination = ["/exchange/connect.api/api:", ":Smart.Transactions"];
         this.authenticator = authenticator;
-        
+
         if (stompClient != null && stompClient instanceof StompClient) {
             this.stompClient = stompClient;
             this.connected = this.stompClient.connect();
         } else {
-            this.connected = new Promise((resolve, reject) => {
+            this.connected = new Promise((resolve) => {
                 this.authenticator.getToken().then((token) => {
-                    this.stompClient = StompFactory.getInstance(token.access_token, Environments.BROWSER);
-                    this.stompClient.connect().then((connectedFrame) => {
-                        resolve(connectedFrame);
-                    });
+                    this.stompClient = StompFactory.getInstance(token.access_token, environment);
+                    this.stompClient.connect()
+                        .then((connectedFrame) => {
+                            if (connectedFrame) {
+                                resolve(connectedFrame);
+                            } else {
+                                reject('Connection error');
+                            }
+                        });
                 });
             });
         }
     }
 
-    addTransaction(smartTransactionProperties) {
-        return new Promise((resolve, reject) => {
-            this.connected.then((connectedFrame) => {
-                this.stompClient.sendMessage(
-                    this.destination[0] + 'add' + this.destination[1],
-                    JSON.stringify({
-                        'data': smartTransactionProperties}
-                    )
-                );
-    
-                this.stompClient.setMessageListener((frame) => {
-                    let response = JSON.parse(frame.body);
+    getConnectedStompClient() {
+        return this.connected.then(() => {
+            return this.stompClient;
+        });
+    }
 
-                    if (response.status === ResponseStatus.ok) {
-                        let smartTransaction = ApiClient.convertToType(response.data, SmartTransactionsProductModel);
-                        resolve(smartTransaction);
-                    } else {
-                        reject(response.error_details);
-                    }
-                });
-            });
+    addTransaction(smartTransactionProperties) {
+        this.connected.then(() => {
+            this.stompClient.sendMessage(
+                this.destination[0] + 'add' + this.destination[1],
+                JSON.stringify({
+                    'data': smartTransactionProperties}
+                )
+            );
         });
     }
 
     updateTransaction(smartTransactionId, smartTransactionProperties) {
-        return new Promise((resolve, reject) => {
-            this.connected.then( () => {
-                this.stompClient.sendMessage(
-                    this.destination[0] + 'update' + this.destination[1],
-                    JSON.stringify({
-                        'pid': smartTransactionId,
-                        'data': smartTransactionProperties
-                    })
-                );
-    
-                this.stompClient.setMessageListener((frame) => {
-                    let response = JSON.parse(frame.body);
-
-                    if (response.status === ResponseStatus.ok) {
-                        let smartTransaction = ApiClient.convertToType(response.data, SmartTransactionsProductModel);
-                        resolve(smartTransaction);
-                    } else {
-                        reject(response.error_details);
-                    }
-                });
-            });
+        this.connected.then( () => {
+            this.stompClient.sendMessage(
+                this.destination[0] + 'update' + this.destination[1],
+                JSON.stringify({
+                    'pid': smartTransactionId,
+                    'data': smartTransactionProperties
+                })
+            );
         });
     }
 
     startTransaction(smartTransactionId, paymentMethod) {
-        return new Promise((resolve, reject) => {
-            this.connected.then( () => {
-                this.stompClient.sendMessage(
-                    this.destination[0] + 'update' + this.destination[1] + 'Start',
-                    JSON.stringify({
-                        'pid': smartTransactionId,
-                        'sid': paymentMethod
-                    })
-                );
-    
-                this.stompClient.setMessageListener((frame) => {
-                    let response = JSON.parse(frame.body);
-
-                    if (response.status === ResponseStatus.ok) {
-                        let smartTransaction = ApiClient.convertToType(response.data, SmartTransactionsProductModel);
-                        resolve(smartTransaction);
-                    } else {
-                        reject(response.error_details);
-                    }
-                });
-            });
+        this.connected.then( () => {
+            this.stompClient.sendMessage(
+                this.destination[0] + 'add' + this.destination[1] + '.Start',
+                JSON.stringify({
+                    'pid': smartTransactionId,
+                    'sid': paymentMethod
+                })
+            );
         });
     }
 
     preTransaction(smartTransactionId) {
-        return new Promise((resolve, reject) => {
-            this.connected.then( () => {
-                this.stompClient.sendMessage(
-                    this.destination[0] + 'update' + this.destination[1] + 'Pretransaction',
-                    JSON.stringify({
-                        'pid': smartTransactionId
-                    })
-                );
-    
-                this.stompClient.setMessageListener((frame) => {
-                    let response = JSON.parse(frame.body);
-
-                    if (response.status === ResponseStatus.ok) {
-                        let smartTransaction = ApiClient.convertToType(response.data, SmartTransactionsProductModel);
-                        resolve(smartTransaction);
-                    } else {
-                        reject(response.error_details);
-                    }
-                });
-            });
+        this.connected.then( () => {
+            this.stompClient.sendMessage(
+                this.destination[0] + 'add' + this.destination[1] + '.Pretransaction',
+                JSON.stringify({
+                    'pid': smartTransactionId
+                })
+            );
         });
     }
 }

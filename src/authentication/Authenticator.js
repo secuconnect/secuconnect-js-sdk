@@ -204,7 +204,7 @@ export default class Authenticator {
      * @returns {Promise<any | never>}
      */
     tryToObtainTokenForDevice(expiresIn, interval) {
-        return new Promise(resolve  => {
+        return new Promise((resolve, reject) => {
             let tryObtainToken = setInterval(() => {
                 return this.getTokenFromApi()
                     .then((response) => {
@@ -212,7 +212,12 @@ export default class Authenticator {
                         resolve(this.setObtainedToken(response));
                     })
                     .catch(() => {
-                        expiresIn = expiresIn - interval;
+                        if (expiresIn > 0) {
+                            expiresIn = expiresIn - interval;
+                        } else {
+                            clearInterval(tryObtainToken);
+                            reject('Unfortunately, the access token could not be obtained.');
+                        }
                     });
             }, interval * 1000);
         });

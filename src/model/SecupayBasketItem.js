@@ -43,9 +43,6 @@ export default class SecupayBasketItem {
             
             
 
-            if (data.hasOwnProperty('item_type')) {
-                obj['item_type'] = ApiClient.convertToType(data['item_type'], 'String');
-            }
             if (data.hasOwnProperty('article_number')) {
                 obj['article_number'] = ApiClient.convertToType(data['article_number'], 'String');
             }
@@ -89,12 +86,6 @@ export default class SecupayBasketItem {
         return obj;
     }
 
-    /**
-    * Category of item
-    * @member {String} item_type
-    * @default 'article'
-    */
-    item_type = 'article';
     /**
     * Article number of item
     * @member {String} article_number

@@ -4,6 +4,10 @@ import * as config from "../../stomp-config.json";
 import { Environments } from './StompGlobals';
 
 class StompClient {
+
+    // this is session refresh interval given in seconds
+    SESSION_REFRESH_INTERVAL = 120;
+
     constructor(token, env, debugMode) {
         if (token === undefined) throw 'token is not a valid value';
         if (config.host === '' || config.host === undefined) throw 'invalid host in stomp config';
@@ -57,6 +61,8 @@ class StompClient {
             });
 
             this.stomp.on('connected', (frame) => {
+                this.refreshAuthSession();
+
                 // if successfully connected then set proper listeners for soceket and stomp
                 this.stomp.on('socket-error', (error) => {
                     console.log('Unexpected socket error' + error);
@@ -88,6 +94,22 @@ class StompClient {
             // try connecting
             this.stomp.connect();
         });
+    }
+
+    refreshAuthSession() {
+        let destination = '/exchange/connect.api/api:add:Auth.Sessions.refresh';
+        let body = JSON.stringify({
+            "method":"Auth.Sessions.refresh",
+            "action":"exec",
+            "pid":"me",
+            "data": {
+                "refresh_interval": this.SESSION_REFRESH_INTERVAL
+            },
+            "action_id": this.generateCorrelationId()
+        });
+
+        this.sendMessage(destination, body);
+        setInterval(() => this.sendMessage(destination, body), this.SESSION_REFRESH_INTERVAL * 1000);
     }
 
     sendMessage(destination, body, want_receipt) {
