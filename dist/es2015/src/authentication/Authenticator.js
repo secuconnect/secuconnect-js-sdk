@@ -285,13 +285,18 @@ var Authenticator = function () {
         value: function tryToObtainTokenForDevice(expiresIn, interval) {
             var _this8 = this;
 
-            return new Promise(function (resolve) {
+            return new Promise(function (resolve, reject) {
                 var tryObtainToken = setInterval(function () {
                     return _this8.getTokenFromApi().then(function (response) {
                         clearInterval(tryObtainToken);
                         resolve(_this8.setObtainedToken(response));
                     }).catch(function () {
-                        expiresIn = expiresIn - interval;
+                        if (expiresIn > 0) {
+                            expiresIn = expiresIn - interval;
+                        } else {
+                            clearInterval(tryObtainToken);
+                            reject('Unfortunately, the access token could not be obtained.');
+                        }
                     });
                 }, interval * 1000);
             });

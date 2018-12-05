@@ -31,6 +31,8 @@ var StompClient = function () {
     function StompClient(token, env, debugMode) {
         _classCallCheck(this, StompClient);
 
+        this.SESSION_REFRESH_INTERVAL = 120;
+
         if (token === undefined) throw 'token is not a valid value';
         if (config.host === '' || config.host === undefined) throw 'invalid host in stomp config';
         if (config.headers.content_type === '' || config.headers.content_type === undefined) throw 'invalid content_type in stomp config';
@@ -51,6 +53,9 @@ var StompClient = function () {
             console.log = function () {};
         }
     }
+
+    // this is session refresh interval given in seconds
+
 
     _createClass(StompClient, [{
         key: 'getToken',
@@ -88,6 +93,8 @@ var StompClient = function () {
                 });
 
                 _this.stomp.on('connected', function (frame) {
+                    _this.refreshAuthSession();
+
                     // if successfully connected then set proper listeners for soceket and stomp
                     _this.stomp.on('socket-error', function (error) {
                         console.log('Unexpected socket error' + error);
@@ -119,6 +126,27 @@ var StompClient = function () {
                 // try connecting
                 _this.stomp.connect();
             });
+        }
+    }, {
+        key: 'refreshAuthSession',
+        value: function refreshAuthSession() {
+            var _this2 = this;
+
+            var destination = '/exchange/connect.api/api:add:Auth.Sessions.refresh';
+            var body = JSON.stringify({
+                "method": "Auth.Sessions.refresh",
+                "action": "exec",
+                "pid": "me",
+                "data": {
+                    "refresh_interval": this.SESSION_REFRESH_INTERVAL
+                },
+                "action_id": this.generateCorrelationId()
+            });
+
+            this.sendMessage(destination, body);
+            setInterval(function () {
+                return _this2.sendMessage(destination, body);
+            }, this.SESSION_REFRESH_INTERVAL * 1000);
         }
     }, {
         key: 'sendMessage',

@@ -30,95 +30,121 @@ var _Authenticator2 = _interopRequireDefault(_Authenticator);
 
 var _Globals = require("../../Globals");
 
-var _OAuthApplicationUserCredentials = require("../../../src/authentication/OAuthApplicationUserCredentials");
+var _OAuthDeviceCredentials = require("../../../src/authentication/OAuthDeviceCredentials");
 
-var _OAuthApplicationUserCredentials2 = _interopRequireDefault(_OAuthApplicationUserCredentials);
+var _OAuthDeviceCredentials2 = _interopRequireDefault(_OAuthDeviceCredentials);
+
+var _FileCache = require("../../../src/cache/FileCache");
+
+var _FileCache2 = _interopRequireDefault(_FileCache);
+
+var _StompGlobals = require("../../../src/stomp/StompGlobals");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-describe('StompSmartTransactionsApi', function () {
-    var SMART_TRANSACTIONS = 'smart.transactions';
+var SMART_TRANSACTIONS = 'smart.transactions';
+var SMART_TRANSACTION_STATUS_AFTER_CREATE = 'created';
+var SMART_TRANSACTION_STATUS_AFTER_START = 'ok';
 
-    var api = void 0;
-    var authenticator = void 0;
-    var smartTransactionsDTO = void 0;
-    var smartTransactionsProductModel = void 0;
-    var ident = void 0;
-    var item = void 0;
-    var basketInfo = void 0;
-    var basket = void 0;
+var api = void 0;
+var authenticator = void 0;
+var smartTransactionsDTO = void 0;
+var ident = void 0;
+var item = void 0;
+var basketInfo = void 0;
+var basket = void 0;
+var state = 0;
 
-    beforeAll(function () {
-        authenticator = new _Authenticator2.default(_OAuthApplicationUserCredentials2.default.from(_Globals.OAuthApplicationUserCredentials.clientId, _Globals.OAuthApplicationUserCredentials.clientSecret, _Globals.OAuthApplicationUserCredentials.username, _Globals.OAuthApplicationUserCredentials.password, _Globals.OAuthApplicationUserCredentials.device, _Globals.OAuthApplicationUserCredentials.deviceName));
+beforeAll(function () {
+    authenticator = new _Authenticator2.default(_OAuthDeviceCredentials2.default.fromUuid(_Globals.OAuthDeviceCredentials.clientId, _Globals.OAuthDeviceCredentials.clientSecret, _Globals.OAuthDeviceCredentials.deviceUuid));
 
-        api = new _StompSmartTransactionsApi2.default(authenticator);
+    var fileCache = new _FileCache2.default();
+    authenticator.getApiClient().setCachePool(fileCache);
 
-        ident = new _SmartTransactionsIdent2.default();
-        ident.type = 'card';
-        ident.value = 9991234567890;
+    api = new _StompSmartTransactionsApi2.default(authenticator, null, _StompGlobals.Environments.NODE);
 
-        item = new _SecupayBasketItem2.default();
-        item.id = 1;
-        item.quantity = 1;
-        item.priceOne = 209;
-        item.desc = 'BRÖTCHENANGEBOT 8 Stück';
-        item.tax = 7;
+    ident = new _SmartTransactionsIdent2.default();
+    ident.type = 'card';
+    ident.value = '9991234567890';
+    ident.valid = false;
 
-        basketInfo = new _SmartTransactionsBasketInfo2.default();
-        basketInfo.sum = 209;
-        basketInfo.currency = 'EUR';
+    item = new _SecupayBasketItem2.default();
+    item.id = 1;
+    item.quantity = 1;
+    item.priceOne = 209;
+    item.desc = 'BRÖTCHENANGEBOT 8 Stück';
+    item.tax = 7;
 
-        basket = new _SmartTransactionsBasket2.default();
-        basket.products = [item];
+    basketInfo = new _SmartTransactionsBasketInfo2.default();
+    basketInfo.sum = 209;
+    basketInfo.currency = 'EUR';
 
-        smartTransactionsDTO = new _SmartTransactionsDTO2.default();
-        smartTransactionsDTO.merchant = 'MRC_2YPYFEYKF2DYG8Z4KHB5T8P2P4H0P6';
+    basket = new _SmartTransactionsBasket2.default();
+    basket.products = [item];
+
+    smartTransactionsDTO = new _SmartTransactionsDTO2.default();
+    smartTransactionsDTO.idents = [ident];
+    smartTransactionsDTO.basket = basket;
+    smartTransactionsDTO.basket_info = basketInfo;
+    smartTransactionsDTO.merchantRef = 'Kunde12345';
+    smartTransactionsDTO.transactionRef = 'Beleg12345';
+});
+
+test('Test of creating the smart transaction, updating and starting it.', function () {
+    api.getConnectedStompClient().then(function (connectedStompClient) {
+        connectedStompClient.setMessageListener(function (frame) {
+            var response = JSON.parse(frame.body);
+
+            if (response.status === 'ok') {
+                if (response.data.result === undefined) {
+                    if (state === 0) {
+                        var createdSmartTransactionsProductModel = response.data;
+                        expect(createdSmartTransactionsProductModel.object).toBe(SMART_TRANSACTIONS);
+                        expect(createdSmartTransactionsProductModel.idents[0]).toEqual(smartTransactionsDTO.idents[0]);
+                        expect(createdSmartTransactionsProductModel.basket[0]).toBe(smartTransactionsDTO.basket[0]);
+                        expect(createdSmartTransactionsProductModel.merchantRef).toBe(smartTransactionsDTO.merchantRef);
+                        expect(createdSmartTransactionsProductModel.transactionRef).toBe(smartTransactionsDTO.transactionRef);
+                        expect(createdSmartTransactionsProductModel.status).toBe(SMART_TRANSACTION_STATUS_AFTER_CREATE);
+                        expect(createdSmartTransactionsProductModel.merchant).not.toBeUndefined();
+
+                        smartTransactionsDTO.idents = [ident];
+
+                        smartTransactionsDTO.basket.products[0].quantity = 3;
+                        smartTransactionsDTO.basket.products[0].priceOne = 200;
+                        smartTransactionsDTO.basket.products[0].desc = 'BRÖTCHENANGEBOT 24 Stück';
+                        smartTransactionsDTO.basket.products[0].tax = 7;
+
+                        smartTransactionsDTO.basket_info.sum = 600;
+
+                        smartTransactionsDTO.basket = basket;
+                        smartTransactionsDTO.basket_info = basketInfo;
+                        smartTransactionsDTO.merchantRef = 'Kunde234235';
+                        smartTransactionsDTO.transactionRef = 'Beleg4536676';
+
+                        api.updateTransaction(createdSmartTransactionsProductModel.id, smartTransactionsDTO);
+                        state++;
+                    } else if (state === 1) {
+                        var updatedSmartTransactionsProductModel = response.data;
+
+                        expect(updatedSmartTransactionsProductModel.object).toBe(SMART_TRANSACTIONS);
+                        expect(updatedSmartTransactionsProductModel.basket[0]).toBe(smartTransactionsDTO.basket[0]);
+                        expect(updatedSmartTransactionsProductModel.merchantRef).toBe(smartTransactionsDTO.merchantRef);
+                        expect(updatedSmartTransactionsProductModel.transactionRef).toBe(smartTransactionsDTO.transactionRef);
+
+                        api.startTransaction(updatedSmartTransactionsProductModel.id, 'demo');
+                        state++;
+                    } else if (state === 2) {
+                        var smartTransactionsProductModelAfterStart = response.data;
+
+                        expect(smartTransactionsProductModelAfterStart.object).toBe(SMART_TRANSACTIONS);
+                        expect(smartTransactionsProductModelAfterStart.status).toBe(SMART_TRANSACTION_STATUS_AFTER_START);
+                        expect(smartTransactionsProductModelAfterStart.device_source).not.toBeUndefined();
+                    }
+                }
+            } else {
+                console.error(response.error_details);
+            }
+        });
     });
-
-    afterAll(function () {
-        authenticator = null;
-        accessToken = null;
-        api = null;
-        smartTransactionsDTO = null;
-        smartTransactionsProductModel = null;
-        ident = null;
-        item = null;
-        basketInfo = null;
-        basket = null;
-    });
-
-    describe('StompSmartTransactionsApi methods', function () {
-        test('adding new smart transaction', function () {
-            return api.addTransaction(smartTransactionsDTO).then(function (createdSmartTransactionsProductModel) {
-                expect(createdSmartTransactionsProductModel.object).toBe(SMART_TRANSACTIONS);
-
-                smartTransactionsProductModel = createdSmartTransactionsProductModel;
-            });
-        });
-
-        test('updating existing smart transaction', function () {
-            smartTransactionsDTO.idents = [ident];
-            smartTransactionsDTO.basket = basket;
-            smartTransactionsDTO.basket_info = basketInfo;
-            smartTransactionsDTO.merchantRef = 'Kunde234235';
-            smartTransactionsDTO.transactionRef = 'Beleg4536676';
-
-            return api.updateTransaction(smartTransactionsProductModel.id, smartTransactionsDTO).then(function (updatedSmartTransactionsProductModel) {
-                expect(updatedSmartTransactionsProductModel.object).toBe(SMART_TRANSACTIONS);
-                expect(updatedSmartTransactionsProductModel.merchantRef).toBe(smartTransactionsDTO.merchantRef);
-            });
-        });
-
-        test('starting selected smart transaction', function () {
-            return api.startTransaction(smartTransactionsProductModel.id, 'demo').then(function (smartTransactionsProductModelAfterStart) {
-                expect(smartTransactionsProductModelAfterStart.object).toBe(SMART_TRANSACTIONS);
-            });
-        });
-
-        test('checking balance of merchantcard from ident and if possible creating bonus product items for basket', function () {
-            return api.preTransaction(smartTransactionsProductModel.id).then(function (smartTransactionsProductModel) {
-                expect(smartTransactionsProductModel.object).toBe(SMART_TRANSACTIONS);
-            });
-        });
-    });
+    api.addTransaction(smartTransactionsDTO);
 });

@@ -29,7 +29,6 @@ var SecupayBasketItem = function () {
     function SecupayBasketItem() {
         _classCallCheck(this, SecupayBasketItem);
 
-        this.item_type = 'article';
         this.article_number = undefined;
         this.quantity = undefined;
         this.name = undefined;
@@ -60,9 +59,6 @@ var SecupayBasketItem = function () {
             if (data) {
                 obj = obj || new SecupayBasketItem();
 
-                if (data.hasOwnProperty('item_type')) {
-                    obj['item_type'] = _ApiClient2.default.convertToType(data['item_type'], 'String');
-                }
                 if (data.hasOwnProperty('article_number')) {
                     obj['article_number'] = _ApiClient2.default.convertToType(data['article_number'], 'String');
                 }
@@ -105,12 +101,6 @@ var SecupayBasketItem = function () {
             }
             return obj;
         }
-
-        /**
-        * Category of item
-        * @member {String} item_type
-        * @default 'article'
-        */
 
         /**
         * Article number of item
