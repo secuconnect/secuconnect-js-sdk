@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The SmartTransactionsBasketText model module.
-* @module model/SmartTransactionsBasketText
-*/
+ * The SmartTransactionsBasketText model module.
+ * @module model/SmartTransactionsBasketText
+ */
 export default class SmartTransactionsBasketText {
     /**
-    * Constructs a new <code>SmartTransactionsBasketText</code>.
-    * @alias module:model/SmartTransactionsBasketText
-    * @class
-    */
+     * Constructs a new <code>SmartTransactionsBasketText</code>.
+     * @alias module:model/SmartTransactionsBasketText
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class SmartTransactionsBasketText {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SmartTransactionsBasketText();
-
             
             
             
-
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
@@ -56,28 +43,21 @@ export default class SmartTransactionsBasketText {
     }
 
     /**
-    * Text id
-    * @member {Number} id
-    */
+     * Text id
+     * @member {Number} id
+     */
     id = undefined;
+
     /**
-    * Parent
-    * @member {Number} parent
-    */
+     * Parent
+     * @member {Number} parent
+     */
     parent = undefined;
+
     /**
-    * Desc
-    * @member {String} desc
-    */
+     * Desc
+     * @member {String} desc
+     */
     desc = undefined;
 
-
-
-
-
-
-
-
 }
-
-

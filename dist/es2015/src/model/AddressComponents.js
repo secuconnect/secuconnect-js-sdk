@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The AddressComponents model module.
-* @module model/AddressComponents
-*/
+ * The AddressComponents model module.
+ * @module model/AddressComponents
+ */
 var AddressComponents = function () {
     /**
-    * Constructs a new <code>AddressComponents</code>.
-    * @alias module:model/AddressComponents
-    * @class
-    */
+     * Constructs a new <code>AddressComponents</code>.
+     * @alias module:model/AddressComponents
+     * @class
+     */
 
     function AddressComponents() {
         _classCallCheck(this, AddressComponents);
@@ -62,19 +62,21 @@ var AddressComponents = function () {
         }
 
         /**
-        * Long name
-        * @member {String} long_name
-        */
+         * Long name
+         * @member {String} long_name
+         */
+
 
         /**
-        * Short name
-        * @member {String} short_name
-        */
+         * Short name
+         * @member {String} short_name
+         */
+
 
         /**
-        * Types
-        * @member {Array.<String>} types
-        */
+         * Types
+         * @member {Array.<String>} types
+         */
 
     }]);
 

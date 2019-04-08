@@ -10,6 +10,14 @@ var _ApiClient = require('../ApiClient');
 
 var _ApiClient2 = _interopRequireDefault(_ApiClient);
 
+var _GeneralMerchantsProductModel = require('./GeneralMerchantsProductModel');
+
+var _GeneralMerchantsProductModel2 = _interopRequireDefault(_GeneralMerchantsProductModel);
+
+var _GeneralStoresProductModel = require('./GeneralStoresProductModel');
+
+var _GeneralStoresProductModel2 = _interopRequireDefault(_GeneralStoresProductModel);
+
 var _PaymentTransactionsProductModelCustomer = require('./PaymentTransactionsProductModelCustomer');
 
 var _PaymentTransactionsProductModelCustomer2 = _interopRequireDefault(_PaymentTransactionsProductModelCustomer);
@@ -18,24 +26,20 @@ var _PaymentTransactionsProductModelDetails = require('./PaymentTransactionsProd
 
 var _PaymentTransactionsProductModelDetails2 = _interopRequireDefault(_PaymentTransactionsProductModelDetails);
 
-var _PaymentTransactionsProductModelMerchant = require('./PaymentTransactionsProductModelMerchant');
-
-var _PaymentTransactionsProductModelMerchant2 = _interopRequireDefault(_PaymentTransactionsProductModelMerchant);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The PaymentTransactionsProductModel model module.
-* @module model/PaymentTransactionsProductModel
-*/
+ * The PaymentTransactionsProductModel model module.
+ * @module model/PaymentTransactionsProductModel
+ */
 var PaymentTransactionsProductModel = function () {
     /**
-    * Constructs a new <code>PaymentTransactionsProductModel</code>.
-    * @alias module:model/PaymentTransactionsProductModel
-    * @class
-    */
+     * Constructs a new <code>PaymentTransactionsProductModel</code>.
+     * @alias module:model/PaymentTransactionsProductModel
+     * @class
+     */
 
     function PaymentTransactionsProductModel() {
         _classCallCheck(this, PaymentTransactionsProductModel);
@@ -43,6 +47,7 @@ var PaymentTransactionsProductModel = function () {
         this.object = undefined;
         this.id = undefined;
         this.merchant = undefined;
+        this.store = undefined;
         this.trans_id = undefined;
         this.product_id = undefined;
         this.product = undefined;
@@ -55,8 +60,16 @@ var PaymentTransactionsProductModel = function () {
         this.updated = undefined;
         this.status = undefined;
         this.status_text = undefined;
+        this.incoming_payment_date = undefined;
         this.details = undefined;
         this.customer = undefined;
+        this.tid = undefined;
+        this.payment_data = undefined;
+        this.store_name = undefined;
+        this.payout_date = undefined;
+        this.invoice_number = undefined;
+        this.transaction_hash = undefined;
+        this.reference_id = undefined;
     }
 
     /**
@@ -81,7 +94,10 @@ var PaymentTransactionsProductModel = function () {
                     obj['id'] = _ApiClient2.default.convertToType(data['id'], 'String');
                 }
                 if (data.hasOwnProperty('merchant')) {
-                    obj['merchant'] = _PaymentTransactionsProductModelMerchant2.default.constructFromObject(data['merchant']);
+                    obj['merchant'] = _GeneralMerchantsProductModel2.default.constructFromObject(data['merchant']);
+                }
+                if (data.hasOwnProperty('store')) {
+                    obj['store'] = _GeneralStoresProductModel2.default.constructFromObject(data['store']);
                 }
                 if (data.hasOwnProperty('trans_id')) {
                     obj['trans_id'] = _ApiClient2.default.convertToType(data['trans_id'], 'Number');
@@ -108,10 +124,10 @@ var PaymentTransactionsProductModel = function () {
                     obj['currency'] = _ApiClient2.default.convertToType(data['currency'], 'String');
                 }
                 if (data.hasOwnProperty('created')) {
-                    obj['created'] = _ApiClient2.default.convertToType(data['created'], 'Date');
+                    obj['created'] = _ApiClient2.default.convertToType(data['created'], 'String');
                 }
                 if (data.hasOwnProperty('updated')) {
-                    obj['updated'] = _ApiClient2.default.convertToType(data['updated'], 'Date');
+                    obj['updated'] = _ApiClient2.default.convertToType(data['updated'], 'String');
                 }
                 if (data.hasOwnProperty('status')) {
                     obj['status'] = _ApiClient2.default.convertToType(data['status'], 'Number');
@@ -119,97 +135,192 @@ var PaymentTransactionsProductModel = function () {
                 if (data.hasOwnProperty('status_text')) {
                     obj['status_text'] = _ApiClient2.default.convertToType(data['status_text'], 'String');
                 }
+                if (data.hasOwnProperty('incoming_payment_date')) {
+                    obj['incoming_payment_date'] = _ApiClient2.default.convertToType(data['incoming_payment_date'], 'String');
+                }
                 if (data.hasOwnProperty('details')) {
                     obj['details'] = _PaymentTransactionsProductModelDetails2.default.constructFromObject(data['details']);
                 }
                 if (data.hasOwnProperty('customer')) {
                     obj['customer'] = _PaymentTransactionsProductModelCustomer2.default.constructFromObject(data['customer']);
                 }
+                if (data.hasOwnProperty('tid')) {
+                    obj['tid'] = _ApiClient2.default.convertToType(data['tid'], 'String');
+                }
+                if (data.hasOwnProperty('payment_data')) {
+                    obj['payment_data'] = _ApiClient2.default.convertToType(data['payment_data'], 'String');
+                }
+                if (data.hasOwnProperty('store_name')) {
+                    obj['store_name'] = _ApiClient2.default.convertToType(data['store_name'], 'String');
+                }
+                if (data.hasOwnProperty('payout_date')) {
+                    obj['payout_date'] = _ApiClient2.default.convertToType(data['payout_date'], 'String');
+                }
+                if (data.hasOwnProperty('invoice_number')) {
+                    obj['invoice_number'] = _ApiClient2.default.convertToType(data['invoice_number'], 'String');
+                }
+                if (data.hasOwnProperty('transaction_hash')) {
+                    obj['transaction_hash'] = _ApiClient2.default.convertToType(data['transaction_hash'], 'String');
+                }
+                if (data.hasOwnProperty('reference_id')) {
+                    obj['reference_id'] = _ApiClient2.default.convertToType(data['reference_id'], 'String');
+                }
             }
             return obj;
         }
 
         /**
-        * Object of payment transaction
-        * @member {String} object
-        */
+         * Object of payment transaction
+         * @member {String} object
+         */
+
 
         /**
-        * Id of payment transaction
-        * @member {String} id
-        */
+         * Id of payment transaction
+         * @member {String} id
+         */
+
 
         /**
-        * @member {module:model/PaymentTransactionsProductModelMerchant} merchant
-        */
+         * Merchant information
+         * @member {module:model/GeneralMerchantsProductModel} merchant
+         */
+
 
         /**
-        * Transaction identifier
-        * @member {Number} trans_id
-        */
+         * Merchants store information
+         * @member {module:model/GeneralStoresProductModel} store
+         */
+
 
         /**
-        * Product identifier
-        * @member {Number} product_id
-        */
+         * Transaction identifier
+         * @member {Number} trans_id
+         */
+
 
         /**
-        * Product type
-        * @member {String} product
-        */
+         * Product identifier
+         * @member {Number} product_id
+         */
+
 
         /**
-        * the name of the payment product
-        * @member {String} product_raw
-        */
+         * Product type
+         * @member {String} product
+         */
+
 
         /**
-        * The internal id of the stored payment instrument.
-        * @member {Number} zahlungsmittel_id
-        */
+         * the name of the payment product
+         * @member {String} product_raw
+         */
+
 
         /**
-        * Contract identifier
-        * @member {Number} contract_id
-        */
+         * The internal id of the stored payment instrument.
+         * @member {Number} zahlungsmittel_id
+         */
+
 
         /**
-        * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
-        * @member {Number} amount
-        */
+         * Contract identifier
+         * @member {Number} contract_id
+         */
+
 
         /**
-        * ISO 4217 code of currency, eg EUR for Euro.
-        * @member {String} currency
-        */
+         * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
+         * @member {Number} amount
+         */
+
 
         /**
-        * Created at date
-        * @member {Date} created
-        */
+         * ISO 4217 code of currency, eg EUR for Euro.
+         * @member {String} currency
+         */
+
 
         /**
-        * Updated at date
-        * @member {Date} updated
-        */
+         * Created at date
+         * @member {String} created
+         */
+
 
         /**
-        * WTF??
-        * @member {Number} status
-        */
+         * Updated at date
+         * @member {String} updated
+         */
+
 
         /**
-        * Transaction status
-        * @member {String} status_text
-        */
+         * Transaction status ID
+         * @member {Number} status
+         */
+
 
         /**
-        * @member {module:model/PaymentTransactionsProductModelDetails} details
-        */
+         * Transaction status description
+         * @member {String} status_text
+         */
+
 
         /**
-        * @member {module:model/PaymentTransactionsProductModelCustomer} customer
-        */
+         * Date when the payment was received
+         * @member {String} incoming_payment_date
+         */
+
+
+        /**
+         * @member {module:model/PaymentTransactionsProductModelDetails} details
+         */
+
+
+        /**
+         * @member {module:model/PaymentTransactionsProductModelCustomer} customer
+         */
+
+
+        /**
+         * Terminal-ID
+         * @member {String} tid
+         */
+
+
+        /**
+         * Data of the used payment instrument
+         * @member {String} payment_data
+         */
+
+
+        /**
+         * Store name
+         * @member {String} store_name
+         */
+
+
+        /**
+         * Date when the payout was created
+         * @member {String} payout_date
+         */
+
+
+        /**
+         * Invoice number (from merchant)
+         * @member {String} invoice_number
+         */
+
+
+        /**
+         * Payment-ID
+         * @member {String} transaction_hash
+         */
+
+
+        /**
+         * Reference ID
+         * @member {String} reference_id
+         */
 
     }]);
 

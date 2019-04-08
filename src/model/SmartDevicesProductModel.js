@@ -5,29 +5,18 @@ import SmartDevicesDevice from './SmartDevicesDevice';
 import SmartDevicesProducts from './SmartDevicesProducts';
 import Store from './Store';
 
-
-
-
-
 /**
-* The SmartDevicesProductModel model module.
-* @module model/SmartDevicesProductModel
-*/
+ * The SmartDevicesProductModel model module.
+ * @module model/SmartDevicesProductModel
+ */
 export default class SmartDevicesProductModel {
     /**
-    * Constructs a new <code>SmartDevicesProductModel</code>.
-    * @alias module:model/SmartDevicesProductModel
-    * @class
-    */
+     * Constructs a new <code>SmartDevicesProductModel</code>.
+     * @alias module:model/SmartDevicesProductModel
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -41,11 +30,9 @@ export default class SmartDevicesProductModel {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SmartDevicesProductModel();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -89,7 +76,7 @@ export default class SmartDevicesProductModel {
                 obj['idle_screen_terminal'] = ApiClient.convertToType(data['idle_screen_terminal'], 'String');
             }
             if (data.hasOwnProperty('created')) {
-                obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+                obj['created'] = ApiClient.convertToType(data['created'], 'String');
             }
             if (data.hasOwnProperty('online')) {
                 obj['online'] = ApiClient.convertToType(data['online'], 'Boolean');
@@ -105,103 +92,111 @@ export default class SmartDevicesProductModel {
     }
 
     /**
-    * Object of smart device
-    * @member {String} object
-    */
+     * Object of smart device
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of smart device
-    * @member {String} id
-    */
+     * Id of smart device
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Merchant
-    * @member {module:model/ProductInstanceUID} merchant
-    */
+     * Merchant
+     * @member {module:model/ProductInstanceUID} merchant
+     */
     merchant = undefined;
+
     /**
-    * Store
-    * @member {module:model/Store} store
-    */
+     * Store
+     * @member {module:model/Store} store
+     */
     store = undefined;
+
     /**
-    * Vendor
-    * @member {String} vendor
-    */
+     * Vendor
+     * @member {String} vendor
+     */
     vendor = undefined;
+
     /**
-    * Vendor uid
-    * @member {String} vendor_uid
-    */
+     * Vendor uid
+     * @member {String} vendor_uid
+     */
     vendor_uid = undefined;
+
     /**
-    * Type
-    * @member {String} type
-    */
+     * Type
+     * @member {String} type
+     */
     type = undefined;
+
     /**
-    * Device
-    * @member {module:model/SmartDevicesDevice} device
-    */
+     * Device
+     * @member {module:model/SmartDevicesDevice} device
+     */
     device = undefined;
+
     /**
-    * Routing
-    * @member {module:model/ProductInstanceUID} routing
-    */
+     * Routing
+     * @member {module:model/ProductInstanceUID} routing
+     */
     routing = undefined;
+
     /**
-    * User pin
-    * @member {String} user_pin
-    */
+     * User pin
+     * @member {String} user_pin
+     */
     user_pin = undefined;
+
     /**
-    * Products
-    * @member {module:model/SmartDevicesProducts} products
-    */
+     * Products
+     * @member {module:model/SmartDevicesProducts} products
+     */
     products = undefined;
+
     /**
-    * Description
-    * @member {String} description
-    */
+     * Description
+     * @member {String} description
+     */
     description = undefined;
+
     /**
-    * Idle screen register
-    * @member {String} idle_screen_register
-    */
+     * Idle screen register
+     * @member {String} idle_screen_register
+     */
     idle_screen_register = undefined;
+
     /**
-    * Idle screen terminal
-    * @member {String} idle_screen_terminal
-    */
+     * Idle screen terminal
+     * @member {String} idle_screen_terminal
+     */
     idle_screen_terminal = undefined;
+
     /**
-    * Created at date
-    * @member {Date} created
-    */
+     * Created at date
+     * @member {String} created
+     */
     created = undefined;
+
     /**
-    * Online
-    * @member {Boolean} online
-    */
+     * Online
+     * @member {Boolean} online
+     */
     online = undefined;
+
     /**
-    * Terminal type
-    * @member {String} terminal_type
-    */
+     * Terminal type
+     * @member {String} terminal_type
+     */
     terminal_type = undefined;
+
     /**
-    * Base version
-    * @member {String} base_version
-    */
+     * Base version
+     * @member {String} base_version
+     */
     base_version = undefined;
 
-
-
-
-
-
-
-
 }
-
-

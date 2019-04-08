@@ -35,15 +35,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The GeneralStoresProductModel model module.
-* @module model/GeneralStoresProductModel
-*/
+ * The GeneralStoresProductModel model module.
+ * @module model/GeneralStoresProductModel
+ */
 var GeneralStoresProductModel = function () {
     /**
-    * Constructs a new <code>GeneralStoresProductModel</code>.
-    * @alias module:model/GeneralStoresProductModel
-    * @class
-    */
+     * Constructs a new <code>GeneralStoresProductModel</code>.
+     * @alias module:model/GeneralStoresProductModel
+     * @class
+     */
 
     function GeneralStoresProductModel() {
         _classCallCheck(this, GeneralStoresProductModel);
@@ -178,139 +178,165 @@ var GeneralStoresProductModel = function () {
         }
 
         /**
-        * Object of general store
-        * @member {String} object
-        */
+         * Object of general store
+         * @member {String} object
+         */
+
 
         /**
-        * Id of general store
-        * @member {String} id
-        */
+         * Id of general store
+         * @member {String} id
+         */
+
 
         /**
-        * Old id of general store
-        * @member {String} id_old
-        */
+         * Old id of general store
+         * @member {String} id_old
+         */
+
 
         /**
-        * General merchant of general store
-        * @member {module:model/ProductInstanceUID} merchant
-        */
+         * General merchant of general store
+         * @member {module:model/ProductInstanceUID} merchant
+         */
+
 
         /**
-        * Facebook id
-        * @member {String} facebook_id
-        */
+         * Facebook id
+         * @member {String} facebook_id
+         */
+
 
         /**
-        * Source
-        * @member {String} source
-        */
+         * Source
+         * @member {String} source
+         */
+
 
         /**
-        * Key
-        * @member {String} key
-        */
+         * Key
+         * @member {String} key
+         */
+
 
         /**
-        * Hash
-        * @member {String} hash
-        */
+         * Hash
+         * @member {String} hash
+         */
+
 
         /**
-        * Address components
-        * @member {Array.<module:model/AddressComponents>} address_components
-        */
+         * Address components
+         * @member {Array.<module:model/AddressComponents>} address_components
+         */
+
 
         /**
-        * General store formatted address
-        * @member {String} address_formatted
-        */
+         * General store formatted address
+         * @member {String} address_formatted
+         */
+
 
         /**
-        * General store formatted phone number
-        * @member {String} phone_number_formatted
-        */
+         * General store formatted phone number
+         * @member {String} phone_number_formatted
+         */
+
 
         /**
-        * General store geometry
-        * @member {String} geometry
-        */
+         * General store geometry
+         * @member {String} geometry
+         */
+
 
         /**
-        * General store name
-        * @member {String} name
-        */
+         * General store name
+         * @member {String} name
+         */
+
 
         /**
-        * General store raw name
-        * @member {String} name_raw
-        */
+         * General store raw name
+         * @member {String} name_raw
+         */
+
 
         /**
-        * General store main photo
-        * @member {String} photo_main
-        */
+         * General store main photo
+         * @member {String} photo_main
+         */
+
 
         /**
-        * General store photos
-        * @member {Array.<String>} photo
-        */
+         * General store photos
+         * @member {Array.<String>} photo
+         */
+
 
         /**
-        * General store main category
-        * @member {String} category_main
-        */
+         * General store main category
+         * @member {String} category_main
+         */
+
 
         /**
-        * General store category
-        * @member {String} category
-        */
+         * General store category
+         * @member {String} category
+         */
+
 
         /**
-        * Url to general store google plus
-        * @member {String} url_googleplus
-        */
+         * Url to general store google plus
+         * @member {String} url_googleplus
+         */
+
 
         /**
-        * Url to general store website
-        * @member {String} url_website
-        */
+         * Url to general store website
+         * @member {String} url_website
+         */
+
 
         /**
-        * Open hours in every day
-        * @member {Array.<module:model/OpenHours>} open_hours
-        */
+         * Open hours in every day
+         * @member {Array.<module:model/OpenHours>} open_hours
+         */
+
 
         /**
-        * Open now
-        * @member {Boolean} open_now
-        */
+         * Open now
+         * @member {Boolean} open_now
+         */
+
 
         /**
-        * Open time
-        * @member {String} open_time
-        */
+         * Open time
+         * @member {String} open_time
+         */
+
 
         /**
-        * Utc offset
-        * @member {String} utc_offset
-        */
+         * Utc offset
+         * @member {String} utc_offset
+         */
+
 
         /**
-        * Assigned by
-        * @member {Array.<module:model/AssignedBy>} assigned_by
-        */
+         * Assigned by
+         * @member {Array.<module:model/AssignedBy>} assigned_by
+         */
+
 
         /**
-        * Invited by
-        * @member {Array.<module:model/InvitedBy>} invited_by
-        */
+         * Invited by
+         * @member {Array.<module:model/InvitedBy>} invited_by
+         */
+
 
         /**
-        * Has beacon
-        * @member {Boolean} has_beacon
-        */
+         * Has beacon
+         * @member {Boolean} has_beacon
+         */
 
     }]);
 

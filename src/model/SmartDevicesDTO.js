@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The SmartDevicesDTO model module.
-* @module model/SmartDevicesDTO
-*/
+ * The SmartDevicesDTO model module.
+ * @module model/SmartDevicesDTO
+ */
 export default class SmartDevicesDTO {
     /**
-    * Constructs a new <code>SmartDevicesDTO</code>.
-    * @alias module:model/SmartDevicesDTO
-    * @class
-    */
+     * Constructs a new <code>SmartDevicesDTO</code>.
+     * @alias module:model/SmartDevicesDTO
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class SmartDevicesDTO {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SmartDevicesDTO();
-
             
             
             
-
             if (data.hasOwnProperty('merchant')) {
                 obj['merchant'] = ApiClient.convertToType(data['merchant'], 'String');
             }
@@ -77,63 +64,63 @@ export default class SmartDevicesDTO {
     }
 
     /**
-    * Merchant
-    * @member {String} merchant
-    */
+     * Merchant
+     * @member {String} merchant
+     */
     merchant = undefined;
+
     /**
-    * Store
-    * @member {String} store
-    */
+     * Store
+     * @member {String} store
+     */
     store = undefined;
+
     /**
-    * Terminal
-    * @member {String} terminal
-    */
+     * Terminal
+     * @member {String} terminal
+     */
     terminal = undefined;
+
     /**
-    * Vendor
-    * @member {String} vendor
-    */
+     * Vendor
+     * @member {String} vendor
+     */
     vendor = undefined;
+
     /**
-    * Vendor uid
-    * @member {String} vendor_uid
-    */
+     * Vendor uid
+     * @member {String} vendor_uid
+     */
     vendor_uid = undefined;
+
     /**
-    * Type
-    * @member {String} type
-    */
+     * Type
+     * @member {String} type
+     */
     type = undefined;
+
     /**
-    * Description
-    * @member {String} description
-    */
+     * Description
+     * @member {String} description
+     */
     description = undefined;
+
     /**
-    * Products
-    * @member {Array.<String>} products
-    */
+     * Products
+     * @member {Array.<String>} products
+     */
     products = undefined;
+
     /**
-    * Base version
-    * @member {String} base_version
-    */
+     * Base version
+     * @member {String} base_version
+     */
     base_version = undefined;
+
     /**
-    * Terminal type
-    * @member {String} terminal_type
-    */
+     * Terminal type
+     * @member {String} terminal_type
+     */
     terminal_type = undefined;
 
-
-
-
-
-
-
-
 }
-
-

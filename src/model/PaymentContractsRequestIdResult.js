@@ -3,29 +3,18 @@ import ApiClient from '../ApiClient';
 import PaymentContractsProductModel from './PaymentContractsProductModel';
 import PaymentInformation from './PaymentInformation';
 
-
-
-
-
 /**
-* The PaymentContractsRequestIdResult model module.
-* @module model/PaymentContractsRequestIdResult
-*/
+ * The PaymentContractsRequestIdResult model module.
+ * @module model/PaymentContractsRequestIdResult
+ */
 export default class PaymentContractsRequestIdResult {
     /**
-    * Constructs a new <code>PaymentContractsRequestIdResult</code>.
-    * @alias module:model/PaymentContractsRequestIdResult
-    * @class
-    */
+     * Constructs a new <code>PaymentContractsRequestIdResult</code>.
+     * @alias module:model/PaymentContractsRequestIdResult
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -39,11 +28,9 @@ export default class PaymentContractsRequestIdResult {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PaymentContractsRequestIdResult();
-
             
             
             
-
             if (data.hasOwnProperty('contract')) {
                 obj['contract'] = PaymentContractsProductModel.constructFromObject(data['contract']);
             }
@@ -58,28 +45,21 @@ export default class PaymentContractsRequestIdResult {
     }
 
     /**
-    * The payment contract object
-    * @member {module:model/PaymentContractsProductModel} contract
-    */
+     * The payment contract object
+     * @member {module:model/PaymentContractsProductModel} contract
+     */
     contract = undefined;
+
     /**
-    * Returns the apikey of the created merchant
-    * @member {String} apikey
-    */
+     * Returns the apikey of the created merchant
+     * @member {String} apikey
+     */
     apikey = undefined;
+
     /**
-    * The bank account you can use for pay in.
-    * @member {module:model/PaymentInformation} payin_account
-    */
+     * The bank account you can use for pay in.
+     * @member {module:model/PaymentInformation} payin_account
+     */
     payin_account = undefined;
 
-
-
-
-
-
-
-
 }
-
-

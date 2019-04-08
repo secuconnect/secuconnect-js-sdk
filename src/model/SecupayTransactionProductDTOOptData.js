@@ -1,30 +1,19 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The SecupayTransactionProductDTOOptData model module.
-* @module model/SecupayTransactionProductDTOOptData
-*/
+ * The SecupayTransactionProductDTOOptData model module.
+ * @module model/SecupayTransactionProductDTOOptData
+ */
 export default class SecupayTransactionProductDTOOptData {
     /**
-    * Constructs a new <code>SecupayTransactionProductDTOOptData</code>.
-    * Options for customizing the checkout page
-    * @alias module:model/SecupayTransactionProductDTOOptData
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionProductDTOOptData</code>.
+     * Options for customizing the checkout page
+     * @alias module:model/SecupayTransactionProductDTOOptData
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class SecupayTransactionProductDTOOptData {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SecupayTransactionProductDTOOptData();
-
             
             
             
-
             if (data.hasOwnProperty('has_accepted_disclaimer')) {
                 obj['has_accepted_disclaimer'] = ApiClient.convertToType(data['has_accepted_disclaimer'], 'String');
             }
@@ -54,23 +41,15 @@ export default class SecupayTransactionProductDTOOptData {
     }
 
     /**
-    * Customer accepted disclaimer
-    * @member {String} has_accepted_disclaimer
-    */
+     * Customer accepted disclaimer
+     * @member {String} has_accepted_disclaimer
+     */
     has_accepted_disclaimer = undefined;
+
     /**
-    * Client language
-    * @member {String} language
-    */
+     * Client language
+     * @member {String} language
+     */
     language = undefined;
 
-
-
-
-
-
-
-
 }
-
-

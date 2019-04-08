@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The DocumentUploadsDTOContent model module.
-* @module model/DocumentUploadsDTOContent
-*/
+ * The DocumentUploadsDTOContent model module.
+ * @module model/DocumentUploadsDTOContent
+ */
 var DocumentUploadsDTOContent = function () {
     /**
-    * Constructs a new <code>DocumentUploadsDTOContent</code>.
-    * @alias module:model/DocumentUploadsDTOContent
-    * @class
-    */
+     * Constructs a new <code>DocumentUploadsDTOContent</code>.
+     * @alias module:model/DocumentUploadsDTOContent
+     * @class
+     */
 
     function DocumentUploadsDTOContent() {
         _classCallCheck(this, DocumentUploadsDTOContent);
@@ -54,9 +54,9 @@ var DocumentUploadsDTOContent = function () {
         }
 
         /**
-        * Content
-        * @member {String} content
-        */
+         * Content
+         * @member {String} content
+         */
 
     }]);
 

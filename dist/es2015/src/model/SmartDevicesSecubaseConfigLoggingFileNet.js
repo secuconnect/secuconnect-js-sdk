@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SmartDevicesSecubaseConfigLoggingFileNet model module.
-* @module model/SmartDevicesSecubaseConfigLoggingFileNet
-*/
+ * The SmartDevicesSecubaseConfigLoggingFileNet model module.
+ * @module model/SmartDevicesSecubaseConfigLoggingFileNet
+ */
 var SmartDevicesSecubaseConfigLoggingFileNet = function () {
     /**
-    * Constructs a new <code>SmartDevicesSecubaseConfigLoggingFileNet</code>.
-    * @alias module:model/SmartDevicesSecubaseConfigLoggingFileNet
-    * @class
-    */
+     * Constructs a new <code>SmartDevicesSecubaseConfigLoggingFileNet</code>.
+     * @alias module:model/SmartDevicesSecubaseConfigLoggingFileNet
+     * @class
+     */
 
     function SmartDevicesSecubaseConfigLoggingFileNet() {
         _classCallCheck(this, SmartDevicesSecubaseConfigLoggingFileNet);
@@ -58,14 +58,15 @@ var SmartDevicesSecubaseConfigLoggingFileNet = function () {
         }
 
         /**
-        * File
-        * @member {Array.<String>} file
-        */
+         * File
+         * @member {Array.<String>} file
+         */
+
 
         /**
-        * Net
-        * @member {Array.<String>} net
-        */
+         * Net
+         * @member {Array.<String>} net
+         */
 
     }]);
 

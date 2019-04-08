@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The GeneralMerchantsCheckoutOptionsShipping model module.
-* @module model/GeneralMerchantsCheckoutOptionsShipping
-*/
+ * The GeneralMerchantsCheckoutOptionsShipping model module.
+ * @module model/GeneralMerchantsCheckoutOptionsShipping
+ */
 var GeneralMerchantsCheckoutOptionsShipping = function () {
     /**
-    * Constructs a new <code>GeneralMerchantsCheckoutOptionsShipping</code>.
-    * @alias module:model/GeneralMerchantsCheckoutOptionsShipping
-    * @class
-    */
+     * Constructs a new <code>GeneralMerchantsCheckoutOptionsShipping</code>.
+     * @alias module:model/GeneralMerchantsCheckoutOptionsShipping
+     * @class
+     */
 
     function GeneralMerchantsCheckoutOptionsShipping() {
         _classCallCheck(this, GeneralMerchantsCheckoutOptionsShipping);
@@ -54,9 +54,9 @@ var GeneralMerchantsCheckoutOptionsShipping = function () {
         }
 
         /**
-        * Enabled
-        * @member {Boolean} enabled
-        */
+         * Enabled
+         * @member {Boolean} enabled
+         */
 
     }]);
 

@@ -1,32 +1,22 @@
 
 import ApiClient from '../ApiClient';
+import GeneralMerchantsProductModel from './GeneralMerchantsProductModel';
+import GeneralStoresProductModel from './GeneralStoresProductModel';
 import PaymentTransactionsProductModelCustomer from './PaymentTransactionsProductModelCustomer';
 import PaymentTransactionsProductModelDetails from './PaymentTransactionsProductModelDetails';
-import PaymentTransactionsProductModelMerchant from './PaymentTransactionsProductModelMerchant';
-
-
-
-
 
 /**
-* The PaymentTransactionsProductModel model module.
-* @module model/PaymentTransactionsProductModel
-*/
+ * The PaymentTransactionsProductModel model module.
+ * @module model/PaymentTransactionsProductModel
+ */
 export default class PaymentTransactionsProductModel {
     /**
-    * Constructs a new <code>PaymentTransactionsProductModel</code>.
-    * @alias module:model/PaymentTransactionsProductModel
-    * @class
-    */
+     * Constructs a new <code>PaymentTransactionsProductModel</code>.
+     * @alias module:model/PaymentTransactionsProductModel
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -40,11 +30,9 @@ export default class PaymentTransactionsProductModel {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PaymentTransactionsProductModel();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -52,7 +40,10 @@ export default class PaymentTransactionsProductModel {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
             if (data.hasOwnProperty('merchant')) {
-                obj['merchant'] = PaymentTransactionsProductModelMerchant.constructFromObject(data['merchant']);
+                obj['merchant'] = GeneralMerchantsProductModel.constructFromObject(data['merchant']);
+            }
+            if (data.hasOwnProperty('store')) {
+                obj['store'] = GeneralStoresProductModel.constructFromObject(data['store']);
             }
             if (data.hasOwnProperty('trans_id')) {
                 obj['trans_id'] = ApiClient.convertToType(data['trans_id'], 'Number');
@@ -79,10 +70,10 @@ export default class PaymentTransactionsProductModel {
                 obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
             }
             if (data.hasOwnProperty('created')) {
-                obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+                obj['created'] = ApiClient.convertToType(data['created'], 'String');
             }
             if (data.hasOwnProperty('updated')) {
-                obj['updated'] = ApiClient.convertToType(data['updated'], 'Date');
+                obj['updated'] = ApiClient.convertToType(data['updated'], 'String');
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'Number');
@@ -90,106 +81,192 @@ export default class PaymentTransactionsProductModel {
             if (data.hasOwnProperty('status_text')) {
                 obj['status_text'] = ApiClient.convertToType(data['status_text'], 'String');
             }
+            if (data.hasOwnProperty('incoming_payment_date')) {
+                obj['incoming_payment_date'] = ApiClient.convertToType(data['incoming_payment_date'], 'String');
+            }
             if (data.hasOwnProperty('details')) {
                 obj['details'] = PaymentTransactionsProductModelDetails.constructFromObject(data['details']);
             }
             if (data.hasOwnProperty('customer')) {
                 obj['customer'] = PaymentTransactionsProductModelCustomer.constructFromObject(data['customer']);
             }
+            if (data.hasOwnProperty('tid')) {
+                obj['tid'] = ApiClient.convertToType(data['tid'], 'String');
+            }
+            if (data.hasOwnProperty('payment_data')) {
+                obj['payment_data'] = ApiClient.convertToType(data['payment_data'], 'String');
+            }
+            if (data.hasOwnProperty('store_name')) {
+                obj['store_name'] = ApiClient.convertToType(data['store_name'], 'String');
+            }
+            if (data.hasOwnProperty('payout_date')) {
+                obj['payout_date'] = ApiClient.convertToType(data['payout_date'], 'String');
+            }
+            if (data.hasOwnProperty('invoice_number')) {
+                obj['invoice_number'] = ApiClient.convertToType(data['invoice_number'], 'String');
+            }
+            if (data.hasOwnProperty('transaction_hash')) {
+                obj['transaction_hash'] = ApiClient.convertToType(data['transaction_hash'], 'String');
+            }
+            if (data.hasOwnProperty('reference_id')) {
+                obj['reference_id'] = ApiClient.convertToType(data['reference_id'], 'String');
+            }
         }
         return obj;
     }
 
     /**
-    * Object of payment transaction
-    * @member {String} object
-    */
+     * Object of payment transaction
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of payment transaction
-    * @member {String} id
-    */
+     * Id of payment transaction
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * @member {module:model/PaymentTransactionsProductModelMerchant} merchant
-    */
+     * Merchant information
+     * @member {module:model/GeneralMerchantsProductModel} merchant
+     */
     merchant = undefined;
+
     /**
-    * Transaction identifier
-    * @member {Number} trans_id
-    */
+     * Merchants store information
+     * @member {module:model/GeneralStoresProductModel} store
+     */
+    store = undefined;
+
+    /**
+     * Transaction identifier
+     * @member {Number} trans_id
+     */
     trans_id = undefined;
+
     /**
-    * Product identifier
-    * @member {Number} product_id
-    */
+     * Product identifier
+     * @member {Number} product_id
+     */
     product_id = undefined;
+
     /**
-    * Product type
-    * @member {String} product
-    */
+     * Product type
+     * @member {String} product
+     */
     product = undefined;
+
     /**
-    * the name of the payment product
-    * @member {String} product_raw
-    */
+     * the name of the payment product
+     * @member {String} product_raw
+     */
     product_raw = undefined;
+
     /**
-    * The internal id of the stored payment instrument.
-    * @member {Number} zahlungsmittel_id
-    */
+     * The internal id of the stored payment instrument.
+     * @member {Number} zahlungsmittel_id
+     */
     zahlungsmittel_id = undefined;
+
     /**
-    * Contract identifier
-    * @member {Number} contract_id
-    */
+     * Contract identifier
+     * @member {Number} contract_id
+     */
     contract_id = undefined;
+
     /**
-    * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
-    * @member {Number} amount
-    */
+     * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
+     * @member {Number} amount
+     */
     amount = undefined;
+
     /**
-    * ISO 4217 code of currency, eg EUR for Euro.
-    * @member {String} currency
-    */
+     * ISO 4217 code of currency, eg EUR for Euro.
+     * @member {String} currency
+     */
     currency = undefined;
+
     /**
-    * Created at date
-    * @member {Date} created
-    */
+     * Created at date
+     * @member {String} created
+     */
     created = undefined;
+
     /**
-    * Updated at date
-    * @member {Date} updated
-    */
+     * Updated at date
+     * @member {String} updated
+     */
     updated = undefined;
+
     /**
-    * WTF??
-    * @member {Number} status
-    */
+     * Transaction status ID
+     * @member {Number} status
+     */
     status = undefined;
+
     /**
-    * Transaction status
-    * @member {String} status_text
-    */
+     * Transaction status description
+     * @member {String} status_text
+     */
     status_text = undefined;
+
     /**
-    * @member {module:model/PaymentTransactionsProductModelDetails} details
-    */
+     * Date when the payment was received
+     * @member {String} incoming_payment_date
+     */
+    incoming_payment_date = undefined;
+
+    /**
+     * @member {module:model/PaymentTransactionsProductModelDetails} details
+     */
     details = undefined;
+
     /**
-    * @member {module:model/PaymentTransactionsProductModelCustomer} customer
-    */
+     * @member {module:model/PaymentTransactionsProductModelCustomer} customer
+     */
     customer = undefined;
 
+    /**
+     * Terminal-ID
+     * @member {String} tid
+     */
+    tid = undefined;
 
+    /**
+     * Data of the used payment instrument
+     * @member {String} payment_data
+     */
+    payment_data = undefined;
 
+    /**
+     * Store name
+     * @member {String} store_name
+     */
+    store_name = undefined;
 
+    /**
+     * Date when the payout was created
+     * @member {String} payout_date
+     */
+    payout_date = undefined;
 
+    /**
+     * Invoice number (from merchant)
+     * @member {String} invoice_number
+     */
+    invoice_number = undefined;
 
+    /**
+     * Payment-ID
+     * @member {String} transaction_hash
+     */
+    transaction_hash = undefined;
 
+    /**
+     * Reference ID
+     * @member {String} reference_id
+     */
+    reference_id = undefined;
 
 }
-
-

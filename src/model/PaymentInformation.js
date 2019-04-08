@@ -1,30 +1,19 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The PaymentInformation model module.
-* @module model/PaymentInformation
-*/
+ * The PaymentInformation model module.
+ * @module model/PaymentInformation
+ */
 export default class PaymentInformation {
     /**
-    * Constructs a new <code>PaymentInformation</code>.
-    * Payment information
-    * @alias module:model/PaymentInformation
-    * @class
-    */
+     * Constructs a new <code>PaymentInformation</code>.
+     * Payment information
+     * @alias module:model/PaymentInformation
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,47 +27,47 @@ export default class PaymentInformation {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PaymentInformation();
-
             
             
             
-
-            if (data.hasOwnProperty('owner')) {
-                obj['owner'] = ApiClient.convertToType(data['owner'], 'String');
-            }
             if (data.hasOwnProperty('iban')) {
                 obj['iban'] = ApiClient.convertToType(data['iban'], 'String');
             }
             if (data.hasOwnProperty('bic')) {
                 obj['bic'] = ApiClient.convertToType(data['bic'], 'String');
             }
+            if (data.hasOwnProperty('owner')) {
+                obj['owner'] = ApiClient.convertToType(data['owner'], 'String');
+            }
+            if (data.hasOwnProperty('bankname')) {
+                obj['bankname'] = ApiClient.convertToType(data['bankname'], 'String');
+            }
         }
         return obj;
     }
 
     /**
-    * Owner
-    * @member {String} owner
-    */
-    owner = undefined;
-    /**
-    * IBAN
-    * @member {String} iban
-    */
+     * IBAN
+     * @member {String} iban
+     */
     iban = undefined;
+
     /**
-    * BIC
-    * @member {String} bic
-    */
+     * BIC
+     * @member {String} bic
+     */
     bic = undefined;
 
+    /**
+     * Owner
+     * @member {String} owner
+     */
+    owner = undefined;
 
-
-
-
-
-
+    /**
+     * Bank name
+     * @member {String} bankname
+     */
+    bankname = undefined;
 
 }
-
-

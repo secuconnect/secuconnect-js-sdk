@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The PaymentContractsDTO model module.
-* @module model/PaymentContractsDTO
-*/
+ * The PaymentContractsDTO model module.
+ * @module model/PaymentContractsDTO
+ */
 var PaymentContractsDTO = function () {
     /**
-    * Constructs a new <code>PaymentContractsDTO</code>.
-    * @alias module:model/PaymentContractsDTO
-    * @class
-    */
+     * Constructs a new <code>PaymentContractsDTO</code>.
+     * @alias module:model/PaymentContractsDTO
+     * @class
+     */
 
     function PaymentContractsDTO() {
         _classCallCheck(this, PaymentContractsDTO);
@@ -32,16 +32,9 @@ var PaymentContractsDTO = function () {
         this.internal_reference = undefined;
         this.contract_id = undefined;
         this.demo = undefined;
-        this.debit_product_id = undefined;
-        this.prepay_product_id = undefined;
-        this.invoice_product_id = undefined;
-        this.creditcard_product_id = undefined;
         this.url_push = undefined;
-        this.allow_transactions = undefined;
-        this.allow_cloning = undefined;
         this.unique_order_id = undefined;
         this.scoring = undefined;
-        this.sepa_mandate_inform = undefined;
     }
 
     /**
@@ -71,26 +64,8 @@ var PaymentContractsDTO = function () {
                 if (data.hasOwnProperty('demo')) {
                     obj['demo'] = _ApiClient2.default.convertToType(data['demo'], 'String');
                 }
-                if (data.hasOwnProperty('debit_product_id')) {
-                    obj['debit_product_id'] = _ApiClient2.default.convertToType(data['debit_product_id'], 'String');
-                }
-                if (data.hasOwnProperty('prepay_product_id')) {
-                    obj['prepay_product_id'] = _ApiClient2.default.convertToType(data['prepay_product_id'], 'String');
-                }
-                if (data.hasOwnProperty('invoice_product_id')) {
-                    obj['invoice_product_id'] = _ApiClient2.default.convertToType(data['invoice_product_id'], 'String');
-                }
-                if (data.hasOwnProperty('creditcard_product_id')) {
-                    obj['creditcard_product_id'] = _ApiClient2.default.convertToType(data['creditcard_product_id'], 'String');
-                }
                 if (data.hasOwnProperty('url_push')) {
                     obj['url_push'] = _ApiClient2.default.convertToType(data['url_push'], 'String');
-                }
-                if (data.hasOwnProperty('allow_transactions')) {
-                    obj['allow_transactions'] = _ApiClient2.default.convertToType(data['allow_transactions'], 'Boolean');
-                }
-                if (data.hasOwnProperty('allow_cloning')) {
-                    obj['allow_cloning'] = _ApiClient2.default.convertToType(data['allow_cloning'], 'Boolean');
                 }
                 if (data.hasOwnProperty('unique_order_id')) {
                     obj['unique_order_id'] = _ApiClient2.default.convertToType(data['unique_order_id'], 'Boolean');
@@ -98,82 +73,50 @@ var PaymentContractsDTO = function () {
                 if (data.hasOwnProperty('scoring')) {
                     obj['scoring'] = _ApiClient2.default.convertToType(data['scoring'], 'Boolean');
                 }
-                if (data.hasOwnProperty('sepa_mandate_inform')) {
-                    obj['sepa_mandate_inform'] = _ApiClient2.default.convertToType(data['sepa_mandate_inform'], 'String');
-                }
             }
             return obj;
         }
 
         /**
-        * Contracts Merchant
-        * @member {String} merchant
-        */
+         * Contracts Merchant
+         * @member {String} merchant
+         */
+
 
         /**
-        * The internal user id
-        * @member {String} internal_reference
-        */
+         * The internal user id
+         * @member {String} internal_reference
+         */
+
 
         /**
-        * Contracts id
-        * @member {String} contract_id
-        */
+         * Contracts id
+         * @member {String} contract_id
+         */
+
 
         /**
-        * Is this a demo contract
-        * @member {String} demo
-        */
+         * Is this a demo contract
+         * @member {String} demo
+         */
+
 
         /**
-        * Contract debit product id
-        * @member {String} debit_product_id
-        */
+         * An URL where your service listen for push notifications of the secuconnect service
+         * @member {String} url_push
+         */
+
 
         /**
-        * Contracts prepay product id
-        * @member {String} prepay_product_id
-        */
+         * Bool, default FALSE. If TRUE, an error message will be thrown if you try to create a new payment transaction with the same order_id of an previous transaction.
+         * @member {Boolean} unique_order_id
+         */
+
 
         /**
-        * Contracts invoice product id
-        * @member {String} invoice_product_id
-        */
-
-        /**
-        * Contracts credit card product id
-        * @member {String} creditcard_product_id
-        */
-
-        /**
-        * An URL where your service listen for push notifications of the secuconnect service
-        * @member {String} url_push
-        */
-
-        /**
-        * Should allow transactions?
-        * @member {Boolean} allow_transactions
-        */
-
-        /**
-        * Should allow cloning?
-        * @member {Boolean} allow_cloning
-        */
-
-        /**
-        * Bool, default FALSE. If TRUE, an error message will be thrown if you try to create a new payment transaction with the same order_id of an previous transaction.
-        * @member {Boolean} unique_order_id
-        */
-
-        /**
-        * Bool, default TRUE. If FALSE, the customer scoring is disabled for your payment contract
-        * @member {Boolean} scoring
-        */
-
-        /**
-        * Enum [on_transaction, on_container, never], default “never” Option to send automatically an information to the customer when a new SEPA-mandate was created.
-        * @member {String} sepa_mandate_inform
-        */
+         * Bool, default TRUE. If FALSE, the customer scoring is disabled for your payment contract
+         * @member {Boolean} scoring
+         */
 
     }]);
 

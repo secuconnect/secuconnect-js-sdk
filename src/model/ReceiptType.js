@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The ReceiptType model module.
-* @module model/ReceiptType
-*/
+ * The ReceiptType model module.
+ * @module model/ReceiptType
+ */
 export default class ReceiptType {
     /**
-    * Constructs a new <code>ReceiptType</code>.
-    * @alias module:model/ReceiptType
-    * @class
-    */
+     * Constructs a new <code>ReceiptType</code>.
+     * @alias module:model/ReceiptType
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class ReceiptType {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ReceiptType();
-
             
             
             
-
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
@@ -50,18 +37,9 @@ export default class ReceiptType {
     }
 
     /**
-    * Type
-    * @member {String} type
-    */
+     * Type
+     * @member {String} type
+     */
     type = undefined;
 
-
-
-
-
-
-
-
 }
-
-

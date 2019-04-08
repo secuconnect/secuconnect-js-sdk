@@ -249,7 +249,7 @@ export default class PaymentContractsApi {
 
 
     /**
-     * GET Payment/Contracts/{paymentContractId}/PaymentMethods
+     * GET Payment/Contracts/{paymentContractId}/paymentMethods
      * Get available payment methods for given contract
      * @param {String} paymentContractId Contract identifier
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<'String'>} and HTTP response
@@ -279,14 +279,14 @@ export default class PaymentContractsApi {
       let returnType = ['String'];
 
       return this.apiClient.callApi(
-        '/Payment/Contracts/{paymentContractId}/PaymentMethods', 'GET',
+        '/Payment/Contracts/{paymentContractId}/paymentMethods', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * GET Payment/Contracts/{paymentContractId}/PaymentMethods
+     * GET Payment/Contracts/{paymentContractId}/paymentMethods
      * Get available payment methods for given contract
      * @param {String} paymentContractId Contract identifier
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<'String'>}

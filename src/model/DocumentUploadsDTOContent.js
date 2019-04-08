@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The DocumentUploadsDTOContent model module.
-* @module model/DocumentUploadsDTOContent
-*/
+ * The DocumentUploadsDTOContent model module.
+ * @module model/DocumentUploadsDTOContent
+ */
 export default class DocumentUploadsDTOContent {
     /**
-    * Constructs a new <code>DocumentUploadsDTOContent</code>.
-    * @alias module:model/DocumentUploadsDTOContent
-    * @class
-    */
+     * Constructs a new <code>DocumentUploadsDTOContent</code>.
+     * @alias module:model/DocumentUploadsDTOContent
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class DocumentUploadsDTOContent {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new DocumentUploadsDTOContent();
-
             
             
             
-
             if (data.hasOwnProperty('content')) {
                 obj['content'] = ApiClient.convertToType(data['content'], 'String');
             }
@@ -50,18 +37,9 @@ export default class DocumentUploadsDTOContent {
     }
 
     /**
-    * Content
-    * @member {String} content
-    */
+     * Content
+     * @member {String} content
+     */
     content = undefined;
 
-
-
-
-
-
-
-
 }
-
-

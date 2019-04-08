@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The VirtualTerminalData model module.
-* @module model/VirtualTerminalData
-*/
+ * The VirtualTerminalData model module.
+ * @module model/VirtualTerminalData
+ */
 export default class VirtualTerminalData {
     /**
-    * Constructs a new <code>VirtualTerminalData</code>.
-    * @alias module:model/VirtualTerminalData
-    * @class
-    */
+     * Constructs a new <code>VirtualTerminalData</code>.
+     * @alias module:model/VirtualTerminalData
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class VirtualTerminalData {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new VirtualTerminalData();
-
             
             
             
-
             if (data.hasOwnProperty('store')) {
                 obj['store'] = ApiClient.convertToType(data['store'], Object);
             }
@@ -62,38 +49,33 @@ export default class VirtualTerminalData {
     }
 
     /**
-    * Store
-    * @member {Object} store
-    */
+     * Store
+     * @member {Object} store
+     */
     store = undefined;
+
     /**
-    * Terminal id
-    * @member {String} tid
-    */
+     * Terminal id
+     * @member {String} tid
+     */
     tid = undefined;
+
     /**
-    * Actions
-    * @member {Array.<String>} actions
-    */
+     * Actions
+     * @member {Array.<String>} actions
+     */
     actions = undefined;
+
     /**
-    * Gift terminal
-    * @member {Number} gift_terminal
-    */
+     * Gift terminal
+     * @member {Number} gift_terminal
+     */
     gift_terminal = undefined;
+
     /**
-    * Amount split enabled
-    * @member {Number} amount_split_enabled
-    */
+     * Amount split enabled
+     * @member {Number} amount_split_enabled
+     */
     amount_split_enabled = undefined;
 
-
-
-
-
-
-
-
 }
-
-

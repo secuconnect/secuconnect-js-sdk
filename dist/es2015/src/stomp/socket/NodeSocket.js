@@ -19,13 +19,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var NodeSocket = function () {
-    function NodeSocket(host, port, vhost) {
+    function NodeSocket(host, port, vhost, debugMode) {
         _classCallCheck(this, NodeSocket);
 
         this.host = host;
         this.port = port;
         this.vhost = vhost;
         this.connected = false;
+        this.debugMode = debugMode;
     }
 
     _createClass(NodeSocket, [{
@@ -52,15 +53,17 @@ var NodeSocket = function () {
 
             this.onopen = function () {
                 _this2.connected = true;
-                console.log('Connected to socket');
+                if (_this2.debugMode) console.log('Connected to socket');
                 onOpen();
             };
         }
     }, {
         key: 'addOnMessageListener',
         value: function addOnMessageListener(onMessage) {
+            var _this3 = this;
+
             this.onmessage = function (binaryData) {
-                console.log('Received data on socket');
+                if (_this3.debugMode) console.log('Received data on socket');
                 onMessage('' + binaryData);
             };
         }
@@ -75,8 +78,11 @@ var NodeSocket = function () {
     }, {
         key: 'addOnCloseListener',
         value: function addOnCloseListener(onClose) {
+            var _this4 = this;
+
             this.onclose = function (error) {
-                console.log('Closing socket');
+                if (_this4.debugMode) console.log('Closing socket');
+                _this4.connected = false;
                 onClose(error);
             };
         }

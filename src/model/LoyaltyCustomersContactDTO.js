@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import Address from './Address';
 
-
-
-
-
 /**
-* The LoyaltyCustomersContactDTO model module.
-* @module model/LoyaltyCustomersContactDTO
-*/
+ * The LoyaltyCustomersContactDTO model module.
+ * @module model/LoyaltyCustomersContactDTO
+ */
 export default class LoyaltyCustomersContactDTO {
     /**
-    * Constructs a new <code>LoyaltyCustomersContactDTO</code>.
-    * @alias module:model/LoyaltyCustomersContactDTO
-    * @class
-    */
+     * Constructs a new <code>LoyaltyCustomersContactDTO</code>.
+     * @alias module:model/LoyaltyCustomersContactDTO
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class LoyaltyCustomersContactDTO {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyCustomersContactDTO();
-
             
             
             
-
             if (data.hasOwnProperty('forename')) {
                 obj['forename'] = ApiClient.convertToType(data['forename'], 'String');
             }
@@ -63,38 +50,33 @@ export default class LoyaltyCustomersContactDTO {
     }
 
     /**
-    * Forename
-    * @member {String} forename
-    */
+     * Forename
+     * @member {String} forename
+     */
     forename = undefined;
+
     /**
-    * Surname
-    * @member {String} surname
-    */
+     * Surname
+     * @member {String} surname
+     */
     surname = undefined;
+
     /**
-    * Name
-    * @member {String} name
-    */
+     * Name
+     * @member {String} name
+     */
     name = undefined;
+
     /**
-    * Phone
-    * @member {String} phone
-    */
+     * Phone
+     * @member {String} phone
+     */
     phone = undefined;
+
     /**
-    * Address
-    * @member {module:model/Address} address
-    */
+     * Address
+     * @member {module:model/Address} address
+     */
     address = undefined;
 
-
-
-
-
-
-
-
 }
-
-

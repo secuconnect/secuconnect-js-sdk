@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import ProductInstanceUID from './ProductInstanceUID';
 
-
-
-
-
 /**
-* The SmartTransactionsPickupOptions model module.
-* @module model/SmartTransactionsPickupOptions
-*/
+ * The SmartTransactionsPickupOptions model module.
+ * @module model/SmartTransactionsPickupOptions
+ */
 export default class SmartTransactionsPickupOptions {
     /**
-    * Constructs a new <code>SmartTransactionsPickupOptions</code>.
-    * @alias module:model/SmartTransactionsPickupOptions
-    * @class
-    */
+     * Constructs a new <code>SmartTransactionsPickupOptions</code>.
+     * @alias module:model/SmartTransactionsPickupOptions
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,16 +27,14 @@ export default class SmartTransactionsPickupOptions {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SmartTransactionsPickupOptions();
-
             
             
             
-
             if (data.hasOwnProperty('code')) {
                 obj['code'] = ApiClient.convertToType(data['code'], 'String');
             }
             if (data.hasOwnProperty('date')) {
-                obj['date'] = ApiClient.convertToType(data['date'], 'Date');
+                obj['date'] = ApiClient.convertToType(data['date'], 'String');
             }
             if (data.hasOwnProperty('store')) {
                 obj['store'] = ProductInstanceUID.constructFromObject(data['store']);
@@ -57,28 +44,21 @@ export default class SmartTransactionsPickupOptions {
     }
 
     /**
-    * Code
-    * @member {String} code
-    */
+     * Code
+     * @member {String} code
+     */
     code = undefined;
+
     /**
-    * Date
-    * @member {Date} date
-    */
+     * Date
+     * @member {String} date
+     */
     date = undefined;
+
     /**
-    * Store
-    * @member {module:model/ProductInstanceUID} store
-    */
+     * Store
+     * @member {module:model/ProductInstanceUID} store
+     */
     store = undefined;
 
-
-
-
-
-
-
-
 }
-
-

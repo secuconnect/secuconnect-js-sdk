@@ -31,15 +31,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SmartDevicesProductModel model module.
-* @module model/SmartDevicesProductModel
-*/
+ * The SmartDevicesProductModel model module.
+ * @module model/SmartDevicesProductModel
+ */
 var SmartDevicesProductModel = function () {
     /**
-    * Constructs a new <code>SmartDevicesProductModel</code>.
-    * @alias module:model/SmartDevicesProductModel
-    * @class
-    */
+     * Constructs a new <code>SmartDevicesProductModel</code>.
+     * @alias module:model/SmartDevicesProductModel
+     * @class
+     */
 
     function SmartDevicesProductModel() {
         _classCallCheck(this, SmartDevicesProductModel);
@@ -122,7 +122,7 @@ var SmartDevicesProductModel = function () {
                     obj['idle_screen_terminal'] = _ApiClient2.default.convertToType(data['idle_screen_terminal'], 'String');
                 }
                 if (data.hasOwnProperty('created')) {
-                    obj['created'] = _ApiClient2.default.convertToType(data['created'], 'Date');
+                    obj['created'] = _ApiClient2.default.convertToType(data['created'], 'String');
                 }
                 if (data.hasOwnProperty('online')) {
                     obj['online'] = _ApiClient2.default.convertToType(data['online'], 'Boolean');
@@ -138,94 +138,111 @@ var SmartDevicesProductModel = function () {
         }
 
         /**
-        * Object of smart device
-        * @member {String} object
-        */
+         * Object of smart device
+         * @member {String} object
+         */
+
 
         /**
-        * Id of smart device
-        * @member {String} id
-        */
+         * Id of smart device
+         * @member {String} id
+         */
+
 
         /**
-        * Merchant
-        * @member {module:model/ProductInstanceUID} merchant
-        */
+         * Merchant
+         * @member {module:model/ProductInstanceUID} merchant
+         */
+
 
         /**
-        * Store
-        * @member {module:model/Store} store
-        */
+         * Store
+         * @member {module:model/Store} store
+         */
+
 
         /**
-        * Vendor
-        * @member {String} vendor
-        */
+         * Vendor
+         * @member {String} vendor
+         */
+
 
         /**
-        * Vendor uid
-        * @member {String} vendor_uid
-        */
+         * Vendor uid
+         * @member {String} vendor_uid
+         */
+
 
         /**
-        * Type
-        * @member {String} type
-        */
+         * Type
+         * @member {String} type
+         */
+
 
         /**
-        * Device
-        * @member {module:model/SmartDevicesDevice} device
-        */
+         * Device
+         * @member {module:model/SmartDevicesDevice} device
+         */
+
 
         /**
-        * Routing
-        * @member {module:model/ProductInstanceUID} routing
-        */
+         * Routing
+         * @member {module:model/ProductInstanceUID} routing
+         */
+
 
         /**
-        * User pin
-        * @member {String} user_pin
-        */
+         * User pin
+         * @member {String} user_pin
+         */
+
 
         /**
-        * Products
-        * @member {module:model/SmartDevicesProducts} products
-        */
+         * Products
+         * @member {module:model/SmartDevicesProducts} products
+         */
+
 
         /**
-        * Description
-        * @member {String} description
-        */
+         * Description
+         * @member {String} description
+         */
+
 
         /**
-        * Idle screen register
-        * @member {String} idle_screen_register
-        */
+         * Idle screen register
+         * @member {String} idle_screen_register
+         */
+
 
         /**
-        * Idle screen terminal
-        * @member {String} idle_screen_terminal
-        */
+         * Idle screen terminal
+         * @member {String} idle_screen_terminal
+         */
+
 
         /**
-        * Created at date
-        * @member {Date} created
-        */
+         * Created at date
+         * @member {String} created
+         */
+
 
         /**
-        * Online
-        * @member {Boolean} online
-        */
+         * Online
+         * @member {Boolean} online
+         */
+
 
         /**
-        * Terminal type
-        * @member {String} terminal_type
-        */
+         * Terminal type
+         * @member {String} terminal_type
+         */
+
 
         /**
-        * Base version
-        * @member {String} base_version
-        */
+         * Base version
+         * @member {String} base_version
+         */
 
     }]);
 

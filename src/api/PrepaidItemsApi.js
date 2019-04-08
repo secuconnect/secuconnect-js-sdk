@@ -2,6 +2,7 @@
 import ApiClient from "../ApiClient";
 import PrepaidItemsList from '../model/PrepaidItemsList';
 import PrepaidItemsProductModel from '../model/PrepaidItemsProductModel';
+import ProductExceptionPayload from '../model/ProductExceptionPayload';
 
 /**
 * PrepaidItems service.

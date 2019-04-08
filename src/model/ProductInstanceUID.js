@@ -1,30 +1,19 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The ProductInstanceUID model module.
-* @module model/ProductInstanceUID
-*/
+ * The ProductInstanceUID model module.
+ * @module model/ProductInstanceUID
+ */
 export default class ProductInstanceUID {
     /**
-    * Constructs a new <code>ProductInstanceUID</code>.
-    * Product name and instance id, uniquely identifying instance of Product
-    * @alias module:model/ProductInstanceUID
-    * @class
-    */
+     * Constructs a new <code>ProductInstanceUID</code>.
+     * Product name and instance id, uniquely identifying instance of Product
+     * @alias module:model/ProductInstanceUID
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class ProductInstanceUID {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ProductInstanceUID();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -54,23 +41,15 @@ export default class ProductInstanceUID {
     }
 
     /**
-    * Object type of instance
-    * @member {String} object
-    */
+     * Object type of instance
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * ID of instance
-    * @member {String} id
-    */
+     * ID of instance
+     * @member {String} id
+     */
     id = undefined;
 
-
-
-
-
-
-
-
 }
-
-

@@ -3,29 +3,18 @@ import ApiClient from '../ApiClient';
 import GeneralMerchantsCheckoutOptionsCollection from './GeneralMerchantsCheckoutOptionsCollection';
 import GeneralMerchantsCheckoutOptionsShipping from './GeneralMerchantsCheckoutOptionsShipping';
 
-
-
-
-
 /**
-* The GeneralMerchantsCheckoutOptions model module.
-* @module model/GeneralMerchantsCheckoutOptions
-*/
+ * The GeneralMerchantsCheckoutOptions model module.
+ * @module model/GeneralMerchantsCheckoutOptions
+ */
 export default class GeneralMerchantsCheckoutOptions {
     /**
-    * Constructs a new <code>GeneralMerchantsCheckoutOptions</code>.
-    * @alias module:model/GeneralMerchantsCheckoutOptions
-    * @class
-    */
+     * Constructs a new <code>GeneralMerchantsCheckoutOptions</code>.
+     * @alias module:model/GeneralMerchantsCheckoutOptions
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -39,11 +28,9 @@ export default class GeneralMerchantsCheckoutOptions {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new GeneralMerchantsCheckoutOptions();
-
             
             
             
-
             if (data.hasOwnProperty('enabled')) {
                 obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
             }
@@ -58,28 +45,21 @@ export default class GeneralMerchantsCheckoutOptions {
     }
 
     /**
-    * Enabled
-    * @member {Boolean} enabled
-    */
+     * Enabled
+     * @member {Boolean} enabled
+     */
     enabled = undefined;
+
     /**
-    * Shipping
-    * @member {module:model/GeneralMerchantsCheckoutOptionsShipping} shipping
-    */
+     * Shipping
+     * @member {module:model/GeneralMerchantsCheckoutOptionsShipping} shipping
+     */
     shipping = undefined;
+
     /**
-    * Collection
-    * @member {module:model/GeneralMerchantsCheckoutOptionsCollection} collection
-    */
+     * Collection
+     * @member {module:model/GeneralMerchantsCheckoutOptionsCollection} collection
+     */
     collection = undefined;
 
-
-
-
-
-
-
-
 }
-
-

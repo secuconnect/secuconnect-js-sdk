@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The PrepaidSalesSmartDevice model module.
-* @module model/PrepaidSalesSmartDevice
-*/
+ * The PrepaidSalesSmartDevice model module.
+ * @module model/PrepaidSalesSmartDevice
+ */
 var PrepaidSalesSmartDevice = function () {
     /**
-    * Constructs a new <code>PrepaidSalesSmartDevice</code>.
-    * @alias module:model/PrepaidSalesSmartDevice
-    * @class
-    */
+     * Constructs a new <code>PrepaidSalesSmartDevice</code>.
+     * @alias module:model/PrepaidSalesSmartDevice
+     * @class
+     */
 
     function PrepaidSalesSmartDevice() {
         _classCallCheck(this, PrepaidSalesSmartDevice);
@@ -66,24 +66,27 @@ var PrepaidSalesSmartDevice = function () {
         }
 
         /**
-        * Object of smart device
-        * @member {String} object
-        */
+         * Object of smart device
+         * @member {String} object
+         */
+
 
         /**
-        * Id of smart device
-        * @member {String} id
-        */
+         * Id of smart device
+         * @member {String} id
+         */
+
 
         /**
-        * Smart device description
-        * @member {String} description
-        */
+         * Smart device description
+         * @member {String} description
+         */
+
 
         /**
-        * Smart device vendor uid
-        * @member {String} vendor_uid
-        */
+         * Smart device vendor uid
+         * @member {String} vendor_uid
+         */
 
     }]);
 

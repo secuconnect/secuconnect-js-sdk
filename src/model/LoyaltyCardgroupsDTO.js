@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import LoyaltyCardgroupsDTOMerchant from './LoyaltyCardgroupsDTOMerchant';
 
-
-
-
-
 /**
-* The LoyaltyCardgroupsDTO model module.
-* @module model/LoyaltyCardgroupsDTO
-*/
+ * The LoyaltyCardgroupsDTO model module.
+ * @module model/LoyaltyCardgroupsDTO
+ */
 export default class LoyaltyCardgroupsDTO {
     /**
-    * Constructs a new <code>LoyaltyCardgroupsDTO</code>.
-    * @alias module:model/LoyaltyCardgroupsDTO
-    * @class
-    */
+     * Constructs a new <code>LoyaltyCardgroupsDTO</code>.
+     * @alias module:model/LoyaltyCardgroupsDTO
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class LoyaltyCardgroupsDTO {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyCardgroupsDTO();
-
             
             
             
-
             if (data.hasOwnProperty('display_name')) {
                 obj['display_name'] = ApiClient.convertToType(data['display_name'], 'String');
             }
@@ -63,38 +50,33 @@ export default class LoyaltyCardgroupsDTO {
     }
 
     /**
-    * Display name
-    * @member {String} display_name
-    */
+     * Display name
+     * @member {String} display_name
+     */
     display_name = undefined;
+
     /**
-    * Display name raw
-    * @member {String} display_name_raw
-    */
+     * Display name raw
+     * @member {String} display_name_raw
+     */
     display_name_raw = undefined;
+
     /**
-    * Stock warn limit
-    * @member {String} stock_warn_limit
-    */
+     * Stock warn limit
+     * @member {String} stock_warn_limit
+     */
     stock_warn_limit = undefined;
+
     /**
-    * Picture
-    * @member {String} picture
-    */
+     * Picture
+     * @member {String} picture
+     */
     picture = undefined;
+
     /**
-    * LoyaltyCardgroupsDTO
-    * @member {module:model/LoyaltyCardgroupsDTOMerchant} merchant
-    */
+     * LoyaltyCardgroupsDTO
+     * @member {module:model/LoyaltyCardgroupsDTOMerchant} merchant
+     */
     merchant = undefined;
 
-
-
-
-
-
-
-
 }
-
-

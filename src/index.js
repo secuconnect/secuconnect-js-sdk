@@ -84,44 +84,51 @@ import PaymentCustomersDTO from './model/PaymentCustomersDTO';
 import PaymentCustomersList from './model/PaymentCustomersList';
 import PaymentCustomersProductModel from './model/PaymentCustomersProductModel';
 import PaymentInformation from './model/PaymentInformation';
-import PaymentTransactionsCancelList from './model/PaymentTransactionsCancelList';
+import PaymentTransactionCancelDTO from './model/PaymentTransactionCancelDTO';
+import PaymentTransactionsInstructions from './model/PaymentTransactionsInstructions';
 import PaymentTransactionsList from './model/PaymentTransactionsList';
 import PaymentTransactionsProductModel from './model/PaymentTransactionsProductModel';
 import PaymentTransactionsProductModelCustomer from './model/PaymentTransactionsProductModelCustomer';
 import PaymentTransactionsProductModelDetails from './model/PaymentTransactionsProductModelDetails';
-import PaymentTransactionsProductModelMerchant from './model/PaymentTransactionsProductModelMerchant';
 import PaymentTransactionsShippingUrl from './model/PaymentTransactionsShippingUrl';
 import PrepaidItemsList from './model/PrepaidItemsList';
 import PrepaidItemsProductModel from './model/PrepaidItemsProductModel';
+import PrepaidMappingZvt from './model/PrepaidMappingZvt';
+import PrepaidMappingZvtItem from './model/PrepaidMappingZvtItem';
 import PrepaidSalesItem from './model/PrepaidSalesItem';
+import PrepaidSalesProductDTO from './model/PrepaidSalesProductDTO';
 import PrepaidSalesProductModel from './model/PrepaidSalesProductModel';
 import PrepaidSalesSmartDevice from './model/PrepaidSalesSmartDevice';
+import PrepaidZvtDTO from './model/PrepaidZvtDTO';
 import ProductExceptionPayload from './model/ProductExceptionPayload';
 import ProductInstanceID from './model/ProductInstanceID';
 import ProductInstanceUID from './model/ProductInstanceUID';
 import ReceiptType from './model/ReceiptType';
 import ReceiptValue from './model/ReceiptValue';
 import SecupayBasketItem from './model/SecupayBasketItem';
+import SecupayPayoutDTO from './model/SecupayPayoutDTO';
+import SecupayPayoutDTOOptData from './model/SecupayPayoutDTOOptData';
+import SecupayPayoutProductModel from './model/SecupayPayoutProductModel';
+import SecupayRedirectUrl from './model/SecupayRedirectUrl';
 import SecupaySubTransactionProductModel from './model/SecupaySubTransactionProductModel';
 import SecupayTransactionCancelDTO from './model/SecupayTransactionCancelDTO';
 import SecupayTransactionCaptureDTO from './model/SecupayTransactionCaptureDTO';
 import SecupayTransactionDTOExternalInvoicePdf from './model/SecupayTransactionDTOExternalInvoicePdf';
 import SecupayTransactionExternalInvoicePdf from './model/SecupayTransactionExternalInvoicePdf';
 import SecupayTransactionExternalInvoicePdfDocument from './model/SecupayTransactionExternalInvoicePdfDocument';
+import SecupayTransactionListItem from './model/SecupayTransactionListItem';
 import SecupayTransactionProductDTO from './model/SecupayTransactionProductDTO';
 import SecupayTransactionProductDTOExperience from './model/SecupayTransactionProductDTOExperience';
 import SecupayTransactionProductDTOOptData from './model/SecupayTransactionProductDTOOptData';
-import SecupayTransactionProductDTORedirectUrl from './model/SecupayTransactionProductDTORedirectUrl';
 import SecupayTransactionProductDTOSubscription from './model/SecupayTransactionProductDTOSubscription';
 import SecupayTransactionProductModel from './model/SecupayTransactionProductModel';
-import SecupayTransactionProductModelRedirectUrl from './model/SecupayTransactionProductModelRedirectUrl';
-import SecupayTransactionProductModelTransferAccount from './model/SecupayTransactionProductModelTransferAccount';
 import SecupayTransactionProductModelUsedPaymentInstrument from './model/SecupayTransactionProductModelUsedPaymentInstrument';
 import SecupayTransactionReverseAccrualDTO from './model/SecupayTransactionReverseAccrualDTO';
 import SecupayTransactionSetShippingInformationDTO from './model/SecupayTransactionSetShippingInformationDTO';
 import SecupayTransactionUpdateBasketDTO from './model/SecupayTransactionUpdateBasketDTO';
 import SmartDeviceProductsEnabled from './model/SmartDeviceProductsEnabled';
 import SmartDeviceProductsPrepaid from './model/SmartDeviceProductsPrepaid';
+import SmartDeviceUserPin from './model/SmartDeviceUserPin';
 import SmartDevicesDTO from './model/SmartDevicesDTO';
 import SmartDevicesDTOPrepaidTid from './model/SmartDevicesDTOPrepaidTid';
 import SmartDevicesDTOSecubaseConfig from './model/SmartDevicesDTOSecubaseConfig';
@@ -133,6 +140,11 @@ import SmartDevicesProducts from './model/SmartDevicesProducts';
 import SmartDevicesSecubaseConfig from './model/SmartDevicesSecubaseConfig';
 import SmartDevicesSecubaseConfigLogging from './model/SmartDevicesSecubaseConfigLogging';
 import SmartDevicesSecubaseConfigLoggingFileNet from './model/SmartDevicesSecubaseConfigLoggingFileNet';
+import SmartRoutingPriority from './model/SmartRoutingPriority';
+import SmartRoutingsAssign from './model/SmartRoutingsAssign';
+import SmartRoutingsDTO from './model/SmartRoutingsDTO';
+import SmartRoutingsList from './model/SmartRoutingsList';
+import SmartRoutingsProductModel from './model/SmartRoutingsProductModel';
 import SmartTransactionsBasket from './model/SmartTransactionsBasket';
 import SmartTransactionsBasketInfo from './model/SmartTransactionsBasketInfo';
 import SmartTransactionsBasketProduct from './model/SmartTransactionsBasketProduct';
@@ -140,21 +152,25 @@ import SmartTransactionsBasketProductGroup from './model/SmartTransactionsBasket
 import SmartTransactionsBasketText from './model/SmartTransactionsBasketText';
 import SmartTransactionsBonusProducts from './model/SmartTransactionsBonusProducts';
 import SmartTransactionsCheckin from './model/SmartTransactionsCheckin';
+import SmartTransactionsCheckoutLinks from './model/SmartTransactionsCheckoutLinks';
 import SmartTransactionsDTO from './model/SmartTransactionsDTO';
 import SmartTransactionsIdent from './model/SmartTransactionsIdent';
 import SmartTransactionsList from './model/SmartTransactionsList';
+import SmartTransactionsMerchant from './model/SmartTransactionsMerchant';
 import SmartTransactionsPickupOptions from './model/SmartTransactionsPickupOptions';
 import SmartTransactionsPreTransactionModel from './model/SmartTransactionsPreTransactionModel';
+import SmartTransactionsPrepare from './model/SmartTransactionsPrepare';
 import SmartTransactionsProductModel from './model/SmartTransactionsProductModel';
 import SmartTransactionsReceipt from './model/SmartTransactionsReceipt';
 import SmartTransactionsReceiptValue from './model/SmartTransactionsReceiptValue';
+import SmartTransactionsShipmentDetails from './model/SmartTransactionsShipmentDetails';
+import SmartTransactionsSubBasketProduct from './model/SmartTransactionsSubBasketProduct';
 import Store from './model/Store';
 import VirtualTerminalData from './model/VirtualTerminalData';
 import DocumentUploadsProductModel from './model/DocumentUploadsProductModel';
 import LoyaltyMerchantcardsDTONewPasscode from './model/LoyaltyMerchantcardsDTONewPasscode';
 import LoyaltyMerchantcardsProductWithReceiptModel from './model/LoyaltyMerchantcardsProductWithReceiptModel';
 import ReceiptTypeValue from './model/ReceiptTypeValue';
-import SmartTransactionsMerchant from './model/SmartTransactionsMerchant';
 import DocumentUploadsApi from './api/DocumentUploadsApi';
 import GeneralMerchantsApi from './api/GeneralMerchantsApi';
 import GeneralStoresApi from './api/GeneralStoresApi';
@@ -170,10 +186,14 @@ import PaymentCustomersApi from './api/PaymentCustomersApi';
 import PaymentSecupayCreditcardsApi from './api/PaymentSecupayCreditcardsApi';
 import PaymentSecupayDebitsApi from './api/PaymentSecupayDebitsApi';
 import PaymentSecupayInvoicesApi from './api/PaymentSecupayInvoicesApi';
+import PaymentSecupayPayoutApi from './api/PaymentSecupayPayoutApi';
 import PaymentSecupayPrepaysApi from './api/PaymentSecupayPrepaysApi';
 import PaymentTransactionsApi from './api/PaymentTransactionsApi';
+import PrepaidContractsProductApi from './api/PrepaidContractsProductApi';
 import PrepaidItemsApi from './api/PrepaidItemsApi';
+import PrepaidSalesProductApi from './api/PrepaidSalesProductApi';
 import SmartDevicesApi from './api/SmartDevicesApi';
+import SmartRoutingsApi from './api/SmartRoutingsApi';
 import SmartTransactionsApi from './api/SmartTransactionsApi';
 import StompClient from './stomp/StompClient';
 import StompSmartTransactionsApi from './stomp/api/StompSmartTransactionsApi';
@@ -223,37 +243,37 @@ export {
 
     /**
      * The Authenticator constructor.
-     * @property {module:Authenticator}
+     * @property {Authenticator}
      */
     Authenticator,
 
     /**
      * The OAuthApplicationUserCredentials constructor.
-     * @property {module:OAuthApplicationUserCredentials}
+     * @property {OAuthApplicationUserCredentials}
      */
     OAuthApplicationUserCredentials,
 
     /**
      * The OAuthClientCredentials constructor.
-     * @property {module:OAuthClientCredentials}
+     * @property {OAuthClientCredentials}
      */
     OAuthClientCredentials,
 
     /**
      * The OAuthDeviceCredentials constructor.
-     * @property {module:OAuthDeviceCredentials}
+     * @property {OAuthDeviceCredentials}
      */
     OAuthDeviceCredentials,
 
     /**
     * The SDKCache constructor.
-    * @property {module:cache/SDKCache}
+    * @property {SDKCache}
     */
     SDKCache,
 
     /**
     * The FileCache constructor.
-    * @property {module:cache/FileCache}
+    * @property {FileCache}
     */
     FileCache,
 
@@ -726,10 +746,16 @@ export {
     PaymentInformation,
 
     /**
-     * The PaymentTransactionsCancelList model constructor.
-     * @property {module:model/PaymentTransactionsCancelList}
+     * The PaymentTransactionCancelDTO model constructor.
+     * @property {module:model/PaymentTransactionCancelDTO}
      */
-    PaymentTransactionsCancelList,
+    PaymentTransactionCancelDTO,
+
+    /**
+     * The PaymentTransactionsInstructions model constructor.
+     * @property {module:model/PaymentTransactionsInstructions}
+     */
+    PaymentTransactionsInstructions,
 
     /**
      * The PaymentTransactionsList model constructor.
@@ -756,12 +782,6 @@ export {
     PaymentTransactionsProductModelDetails,
 
     /**
-     * The PaymentTransactionsProductModelMerchant model constructor.
-     * @property {module:model/PaymentTransactionsProductModelMerchant}
-     */
-    PaymentTransactionsProductModelMerchant,
-
-    /**
      * The PaymentTransactionsShippingUrl model constructor.
      * @property {module:model/PaymentTransactionsShippingUrl}
      */
@@ -780,10 +800,28 @@ export {
     PrepaidItemsProductModel,
 
     /**
+     * The PrepaidMappingZvt model constructor.
+     * @property {module:model/PrepaidMappingZvt}
+     */
+    PrepaidMappingZvt,
+
+    /**
+     * The PrepaidMappingZvtItem model constructor.
+     * @property {module:model/PrepaidMappingZvtItem}
+     */
+    PrepaidMappingZvtItem,
+
+    /**
      * The PrepaidSalesItem model constructor.
      * @property {module:model/PrepaidSalesItem}
      */
     PrepaidSalesItem,
+
+    /**
+     * The PrepaidSalesProductDTO model constructor.
+     * @property {module:model/PrepaidSalesProductDTO}
+     */
+    PrepaidSalesProductDTO,
 
     /**
      * The PrepaidSalesProductModel model constructor.
@@ -796,6 +834,12 @@ export {
      * @property {module:model/PrepaidSalesSmartDevice}
      */
     PrepaidSalesSmartDevice,
+
+    /**
+     * The PrepaidZvtDTO model constructor.
+     * @property {module:model/PrepaidZvtDTO}
+     */
+    PrepaidZvtDTO,
 
     /**
      * The ProductExceptionPayload model constructor.
@@ -834,6 +878,30 @@ export {
     SecupayBasketItem,
 
     /**
+     * The SecupayPayoutDTO model constructor.
+     * @property {module:model/SecupayPayoutDTO}
+     */
+    SecupayPayoutDTO,
+
+    /**
+     * The SecupayPayoutDTOOptData model constructor.
+     * @property {module:model/SecupayPayoutDTOOptData}
+     */
+    SecupayPayoutDTOOptData,
+
+    /**
+     * The SecupayPayoutProductModel model constructor.
+     * @property {module:model/SecupayPayoutProductModel}
+     */
+    SecupayPayoutProductModel,
+
+    /**
+     * The SecupayRedirectUrl model constructor.
+     * @property {module:model/SecupayRedirectUrl}
+     */
+    SecupayRedirectUrl,
+
+    /**
      * The SecupaySubTransactionProductModel model constructor.
      * @property {module:model/SecupaySubTransactionProductModel}
      */
@@ -870,6 +938,12 @@ export {
     SecupayTransactionExternalInvoicePdfDocument,
 
     /**
+     * The SecupayTransactionListItem model constructor.
+     * @property {module:model/SecupayTransactionListItem}
+     */
+    SecupayTransactionListItem,
+
+    /**
      * The SecupayTransactionProductDTO model constructor.
      * @property {module:model/SecupayTransactionProductDTO}
      */
@@ -888,12 +962,6 @@ export {
     SecupayTransactionProductDTOOptData,
 
     /**
-     * The SecupayTransactionProductDTORedirectUrl model constructor.
-     * @property {module:model/SecupayTransactionProductDTORedirectUrl}
-     */
-    SecupayTransactionProductDTORedirectUrl,
-
-    /**
      * The SecupayTransactionProductDTOSubscription model constructor.
      * @property {module:model/SecupayTransactionProductDTOSubscription}
      */
@@ -904,18 +972,6 @@ export {
      * @property {module:model/SecupayTransactionProductModel}
      */
     SecupayTransactionProductModel,
-
-    /**
-     * The SecupayTransactionProductModelRedirectUrl model constructor.
-     * @property {module:model/SecupayTransactionProductModelRedirectUrl}
-     */
-    SecupayTransactionProductModelRedirectUrl,
-
-    /**
-     * The SecupayTransactionProductModelTransferAccount model constructor.
-     * @property {module:model/SecupayTransactionProductModelTransferAccount}
-     */
-    SecupayTransactionProductModelTransferAccount,
 
     /**
      * The SecupayTransactionProductModelUsedPaymentInstrument model constructor.
@@ -952,6 +1008,12 @@ export {
      * @property {module:model/SmartDeviceProductsPrepaid}
      */
     SmartDeviceProductsPrepaid,
+
+    /**
+     * The SmartDeviceUserPin model constructor.
+     * @property {module:model/SmartDeviceUserPin}
+     */
+    SmartDeviceUserPin,
 
     /**
      * The SmartDevicesDTO model constructor.
@@ -1020,6 +1082,36 @@ export {
     SmartDevicesSecubaseConfigLoggingFileNet,
 
     /**
+     * The SmartRoutingPriority model constructor.
+     * @property {module:model/SmartRoutingPriority}
+     */
+    SmartRoutingPriority,
+
+    /**
+     * The SmartRoutingsAssign model constructor.
+     * @property {module:model/SmartRoutingsAssign}
+     */
+    SmartRoutingsAssign,
+
+    /**
+     * The SmartRoutingsDTO model constructor.
+     * @property {module:model/SmartRoutingsDTO}
+     */
+    SmartRoutingsDTO,
+
+    /**
+     * The SmartRoutingsList model constructor.
+     * @property {module:model/SmartRoutingsList}
+     */
+    SmartRoutingsList,
+
+    /**
+     * The SmartRoutingsProductModel model constructor.
+     * @property {module:model/SmartRoutingsProductModel}
+     */
+    SmartRoutingsProductModel,
+
+    /**
      * The SmartTransactionsBasket model constructor.
      * @property {module:model/SmartTransactionsBasket}
      */
@@ -1062,6 +1154,12 @@ export {
     SmartTransactionsCheckin,
 
     /**
+     * The SmartTransactionsCheckoutLinks model constructor.
+     * @property {module:model/SmartTransactionsCheckoutLinks}
+     */
+    SmartTransactionsCheckoutLinks,
+
+    /**
      * The SmartTransactionsDTO model constructor.
      * @property {module:model/SmartTransactionsDTO}
      */
@@ -1098,6 +1196,12 @@ export {
     SmartTransactionsPreTransactionModel,
 
     /**
+     * The SmartTransactionsPrepare model constructor.
+     * @property {module:model/SmartTransactionsPrepare}
+     */
+    SmartTransactionsPrepare,
+
+    /**
      * The SmartTransactionsProductModel model constructor.
      * @property {module:model/SmartTransactionsProductModel}
      */
@@ -1114,6 +1218,18 @@ export {
      * @property {module:model/SmartTransactionsReceiptValue}
      */
     SmartTransactionsReceiptValue,
+
+    /**
+     * The SmartTransactionsShipmentDetails model constructor.
+     * @property {module:model/SmartTransactionsShipmentDetails}
+     */
+    SmartTransactionsShipmentDetails,
+
+    /**
+     * The SmartTransactionsSubBasketProduct model constructor.
+     * @property {module:model/SmartTransactionsSubBasketProduct}
+     */
+    SmartTransactionsSubBasketProduct,
 
     /**
      * The Store model constructor.
@@ -1242,6 +1358,12 @@ export {
     PaymentSecupayInvoicesApi,
 
     /**
+    * The PaymentSecupayPayoutApi service constructor.
+    * @property {module:api/PaymentSecupayPayoutApi}
+    */
+    PaymentSecupayPayoutApi,
+
+    /**
     * The PaymentSecupayPrepaysApi service constructor.
     * @property {module:api/PaymentSecupayPrepaysApi}
     */
@@ -1254,16 +1376,34 @@ export {
     PaymentTransactionsApi,
 
     /**
+    * The PrepaidContractsProductApi service constructor.
+    * @property {module:api/PrepaidContractsProductApi}
+    */
+    PrepaidContractsProductApi,
+
+    /**
     * The PrepaidItemsApi service constructor.
     * @property {module:api/PrepaidItemsApi}
     */
     PrepaidItemsApi,
 
     /**
+    * The PrepaidSalesProductApi service constructor.
+    * @property {module:api/PrepaidSalesProductApi}
+    */
+    PrepaidSalesProductApi,
+
+    /**
     * The SmartDevicesApi service constructor.
     * @property {module:api/SmartDevicesApi}
     */
     SmartDevicesApi,
+
+    /**
+    * The SmartRoutingsApi service constructor.
+    * @property {module:api/SmartRoutingsApi}
+    */
+    SmartRoutingsApi,
 
     /**
     * The SmartTransactionsApi service constructor.

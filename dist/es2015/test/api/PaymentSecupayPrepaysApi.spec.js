@@ -14,11 +14,15 @@ var _PaymentCustomersDTO = require("../../src/model/PaymentCustomersDTO");
 
 var _PaymentCustomersDTO2 = _interopRequireDefault(_PaymentCustomersDTO);
 
-var _SecupayTransactionProductDTORedirectUrl = require("../../src/model/SecupayTransactionProductDTORedirectUrl");
+var _SecupayRedirectUrl = require("../../src/model/SecupayRedirectUrl");
 
-var _SecupayTransactionProductDTORedirectUrl2 = _interopRequireDefault(_SecupayTransactionProductDTORedirectUrl);
+var _SecupayRedirectUrl2 = _interopRequireDefault(_SecupayRedirectUrl);
 
 var _Globals = require("../Globals");
+
+var _FileCache = require("../../src/cache/FileCache");
+
+var _FileCache2 = _interopRequireDefault(_FileCache);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -49,6 +53,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   beforeAll(function () {
     authenticator = new SecuConnectApi.Authenticator(SecuConnectApi.OAuthClientCredentials.from(_Globals.OAuthClientCredentials.clientId, _Globals.OAuthClientCredentials.clientSecret));
 
+    var fileCache = new _FileCache2.default();
+    authenticator.getApiClient().setCachePool(fileCache);
+
     prepayApi = new SecuConnectApi.PaymentSecupayPrepaysApi();
     customerApi = new SecuConnectApi.PaymentCustomersApi();
 
@@ -77,13 +84,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     var basketItem2 = new SecuConnectApi.SecupayBasketItem();
     var basketItem3 = new SecuConnectApi.SecupayBasketItem();
 
-    basketItem1.item_type = 'shipping';
     basketItem1.name = 'standard delivery';
     basketItem1.tax = 19;
     basketItem1.total = 200;
     basket.push(basketItem1);
 
-    basketItem2.item_type = 'article';
     basketItem2.article_number = 3211;
     basketItem2.quantity = 2;
     basketItem2.name = 'Product 3211';
@@ -93,7 +98,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     basketItem2.price = 1000;
     basket.push(basketItem2);
 
-    basketItem3.item_type = 'article';
     basketItem3.article_number = 48875;
     basketItem3.quantity = 2;
     basketItem3.name = 'Product 48875';
@@ -105,7 +109,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
     prepaysData.basket = basket;
 
-    prepaysData.redirect_url = new _SecupayTransactionProductDTORedirectUrl2.default();
+    prepaysData.redirect_url = new _SecupayRedirectUrl2.default();
     prepaysData.redirect_url.url_success = 'http://shop.example.com?success=true';
     prepaysData.redirect_url.url_failure = 'http://shop.example.com?success=false';
     prepaysData.redirect_url.url_push = 'https://requestb.in/14f6a1j1';
@@ -150,10 +154,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
             expect(prepayTransaction.purpose).toBe('for what text');
             expect(prepayTransaction.order_id).toBe('ZZZZZZ');
             expect(prepayTransaction.basket).toHaveLength(3);
-            expect(prepayTransaction.basket[0].item_type).toBe(basket[0].item_type);
             expect(prepayTransaction.basket[0].name).toBe(basket[0].name);
             expect(prepayTransaction.basket[0].total).toBe(basket[0].total);
-            expect(prepayTransaction.basket[1].item_type).toBe(basket[1].item_type);
             expect(prepayTransaction.basket[1].article_number).toBe(basket[1].article_number.toString());
             expect(prepayTransaction.basket[1].quantity).toBe(basket[1].quantity);
             expect(prepayTransaction.basket[1].name).toBe(basket[1].name);
@@ -161,7 +163,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
             expect(prepayTransaction.basket[1].tax).toBe(basket[1].tax.toString());
             expect(prepayTransaction.basket[1].total).toBe(basket[1].total);
             expect(prepayTransaction.basket[1].price).toBe(basket[1].price);
-            expect(prepayTransaction.basket[2].item_type).toBe(basket[2].item_type);
             expect(prepayTransaction.basket[2].article_number).toBe(basket[2].article_number.toString());
             expect(prepayTransaction.basket[2].quantity).toBe(basket[2].quantity);
             expect(prepayTransaction.basket[2].name).toBe(basket[2].name);
@@ -259,7 +260,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
         it('should cancel prepay transaction successfully', function () {
           return prepayApi.paymentSecupayPrepaysCancelById(prepayTransactionData.id).then(function (data) {
             expect(typeof data === "undefined" ? "undefined" : _typeof(data)).toBe('object');
-            expect(data.result).toBe(true);
           }).catch(function (reason) {
             console.log(reason);
           });

@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SecupayTransactionSetShippingInformationDTO model module.
-* @module model/SecupayTransactionSetShippingInformationDTO
-*/
+ * The SecupayTransactionSetShippingInformationDTO model module.
+ * @module model/SecupayTransactionSetShippingInformationDTO
+ */
 var SecupayTransactionSetShippingInformationDTO = function () {
     /**
-    * Constructs a new <code>SecupayTransactionSetShippingInformationDTO</code>.
-    * @alias module:model/SecupayTransactionSetShippingInformationDTO
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionSetShippingInformationDTO</code>.
+     * @alias module:model/SecupayTransactionSetShippingInformationDTO
+     * @class
+     */
 
     function SecupayTransactionSetShippingInformationDTO() {
         _classCallCheck(this, SecupayTransactionSetShippingInformationDTO);
@@ -62,19 +62,21 @@ var SecupayTransactionSetShippingInformationDTO = function () {
         }
 
         /**
-        * Shipping provider name
-        * @member {String} carrier
-        */
+         * Shipping provider name
+         * @member {String} carrier
+         */
+
 
         /**
-        * Tracking-ID
-        * @member {String} tracking_id
-        */
+         * Tracking-ID
+         * @member {String} tracking_id
+         */
+
 
         /**
-        * Merchants invoice number
-        * @member {String} invoice_number
-        */
+         * Merchants invoice number
+         * @member {String} invoice_number
+         */
 
     }]);
 

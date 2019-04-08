@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The DocumentUploadsBaseProductModel model module.
-* @module model/DocumentUploadsBaseProductModel
-*/
+ * The DocumentUploadsBaseProductModel model module.
+ * @module model/DocumentUploadsBaseProductModel
+ */
 export default class DocumentUploadsBaseProductModel {
     /**
-    * Constructs a new <code>DocumentUploadsBaseProductModel</code>.
-    * @alias module:model/DocumentUploadsBaseProductModel
-    * @class
-    */
+     * Constructs a new <code>DocumentUploadsBaseProductModel</code>.
+     * @alias module:model/DocumentUploadsBaseProductModel
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class DocumentUploadsBaseProductModel {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new DocumentUploadsBaseProductModel();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -49,35 +36,28 @@ export default class DocumentUploadsBaseProductModel {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
             if (data.hasOwnProperty('created')) {
-                obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+                obj['created'] = ApiClient.convertToType(data['created'], 'String');
             }
         }
         return obj;
     }
 
     /**
-    * Object of document upload
-    * @member {String} object
-    */
+     * Object of document upload
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of document upload
-    * @member {String} id
-    */
+     * Id of document upload
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Created at date
-    * @member {Date} created
-    */
+     * Created at date
+     * @member {String} created
+     */
     created = undefined;
 
-
-
-
-
-
-
-
 }
-
-

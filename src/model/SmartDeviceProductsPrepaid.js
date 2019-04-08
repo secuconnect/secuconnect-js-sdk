@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The SmartDeviceProductsPrepaid model module.
-* @module model/SmartDeviceProductsPrepaid
-*/
+ * The SmartDeviceProductsPrepaid model module.
+ * @module model/SmartDeviceProductsPrepaid
+ */
 export default class SmartDeviceProductsPrepaid {
     /**
-    * Constructs a new <code>SmartDeviceProductsPrepaid</code>.
-    * @alias module:model/SmartDeviceProductsPrepaid
-    * @class
-    */
+     * Constructs a new <code>SmartDeviceProductsPrepaid</code>.
+     * @alias module:model/SmartDeviceProductsPrepaid
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class SmartDeviceProductsPrepaid {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SmartDeviceProductsPrepaid();
-
             
             
             
-
             if (data.hasOwnProperty('enabled')) {
                 obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
             }
@@ -59,33 +46,27 @@ export default class SmartDeviceProductsPrepaid {
     }
 
     /**
-    * Enabled
-    * @member {Boolean} enabled
-    */
+     * Enabled
+     * @member {Boolean} enabled
+     */
     enabled = undefined;
+
     /**
-    * Simulate force
-    * @member {Boolean} simulate_force
-    */
+     * Simulate force
+     * @member {Boolean} simulate_force
+     */
     simulate_force = undefined;
+
     /**
-    * Demo force
-    * @member {Boolean} demo_force
-    */
+     * Demo force
+     * @member {Boolean} demo_force
+     */
     demo_force = undefined;
+
     /**
-    * Vtc tid
-    * @member {String} vtc_tid
-    */
+     * Vtc tid
+     * @member {String} vtc_tid
+     */
     vtc_tid = undefined;
 
-
-
-
-
-
-
-
 }
-
-

@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The LoyaltyMerchantcardsDTO model module.
-* @module model/LoyaltyMerchantcardsDTO
-*/
+ * The LoyaltyMerchantcardsDTO model module.
+ * @module model/LoyaltyMerchantcardsDTO
+ */
 var LoyaltyMerchantcardsDTO = function () {
     /**
-    * Constructs a new <code>LoyaltyMerchantcardsDTO</code>.
-    * @alias module:model/LoyaltyMerchantcardsDTO
-    * @class
-    */
+     * Constructs a new <code>LoyaltyMerchantcardsDTO</code>.
+     * @alias module:model/LoyaltyMerchantcardsDTO
+     * @class
+     */
 
     function LoyaltyMerchantcardsDTO() {
         _classCallCheck(this, LoyaltyMerchantcardsDTO);
@@ -70,29 +70,33 @@ var LoyaltyMerchantcardsDTO = function () {
         }
 
         /**
-        * General merchant id
-        * @member {String} merchant
-        */
+         * General merchant id
+         * @member {String} merchant
+         */
+
 
         /**
-        * Loyalty card id
-        * @member {String} card
-        */
+         * Loyalty card id
+         * @member {String} card
+         */
+
 
         /**
-        * Loyalty payment container id
-        * @member {String} payment_container
-        */
+         * Loyalty payment container id
+         * @member {String} payment_container
+         */
+
 
         /**
-        * Created by general merchant or not
-        * @member {Boolean} created_by_merchant
-        */
+         * Created by general merchant or not
+         * @member {Boolean} created_by_merchant
+         */
+
 
         /**
-        * Used by general merchant or not
-        * @member {Boolean} used_by_merchant
-        */
+         * Used by general merchant or not
+         * @member {Boolean} used_by_merchant
+         */
 
     }]);
 

@@ -1,30 +1,19 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The PaymentTransactionsProductModelCustomer model module.
-* @module model/PaymentTransactionsProductModelCustomer
-*/
+ * The PaymentTransactionsProductModelCustomer model module.
+ * @module model/PaymentTransactionsProductModelCustomer
+ */
 export default class PaymentTransactionsProductModelCustomer {
     /**
-    * Constructs a new <code>PaymentTransactionsProductModelCustomer</code>.
-    * PaymentTransactionsProductModel
-    * @alias module:model/PaymentTransactionsProductModelCustomer
-    * @class
-    */
+     * Constructs a new <code>PaymentTransactionsProductModelCustomer</code>.
+     * PaymentTransactionsProductModel
+     * @alias module:model/PaymentTransactionsProductModelCustomer
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,17 +27,9 @@ export default class PaymentTransactionsProductModelCustomer {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PaymentTransactionsProductModelCustomer();
-
             
             
             
-
-            if (data.hasOwnProperty('object')) {
-                obj['object'] = ApiClient.convertToType(data['object'], 'String');
-            }
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
             if (data.hasOwnProperty('companyname')) {
                 obj['companyname'] = ApiClient.convertToType(data['companyname'], 'String');
             }
@@ -69,48 +50,33 @@ export default class PaymentTransactionsProductModelCustomer {
     }
 
     /**
-    * Customer type name
-    * @member {String} object
-    */
-    object = undefined;
-    /**
-    * Id of customer
-    * @member {String} id
-    */
-    id = undefined;
-    /**
-    * Customer company name
-    * @member {String} companyname
-    */
+     * Customer company name
+     * @member {String} companyname
+     */
     companyname = undefined;
+
     /**
-    * Customer salutation
-    * @member {String} salutation
-    */
+     * Customer salutation
+     * @member {String} salutation
+     */
     salutation = undefined;
+
     /**
-    * Customer title
-    * @member {String} title
-    */
+     * Customer title
+     * @member {String} title
+     */
     title = undefined;
+
     /**
-    * Customer forename
-    * @member {String} forename
-    */
+     * Customer forename
+     * @member {String} forename
+     */
     forename = undefined;
+
     /**
-    * Customer surname
-    * @member {String} surname
-    */
+     * Customer surname
+     * @member {String} surname
+     */
     surname = undefined;
 
-
-
-
-
-
-
-
 }
-
-

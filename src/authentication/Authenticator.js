@@ -9,9 +9,9 @@ import OAuthRefreshCredentials from "./OAuthRefreshCredentials";
 export default class Authenticator {
     AUTH_HOST = 'https://connect-testing.secupay-ag.de';
 
-    constructor (credentials, apiClient) {
+    constructor (credentials) {
         this.credentials = credentials;
-        this.apiClient = apiClient || ApiClient.instance;
+        this.apiClient = new ApiClient();
     }
 
     /**

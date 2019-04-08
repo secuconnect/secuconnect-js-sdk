@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The SmartDevicesDTOSecubaseConfig model module.
-* @module model/SmartDevicesDTOSecubaseConfig
-*/
+ * The SmartDevicesDTOSecubaseConfig model module.
+ * @module model/SmartDevicesDTOSecubaseConfig
+ */
 export default class SmartDevicesDTOSecubaseConfig {
     /**
-    * Constructs a new <code>SmartDevicesDTOSecubaseConfig</code>.
-    * @alias module:model/SmartDevicesDTOSecubaseConfig
-    * @class
-    */
+     * Constructs a new <code>SmartDevicesDTOSecubaseConfig</code>.
+     * @alias module:model/SmartDevicesDTOSecubaseConfig
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class SmartDevicesDTOSecubaseConfig {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SmartDevicesDTOSecubaseConfig();
-
             
             
             
-
             if (data.hasOwnProperty('secubaseVersion')) {
                 obj['secubaseVersion'] = ApiClient.convertToType(data['secubaseVersion'], 'String');
             }
@@ -56,28 +43,21 @@ export default class SmartDevicesDTOSecubaseConfig {
     }
 
     /**
-    * Secubase version
-    * @member {String} secubaseVersion
-    */
+     * Secubase version
+     * @member {String} secubaseVersion
+     */
     secubaseVersion = undefined;
+
     /**
-    * Base version
-    * @member {String} baseVersion
-    */
+     * Base version
+     * @member {String} baseVersion
+     */
     baseVersion = undefined;
+
     /**
-    * Oai version
-    * @member {String} oaiVersion
-    */
+     * Oai version
+     * @member {String} oaiVersion
+     */
     oaiVersion = undefined;
 
-
-
-
-
-
-
-
 }
-
-

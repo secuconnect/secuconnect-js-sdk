@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The ReceiptType model module.
-* @module model/ReceiptType
-*/
+ * The ReceiptType model module.
+ * @module model/ReceiptType
+ */
 var ReceiptType = function () {
     /**
-    * Constructs a new <code>ReceiptType</code>.
-    * @alias module:model/ReceiptType
-    * @class
-    */
+     * Constructs a new <code>ReceiptType</code>.
+     * @alias module:model/ReceiptType
+     * @class
+     */
 
     function ReceiptType() {
         _classCallCheck(this, ReceiptType);
@@ -54,9 +54,9 @@ var ReceiptType = function () {
         }
 
         /**
-        * Type
-        * @member {String} type
-        */
+         * Type
+         * @member {String} type
+         */
 
     }]);
 

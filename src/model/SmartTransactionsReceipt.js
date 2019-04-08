@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import SmartTransactionsReceiptValue from './SmartTransactionsReceiptValue';
 
-
-
-
-
 /**
-* The SmartTransactionsReceipt model module.
-* @module model/SmartTransactionsReceipt
-*/
+ * The SmartTransactionsReceipt model module.
+ * @module model/SmartTransactionsReceipt
+ */
 export default class SmartTransactionsReceipt {
     /**
-    * Constructs a new <code>SmartTransactionsReceipt</code>.
-    * @alias module:model/SmartTransactionsReceipt
-    * @class
-    */
+     * Constructs a new <code>SmartTransactionsReceipt</code>.
+     * @alias module:model/SmartTransactionsReceipt
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class SmartTransactionsReceipt {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SmartTransactionsReceipt();
-
             
             
             
-
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
@@ -54,23 +41,15 @@ export default class SmartTransactionsReceipt {
     }
 
     /**
-    * Type
-    * @member {String} type
-    */
+     * Type
+     * @member {String} type
+     */
     type = undefined;
+
     /**
-    * Value
-    * @member {module:model/SmartTransactionsReceiptValue} value
-    */
+     * Value
+     * @member {module:model/SmartTransactionsReceiptValue} value
+     */
     value = undefined;
 
-
-
-
-
-
-
-
 }
-
-

@@ -3,29 +3,18 @@ import ApiClient from '../ApiClient';
 import AddressComponents from './AddressComponents';
 import GeoAddressGeometry from './GeoAddressGeometry';
 
-
-
-
-
 /**
-* The GeoAddress model module.
-* @module model/GeoAddress
-*/
+ * The GeoAddress model module.
+ * @module model/GeoAddress
+ */
 export default class GeoAddress {
     /**
-    * Constructs a new <code>GeoAddress</code>.
-    * @alias module:model/GeoAddress
-    * @class
-    */
+     * Constructs a new <code>GeoAddress</code>.
+     * @alias module:model/GeoAddress
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -39,11 +28,9 @@ export default class GeoAddress {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new GeoAddress();
-
             
             
             
-
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
@@ -61,32 +48,26 @@ export default class GeoAddress {
     }
 
     /**
-    * Address type
-    * @member {String} type
-    */
+     * Address type
+     * @member {String} type
+     */
     type = undefined;
+
     /**
-    * Address components
-    * @member {module:model/AddressComponents} address_components
-    */
+     * Address components
+     * @member {module:model/AddressComponents} address_components
+     */
     address_components = undefined;
+
     /**
-    * Address formatted
-    * @member {String} address_formatted
-    */
+     * Address formatted
+     * @member {String} address_formatted
+     */
     address_formatted = undefined;
+
     /**
-    * @member {module:model/GeoAddressGeometry} geometry
-    */
+     * @member {module:model/GeoAddressGeometry} geometry
+     */
     geometry = undefined;
 
-
-
-
-
-
-
-
 }
-
-

@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The PaymentContractsDTOIFrameOpts model module.
-* @module model/PaymentContractsDTOIFrameOpts
-*/
+ * The PaymentContractsDTOIFrameOpts model module.
+ * @module model/PaymentContractsDTOIFrameOpts
+ */
 export default class PaymentContractsDTOIFrameOpts {
     /**
-    * Constructs a new <code>PaymentContractsDTOIFrameOpts</code>.
-    * @alias module:model/PaymentContractsDTOIFrameOpts
-    * @class
-    */
+     * Constructs a new <code>PaymentContractsDTOIFrameOpts</code>.
+     * @alias module:model/PaymentContractsDTOIFrameOpts
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class PaymentContractsDTOIFrameOpts {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PaymentContractsDTOIFrameOpts();
-
             
             
             
-
             if (data.hasOwnProperty('show_basket')) {
                 obj['show_basket'] = ApiClient.convertToType(data['show_basket'], 'Boolean');
             }
@@ -62,39 +49,34 @@ export default class PaymentContractsDTOIFrameOpts {
     }
 
     /**
-    * Display the basket items to the customer during the checkout
-    * @member {Boolean} show_basket
-    */
+     * Display the basket items to the customer during the checkout
+     * @member {Boolean} show_basket
+     */
     show_basket = undefined;
+
     /**
-    * Default headline of the checkout page
-    * @member {String} basket_title
-    */
+     * Default headline of the checkout page
+     * @member {String} basket_title
+     */
     basket_title = undefined;
+
     /**
-    * Default naming of the Submit-Button
-    * @member {String} submit_button_title
-    */
+     * Default naming of the Submit-Button
+     * @member {String} submit_button_title
+     */
     submit_button_title = undefined;
+
     /**
-    * Logo base64-enconded
-    * @member {String} logo_base64
-    */
+     * Logo base64-enconded
+     * @member {String} logo_base64
+     */
     logo_base64 = undefined;
+
     /**
-    * Cession ('formal', 'personal')
-    * @member {String} cession
-    * @default 'personal'
-    */
+     * Cession ('formal', 'personal')
+     * @member {String} cession
+     * @default 'personal'
+     */
     cession = 'personal';
 
-
-
-
-
-
-
-
 }
-
-

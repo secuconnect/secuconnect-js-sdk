@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The LoyaltyDTOMerchant model module.
-* @module model/LoyaltyDTOMerchant
-*/
+ * The LoyaltyDTOMerchant model module.
+ * @module model/LoyaltyDTOMerchant
+ */
 export default class LoyaltyDTOMerchant {
     /**
-    * Constructs a new <code>LoyaltyDTOMerchant</code>.
-    * @alias module:model/LoyaltyDTOMerchant
-    * @class
-    */
+     * Constructs a new <code>LoyaltyDTOMerchant</code>.
+     * @alias module:model/LoyaltyDTOMerchant
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class LoyaltyDTOMerchant {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyDTOMerchant();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -53,23 +40,15 @@ export default class LoyaltyDTOMerchant {
     }
 
     /**
-    * LoyaltyDTOMerchant
-    * @member {String} object
-    */
+     * LoyaltyDTOMerchant
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * LoyaltyDTOMerchant
-    * @member {String} id
-    */
+     * LoyaltyDTOMerchant
+     * @member {String} id
+     */
     id = undefined;
 
-
-
-
-
-
-
-
 }
-
-

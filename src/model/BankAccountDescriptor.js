@@ -1,30 +1,19 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The BankAccountDescriptor model module.
-* @module model/BankAccountDescriptor
-*/
+ * The BankAccountDescriptor model module.
+ * @module model/BankAccountDescriptor
+ */
 export default class BankAccountDescriptor {
     /**
-    * Constructs a new <code>BankAccountDescriptor</code>.
-    * Bank account data like owner, iban, bic and bank name
-    * @alias module:model/BankAccountDescriptor
-    * @class
-    */
+     * Constructs a new <code>BankAccountDescriptor</code>.
+     * Bank account data like owner, iban, bic and bank name
+     * @alias module:model/BankAccountDescriptor
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,55 +27,56 @@ export default class BankAccountDescriptor {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new BankAccountDescriptor();
-
             
             
             
-
-            if (data.hasOwnProperty('owner')) {
-                obj['owner'] = ApiClient.convertToType(data['owner'], 'String');
-            }
             if (data.hasOwnProperty('iban')) {
                 obj['iban'] = ApiClient.convertToType(data['iban'], 'String');
             }
             if (data.hasOwnProperty('bic')) {
                 obj['bic'] = ApiClient.convertToType(data['bic'], 'String');
             }
+            if (data.hasOwnProperty('owner')) {
+                obj['owner'] = ApiClient.convertToType(data['owner'], 'String');
+            }
             if (data.hasOwnProperty('bankname')) {
                 obj['bankname'] = ApiClient.convertToType(data['bankname'], 'String');
+            }
+            if (data.hasOwnProperty('purpose')) {
+                obj['purpose'] = ApiClient.convertToType(data['purpose'], 'String');
             }
         }
         return obj;
     }
 
     /**
-    * Owner
-    * @member {String} owner
-    */
-    owner = undefined;
-    /**
-    * IBAN
-    * @member {String} iban
-    */
+     * IBAN
+     * @member {String} iban
+     */
     iban = undefined;
+
     /**
-    * BIC
-    * @member {String} bic
-    */
+     * BIC
+     * @member {String} bic
+     */
     bic = undefined;
+
     /**
-    * Bank name
-    * @member {String} bankname
-    */
+     * Owner
+     * @member {String} owner
+     */
+    owner = undefined;
+
+    /**
+     * Bank name
+     * @member {String} bankname
+     */
     bankname = undefined;
 
-
-
-
-
-
-
+    /**
+     * Purpose
+     * @member {String} purpose
+     */
+    purpose = undefined;
 
 }
-
-

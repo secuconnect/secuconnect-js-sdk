@@ -19,15 +19,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SecupayTransactionUpdateBasketDTO model module.
-* @module model/SecupayTransactionUpdateBasketDTO
-*/
+ * The SecupayTransactionUpdateBasketDTO model module.
+ * @module model/SecupayTransactionUpdateBasketDTO
+ */
 var SecupayTransactionUpdateBasketDTO = function () {
     /**
-    * Constructs a new <code>SecupayTransactionUpdateBasketDTO</code>.
-    * @alias module:model/SecupayTransactionUpdateBasketDTO
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionUpdateBasketDTO</code>.
+     * @alias module:model/SecupayTransactionUpdateBasketDTO
+     * @class
+     */
 
     function SecupayTransactionUpdateBasketDTO() {
         _classCallCheck(this, SecupayTransactionUpdateBasketDTO);
@@ -62,14 +62,15 @@ var SecupayTransactionUpdateBasketDTO = function () {
         }
 
         /**
-        * The payment contract object
-        * @member {Object} contract
-        */
+         * The payment contract object
+         * @member {Object} contract
+         */
+
 
         /**
-        * A list of items that are being purchased.
-        * @member {Array.<module:model/SecupayBasketItem>} basket
-        */
+         * A list of items that are being purchased.
+         * @member {Array.<module:model/SecupayBasketItem>} basket
+         */
 
     }]);
 

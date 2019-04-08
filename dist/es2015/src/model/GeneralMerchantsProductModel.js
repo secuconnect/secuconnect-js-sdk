@@ -43,15 +43,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The GeneralMerchantsProductModel model module.
-* @module model/GeneralMerchantsProductModel
-*/
+ * The GeneralMerchantsProductModel model module.
+ * @module model/GeneralMerchantsProductModel
+ */
 var GeneralMerchantsProductModel = function () {
     /**
-    * Constructs a new <code>GeneralMerchantsProductModel</code>.
-    * @alias module:model/GeneralMerchantsProductModel
-    * @class
-    */
+     * Constructs a new <code>GeneralMerchantsProductModel</code>.
+     * @alias module:model/GeneralMerchantsProductModel
+     * @class
+     */
 
     function GeneralMerchantsProductModel() {
         _classCallCheck(this, GeneralMerchantsProductModel);
@@ -67,6 +67,7 @@ var GeneralMerchantsProductModel = function () {
         this.legal_details = undefined;
         this.checkout_options = undefined;
         this.urls = undefined;
+        this.store_name = undefined;
     }
 
     /**
@@ -117,64 +118,83 @@ var GeneralMerchantsProductModel = function () {
                 if (data.hasOwnProperty('urls')) {
                     obj['urls'] = _GeneralMerchantsUrls2.default.constructFromObject(data['urls']);
                 }
+                if (data.hasOwnProperty('store_name')) {
+                    obj['store_name'] = _ApiClient2.default.convertToType(data['store_name'], 'String');
+                }
             }
             return obj;
         }
 
         /**
-        * Object of general merchant
-        * @member {String} object
-        */
+         * Object of general merchant
+         * @member {String} object
+         */
+
 
         /**
-        * Id of general merchant
-        * @member {String} id
-        */
+         * Id of general merchant
+         * @member {String} id
+         */
+
 
         /**
-        * Old id of general merchant
-        * @member {String} id_old
-        */
+         * Old id of general merchant
+         * @member {String} id_old
+         */
+
 
         /**
-        * Type of general merchant
-        * @member {String} type
-        */
+         * Type of general merchant
+         * @member {String} type
+         */
+
 
         /**
-        * General merchant user
-        * @member {module:model/GeneralMerchantsUser} user
-        */
+         * General merchant user
+         * @member {module:model/GeneralMerchantsUser} user
+         */
+
 
         /**
-        * Parent of general merchant user
-        * @member {module:model/ParentModel} parent
-        */
+         * Parent of general merchant user
+         * @member {module:model/ParentModel} parent
+         */
+
 
         /**
-        * Assigned by
-        * @member {Array.<module:model/AssignedBy>} assigned_by
-        */
+         * Assigned by
+         * @member {Array.<module:model/AssignedBy>} assigned_by
+         */
+
 
         /**
-        * Invited by
-        * @member {Array.<module:model/InvitedBy>} invited_by
-        */
+         * Invited by
+         * @member {Array.<module:model/InvitedBy>} invited_by
+         */
+
 
         /**
-        * Legal details
-        * @member {module:model/GeneralMerchantsLegalDetails} legal_details
-        */
+         * Legal details
+         * @member {module:model/GeneralMerchantsLegalDetails} legal_details
+         */
+
 
         /**
-        * Checkout options
-        * @member {module:model/GeneralMerchantsCheckoutOptions} checkout_options
-        */
+         * Checkout options
+         * @member {module:model/GeneralMerchantsCheckoutOptions} checkout_options
+         */
+
 
         /**
-        * Urls
-        * @member {module:model/GeneralMerchantsUrls} urls
-        */
+         * Urls
+         * @member {module:model/GeneralMerchantsUrls} urls
+         */
+
+
+        /**
+         * store name
+         * @member {String} store_name
+         */
 
     }]);
 

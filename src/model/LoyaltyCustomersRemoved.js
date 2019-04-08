@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The LoyaltyCustomersRemoved model module.
-* @module model/LoyaltyCustomersRemoved
-*/
+ * The LoyaltyCustomersRemoved model module.
+ * @module model/LoyaltyCustomersRemoved
+ */
 export default class LoyaltyCustomersRemoved {
     /**
-    * Constructs a new <code>LoyaltyCustomersRemoved</code>.
-    * @alias module:model/LoyaltyCustomersRemoved
-    * @class
-    */
+     * Constructs a new <code>LoyaltyCustomersRemoved</code>.
+     * @alias module:model/LoyaltyCustomersRemoved
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class LoyaltyCustomersRemoved {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyCustomersRemoved();
-
             
             
             
-
             if (data.hasOwnProperty('deleted')) {
                 obj['deleted'] = ApiClient.convertToType(data['deleted'], 'Boolean');
             }
@@ -50,18 +37,9 @@ export default class LoyaltyCustomersRemoved {
     }
 
     /**
-    * Result is true or false
-    * @member {Boolean} deleted
-    */
+     * Result is true or false
+     * @member {Boolean} deleted
+     */
     deleted = undefined;
 
-
-
-
-
-
-
-
 }
-
-

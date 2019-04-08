@@ -19,15 +19,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The LoyaltyDTOStore model module.
-* @module model/LoyaltyDTOStore
-*/
+ * The LoyaltyDTOStore model module.
+ * @module model/LoyaltyDTOStore
+ */
 var LoyaltyDTOStore = function () {
     /**
-    * Constructs a new <code>LoyaltyDTOStore</code>.
-    * @alias module:model/LoyaltyDTOStore
-    * @class
-    */
+     * Constructs a new <code>LoyaltyDTOStore</code>.
+     * @alias module:model/LoyaltyDTOStore
+     * @class
+     */
 
     function LoyaltyDTOStore() {
         _classCallCheck(this, LoyaltyDTOStore);
@@ -82,39 +82,45 @@ var LoyaltyDTOStore = function () {
         }
 
         /**
-        * LoyaltyDTOStore
-        * @member {String} object
-        */
+         * LoyaltyDTOStore
+         * @member {String} object
+         */
+
 
         /**
-        * LoyaltyDTOStore
-        * @member {String} id
-        */
+         * LoyaltyDTOStore
+         * @member {String} id
+         */
+
 
         /**
-        * LoyaltyDTOStore
-        * @member {Array.<module:model/LoyaltyStoregroupsDTOStoresAddressComponents>} address_components
-        */
+         * LoyaltyDTOStore
+         * @member {Array.<module:model/LoyaltyStoregroupsDTOStoresAddressComponents>} address_components
+         */
+
 
         /**
-        * Address formatted
-        * @member {String} address_formatted
-        */
+         * Address formatted
+         * @member {String} address_formatted
+         */
+
 
         /**
-        * Geometry
-        * @member {String} geometry
-        */
+         * Geometry
+         * @member {String} geometry
+         */
+
 
         /**
-        * Name
-        * @member {String} name
-        */
+         * Name
+         * @member {String} name
+         */
+
 
         /**
-        * Raw name
-        * @member {String} name_raw
-        */
+         * Raw name
+         * @member {String} name_raw
+         */
 
     }]);
 

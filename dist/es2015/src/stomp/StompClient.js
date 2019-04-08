@@ -40,18 +40,15 @@ var StompClient = function () {
         if (config.headers.ack === '' || config.headers.ack === undefined) throw 'invalid ack in stomp config';
 
         if (env === _StompGlobals.Environments.NODE) {
-            this.socketProvider = new _SocketProvider2.default(config.host, config.node_env.port, config.node_env.vhost);
+            this.socketProvider = new _SocketProvider2.default(config.host, config.node_env.port, config.node_env.vhost, debugMode);
         } else {
-            this.socketProvider = new _SocketProvider2.default(config.host, config.browser_env.port, config.browser_env.vhost);
+            this.socketProvider = new _SocketProvider2.default(config.host, config.browser_env.port, config.browser_env.vhost, debugMode);
         }
 
         this.socket = this.socketProvider.createSocket(env);
-        this.stomp = new _Stomp2.default(token, token, this.socket);
+        this.stomp = new _Stomp2.default(token, token, this.socket, debugMode);
         this.token = token;
-
-        if (!debugMode) {
-            console.log = function () {};
-        }
+        this.debugMode = debugMode;
     }
 
     // this is session refresh interval given in seconds
@@ -79,7 +76,7 @@ var StompClient = function () {
                     if (error) {
                         console.error('Disconnected from Stomp with error: ' + error);
                     } else {
-                        console.log('Disconnected from Stomp');
+                        if (_this.debugMode) console.log('Disconnected from Stomp');
                     }
 
                     reject(error);
@@ -97,14 +94,14 @@ var StompClient = function () {
 
                     // if successfully connected then set proper listeners for soceket and stomp
                     _this.stomp.on('socket-error', function (error) {
-                        console.log('Unexpected socket error' + error);
+                        if (_this.debugMode) console.log('Unexpected socket error' + error);
                     });
 
                     _this.stomp.on('disconnected', function (error) {
                         if (error) {
-                            console.log('Disconnected from Stomp with error: ' + error);
+                            if (_this.debugMode) console.log('Disconnected from Stomp with error: ' + error);
                         } else {
-                            console.log('Disconnected from Stomp');
+                            if (_this.debugMode) console.log('Disconnected from Stomp');
                         }
                     });
 
@@ -113,11 +110,11 @@ var StompClient = function () {
                     });
 
                     _this.stomp.on('receipt', function (frame) {
-                        console.log('Received receipt: ' + frame.headers['receipt-id']);
+                        if (_this.debugMode) console.log('Received receipt: ' + frame.headers['receipt-id']);
                     });
 
                     _this.stomp.on('message', function (frame) {
-                        console.log('Received message: ' + frame.body);
+                        if (_this.debugMode) console.log('Received message: ' + frame.body);
                     });
 
                     resolve(frame);
@@ -145,8 +142,10 @@ var StompClient = function () {
 
             this.sendMessage(destination, body);
             setInterval(function () {
-                return _this2.sendMessage(destination, body);
-            }, this.SESSION_REFRESH_INTERVAL * 1000);
+                if (_this2.socket.connected) {
+                    _this2.sendMessage(destination, body), _this2.SESSION_REFRESH_INTERVAL * 1000;
+                }
+            });
         }
     }, {
         key: 'sendMessage',

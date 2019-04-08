@@ -1,30 +1,19 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The SecupayTransactionProductDTOExperience model module.
-* @module model/SecupayTransactionProductDTOExperience
-*/
+ * The SecupayTransactionProductDTOExperience model module.
+ * @module model/SecupayTransactionProductDTOExperience
+ */
 export default class SecupayTransactionProductDTOExperience {
     /**
-    * Constructs a new <code>SecupayTransactionProductDTOExperience</code>.
-    * Customer experience score
-    * @alias module:model/SecupayTransactionProductDTOExperience
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionProductDTOExperience</code>.
+     * Customer experience score
+     * @alias module:model/SecupayTransactionProductDTOExperience
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class SecupayTransactionProductDTOExperience {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SecupayTransactionProductDTOExperience();
-
             
             
             
-
             if (data.hasOwnProperty('positive')) {
                 obj['positive'] = ApiClient.convertToType(data['positive'], 'Number');
             }
@@ -54,23 +41,15 @@ export default class SecupayTransactionProductDTOExperience {
     }
 
     /**
-    * Score of positive experience (paid orders)
-    * @member {Number} positive
-    */
+     * Score of positive experience (paid orders)
+     * @member {Number} positive
+     */
     positive = undefined;
+
     /**
-    * Score of negative experience (open/unpaid orders)
-    * @member {Number} negative
-    */
+     * Score of negative experience (open/unpaid orders)
+     * @member {Number} negative
+     */
     negative = undefined;
 
-
-
-
-
-
-
-
 }
-
-

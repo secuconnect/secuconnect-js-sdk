@@ -19,15 +19,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The PaymentContractsProductModel model module.
-* @module model/PaymentContractsProductModel
-*/
+ * The PaymentContractsProductModel model module.
+ * @module model/PaymentContractsProductModel
+ */
 var PaymentContractsProductModel = function () {
     /**
-    * Constructs a new <code>PaymentContractsProductModel</code>.
-    * @alias module:model/PaymentContractsProductModel
-    * @class
-    */
+     * Constructs a new <code>PaymentContractsProductModel</code>.
+     * @alias module:model/PaymentContractsProductModel
+     * @class
+     */
 
     function PaymentContractsProductModel() {
         _classCallCheck(this, PaymentContractsProductModel);
@@ -36,8 +36,6 @@ var PaymentContractsProductModel = function () {
         this.id = undefined;
         this.parent = undefined;
         this.demo = undefined;
-        this.allow_cloning = undefined;
-        this.sepa_mandate_inform = 'never';
         this.created = undefined;
         this.updated = undefined;
     }
@@ -69,62 +67,50 @@ var PaymentContractsProductModel = function () {
                 if (data.hasOwnProperty('demo')) {
                     obj['demo'] = _ApiClient2.default.convertToType(data['demo'], 'Boolean');
                 }
-                if (data.hasOwnProperty('allow_cloning')) {
-                    obj['allow_cloning'] = _ApiClient2.default.convertToType(data['allow_cloning'], 'Boolean');
-                }
-                if (data.hasOwnProperty('sepa_mandate_inform')) {
-                    obj['sepa_mandate_inform'] = _ApiClient2.default.convertToType(data['sepa_mandate_inform'], 'String');
-                }
                 if (data.hasOwnProperty('created')) {
-                    obj['created'] = _ApiClient2.default.convertToType(data['created'], 'Date');
+                    obj['created'] = _ApiClient2.default.convertToType(data['created'], 'String');
                 }
                 if (data.hasOwnProperty('updated')) {
-                    obj['updated'] = _ApiClient2.default.convertToType(data['updated'], 'Date');
+                    obj['updated'] = _ApiClient2.default.convertToType(data['updated'], 'String');
                 }
             }
             return obj;
         }
 
         /**
-        * Object of payment contract
-        * @member {String} object
-        */
+         * Object of payment contract
+         * @member {String} object
+         */
+
 
         /**
-        * Id of payment contract
-        * @member {String} id
-        */
+         * Id of payment contract
+         * @member {String} id
+         */
+
 
         /**
-        * Payment contract
-        * @member {module:model/ProductInstanceUID} parent
-        */
+         * Payment contract
+         * @member {module:model/ProductInstanceUID} parent
+         */
+
 
         /**
-        * Is this a demo contract
-        * @member {Boolean} demo
-        */
+         * Is this a demo contract
+         * @member {Boolean} demo
+         */
+
 
         /**
-        * Allow to create sub-contracts
-        * @member {Boolean} allow_cloning
-        */
+         * Created at date
+         * @member {String} created
+         */
+
 
         /**
-        * Inform the customer about the created sepa mandate
-        * @member {String} sepa_mandate_inform
-        * @default 'never'
-        */
-
-        /**
-        * Created at date
-        * @member {Date} created
-        */
-
-        /**
-        * Updated at date
-        * @member {Date} updated
-        */
+         * Updated at date
+         * @member {String} updated
+         */
 
     }]);
 

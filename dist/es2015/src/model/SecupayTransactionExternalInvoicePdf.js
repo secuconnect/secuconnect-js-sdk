@@ -19,15 +19,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SecupayTransactionExternalInvoicePdf model module.
-* @module model/SecupayTransactionExternalInvoicePdf
-*/
+ * The SecupayTransactionExternalInvoicePdf model module.
+ * @module model/SecupayTransactionExternalInvoicePdf
+ */
 var SecupayTransactionExternalInvoicePdf = function () {
     /**
-    * Constructs a new <code>SecupayTransactionExternalInvoicePdf</code>.
-    * @alias module:model/SecupayTransactionExternalInvoicePdf
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionExternalInvoicePdf</code>.
+     * @alias module:model/SecupayTransactionExternalInvoicePdf
+     * @class
+     */
 
     function SecupayTransactionExternalInvoicePdf() {
         _classCallCheck(this, SecupayTransactionExternalInvoicePdf);
@@ -58,8 +58,8 @@ var SecupayTransactionExternalInvoicePdf = function () {
         }
 
         /**
-        * @member {module:model/SecupayTransactionExternalInvoicePdfDocument} document
-        */
+         * @member {module:model/SecupayTransactionExternalInvoicePdfDocument} document
+         */
 
     }]);
 

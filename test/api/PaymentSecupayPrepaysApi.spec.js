@@ -1,8 +1,9 @@
 import SecupayTransactionProductDTO from "../../src/model/SecupayTransactionProductDTO";
 import Contact from "../../src/model/Contact";
 import PaymentCustomersDTO from "../../src/model/PaymentCustomersDTO";
-import SecupayTransactionProductDTORedirectUrl from "../../src/model/SecupayTransactionProductDTORedirectUrl";
+import SecupayRedirectUrl from "../../src/model/SecupayRedirectUrl";
 import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCredentials } from '../Globals';
+import FileCache from "../../src/cache/FileCache";
 
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
@@ -35,6 +36,9 @@ import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCre
       )
     );
 
+    let fileCache = new FileCache();
+    authenticator.getApiClient().setCachePool(fileCache);
+
     prepayApi = new SecuConnectApi.PaymentSecupayPrepaysApi();
     customerApi = new SecuConnectApi.PaymentCustomersApi();
 
@@ -63,13 +67,11 @@ import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCre
     let basketItem2 = new SecuConnectApi.SecupayBasketItem();
     let basketItem3 = new SecuConnectApi.SecupayBasketItem();
 
-    basketItem1.item_type = 'shipping';
     basketItem1.name = 'standard delivery';
     basketItem1.tax = 19;
     basketItem1.total = 200;
     basket.push(basketItem1);
 
-    basketItem2.item_type = 'article';
     basketItem2.article_number = 3211;
     basketItem2.quantity = 2;
     basketItem2.name = 'Product 3211';
@@ -79,7 +81,6 @@ import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCre
     basketItem2.price = 1000;
     basket.push(basketItem2);
 
-    basketItem3.item_type = 'article';
     basketItem3.article_number = 48875;
     basketItem3.quantity = 2;
     basketItem3.name = 'Product 48875';
@@ -91,7 +92,7 @@ import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCre
 
     prepaysData.basket = basket;
 
-    prepaysData.redirect_url = new SecupayTransactionProductDTORedirectUrl();
+    prepaysData.redirect_url = new SecupayRedirectUrl();
     prepaysData.redirect_url.url_success = 'http://shop.example.com?success=true';
     prepaysData.redirect_url.url_failure = 'http://shop.example.com?success=false';
     prepaysData.redirect_url.url_push = 'https://requestb.in/14f6a1j1';
@@ -146,10 +147,8 @@ import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCre
               expect(prepayTransaction.purpose).toBe('for what text');
               expect(prepayTransaction.order_id).toBe('ZZZZZZ');
               expect(prepayTransaction.basket).toHaveLength(3);
-              expect(prepayTransaction.basket[0].item_type).toBe(basket[0].item_type);
               expect(prepayTransaction.basket[0].name).toBe(basket[0].name);
               expect(prepayTransaction.basket[0].total).toBe(basket[0].total);
-              expect(prepayTransaction.basket[1].item_type).toBe(basket[1].item_type);
               expect(prepayTransaction.basket[1].article_number).toBe(basket[1].article_number.toString());
               expect(prepayTransaction.basket[1].quantity).toBe(basket[1].quantity);
               expect(prepayTransaction.basket[1].name).toBe(basket[1].name);
@@ -157,7 +156,6 @@ import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCre
               expect(prepayTransaction.basket[1].tax).toBe(basket[1].tax.toString());
               expect(prepayTransaction.basket[1].total).toBe(basket[1].total);
               expect(prepayTransaction.basket[1].price).toBe(basket[1].price);
-              expect(prepayTransaction.basket[2].item_type).toBe(basket[2].item_type);
               expect(prepayTransaction.basket[2].article_number).toBe(basket[2].article_number.toString());
               expect(prepayTransaction.basket[2].quantity).toBe(basket[2].quantity);
               expect(prepayTransaction.basket[2].name).toBe(basket[2].name);
@@ -259,7 +257,6 @@ import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCre
           return prepayApi.paymentSecupayPrepaysCancelById(prepayTransactionData.id)
             .then((data) => {
               expect(typeof data).toBe('object');
-              expect(data.result).toBe(true);
             })
             .catch(reason => {
               console.log(reason);

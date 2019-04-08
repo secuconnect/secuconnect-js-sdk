@@ -35,15 +35,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The PaymentContainersProductModel model module.
-* @module model/PaymentContainersProductModel
-*/
+ * The PaymentContainersProductModel model module.
+ * @module model/PaymentContainersProductModel
+ */
 var PaymentContainersProductModel = function () {
     /**
-    * Constructs a new <code>PaymentContainersProductModel</code>.
-    * @alias module:model/PaymentContainersProductModel
-    * @class
-    */
+     * Constructs a new <code>PaymentContainersProductModel</code>.
+     * @alias module:model/PaymentContainersProductModel
+     * @class
+     */
 
     function PaymentContainersProductModel() {
         _classCallCheck(this, PaymentContainersProductModel);
@@ -101,10 +101,10 @@ var PaymentContainersProductModel = function () {
                     obj['private'] = _BankAccountDescriptor2.default.constructFromObject(data['private']);
                 }
                 if (data.hasOwnProperty('created')) {
-                    obj['created'] = _ApiClient2.default.convertToType(data['created'], 'Date');
+                    obj['created'] = _ApiClient2.default.convertToType(data['created'], 'String');
                 }
                 if (data.hasOwnProperty('updated')) {
-                    obj['updated'] = _ApiClient2.default.convertToType(data['updated'], 'Date');
+                    obj['updated'] = _ApiClient2.default.convertToType(data['updated'], 'String');
                 }
                 if (data.hasOwnProperty('mandate')) {
                     obj['mandate'] = _PaymentContainerMandate2.default.constructFromObject(data['mandate']);
@@ -114,59 +114,69 @@ var PaymentContainersProductModel = function () {
         }
 
         /**
-        * Object of payment container
-        * @member {String} object
-        */
+         * Object of payment container
+         * @member {String} object
+         */
+
 
         /**
-        * Id of payment container
-        * @member {String} id
-        */
+         * Id of payment container
+         * @member {String} id
+         */
+
 
         /**
-        * Payment container contract
-        * @member {module:model/PaymentContractsProductModel} contract
-        */
+         * Payment container contract
+         * @member {module:model/PaymentContractsProductModel} contract
+         */
+
 
         /**
-        * Payment container customer
-        * @member {module:model/PaymentCustomersProductModel} customer
-        */
+         * Payment container customer
+         * @member {module:model/PaymentCustomersProductModel} customer
+         */
+
 
         /**
-        * Assign to
-        * @member {module:model/ProductInstanceUID} assign
-        */
+         * Assign to
+         * @member {module:model/ProductInstanceUID} assign
+         */
+
 
         /**
-        * Type of payment container
-        * @member {String} type
-        */
+         * Type of payment container
+         * @member {String} type
+         */
+
 
         /**
-        * Public payment instrument data
-        * @member {module:model/BankAccountDescriptor} public
-        */
+         * Public payment instrument data
+         * @member {module:model/BankAccountDescriptor} public
+         */
+
 
         /**
-        * Private payment instrument data
-        * @member {module:model/BankAccountDescriptor} private
-        */
+         * Private payment instrument data
+         * @member {module:model/BankAccountDescriptor} private
+         */
+
 
         /**
-        * Creation date
-        * @member {Date} created
-        */
+         * Creation date
+         * @member {String} created
+         */
+
 
         /**
-        * Last update date
-        * @member {Date} updated
-        */
+         * Last update date
+         * @member {String} updated
+         */
+
 
         /**
-        * Payment container mandate
-        * @member {module:model/PaymentContainerMandate} mandate
-        */
+         * Payment container mandate
+         * @member {module:model/PaymentContainerMandate} mandate
+         */
 
     }]);
 

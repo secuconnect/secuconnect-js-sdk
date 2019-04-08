@@ -1,8 +1,9 @@
 export default class BrowserSocket {
 
-    constructor(host, port, vhost) {
+    constructor(host, port, vhost, debugMode) {
         this.url = 'wss://' + host + ':' + port + vhost;
         this.connected = false;
+        this.debugMode = debugMode;
     }
 
     connect() {
@@ -17,14 +18,14 @@ export default class BrowserSocket {
     addOnOpenListener(onOpen) {
         this.onopen = () => {
             this.connected = true;
-            console.log('Connected to socket');
+            if (this.debugMode) console.log('Connected to socket');
             onOpen();
         };
     }
 
     addOnMessageListener(onMessage) {
         this.onmessage = (messageEvent) => {
-            console.log('Received data on socket');
+            if (this.debugMode) console.log('Received data on socket');
             onMessage(messageEvent.data);
         };
     }
@@ -38,7 +39,8 @@ export default class BrowserSocket {
 
     addOnCloseListener(onClose) {
         this.onclose = (error) => {
-            console.log('Closing socket'); 
+            if (this.debugMode) console.log('Closing socket');
+            this.connected = false; 
             onClose(error);
         };
     }

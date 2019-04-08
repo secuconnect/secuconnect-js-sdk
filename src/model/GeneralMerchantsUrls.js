@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The GeneralMerchantsUrls model module.
-* @module model/GeneralMerchantsUrls
-*/
+ * The GeneralMerchantsUrls model module.
+ * @module model/GeneralMerchantsUrls
+ */
 export default class GeneralMerchantsUrls {
     /**
-    * Constructs a new <code>GeneralMerchantsUrls</code>.
-    * @alias module:model/GeneralMerchantsUrls
-    * @class
-    */
+     * Constructs a new <code>GeneralMerchantsUrls</code>.
+     * @alias module:model/GeneralMerchantsUrls
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class GeneralMerchantsUrls {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new GeneralMerchantsUrls();
-
             
             
             
-
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
@@ -53,23 +40,15 @@ export default class GeneralMerchantsUrls {
     }
 
     /**
-    * Type of urls
-    * @member {String} type
-    */
+     * Type of urls
+     * @member {String} type
+     */
     type = undefined;
+
     /**
-    * Url
-    * @member {String} url
-    */
+     * Url
+     * @member {String} url
+     */
     url = undefined;
 
-
-
-
-
-
-
-
 }
-
-

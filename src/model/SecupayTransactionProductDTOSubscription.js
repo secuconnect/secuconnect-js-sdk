@@ -1,30 +1,19 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The SecupayTransactionProductDTOSubscription model module.
-* @module model/SecupayTransactionProductDTOSubscription
-*/
+ * The SecupayTransactionProductDTOSubscription model module.
+ * @module model/SecupayTransactionProductDTOSubscription
+ */
 export default class SecupayTransactionProductDTOSubscription {
     /**
-    * Constructs a new <code>SecupayTransactionProductDTOSubscription</code>.
-    * Recurring payments
-    * @alias module:model/SecupayTransactionProductDTOSubscription
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionProductDTOSubscription</code>.
+     * Recurring payments
+     * @alias module:model/SecupayTransactionProductDTOSubscription
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class SecupayTransactionProductDTOSubscription {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SecupayTransactionProductDTOSubscription();
-
             
             
             
-
             if (data.hasOwnProperty('purpose')) {
                 obj['purpose'] = ApiClient.convertToType(data['purpose'], 'String');
             }
@@ -54,23 +41,15 @@ export default class SecupayTransactionProductDTOSubscription {
     }
 
     /**
-    * The purpose of the subscription
-    * @member {String} purpose
-    */
+     * The purpose of the subscription
+     * @member {String} purpose
+     */
     purpose = undefined;
+
     /**
-    * Id of subscription, if exists
-    * @member {Number} id
-    */
+     * Id of subscription, if exists
+     * @member {Number} id
+     */
     id = undefined;
 
-
-
-
-
-
-
-
 }
-
-

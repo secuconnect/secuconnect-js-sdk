@@ -10,10 +10,8 @@ Name | Type | Description | Notes
 **merchantContact** | [**Contact**](Contact.md) | merchant contact | [optional] 
 **accountContact** | [**Contact**](Contact.md) | merchant contact | [optional] 
 **paymentContainer** | [**[LoyaltyCustomersPaymentContainerModel]**](LoyaltyCustomersPaymentContainerModel.md) | payment container | [optional] 
-**age** | **Number** | Age | [optional] 
-**daysUntilBirthday** | **Number** | Number of days until birthday | [optional] 
 **customernumber** | **String** | Customer number | [optional] 
 **note** | **String** | Customer number | [optional] 
-**created** | **Date** | Creation date | [optional] 
+**created** | **String** | Creation date | [optional] 
 
 

@@ -23,15 +23,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The GeoAddress model module.
-* @module model/GeoAddress
-*/
+ * The GeoAddress model module.
+ * @module model/GeoAddress
+ */
 var GeoAddress = function () {
     /**
-    * Constructs a new <code>GeoAddress</code>.
-    * @alias module:model/GeoAddress
-    * @class
-    */
+     * Constructs a new <code>GeoAddress</code>.
+     * @alias module:model/GeoAddress
+     * @class
+     */
 
     function GeoAddress() {
         _classCallCheck(this, GeoAddress);
@@ -74,23 +74,26 @@ var GeoAddress = function () {
         }
 
         /**
-        * Address type
-        * @member {String} type
-        */
+         * Address type
+         * @member {String} type
+         */
+
 
         /**
-        * Address components
-        * @member {module:model/AddressComponents} address_components
-        */
+         * Address components
+         * @member {module:model/AddressComponents} address_components
+         */
+
 
         /**
-        * Address formatted
-        * @member {String} address_formatted
-        */
+         * Address formatted
+         * @member {String} address_formatted
+         */
+
 
         /**
-        * @member {module:model/GeoAddressGeometry} geometry
-        */
+         * @member {module:model/GeoAddressGeometry} geometry
+         */
 
     }]);
 

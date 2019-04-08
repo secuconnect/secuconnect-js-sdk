@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The LoyaltyMerchantcardsDTOTransaction model module.
-* @module model/LoyaltyMerchantcardsDTOTransaction
-*/
+ * The LoyaltyMerchantcardsDTOTransaction model module.
+ * @module model/LoyaltyMerchantcardsDTOTransaction
+ */
 var LoyaltyMerchantcardsDTOTransaction = function () {
     /**
-    * Constructs a new <code>LoyaltyMerchantcardsDTOTransaction</code>.
-    * @alias module:model/LoyaltyMerchantcardsDTOTransaction
-    * @class
-    */
+     * Constructs a new <code>LoyaltyMerchantcardsDTOTransaction</code>.
+     * @alias module:model/LoyaltyMerchantcardsDTOTransaction
+     * @class
+     */
 
     function LoyaltyMerchantcardsDTOTransaction() {
         _classCallCheck(this, LoyaltyMerchantcardsDTOTransaction);
@@ -86,49 +86,57 @@ var LoyaltyMerchantcardsDTOTransaction = function () {
         }
 
         /**
-        * Action
-        * @member {String} action
-        */
+         * Action
+         * @member {String} action
+         */
+
 
         /**
-        * Terminal id
-        * @member {String} terminal_id
-        */
+         * Terminal id
+         * @member {String} terminal_id
+         */
+
 
         /**
-        * Amount
-        * @member {Number} amount
-        */
+         * Amount
+         * @member {Number} amount
+         */
+
 
         /**
-        * Tid
-        * @member {String} tid
-        */
+         * Tid
+         * @member {String} tid
+         */
+
 
         /**
-        * Store id
-        * @member {String} store
-        */
+         * Store id
+         * @member {String} store
+         */
+
 
         /**
-        * Card number
-        * @member {Number} cardnumber
-        */
+         * Card number
+         * @member {Number} cardnumber
+         */
+
 
         /**
-        * Bonus amount
-        * @member {Number} bonus_amount
-        */
+         * Bonus amount
+         * @member {Number} bonus_amount
+         */
+
 
         /**
-        * Amount split allowed
-        * @member {String} amount_split_allowed
-        */
+         * Amount split allowed
+         * @member {String} amount_split_allowed
+         */
+
 
         /**
-        * Merchant id
-        * @member {String} merchant_id
-        */
+         * Merchant id
+         * @member {String} merchant_id
+         */
 
     }]);
 

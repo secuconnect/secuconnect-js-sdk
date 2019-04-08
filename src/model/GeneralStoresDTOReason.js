@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The GeneralStoresDTOReason model module.
-* @module model/GeneralStoresDTOReason
-*/
+ * The GeneralStoresDTOReason model module.
+ * @module model/GeneralStoresDTOReason
+ */
 export default class GeneralStoresDTOReason {
     /**
-    * Constructs a new <code>GeneralStoresDTOReason</code>.
-    * @alias module:model/GeneralStoresDTOReason
-    * @class
-    */
+     * Constructs a new <code>GeneralStoresDTOReason</code>.
+     * @alias module:model/GeneralStoresDTOReason
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class GeneralStoresDTOReason {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new GeneralStoresDTOReason();
-
             
             
             
-
             if (data.hasOwnProperty('reason')) {
                 obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
             }
@@ -50,18 +37,9 @@ export default class GeneralStoresDTOReason {
     }
 
     /**
-    * Reason
-    * @member {String} reason
-    */
+     * Reason
+     * @member {String} reason
+     */
     reason = undefined;
 
-
-
-
-
-
-
-
 }
-
-

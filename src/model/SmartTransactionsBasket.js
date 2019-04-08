@@ -3,29 +3,18 @@ import ApiClient from '../ApiClient';
 import SmartTransactionsBasketProduct from './SmartTransactionsBasketProduct';
 import SmartTransactionsBasketText from './SmartTransactionsBasketText';
 
-
-
-
-
 /**
-* The SmartTransactionsBasket model module.
-* @module model/SmartTransactionsBasket
-*/
+ * The SmartTransactionsBasket model module.
+ * @module model/SmartTransactionsBasket
+ */
 export default class SmartTransactionsBasket {
     /**
-    * Constructs a new <code>SmartTransactionsBasket</code>.
-    * @alias module:model/SmartTransactionsBasket
-    * @class
-    */
+     * Constructs a new <code>SmartTransactionsBasket</code>.
+     * @alias module:model/SmartTransactionsBasket
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -39,39 +28,38 @@ export default class SmartTransactionsBasket {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SmartTransactionsBasket();
-
             
             
             
-
             if (data.hasOwnProperty('products')) {
                 obj['products'] = ApiClient.convertToType(data['products'], [SmartTransactionsBasketProduct]);
             }
             if (data.hasOwnProperty('texts')) {
                 obj['texts'] = ApiClient.convertToType(data['texts'], [SmartTransactionsBasketText]);
             }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], 'String');
+            }
         }
         return obj;
     }
 
     /**
-    * Products
-    * @member {Array.<module:model/SmartTransactionsBasketProduct>} products
-    */
+     * Products
+     * @member {Array.<module:model/SmartTransactionsBasketProduct>} products
+     */
     products = undefined;
+
     /**
-    * Texts
-    * @member {Array.<module:model/SmartTransactionsBasketText>} texts
-    */
+     * Texts
+     * @member {Array.<module:model/SmartTransactionsBasketText>} texts
+     */
     texts = undefined;
 
-
-
-
-
-
-
+    /**
+     * Basket Type
+     * @member {String} type
+     */
+    type = undefined;
 
 }
-
-

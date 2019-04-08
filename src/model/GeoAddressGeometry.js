@@ -1,30 +1,19 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The GeoAddressGeometry model module.
-* @module model/GeoAddressGeometry
-*/
+ * The GeoAddressGeometry model module.
+ * @module model/GeoAddressGeometry
+ */
 export default class GeoAddressGeometry {
     /**
-    * Constructs a new <code>GeoAddressGeometry</code>.
-    * Geometry
-    * @alias module:model/GeoAddressGeometry
-    * @class
-    */
+     * Constructs a new <code>GeoAddressGeometry</code>.
+     * Geometry
+     * @alias module:model/GeoAddressGeometry
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class GeoAddressGeometry {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new GeoAddressGeometry();
-
             
             
             
-
             if (data.hasOwnProperty('lat')) {
                 obj['lat'] = ApiClient.convertToType(data['lat'], 'String');
             }
@@ -54,23 +41,15 @@ export default class GeoAddressGeometry {
     }
 
     /**
-    * latitude
-    * @member {String} lat
-    */
+     * latitude
+     * @member {String} lat
+     */
     lat = undefined;
+
     /**
-    * longitude
-    * @member {String} lon
-    */
+     * longitude
+     * @member {String} lon
+     */
     lon = undefined;
 
-
-
-
-
-
-
-
 }
-
-

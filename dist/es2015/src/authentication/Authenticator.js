@@ -27,13 +27,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * @module authentication/Authenticator
  */
 var Authenticator = function () {
-    function Authenticator(credentials, apiClient) {
+    function Authenticator(credentials) {
         _classCallCheck(this, Authenticator);
 
         this.AUTH_HOST = 'https://connect-testing.secupay-ag.de';
 
         this.credentials = credentials;
-        this.apiClient = apiClient || _ApiClient2.default.instance;
+        this.apiClient = new _ApiClient2.default();
     }
 
     /**

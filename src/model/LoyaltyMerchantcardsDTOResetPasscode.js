@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The LoyaltyMerchantcardsDTOResetPasscode model module.
-* @module model/LoyaltyMerchantcardsDTOResetPasscode
-*/
+ * The LoyaltyMerchantcardsDTOResetPasscode model module.
+ * @module model/LoyaltyMerchantcardsDTOResetPasscode
+ */
 export default class LoyaltyMerchantcardsDTOResetPasscode {
     /**
-    * Constructs a new <code>LoyaltyMerchantcardsDTOResetPasscode</code>.
-    * @alias module:model/LoyaltyMerchantcardsDTOResetPasscode
-    * @class
-    */
+     * Constructs a new <code>LoyaltyMerchantcardsDTOResetPasscode</code>.
+     * @alias module:model/LoyaltyMerchantcardsDTOResetPasscode
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class LoyaltyMerchantcardsDTOResetPasscode {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyMerchantcardsDTOResetPasscode();
-
             
             
             
-
             if (data.hasOwnProperty('cardnumber')) {
                 obj['cardnumber'] = ApiClient.convertToType(data['cardnumber'], 'Number');
             }
@@ -53,23 +40,15 @@ export default class LoyaltyMerchantcardsDTOResetPasscode {
     }
 
     /**
-    * Loyalty Card number
-    * @member {Number} cardnumber
-    */
+     * Loyalty Card number
+     * @member {Number} cardnumber
+     */
     cardnumber = undefined;
+
     /**
-    * Loyalty Card passcode
-    * @member {Number} passcode
-    */
+     * Loyalty Card passcode
+     * @member {Number} passcode
+     */
     passcode = undefined;
 
-
-
-
-
-
-
-
 }
-
-

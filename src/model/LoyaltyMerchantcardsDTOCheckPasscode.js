@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The LoyaltyMerchantcardsDTOCheckPasscode model module.
-* @module model/LoyaltyMerchantcardsDTOCheckPasscode
-*/
+ * The LoyaltyMerchantcardsDTOCheckPasscode model module.
+ * @module model/LoyaltyMerchantcardsDTOCheckPasscode
+ */
 export default class LoyaltyMerchantcardsDTOCheckPasscode {
     /**
-    * Constructs a new <code>LoyaltyMerchantcardsDTOCheckPasscode</code>.
-    * @alias module:model/LoyaltyMerchantcardsDTOCheckPasscode
-    * @class
-    */
+     * Constructs a new <code>LoyaltyMerchantcardsDTOCheckPasscode</code>.
+     * @alias module:model/LoyaltyMerchantcardsDTOCheckPasscode
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class LoyaltyMerchantcardsDTOCheckPasscode {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyMerchantcardsDTOCheckPasscode();
-
             
             
             
-
             if (data.hasOwnProperty('cardnumber')) {
                 obj['cardnumber'] = ApiClient.convertToType(data['cardnumber'], 'Number');
             }
@@ -53,23 +40,15 @@ export default class LoyaltyMerchantcardsDTOCheckPasscode {
     }
 
     /**
-    * Loyalty Card number
-    * @member {Number} cardnumber
-    */
+     * Loyalty Card number
+     * @member {Number} cardnumber
+     */
     cardnumber = undefined;
+
     /**
-    * Loyalty Card pin
-    * @member {Number} pin
-    */
+     * Loyalty Card pin
+     * @member {Number} pin
+     */
     pin = undefined;
 
-
-
-
-
-
-
-
 }
-
-

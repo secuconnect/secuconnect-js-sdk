@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The LoyaltyMerchantcardsDTO model module.
-* @module model/LoyaltyMerchantcardsDTO
-*/
+ * The LoyaltyMerchantcardsDTO model module.
+ * @module model/LoyaltyMerchantcardsDTO
+ */
 export default class LoyaltyMerchantcardsDTO {
     /**
-    * Constructs a new <code>LoyaltyMerchantcardsDTO</code>.
-    * @alias module:model/LoyaltyMerchantcardsDTO
-    * @class
-    */
+     * Constructs a new <code>LoyaltyMerchantcardsDTO</code>.
+     * @alias module:model/LoyaltyMerchantcardsDTO
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class LoyaltyMerchantcardsDTO {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyMerchantcardsDTO();
-
             
             
             
-
             if (data.hasOwnProperty('merchant')) {
                 obj['merchant'] = ApiClient.convertToType(data['merchant'], 'String');
             }
@@ -62,38 +49,33 @@ export default class LoyaltyMerchantcardsDTO {
     }
 
     /**
-    * General merchant id
-    * @member {String} merchant
-    */
+     * General merchant id
+     * @member {String} merchant
+     */
     merchant = undefined;
+
     /**
-    * Loyalty card id
-    * @member {String} card
-    */
+     * Loyalty card id
+     * @member {String} card
+     */
     card = undefined;
+
     /**
-    * Loyalty payment container id
-    * @member {String} payment_container
-    */
+     * Loyalty payment container id
+     * @member {String} payment_container
+     */
     payment_container = undefined;
+
     /**
-    * Created by general merchant or not
-    * @member {Boolean} created_by_merchant
-    */
+     * Created by general merchant or not
+     * @member {Boolean} created_by_merchant
+     */
     created_by_merchant = undefined;
+
     /**
-    * Used by general merchant or not
-    * @member {Boolean} used_by_merchant
-    */
+     * Used by general merchant or not
+     * @member {Boolean} used_by_merchant
+     */
     used_by_merchant = undefined;
 
-
-
-
-
-
-
-
 }
-
-

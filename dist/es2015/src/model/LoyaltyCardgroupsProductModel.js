@@ -19,15 +19,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The LoyaltyCardgroupsProductModel model module.
-* @module model/LoyaltyCardgroupsProductModel
-*/
+ * The LoyaltyCardgroupsProductModel model module.
+ * @module model/LoyaltyCardgroupsProductModel
+ */
 var LoyaltyCardgroupsProductModel = function () {
     /**
-    * Constructs a new <code>LoyaltyCardgroupsProductModel</code>.
-    * @alias module:model/LoyaltyCardgroupsProductModel
-    * @class
-    */
+     * Constructs a new <code>LoyaltyCardgroupsProductModel</code>.
+     * @alias module:model/LoyaltyCardgroupsProductModel
+     * @class
+     */
 
     function LoyaltyCardgroupsProductModel() {
         _classCallCheck(this, LoyaltyCardgroupsProductModel);
@@ -82,39 +82,45 @@ var LoyaltyCardgroupsProductModel = function () {
         }
 
         /**
-        * Object of loyalty card group
-        * @member {String} object
-        */
+         * Object of loyalty card group
+         * @member {String} object
+         */
+
 
         /**
-        * Id of loyalty card group
-        * @member {String} id
-        */
+         * Id of loyalty card group
+         * @member {String} id
+         */
+
 
         /**
-        * Loyalty card group merchant
-        * @member {module:model/LoyaltyCardgroupsDTOMerchant} merchant
-        */
+         * Loyalty card group merchant
+         * @member {module:model/LoyaltyCardgroupsDTOMerchant} merchant
+         */
+
 
         /**
-        * Loyalty card group display name
-        * @member {String} display_name
-        */
+         * Loyalty card group display name
+         * @member {String} display_name
+         */
+
 
         /**
-        * Loyalty card group display name raw
-        * @member {String} display_name_raw
-        */
+         * Loyalty card group display name raw
+         * @member {String} display_name_raw
+         */
+
 
         /**
-        * Loyalty card group stock warn limit
-        * @member {String} stock_warn_limit
-        */
+         * Loyalty card group stock warn limit
+         * @member {String} stock_warn_limit
+         */
+
 
         /**
-        * Loyalty card group picture
-        * @member {String} picture
-        */
+         * Loyalty card group picture
+         * @member {String} picture
+         */
 
     }]);
 

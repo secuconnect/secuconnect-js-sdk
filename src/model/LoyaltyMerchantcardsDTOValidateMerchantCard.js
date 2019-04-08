@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The LoyaltyMerchantcardsDTOValidateMerchantCard model module.
-* @module model/LoyaltyMerchantcardsDTOValidateMerchantCard
-*/
+ * The LoyaltyMerchantcardsDTOValidateMerchantCard model module.
+ * @module model/LoyaltyMerchantcardsDTOValidateMerchantCard
+ */
 export default class LoyaltyMerchantcardsDTOValidateMerchantCard {
     /**
-    * Constructs a new <code>LoyaltyMerchantcardsDTOValidateMerchantCard</code>.
-    * @alias module:model/LoyaltyMerchantcardsDTOValidateMerchantCard
-    * @class
-    */
+     * Constructs a new <code>LoyaltyMerchantcardsDTOValidateMerchantCard</code>.
+     * @alias module:model/LoyaltyMerchantcardsDTOValidateMerchantCard
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class LoyaltyMerchantcardsDTOValidateMerchantCard {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyMerchantcardsDTOValidateMerchantCard();
-
             
             
             
-
             if (data.hasOwnProperty('merchant')) {
                 obj['merchant'] = ApiClient.convertToType(data['merchant'], 'String');
             }
@@ -53,23 +40,15 @@ export default class LoyaltyMerchantcardsDTOValidateMerchantCard {
     }
 
     /**
-    * General Merchant id
-    * @member {String} merchant
-    */
+     * General Merchant id
+     * @member {String} merchant
+     */
     merchant = undefined;
+
     /**
-    * Loyalty Card number
-    * @member {Number} cardnumber
-    */
+     * Loyalty Card number
+     * @member {Number} cardnumber
+     */
     cardnumber = undefined;
 
-
-
-
-
-
-
-
 }
-
-

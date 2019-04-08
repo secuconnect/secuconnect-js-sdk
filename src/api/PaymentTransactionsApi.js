@@ -1,6 +1,6 @@
 
 import ApiClient from "../ApiClient";
-import PaymentTransactionsCancelList from '../model/PaymentTransactionsCancelList';
+import PaymentTransactionCancelDTO from '../model/PaymentTransactionCancelDTO';
 import PaymentTransactionsList from '../model/PaymentTransactionsList';
 import PaymentTransactionsProductModel from '../model/PaymentTransactionsProductModel';
 import PaymentTransactionsShippingUrl from '../model/PaymentTransactionsShippingUrl';
@@ -26,6 +26,62 @@ export default class PaymentTransactionsApi {
 
 
     /**
+     * POST Payment/Transactions/{paymentTransactionId}/cancel
+     * Cancel a payment transaction
+     * @param {String} paymentTransactionId Payment transaction id
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PaymentTransactionCancelDTO} opts.body Cancel payment transaction input properties
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PaymentTransactionsProductModel>} and HTTP response
+     */
+    cancelWithHttpInfo(paymentTransactionId, opts) {
+      opts = opts || {};
+      let postBody = opts['body'];
+
+      // verify the required parameter 'paymentTransactionId' is set
+      if (paymentTransactionId === undefined || paymentTransactionId === null) {
+        throw new Error("Missing the required parameter 'paymentTransactionId' when calling cancel");
+      }
+
+
+      let pathParams = {
+        'paymentTransactionId': paymentTransactionId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['oauth_token'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = [PaymentTransactionsProductModel];
+
+      return this.apiClient.callApi(
+        '/Payment/Transactions/{paymentTransactionId}/cancel', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * POST Payment/Transactions/{paymentTransactionId}/cancel
+     * Cancel a payment transaction
+     * @param {String} paymentTransactionId Payment transaction id
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PaymentTransactionCancelDTO} opts.body Cancel payment transaction input properties
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PaymentTransactionsProductModel>}
+     */
+    cancel(paymentTransactionId, opts) {
+      return this.cancelWithHttpInfo(paymentTransactionId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * GET Payment/Transactions
      * Get a list of payment transactions
      * @param {Object} opts Optional parameters
@@ -36,7 +92,7 @@ export default class PaymentTransactionsApi {
      * @param {String} opts.sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#39;asc&#39;, or descending &#39;dsc&#39; order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentTransactionsList} and HTTP response
      */
-    paymentTransactionsGetWithHttpInfo(opts) {
+    getAllWithHttpInfo(opts) {
       opts = opts || {};
       let postBody = null;
 
@@ -78,8 +134,8 @@ export default class PaymentTransactionsApi {
      * @param {String} opts.sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#39;asc&#39;, or descending &#39;dsc&#39; order.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentTransactionsList}
      */
-    paymentTransactionsGet(opts) {
-      return this.paymentTransactionsGetWithHttpInfo(opts)
+    getAll(opts) {
+      return this.getAllWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -92,12 +148,12 @@ export default class PaymentTransactionsApi {
      * @param {String} paymentTransactionId Payment transaction id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentTransactionsProductModel} and HTTP response
      */
-    paymentTransactionsGetByIdWithHttpInfo(paymentTransactionId) {
+    getOneWithHttpInfo(paymentTransactionId) {
       let postBody = null;
 
       // verify the required parameter 'paymentTransactionId' is set
       if (paymentTransactionId === undefined || paymentTransactionId === null) {
-        throw new Error("Missing the required parameter 'paymentTransactionId' when calling paymentTransactionsGetById");
+        throw new Error("Missing the required parameter 'paymentTransactionId' when calling getOne");
       }
 
 
@@ -129,8 +185,8 @@ export default class PaymentTransactionsApi {
      * @param {String} paymentTransactionId Payment transaction id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentTransactionsProductModel}
      */
-    paymentTransactionsGetById(paymentTransactionId) {
-      return this.paymentTransactionsGetByIdWithHttpInfo(paymentTransactionId)
+    getOne(paymentTransactionId) {
+      return this.getOneWithHttpInfo(paymentTransactionId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -138,68 +194,17 @@ export default class PaymentTransactionsApi {
 
 
     /**
-     * POST Payment/Transactions/{paymentTransactionId}/cancel
-     * Cancel a payment transaction
-     * @param {String} paymentTransactionId Payment transaction id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PaymentTransactionsCancelList>} and HTTP response
-     */
-    paymentTransactionsIdCancelPostWithHttpInfo(paymentTransactionId) {
-      let postBody = null;
-
-      // verify the required parameter 'paymentTransactionId' is set
-      if (paymentTransactionId === undefined || paymentTransactionId === null) {
-        throw new Error("Missing the required parameter 'paymentTransactionId' when calling paymentTransactionsIdCancelPost");
-      }
-
-
-      let pathParams = {
-        'paymentTransactionId': paymentTransactionId
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['oauth_token'];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = [PaymentTransactionsCancelList];
-
-      return this.apiClient.callApi(
-        '/Payment/Transactions/{paymentTransactionId}/cancel', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * POST Payment/Transactions/{paymentTransactionId}/cancel
-     * Cancel a payment transaction
-     * @param {String} paymentTransactionId Payment transaction id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PaymentTransactionsCancelList>}
-     */
-    paymentTransactionsIdCancelPost(paymentTransactionId) {
-      return this.paymentTransactionsIdCancelPostWithHttpInfo(paymentTransactionId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * GET Payment/Transactions/{paymentTransactionId}/ShippingUrl
+     * GET Payment/Transactions/{paymentTransactionId}/shippingUrl
      * Get the url where you can fill the shipping information
      * @param {String} paymentTransactionId Payment transaction id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentTransactionsShippingUrl} and HTTP response
      */
-    paymentTransactionsIdShippingUrlGetWithHttpInfo(paymentTransactionId) {
+    getShippingUrlWithHttpInfo(paymentTransactionId) {
       let postBody = null;
 
       // verify the required parameter 'paymentTransactionId' is set
       if (paymentTransactionId === undefined || paymentTransactionId === null) {
-        throw new Error("Missing the required parameter 'paymentTransactionId' when calling paymentTransactionsIdShippingUrlGet");
+        throw new Error("Missing the required parameter 'paymentTransactionId' when calling getShippingUrl");
       }
 
 
@@ -219,20 +224,76 @@ export default class PaymentTransactionsApi {
       let returnType = PaymentTransactionsShippingUrl;
 
       return this.apiClient.callApi(
-        '/Payment/Transactions/{paymentTransactionId}/ShippingUrl', 'GET',
+        '/Payment/Transactions/{paymentTransactionId}/shippingUrl', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * GET Payment/Transactions/{paymentTransactionId}/ShippingUrl
+     * GET Payment/Transactions/{paymentTransactionId}/shippingUrl
      * Get the url where you can fill the shipping information
      * @param {String} paymentTransactionId Payment transaction id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentTransactionsShippingUrl}
      */
-    paymentTransactionsIdShippingUrlGet(paymentTransactionId) {
-      return this.paymentTransactionsIdShippingUrlGetWithHttpInfo(paymentTransactionId)
+    getShippingUrl(paymentTransactionId) {
+      return this.getShippingUrlWithHttpInfo(paymentTransactionId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * POST Payment/Transactions/{paymentTransactionId}/revokeAccrual
+     * Revoke the accrual flag of a payment transaction
+     * @param {String} paymentTransactionId Payment transaction id
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body Reverse accrual input properties
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentTransactionsProductModel} and HTTP response
+     */
+    revokeAccrualWithHttpInfo(paymentTransactionId, opts) {
+      opts = opts || {};
+      let postBody = opts['body'];
+
+      // verify the required parameter 'paymentTransactionId' is set
+      if (paymentTransactionId === undefined || paymentTransactionId === null) {
+        throw new Error("Missing the required parameter 'paymentTransactionId' when calling revokeAccrual");
+      }
+
+
+      let pathParams = {
+        'paymentTransactionId': paymentTransactionId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['oauth_token'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = PaymentTransactionsProductModel;
+
+      return this.apiClient.callApi(
+        '/Payment/Transactions/{paymentTransactionId}/revokeAccrual', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * POST Payment/Transactions/{paymentTransactionId}/revokeAccrual
+     * Revoke the accrual flag of a payment transaction
+     * @param {String} paymentTransactionId Payment transaction id
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body Reverse accrual input properties
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentTransactionsProductModel}
+     */
+    revokeAccrual(paymentTransactionId, opts) {
+      return this.revokeAccrualWithHttpInfo(paymentTransactionId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

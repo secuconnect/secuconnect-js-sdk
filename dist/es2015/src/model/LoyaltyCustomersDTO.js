@@ -19,15 +19,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The LoyaltyCustomersDTO model module.
-* @module model/LoyaltyCustomersDTO
-*/
+ * The LoyaltyCustomersDTO model module.
+ * @module model/LoyaltyCustomersDTO
+ */
 var LoyaltyCustomersDTO = function () {
     /**
-    * Constructs a new <code>LoyaltyCustomersDTO</code>.
-    * @alias module:model/LoyaltyCustomersDTO
-    * @class
-    */
+     * Constructs a new <code>LoyaltyCustomersDTO</code>.
+     * @alias module:model/LoyaltyCustomersDTO
+     * @class
+     */
 
     function LoyaltyCustomersDTO() {
         _classCallCheck(this, LoyaltyCustomersDTO);
@@ -82,39 +82,45 @@ var LoyaltyCustomersDTO = function () {
         }
 
         /**
-        * merchant
-        * @member {String} merchant
-        */
+         * merchant
+         * @member {String} merchant
+         */
+
 
         /**
-        * Contact
-        * @member {module:model/Contact} merchant_contact
-        */
+         * Contact
+         * @member {module:model/Contact} merchant_contact
+         */
+
 
         /**
-        * Age
-        * @member {Number} age
-        */
+         * Age
+         * @member {Number} age
+         */
+
 
         /**
-        * Number of days until birthday
-        * @member {Number} days_until_birthday
-        */
+         * Number of days until birthday
+         * @member {Number} days_until_birthday
+         */
+
 
         /**
-        * Customer number
-        * @member {String} customernumber
-        */
+         * Customer number
+         * @member {String} customernumber
+         */
+
 
         /**
-        * note
-        * @member {String} note
-        */
+         * note
+         * @member {String} note
+         */
+
 
         /**
-        * Consent for communication
-        * @member {Object} additional_data
-        */
+         * Consent for communication
+         * @member {Object} additional_data
+         */
 
     }]);
 

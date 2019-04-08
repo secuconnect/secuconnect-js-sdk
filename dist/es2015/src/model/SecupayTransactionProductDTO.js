@@ -18,6 +18,10 @@ var _SecupayBasketItem = require('./SecupayBasketItem');
 
 var _SecupayBasketItem2 = _interopRequireDefault(_SecupayBasketItem);
 
+var _SecupayRedirectUrl = require('./SecupayRedirectUrl');
+
+var _SecupayRedirectUrl2 = _interopRequireDefault(_SecupayRedirectUrl);
+
 var _SecupayTransactionProductDTOExperience = require('./SecupayTransactionProductDTOExperience');
 
 var _SecupayTransactionProductDTOExperience2 = _interopRequireDefault(_SecupayTransactionProductDTOExperience);
@@ -25,10 +29,6 @@ var _SecupayTransactionProductDTOExperience2 = _interopRequireDefault(_SecupayTr
 var _SecupayTransactionProductDTOOptData = require('./SecupayTransactionProductDTOOptData');
 
 var _SecupayTransactionProductDTOOptData2 = _interopRequireDefault(_SecupayTransactionProductDTOOptData);
-
-var _SecupayTransactionProductDTORedirectUrl = require('./SecupayTransactionProductDTORedirectUrl');
-
-var _SecupayTransactionProductDTORedirectUrl2 = _interopRequireDefault(_SecupayTransactionProductDTORedirectUrl);
 
 var _SecupayTransactionProductDTOSubscription = require('./SecupayTransactionProductDTOSubscription');
 
@@ -39,15 +39,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SecupayTransactionProductDTO model module.
-* @module model/SecupayTransactionProductDTO
-*/
+ * The SecupayTransactionProductDTO model module.
+ * @module model/SecupayTransactionProductDTO
+ */
 var SecupayTransactionProductDTO = function () {
     /**
-    * Constructs a new <code>SecupayTransactionProductDTO</code>.
-    * @alias module:model/SecupayTransactionProductDTO
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionProductDTO</code>.
+     * @alias module:model/SecupayTransactionProductDTO
+     * @class
+     */
 
     function SecupayTransactionProductDTO() {
         _classCallCheck(this, SecupayTransactionProductDTO);
@@ -109,7 +109,7 @@ var SecupayTransactionProductDTO = function () {
                     obj['customer'] = _PaymentCustomersProductModel2.default.constructFromObject(data['customer']);
                 }
                 if (data.hasOwnProperty('redirect_url')) {
-                    obj['redirect_url'] = _SecupayTransactionProductDTORedirectUrl2.default.constructFromObject(data['redirect_url']);
+                    obj['redirect_url'] = _SecupayRedirectUrl2.default.constructFromObject(data['redirect_url']);
                 }
                 if (data.hasOwnProperty('contract')) {
                     obj['contract'] = _ApiClient2.default.convertToType(data['contract'], 'String');
@@ -134,75 +134,90 @@ var SecupayTransactionProductDTO = function () {
         }
 
         /**
-        * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
-        * @member {Number} amount
-        */
+         * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
+         * @member {Number} amount
+         */
+
 
         /**
-        * ISO 4217 code of currency, eg EUR for Euro.
-        * @member {String} currency
-        */
+         * ISO 4217 code of currency, eg EUR for Euro.
+         * @member {String} currency
+         */
+
 
         /**
-        * The purpose of the payment. This is the later assignment of the payment is for example on the account statement of the buyer.
-        * @member {String} purpose
-        */
+         * The purpose of the payment. This is the later assignment of the payment is for example on the account statement of the buyer.
+         * @member {String} purpose
+         */
+
 
         /**
-        * Specifying an order number. Depending on the contract setting, this must be unique for each payment.
-        * @member {String} order_id
-        */
+         * Specifying an order number. Depending on the contract setting, this must be unique for each payment.
+         * @member {String} order_id
+         */
+
 
         /**
-        * A list of items that are being purchased.
-        * @member {Array.<module:model/SecupayBasketItem>} basket
-        */
+         * A list of items that are being purchased.
+         * @member {Array.<module:model/SecupayBasketItem>} basket
+         */
+
 
         /**
-        * Indicates whether the payment is locked for pay-out (TRUE) or not (FALSE). Standard value here is FALSE.
-        * @member {Boolean} accrual
-        */
+         * Indicates whether the payment is locked for pay-out (TRUE) or not (FALSE). Standard value here is FALSE.
+         * @member {Boolean} accrual
+         */
+
 
         /**
-        * Specifies whether a pre-authorization (\"authorization\") or instant payment (\"sale\") is to be performed. Standard value here is \"sale\". The collection of the pre-authorized payment is made with the \"capture\" command.
-        * @member {String} payment_action
-        */
+         * Specifies whether a pre-authorization (\"authorization\") or instant payment (\"sale\") is to be performed. Standard value here is \"sale\". The collection of the pre-authorized payment is made with the \"capture\" command.
+         * @member {String} payment_action
+         */
+
 
         /**
-        * The customer object
-        * @member {module:model/PaymentCustomersProductModel} customer
-        */
+         * The customer object
+         * @member {module:model/PaymentCustomersProductModel} customer
+         */
+
 
         /**
-        * @member {module:model/SecupayTransactionProductDTORedirectUrl} redirect_url
-        */
+         * A list of redirect urls used for the payment checkout page
+         * @member {module:model/SecupayRedirectUrl} redirect_url
+         */
+
 
         /**
-        * Contract id
-        * @member {String} contract
-        */
+         * Contract id
+         * @member {String} contract
+         */
+
 
         /**
-        * Container id
-        * @member {String} container
-        */
+         * Container id
+         * @member {String} container
+         */
+
 
         /**
-        * @member {module:model/SecupayTransactionProductDTOOptData} opt_data
-        */
+         * @member {module:model/SecupayTransactionProductDTOOptData} opt_data
+         */
+
 
         /**
-        * @member {module:model/SecupayTransactionProductDTOSubscription} subscription
-        */
+         * @member {module:model/SecupayTransactionProductDTOSubscription} subscription
+         */
+
 
         /**
-        * Demo
-        * @member {Boolean} demo
-        */
+         * Demo
+         * @member {Boolean} demo
+         */
+
 
         /**
-        * @member {module:model/SecupayTransactionProductDTOExperience} experience
-        */
+         * @member {module:model/SecupayTransactionProductDTOExperience} experience
+         */
 
     }]);
 

@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SmartDevicesDTO model module.
-* @module model/SmartDevicesDTO
-*/
+ * The SmartDevicesDTO model module.
+ * @module model/SmartDevicesDTO
+ */
 var SmartDevicesDTO = function () {
     /**
-    * Constructs a new <code>SmartDevicesDTO</code>.
-    * @alias module:model/SmartDevicesDTO
-    * @class
-    */
+     * Constructs a new <code>SmartDevicesDTO</code>.
+     * @alias module:model/SmartDevicesDTO
+     * @class
+     */
 
     function SmartDevicesDTO() {
         _classCallCheck(this, SmartDevicesDTO);
@@ -90,54 +90,63 @@ var SmartDevicesDTO = function () {
         }
 
         /**
-        * Merchant
-        * @member {String} merchant
-        */
+         * Merchant
+         * @member {String} merchant
+         */
+
 
         /**
-        * Store
-        * @member {String} store
-        */
+         * Store
+         * @member {String} store
+         */
+
 
         /**
-        * Terminal
-        * @member {String} terminal
-        */
+         * Terminal
+         * @member {String} terminal
+         */
+
 
         /**
-        * Vendor
-        * @member {String} vendor
-        */
+         * Vendor
+         * @member {String} vendor
+         */
+
 
         /**
-        * Vendor uid
-        * @member {String} vendor_uid
-        */
+         * Vendor uid
+         * @member {String} vendor_uid
+         */
+
 
         /**
-        * Type
-        * @member {String} type
-        */
+         * Type
+         * @member {String} type
+         */
+
 
         /**
-        * Description
-        * @member {String} description
-        */
+         * Description
+         * @member {String} description
+         */
+
 
         /**
-        * Products
-        * @member {Array.<String>} products
-        */
+         * Products
+         * @member {Array.<String>} products
+         */
+
 
         /**
-        * Base version
-        * @member {String} base_version
-        */
+         * Base version
+         * @member {String} base_version
+         */
+
 
         /**
-        * Terminal type
-        * @member {String} terminal_type
-        */
+         * Terminal type
+         * @member {String} terminal_type
+         */
 
     }]);
 

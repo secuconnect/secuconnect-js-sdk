@@ -23,15 +23,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The PaymentContractsRequestIdResult model module.
-* @module model/PaymentContractsRequestIdResult
-*/
+ * The PaymentContractsRequestIdResult model module.
+ * @module model/PaymentContractsRequestIdResult
+ */
 var PaymentContractsRequestIdResult = function () {
     /**
-    * Constructs a new <code>PaymentContractsRequestIdResult</code>.
-    * @alias module:model/PaymentContractsRequestIdResult
-    * @class
-    */
+     * Constructs a new <code>PaymentContractsRequestIdResult</code>.
+     * @alias module:model/PaymentContractsRequestIdResult
+     * @class
+     */
 
     function PaymentContractsRequestIdResult() {
         _classCallCheck(this, PaymentContractsRequestIdResult);
@@ -70,19 +70,21 @@ var PaymentContractsRequestIdResult = function () {
         }
 
         /**
-        * The payment contract object
-        * @member {module:model/PaymentContractsProductModel} contract
-        */
+         * The payment contract object
+         * @member {module:model/PaymentContractsProductModel} contract
+         */
+
 
         /**
-        * Returns the apikey of the created merchant
-        * @member {String} apikey
-        */
+         * Returns the apikey of the created merchant
+         * @member {String} apikey
+         */
+
 
         /**
-        * The bank account you can use for pay in.
-        * @member {module:model/PaymentInformation} payin_account
-        */
+         * The bank account you can use for pay in.
+         * @member {module:model/PaymentInformation} payin_account
+         */
 
     }]);
 

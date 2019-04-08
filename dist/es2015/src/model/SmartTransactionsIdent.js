@@ -19,15 +19,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SmartTransactionsIdent model module.
-* @module model/SmartTransactionsIdent
-*/
+ * The SmartTransactionsIdent model module.
+ * @module model/SmartTransactionsIdent
+ */
 var SmartTransactionsIdent = function () {
     /**
-    * Constructs a new <code>SmartTransactionsIdent</code>.
-    * @alias module:model/SmartTransactionsIdent
-    * @class
-    */
+     * Constructs a new <code>SmartTransactionsIdent</code>.
+     * @alias module:model/SmartTransactionsIdent
+     * @class
+     */
 
     function SmartTransactionsIdent() {
         _classCallCheck(this, SmartTransactionsIdent);
@@ -86,44 +86,51 @@ var SmartTransactionsIdent = function () {
         }
 
         /**
-        * Object of smart transaction ident
-        * @member {String} object
-        */
+         * Object of smart transaction ident
+         * @member {String} object
+         */
+
 
         /**
-        * Id of smart transaction ident
-        * @member {String} id
-        */
+         * Id of smart transaction ident
+         * @member {String} id
+         */
+
 
         /**
-        * Prefix
-        * @member {String} prefix
-        */
+         * Prefix
+         * @member {String} prefix
+         */
+
 
         /**
-        * Name
-        * @member {String} name
-        */
+         * Name
+         * @member {String} name
+         */
+
 
         /**
-        * Type
-        * @member {String} type
-        */
+         * Type
+         * @member {String} type
+         */
+
 
         /**
-        * Value
-        * @member {String} value
-        */
+         * Value
+         * @member {String} value
+         */
+
 
         /**
-        * Valid
-        * @member {Boolean} valid
-        */
+         * Valid
+         * @member {Boolean} valid
+         */
+
 
         /**
-        * Loyalty merchant card
-        * @member {module:model/LoyaltyMerchantcardsProductModel} merchantcard
-        */
+         * Loyalty merchant card
+         * @member {module:model/LoyaltyMerchantcardsProductModel} merchantcard
+         */
 
     }]);
 

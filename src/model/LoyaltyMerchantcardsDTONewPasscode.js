@@ -2,31 +2,21 @@
 import ApiClient from '../ApiClient';
 import LoyaltyMerchantcardsDTOValidateMerchantCard from './LoyaltyMerchantcardsDTOValidateMerchantCard';
 
-
-
-
-
 /**
-* The LoyaltyMerchantcardsDTONewPasscode model module.
-* @module model/LoyaltyMerchantcardsDTONewPasscode
-*/
+ * The LoyaltyMerchantcardsDTONewPasscode model module.
+ * @module model/LoyaltyMerchantcardsDTONewPasscode
+ */
 export default class LoyaltyMerchantcardsDTONewPasscode {
     /**
-    * Constructs a new <code>LoyaltyMerchantcardsDTONewPasscode</code>.
-    * @alias module:model/LoyaltyMerchantcardsDTONewPasscode
-    * @class
-    * @implements module:model/LoyaltyMerchantcardsDTOValidateMerchantCard
-    */
+     * Constructs a new <code>LoyaltyMerchantcardsDTONewPasscode</code>.
+     * @alias module:model/LoyaltyMerchantcardsDTONewPasscode
+     * @class
+     * @implements module:model/LoyaltyMerchantcardsDTOValidateMerchantCard
+     */
 
     constructor() {
         
-
-        
         LoyaltyMerchantcardsDTOValidateMerchantCard.call(this);
-
-        
-
-        
     }
 
     /**
@@ -39,11 +29,9 @@ export default class LoyaltyMerchantcardsDTONewPasscode {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyMerchantcardsDTONewPasscode();
-
             
             
             LoyaltyMerchantcardsDTOValidateMerchantCard.constructFromObject(data, obj);
-
             if (data.hasOwnProperty('passcode')) {
                 obj['passcode'] = ApiClient.convertToType(data['passcode'], 'Number');
             }
@@ -52,30 +40,24 @@ export default class LoyaltyMerchantcardsDTONewPasscode {
     }
 
     /**
-    * Loyalty Card passcode
-    * @member {Number} passcode
-    */
+     * Loyalty Card passcode
+     * @member {Number} passcode
+     */
     passcode = undefined;
 
 
     // Implement LoyaltyMerchantcardsDTOValidateMerchantCard interface:
+
     /**
-    * General Merchant id
-    * @member {String} merchant
-    */
+     * General Merchant id
+     * @member {String} merchant
+     */
     merchant = undefined;
-/**
-    * Loyalty Card number
-    * @member {Number} cardnumber
-    */
+
+    /**
+     * Loyalty Card number
+     * @member {Number} cardnumber
+     */
     cardnumber = undefined;
 
-
-
-
-
-
-
 }
-
-

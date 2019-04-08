@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The LoyaltyMerchantcardsValidateMerchantCard model module.
-* @module model/LoyaltyMerchantcardsValidateMerchantCard
-*/
+ * The LoyaltyMerchantcardsValidateMerchantCard model module.
+ * @module model/LoyaltyMerchantcardsValidateMerchantCard
+ */
 export default class LoyaltyMerchantcardsValidateMerchantCard {
     /**
-    * Constructs a new <code>LoyaltyMerchantcardsValidateMerchantCard</code>.
-    * @alias module:model/LoyaltyMerchantcardsValidateMerchantCard
-    * @class
-    */
+     * Constructs a new <code>LoyaltyMerchantcardsValidateMerchantCard</code>.
+     * @alias module:model/LoyaltyMerchantcardsValidateMerchantCard
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class LoyaltyMerchantcardsValidateMerchantCard {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyMerchantcardsValidateMerchantCard();
-
             
             
             
-
             if (data.hasOwnProperty('isValid')) {
                 obj['isValid'] = ApiClient.convertToType(data['isValid'], 'Boolean');
             }
@@ -56,28 +43,21 @@ export default class LoyaltyMerchantcardsValidateMerchantCard {
     }
 
     /**
-    * Result has true or false value
-    * @member {Boolean} isValid
-    */
+     * Result has true or false value
+     * @member {Boolean} isValid
+     */
     isValid = undefined;
+
     /**
-    * Result has true or false value
-    * @member {Boolean} hasPasscode
-    */
+     * Result has true or false value
+     * @member {Boolean} hasPasscode
+     */
     hasPasscode = undefined;
+
     /**
-    * Result has true or false value
-    * @member {Boolean} isLocked
-    */
+     * Result has true or false value
+     * @member {Boolean} isLocked
+     */
     isLocked = undefined;
 
-
-
-
-
-
-
-
 }
-
-

@@ -23,15 +23,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The GeneralStoresDTO model module.
-* @module model/GeneralStoresDTO
-*/
+ * The GeneralStoresDTO model module.
+ * @module model/GeneralStoresDTO
+ */
 var GeneralStoresDTO = function () {
     /**
-    * Constructs a new <code>GeneralStoresDTO</code>.
-    * @alias module:model/GeneralStoresDTO
-    * @class
-    */
+     * Constructs a new <code>GeneralStoresDTO</code>.
+     * @alias module:model/GeneralStoresDTO
+     * @class
+     */
 
     function GeneralStoresDTO() {
         _classCallCheck(this, GeneralStoresDTO);
@@ -86,39 +86,45 @@ var GeneralStoresDTO = function () {
         }
 
         /**
-        * New address
-        * @member {module:model/Address} address
-        */
+         * New address
+         * @member {module:model/Address} address
+         */
+
 
         /**
-        * New facebook id
-        * @member {String} facebook_id
-        */
+         * New facebook id
+         * @member {String} facebook_id
+         */
+
 
         /**
-        * New phone number
-        * @member {String} phone
-        */
+         * New phone number
+         * @member {String} phone
+         */
+
 
         /**
-        * New url to general store website
-        * @member {String} url_website
-        */
+         * New url to general store website
+         * @member {String} url_website
+         */
+
 
         /**
-        * New main photo
-        * @member {String} photo_main
-        */
+         * New main photo
+         * @member {String} photo_main
+         */
+
 
         /**
-        * New photos
-        * @member {Array.<String>} photo
-        */
+         * New photos
+         * @member {Array.<String>} photo
+         */
+
 
         /**
-        * Open hours in every day
-        * @member {Array.<module:model/OpenHours>} open_hours
-        */
+         * Open hours in every day
+         * @member {Array.<module:model/OpenHours>} open_hours
+         */
 
     }]);
 

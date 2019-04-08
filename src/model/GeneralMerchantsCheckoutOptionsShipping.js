@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The GeneralMerchantsCheckoutOptionsShipping model module.
-* @module model/GeneralMerchantsCheckoutOptionsShipping
-*/
+ * The GeneralMerchantsCheckoutOptionsShipping model module.
+ * @module model/GeneralMerchantsCheckoutOptionsShipping
+ */
 export default class GeneralMerchantsCheckoutOptionsShipping {
     /**
-    * Constructs a new <code>GeneralMerchantsCheckoutOptionsShipping</code>.
-    * @alias module:model/GeneralMerchantsCheckoutOptionsShipping
-    * @class
-    */
+     * Constructs a new <code>GeneralMerchantsCheckoutOptionsShipping</code>.
+     * @alias module:model/GeneralMerchantsCheckoutOptionsShipping
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class GeneralMerchantsCheckoutOptionsShipping {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new GeneralMerchantsCheckoutOptionsShipping();
-
             
             
             
-
             if (data.hasOwnProperty('enabled')) {
                 obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
             }
@@ -50,18 +37,9 @@ export default class GeneralMerchantsCheckoutOptionsShipping {
     }
 
     /**
-    * Enabled
-    * @member {Boolean} enabled
-    */
+     * Enabled
+     * @member {Boolean} enabled
+     */
     enabled = undefined;
 
-
-
-
-
-
-
-
 }
-
-

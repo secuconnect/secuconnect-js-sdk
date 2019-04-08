@@ -19,15 +19,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The LoyaltyStoregroupsList model module.
-* @module model/LoyaltyStoregroupsList
-*/
+ * The LoyaltyStoregroupsList model module.
+ * @module model/LoyaltyStoregroupsList
+ */
 var LoyaltyStoregroupsList = function () {
     /**
-    * Constructs a new <code>LoyaltyStoregroupsList</code>.
-    * @alias module:model/LoyaltyStoregroupsList
-    * @class
-    */
+     * Constructs a new <code>LoyaltyStoregroupsList</code>.
+     * @alias module:model/LoyaltyStoregroupsList
+     * @class
+     */
 
     function LoyaltyStoregroupsList() {
         _classCallCheck(this, LoyaltyStoregroupsList);
@@ -62,14 +62,15 @@ var LoyaltyStoregroupsList = function () {
         }
 
         /**
-        * Number of existing loyalty store groups
-        * @member {Number} count
-        */
+         * Number of existing loyalty store groups
+         * @member {Number} count
+         */
+
 
         /**
-        * GET Loyalty/StoreGroups
-        * @member {Array.<module:model/LoyaltyStoregroupsProductModel>} data
-        */
+         * GET Loyalty/StoreGroups
+         * @member {Array.<module:model/LoyaltyStoregroupsProductModel>} data
+         */
 
     }]);
 

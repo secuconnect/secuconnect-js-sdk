@@ -1,6 +1,7 @@
 
 import ApiClient from "../ApiClient";
 import ProductExceptionPayload from '../model/ProductExceptionPayload';
+import SmartDeviceUserPin from '../model/SmartDeviceUserPin';
 import SmartDevicesDTO from '../model/SmartDevicesDTO';
 import SmartDevicesDTOPrepaidTid from '../model/SmartDevicesDTOPrepaidTid';
 import SmartDevicesDTOSecubaseConfig from '../model/SmartDevicesDTOSecubaseConfig';
@@ -79,7 +80,7 @@ export default class SmartDevicesApi {
 
 
     /**
-     * POST Smart/Devices/{smartDeviceId}/CreatePrepaidTid
+     * POST Smart/Devices/{smartDeviceId}/createPrepaidTid
      * Create prepaid tid
      * @param {String} smartDeviceId Smart device id
      * @param {module:model/SmartDevicesDTOPrepaidTid} prepaidTidProperties Prepaid tid properties
@@ -115,14 +116,14 @@ export default class SmartDevicesApi {
       let returnType = SmartDevicesProductModel;
 
       return this.apiClient.callApi(
-        '/Smart/Devices/{smartDeviceId}/CreatePrepaidTid', 'POST',
+        '/Smart/Devices/{smartDeviceId}/createPrepaidTid', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * POST Smart/Devices/{smartDeviceId}/CreatePrepaidTid
+     * POST Smart/Devices/{smartDeviceId}/createPrepaidTid
      * Create prepaid tid
      * @param {String} smartDeviceId Smart device id
      * @param {module:model/SmartDevicesDTOPrepaidTid} prepaidTidProperties Prepaid tid properties
@@ -137,7 +138,7 @@ export default class SmartDevicesApi {
 
 
     /**
-     * POST Smart/Devices/{smartDeviceId}/CreateVirtualDevice
+     * POST Smart/Devices/{smartDeviceId}/createVirtualDevice
      * Create virtual device
      * @param {String} smartDeviceId Smart device id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SmartDevicesProductModel} and HTTP response
@@ -167,14 +168,14 @@ export default class SmartDevicesApi {
       let returnType = SmartDevicesProductModel;
 
       return this.apiClient.callApi(
-        '/Smart/Devices/{smartDeviceId}/CreateVirtualDevice', 'POST',
+        '/Smart/Devices/{smartDeviceId}/createVirtualDevice', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * POST Smart/Devices/{smartDeviceId}/CreateVirtualDevice
+     * POST Smart/Devices/{smartDeviceId}/createVirtualDevice
      * Create virtual device
      * @param {String} smartDeviceId Smart device id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SmartDevicesProductModel}
@@ -359,7 +360,7 @@ export default class SmartDevicesApi {
 
 
     /**
-     * POST Smart/Devices/{smartDeviceId}/GetSecubaseConfig
+     * POST Smart/Devices/{smartDeviceId}/getSecubaseConfig
      * Get secubase config
      * @param {String} smartDeviceId Smart device id
      * @param {module:model/SmartDevicesDTOSecubaseConfig} secubaseConfigProperties Secubase config properties
@@ -395,14 +396,14 @@ export default class SmartDevicesApi {
       let returnType = SmartDevicesSecubaseConfig;
 
       return this.apiClient.callApi(
-        '/Smart/Devices/{smartDeviceId}/GetSecubaseConfig', 'POST',
+        '/Smart/Devices/{smartDeviceId}/getSecubaseConfig', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * POST Smart/Devices/{smartDeviceId}/GetSecubaseConfig
+     * POST Smart/Devices/{smartDeviceId}/getSecubaseConfig
      * Get secubase config
      * @param {String} smartDeviceId Smart device id
      * @param {module:model/SmartDevicesDTOSecubaseConfig} secubaseConfigProperties Secubase config properties
@@ -468,6 +469,64 @@ export default class SmartDevicesApi {
      */
     updateDevice(smartDeviceId, smartDeviceProperties) {
       return this.updateDeviceWithHttpInfo(smartDeviceId, smartDeviceProperties)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * PUT /Smart/Devices/{smartDeviceId}/pin
+     * Create new smart device
+     * @param {String} smartDeviceId Smart device id
+     * @param {module:model/SmartDeviceUserPin} smartDeviceProperties Smart device properties
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SmartDevicesProductModel} and HTTP response
+     */
+    updatePinWithHttpInfo(smartDeviceId, smartDeviceProperties) {
+      let postBody = smartDeviceProperties;
+
+      // verify the required parameter 'smartDeviceId' is set
+      if (smartDeviceId === undefined || smartDeviceId === null) {
+        throw new Error("Missing the required parameter 'smartDeviceId' when calling updatePin");
+      }
+
+      // verify the required parameter 'smartDeviceProperties' is set
+      if (smartDeviceProperties === undefined || smartDeviceProperties === null) {
+        throw new Error("Missing the required parameter 'smartDeviceProperties' when calling updatePin");
+      }
+
+
+      let pathParams = {
+        'smartDeviceId': smartDeviceId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['oauth_token'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = SmartDevicesProductModel;
+
+      return this.apiClient.callApi(
+        '/Smart/Devices/{smartDeviceId}/pin', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * PUT /Smart/Devices/{smartDeviceId}/pin
+     * Create new smart device
+     * @param {String} smartDeviceId Smart device id
+     * @param {module:model/SmartDeviceUserPin} smartDeviceProperties Smart device properties
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SmartDevicesProductModel}
+     */
+    updatePin(smartDeviceId, smartDeviceProperties) {
+      return this.updatePinWithHttpInfo(smartDeviceId, smartDeviceProperties)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import SmartTransactionsProductModel from './SmartTransactionsProductModel';
 
-
-
-
-
 /**
-* The SmartTransactionsList model module.
-* @module model/SmartTransactionsList
-*/
+ * The SmartTransactionsList model module.
+ * @module model/SmartTransactionsList
+ */
 export default class SmartTransactionsList {
     /**
-    * Constructs a new <code>SmartTransactionsList</code>.
-    * @alias module:model/SmartTransactionsList
-    * @class
-    */
+     * Constructs a new <code>SmartTransactionsList</code>.
+     * @alias module:model/SmartTransactionsList
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class SmartTransactionsList {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SmartTransactionsList();
-
             
             
             
-
             if (data.hasOwnProperty('count')) {
                 obj['count'] = ApiClient.convertToType(data['count'], 'Number');
             }
@@ -54,23 +41,15 @@ export default class SmartTransactionsList {
     }
 
     /**
-    * Number of existing smart transactions
-    * @member {Number} count
-    */
+     * Number of existing smart transactions
+     * @member {Number} count
+     */
     count = undefined;
+
     /**
-    * GET Smart/Transactions
-    * @member {Array.<module:model/SmartTransactionsProductModel>} data
-    */
+     * GET Smart/Transactions
+     * @member {Array.<module:model/SmartTransactionsProductModel>} data
+     */
     data = undefined;
 
-
-
-
-
-
-
-
 }
-
-

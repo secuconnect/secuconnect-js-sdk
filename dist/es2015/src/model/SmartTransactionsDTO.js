@@ -10,9 +10,17 @@ var _ApiClient = require('../ApiClient');
 
 var _ApiClient2 = _interopRequireDefault(_ApiClient);
 
+var _PaymentCustomersProductModel = require('./PaymentCustomersProductModel');
+
+var _PaymentCustomersProductModel2 = _interopRequireDefault(_PaymentCustomersProductModel);
+
 var _ProductInstanceID = require('./ProductInstanceID');
 
 var _ProductInstanceID2 = _interopRequireDefault(_ProductInstanceID);
+
+var _ProductInstanceUID = require('./ProductInstanceUID');
+
+var _ProductInstanceUID2 = _interopRequireDefault(_ProductInstanceUID);
 
 var _SmartTransactionsBasket = require('./SmartTransactionsBasket');
 
@@ -22,6 +30,14 @@ var _SmartTransactionsBasketInfo = require('./SmartTransactionsBasketInfo');
 
 var _SmartTransactionsBasketInfo2 = _interopRequireDefault(_SmartTransactionsBasketInfo);
 
+var _SmartTransactionsCheckin = require('./SmartTransactionsCheckin');
+
+var _SmartTransactionsCheckin2 = _interopRequireDefault(_SmartTransactionsCheckin);
+
+var _SmartTransactionsCheckoutLinks = require('./SmartTransactionsCheckoutLinks');
+
+var _SmartTransactionsCheckoutLinks2 = _interopRequireDefault(_SmartTransactionsCheckoutLinks);
+
 var _SmartTransactionsIdent = require('./SmartTransactionsIdent');
 
 var _SmartTransactionsIdent2 = _interopRequireDefault(_SmartTransactionsIdent);
@@ -30,26 +46,30 @@ var _SmartTransactionsPickupOptions = require('./SmartTransactionsPickupOptions'
 
 var _SmartTransactionsPickupOptions2 = _interopRequireDefault(_SmartTransactionsPickupOptions);
 
+var _SmartTransactionsReceipt = require('./SmartTransactionsReceipt');
+
+var _SmartTransactionsReceipt2 = _interopRequireDefault(_SmartTransactionsReceipt);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SmartTransactionsDTO model module.
-* @module model/SmartTransactionsDTO
-*/
+ * The SmartTransactionsDTO model module.
+ * @module model/SmartTransactionsDTO
+ */
 var SmartTransactionsDTO = function () {
     /**
-    * Constructs a new <code>SmartTransactionsDTO</code>.
-    * @alias module:model/SmartTransactionsDTO
-    * @class
-    */
+     * Constructs a new <code>SmartTransactionsDTO</code>.
+     * @alias module:model/SmartTransactionsDTO
+     * @class
+     */
 
     function SmartTransactionsDTO() {
         _classCallCheck(this, SmartTransactionsDTO);
 
         this.merchant = undefined;
-        this.marketplace_contract = undefined;
+        this.provider_contract = undefined;
         this.order_option = undefined;
         this.status = undefined;
         this.transactionRef = undefined;
@@ -69,6 +89,13 @@ var SmartTransactionsDTO = function () {
         this.contract = undefined;
         this.pickup_options = undefined;
         this.last_visited_page = undefined;
+        this.customer = undefined;
+        this.shipping_address = undefined;
+        this.container = undefined;
+        this.checkin = undefined;
+        this.payment_method = undefined;
+        this.is_demo = undefined;
+        this.checkout_links = undefined;
     }
 
     /**
@@ -89,8 +116,8 @@ var SmartTransactionsDTO = function () {
                 if (data.hasOwnProperty('merchant')) {
                     obj['merchant'] = _ApiClient2.default.convertToType(data['merchant'], 'String');
                 }
-                if (data.hasOwnProperty('marketplace_contract')) {
-                    obj['marketplace_contract'] = _ProductInstanceID2.default.constructFromObject(data['marketplace_contract']);
+                if (data.hasOwnProperty('provider_contract')) {
+                    obj['provider_contract'] = _ProductInstanceUID2.default.constructFromObject(data['provider_contract']);
                 }
                 if (data.hasOwnProperty('order_option')) {
                     obj['order_option'] = _ApiClient2.default.convertToType(data['order_option'], 'String');
@@ -129,7 +156,7 @@ var SmartTransactionsDTO = function () {
                     obj['product'] = _ApiClient2.default.convertToType(data['product'], 'String');
                 }
                 if (data.hasOwnProperty('receipt')) {
-                    obj['receipt'] = _ApiClient2.default.convertToType(data['receipt'], 'String');
+                    obj['receipt'] = _ApiClient2.default.convertToType(data['receipt'], [_SmartTransactionsReceipt2.default]);
                 }
                 if (data.hasOwnProperty('receipt_number')) {
                     obj['receipt_number'] = _ApiClient2.default.convertToType(data['receipt_number'], 'Number');
@@ -149,114 +176,197 @@ var SmartTransactionsDTO = function () {
                 if (data.hasOwnProperty('last_visited_page')) {
                     obj['last_visited_page'] = _ApiClient2.default.convertToType(data['last_visited_page'], 'String');
                 }
+                if (data.hasOwnProperty('customer')) {
+                    obj['customer'] = _PaymentCustomersProductModel2.default.constructFromObject(data['customer']);
+                }
+                if (data.hasOwnProperty('shipping_address')) {
+                    obj['shipping_address'] = _PaymentCustomersProductModel2.default.constructFromObject(data['shipping_address']);
+                }
+                if (data.hasOwnProperty('container')) {
+                    obj['container'] = _ProductInstanceUID2.default.constructFromObject(data['container']);
+                }
+                if (data.hasOwnProperty('checkin')) {
+                    obj['checkin'] = _SmartTransactionsCheckin2.default.constructFromObject(data['checkin']);
+                }
+                if (data.hasOwnProperty('payment_method')) {
+                    obj['payment_method'] = _ApiClient2.default.convertToType(data['payment_method'], 'String');
+                }
+                if (data.hasOwnProperty('is_demo')) {
+                    obj['is_demo'] = _ApiClient2.default.convertToType(data['is_demo'], 'Boolean');
+                }
+                if (data.hasOwnProperty('checkout_links')) {
+                    obj['checkout_links'] = _SmartTransactionsCheckoutLinks2.default.constructFromObject(data['checkout_links']);
+                }
             }
             return obj;
         }
 
         /**
-        * Merchant
-        * @member {String} merchant
-        */
+         * Merchant
+         * @member {String} merchant
+         */
+
 
         /**
-        * Marketplace contract
-        * @member {module:model/ProductInstanceID} marketplace_contract
-        */
+         * Provider contract
+         * @member {module:model/ProductInstanceUID} provider_contract
+         */
+
 
         /**
-        * Order option
-        * @member {String} order_option
-        */
+         * Order option
+         * @member {String} order_option
+         */
+
 
         /**
-        * Status
-        * @member {String} status
-        */
+         * Status
+         * @member {String} status
+         */
+
 
         /**
-        * Transaction ref
-        * @member {String} transactionRef
-        */
+         * Transaction ref
+         * @member {String} transactionRef
+         */
+
 
         /**
-        * Merchant ref
-        * @member {String} merchantRef
-        */
+         * Merchant ref
+         * @member {String} merchantRef
+         */
+
 
         /**
-        * Basket
-        * @member {module:model/SmartTransactionsBasket} basket
-        */
+         * Basket
+         * @member {module:model/SmartTransactionsBasket} basket
+         */
+
 
         /**
-        * Basket info
-        * @member {module:model/SmartTransactionsBasketInfo} basket_info
-        */
+         * Basket info
+         * @member {module:model/SmartTransactionsBasketInfo} basket_info
+         */
+
 
         /**
-        * Idents
-        * @member {Array.<module:model/SmartTransactionsIdent>} idents
-        */
+         * Idents
+         * @member {Array.<module:model/SmartTransactionsIdent>} idents
+         */
+
 
         /**
-        * Tax amount
-        * @member {Number} tax_amount
-        */
+         * Tax amount
+         * @member {Number} tax_amount
+         */
+
 
         /**
-        * Tax rate
-        * @member {Number} tax_rate
-        */
+         * Tax rate
+         * @member {Number} tax_rate
+         */
+
 
         /**
-        * Market
-        * @member {String} market
-        */
+         * Market
+         * @member {String} market
+         */
+
 
         /**
-        * Cashier
-        * @member {String} cashier
-        */
+         * Cashier
+         * @member {String} cashier
+         */
+
 
         /**
-        * Product
-        * @member {String} product
-        */
+         * Product
+         * @member {String} product
+         */
+
 
         /**
-        * Receipt
-        * @member {String} receipt
-        */
+         * Receipt
+         * @member {Array.<module:model/SmartTransactionsReceipt>} receipt
+         */
+
 
         /**
-        * Receipt number
-        * @member {Number} receipt_number
-        */
+         * Receipt number
+         * @member {Number} receipt_number
+         */
+
 
         /**
-        * Device source
-        * @member {String} device_source
-        */
+         * Device source
+         * @member {String} device_source
+         */
+
 
         /**
-        * Transaction id
-        * @member {Number} trans_id
-        */
+         * Transaction id
+         * @member {Number} trans_id
+         */
+
 
         /**
-        * Contract
-        * @member {module:model/ProductInstanceID} contract
-        */
+         * Contract
+         * @member {module:model/ProductInstanceID} contract
+         */
+
 
         /**
-        * Pickup options
-        * @member {module:model/SmartTransactionsPickupOptions} pickup_options
-        */
+         * Pickup options
+         * @member {module:model/SmartTransactionsPickupOptions} pickup_options
+         */
+
 
         /**
-        * Last visited page
-        * @member {String} last_visited_page
-        */
+         * Last visited page
+         * @member {String} last_visited_page
+         */
+
+
+        /**
+         * Customer
+         * @member {module:model/PaymentCustomersProductModel} customer
+         */
+
+
+        /**
+         * Customers delivery address
+         * @member {module:model/PaymentCustomersProductModel} shipping_address
+         */
+
+
+        /**
+         * Payment Container
+         * @member {module:model/ProductInstanceUID} container
+         */
+
+
+        /**
+         * Check in
+         * @member {module:model/SmartTransactionsCheckin} checkin
+         */
+
+
+        /**
+         * Payment method
+         * @member {String} payment_method
+         */
+
+
+        /**
+         * Demo payment
+         * @member {Boolean} is_demo
+         */
+
+
+        /**
+         * Checkout Links
+         * @member {module:model/SmartTransactionsCheckoutLinks} checkout_links
+         */
 
     }]);
 

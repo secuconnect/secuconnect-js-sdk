@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The SmartTransactionsBonusProducts model module.
-* @module model/SmartTransactionsBonusProducts
-*/
+ * The SmartTransactionsBonusProducts model module.
+ * @module model/SmartTransactionsBonusProducts
+ */
 export default class SmartTransactionsBonusProducts {
     /**
-    * Constructs a new <code>SmartTransactionsBonusProducts</code>.
-    * @alias module:model/SmartTransactionsBonusProducts
-    * @class
-    */
+     * Constructs a new <code>SmartTransactionsBonusProducts</code>.
+     * @alias module:model/SmartTransactionsBonusProducts
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class SmartTransactionsBonusProducts {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SmartTransactionsBonusProducts();
-
             
             
             
-
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
@@ -68,48 +55,45 @@ export default class SmartTransactionsBonusProducts {
     }
 
     /**
-    * Bonus Product ID
-    * @member {Number} id
-    */
+     * Bonus Product ID
+     * @member {Number} id
+     */
     id = undefined;
+
     /**
-    * Tax
-    * @member {Number} tax
-    */
+     * Tax
+     * @member {Number} tax
+     */
     tax = undefined;
+
     /**
-    * price of one bonus product
-    * @member {Number} priceOne
-    */
+     * price of one bonus product
+     * @member {Number} priceOne
+     */
     priceOne = undefined;
+
     /**
-    * amount of bonus products
-    * @member {Number} quantity
-    */
+     * amount of bonus products
+     * @member {Number} quantity
+     */
     quantity = undefined;
+
     /**
-    * description
-    * @member {String} desc
-    */
+     * description
+     * @member {String} desc
+     */
     desc = undefined;
+
     /**
-    * article Number
-    * @member {String} articleNumber
-    */
+     * article Number
+     * @member {String} articleNumber
+     */
     articleNumber = undefined;
+
     /**
-    * ean
-    * @member {String} ean
-    */
+     * ean
+     * @member {String} ean
+     */
     ean = undefined;
 
-
-
-
-
-
-
-
 }
-
-

@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The LoyaltyMerchantcardsDTOCsc model module.
-* @module model/LoyaltyMerchantcardsDTOCsc
-*/
+ * The LoyaltyMerchantcardsDTOCsc model module.
+ * @module model/LoyaltyMerchantcardsDTOCsc
+ */
 export default class LoyaltyMerchantcardsDTOCsc {
     /**
-    * Constructs a new <code>LoyaltyMerchantcardsDTOCsc</code>.
-    * @alias module:model/LoyaltyMerchantcardsDTOCsc
-    * @class
-    */
+     * Constructs a new <code>LoyaltyMerchantcardsDTOCsc</code>.
+     * @alias module:model/LoyaltyMerchantcardsDTOCsc
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class LoyaltyMerchantcardsDTOCsc {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyMerchantcardsDTOCsc();
-
             
             
             
-
             if (data.hasOwnProperty('cardnumber')) {
                 obj['cardnumber'] = ApiClient.convertToType(data['cardnumber'], 'Number');
             }
@@ -53,23 +40,15 @@ export default class LoyaltyMerchantcardsDTOCsc {
     }
 
     /**
-    * Card number
-    * @member {Number} cardnumber
-    */
+     * Card number
+     * @member {Number} cardnumber
+     */
     cardnumber = undefined;
+
     /**
-    * Card security code
-    * @member {Number} csc
-    */
+     * Card security code
+     * @member {Number} csc
+     */
     csc = undefined;
 
-
-
-
-
-
-
-
 }
-
-

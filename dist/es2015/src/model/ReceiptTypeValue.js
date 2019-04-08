@@ -23,16 +23,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The ReceiptTypeValue model module.
-* @module model/ReceiptTypeValue
-*/
+ * The ReceiptTypeValue model module.
+ * @module model/ReceiptTypeValue
+ */
 var ReceiptTypeValue = function () {
     /**
-    * Constructs a new <code>ReceiptTypeValue</code>.
-    * @alias module:model/ReceiptTypeValue
-    * @class
-    * @implements module:model/ReceiptType
-    */
+     * Constructs a new <code>ReceiptTypeValue</code>.
+     * @alias module:model/ReceiptTypeValue
+     * @class
+     * @implements module:model/ReceiptType
+     */
 
     function ReceiptTypeValue() {
         _classCallCheck(this, ReceiptTypeValue);
@@ -60,7 +60,6 @@ var ReceiptTypeValue = function () {
                 obj = obj || new ReceiptTypeValue();
 
                 _ReceiptType2.default.constructFromObject(data, obj);
-
                 if (data.hasOwnProperty('value')) {
                     obj['value'] = _ReceiptValue2.default.constructFromObject(data['value']);
                 }
@@ -69,16 +68,17 @@ var ReceiptTypeValue = function () {
         }
 
         /**
-        * Value object
-        * @member {module:model/ReceiptValue} value
-        */
+         * Value object
+         * @member {module:model/ReceiptValue} value
+         */
 
 
         // Implement ReceiptType interface:
+
         /**
-        * Type
-        * @member {String} type
-        */
+         * Type
+         * @member {String} type
+         */
 
     }]);
 

@@ -15,22 +15,20 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The PaymentTransactionsProductModelCustomer model module.
-* @module model/PaymentTransactionsProductModelCustomer
-*/
+ * The PaymentTransactionsProductModelCustomer model module.
+ * @module model/PaymentTransactionsProductModelCustomer
+ */
 var PaymentTransactionsProductModelCustomer = function () {
     /**
-    * Constructs a new <code>PaymentTransactionsProductModelCustomer</code>.
-    * PaymentTransactionsProductModel
-    * @alias module:model/PaymentTransactionsProductModelCustomer
-    * @class
-    */
+     * Constructs a new <code>PaymentTransactionsProductModelCustomer</code>.
+     * PaymentTransactionsProductModel
+     * @alias module:model/PaymentTransactionsProductModelCustomer
+     * @class
+     */
 
     function PaymentTransactionsProductModelCustomer() {
         _classCallCheck(this, PaymentTransactionsProductModelCustomer);
 
-        this.object = undefined;
-        this.id = undefined;
         this.companyname = undefined;
         this.salutation = undefined;
         this.title = undefined;
@@ -53,12 +51,6 @@ var PaymentTransactionsProductModelCustomer = function () {
             if (data) {
                 obj = obj || new PaymentTransactionsProductModelCustomer();
 
-                if (data.hasOwnProperty('object')) {
-                    obj['object'] = _ApiClient2.default.convertToType(data['object'], 'String');
-                }
-                if (data.hasOwnProperty('id')) {
-                    obj['id'] = _ApiClient2.default.convertToType(data['id'], 'String');
-                }
                 if (data.hasOwnProperty('companyname')) {
                     obj['companyname'] = _ApiClient2.default.convertToType(data['companyname'], 'String');
                 }
@@ -79,39 +71,33 @@ var PaymentTransactionsProductModelCustomer = function () {
         }
 
         /**
-        * Customer type name
-        * @member {String} object
-        */
+         * Customer company name
+         * @member {String} companyname
+         */
+
 
         /**
-        * Id of customer
-        * @member {String} id
-        */
+         * Customer salutation
+         * @member {String} salutation
+         */
+
 
         /**
-        * Customer company name
-        * @member {String} companyname
-        */
+         * Customer title
+         * @member {String} title
+         */
+
 
         /**
-        * Customer salutation
-        * @member {String} salutation
-        */
+         * Customer forename
+         * @member {String} forename
+         */
+
 
         /**
-        * Customer title
-        * @member {String} title
-        */
-
-        /**
-        * Customer forename
-        * @member {String} forename
-        */
-
-        /**
-        * Customer surname
-        * @member {String} surname
-        */
+         * Customer surname
+         * @member {String} surname
+         */
 
     }]);
 

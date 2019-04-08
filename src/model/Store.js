@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The Store model module.
-* @module model/Store
-*/
+ * The Store model module.
+ * @module model/Store
+ */
 export default class Store {
     /**
-    * Constructs a new <code>Store</code>.
-    * @alias module:model/Store
-    * @class
-    */
+     * Constructs a new <code>Store</code>.
+     * @alias module:model/Store
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class Store {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new Store();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -59,33 +46,27 @@ export default class Store {
     }
 
     /**
-    * Object of store
-    * @member {String} object
-    */
+     * Object of store
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of store
-    * @member {String} id
-    */
+     * Id of store
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Store name
-    * @member {String} name
-    */
+     * Store name
+     * @member {String} name
+     */
     name = undefined;
+
     /**
-    * Store name raw
-    * @member {String} name_raw
-    */
+     * Store name raw
+     * @member {String} name_raw
+     */
     name_raw = undefined;
 
-
-
-
-
-
-
-
 }
-
-

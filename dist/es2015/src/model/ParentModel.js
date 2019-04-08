@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The ParentModel model module.
-* @module model/ParentModel
-*/
+ * The ParentModel model module.
+ * @module model/ParentModel
+ */
 var ParentModel = function () {
     /**
-    * Constructs a new <code>ParentModel</code>.
-    * @alias module:model/ParentModel
-    * @class
-    */
+     * Constructs a new <code>ParentModel</code>.
+     * @alias module:model/ParentModel
+     * @class
+     */
 
     function ParentModel() {
         _classCallCheck(this, ParentModel);
@@ -62,19 +62,21 @@ var ParentModel = function () {
         }
 
         /**
-        * Object of parent
-        * @member {String} object
-        */
+         * Object of parent
+         * @member {String} object
+         */
+
 
         /**
-        * Id of parent
-        * @member {String} id
-        */
+         * Id of parent
+         * @member {String} id
+         */
+
 
         /**
-        * Type of parent
-        * @member {String} type
-        */
+         * Type of parent
+         * @member {String} type
+         */
 
     }]);
 

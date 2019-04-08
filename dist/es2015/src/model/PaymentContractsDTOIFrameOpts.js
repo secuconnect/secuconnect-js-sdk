@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The PaymentContractsDTOIFrameOpts model module.
-* @module model/PaymentContractsDTOIFrameOpts
-*/
+ * The PaymentContractsDTOIFrameOpts model module.
+ * @module model/PaymentContractsDTOIFrameOpts
+ */
 var PaymentContractsDTOIFrameOpts = function () {
     /**
-    * Constructs a new <code>PaymentContractsDTOIFrameOpts</code>.
-    * @alias module:model/PaymentContractsDTOIFrameOpts
-    * @class
-    */
+     * Constructs a new <code>PaymentContractsDTOIFrameOpts</code>.
+     * @alias module:model/PaymentContractsDTOIFrameOpts
+     * @class
+     */
 
     function PaymentContractsDTOIFrameOpts() {
         _classCallCheck(this, PaymentContractsDTOIFrameOpts);
@@ -70,30 +70,34 @@ var PaymentContractsDTOIFrameOpts = function () {
         }
 
         /**
-        * Display the basket items to the customer during the checkout
-        * @member {Boolean} show_basket
-        */
+         * Display the basket items to the customer during the checkout
+         * @member {Boolean} show_basket
+         */
+
 
         /**
-        * Default headline of the checkout page
-        * @member {String} basket_title
-        */
+         * Default headline of the checkout page
+         * @member {String} basket_title
+         */
+
 
         /**
-        * Default naming of the Submit-Button
-        * @member {String} submit_button_title
-        */
+         * Default naming of the Submit-Button
+         * @member {String} submit_button_title
+         */
+
 
         /**
-        * Logo base64-enconded
-        * @member {String} logo_base64
-        */
+         * Logo base64-enconded
+         * @member {String} logo_base64
+         */
+
 
         /**
-        * Cession ('formal', 'personal')
-        * @member {String} cession
-        * @default 'personal'
-        */
+         * Cession ('formal', 'personal')
+         * @member {String} cession
+         * @default 'personal'
+         */
 
     }]);
 

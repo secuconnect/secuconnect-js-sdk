@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import Address from './Address';
 
-
-
-
-
 /**
-* The Contact model module.
-* @module model/Contact
-*/
+ * The Contact model module.
+ * @module model/Contact
+ */
 export default class Contact {
     /**
-    * Constructs a new <code>Contact</code>.
-    * @alias module:model/Contact
-    * @class
-    */
+     * Constructs a new <code>Contact</code>.
+     * @alias module:model/Contact
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class Contact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new Contact();
-
             
             
             
-
             if (data.hasOwnProperty('forename')) {
                 obj['forename'] = ApiClient.convertToType(data['forename'], 'String');
             }
@@ -96,93 +83,99 @@ export default class Contact {
     }
 
     /**
-    * Forename
-    * @member {String} forename
-    */
+     * Forename
+     * @member {String} forename
+     */
     forename = undefined;
+
     /**
-    * Surname
-    * @member {String} surname
-    */
+     * Surname
+     * @member {String} surname
+     */
     surname = undefined;
+
     /**
-    * Company name
-    * @member {String} companyname
-    */
+     * Company name
+     * @member {String} companyname
+     */
     companyname = undefined;
+
     /**
-    * Salutation
-    * @member {String} salutation
-    */
+     * Salutation
+     * @member {String} salutation
+     */
     salutation = undefined;
+
     /**
-    * Gender
-    * @member {String} gender
-    */
+     * Gender
+     * @member {String} gender
+     */
     gender = undefined;
+
     /**
-    * Title
-    * @member {String} title
-    */
+     * Title
+     * @member {String} title
+     */
     title = undefined;
+
     /**
-    * Email
-    * @member {String} email
-    */
+     * Email
+     * @member {String} email
+     */
     email = undefined;
+
     /**
-    * Phone
-    * @member {String} phone
-    */
+     * Phone
+     * @member {String} phone
+     */
     phone = undefined;
+
     /**
-    * Mobile
-    * @member {String} mobile
-    */
+     * Mobile
+     * @member {String} mobile
+     */
     mobile = undefined;
+
     /**
-    * Fax
-    * @member {String} fax
-    */
+     * Fax
+     * @member {String} fax
+     */
     fax = undefined;
+
     /**
-    * Date of birth
-    * @member {String} dob
-    */
+     * Date of birth
+     * @member {String} dob
+     */
     dob = undefined;
+
     /**
-    * The document id of an user picture (To upload the picture use our document service.)
-    * @member {String} picture
-    */
+     * The document id of an user picture (To upload the picture use our document service.)
+     * @member {String} picture
+     */
     picture = undefined;
+
     /**
-    * URL to website
-    * @member {String} url_website
-    */
+     * URL to website
+     * @member {String} url_website
+     */
     url_website = undefined;
+
     /**
-    * Birthplace
-    * @member {String} birthplace
-    */
+     * Birthplace
+     * @member {String} birthplace
+     */
     birthplace = undefined;
+
     /**
-    * Nationality
-    * @member {String} nationality
-    */
+     * Nationality
+     * @member {String} nationality
+     */
     nationality = undefined;
+
     /**
-    * Address
-    * @member {module:model/Address} address
-    */
+     * Address
+     * @member {module:model/Address} address
+     */
     address = undefined;
 
-
-
-
-
-
-
-
 }
-
-

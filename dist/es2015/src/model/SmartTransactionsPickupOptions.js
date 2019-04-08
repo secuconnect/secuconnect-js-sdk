@@ -19,15 +19,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SmartTransactionsPickupOptions model module.
-* @module model/SmartTransactionsPickupOptions
-*/
+ * The SmartTransactionsPickupOptions model module.
+ * @module model/SmartTransactionsPickupOptions
+ */
 var SmartTransactionsPickupOptions = function () {
     /**
-    * Constructs a new <code>SmartTransactionsPickupOptions</code>.
-    * @alias module:model/SmartTransactionsPickupOptions
-    * @class
-    */
+     * Constructs a new <code>SmartTransactionsPickupOptions</code>.
+     * @alias module:model/SmartTransactionsPickupOptions
+     * @class
+     */
 
     function SmartTransactionsPickupOptions() {
         _classCallCheck(this, SmartTransactionsPickupOptions);
@@ -56,7 +56,7 @@ var SmartTransactionsPickupOptions = function () {
                     obj['code'] = _ApiClient2.default.convertToType(data['code'], 'String');
                 }
                 if (data.hasOwnProperty('date')) {
-                    obj['date'] = _ApiClient2.default.convertToType(data['date'], 'Date');
+                    obj['date'] = _ApiClient2.default.convertToType(data['date'], 'String');
                 }
                 if (data.hasOwnProperty('store')) {
                     obj['store'] = _ProductInstanceUID2.default.constructFromObject(data['store']);
@@ -66,19 +66,21 @@ var SmartTransactionsPickupOptions = function () {
         }
 
         /**
-        * Code
-        * @member {String} code
-        */
+         * Code
+         * @member {String} code
+         */
+
 
         /**
-        * Date
-        * @member {Date} date
-        */
+         * Date
+         * @member {String} date
+         */
+
 
         /**
-        * Store
-        * @member {module:model/ProductInstanceUID} store
-        */
+         * Store
+         * @member {module:model/ProductInstanceUID} store
+         */
 
     }]);
 

@@ -21,12 +21,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var SocketProvider = function () {
-    function SocketProvider(host, port, vhost) {
+    function SocketProvider(host, port, vhost, debugMode) {
         _classCallCheck(this, SocketProvider);
 
         this.host = host;
         this.port = port;
         this.vhost = vhost;
+        this.debugMode = debugMode;
     }
 
     _createClass(SocketProvider, [{
@@ -34,10 +35,10 @@ var SocketProvider = function () {
         value: function createSocket(env) {
             switch (env) {
                 case _StompGlobals.Environments.NODE:
-                    return new _NodeSocket2.default(this.host, this.port, this.vhost);
+                    return new _NodeSocket2.default(this.host, this.port, this.vhost, this.debugMode);
                 default:
                     // defaults to browser env
-                    return new _BrowserSocket2.default(this.host, this.port, this.vhost);
+                    return new _BrowserSocket2.default(this.host, this.port, this.vhost, this.debugMode);
             }
         }
     }]);

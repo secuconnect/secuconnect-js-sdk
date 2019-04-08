@@ -1,30 +1,19 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The SecupayTransactionExternalInvoicePdfDocument model module.
-* @module model/SecupayTransactionExternalInvoicePdfDocument
-*/
+ * The SecupayTransactionExternalInvoicePdfDocument model module.
+ * @module model/SecupayTransactionExternalInvoicePdfDocument
+ */
 export default class SecupayTransactionExternalInvoicePdfDocument {
     /**
-    * Constructs a new <code>SecupayTransactionExternalInvoicePdfDocument</code>.
-    * Information about the saved document
-    * @alias module:model/SecupayTransactionExternalInvoicePdfDocument
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionExternalInvoicePdfDocument</code>.
+     * Information about the saved document
+     * @alias module:model/SecupayTransactionExternalInvoicePdfDocument
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class SecupayTransactionExternalInvoicePdfDocument {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SecupayTransactionExternalInvoicePdfDocument();
-
             
             
             
-
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
@@ -63,38 +50,33 @@ export default class SecupayTransactionExternalInvoicePdfDocument {
     }
 
     /**
-    * The Document File ID
-    * @member {String} id
-    */
+     * The Document File ID
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * The MIME Type
-    * @member {String} mime_type
-    */
+     * The MIME Type
+     * @member {String} mime_type
+     */
     mime_type = undefined;
+
     /**
-    * The file name
-    * @member {String} name
-    */
+     * The file name
+     * @member {String} name
+     */
     name = undefined;
+
     /**
-    * The size of the file in bytes
-    * @member {Number} size
-    */
+     * The size of the file in bytes
+     * @member {Number} size
+     */
     size = undefined;
+
     /**
-    * The download-url to this file
-    * @member {String} url
-    */
+     * The download-url to this file
+     * @member {String} url
+     */
     url = undefined;
 
-
-
-
-
-
-
-
 }
-
-

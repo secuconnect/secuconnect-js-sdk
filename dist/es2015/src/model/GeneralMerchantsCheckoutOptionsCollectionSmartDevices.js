@@ -19,15 +19,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The GeneralMerchantsCheckoutOptionsCollectionSmartDevices model module.
-* @module model/GeneralMerchantsCheckoutOptionsCollectionSmartDevices
-*/
+ * The GeneralMerchantsCheckoutOptionsCollectionSmartDevices model module.
+ * @module model/GeneralMerchantsCheckoutOptionsCollectionSmartDevices
+ */
 var GeneralMerchantsCheckoutOptionsCollectionSmartDevices = function () {
     /**
-    * Constructs a new <code>GeneralMerchantsCheckoutOptionsCollectionSmartDevices</code>.
-    * @alias module:model/GeneralMerchantsCheckoutOptionsCollectionSmartDevices
-    * @class
-    */
+     * Constructs a new <code>GeneralMerchantsCheckoutOptionsCollectionSmartDevices</code>.
+     * @alias module:model/GeneralMerchantsCheckoutOptionsCollectionSmartDevices
+     * @class
+     */
 
     function GeneralMerchantsCheckoutOptionsCollectionSmartDevices() {
         _classCallCheck(this, GeneralMerchantsCheckoutOptionsCollectionSmartDevices);
@@ -70,24 +70,27 @@ var GeneralMerchantsCheckoutOptionsCollectionSmartDevices = function () {
         }
 
         /**
-        * Object of smart device
-        * @member {String} object
-        */
+         * Object of smart device
+         * @member {String} object
+         */
+
 
         /**
-        * Id of smart device
-        * @member {String} id
-        */
+         * Id of smart device
+         * @member {String} id
+         */
+
 
         /**
-        * Description of smart device
-        * @member {String} description
-        */
+         * Description of smart device
+         * @member {String} description
+         */
+
 
         /**
-        * Store
-        * @member {module:model/Store} store
-        */
+         * Store
+         * @member {module:model/Store} store
+         */
 
     }]);
 

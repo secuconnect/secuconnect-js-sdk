@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The AddressComponents model module.
-* @module model/AddressComponents
-*/
+ * The AddressComponents model module.
+ * @module model/AddressComponents
+ */
 export default class AddressComponents {
     /**
-    * Constructs a new <code>AddressComponents</code>.
-    * @alias module:model/AddressComponents
-    * @class
-    */
+     * Constructs a new <code>AddressComponents</code>.
+     * @alias module:model/AddressComponents
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class AddressComponents {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new AddressComponents();
-
             
             
             
-
             if (data.hasOwnProperty('long_name')) {
                 obj['long_name'] = ApiClient.convertToType(data['long_name'], 'String');
             }
@@ -56,28 +43,21 @@ export default class AddressComponents {
     }
 
     /**
-    * Long name
-    * @member {String} long_name
-    */
+     * Long name
+     * @member {String} long_name
+     */
     long_name = undefined;
+
     /**
-    * Short name
-    * @member {String} short_name
-    */
+     * Short name
+     * @member {String} short_name
+     */
     short_name = undefined;
+
     /**
-    * Types
-    * @member {Array.<String>} types
-    */
+     * Types
+     * @member {Array.<String>} types
+     */
     types = undefined;
 
-
-
-
-
-
-
-
 }
-
-

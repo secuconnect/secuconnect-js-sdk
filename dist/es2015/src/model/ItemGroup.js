@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The ItemGroup model module.
-* @module model/ItemGroup
-*/
+ * The ItemGroup model module.
+ * @module model/ItemGroup
+ */
 var ItemGroup = function () {
     /**
-    * Constructs a new <code>ItemGroup</code>.
-    * @alias module:model/ItemGroup
-    * @class
-    */
+     * Constructs a new <code>ItemGroup</code>.
+     * @alias module:model/ItemGroup
+     * @class
+     */
 
     function ItemGroup() {
         _classCallCheck(this, ItemGroup);
@@ -70,29 +70,33 @@ var ItemGroup = function () {
         }
 
         /**
-        * Object of item group
-        * @member {String} object
-        */
+         * Object of item group
+         * @member {String} object
+         */
+
 
         /**
-        * Id of item group
-        * @member {String} id
-        */
+         * Id of item group
+         * @member {String} id
+         */
+
 
         /**
-        * Description
-        * @member {String} description
-        */
+         * Description
+         * @member {String} description
+         */
+
 
         /**
-        * Logo
-        * @member {String} logo
-        */
+         * Logo
+         * @member {String} logo
+         */
+
 
         /**
-        * Enabled
-        * @member {Boolean} enabled
-        */
+         * Enabled
+         * @member {Boolean} enabled
+         */
 
     }]);
 

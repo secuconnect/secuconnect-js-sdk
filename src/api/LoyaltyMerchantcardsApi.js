@@ -490,65 +490,6 @@ export default class LoyaltyMerchantcardsApi {
 
 
     /**
-     * GET Loyalty/MerchantCards/{generalMerchantId}/merchantcard/{loyaltyCardId}
-     * Get raw merchant card id for merchant id and card id
-     * @param {String} generalMerchantId Merchant id
-     * @param {String} loyaltyCardId Card id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
-     */
-    getRawMerchantCardIdWithHttpInfo(generalMerchantId, loyaltyCardId) {
-      let postBody = null;
-
-      // verify the required parameter 'generalMerchantId' is set
-      if (generalMerchantId === undefined || generalMerchantId === null) {
-        throw new Error("Missing the required parameter 'generalMerchantId' when calling getRawMerchantCardId");
-      }
-
-      // verify the required parameter 'loyaltyCardId' is set
-      if (loyaltyCardId === undefined || loyaltyCardId === null) {
-        throw new Error("Missing the required parameter 'loyaltyCardId' when calling getRawMerchantCardId");
-      }
-
-
-      let pathParams = {
-        'generalMerchantId': generalMerchantId,
-        'loyaltyCardId': loyaltyCardId
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['oauth_token'];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = Object;
-
-      return this.apiClient.callApi(
-        '/Loyalty/MerchantCards/{generalMerchantId}/merchantcard/{loyaltyCardId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * GET Loyalty/MerchantCards/{generalMerchantId}/merchantcard/{loyaltyCardId}
-     * Get raw merchant card id for merchant id and card id
-     * @param {String} generalMerchantId Merchant id
-     * @param {String} loyaltyCardId Card id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
-     */
-    getRawMerchantCardId(generalMerchantId, loyaltyCardId) {
-      return this.getRawMerchantCardIdWithHttpInfo(generalMerchantId, loyaltyCardId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * GET Loyalty/MerchantCards/{loyaltyMerchantCardId}/virtualTerminalData/{loyaltyMerchantId}
      * Get virtual terminal data for merchant
      * @param {String} loyaltyMerchantCardId Merchant card id

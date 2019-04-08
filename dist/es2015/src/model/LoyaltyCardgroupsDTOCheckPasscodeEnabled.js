@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The LoyaltyCardgroupsDTOCheckPasscodeEnabled model module.
-* @module model/LoyaltyCardgroupsDTOCheckPasscodeEnabled
-*/
+ * The LoyaltyCardgroupsDTOCheckPasscodeEnabled model module.
+ * @module model/LoyaltyCardgroupsDTOCheckPasscodeEnabled
+ */
 var LoyaltyCardgroupsDTOCheckPasscodeEnabled = function () {
     /**
-    * Constructs a new <code>LoyaltyCardgroupsDTOCheckPasscodeEnabled</code>.
-    * @alias module:model/LoyaltyCardgroupsDTOCheckPasscodeEnabled
-    * @class
-    */
+     * Constructs a new <code>LoyaltyCardgroupsDTOCheckPasscodeEnabled</code>.
+     * @alias module:model/LoyaltyCardgroupsDTOCheckPasscodeEnabled
+     * @class
+     */
 
     function LoyaltyCardgroupsDTOCheckPasscodeEnabled() {
         _classCallCheck(this, LoyaltyCardgroupsDTOCheckPasscodeEnabled);
@@ -58,14 +58,15 @@ var LoyaltyCardgroupsDTOCheckPasscodeEnabled = function () {
         }
 
         /**
-        * Action type
-        * @member {String} action
-        */
+         * Action type
+         * @member {String} action
+         */
+
 
         /**
-        * Secucard number
-        * @member {String} cardnumber
-        */
+         * Secucard number
+         * @member {String} cardnumber
+         */
 
     }]);
 

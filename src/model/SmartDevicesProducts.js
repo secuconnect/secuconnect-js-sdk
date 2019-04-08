@@ -3,29 +3,18 @@ import ApiClient from '../ApiClient';
 import SmartDeviceProductsEnabled from './SmartDeviceProductsEnabled';
 import SmartDeviceProductsPrepaid from './SmartDeviceProductsPrepaid';
 
-
-
-
-
 /**
-* The SmartDevicesProducts model module.
-* @module model/SmartDevicesProducts
-*/
+ * The SmartDevicesProducts model module.
+ * @module model/SmartDevicesProducts
+ */
 export default class SmartDevicesProducts {
     /**
-    * Constructs a new <code>SmartDevicesProducts</code>.
-    * @alias module:model/SmartDevicesProducts
-    * @class
-    */
+     * Constructs a new <code>SmartDevicesProducts</code>.
+     * @alias module:model/SmartDevicesProducts
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -39,11 +28,9 @@ export default class SmartDevicesProducts {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SmartDevicesProducts();
-
             
             
             
-
             if (data.hasOwnProperty('loyalty')) {
                 obj['loyalty'] = SmartDeviceProductsEnabled.constructFromObject(data['loyalty']);
             }
@@ -70,48 +57,45 @@ export default class SmartDevicesProducts {
     }
 
     /**
-    * Loyalty
-    * @member {module:model/SmartDeviceProductsEnabled} loyalty
-    */
+     * Loyalty
+     * @member {module:model/SmartDeviceProductsEnabled} loyalty
+     */
     loyalty = undefined;
+
     /**
-    * Smart
-    * @member {module:model/SmartDeviceProductsEnabled} smart
-    */
+     * Smart
+     * @member {module:model/SmartDeviceProductsEnabled} smart
+     */
     smart = undefined;
+
     /**
-    * Cashreg
-    * @member {module:model/SmartDeviceProductsEnabled} cashreg
-    */
+     * Cashreg
+     * @member {module:model/SmartDeviceProductsEnabled} cashreg
+     */
     cashreg = undefined;
+
     /**
-    * Collect
-    * @member {module:model/SmartDeviceProductsEnabled} collect
-    */
+     * Collect
+     * @member {module:model/SmartDeviceProductsEnabled} collect
+     */
     collect = undefined;
+
     /**
-    * Showcase
-    * @member {module:model/SmartDeviceProductsEnabled} showcase
-    */
+     * Showcase
+     * @member {module:model/SmartDeviceProductsEnabled} showcase
+     */
     showcase = undefined;
+
     /**
-    * Vtm
-    * @member {module:model/SmartDeviceProductsEnabled} vtm
-    */
+     * Vtm
+     * @member {module:model/SmartDeviceProductsEnabled} vtm
+     */
     vtm = undefined;
+
     /**
-    * Prepaid
-    * @member {module:model/SmartDeviceProductsPrepaid} prepaid
-    */
+     * Prepaid
+     * @member {module:model/SmartDeviceProductsPrepaid} prepaid
+     */
     prepaid = undefined;
 
-
-
-
-
-
-
-
 }
-
-

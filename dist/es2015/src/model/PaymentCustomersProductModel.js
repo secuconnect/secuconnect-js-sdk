@@ -23,15 +23,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The PaymentCustomersProductModel model module.
-* @module model/PaymentCustomersProductModel
-*/
+ * The PaymentCustomersProductModel model module.
+ * @module model/PaymentCustomersProductModel
+ */
 var PaymentCustomersProductModel = function () {
     /**
-    * Constructs a new <code>PaymentCustomersProductModel</code>.
-    * @alias module:model/PaymentCustomersProductModel
-    * @class
-    */
+     * Constructs a new <code>PaymentCustomersProductModel</code>.
+     * @alias module:model/PaymentCustomersProductModel
+     * @class
+     */
 
     function PaymentCustomersProductModel() {
         _classCallCheck(this, PaymentCustomersProductModel);
@@ -72,44 +72,49 @@ var PaymentCustomersProductModel = function () {
                     obj['contact'] = _Contact2.default.constructFromObject(data['contact']);
                 }
                 if (data.hasOwnProperty('created')) {
-                    obj['created'] = _ApiClient2.default.convertToType(data['created'], 'Date');
+                    obj['created'] = _ApiClient2.default.convertToType(data['created'], 'String');
                 }
                 if (data.hasOwnProperty('updated')) {
-                    obj['updated'] = _ApiClient2.default.convertToType(data['updated'], 'Date');
+                    obj['updated'] = _ApiClient2.default.convertToType(data['updated'], 'String');
                 }
             }
             return obj;
         }
 
         /**
-        * Object of payment customer
-        * @member {String} object
-        */
+         * Object of payment customer
+         * @member {String} object
+         */
+
 
         /**
-        * Id of payment customer
-        * @member {String} id
-        */
+         * Id of payment customer
+         * @member {String} id
+         */
+
 
         /**
-        * Payment contract
-        * @member {module:model/ProductInstanceUID} contract
-        */
+         * Payment contract
+         * @member {module:model/ProductInstanceUID} contract
+         */
+
 
         /**
-        * Customer contact info
-        * @member {module:model/Contact} contact
-        */
+         * Customer contact info
+         * @member {module:model/Contact} contact
+         */
+
 
         /**
-        * Created at date
-        * @member {Date} created
-        */
+         * Created at date
+         * @member {String} created
+         */
+
 
         /**
-        * Updated at date
-        * @member {Date} updated
-        */
+         * Updated at date
+         * @member {String} updated
+         */
 
     }]);
 

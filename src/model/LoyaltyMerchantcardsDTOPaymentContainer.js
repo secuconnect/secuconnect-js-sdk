@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import PaymentInformation from './PaymentInformation';
 
-
-
-
-
 /**
-* The LoyaltyMerchantcardsDTOPaymentContainer model module.
-* @module model/LoyaltyMerchantcardsDTOPaymentContainer
-*/
+ * The LoyaltyMerchantcardsDTOPaymentContainer model module.
+ * @module model/LoyaltyMerchantcardsDTOPaymentContainer
+ */
 export default class LoyaltyMerchantcardsDTOPaymentContainer {
     /**
-    * Constructs a new <code>LoyaltyMerchantcardsDTOPaymentContainer</code>.
-    * @alias module:model/LoyaltyMerchantcardsDTOPaymentContainer
-    * @class
-    */
+     * Constructs a new <code>LoyaltyMerchantcardsDTOPaymentContainer</code>.
+     * @alias module:model/LoyaltyMerchantcardsDTOPaymentContainer
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class LoyaltyMerchantcardsDTOPaymentContainer {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyMerchantcardsDTOPaymentContainer();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -60,33 +47,27 @@ export default class LoyaltyMerchantcardsDTOPaymentContainer {
     }
 
     /**
-    * Object of payment container
-    * @member {String} object
-    */
+     * Object of payment container
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of payment container
-    * @member {String} id
-    */
+     * Id of payment container
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Type of payment container
-    * @member {String} type
-    */
+     * Type of payment container
+     * @member {String} type
+     */
     type = undefined;
+
     /**
-    * Payment information
-    * @member {module:model/PaymentInformation} payment_information
-    */
+     * Payment information
+     * @member {module:model/PaymentInformation} payment_information
+     */
     payment_information = undefined;
 
-
-
-
-
-
-
-
 }
-
-

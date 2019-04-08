@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The ParentModel model module.
-* @module model/ParentModel
-*/
+ * The ParentModel model module.
+ * @module model/ParentModel
+ */
 export default class ParentModel {
     /**
-    * Constructs a new <code>ParentModel</code>.
-    * @alias module:model/ParentModel
-    * @class
-    */
+     * Constructs a new <code>ParentModel</code>.
+     * @alias module:model/ParentModel
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class ParentModel {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ParentModel();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -56,28 +43,21 @@ export default class ParentModel {
     }
 
     /**
-    * Object of parent
-    * @member {String} object
-    */
+     * Object of parent
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of parent
-    * @member {String} id
-    */
+     * Id of parent
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Type of parent
-    * @member {String} type
-    */
+     * Type of parent
+     * @member {String} type
+     */
     type = undefined;
 
-
-
-
-
-
-
-
 }
-
-

@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The AssignedBy model module.
-* @module model/AssignedBy
-*/
+ * The AssignedBy model module.
+ * @module model/AssignedBy
+ */
 var AssignedBy = function () {
     /**
-    * Constructs a new <code>AssignedBy</code>.
-    * @alias module:model/AssignedBy
-    * @class
-    */
+     * Constructs a new <code>AssignedBy</code>.
+     * @alias module:model/AssignedBy
+     * @class
+     */
 
     function AssignedBy() {
         _classCallCheck(this, AssignedBy);
@@ -62,19 +62,21 @@ var AssignedBy = function () {
         }
 
         /**
-        * Object of assigned by
-        * @member {String} object
-        */
+         * Object of assigned by
+         * @member {String} object
+         */
+
 
         /**
-        * Id of assigned by
-        * @member {String} id
-        */
+         * Id of assigned by
+         * @member {String} id
+         */
+
 
         /**
-        * Owner
-        * @member {Boolean} owner
-        */
+         * Owner
+         * @member {Boolean} owner
+         */
 
     }]);
 

@@ -19,15 +19,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The Contact model module.
-* @module model/Contact
-*/
+ * The Contact model module.
+ * @module model/Contact
+ */
 var Contact = function () {
     /**
-    * Constructs a new <code>Contact</code>.
-    * @alias module:model/Contact
-    * @class
-    */
+     * Constructs a new <code>Contact</code>.
+     * @alias module:model/Contact
+     * @class
+     */
 
     function Contact() {
         _classCallCheck(this, Contact);
@@ -118,84 +118,99 @@ var Contact = function () {
         }
 
         /**
-        * Forename
-        * @member {String} forename
-        */
+         * Forename
+         * @member {String} forename
+         */
+
 
         /**
-        * Surname
-        * @member {String} surname
-        */
+         * Surname
+         * @member {String} surname
+         */
+
 
         /**
-        * Company name
-        * @member {String} companyname
-        */
+         * Company name
+         * @member {String} companyname
+         */
+
 
         /**
-        * Salutation
-        * @member {String} salutation
-        */
+         * Salutation
+         * @member {String} salutation
+         */
+
 
         /**
-        * Gender
-        * @member {String} gender
-        */
+         * Gender
+         * @member {String} gender
+         */
+
 
         /**
-        * Title
-        * @member {String} title
-        */
+         * Title
+         * @member {String} title
+         */
+
 
         /**
-        * Email
-        * @member {String} email
-        */
+         * Email
+         * @member {String} email
+         */
+
 
         /**
-        * Phone
-        * @member {String} phone
-        */
+         * Phone
+         * @member {String} phone
+         */
+
 
         /**
-        * Mobile
-        * @member {String} mobile
-        */
+         * Mobile
+         * @member {String} mobile
+         */
+
 
         /**
-        * Fax
-        * @member {String} fax
-        */
+         * Fax
+         * @member {String} fax
+         */
+
 
         /**
-        * Date of birth
-        * @member {String} dob
-        */
+         * Date of birth
+         * @member {String} dob
+         */
+
 
         /**
-        * The document id of an user picture (To upload the picture use our document service.)
-        * @member {String} picture
-        */
+         * The document id of an user picture (To upload the picture use our document service.)
+         * @member {String} picture
+         */
+
 
         /**
-        * URL to website
-        * @member {String} url_website
-        */
+         * URL to website
+         * @member {String} url_website
+         */
+
 
         /**
-        * Birthplace
-        * @member {String} birthplace
-        */
+         * Birthplace
+         * @member {String} birthplace
+         */
+
 
         /**
-        * Nationality
-        * @member {String} nationality
-        */
+         * Nationality
+         * @member {String} nationality
+         */
+
 
         /**
-        * Address
-        * @member {module:model/Address} address
-        */
+         * Address
+         * @member {module:model/Address} address
+         */
 
     }]);
 

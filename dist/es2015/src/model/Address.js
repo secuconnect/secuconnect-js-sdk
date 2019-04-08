@@ -15,16 +15,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The Address model module.
-* @module model/Address
-*/
+ * The Address model module.
+ * @module model/Address
+ */
 var Address = function () {
     /**
-    * Constructs a new <code>Address</code>.
-    * Address
-    * @alias module:model/Address
-    * @class
-    */
+     * Constructs a new <code>Address</code>.
+     * Address
+     * @alias module:model/Address
+     * @class
+     */
 
     function Address() {
         _classCallCheck(this, Address);
@@ -75,34 +75,39 @@ var Address = function () {
         }
 
         /**
-        * Type
-        * @member {String} type
-        */
+         * Type
+         * @member {String} type
+         */
+
 
         /**
-        * Street
-        * @member {String} street
-        */
+         * Street
+         * @member {String} street
+         */
+
 
         /**
-        * Street number
-        * @member {String} street_number
-        */
+         * Street number
+         * @member {String} street_number
+         */
+
 
         /**
-        * City
-        * @member {String} city
-        */
+         * City
+         * @member {String} city
+         */
+
 
         /**
-        * Postal code
-        * @member {String} postal_code
-        */
+         * Postal code
+         * @member {String} postal_code
+         */
+
 
         /**
-        * Country
-        * @member {String} country
-        */
+         * Country
+         * @member {String} country
+         */
 
     }]);
 

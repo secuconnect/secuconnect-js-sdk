@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import LoyaltyMerchantcardsProductModel from './LoyaltyMerchantcardsProductModel';
 
-
-
-
-
 /**
-* The SmartTransactionsIdent model module.
-* @module model/SmartTransactionsIdent
-*/
+ * The SmartTransactionsIdent model module.
+ * @module model/SmartTransactionsIdent
+ */
 export default class SmartTransactionsIdent {
     /**
-    * Constructs a new <code>SmartTransactionsIdent</code>.
-    * @alias module:model/SmartTransactionsIdent
-    * @class
-    */
+     * Constructs a new <code>SmartTransactionsIdent</code>.
+     * @alias module:model/SmartTransactionsIdent
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class SmartTransactionsIdent {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SmartTransactionsIdent();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -72,53 +59,51 @@ export default class SmartTransactionsIdent {
     }
 
     /**
-    * Object of smart transaction ident
-    * @member {String} object
-    */
+     * Object of smart transaction ident
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of smart transaction ident
-    * @member {String} id
-    */
+     * Id of smart transaction ident
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Prefix
-    * @member {String} prefix
-    */
+     * Prefix
+     * @member {String} prefix
+     */
     prefix = undefined;
+
     /**
-    * Name
-    * @member {String} name
-    */
+     * Name
+     * @member {String} name
+     */
     name = undefined;
+
     /**
-    * Type
-    * @member {String} type
-    */
+     * Type
+     * @member {String} type
+     */
     type = undefined;
+
     /**
-    * Value
-    * @member {String} value
-    */
+     * Value
+     * @member {String} value
+     */
     value = undefined;
+
     /**
-    * Valid
-    * @member {Boolean} valid
-    */
+     * Valid
+     * @member {Boolean} valid
+     */
     valid = undefined;
+
     /**
-    * Loyalty merchant card
-    * @member {module:model/LoyaltyMerchantcardsProductModel} merchantcard
-    */
+     * Loyalty merchant card
+     * @member {module:model/LoyaltyMerchantcardsProductModel} merchantcard
+     */
     merchantcard = undefined;
 
-
-
-
-
-
-
-
 }
-
-

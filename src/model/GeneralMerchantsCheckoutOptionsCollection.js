@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import GeneralMerchantsCheckoutOptionsCollectionSmartDevices from './GeneralMerchantsCheckoutOptionsCollectionSmartDevices';
 
-
-
-
-
 /**
-* The GeneralMerchantsCheckoutOptionsCollection model module.
-* @module model/GeneralMerchantsCheckoutOptionsCollection
-*/
+ * The GeneralMerchantsCheckoutOptionsCollection model module.
+ * @module model/GeneralMerchantsCheckoutOptionsCollection
+ */
 export default class GeneralMerchantsCheckoutOptionsCollection {
     /**
-    * Constructs a new <code>GeneralMerchantsCheckoutOptionsCollection</code>.
-    * @alias module:model/GeneralMerchantsCheckoutOptionsCollection
-    * @class
-    */
+     * Constructs a new <code>GeneralMerchantsCheckoutOptionsCollection</code>.
+     * @alias module:model/GeneralMerchantsCheckoutOptionsCollection
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class GeneralMerchantsCheckoutOptionsCollection {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new GeneralMerchantsCheckoutOptionsCollection();
-
             
             
             
-
             if (data.hasOwnProperty('enabled')) {
                 obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
             }
@@ -54,23 +41,15 @@ export default class GeneralMerchantsCheckoutOptionsCollection {
     }
 
     /**
-    * Enabled
-    * @member {Boolean} enabled
-    */
+     * Enabled
+     * @member {Boolean} enabled
+     */
     enabled = undefined;
+
     /**
-    * Smart devices
-    * @member {module:model/GeneralMerchantsCheckoutOptionsCollectionSmartDevices} smart_devices
-    */
+     * Smart devices
+     * @member {module:model/GeneralMerchantsCheckoutOptionsCollectionSmartDevices} smart_devices
+     */
     smart_devices = undefined;
 
-
-
-
-
-
-
-
 }
-
-

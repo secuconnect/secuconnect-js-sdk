@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SecupayTransactionReverseAccrualDTO model module.
-* @module model/SecupayTransactionReverseAccrualDTO
-*/
+ * The SecupayTransactionReverseAccrualDTO model module.
+ * @module model/SecupayTransactionReverseAccrualDTO
+ */
 var SecupayTransactionReverseAccrualDTO = function () {
     /**
-    * Constructs a new <code>SecupayTransactionReverseAccrualDTO</code>.
-    * @alias module:model/SecupayTransactionReverseAccrualDTO
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionReverseAccrualDTO</code>.
+     * @alias module:model/SecupayTransactionReverseAccrualDTO
+     * @class
+     */
 
     function SecupayTransactionReverseAccrualDTO() {
         _classCallCheck(this, SecupayTransactionReverseAccrualDTO);
@@ -54,10 +54,10 @@ var SecupayTransactionReverseAccrualDTO = function () {
         }
 
         /**
-        * Indicates whether the payment is locked for pay-out (TRUE) or not (FALSE).
-        * @member {Boolean} accrual
-        * @default false
-        */
+         * Indicates whether the payment is locked for pay-out (TRUE) or not (FALSE).
+         * @member {Boolean} accrual
+         * @default false
+         */
 
     }]);
 

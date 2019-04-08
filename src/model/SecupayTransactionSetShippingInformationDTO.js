@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The SecupayTransactionSetShippingInformationDTO model module.
-* @module model/SecupayTransactionSetShippingInformationDTO
-*/
+ * The SecupayTransactionSetShippingInformationDTO model module.
+ * @module model/SecupayTransactionSetShippingInformationDTO
+ */
 export default class SecupayTransactionSetShippingInformationDTO {
     /**
-    * Constructs a new <code>SecupayTransactionSetShippingInformationDTO</code>.
-    * @alias module:model/SecupayTransactionSetShippingInformationDTO
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionSetShippingInformationDTO</code>.
+     * @alias module:model/SecupayTransactionSetShippingInformationDTO
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class SecupayTransactionSetShippingInformationDTO {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SecupayTransactionSetShippingInformationDTO();
-
             
             
             
-
             if (data.hasOwnProperty('carrier')) {
                 obj['carrier'] = ApiClient.convertToType(data['carrier'], 'String');
             }
@@ -56,28 +43,21 @@ export default class SecupayTransactionSetShippingInformationDTO {
     }
 
     /**
-    * Shipping provider name
-    * @member {String} carrier
-    */
+     * Shipping provider name
+     * @member {String} carrier
+     */
     carrier = undefined;
+
     /**
-    * Tracking-ID
-    * @member {String} tracking_id
-    */
+     * Tracking-ID
+     * @member {String} tracking_id
+     */
     tracking_id = undefined;
+
     /**
-    * Merchants invoice number
-    * @member {String} invoice_number
-    */
+     * Merchants invoice number
+     * @member {String} invoice_number
+     */
     invoice_number = undefined;
 
-
-
-
-
-
-
-
 }
-
-

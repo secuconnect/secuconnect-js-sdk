@@ -19,15 +19,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The LoyaltyCustomersContactDTO model module.
-* @module model/LoyaltyCustomersContactDTO
-*/
+ * The LoyaltyCustomersContactDTO model module.
+ * @module model/LoyaltyCustomersContactDTO
+ */
 var LoyaltyCustomersContactDTO = function () {
     /**
-    * Constructs a new <code>LoyaltyCustomersContactDTO</code>.
-    * @alias module:model/LoyaltyCustomersContactDTO
-    * @class
-    */
+     * Constructs a new <code>LoyaltyCustomersContactDTO</code>.
+     * @alias module:model/LoyaltyCustomersContactDTO
+     * @class
+     */
 
     function LoyaltyCustomersContactDTO() {
         _classCallCheck(this, LoyaltyCustomersContactDTO);
@@ -74,29 +74,33 @@ var LoyaltyCustomersContactDTO = function () {
         }
 
         /**
-        * Forename
-        * @member {String} forename
-        */
+         * Forename
+         * @member {String} forename
+         */
+
 
         /**
-        * Surname
-        * @member {String} surname
-        */
+         * Surname
+         * @member {String} surname
+         */
+
 
         /**
-        * Name
-        * @member {String} name
-        */
+         * Name
+         * @member {String} name
+         */
+
 
         /**
-        * Phone
-        * @member {String} phone
-        */
+         * Phone
+         * @member {String} phone
+         */
+
 
         /**
-        * Address
-        * @member {module:model/Address} address
-        */
+         * Address
+         * @member {module:model/Address} address
+         */
 
     }]);
 

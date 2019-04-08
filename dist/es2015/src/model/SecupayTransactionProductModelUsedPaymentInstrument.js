@@ -19,16 +19,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SecupayTransactionProductModelUsedPaymentInstrument model module.
-* @module model/SecupayTransactionProductModelUsedPaymentInstrument
-*/
+ * The SecupayTransactionProductModelUsedPaymentInstrument model module.
+ * @module model/SecupayTransactionProductModelUsedPaymentInstrument
+ */
 var SecupayTransactionProductModelUsedPaymentInstrument = function () {
     /**
-    * Constructs a new <code>SecupayTransactionProductModelUsedPaymentInstrument</code>.
-    * The payment data which has the payer used (like bank account, credit card, ...). This data is always masked.
-    * @alias module:model/SecupayTransactionProductModelUsedPaymentInstrument
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionProductModelUsedPaymentInstrument</code>.
+     * The payment data which has the payer used (like bank account, credit card, ...). This data is always masked.
+     * @alias module:model/SecupayTransactionProductModelUsedPaymentInstrument
+     * @class
+     */
 
     function SecupayTransactionProductModelUsedPaymentInstrument() {
         _classCallCheck(this, SecupayTransactionProductModelUsedPaymentInstrument);
@@ -63,14 +63,15 @@ var SecupayTransactionProductModelUsedPaymentInstrument = function () {
         }
 
         /**
-        * The type of the payment instrument data, like: 'bank_account' or 'credit_card'
-        * @member {String} type
-        */
+         * The type of the payment instrument data, like: 'bank_account' or 'credit_card'
+         * @member {String} type
+         */
+
 
         /**
-        * Holds the payment instrument data
-        * @member {module:model/BankAccountDescriptor} data
-        */
+         * Holds the payment instrument data
+         * @member {module:model/BankAccountDescriptor} data
+         */
 
     }]);
 

@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The SmartDevicesDTOPrepaidTid model module.
-* @module model/SmartDevicesDTOPrepaidTid
-*/
+ * The SmartDevicesDTOPrepaidTid model module.
+ * @module model/SmartDevicesDTOPrepaidTid
+ */
 export default class SmartDevicesDTOPrepaidTid {
     /**
-    * Constructs a new <code>SmartDevicesDTOPrepaidTid</code>.
-    * @alias module:model/SmartDevicesDTOPrepaidTid
-    * @class
-    */
+     * Constructs a new <code>SmartDevicesDTOPrepaidTid</code>.
+     * @alias module:model/SmartDevicesDTOPrepaidTid
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class SmartDevicesDTOPrepaidTid {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SmartDevicesDTOPrepaidTid();
-
             
             
             
-
             if (data.hasOwnProperty('tid')) {
                 obj['tid'] = ApiClient.convertToType(data['tid'], 'String');
             }
@@ -53,23 +40,15 @@ export default class SmartDevicesDTOPrepaidTid {
     }
 
     /**
-    * Tid
-    * @member {String} tid
-    */
+     * Tid
+     * @member {String} tid
+     */
     tid = undefined;
+
     /**
-    * Force
-    * @member {Boolean} force
-    */
+     * Force
+     * @member {Boolean} force
+     */
     force = undefined;
 
-
-
-
-
-
-
-
 }
-
-

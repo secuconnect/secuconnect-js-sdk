@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The VirtualTerminalData model module.
-* @module model/VirtualTerminalData
-*/
+ * The VirtualTerminalData model module.
+ * @module model/VirtualTerminalData
+ */
 var VirtualTerminalData = function () {
     /**
-    * Constructs a new <code>VirtualTerminalData</code>.
-    * @alias module:model/VirtualTerminalData
-    * @class
-    */
+     * Constructs a new <code>VirtualTerminalData</code>.
+     * @alias module:model/VirtualTerminalData
+     * @class
+     */
 
     function VirtualTerminalData() {
         _classCallCheck(this, VirtualTerminalData);
@@ -70,29 +70,33 @@ var VirtualTerminalData = function () {
         }
 
         /**
-        * Store
-        * @member {Object} store
-        */
+         * Store
+         * @member {Object} store
+         */
+
 
         /**
-        * Terminal id
-        * @member {String} tid
-        */
+         * Terminal id
+         * @member {String} tid
+         */
+
 
         /**
-        * Actions
-        * @member {Array.<String>} actions
-        */
+         * Actions
+         * @member {Array.<String>} actions
+         */
+
 
         /**
-        * Gift terminal
-        * @member {Number} gift_terminal
-        */
+         * Gift terminal
+         * @member {Number} gift_terminal
+         */
+
 
         /**
-        * Amount split enabled
-        * @member {Number} amount_split_enabled
-        */
+         * Amount split enabled
+         * @member {Number} amount_split_enabled
+         */
 
     }]);
 

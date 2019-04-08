@@ -15,16 +15,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The PaymentTransactionsProductModelDetails model module.
-* @module model/PaymentTransactionsProductModelDetails
-*/
+ * The PaymentTransactionsProductModelDetails model module.
+ * @module model/PaymentTransactionsProductModelDetails
+ */
 var PaymentTransactionsProductModelDetails = function () {
     /**
-    * Constructs a new <code>PaymentTransactionsProductModelDetails</code>.
-    * Transaction details
-    * @alias module:model/PaymentTransactionsProductModelDetails
-    * @class
-    */
+     * Constructs a new <code>PaymentTransactionsProductModelDetails</code>.
+     * Transaction details
+     * @alias module:model/PaymentTransactionsProductModelDetails
+     * @class
+     */
 
     function PaymentTransactionsProductModelDetails() {
         _classCallCheck(this, PaymentTransactionsProductModelDetails);
@@ -83,44 +83,51 @@ var PaymentTransactionsProductModelDetails = function () {
         }
 
         /**
-        * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
-        * @member {Number} amount
-        */
+         * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
+         * @member {Number} amount
+         */
+
 
         /**
-        * Clearing status
-        * @member {String} cleared
-        */
+         * Clearing status
+         * @member {String} cleared
+         */
+
 
         /**
-        * Transaction status ID
-        * @member {Number} status
-        */
+         * Transaction status ID
+         * @member {Number} status
+         */
+
 
         /**
-        * Transaction status description
-        * @member {String} status_text
-        */
+         * Transaction status description
+         * @member {String} status_text
+         */
+
 
         /**
-        * Transaction simple-status ID
-        * @member {Number} status_simple
-        */
+         * Transaction simple-status ID
+         * @member {Number} status_simple
+         */
+
 
         /**
-        * Transaction simple-status description
-        * @member {String} status_text_simple
-        */
+         * Transaction simple-status description
+         * @member {String} status_text_simple
+         */
+
 
         /**
-        * Transaction description
-        * @member {String} description
-        */
+         * Transaction description
+         * @member {String} description
+         */
+
 
         /**
-        * Transaction description (plain text)
-        * @member {String} description_raw
-        */
+         * Transaction description (plain text)
+         * @member {String} description_raw
+         */
 
     }]);
 

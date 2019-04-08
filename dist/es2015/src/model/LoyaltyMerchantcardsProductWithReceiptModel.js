@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -47,183 +47,202 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The LoyaltyMerchantcardsProductWithReceiptModel model module.
-* @module model/LoyaltyMerchantcardsProductWithReceiptModel
-*/
+ * The LoyaltyMerchantcardsProductWithReceiptModel model module.
+ * @module model/LoyaltyMerchantcardsProductWithReceiptModel
+ */
 var LoyaltyMerchantcardsProductWithReceiptModel = function () {
-    /**
-    * Constructs a new <code>LoyaltyMerchantcardsProductWithReceiptModel</code>.
-    * @alias module:model/LoyaltyMerchantcardsProductWithReceiptModel
-    * @class
-    * @implements module:model/LoyaltyMerchantcardsProductModel
-    */
+  /**
+   * Constructs a new <code>LoyaltyMerchantcardsProductWithReceiptModel</code>.
+   * @alias module:model/LoyaltyMerchantcardsProductWithReceiptModel
+   * @class
+   * @implements module:model/LoyaltyMerchantcardsProductModel
+   */
 
-    function LoyaltyMerchantcardsProductWithReceiptModel() {
-        _classCallCheck(this, LoyaltyMerchantcardsProductWithReceiptModel);
+  function LoyaltyMerchantcardsProductWithReceiptModel() {
+    _classCallCheck(this, LoyaltyMerchantcardsProductWithReceiptModel);
 
-        this.receipt_header = undefined;
-        this.receipt = undefined;
-        this.object = undefined;
-        this.id = undefined;
-        this.card = undefined;
-        this.merchant = undefined;
-        this.created_for_merchant = undefined;
-        this.created_for_store = undefined;
-        this.customer = undefined;
-        this.cardgroup = undefined;
-        this.payment_container = undefined;
-        this.balance = undefined;
-        this.points = undefined;
-        this.bonus_balance = undefined;
-        this.cash_balance = undefined;
-        this.stock_status = undefined;
-        this.lock_status = undefined;
-        this.last_usage = undefined;
-        this.last_charge = undefined;
-        this.is_base_card = undefined;
-        this.passcode = undefined;
+    this.receipt_header = undefined;
+    this.receipt = undefined;
+    this.object = undefined;
+    this.id = undefined;
+    this.card = undefined;
+    this.merchant = undefined;
+    this.created_for_merchant = undefined;
+    this.created_for_store = undefined;
+    this.customer = undefined;
+    this.cardgroup = undefined;
+    this.payment_container = undefined;
+    this.balance = undefined;
+    this.points = undefined;
+    this.bonus_balance = undefined;
+    this.cash_balance = undefined;
+    this.stock_status = undefined;
+    this.lock_status = undefined;
+    this.last_usage = undefined;
+    this.last_charge = undefined;
+    this.is_base_card = undefined;
+    this.passcode = undefined;
 
 
-        _LoyaltyMerchantcardsProductModel2.default.call(this);
+    _LoyaltyMerchantcardsProductModel2.default.call(this);
+  }
+
+  /**
+  * Constructs a <code>LoyaltyMerchantcardsProductWithReceiptModel</code> from a plain JavaScript object, optionally creating a new instance.
+  * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+  * @param {Object} data The plain JavaScript object bearing properties of interest.
+  * @param {module:model/LoyaltyMerchantcardsProductWithReceiptModel} obj Optional instance to populate.
+  * @return {module:model/LoyaltyMerchantcardsProductWithReceiptModel} The populated <code>LoyaltyMerchantcardsProductWithReceiptModel</code> instance.
+  */
+
+
+  _createClass(LoyaltyMerchantcardsProductWithReceiptModel, null, [{
+    key: 'constructFromObject',
+    value: function constructFromObject(data, obj) {
+      if (data) {
+        obj = obj || new LoyaltyMerchantcardsProductWithReceiptModel();
+
+        _LoyaltyMerchantcardsProductModel2.default.constructFromObject(data, obj);
+        if (data.hasOwnProperty('receipt_header')) {
+          obj['receipt_header'] = _ApiClient2.default.convertToType(data['receipt_header'], [_ReceiptType2.default]);
+        }
+        if (data.hasOwnProperty('receipt')) {
+          obj['receipt'] = _ApiClient2.default.convertToType(data['receipt'], [_ReceiptTypeValue2.default]);
+        }
+      }
+      return obj;
     }
 
     /**
-    * Constructs a <code>LoyaltyMerchantcardsProductWithReceiptModel</code> from a plain JavaScript object, optionally creating a new instance.
-    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-    * @param {Object} data The plain JavaScript object bearing properties of interest.
-    * @param {module:model/LoyaltyMerchantcardsProductWithReceiptModel} obj Optional instance to populate.
-    * @return {module:model/LoyaltyMerchantcardsProductWithReceiptModel} The populated <code>LoyaltyMerchantcardsProductWithReceiptModel</code> instance.
-    */
+     * Receipt header
+     * @member {Array.<module:model/ReceiptType>} receipt_header
+     */
 
 
-    _createClass(LoyaltyMerchantcardsProductWithReceiptModel, null, [{
-        key: 'constructFromObject',
-        value: function constructFromObject(data, obj) {
-            if (data) {
-                obj = obj || new LoyaltyMerchantcardsProductWithReceiptModel();
-
-                _LoyaltyMerchantcardsProductModel2.default.constructFromObject(data, obj);
-
-                if (data.hasOwnProperty('receipt_header')) {
-                    obj['receipt_header'] = _ApiClient2.default.convertToType(data['receipt_header'], [_ReceiptType2.default]);
-                }
-                if (data.hasOwnProperty('receipt')) {
-                    obj['receipt'] = _ApiClient2.default.convertToType(data['receipt'], [_ReceiptTypeValue2.default]);
-                }
-            }
-            return obj;
-        }
-
-        /**
-        * Receipt header
-        * @member {Array.<module:model/ReceiptType>} receipt_header
-        */
-
-        /**
-        * Receipt
-        * @member {Array.<module:model/ReceiptTypeValue>} receipt
-        */
+    /**
+     * Receipt
+     * @member {Array.<module:model/ReceiptTypeValue>} receipt
+     */
 
 
-        // Implement LoyaltyMerchantcardsProductModel interface:
-        /**
-        * Object of loyalty merchant card
-        * @member {String} object
-        */
+    // Implement LoyaltyMerchantcardsProductModel interface:
 
-        /**
-            * Id of loyalty merchant card
-            * @member {String} id
-            */
+    /**
+     * Object of loyalty merchant card
+     * @member {String} object
+     */
 
-        /**
-            * Id of loyalty store group
-            * @member {module:model/LoyaltyCardsProductModel} card
-            */
 
-        /**
-            * Current merchant id
-            * @member {module:model/ProductInstanceUID} merchant
-            */
+    /**
+     * Id of loyalty merchant card
+     * @member {String} id
+     */
 
-        /**
-            * Merchant id, that loyalty merchant card object was created for
-            * @member {module:model/ProductInstanceUID} created_for_merchant
-            */
 
-        /**
-            * Store id, that loyalty merchant card object was created for
-            * @member {module:model/ProductInstanceUID} created_for_store
-            */
+    /**
+     * Id of loyalty store group
+     * @member {module:model/LoyaltyCardsProductModel} card
+     */
 
-        /**
-            * Loyalty merchant card customer
-            * @member {module:model/LoyaltyCustomersProductModel} customer
-            */
 
-        /**
-            * Loyalty merchant card card group
-            * @member {module:model/LoyaltyCardgroupsProductModel} cardgroup
-            */
+    /**
+     * Current merchant id
+     * @member {module:model/ProductInstanceUID} merchant
+     */
 
-        /**
-            * Loyalty merchant card payment container
-            * @member {module:model/LoyaltyMerchantcardsDTOPaymentContainer} payment_container
-            */
 
-        /**
-            * Loyalty merchant card balance
-            * @member {Number} balance
-            */
+    /**
+     * Merchant id, that loyalty merchant card object was created for
+     * @member {module:model/ProductInstanceUID} created_for_merchant
+     */
 
-        /**
-            * Loyalty merchant card points
-            * @member {Number} points
-            */
 
-        /**
-            * Loyalty merchant card bonus balance
-            * @member {Number} bonus_balance
-            */
+    /**
+     * Store id, that loyalty merchant card object was created for
+     * @member {module:model/ProductInstanceUID} created_for_store
+     */
 
-        /**
-            * Loyalty merchant card cash balance
-            * @member {Number} cash_balance
-            */
 
-        /**
-            * Loyalty merchant card stock status
-            * @member {String} stock_status
-            */
+    /**
+     * Loyalty merchant card customer
+     * @member {module:model/LoyaltyCustomersProductModel} customer
+     */
 
-        /**
-            * Loyalty merchant card lock status
-            * @member {String} lock_status
-            */
 
-        /**
-            * Loyalty merchant card last usage
-            * @member {Date} last_usage
-            */
+    /**
+     * Loyalty merchant card card group
+     * @member {module:model/LoyaltyCardgroupsProductModel} cardgroup
+     */
 
-        /**
-            * Loyalty merchant card last charge
-            * @member {Date} last_charge
-            */
 
-        /**
-            * Information whether loyalty merchant card is base card
-            * @member {Boolean} is_base_card
-            */
+    /**
+     * Loyalty merchant card payment container
+     * @member {module:model/LoyaltyMerchantcardsDTOPaymentContainer} payment_container
+     */
 
-        /**
-            * Loyalty merchant card passcode
-            * @member {Number} passcode
-            */
 
-    }]);
+    /**
+     * Loyalty merchant card balance
+     * @member {Number} balance
+     */
 
-    return LoyaltyMerchantcardsProductWithReceiptModel;
+
+    /**
+     * Loyalty merchant card points
+     * @member {Number} points
+     */
+
+
+    /**
+     * Loyalty merchant card bonus balance
+     * @member {Number} bonus_balance
+     */
+
+
+    /**
+     * Loyalty merchant card cash balance
+     * @member {Number} cash_balance
+     */
+
+
+    /**
+     * Loyalty merchant card stock status
+     * @member {String} stock_status
+     */
+
+
+    /**
+     * Loyalty merchant card lock status
+     * @member {String} lock_status
+     */
+
+
+    /**
+     * Loyalty merchant card last usage
+     * @member {String} last_usage
+     */
+
+
+    /**
+     * Loyalty merchant card last charge
+     * @member {String} last_charge
+     */
+
+
+    /**
+     * Information whether loyalty merchant card is base card
+     * @member {Boolean} is_base_card
+     */
+
+
+    /**
+     * Loyalty merchant card passcode
+     * @member {Number} passcode
+     */
+
+  }]);
+
+  return LoyaltyMerchantcardsProductWithReceiptModel;
 }();
 
 exports.default = LoyaltyMerchantcardsProductWithReceiptModel;

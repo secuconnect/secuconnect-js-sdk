@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The GeneralStoresDTOType model module.
-* @module model/GeneralStoresDTOType
-*/
+ * The GeneralStoresDTOType model module.
+ * @module model/GeneralStoresDTOType
+ */
 export default class GeneralStoresDTOType {
     /**
-    * Constructs a new <code>GeneralStoresDTOType</code>.
-    * @alias module:model/GeneralStoresDTOType
-    * @class
-    */
+     * Constructs a new <code>GeneralStoresDTOType</code>.
+     * @alias module:model/GeneralStoresDTOType
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class GeneralStoresDTOType {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new GeneralStoresDTOType();
-
             
             
             
-
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
@@ -50,18 +37,9 @@ export default class GeneralStoresDTOType {
     }
 
     /**
-    * Type
-    * @member {String} type
-    */
+     * Type
+     * @member {String} type
+     */
     type = undefined;
 
-
-
-
-
-
-
-
 }
-
-

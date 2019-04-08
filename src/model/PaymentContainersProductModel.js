@@ -6,29 +6,18 @@ import PaymentContractsProductModel from './PaymentContractsProductModel';
 import PaymentCustomersProductModel from './PaymentCustomersProductModel';
 import ProductInstanceUID from './ProductInstanceUID';
 
-
-
-
-
 /**
-* The PaymentContainersProductModel model module.
-* @module model/PaymentContainersProductModel
-*/
+ * The PaymentContainersProductModel model module.
+ * @module model/PaymentContainersProductModel
+ */
 export default class PaymentContainersProductModel {
     /**
-    * Constructs a new <code>PaymentContainersProductModel</code>.
-    * @alias module:model/PaymentContainersProductModel
-    * @class
-    */
+     * Constructs a new <code>PaymentContainersProductModel</code>.
+     * @alias module:model/PaymentContainersProductModel
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -42,11 +31,9 @@ export default class PaymentContainersProductModel {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PaymentContainersProductModel();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -72,10 +59,10 @@ export default class PaymentContainersProductModel {
                 obj['private'] = BankAccountDescriptor.constructFromObject(data['private']);
             }
             if (data.hasOwnProperty('created')) {
-                obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+                obj['created'] = ApiClient.convertToType(data['created'], 'String');
             }
             if (data.hasOwnProperty('updated')) {
-                obj['updated'] = ApiClient.convertToType(data['updated'], 'Date');
+                obj['updated'] = ApiClient.convertToType(data['updated'], 'String');
             }
             if (data.hasOwnProperty('mandate')) {
                 obj['mandate'] = PaymentContainerMandate.constructFromObject(data['mandate']);
@@ -85,68 +72,69 @@ export default class PaymentContainersProductModel {
     }
 
     /**
-    * Object of payment container
-    * @member {String} object
-    */
+     * Object of payment container
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of payment container
-    * @member {String} id
-    */
+     * Id of payment container
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Payment container contract
-    * @member {module:model/PaymentContractsProductModel} contract
-    */
+     * Payment container contract
+     * @member {module:model/PaymentContractsProductModel} contract
+     */
     contract = undefined;
+
     /**
-    * Payment container customer
-    * @member {module:model/PaymentCustomersProductModel} customer
-    */
+     * Payment container customer
+     * @member {module:model/PaymentCustomersProductModel} customer
+     */
     customer = undefined;
+
     /**
-    * Assign to
-    * @member {module:model/ProductInstanceUID} assign
-    */
+     * Assign to
+     * @member {module:model/ProductInstanceUID} assign
+     */
     assign = undefined;
+
     /**
-    * Type of payment container
-    * @member {String} type
-    */
+     * Type of payment container
+     * @member {String} type
+     */
     type = undefined;
+
     /**
-    * Public payment instrument data
-    * @member {module:model/BankAccountDescriptor} public
-    */
+     * Public payment instrument data
+     * @member {module:model/BankAccountDescriptor} public
+     */
     public = undefined;
+
     /**
-    * Private payment instrument data
-    * @member {module:model/BankAccountDescriptor} private
-    */
+     * Private payment instrument data
+     * @member {module:model/BankAccountDescriptor} private
+     */
     private = undefined;
+
     /**
-    * Creation date
-    * @member {Date} created
-    */
+     * Creation date
+     * @member {String} created
+     */
     created = undefined;
+
     /**
-    * Last update date
-    * @member {Date} updated
-    */
+     * Last update date
+     * @member {String} updated
+     */
     updated = undefined;
+
     /**
-    * Payment container mandate
-    * @member {module:model/PaymentContainerMandate} mandate
-    */
+     * Payment container mandate
+     * @member {module:model/PaymentContainerMandate} mandate
+     */
     mandate = undefined;
 
-
-
-
-
-
-
-
 }
-
-
