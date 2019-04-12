@@ -103,7 +103,7 @@ export default class SmartTransactionsProductModel {
                 obj['receipt'] = ApiClient.convertToType(data['receipt'], [SmartTransactionsReceipt]);
             }
             if (data.hasOwnProperty('receipt_merchant')) {
-                obj['receipt_merchant'] = ApiClient.convertToType(data['receipt_merchant'], 'String');
+                obj['receipt_merchant'] = ApiClient.convertToType(data['receipt_merchant'], [SmartTransactionsReceipt]);
             }
             if (data.hasOwnProperty('receipt_merchant_print')) {
                 obj['receipt_merchant_print'] = ApiClient.convertToType(data['receipt_merchant_print'], 'Boolean');
@@ -240,9 +240,9 @@ export default class SmartTransactionsProductModel {
     */
     receipt = undefined;
     /**
-    * Receipt merchant
-    * @member {String} receipt_merchant
-    */
+     * Receipt merchant
+     * @member {Array.<module:model/SmartTransactionsReceipt>} receipt_merchant
+     */
     receipt_merchant = undefined;
     /**
     * Receipt merchant print

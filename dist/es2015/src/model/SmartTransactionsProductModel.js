@@ -166,7 +166,7 @@ var SmartTransactionsProductModel = function () {
                     obj['receipt'] = _ApiClient2.default.convertToType(data['receipt'], [_SmartTransactionsReceipt2.default]);
                 }
                 if (data.hasOwnProperty('receipt_merchant')) {
-                    obj['receipt_merchant'] = _ApiClient2.default.convertToType(data['receipt_merchant'], 'String');
+                    obj['receipt_merchant'] = _ApiClient2.default.convertToType(data['receipt_merchant'], [_SmartTransactionsReceipt2.default]);
                 }
                 if (data.hasOwnProperty('receipt_merchant_print')) {
                     obj['receipt_merchant_print'] = _ApiClient2.default.convertToType(data['receipt_merchant_print'], 'Boolean');
@@ -303,9 +303,9 @@ var SmartTransactionsProductModel = function () {
         */
 
         /**
-        * Receipt merchant
-        * @member {String} receipt_merchant
-        */
+         * Receipt merchant
+         * @member {Array.<module:model/SmartTransactionsReceipt>} receipt_merchant
+         */
 
         /**
         * Receipt merchant print

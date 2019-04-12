@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **updated** | **Date** | Updated at date | [optional] 
 **receiptNumber** | **Number** | Receipt number | [optional] 
 **receipt** | [**[SmartTransactionsReceipt]**](SmartTransactionsReceipt.md) | Receipt | [optional] 
-**receiptMerchant** | **String** | Receipt merchant | [optional] 
+**receiptMerchant** | [**[SmartTransactionsReceipt]**](SmartTransactionsReceipt.md) | Receipt merchant | [optional] 
 **receiptMerchantPrint** | **Boolean** | Receipt merchant print | [optional] 
 **basketInfo** | [**SmartTransactionsBasketInfo**](SmartTransactionsBasketInfo.md) | Basket info | [optional] 
 **basket** | [**SmartTransactionsBasket**](SmartTransactionsBasket.md) | Basket | [optional] 
