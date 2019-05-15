@@ -19,15 +19,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The LoyaltyCardgroupsDTO model module.
-* @module model/LoyaltyCardgroupsDTO
-*/
+ * The LoyaltyCardgroupsDTO model module.
+ * @module model/LoyaltyCardgroupsDTO
+ */
 var LoyaltyCardgroupsDTO = function () {
     /**
-    * Constructs a new <code>LoyaltyCardgroupsDTO</code>.
-    * @alias module:model/LoyaltyCardgroupsDTO
-    * @class
-    */
+     * Constructs a new <code>LoyaltyCardgroupsDTO</code>.
+     * @alias module:model/LoyaltyCardgroupsDTO
+     * @class
+     */
 
     function LoyaltyCardgroupsDTO() {
         _classCallCheck(this, LoyaltyCardgroupsDTO);
@@ -74,29 +74,33 @@ var LoyaltyCardgroupsDTO = function () {
         }
 
         /**
-        * Display name
-        * @member {String} display_name
-        */
+         * Display name
+         * @member {String} display_name
+         */
+
 
         /**
-        * Display name raw
-        * @member {String} display_name_raw
-        */
+         * Display name raw
+         * @member {String} display_name_raw
+         */
+
 
         /**
-        * Stock warn limit
-        * @member {String} stock_warn_limit
-        */
+         * Stock warn limit
+         * @member {String} stock_warn_limit
+         */
+
 
         /**
-        * Picture
-        * @member {String} picture
-        */
+         * Picture
+         * @member {String} picture
+         */
+
 
         /**
-        * LoyaltyCardgroupsDTO
-        * @member {module:model/LoyaltyCardgroupsDTOMerchant} merchant
-        */
+         * LoyaltyCardgroupsDTO
+         * @member {module:model/LoyaltyCardgroupsDTOMerchant} merchant
+         */
 
     }]);
 

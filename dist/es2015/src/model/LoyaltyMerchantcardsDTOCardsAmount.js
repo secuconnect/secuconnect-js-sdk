@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The LoyaltyMerchantcardsDTOCardsAmount model module.
-* @module model/LoyaltyMerchantcardsDTOCardsAmount
-*/
+ * The LoyaltyMerchantcardsDTOCardsAmount model module.
+ * @module model/LoyaltyMerchantcardsDTOCardsAmount
+ */
 var LoyaltyMerchantcardsDTOCardsAmount = function () {
     /**
-    * Constructs a new <code>LoyaltyMerchantcardsDTOCardsAmount</code>.
-    * @alias module:model/LoyaltyMerchantcardsDTOCardsAmount
-    * @class
-    */
+     * Constructs a new <code>LoyaltyMerchantcardsDTOCardsAmount</code>.
+     * @alias module:model/LoyaltyMerchantcardsDTOCardsAmount
+     * @class
+     */
 
     function LoyaltyMerchantcardsDTOCardsAmount() {
         _classCallCheck(this, LoyaltyMerchantcardsDTOCardsAmount);
@@ -54,9 +54,9 @@ var LoyaltyMerchantcardsDTOCardsAmount = function () {
         }
 
         /**
-        * Cards amount
-        * @member {Number} cards_amount
-        */
+         * Cards amount
+         * @member {Number} cards_amount
+         */
 
     }]);
 

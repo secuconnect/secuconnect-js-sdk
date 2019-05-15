@@ -27,15 +27,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The PaymentContractsDTORequestId model module.
-* @module model/PaymentContractsDTORequestId
-*/
+ * The PaymentContractsDTORequestId model module.
+ * @module model/PaymentContractsDTORequestId
+ */
 var PaymentContractsDTORequestId = function () {
     /**
-    * Constructs a new <code>PaymentContractsDTORequestId</code>.
-    * @alias module:model/PaymentContractsDTORequestId
-    * @class
-    */
+     * Constructs a new <code>PaymentContractsDTORequestId</code>.
+     * @alias module:model/PaymentContractsDTORequestId
+     * @class
+     */
 
     function PaymentContractsDTORequestId() {
         _classCallCheck(this, PaymentContractsDTORequestId);
@@ -82,30 +82,34 @@ var PaymentContractsDTORequestId = function () {
         }
 
         /**
-        * Contact
-        * @member {module:model/Contact} contact
-        */
+         * Contact
+         * @member {module:model/Contact} contact
+         */
+
 
         /**
-        * Name of the project (must be unique)
-        * @member {String} project
-        */
+         * Name of the project (must be unique)
+         * @member {String} project
+         */
+
 
         /**
-        * Merchants bank account for the payout
-        * @member {module:model/PaymentInformation} payout_account
-        */
+         * Merchants bank account for the payout
+         * @member {module:model/PaymentInformation} payout_account
+         */
+
 
         /**
-        * IFrame opts
-        * @member {module:model/PaymentContractsDTOIFrameOpts} iframe_opts
-        */
+         * IFrame opts
+         * @member {module:model/PaymentContractsDTOIFrameOpts} iframe_opts
+         */
+
 
         /**
-        * Pay in account
-        * @member {Boolean} payin_account
-        * @default false
-        */
+         * Pay in account
+         * @member {Boolean} payin_account
+         * @default false
+         */
 
     }]);
 

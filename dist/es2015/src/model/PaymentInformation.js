@@ -15,23 +15,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The PaymentInformation model module.
-* @module model/PaymentInformation
-*/
+ * The PaymentInformation model module.
+ * @module model/PaymentInformation
+ */
 var PaymentInformation = function () {
     /**
-    * Constructs a new <code>PaymentInformation</code>.
-    * Payment information
-    * @alias module:model/PaymentInformation
-    * @class
-    */
+     * Constructs a new <code>PaymentInformation</code>.
+     * Payment information
+     * @alias module:model/PaymentInformation
+     * @class
+     */
 
     function PaymentInformation() {
         _classCallCheck(this, PaymentInformation);
 
-        this.owner = undefined;
         this.iban = undefined;
         this.bic = undefined;
+        this.owner = undefined;
+        this.bankname = undefined;
     }
 
     /**
@@ -49,33 +50,44 @@ var PaymentInformation = function () {
             if (data) {
                 obj = obj || new PaymentInformation();
 
-                if (data.hasOwnProperty('owner')) {
-                    obj['owner'] = _ApiClient2.default.convertToType(data['owner'], 'String');
-                }
                 if (data.hasOwnProperty('iban')) {
                     obj['iban'] = _ApiClient2.default.convertToType(data['iban'], 'String');
                 }
                 if (data.hasOwnProperty('bic')) {
                     obj['bic'] = _ApiClient2.default.convertToType(data['bic'], 'String');
                 }
+                if (data.hasOwnProperty('owner')) {
+                    obj['owner'] = _ApiClient2.default.convertToType(data['owner'], 'String');
+                }
+                if (data.hasOwnProperty('bankname')) {
+                    obj['bankname'] = _ApiClient2.default.convertToType(data['bankname'], 'String');
+                }
             }
             return obj;
         }
 
         /**
-        * Owner
-        * @member {String} owner
-        */
+         * IBAN
+         * @member {String} iban
+         */
+
 
         /**
-        * IBAN
-        * @member {String} iban
-        */
+         * BIC
+         * @member {String} bic
+         */
+
 
         /**
-        * BIC
-        * @member {String} bic
-        */
+         * Owner
+         * @member {String} owner
+         */
+
+
+        /**
+         * Bank name
+         * @member {String} bankname
+         */
 
     }]);
 

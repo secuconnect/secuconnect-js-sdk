@@ -15,24 +15,25 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The BankAccountDescriptor model module.
-* @module model/BankAccountDescriptor
-*/
+ * The BankAccountDescriptor model module.
+ * @module model/BankAccountDescriptor
+ */
 var BankAccountDescriptor = function () {
     /**
-    * Constructs a new <code>BankAccountDescriptor</code>.
-    * Bank account data like owner, iban, bic and bank name
-    * @alias module:model/BankAccountDescriptor
-    * @class
-    */
+     * Constructs a new <code>BankAccountDescriptor</code>.
+     * Bank account data like owner, iban, bic and bank name
+     * @alias module:model/BankAccountDescriptor
+     * @class
+     */
 
     function BankAccountDescriptor() {
         _classCallCheck(this, BankAccountDescriptor);
 
-        this.owner = undefined;
         this.iban = undefined;
         this.bic = undefined;
+        this.owner = undefined;
         this.bankname = undefined;
+        this.purpose = undefined;
     }
 
     /**
@@ -50,41 +51,53 @@ var BankAccountDescriptor = function () {
             if (data) {
                 obj = obj || new BankAccountDescriptor();
 
-                if (data.hasOwnProperty('owner')) {
-                    obj['owner'] = _ApiClient2.default.convertToType(data['owner'], 'String');
-                }
                 if (data.hasOwnProperty('iban')) {
                     obj['iban'] = _ApiClient2.default.convertToType(data['iban'], 'String');
                 }
                 if (data.hasOwnProperty('bic')) {
                     obj['bic'] = _ApiClient2.default.convertToType(data['bic'], 'String');
                 }
+                if (data.hasOwnProperty('owner')) {
+                    obj['owner'] = _ApiClient2.default.convertToType(data['owner'], 'String');
+                }
                 if (data.hasOwnProperty('bankname')) {
                     obj['bankname'] = _ApiClient2.default.convertToType(data['bankname'], 'String');
+                }
+                if (data.hasOwnProperty('purpose')) {
+                    obj['purpose'] = _ApiClient2.default.convertToType(data['purpose'], 'String');
                 }
             }
             return obj;
         }
 
         /**
-        * Owner
-        * @member {String} owner
-        */
+         * IBAN
+         * @member {String} iban
+         */
+
 
         /**
-        * IBAN
-        * @member {String} iban
-        */
+         * BIC
+         * @member {String} bic
+         */
+
 
         /**
-        * BIC
-        * @member {String} bic
-        */
+         * Owner
+         * @member {String} owner
+         */
+
 
         /**
-        * Bank name
-        * @member {String} bankname
-        */
+         * Bank name
+         * @member {String} bankname
+         */
+
+
+        /**
+         * Purpose
+         * @member {String} purpose
+         */
 
     }]);
 

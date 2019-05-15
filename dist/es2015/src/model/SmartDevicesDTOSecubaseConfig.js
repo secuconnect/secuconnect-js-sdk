@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SmartDevicesDTOSecubaseConfig model module.
-* @module model/SmartDevicesDTOSecubaseConfig
-*/
+ * The SmartDevicesDTOSecubaseConfig model module.
+ * @module model/SmartDevicesDTOSecubaseConfig
+ */
 var SmartDevicesDTOSecubaseConfig = function () {
     /**
-    * Constructs a new <code>SmartDevicesDTOSecubaseConfig</code>.
-    * @alias module:model/SmartDevicesDTOSecubaseConfig
-    * @class
-    */
+     * Constructs a new <code>SmartDevicesDTOSecubaseConfig</code>.
+     * @alias module:model/SmartDevicesDTOSecubaseConfig
+     * @class
+     */
 
     function SmartDevicesDTOSecubaseConfig() {
         _classCallCheck(this, SmartDevicesDTOSecubaseConfig);
@@ -62,19 +62,21 @@ var SmartDevicesDTOSecubaseConfig = function () {
         }
 
         /**
-        * Secubase version
-        * @member {String} secubaseVersion
-        */
+         * Secubase version
+         * @member {String} secubaseVersion
+         */
+
 
         /**
-        * Base version
-        * @member {String} baseVersion
-        */
+         * Base version
+         * @member {String} baseVersion
+         */
+
 
         /**
-        * Oai version
-        * @member {String} oaiVersion
-        */
+         * Oai version
+         * @member {String} oaiVersion
+         */
 
     }]);
 

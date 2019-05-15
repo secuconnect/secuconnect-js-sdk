@@ -19,15 +19,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The LoyaltyMerchantcardsDTOPaymentContainer model module.
-* @module model/LoyaltyMerchantcardsDTOPaymentContainer
-*/
+ * The LoyaltyMerchantcardsDTOPaymentContainer model module.
+ * @module model/LoyaltyMerchantcardsDTOPaymentContainer
+ */
 var LoyaltyMerchantcardsDTOPaymentContainer = function () {
     /**
-    * Constructs a new <code>LoyaltyMerchantcardsDTOPaymentContainer</code>.
-    * @alias module:model/LoyaltyMerchantcardsDTOPaymentContainer
-    * @class
-    */
+     * Constructs a new <code>LoyaltyMerchantcardsDTOPaymentContainer</code>.
+     * @alias module:model/LoyaltyMerchantcardsDTOPaymentContainer
+     * @class
+     */
 
     function LoyaltyMerchantcardsDTOPaymentContainer() {
         _classCallCheck(this, LoyaltyMerchantcardsDTOPaymentContainer);
@@ -70,24 +70,27 @@ var LoyaltyMerchantcardsDTOPaymentContainer = function () {
         }
 
         /**
-        * Object of payment container
-        * @member {String} object
-        */
+         * Object of payment container
+         * @member {String} object
+         */
+
 
         /**
-        * Id of payment container
-        * @member {String} id
-        */
+         * Id of payment container
+         * @member {String} id
+         */
+
 
         /**
-        * Type of payment container
-        * @member {String} type
-        */
+         * Type of payment container
+         * @member {String} type
+         */
+
 
         /**
-        * Payment information
-        * @member {module:model/PaymentInformation} payment_information
-        */
+         * Payment information
+         * @member {module:model/PaymentInformation} payment_information
+         */
 
     }]);
 

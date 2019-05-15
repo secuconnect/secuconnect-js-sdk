@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SecupayTransactionCancelDTO model module.
-* @module model/SecupayTransactionCancelDTO
-*/
+ * The SecupayTransactionCancelDTO model module.
+ * @module model/SecupayTransactionCancelDTO
+ */
 var SecupayTransactionCancelDTO = function () {
     /**
-    * Constructs a new <code>SecupayTransactionCancelDTO</code>.
-    * @alias module:model/SecupayTransactionCancelDTO
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionCancelDTO</code>.
+     * @alias module:model/SecupayTransactionCancelDTO
+     * @class
+     */
 
     function SecupayTransactionCancelDTO() {
         _classCallCheck(this, SecupayTransactionCancelDTO);
@@ -62,20 +62,22 @@ var SecupayTransactionCancelDTO = function () {
         }
 
         /**
-        * The payment contract object
-        * @member {Object} contract
-        */
+         * The payment contract object
+         * @member {Object} contract
+         */
+
 
         /**
-        * partial or full refund amount, \"0\" means full refund
-        * @member {Number} amount
-        */
+         * partial or full refund amount, \"0\" means full refund
+         * @member {Number} amount
+         */
+
 
         /**
-        * Mixed-Basket: (percentage) reduce the stakeholder amount too
-        * @member {Boolean} reduce_stakeholder_payment
-        * @default false
-        */
+         * Mixed-Basket: (percentage) reduce the stakeholder amount too
+         * @member {Boolean} reduce_stakeholder_payment
+         * @default false
+         */
 
     }]);
 

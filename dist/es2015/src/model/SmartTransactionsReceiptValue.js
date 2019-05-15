@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SmartTransactionsReceiptValue model module.
-* @module model/SmartTransactionsReceiptValue
-*/
+ * The SmartTransactionsReceiptValue model module.
+ * @module model/SmartTransactionsReceiptValue
+ */
 var SmartTransactionsReceiptValue = function () {
     /**
-    * Constructs a new <code>SmartTransactionsReceiptValue</code>.
-    * @alias module:model/SmartTransactionsReceiptValue
-    * @class
-    */
+     * Constructs a new <code>SmartTransactionsReceiptValue</code>.
+     * @alias module:model/SmartTransactionsReceiptValue
+     * @class
+     */
 
     function SmartTransactionsReceiptValue() {
         _classCallCheck(this, SmartTransactionsReceiptValue);
@@ -66,24 +66,27 @@ var SmartTransactionsReceiptValue = function () {
         }
 
         /**
-        * Caption
-        * @member {String} caption
-        */
+         * Caption
+         * @member {String} caption
+         */
+
 
         /**
-        * Text
-        * @member {String} text
-        */
+         * Text
+         * @member {String} text
+         */
+
 
         /**
-        * Name
-        * @member {String} name
-        */
+         * Name
+         * @member {String} name
+         */
+
 
         /**
-        * Value
-        * @member {String} value
-        */
+         * Value
+         * @member {String} value
+         */
 
     }]);
 

@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The Store model module.
-* @module model/Store
-*/
+ * The Store model module.
+ * @module model/Store
+ */
 var Store = function () {
     /**
-    * Constructs a new <code>Store</code>.
-    * @alias module:model/Store
-    * @class
-    */
+     * Constructs a new <code>Store</code>.
+     * @alias module:model/Store
+     * @class
+     */
 
     function Store() {
         _classCallCheck(this, Store);
@@ -66,24 +66,27 @@ var Store = function () {
         }
 
         /**
-        * Object of store
-        * @member {String} object
-        */
+         * Object of store
+         * @member {String} object
+         */
+
 
         /**
-        * Id of store
-        * @member {String} id
-        */
+         * Id of store
+         * @member {String} id
+         */
+
 
         /**
-        * Store name
-        * @member {String} name
-        */
+         * Store name
+         * @member {String} name
+         */
+
 
         /**
-        * Store name raw
-        * @member {String} name_raw
-        */
+         * Store name raw
+         * @member {String} name_raw
+         */
 
     }]);
 

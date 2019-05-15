@@ -196,7 +196,15 @@ import PrepaidSalesProductApi from './api/PrepaidSalesProductApi';
 import SmartDevicesApi from './api/SmartDevicesApi';
 import SmartRoutingsApi from './api/SmartRoutingsApi';
 import SmartTransactionsApi from './api/SmartTransactionsApi';
-
+import StompClient from './stomp/StompClient';
+import StompSmartTransactionsApi from './stomp/api/StompSmartTransactionsApi';
+import Environments from './stomp/StompGlobals';
+import FrameCommands from './stomp/StompGlobals';
+import Frame from './stomp/frame/Frame';
+import Stomp from './stomp/main/Stomp';
+import BrowserSocket from './stomp/socket/BrowserSocket';
+import NodeSocket from './stomp/socket/NodeSocket';
+import SocketProvider from './stomp/socket/SocketProvider';
 
 /**
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
@@ -1408,5 +1416,15 @@ export {
     * The SmartTransactionsApi service constructor.
     * @property {module:api/SmartTransactionsApi}
     */
-    SmartTransactionsApi
+    SmartTransactionsApi,
+
+    StompClient,
+    StompSmartTransactionsApi,
+    Environments,
+    FrameCommands,
+    Frame,
+    Stomp,
+    BrowserSocket,
+    NodeSocket,
+    SocketProvider
 };

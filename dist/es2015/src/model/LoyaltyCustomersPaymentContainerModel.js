@@ -19,15 +19,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The LoyaltyCustomersPaymentContainerModel model module.
-* @module model/LoyaltyCustomersPaymentContainerModel
-*/
+ * The LoyaltyCustomersPaymentContainerModel model module.
+ * @module model/LoyaltyCustomersPaymentContainerModel
+ */
 var LoyaltyCustomersPaymentContainerModel = function () {
     /**
-    * Constructs a new <code>LoyaltyCustomersPaymentContainerModel</code>.
-    * @alias module:model/LoyaltyCustomersPaymentContainerModel
-    * @class
-    */
+     * Constructs a new <code>LoyaltyCustomersPaymentContainerModel</code>.
+     * @alias module:model/LoyaltyCustomersPaymentContainerModel
+     * @class
+     */
 
     function LoyaltyCustomersPaymentContainerModel() {
         _classCallCheck(this, LoyaltyCustomersPaymentContainerModel);
@@ -67,36 +67,40 @@ var LoyaltyCustomersPaymentContainerModel = function () {
                     obj['payment_information'] = _BankAccountDescriptor2.default.constructFromObject(data['payment_information']);
                 }
                 if (data.hasOwnProperty('last_usage')) {
-                    obj['last_usage'] = _ApiClient2.default.convertToType(data['last_usage'], 'Date');
+                    obj['last_usage'] = _ApiClient2.default.convertToType(data['last_usage'], 'String');
                 }
             }
             return obj;
         }
 
         /**
-        * LoyaltyCustomersPaymentContainerModel
-        * @member {String} object
-        */
+         * LoyaltyCustomersPaymentContainerModel
+         * @member {String} object
+         */
+
 
         /**
-        * LoyaltyCustomersPaymentContainerModel
-        * @member {String} id
-        */
+         * LoyaltyCustomersPaymentContainerModel
+         * @member {String} id
+         */
+
 
         /**
-        * LoyaltyCustomersPaymentContainerModel
-        * @member {String} type
-        */
+         * LoyaltyCustomersPaymentContainerModel
+         * @member {String} type
+         */
+
 
         /**
-        * Payment instrument data
-        * @member {module:model/BankAccountDescriptor} payment_information
-        */
+         * Payment instrument data
+         * @member {module:model/BankAccountDescriptor} payment_information
+         */
+
 
         /**
-        * Last Usage date
-        * @member {Date} last_usage
-        */
+         * Last Usage date
+         * @member {String} last_usage
+         */
 
     }]);
 

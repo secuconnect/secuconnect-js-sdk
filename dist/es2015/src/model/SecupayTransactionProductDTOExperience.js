@@ -15,16 +15,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SecupayTransactionProductDTOExperience model module.
-* @module model/SecupayTransactionProductDTOExperience
-*/
+ * The SecupayTransactionProductDTOExperience model module.
+ * @module model/SecupayTransactionProductDTOExperience
+ */
 var SecupayTransactionProductDTOExperience = function () {
     /**
-    * Constructs a new <code>SecupayTransactionProductDTOExperience</code>.
-    * Customer experience score
-    * @alias module:model/SecupayTransactionProductDTOExperience
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionProductDTOExperience</code>.
+     * Customer experience score
+     * @alias module:model/SecupayTransactionProductDTOExperience
+     * @class
+     */
 
     function SecupayTransactionProductDTOExperience() {
         _classCallCheck(this, SecupayTransactionProductDTOExperience);
@@ -59,14 +59,15 @@ var SecupayTransactionProductDTOExperience = function () {
         }
 
         /**
-        * Score of positive experience (paid orders)
-        * @member {Number} positive
-        */
+         * Score of positive experience (paid orders)
+         * @member {Number} positive
+         */
+
 
         /**
-        * Score of negative experience (open/unpaid orders)
-        * @member {Number} negative
-        */
+         * Score of negative experience (open/unpaid orders)
+         * @member {Number} negative
+         */
 
     }]);
 

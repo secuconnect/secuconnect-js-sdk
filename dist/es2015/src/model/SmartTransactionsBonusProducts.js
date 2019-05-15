@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SmartTransactionsBonusProducts model module.
-* @module model/SmartTransactionsBonusProducts
-*/
+ * The SmartTransactionsBonusProducts model module.
+ * @module model/SmartTransactionsBonusProducts
+ */
 var SmartTransactionsBonusProducts = function () {
     /**
-    * Constructs a new <code>SmartTransactionsBonusProducts</code>.
-    * @alias module:model/SmartTransactionsBonusProducts
-    * @class
-    */
+     * Constructs a new <code>SmartTransactionsBonusProducts</code>.
+     * @alias module:model/SmartTransactionsBonusProducts
+     * @class
+     */
 
     function SmartTransactionsBonusProducts() {
         _classCallCheck(this, SmartTransactionsBonusProducts);
@@ -78,39 +78,45 @@ var SmartTransactionsBonusProducts = function () {
         }
 
         /**
-        * Bonus Product ID
-        * @member {Number} id
-        */
+         * Bonus Product ID
+         * @member {Number} id
+         */
+
 
         /**
-        * Tax
-        * @member {Number} tax
-        */
+         * Tax
+         * @member {Number} tax
+         */
+
 
         /**
-        * price of one bonus product
-        * @member {Number} priceOne
-        */
+         * price of one bonus product
+         * @member {Number} priceOne
+         */
+
 
         /**
-        * amount of bonus products
-        * @member {Number} quantity
-        */
+         * amount of bonus products
+         * @member {Number} quantity
+         */
+
 
         /**
-        * description
-        * @member {String} desc
-        */
+         * description
+         * @member {String} desc
+         */
+
 
         /**
-        * article Number
-        * @member {String} articleNumber
-        */
+         * article Number
+         * @member {String} articleNumber
+         */
+
 
         /**
-        * ean
-        * @member {String} ean
-        */
+         * ean
+         * @member {String} ean
+         */
 
     }]);
 

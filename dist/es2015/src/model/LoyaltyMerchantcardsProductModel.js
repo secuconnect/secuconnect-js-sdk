@@ -35,15 +35,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The LoyaltyMerchantcardsProductModel model module.
-* @module model/LoyaltyMerchantcardsProductModel
-*/
+ * The LoyaltyMerchantcardsProductModel model module.
+ * @module model/LoyaltyMerchantcardsProductModel
+ */
 var LoyaltyMerchantcardsProductModel = function () {
     /**
-    * Constructs a new <code>LoyaltyMerchantcardsProductModel</code>.
-    * @alias module:model/LoyaltyMerchantcardsProductModel
-    * @class
-    */
+     * Constructs a new <code>LoyaltyMerchantcardsProductModel</code>.
+     * @alias module:model/LoyaltyMerchantcardsProductModel
+     * @class
+     */
 
     function LoyaltyMerchantcardsProductModel() {
         _classCallCheck(this, LoyaltyMerchantcardsProductModel);
@@ -130,10 +130,10 @@ var LoyaltyMerchantcardsProductModel = function () {
                     obj['lock_status'] = _ApiClient2.default.convertToType(data['lock_status'], 'String');
                 }
                 if (data.hasOwnProperty('last_usage')) {
-                    obj['last_usage'] = _ApiClient2.default.convertToType(data['last_usage'], 'Date');
+                    obj['last_usage'] = _ApiClient2.default.convertToType(data['last_usage'], 'String');
                 }
                 if (data.hasOwnProperty('last_charge')) {
-                    obj['last_charge'] = _ApiClient2.default.convertToType(data['last_charge'], 'Date');
+                    obj['last_charge'] = _ApiClient2.default.convertToType(data['last_charge'], 'String');
                 }
                 if (data.hasOwnProperty('is_base_card')) {
                     obj['is_base_card'] = _ApiClient2.default.convertToType(data['is_base_card'], 'Boolean');
@@ -146,99 +146,117 @@ var LoyaltyMerchantcardsProductModel = function () {
         }
 
         /**
-        * Object of loyalty merchant card
-        * @member {String} object
-        */
+         * Object of loyalty merchant card
+         * @member {String} object
+         */
+
 
         /**
-        * Id of loyalty merchant card
-        * @member {String} id
-        */
+         * Id of loyalty merchant card
+         * @member {String} id
+         */
+
 
         /**
-        * Id of loyalty store group
-        * @member {module:model/LoyaltyCardsProductModel} card
-        */
+         * Id of loyalty store group
+         * @member {module:model/LoyaltyCardsProductModel} card
+         */
+
 
         /**
-        * Current merchant id
-        * @member {module:model/ProductInstanceUID} merchant
-        */
+         * Current merchant id
+         * @member {module:model/ProductInstanceUID} merchant
+         */
+
 
         /**
-        * Merchant id, that loyalty merchant card object was created for
-        * @member {module:model/ProductInstanceUID} created_for_merchant
-        */
+         * Merchant id, that loyalty merchant card object was created for
+         * @member {module:model/ProductInstanceUID} created_for_merchant
+         */
+
 
         /**
-        * Store id, that loyalty merchant card object was created for
-        * @member {module:model/ProductInstanceUID} created_for_store
-        */
+         * Store id, that loyalty merchant card object was created for
+         * @member {module:model/ProductInstanceUID} created_for_store
+         */
+
 
         /**
-        * Loyalty merchant card customer
-        * @member {module:model/LoyaltyCustomersProductModel} customer
-        */
+         * Loyalty merchant card customer
+         * @member {module:model/LoyaltyCustomersProductModel} customer
+         */
+
 
         /**
-        * Loyalty merchant card card group
-        * @member {module:model/LoyaltyCardgroupsProductModel} cardgroup
-        */
+         * Loyalty merchant card card group
+         * @member {module:model/LoyaltyCardgroupsProductModel} cardgroup
+         */
+
 
         /**
-        * Loyalty merchant card payment container
-        * @member {module:model/LoyaltyMerchantcardsDTOPaymentContainer} payment_container
-        */
+         * Loyalty merchant card payment container
+         * @member {module:model/LoyaltyMerchantcardsDTOPaymentContainer} payment_container
+         */
+
 
         /**
-        * Loyalty merchant card balance
-        * @member {Number} balance
-        */
+         * Loyalty merchant card balance
+         * @member {Number} balance
+         */
+
 
         /**
-        * Loyalty merchant card points
-        * @member {Number} points
-        */
+         * Loyalty merchant card points
+         * @member {Number} points
+         */
+
 
         /**
-        * Loyalty merchant card bonus balance
-        * @member {Number} bonus_balance
-        */
+         * Loyalty merchant card bonus balance
+         * @member {Number} bonus_balance
+         */
+
 
         /**
-        * Loyalty merchant card cash balance
-        * @member {Number} cash_balance
-        */
+         * Loyalty merchant card cash balance
+         * @member {Number} cash_balance
+         */
+
 
         /**
-        * Loyalty merchant card stock status
-        * @member {String} stock_status
-        */
+         * Loyalty merchant card stock status
+         * @member {String} stock_status
+         */
+
 
         /**
-        * Loyalty merchant card lock status
-        * @member {String} lock_status
-        */
+         * Loyalty merchant card lock status
+         * @member {String} lock_status
+         */
+
 
         /**
-        * Loyalty merchant card last usage
-        * @member {Date} last_usage
-        */
+         * Loyalty merchant card last usage
+         * @member {String} last_usage
+         */
+
 
         /**
-        * Loyalty merchant card last charge
-        * @member {Date} last_charge
-        */
+         * Loyalty merchant card last charge
+         * @member {String} last_charge
+         */
+
 
         /**
-        * Information whether loyalty merchant card is base card
-        * @member {Boolean} is_base_card
-        */
+         * Information whether loyalty merchant card is base card
+         * @member {Boolean} is_base_card
+         */
+
 
         /**
-        * Loyalty merchant card passcode
-        * @member {Number} passcode
-        */
+         * Loyalty merchant card passcode
+         * @member {Number} passcode
+         */
 
     }]);
 

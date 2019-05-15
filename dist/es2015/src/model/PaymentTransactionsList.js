@@ -19,15 +19,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The PaymentTransactionsList model module.
-* @module model/PaymentTransactionsList
-*/
+ * The PaymentTransactionsList model module.
+ * @module model/PaymentTransactionsList
+ */
 var PaymentTransactionsList = function () {
     /**
-    * Constructs a new <code>PaymentTransactionsList</code>.
-    * @alias module:model/PaymentTransactionsList
-    * @class
-    */
+     * Constructs a new <code>PaymentTransactionsList</code>.
+     * @alias module:model/PaymentTransactionsList
+     * @class
+     */
 
     function PaymentTransactionsList() {
         _classCallCheck(this, PaymentTransactionsList);
@@ -62,14 +62,15 @@ var PaymentTransactionsList = function () {
         }
 
         /**
-        * Number of existing payment transactions
-        * @member {Number} count
-        */
+         * Number of existing payment transactions
+         * @member {Number} count
+         */
+
 
         /**
-        * GET Payment/Transactions
-        * @member {Array.<module:model/PaymentTransactionsProductModel>} data
-        */
+         * GET Payment/Transactions
+         * @member {Array.<module:model/PaymentTransactionsProductModel>} data
+         */
 
     }]);
 

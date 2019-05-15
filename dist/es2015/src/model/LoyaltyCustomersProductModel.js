@@ -27,15 +27,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The LoyaltyCustomersProductModel model module.
-* @module model/LoyaltyCustomersProductModel
-*/
+ * The LoyaltyCustomersProductModel model module.
+ * @module model/LoyaltyCustomersProductModel
+ */
 var LoyaltyCustomersProductModel = function () {
     /**
-    * Constructs a new <code>LoyaltyCustomersProductModel</code>.
-    * @alias module:model/LoyaltyCustomersProductModel
-    * @class
-    */
+     * Constructs a new <code>LoyaltyCustomersProductModel</code>.
+     * @alias module:model/LoyaltyCustomersProductModel
+     * @class
+     */
 
     function LoyaltyCustomersProductModel() {
         _classCallCheck(this, LoyaltyCustomersProductModel);
@@ -47,8 +47,6 @@ var LoyaltyCustomersProductModel = function () {
         this.merchant_contact = undefined;
         this.account_contact = undefined;
         this.payment_container = undefined;
-        this.age = undefined;
-        this.days_until_birthday = undefined;
         this.customernumber = undefined;
         this.note = undefined;
         this.created = undefined;
@@ -90,12 +88,6 @@ var LoyaltyCustomersProductModel = function () {
                 if (data.hasOwnProperty('payment_container')) {
                     obj['payment_container'] = _ApiClient2.default.convertToType(data['payment_container'], [_LoyaltyCustomersPaymentContainerModel2.default]);
                 }
-                if (data.hasOwnProperty('age')) {
-                    obj['age'] = _ApiClient2.default.convertToType(data['age'], 'Number');
-                }
-                if (data.hasOwnProperty('days_until_birthday')) {
-                    obj['days_until_birthday'] = _ApiClient2.default.convertToType(data['days_until_birthday'], 'Number');
-                }
                 if (data.hasOwnProperty('customernumber')) {
                     obj['customernumber'] = _ApiClient2.default.convertToType(data['customernumber'], 'String');
                 }
@@ -103,71 +95,70 @@ var LoyaltyCustomersProductModel = function () {
                     obj['note'] = _ApiClient2.default.convertToType(data['note'], 'String');
                 }
                 if (data.hasOwnProperty('created')) {
-                    obj['created'] = _ApiClient2.default.convertToType(data['created'], 'Date');
+                    obj['created'] = _ApiClient2.default.convertToType(data['created'], 'String');
                 }
             }
             return obj;
         }
 
         /**
-        * Object of loyalty customer
-        * @member {String} object
-        */
+         * Object of loyalty customer
+         * @member {String} object
+         */
+
 
         /**
-        * Id of loyalty customer
-        * @member {String} id
-        */
+         * Id of loyalty customer
+         * @member {String} id
+         */
+
 
         /**
-        * merchant
-        * @member {module:model/ProductInstanceUID} merchant
-        */
+         * merchant
+         * @member {module:model/ProductInstanceUID} merchant
+         */
+
 
         /**
-        * Contact
-        * @member {module:model/Contact} contact
-        */
+         * Contact
+         * @member {module:model/Contact} contact
+         */
+
 
         /**
-        * merchant contact
-        * @member {module:model/Contact} merchant_contact
-        */
+         * merchant contact
+         * @member {module:model/Contact} merchant_contact
+         */
+
 
         /**
-        * merchant contact
-        * @member {module:model/Contact} account_contact
-        */
+         * merchant contact
+         * @member {module:model/Contact} account_contact
+         */
+
 
         /**
-        * payment container
-        * @member {Array.<module:model/LoyaltyCustomersPaymentContainerModel>} payment_container
-        */
+         * payment container
+         * @member {Array.<module:model/LoyaltyCustomersPaymentContainerModel>} payment_container
+         */
+
 
         /**
-        * Age
-        * @member {Number} age
-        */
+         * Customer number
+         * @member {String} customernumber
+         */
+
 
         /**
-        * Number of days until birthday
-        * @member {Number} days_until_birthday
-        */
+         * Customer number
+         * @member {String} note
+         */
+
 
         /**
-        * Customer number
-        * @member {String} customernumber
-        */
-
-        /**
-        * Customer number
-        * @member {String} note
-        */
-
-        /**
-        * Creation date
-        * @member {Date} created
-        */
+         * Creation date
+         * @member {String} created
+         */
 
     }]);
 

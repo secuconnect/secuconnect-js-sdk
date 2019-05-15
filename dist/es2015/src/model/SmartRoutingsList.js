@@ -10,70 +10,71 @@ var _ApiClient = require('../ApiClient');
 
 var _ApiClient2 = _interopRequireDefault(_ApiClient);
 
-var _PaymentTransactionsProductModel = require('./PaymentTransactionsProductModel');
+var _SmartRoutingsProductModel = require('./SmartRoutingsProductModel');
 
-var _PaymentTransactionsProductModel2 = _interopRequireDefault(_PaymentTransactionsProductModel);
+var _SmartRoutingsProductModel2 = _interopRequireDefault(_SmartRoutingsProductModel);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The PaymentTransactionsCancelList model module.
-* @module model/PaymentTransactionsCancelList
-*/
-var PaymentTransactionsCancelList = function () {
+ * The SmartRoutingsList model module.
+ * @module model/SmartRoutingsList
+ */
+var SmartRoutingsList = function () {
     /**
-    * Constructs a new <code>PaymentTransactionsCancelList</code>.
-    * @alias module:model/PaymentTransactionsCancelList
-    * @class
-    */
+     * Constructs a new <code>SmartRoutingsList</code>.
+     * @alias module:model/SmartRoutingsList
+     * @class
+     */
 
-    function PaymentTransactionsCancelList() {
-        _classCallCheck(this, PaymentTransactionsCancelList);
+    function SmartRoutingsList() {
+        _classCallCheck(this, SmartRoutingsList);
 
         this.count = undefined;
         this.data = undefined;
     }
 
     /**
-    * Constructs a <code>PaymentTransactionsCancelList</code> from a plain JavaScript object, optionally creating a new instance.
+    * Constructs a <code>SmartRoutingsList</code> from a plain JavaScript object, optionally creating a new instance.
     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
     * @param {Object} data The plain JavaScript object bearing properties of interest.
-    * @param {module:model/PaymentTransactionsCancelList} obj Optional instance to populate.
-    * @return {module:model/PaymentTransactionsCancelList} The populated <code>PaymentTransactionsCancelList</code> instance.
+    * @param {module:model/SmartRoutingsList} obj Optional instance to populate.
+    * @return {module:model/SmartRoutingsList} The populated <code>SmartRoutingsList</code> instance.
     */
 
 
-    _createClass(PaymentTransactionsCancelList, null, [{
+    _createClass(SmartRoutingsList, null, [{
         key: 'constructFromObject',
         value: function constructFromObject(data, obj) {
             if (data) {
-                obj = obj || new PaymentTransactionsCancelList();
+                obj = obj || new SmartRoutingsList();
 
                 if (data.hasOwnProperty('count')) {
                     obj['count'] = _ApiClient2.default.convertToType(data['count'], 'Number');
                 }
                 if (data.hasOwnProperty('data')) {
-                    obj['data'] = _ApiClient2.default.convertToType(data['data'], [_PaymentTransactionsProductModel2.default]);
+                    obj['data'] = _ApiClient2.default.convertToType(data['data'], [_SmartRoutingsProductModel2.default]);
                 }
             }
             return obj;
         }
 
         /**
-        * Count of returned payment contracts
-        * @member {Number} count
-        */
+         * Number of existing smart routings
+         * @member {Number} count
+         */
+
 
         /**
-        * POST Payment/Transactions/{paymentTransactionId}/cancel
-        * @member {Array.<module:model/PaymentTransactionsProductModel>} data
-        */
+         * GET Smart/Routings
+         * @member {Array.<module:model/SmartRoutingsProductModel>} data
+         */
 
     }]);
 
-    return PaymentTransactionsCancelList;
+    return SmartRoutingsList;
 }();
 
-exports.default = PaymentTransactionsCancelList;
+exports.default = SmartRoutingsList;

@@ -15,16 +15,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SecupayTransactionExternalInvoicePdfDocument model module.
-* @module model/SecupayTransactionExternalInvoicePdfDocument
-*/
+ * The SecupayTransactionExternalInvoicePdfDocument model module.
+ * @module model/SecupayTransactionExternalInvoicePdfDocument
+ */
 var SecupayTransactionExternalInvoicePdfDocument = function () {
     /**
-    * Constructs a new <code>SecupayTransactionExternalInvoicePdfDocument</code>.
-    * Information about the saved document
-    * @alias module:model/SecupayTransactionExternalInvoicePdfDocument
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionExternalInvoicePdfDocument</code>.
+     * Information about the saved document
+     * @alias module:model/SecupayTransactionExternalInvoicePdfDocument
+     * @class
+     */
 
     function SecupayTransactionExternalInvoicePdfDocument() {
         _classCallCheck(this, SecupayTransactionExternalInvoicePdfDocument);
@@ -71,29 +71,33 @@ var SecupayTransactionExternalInvoicePdfDocument = function () {
         }
 
         /**
-        * The Document File ID
-        * @member {String} id
-        */
+         * The Document File ID
+         * @member {String} id
+         */
+
 
         /**
-        * The MIME Type
-        * @member {String} mime_type
-        */
+         * The MIME Type
+         * @member {String} mime_type
+         */
+
 
         /**
-        * The file name
-        * @member {String} name
-        */
+         * The file name
+         * @member {String} name
+         */
+
 
         /**
-        * The size of the file in bytes
-        * @member {Number} size
-        */
+         * The size of the file in bytes
+         * @member {Number} size
+         */
+
 
         /**
-        * The download-url to this file
-        * @member {String} url
-        */
+         * The download-url to this file
+         * @member {String} url
+         */
 
     }]);
 

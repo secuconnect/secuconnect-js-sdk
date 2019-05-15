@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The DocumentUploadsBaseProductModel model module.
-* @module model/DocumentUploadsBaseProductModel
-*/
+ * The DocumentUploadsBaseProductModel model module.
+ * @module model/DocumentUploadsBaseProductModel
+ */
 var DocumentUploadsBaseProductModel = function () {
     /**
-    * Constructs a new <code>DocumentUploadsBaseProductModel</code>.
-    * @alias module:model/DocumentUploadsBaseProductModel
-    * @class
-    */
+     * Constructs a new <code>DocumentUploadsBaseProductModel</code>.
+     * @alias module:model/DocumentUploadsBaseProductModel
+     * @class
+     */
 
     function DocumentUploadsBaseProductModel() {
         _classCallCheck(this, DocumentUploadsBaseProductModel);
@@ -55,26 +55,28 @@ var DocumentUploadsBaseProductModel = function () {
                     obj['id'] = _ApiClient2.default.convertToType(data['id'], 'String');
                 }
                 if (data.hasOwnProperty('created')) {
-                    obj['created'] = _ApiClient2.default.convertToType(data['created'], 'Date');
+                    obj['created'] = _ApiClient2.default.convertToType(data['created'], 'String');
                 }
             }
             return obj;
         }
 
         /**
-        * Object of document upload
-        * @member {String} object
-        */
+         * Object of document upload
+         * @member {String} object
+         */
+
 
         /**
-        * Id of document upload
-        * @member {String} id
-        */
+         * Id of document upload
+         * @member {String} id
+         */
+
 
         /**
-        * Created at date
-        * @member {Date} created
-        */
+         * Created at date
+         * @member {String} created
+         */
 
     }]);
 

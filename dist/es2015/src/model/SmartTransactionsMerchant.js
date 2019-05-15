@@ -34,12 +34,12 @@ var SmartTransactionsMerchant = function () {
     }
 
     /**
-     * Constructs a <code>SmartTransactionsMerchant</code> from a plain JavaScript object, optionally creating a new instance.
-     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SmartTransactionsMerchant} obj Optional instance to populate.
-     * @return {module:model/SmartTransactionsMerchant} The populated <code>SmartTransactionsMerchant</code> instance.
-     */
+    * Constructs a <code>SmartTransactionsMerchant</code> from a plain JavaScript object, optionally creating a new instance.
+    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+    * @param {Object} data The plain JavaScript object bearing properties of interest.
+    * @param {module:model/SmartTransactionsMerchant} obj Optional instance to populate.
+    * @return {module:model/SmartTransactionsMerchant} The populated <code>SmartTransactionsMerchant</code> instance.
+    */
 
 
     _createClass(SmartTransactionsMerchant, null, [{
@@ -66,10 +66,12 @@ var SmartTransactionsMerchant = function () {
          * @member {String} object
          */
 
+
         /**
          * ID of instance
          * @member {String} id
          */
+
 
         /**
          * Company name

@@ -23,21 +23,22 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SmartTransactionsBasket model module.
-* @module model/SmartTransactionsBasket
-*/
+ * The SmartTransactionsBasket model module.
+ * @module model/SmartTransactionsBasket
+ */
 var SmartTransactionsBasket = function () {
     /**
-    * Constructs a new <code>SmartTransactionsBasket</code>.
-    * @alias module:model/SmartTransactionsBasket
-    * @class
-    */
+     * Constructs a new <code>SmartTransactionsBasket</code>.
+     * @alias module:model/SmartTransactionsBasket
+     * @class
+     */
 
     function SmartTransactionsBasket() {
         _classCallCheck(this, SmartTransactionsBasket);
 
         this.products = undefined;
         this.texts = undefined;
+        this.type = undefined;
     }
 
     /**
@@ -61,19 +62,29 @@ var SmartTransactionsBasket = function () {
                 if (data.hasOwnProperty('texts')) {
                     obj['texts'] = _ApiClient2.default.convertToType(data['texts'], [_SmartTransactionsBasketText2.default]);
                 }
+                if (data.hasOwnProperty('type')) {
+                    obj['type'] = _ApiClient2.default.convertToType(data['type'], 'String');
+                }
             }
             return obj;
         }
 
         /**
-        * Products
-        * @member {Array.<module:model/SmartTransactionsBasketProduct>} products
-        */
+         * Products
+         * @member {Array.<module:model/SmartTransactionsBasketProduct>} products
+         */
+
 
         /**
-        * Texts
-        * @member {Array.<module:model/SmartTransactionsBasketText>} texts
-        */
+         * Texts
+         * @member {Array.<module:model/SmartTransactionsBasketText>} texts
+         */
+
+
+        /**
+         * Basket Type
+         * @member {String} type
+         */
 
     }]);
 

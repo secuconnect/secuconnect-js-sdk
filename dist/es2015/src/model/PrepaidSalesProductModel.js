@@ -35,15 +35,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The PrepaidSalesProductModel model module.
-* @module model/PrepaidSalesProductModel
-*/
+ * The PrepaidSalesProductModel model module.
+ * @module model/PrepaidSalesProductModel
+ */
 var PrepaidSalesProductModel = function () {
     /**
-    * Constructs a new <code>PrepaidSalesProductModel</code>.
-    * @alias module:model/PrepaidSalesProductModel
-    * @class
-    */
+     * Constructs a new <code>PrepaidSalesProductModel</code>.
+     * @alias module:model/PrepaidSalesProductModel
+     * @class
+     */
 
     function PrepaidSalesProductModel() {
         _classCallCheck(this, PrepaidSalesProductModel);
@@ -123,7 +123,7 @@ var PrepaidSalesProductModel = function () {
                     obj['contract'] = _ProductInstanceUID2.default.constructFromObject(data['contract']);
                 }
                 if (data.hasOwnProperty('created')) {
-                    obj['created'] = _ApiClient2.default.convertToType(data['created'], 'Date');
+                    obj['created'] = _ApiClient2.default.convertToType(data['created'], 'String');
                 }
                 if (data.hasOwnProperty('demo')) {
                     obj['demo'] = _ApiClient2.default.convertToType(data['demo'], 'Boolean');
@@ -153,7 +153,7 @@ var PrepaidSalesProductModel = function () {
                     obj['cardnumber'] = _ApiClient2.default.convertToType(data['cardnumber'], 'String');
                 }
                 if (data.hasOwnProperty('expire_date')) {
-                    obj['expire_date'] = _ApiClient2.default.convertToType(data['expire_date'], 'Date');
+                    obj['expire_date'] = _ApiClient2.default.convertToType(data['expire_date'], 'String');
                 }
                 if (data.hasOwnProperty('provider_delivery_number')) {
                     obj['provider_delivery_number'] = _ApiClient2.default.convertToType(data['provider_delivery_number'], 'String');
@@ -178,139 +178,165 @@ var PrepaidSalesProductModel = function () {
         }
 
         /**
-        * Object of prepaid sale
-        * @member {String} object
-        */
+         * Object of prepaid sale
+         * @member {String} object
+         */
+
 
         /**
-        * Id of prepaid sale
-        * @member {String} id
-        */
+         * Id of prepaid sale
+         * @member {String} id
+         */
+
 
         /**
-        * Status
-        * @member {String} status
-        */
+         * Status
+         * @member {String} status
+         */
+
 
         /**
-        * Prepaid stock
-        * @member {module:model/ProductInstanceUID} stock
-        */
+         * Prepaid stock
+         * @member {module:model/ProductInstanceUID} stock
+         */
+
 
         /**
-        * Prepaid item
-        * @member {module:model/PrepaidSalesItem} item
-        */
+         * Prepaid item
+         * @member {module:model/PrepaidSalesItem} item
+         */
+
 
         /**
-        * Prepaid item group
-        * @member {module:model/ItemGroup} itemgroup
-        */
+         * Prepaid item group
+         * @member {module:model/ItemGroup} itemgroup
+         */
+
 
         /**
-        * Smart device
-        * @member {module:model/PrepaidSalesSmartDevice} smart_device
-        */
+         * Smart device
+         * @member {module:model/PrepaidSalesSmartDevice} smart_device
+         */
+
 
         /**
-        * General merchant
-        * @member {module:model/ProductInstanceUID} merchant
-        */
+         * General merchant
+         * @member {module:model/ProductInstanceUID} merchant
+         */
+
 
         /**
-        * General store
-        * @member {module:model/Store} store
-        */
+         * General store
+         * @member {module:model/Store} store
+         */
+
 
         /**
-        * Prepaid contract
-        * @member {module:model/ProductInstanceUID} contract
-        */
+         * Prepaid contract
+         * @member {module:model/ProductInstanceUID} contract
+         */
+
 
         /**
-        * Prepaid sale creation date
-        * @member {Date} created
-        */
+         * Prepaid sale creation date
+         * @member {String} created
+         */
+
 
         /**
-        * Demo
-        * @member {Boolean} demo
-        */
+         * Demo
+         * @member {Boolean} demo
+         */
+
 
         /**
-        * Description
-        * @member {String} description
-        */
+         * Description
+         * @member {String} description
+         */
+
 
         /**
-        * Amount
-        * @member {Number} amount
-        */
+         * Amount
+         * @member {Number} amount
+         */
+
 
         /**
-        * Currency
-        * @member {String} currency
-        */
+         * Currency
+         * @member {String} currency
+         */
+
 
         /**
-        * Commission
-        * @member {Number} commission
-        */
+         * Commission
+         * @member {Number} commission
+         */
+
 
         /**
-        * Commission currency
-        * @member {String} commission_currency
-        */
+         * Commission currency
+         * @member {String} commission_currency
+         */
+
 
         /**
-        * Code
-        * @member {String} code
-        */
+         * Code
+         * @member {String} code
+         */
+
 
         /**
-        * Serial
-        * @member {String} serial
-        */
+         * Serial
+         * @member {String} serial
+         */
+
 
         /**
-        * Card number
-        * @member {String} cardnumber
-        */
+         * Card number
+         * @member {String} cardnumber
+         */
+
 
         /**
-        * Expire date
-        * @member {Date} expire_date
-        */
+         * Expire date
+         * @member {String} expire_date
+         */
+
 
         /**
-        * Provider delivery number
-        * @member {String} provider_delivery_number
-        */
+         * Provider delivery number
+         * @member {String} provider_delivery_number
+         */
+
 
         /**
-        * Receipt header
-        * @member {String} receipt_header
-        */
+         * Receipt header
+         * @member {String} receipt_header
+         */
+
 
         /**
-        * Receipt customer
-        * @member {String} receipt_customer
-        */
+         * Receipt customer
+         * @member {String} receipt_customer
+         */
+
 
         /**
-        * Receipt zvt
-        * @member {String} receipt_zvt
-        */
+         * Receipt zvt
+         * @member {String} receipt_zvt
+         */
+
 
         /**
-        * Receipt dealer
-        * @member {String} receipt_dealer
-        */
+         * Receipt dealer
+         * @member {String} receipt_dealer
+         */
+
 
         /**
-        * Vtc tid
-        * @member {String} vtc_tid
-        */
+         * Vtc tid
+         * @member {String} vtc_tid
+         */
 
     }]);
 

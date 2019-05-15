@@ -223,4 +223,4 @@ export const StompFactory = {
             return StompFactory.instance;
         }
     }
-}
+};

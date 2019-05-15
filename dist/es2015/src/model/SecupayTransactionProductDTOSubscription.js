@@ -15,16 +15,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SecupayTransactionProductDTOSubscription model module.
-* @module model/SecupayTransactionProductDTOSubscription
-*/
+ * The SecupayTransactionProductDTOSubscription model module.
+ * @module model/SecupayTransactionProductDTOSubscription
+ */
 var SecupayTransactionProductDTOSubscription = function () {
     /**
-    * Constructs a new <code>SecupayTransactionProductDTOSubscription</code>.
-    * Recurring payments
-    * @alias module:model/SecupayTransactionProductDTOSubscription
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionProductDTOSubscription</code>.
+     * Recurring payments
+     * @alias module:model/SecupayTransactionProductDTOSubscription
+     * @class
+     */
 
     function SecupayTransactionProductDTOSubscription() {
         _classCallCheck(this, SecupayTransactionProductDTOSubscription);
@@ -59,14 +59,15 @@ var SecupayTransactionProductDTOSubscription = function () {
         }
 
         /**
-        * The purpose of the subscription
-        * @member {String} purpose
-        */
+         * The purpose of the subscription
+         * @member {String} purpose
+         */
+
 
         /**
-        * Id of subscription, if exists
-        * @member {Number} id
-        */
+         * Id of subscription, if exists
+         * @member {Number} id
+         */
 
     }]);
 

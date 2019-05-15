@@ -23,15 +23,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The LoyaltyStoregroupsProductModel model module.
-* @module model/LoyaltyStoregroupsProductModel
-*/
+ * The LoyaltyStoregroupsProductModel model module.
+ * @module model/LoyaltyStoregroupsProductModel
+ */
 var LoyaltyStoregroupsProductModel = function () {
     /**
-    * Constructs a new <code>LoyaltyStoregroupsProductModel</code>.
-    * @alias module:model/LoyaltyStoregroupsProductModel
-    * @class
-    */
+     * Constructs a new <code>LoyaltyStoregroupsProductModel</code>.
+     * @alias module:model/LoyaltyStoregroupsProductModel
+     * @class
+     */
 
     function LoyaltyStoregroupsProductModel() {
         _classCallCheck(this, LoyaltyStoregroupsProductModel);
@@ -72,44 +72,49 @@ var LoyaltyStoregroupsProductModel = function () {
                     obj['stores'] = _ApiClient2.default.convertToType(data['stores'], [_LoyaltyDTOStore2.default]);
                 }
                 if (data.hasOwnProperty('created')) {
-                    obj['created'] = _ApiClient2.default.convertToType(data['created'], 'Date');
+                    obj['created'] = _ApiClient2.default.convertToType(data['created'], 'String');
                 }
                 if (data.hasOwnProperty('updated')) {
-                    obj['updated'] = _ApiClient2.default.convertToType(data['updated'], 'Date');
+                    obj['updated'] = _ApiClient2.default.convertToType(data['updated'], 'String');
                 }
             }
             return obj;
         }
 
         /**
-        * Object of loyalty store group
-        * @member {String} object
-        */
+         * Object of loyalty store group
+         * @member {String} object
+         */
+
 
         /**
-        * Id of loyalty store group
-        * @member {String} id
-        */
+         * Id of loyalty store group
+         * @member {String} id
+         */
+
 
         /**
-        * Merchant data for loyalty
-        * @member {module:model/LoyaltyDTOMerchant} merchant
-        */
+         * Merchant data for loyalty
+         * @member {module:model/LoyaltyDTOMerchant} merchant
+         */
+
 
         /**
-        * LoyaltyStoregroupsProductModel
-        * @member {Array.<module:model/LoyaltyDTOStore>} stores
-        */
+         * LoyaltyStoregroupsProductModel
+         * @member {Array.<module:model/LoyaltyDTOStore>} stores
+         */
+
 
         /**
-        * Creation date
-        * @member {Date} created
-        */
+         * Creation date
+         * @member {String} created
+         */
+
 
         /**
-        * Update date
-        * @member {Date} updated
-        */
+         * Update date
+         * @member {String} updated
+         */
 
     }]);
 

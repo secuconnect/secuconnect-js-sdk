@@ -19,15 +19,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The LoyaltyCardsProductModel model module.
-* @module model/LoyaltyCardsProductModel
-*/
+ * The LoyaltyCardsProductModel model module.
+ * @module model/LoyaltyCardsProductModel
+ */
 var LoyaltyCardsProductModel = function () {
     /**
-    * Constructs a new <code>LoyaltyCardsProductModel</code>.
-    * @alias module:model/LoyaltyCardsProductModel
-    * @class
-    */
+     * Constructs a new <code>LoyaltyCardsProductModel</code>.
+     * @alias module:model/LoyaltyCardsProductModel
+     * @class
+     */
 
     function LoyaltyCardsProductModel() {
         _classCallCheck(this, LoyaltyCardsProductModel);
@@ -67,36 +67,40 @@ var LoyaltyCardsProductModel = function () {
                     obj['cardnumber'] = _ApiClient2.default.convertToType(data['cardnumber'], 'String');
                 }
                 if (data.hasOwnProperty('created')) {
-                    obj['created'] = _ApiClient2.default.convertToType(data['created'], 'Date');
+                    obj['created'] = _ApiClient2.default.convertToType(data['created'], 'String');
                 }
             }
             return obj;
         }
 
         /**
-        * Object of loyalty card
-        * @member {String} object
-        */
+         * Object of loyalty card
+         * @member {String} object
+         */
+
 
         /**
-        * Id of loyalty card
-        * @member {String} id
-        */
+         * Id of loyalty card
+         * @member {String} id
+         */
+
 
         /**
-        * Loyalty card account
-        * @member {module:model/LoyaltyCardsDTOAccount} account
-        */
+         * Loyalty card account
+         * @member {module:model/LoyaltyCardsDTOAccount} account
+         */
+
 
         /**
-        * Loyalty card number
-        * @member {String} cardnumber
-        */
+         * Loyalty card number
+         * @member {String} cardnumber
+         */
+
 
         /**
-        * Creation date
-        * @member {Date} created
-        */
+         * Creation date
+         * @member {String} created
+         */
 
     }]);
 

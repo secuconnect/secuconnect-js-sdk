@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The PrepaidSalesItem model module.
-* @module model/PrepaidSalesItem
-*/
+ * The PrepaidSalesItem model module.
+ * @module model/PrepaidSalesItem
+ */
 var PrepaidSalesItem = function () {
     /**
-    * Constructs a new <code>PrepaidSalesItem</code>.
-    * @alias module:model/PrepaidSalesItem
-    * @class
-    */
+     * Constructs a new <code>PrepaidSalesItem</code>.
+     * @alias module:model/PrepaidSalesItem
+     * @class
+     */
 
     function PrepaidSalesItem() {
         _classCallCheck(this, PrepaidSalesItem);
@@ -70,29 +70,33 @@ var PrepaidSalesItem = function () {
         }
 
         /**
-        * Object of item
-        * @member {String} object
-        */
+         * Object of item
+         * @member {String} object
+         */
+
 
         /**
-        * Id of item
-        * @member {String} id
-        */
+         * Id of item
+         * @member {String} id
+         */
+
 
         /**
-        * Item description
-        * @member {String} description
-        */
+         * Item description
+         * @member {String} description
+         */
+
 
         /**
-        * Item logo
-        * @member {String} logo
-        */
+         * Item logo
+         * @member {String} logo
+         */
+
 
         /**
-        * Item type
-        * @member {String} type
-        */
+         * Item type
+         * @member {String} type
+         */
 
     }]);
 

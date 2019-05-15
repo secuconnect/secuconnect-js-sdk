@@ -15,40 +15,43 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SecupayTransactionProductDTORedirectUrl model module.
-* @module model/SecupayTransactionProductDTORedirectUrl
-*/
-var SecupayTransactionProductDTORedirectUrl = function () {
+ * The SecupayRedirectUrl model module.
+ * @module model/SecupayRedirectUrl
+ */
+var SecupayRedirectUrl = function () {
     /**
-    * Constructs a new <code>SecupayTransactionProductDTORedirectUrl</code>.
-    * A list of redirect urls used for the payment checkout page
-    * @alias module:model/SecupayTransactionProductDTORedirectUrl
-    * @class
-    */
+     * Constructs a new <code>SecupayRedirectUrl</code>.
+     * @alias module:model/SecupayRedirectUrl
+     * @class
+     */
 
-    function SecupayTransactionProductDTORedirectUrl() {
-        _classCallCheck(this, SecupayTransactionProductDTORedirectUrl);
+    function SecupayRedirectUrl() {
+        _classCallCheck(this, SecupayRedirectUrl);
 
+        this.iframe_url = undefined;
         this.url_success = undefined;
         this.url_failure = undefined;
         this.url_push = undefined;
     }
 
     /**
-    * Constructs a <code>SecupayTransactionProductDTORedirectUrl</code> from a plain JavaScript object, optionally creating a new instance.
+    * Constructs a <code>SecupayRedirectUrl</code> from a plain JavaScript object, optionally creating a new instance.
     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
     * @param {Object} data The plain JavaScript object bearing properties of interest.
-    * @param {module:model/SecupayTransactionProductDTORedirectUrl} obj Optional instance to populate.
-    * @return {module:model/SecupayTransactionProductDTORedirectUrl} The populated <code>SecupayTransactionProductDTORedirectUrl</code> instance.
+    * @param {module:model/SecupayRedirectUrl} obj Optional instance to populate.
+    * @return {module:model/SecupayRedirectUrl} The populated <code>SecupayRedirectUrl</code> instance.
     */
 
 
-    _createClass(SecupayTransactionProductDTORedirectUrl, null, [{
+    _createClass(SecupayRedirectUrl, null, [{
         key: 'constructFromObject',
         value: function constructFromObject(data, obj) {
             if (data) {
-                obj = obj || new SecupayTransactionProductDTORedirectUrl();
+                obj = obj || new SecupayRedirectUrl();
 
+                if (data.hasOwnProperty('iframe_url')) {
+                    obj['iframe_url'] = _ApiClient2.default.convertToType(data['iframe_url'], 'String');
+                }
                 if (data.hasOwnProperty('url_success')) {
                     obj['url_success'] = _ApiClient2.default.convertToType(data['url_success'], 'String');
                 }
@@ -63,23 +66,31 @@ var SecupayTransactionProductDTORedirectUrl = function () {
         }
 
         /**
-        * After successfully entering the cash data of the payer is returned to this page.
-        * @member {String} url_success
-        */
+         * The url of the payment checkout iframe
+         * @member {String} iframe_url
+         */
+
 
         /**
-        * After canceling or on errors the payer will be redirected to this page and can select there an another payment method.
-        * @member {String} url_failure
-        */
+         * After successfully entering the cash data of the payer is returned to this page.
+         * @member {String} url_success
+         */
+
 
         /**
-        * The secupay system will be send status change notifications to this URL.
-        * @member {String} url_push
-        */
+         * After canceling or on errors the payer will be redirected to this page and can select there an another payment method.
+         * @member {String} url_failure
+         */
+
+
+        /**
+         * The secupay system will be send status change notifications to this URL.
+         * @member {String} url_push
+         */
 
     }]);
 
-    return SecupayTransactionProductDTORedirectUrl;
+    return SecupayRedirectUrl;
 }();
 
-exports.default = SecupayTransactionProductDTORedirectUrl;
+exports.default = SecupayRedirectUrl;

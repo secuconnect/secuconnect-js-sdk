@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The GeneralStoresDTOReason model module.
-* @module model/GeneralStoresDTOReason
-*/
+ * The GeneralStoresDTOReason model module.
+ * @module model/GeneralStoresDTOReason
+ */
 var GeneralStoresDTOReason = function () {
     /**
-    * Constructs a new <code>GeneralStoresDTOReason</code>.
-    * @alias module:model/GeneralStoresDTOReason
-    * @class
-    */
+     * Constructs a new <code>GeneralStoresDTOReason</code>.
+     * @alias module:model/GeneralStoresDTOReason
+     * @class
+     */
 
     function GeneralStoresDTOReason() {
         _classCallCheck(this, GeneralStoresDTOReason);
@@ -54,9 +54,9 @@ var GeneralStoresDTOReason = function () {
         }
 
         /**
-        * Reason
-        * @member {String} reason
-        */
+         * Reason
+         * @member {String} reason
+         */
 
     }]);
 

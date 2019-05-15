@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The LoyaltyStoregroupsDTOStoresAddressComponents model module.
-* @module model/LoyaltyStoregroupsDTOStoresAddressComponents
-*/
+ * The LoyaltyStoregroupsDTOStoresAddressComponents model module.
+ * @module model/LoyaltyStoregroupsDTOStoresAddressComponents
+ */
 var LoyaltyStoregroupsDTOStoresAddressComponents = function () {
     /**
-    * Constructs a new <code>LoyaltyStoregroupsDTOStoresAddressComponents</code>.
-    * @alias module:model/LoyaltyStoregroupsDTOStoresAddressComponents
-    * @class
-    */
+     * Constructs a new <code>LoyaltyStoregroupsDTOStoresAddressComponents</code>.
+     * @alias module:model/LoyaltyStoregroupsDTOStoresAddressComponents
+     * @class
+     */
 
     function LoyaltyStoregroupsDTOStoresAddressComponents() {
         _classCallCheck(this, LoyaltyStoregroupsDTOStoresAddressComponents);
@@ -62,19 +62,21 @@ var LoyaltyStoregroupsDTOStoresAddressComponents = function () {
         }
 
         /**
-        * Long name
-        * @member {String} long_name
-        */
+         * Long name
+         * @member {String} long_name
+         */
+
 
         /**
-        * Short name
-        * @member {String} short_name
-        */
+         * Short name
+         * @member {String} short_name
+         */
+
 
         /**
-        * Types
-        * @member {String} types
-        */
+         * Types
+         * @member {String} types
+         */
 
     }]);
 

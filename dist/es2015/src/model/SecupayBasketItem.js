@@ -15,20 +15,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SecupayBasketItem model module.
-* @module model/SecupayBasketItem
-*/
+ * The SecupayBasketItem model module.
+ * @module model/SecupayBasketItem
+ */
 var SecupayBasketItem = function () {
     /**
-    * Constructs a new <code>SecupayBasketItem</code>.
-    * Item describing single position in basket in transaction
-    * @alias module:model/SecupayBasketItem
-    * @class
-    */
+     * Constructs a new <code>SecupayBasketItem</code>.
+     * Item describing single position in basket in transaction
+     * @alias module:model/SecupayBasketItem
+     * @class
+     */
 
     function SecupayBasketItem() {
         _classCallCheck(this, SecupayBasketItem);
 
+        this.item_type = 'article';
         this.article_number = undefined;
         this.quantity = undefined;
         this.name = undefined;
@@ -59,6 +60,9 @@ var SecupayBasketItem = function () {
             if (data) {
                 obj = obj || new SecupayBasketItem();
 
+                if (data.hasOwnProperty('item_type')) {
+                    obj['item_type'] = _ApiClient2.default.convertToType(data['item_type'], 'String');
+                }
                 if (data.hasOwnProperty('article_number')) {
                     obj['article_number'] = _ApiClient2.default.convertToType(data['article_number'], 'String');
                 }
@@ -103,69 +107,88 @@ var SecupayBasketItem = function () {
         }
 
         /**
-        * Article number of item
-        * @member {String} article_number
-        */
+         * Category of item
+         * @member {String} item_type
+         * @default 'article'
+         */
+
 
         /**
-        * Quantity of articles in item
-        * @member {Number} quantity
-        */
+         * Article number of item
+         * @member {String} article_number
+         */
+
 
         /**
-        * Descriptive name of item
-        * @member {String} name
-        */
+         * Quantity of articles in item
+         * @member {Number} quantity
+         */
+
 
         /**
-        * Model of item
-        * @member {String} model
-        */
+         * Descriptive name of item
+         * @member {String} name
+         */
+
 
         /**
-        * EAN, European Article Number
-        * @member {String} ean
-        */
+         * Model of item
+         * @member {String} model
+         */
+
 
         /**
-        * Applicable tax in percentages
-        * @member {String} tax
-        */
+         * EAN, European Article Number
+         * @member {String} ean
+         */
+
 
         /**
-        * Total price
-        * @member {Number} total
-        */
+         * Applicable tax in percentages
+         * @member {String} tax
+         */
+
 
         /**
-        * Price of single article, if item is of article category
-        * @member {Number} price
-        */
+         * Total price
+         * @member {Number} total
+         */
+
 
         /**
-        * Special param for stakeholder payments
-        * @member {String} apikey
-        */
+         * Price of single article, if item is of article category
+         * @member {Number} price
+         */
+
 
         /**
-        * Special param for payout payments
-        * @member {String} transaction_hash
-        */
+         * Special param for stakeholder payments
+         * @member {String} apikey
+         */
+
 
         /**
-        * Contract id - Special param for stakeholder payments
-        * @member {String} contract_id
-        */
+         * Special param for payout payments
+         * @member {String} transaction_hash
+         */
+
 
         /**
-        * Reference id - must be unique for the entire basket
-        * @member {String} reference_id
-        */
+         * Contract id - Special param for stakeholder payments
+         * @member {String} contract_id
+         */
+
 
         /**
-        * Mixed-Basket: All basket items for one merchant.
-        * @member {Array.<module:model/SecupayBasketItem>} sub_basket
-        */
+         * Reference id - must be unique for the entire basket
+         * @member {String} reference_id
+         */
+
+
+        /**
+         * Mixed-Basket: All basket items for one merchant.
+         * @member {Array.<module:model/SecupayBasketItem>} sub_basket
+         */
 
     }]);
 

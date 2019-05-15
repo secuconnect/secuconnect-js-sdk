@@ -52,12 +52,59 @@ var DocumentUploadsApi = function () {
   /**
    * POST Document/Uploads
    * Store uploaded file
-   * @param {module:model/DocumentUploadsDTOContent} content Content
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DocumentUploadsBaseProductModel} and HTTP response
+   * @param {File} fileToUpload File to upload
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DocumentUploadsProductModel} and HTTP response
    */
 
 
   _createClass(DocumentUploadsApi, [{
+    key: 'documentUploadsMultipartPostWithHttpInfo',
+    value: function documentUploadsMultipartPostWithHttpInfo(fileToUpload) {
+      var postBody = null;
+
+      // verify the required parameter 'fileToUpload' is set
+      if (fileToUpload === undefined || fileToUpload === null) {
+        throw new Error("Missing the required parameter 'fileToUpload' when calling documentUploadsMultipartPost");
+      }
+
+      var pathParams = {};
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {
+        'fileToUpload': fileToUpload
+      };
+
+      var authNames = ['oauth_token'];
+      var contentTypes = ['multipart/form-data'];
+      var accepts = [];
+      var returnType = _DocumentUploadsProductModel2.default;
+
+      return this.apiClient.callApi('/Document/Uploads?multipart', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
+    }
+
+    /**
+     * POST Document/Uploads
+     * Store uploaded file
+     * @param {File} fileToUpload File to upload
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DocumentUploadsProductModel}
+     */
+
+  }, {
+    key: 'documentUploadsMultipartPost',
+    value: function documentUploadsMultipartPost(fileToUpload) {
+      return this.documentUploadsMultipartPostWithHttpInfo(fileToUpload).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+
+    /**
+     * POST Document/Uploads
+     * Store uploaded file
+     * @param {module:model/DocumentUploadsDTOContent} content Content
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DocumentUploadsBaseProductModel} and HTTP response
+     */
+
+  }, {
     key: 'documentUploadsPostWithHttpInfo',
     value: function documentUploadsPostWithHttpInfo(content) {
       var postBody = content;
@@ -91,53 +138,6 @@ var DocumentUploadsApi = function () {
     key: 'documentUploadsPost',
     value: function documentUploadsPost(content) {
       return this.documentUploadsPostWithHttpInfo(content).then(function (response_and_data) {
-        return response_and_data.data;
-      });
-    }
-
-    /**
-     * POST Document/Uploads
-     * Store uploaded file
-     * @param {File} fileToUpload File to upload
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DocumentUploadsProductModel} and HTTP response
-     */
-
-  }, {
-    key: 'documentUploadsmultipartPostWithHttpInfo',
-    value: function documentUploadsmultipartPostWithHttpInfo(fileToUpload) {
-      var postBody = null;
-
-      // verify the required parameter 'fileToUpload' is set
-      if (fileToUpload === undefined || fileToUpload === null) {
-        throw new Error("Missing the required parameter 'fileToUpload' when calling documentUploadsmultipartPost");
-      }
-
-      var pathParams = {};
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {
-        'fileToUpload': fileToUpload
-      };
-
-      var authNames = ['oauth_token'];
-      var contentTypes = ['multipart/form-data'];
-      var accepts = [];
-      var returnType = _DocumentUploadsProductModel2.default;
-
-      return this.apiClient.callApi('/Document/Uploads?multipart', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType);
-    }
-
-    /**
-     * POST Document/Uploads
-     * Store uploaded file
-     * @param {File} fileToUpload File to upload
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DocumentUploadsProductModel}
-     */
-
-  }, {
-    key: 'documentUploadsmultipartPost',
-    value: function documentUploadsmultipartPost(fileToUpload) {
-      return this.documentUploadsmultipartPostWithHttpInfo(fileToUpload).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

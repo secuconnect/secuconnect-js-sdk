@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The LoyaltyMerchantcardsValidateMerchantCard model module.
-* @module model/LoyaltyMerchantcardsValidateMerchantCard
-*/
+ * The LoyaltyMerchantcardsValidateMerchantCard model module.
+ * @module model/LoyaltyMerchantcardsValidateMerchantCard
+ */
 var LoyaltyMerchantcardsValidateMerchantCard = function () {
     /**
-    * Constructs a new <code>LoyaltyMerchantcardsValidateMerchantCard</code>.
-    * @alias module:model/LoyaltyMerchantcardsValidateMerchantCard
-    * @class
-    */
+     * Constructs a new <code>LoyaltyMerchantcardsValidateMerchantCard</code>.
+     * @alias module:model/LoyaltyMerchantcardsValidateMerchantCard
+     * @class
+     */
 
     function LoyaltyMerchantcardsValidateMerchantCard() {
         _classCallCheck(this, LoyaltyMerchantcardsValidateMerchantCard);
@@ -62,19 +62,21 @@ var LoyaltyMerchantcardsValidateMerchantCard = function () {
         }
 
         /**
-        * Result has true or false value
-        * @member {Boolean} isValid
-        */
+         * Result has true or false value
+         * @member {Boolean} isValid
+         */
+
 
         /**
-        * Result has true or false value
-        * @member {Boolean} hasPasscode
-        */
+         * Result has true or false value
+         * @member {Boolean} hasPasscode
+         */
+
 
         /**
-        * Result has true or false value
-        * @member {Boolean} isLocked
-        */
+         * Result has true or false value
+         * @member {Boolean} isLocked
+         */
 
     }]);
 

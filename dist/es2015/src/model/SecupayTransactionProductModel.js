@@ -18,21 +18,21 @@ var _PaymentCustomersProductModel = require('./PaymentCustomersProductModel');
 
 var _PaymentCustomersProductModel2 = _interopRequireDefault(_PaymentCustomersProductModel);
 
+var _PaymentInformation = require('./PaymentInformation');
+
+var _PaymentInformation2 = _interopRequireDefault(_PaymentInformation);
+
 var _SecupayBasketItem = require('./SecupayBasketItem');
 
 var _SecupayBasketItem2 = _interopRequireDefault(_SecupayBasketItem);
 
+var _SecupayRedirectUrl = require('./SecupayRedirectUrl');
+
+var _SecupayRedirectUrl2 = _interopRequireDefault(_SecupayRedirectUrl);
+
 var _SecupaySubTransactionProductModel = require('./SecupaySubTransactionProductModel');
 
 var _SecupaySubTransactionProductModel2 = _interopRequireDefault(_SecupaySubTransactionProductModel);
-
-var _SecupayTransactionProductModelRedirectUrl = require('./SecupayTransactionProductModelRedirectUrl');
-
-var _SecupayTransactionProductModelRedirectUrl2 = _interopRequireDefault(_SecupayTransactionProductModelRedirectUrl);
-
-var _SecupayTransactionProductModelTransferAccount = require('./SecupayTransactionProductModelTransferAccount');
-
-var _SecupayTransactionProductModelTransferAccount2 = _interopRequireDefault(_SecupayTransactionProductModelTransferAccount);
 
 var _SecupayTransactionProductModelUsedPaymentInstrument = require('./SecupayTransactionProductModelUsedPaymentInstrument');
 
@@ -43,15 +43,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SecupayTransactionProductModel model module.
-* @module model/SecupayTransactionProductModel
-*/
+ * The SecupayTransactionProductModel model module.
+ * @module model/SecupayTransactionProductModel
+ */
 var SecupayTransactionProductModel = function () {
     /**
-    * Constructs a new <code>SecupayTransactionProductModel</code>.
-    * @alias module:model/SecupayTransactionProductModel
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionProductModel</code>.
+     * @alias module:model/SecupayTransactionProductModel
+     * @class
+     */
 
     function SecupayTransactionProductModel() {
         _classCallCheck(this, SecupayTransactionProductModel);
@@ -133,7 +133,7 @@ var SecupayTransactionProductModel = function () {
                     obj['transfer_purpose'] = _ApiClient2.default.convertToType(data['transfer_purpose'], 'String');
                 }
                 if (data.hasOwnProperty('transfer_account')) {
-                    obj['transfer_account'] = _SecupayTransactionProductModelTransferAccount2.default.constructFromObject(data['transfer_account']);
+                    obj['transfer_account'] = _PaymentInformation2.default.constructFromObject(data['transfer_account']);
                 }
                 if (data.hasOwnProperty('customer')) {
                     obj['customer'] = _PaymentCustomersProductModel2.default.constructFromObject(data['customer']);
@@ -142,7 +142,7 @@ var SecupayTransactionProductModel = function () {
                     obj['used_payment_instrument'] = _SecupayTransactionProductModelUsedPaymentInstrument2.default.constructFromObject(data['used_payment_instrument']);
                 }
                 if (data.hasOwnProperty('redirect_url')) {
-                    obj['redirect_url'] = _SecupayTransactionProductModelRedirectUrl2.default.constructFromObject(data['redirect_url']);
+                    obj['redirect_url'] = _SecupayRedirectUrl2.default.constructFromObject(data['redirect_url']);
                 }
                 if (data.hasOwnProperty('iframe_url')) {
                     obj['iframe_url'] = _ApiClient2.default.convertToType(data['iframe_url'], 'String');
@@ -158,101 +158,122 @@ var SecupayTransactionProductModel = function () {
         }
 
         /**
-        * Product name
-        * @member {String} object
-        */
+         * Product name
+         * @member {String} object
+         */
+
 
         /**
-        * ID of instance
-        * @member {String} id
-        */
+         * ID of instance
+         * @member {String} id
+         */
+
 
         /**
-        * Transaction identifier
-        * @member {Number} trans_id
-        */
+         * Transaction identifier
+         * @member {Number} trans_id
+         */
+
 
         /**
-        * Transaction status
-        * @member {String} status
-        */
+         * Transaction status
+         * @member {String} status
+         */
+
 
         /**
-        * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
-        * @member {Number} amount
-        */
+         * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
+         * @member {Number} amount
+         */
+
 
         /**
-        * ISO 4217 code of currency, eg EUR for Euro.
-        * @member {String} currency
-        */
+         * ISO 4217 code of currency, eg EUR for Euro.
+         * @member {String} currency
+         */
+
 
         /**
-        * The purpose of the payment. This is the later assignment of the payment is for example on the account statement of the buyer.
-        * @member {String} purpose
-        */
+         * The purpose of the payment. This is the later assignment of the payment is for example on the account statement of the buyer.
+         * @member {String} purpose
+         */
+
 
         /**
-        * Specifying an order number. Depending on the contract setting, this must be unique for each payment.
-        * @member {String} order_id
-        */
+         * Specifying an order number. Depending on the contract setting, this must be unique for each payment.
+         * @member {String} order_id
+         */
+
 
         /**
-        * A list of items that are being purchased.
-        * @member {Array.<module:model/SecupayBasketItem>} basket
-        */
+         * A list of items that are being purchased.
+         * @member {Array.<module:model/SecupayBasketItem>} basket
+         */
+
 
         /**
-        * Transaction status (number)
-        * @member {String} transaction_status
-        */
+         * Transaction status (number)
+         * @member {String} transaction_status
+         */
+
 
         /**
-        * Indicates whether the payment is locked for pay-out (TRUE) or not (FALSE). Standard value here is FALSE.
-        * @member {Boolean} accrual
-        */
+         * Indicates whether the payment is locked for pay-out (TRUE) or not (FALSE). Standard value here is FALSE.
+         * @member {Boolean} accrual
+         */
+
 
         /**
-        * Specifies whether a pre-authorization (\"authorization\") or instant payment ( \"sale\") is to be performed. Standard value here is \"sale\". The collection of the pre-authorized payment is made with the \"capture\" command.
-        * @member {String} payment_action
-        */
+         * Specifies whether a pre-authorization (\"authorization\") or instant payment ( \"sale\") is to be performed. Standard value here is \"sale\". The collection of the pre-authorized payment is made with the \"capture\" command.
+         * @member {String} payment_action
+         */
+
 
         /**
-        * The purpose the payer needs to use for his transfer
-        * @member {String} transfer_purpose
-        */
+         * The purpose the payer needs to use for his transfer
+         * @member {String} transfer_purpose
+         */
+
 
         /**
-        * @member {module:model/SecupayTransactionProductModelTransferAccount} transfer_account
-        */
+         * The bank account the payer needs to use for his transfer
+         * @member {module:model/PaymentInformation} transfer_account
+         */
+
 
         /**
-        * The customer object
-        * @member {module:model/PaymentCustomersProductModel} customer
-        */
+         * The customer object
+         * @member {module:model/PaymentCustomersProductModel} customer
+         */
+
 
         /**
-        * @member {module:model/SecupayTransactionProductModelUsedPaymentInstrument} used_payment_instrument
-        */
+         * @member {module:model/SecupayTransactionProductModelUsedPaymentInstrument} used_payment_instrument
+         */
+
 
         /**
-        * @member {module:model/SecupayTransactionProductModelRedirectUrl} redirect_url
-        */
+         * A list of redirect urls used for the payment checkout page
+         * @member {module:model/SecupayRedirectUrl} redirect_url
+         */
+
 
         /**
-        * The url of the payment checkout iframe
-        * @member {String} iframe_url
-        */
+         * The url of the payment checkout iframe
+         * @member {String} iframe_url
+         */
+
 
         /**
-        * The container object
-        * @member {module:model/PaymentContainersProductModel} container
-        */
+         * The container object
+         * @member {module:model/PaymentContainersProductModel} container
+         */
+
 
         /**
-        * A list of sub-transactions (for mixed basket)
-        * @member {Array.<module:model/SecupaySubTransactionProductModel>} sub_transactions
-        */
+         * A list of sub-transactions (for mixed basket)
+         * @member {Array.<module:model/SecupaySubTransactionProductModel>} sub_transactions
+         */
 
     }]);
 

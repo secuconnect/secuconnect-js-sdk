@@ -15,16 +15,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The DayTime model module.
-* @module model/DayTime
-*/
+ * The DayTime model module.
+ * @module model/DayTime
+ */
 var DayTime = function () {
     /**
-    * Constructs a new <code>DayTime</code>.
-    * Day and time
-    * @alias module:model/DayTime
-    * @class
-    */
+     * Constructs a new <code>DayTime</code>.
+     * Day and time
+     * @alias module:model/DayTime
+     * @class
+     */
 
     function DayTime() {
         _classCallCheck(this, DayTime);
@@ -59,14 +59,15 @@ var DayTime = function () {
         }
 
         /**
-        * Day
-        * @member {Number} day
-        */
+         * Day
+         * @member {Number} day
+         */
+
 
         /**
-        * Time
-        * @member {String} time
-        */
+         * Time
+         * @member {String} time
+         */
 
     }]);
 

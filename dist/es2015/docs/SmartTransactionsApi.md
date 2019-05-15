@@ -10,7 +10,8 @@ Method | HTTP request | Description
 [**diagnose**](SmartTransactionsApi.md#diagnose) | **POST** /Smart/Transactions/{smartDeviceId}/diagnosis | POST Smart/Transactions/{smartDeviceId}/diagnosis
 [**getAll**](SmartTransactionsApi.md#getAll) | **GET** /Smart/Transactions | GET Smart/Transactions
 [**getOne**](SmartTransactionsApi.md#getOne) | **GET** /Smart/Transactions/{smartTransactionId} | GET Smart/Transactions/{smartTransactionId}
-[**preTransaction**](SmartTransactionsApi.md#preTransaction) | **POST** /Smart/Transactions/{smartTransactionId}/PreTransaction | POST Smart/Transactions/{smartTransactionId}/PreTransaction
+[**preTransaction**](SmartTransactionsApi.md#preTransaction) | **POST** /Smart/Transactions/{smartTransactionId}/preTransaction | POST Smart/Transactions/{smartTransactionId}/preTransaction
+[**prepare**](SmartTransactionsApi.md#prepare) | **POST** /Smart/Transactions/{smartTransactionId}/prepare | POST Smart/Transactions/stx_xxx/prepare
 [**startEndOfDayReport**](SmartTransactionsApi.md#startEndOfDayReport) | **POST** /Smart/Transactions/{smartDeviceId}/endOfDay | POST Smart/Transactions/{smartDeviceId}/endOfDay
 [**startTransaction**](SmartTransactionsApi.md#startTransaction) | **POST** /Smart/Transactions/{smartTransactionId}/start/{paymentMethod} | POST Smart/Transactions/{smartTransactionId}/start/{paymentMethod}
 [**updateTransaction**](SmartTransactionsApi.md#updateTransaction) | **PUT** /Smart/Transactions/{smartTransactionId} | PUT Smart/Transactions/{smartTransactionId}
@@ -317,7 +318,7 @@ Name | Type | Description  | Notes
 # **preTransaction**
 > SmartTransactionsPreTransactionModel preTransaction(smartTransactionId)
 
-POST Smart/Transactions/{smartTransactionId}/PreTransaction
+POST Smart/Transactions/{smartTransactionId}/preTransaction
 
 Function that checks balance of merchantcard from ident and if possible creates bonus product items for basket
 
@@ -351,6 +352,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SmartTransactionsPreTransactionModel**](SmartTransactionsPreTransactionModel.md)
+
+### Authorization
+
+[oauth_token](../README.md#oauth_token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="prepare"></a>
+# **prepare**
+> SmartTransactionsProductModel prepare(smartTransactionId, body)
+
+POST Smart/Transactions/stx_xxx/prepare
+
+Create and score payment transaction assigned to given smart transaction
+
+### Example
+```javascript
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth_token
+let oauth_token = defaultClient.authentications['oauth_token'];
+oauth_token.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new SecuconnectJsSdk.SmartTransactionsApi();
+
+let smartTransactionId = "smartTransactionId_example"; // String | Smart transaction id
+
+let body = new SecuconnectJsSdk.SmartTransactionsPrepare(); // SmartTransactionsPrepare | Information which customer and container will be used to this operation
+
+apiInstance.prepare(smartTransactionId, body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **smartTransactionId** | **String**| Smart transaction id | 
+ **body** | [**SmartTransactionsPrepare**](SmartTransactionsPrepare.md)| Information which customer and container will be used to this operation | 
+
+### Return type
+
+[**SmartTransactionsProductModel**](SmartTransactionsProductModel.md)
 
 ### Authorization
 

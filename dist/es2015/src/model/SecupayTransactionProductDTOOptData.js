@@ -15,16 +15,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SecupayTransactionProductDTOOptData model module.
-* @module model/SecupayTransactionProductDTOOptData
-*/
+ * The SecupayTransactionProductDTOOptData model module.
+ * @module model/SecupayTransactionProductDTOOptData
+ */
 var SecupayTransactionProductDTOOptData = function () {
     /**
-    * Constructs a new <code>SecupayTransactionProductDTOOptData</code>.
-    * Options for customizing the checkout page
-    * @alias module:model/SecupayTransactionProductDTOOptData
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionProductDTOOptData</code>.
+     * Options for customizing the checkout page
+     * @alias module:model/SecupayTransactionProductDTOOptData
+     * @class
+     */
 
     function SecupayTransactionProductDTOOptData() {
         _classCallCheck(this, SecupayTransactionProductDTOOptData);
@@ -59,14 +59,15 @@ var SecupayTransactionProductDTOOptData = function () {
         }
 
         /**
-        * Customer accepted disclaimer
-        * @member {String} has_accepted_disclaimer
-        */
+         * Customer accepted disclaimer
+         * @member {String} has_accepted_disclaimer
+         */
+
 
         /**
-        * Client language
-        * @member {String} language
-        */
+         * Client language
+         * @member {String} language
+         */
 
     }]);
 

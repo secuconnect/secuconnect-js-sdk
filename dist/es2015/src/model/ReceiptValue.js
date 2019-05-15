@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The ReceiptValue model module.
-* @module model/ReceiptValue
-*/
+ * The ReceiptValue model module.
+ * @module model/ReceiptValue
+ */
 var ReceiptValue = function () {
     /**
-    * Constructs a new <code>ReceiptValue</code>.
-    * @alias module:model/ReceiptValue
-    * @class
-    */
+     * Constructs a new <code>ReceiptValue</code>.
+     * @alias module:model/ReceiptValue
+     * @class
+     */
 
     function ReceiptValue() {
         _classCallCheck(this, ReceiptValue);
@@ -70,29 +70,33 @@ var ReceiptValue = function () {
         }
 
         /**
-        * Caption
-        * @member {String} caption
-        */
+         * Caption
+         * @member {String} caption
+         */
+
 
         /**
-        * Name
-        * @member {String} name
-        */
+         * Name
+         * @member {String} name
+         */
+
 
         /**
-        * Value
-        * @member {String} value
-        */
+         * Value
+         * @member {String} value
+         */
+
 
         /**
-        * Text
-        * @member {String} text
-        */
+         * Text
+         * @member {String} text
+         */
+
 
         /**
-        * Decoration
-        * @member {Array.<String>} decoration
-        */
+         * Decoration
+         * @member {Array.<String>} decoration
+         */
 
     }]);
 

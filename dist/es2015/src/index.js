@@ -1,10 +1,11 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-exports.SocketProvider = exports.NodeSocket = exports.BrowserSocket = exports.Stomp = exports.Frame = exports.FrameCommands = exports.Environments = exports.StompSmartTransactionsApi = exports.StompClient = exports.SmartTransactionsApi = exports.SmartDevicesApi = exports.PrepaidItemsApi = exports.PaymentTransactionsApi = exports.PaymentSecupayPrepaysApi = exports.PaymentSecupayInvoicesApi = exports.PaymentSecupayDebitsApi = exports.PaymentSecupayCreditcardsApi = exports.PaymentCustomersApi = exports.PaymentContractsApi = exports.PaymentContainersApi = exports.LoyaltyStoregroupsApi = exports.LoyaltySalesApi = exports.LoyaltyMerchantcardsApi = exports.LoyaltyCustomersApi = exports.LoyaltyCardsApi = exports.LoyaltyCardgroupsApi = exports.GeneralStoresApi = exports.GeneralMerchantsApi = exports.DocumentUploadsApi = exports.ReceiptTypeValue = exports.LoyaltyMerchantcardsProductWithReceiptModel = exports.LoyaltyMerchantcardsDTONewPasscode = exports.DocumentUploadsProductModel = exports.VirtualTerminalData = exports.Store = exports.SmartTransactionsReceiptValue = exports.SmartTransactionsReceipt = exports.SmartTransactionsProductModel = exports.SmartTransactionsPreTransactionModel = exports.SmartTransactionsPickupOptions = exports.SmartTransactionsMerchant = exports.SmartTransactionsList = exports.SmartTransactionsIdent = exports.SmartTransactionsDTO = exports.SmartTransactionsCheckin = exports.SmartTransactionsBonusProducts = exports.SmartTransactionsBasketText = exports.SmartTransactionsBasketProductGroup = exports.SmartTransactionsBasketProduct = exports.SmartTransactionsBasketInfo = exports.SmartTransactionsBasket = exports.SmartDevicesSecubaseConfigLoggingFileNet = exports.SmartDevicesSecubaseConfigLogging = exports.SmartDevicesSecubaseConfig = exports.SmartDevicesProducts = exports.SmartDevicesProductModel = exports.SmartDevicesList1 = exports.SmartDevicesList = exports.SmartDevicesDevice = exports.SmartDevicesDTOSecubaseConfig = exports.SmartDevicesDTOPrepaidTid = exports.SmartDevicesDTO = exports.SmartDeviceProductsPrepaid = exports.SmartDeviceProductsEnabled = exports.SecupayTransactionUpdateBasketDTO = exports.SecupayTransactionSetShippingInformationDTO = exports.SecupayTransactionReverseAccrualDTO = exports.SecupayTransactionProductModelUsedPaymentInstrument = exports.SecupayTransactionProductModelTransferAccount = exports.SecupayTransactionProductModelRedirectUrl = exports.SecupayTransactionProductModel = exports.SecupayTransactionProductDTOSubscription = exports.SecupayTransactionProductDTORedirectUrl = exports.SecupayTransactionProductDTOOptData = exports.SecupayTransactionProductDTOExperience = exports.SecupayTransactionProductDTO = exports.SecupayTransactionExternalInvoicePdfDocument = exports.SecupayTransactionExternalInvoicePdf = exports.SecupayTransactionDTOExternalInvoicePdf = exports.SecupayTransactionCaptureDTO = exports.SecupayTransactionCancelDTO = exports.SecupaySubTransactionProductModel = exports.SecupayBasketItem = exports.ReceiptValue = exports.ReceiptType = undefined;
-exports.ProductInstanceUID = exports.ProductInstanceID = exports.ProductExceptionPayload = exports.PrepaidSalesSmartDevice = exports.PrepaidSalesProductModel = exports.PrepaidSalesItem = exports.PrepaidItemsProductModel = exports.PrepaidItemsList = exports.PaymentTransactionsShippingUrl = exports.PaymentTransactionsProductModelMerchant = exports.PaymentTransactionsProductModelDetails = exports.PaymentTransactionsProductModelCustomer = exports.PaymentTransactionsProductModel = exports.PaymentTransactionsList = exports.PaymentTransactionsCancelList = exports.PaymentInformation = exports.PaymentCustomersProductModel = exports.PaymentCustomersList = exports.PaymentCustomersDTO = exports.PaymentContractsRequestIdResult = exports.PaymentContractsProductModel = exports.PaymentContractsList = exports.PaymentContractsDTORequestId = exports.PaymentContractsDTOIFrameOpts = exports.PaymentContractsDTOClone = exports.PaymentContractsDTO = exports.PaymentContainersProductModel = exports.PaymentContainersList = exports.PaymentContainersDTOPrivate = exports.PaymentContainersDTOCustomer = exports.PaymentContainersDTO = exports.PaymentContainerMandate = exports.ParentModel = exports.OpenHours = exports.LoyaltyStoregroupsProductModel = exports.LoyaltyStoregroupsList = exports.LoyaltyStoregroupsDTOStoresAddressComponents = exports.LoyaltyStoregroupsDTO = exports.LoyaltyMerchantcardsValidateMerchantCard = exports.LoyaltyMerchantcardsProductModel = exports.LoyaltyMerchantcardsList = exports.LoyaltyMerchantcardsDTOValidateMerchantCard = exports.LoyaltyMerchantcardsDTOTransaction = exports.LoyaltyMerchantcardsDTOResetPasscode = exports.LoyaltyMerchantcardsDTOPaymentContainer = exports.LoyaltyMerchantcardsDTOLock = exports.LoyaltyMerchantcardsDTOCsc = exports.LoyaltyMerchantcardsDTOCheckPasscode = exports.LoyaltyMerchantcardsDTOCardsAmount = exports.LoyaltyMerchantcardsDTO = exports.LoyaltyDTOStore = exports.LoyaltyDTOMerchant = exports.LoyaltyCustomersRemoved = exports.LoyaltyCustomersProductModel = exports.LoyaltyCustomersPaymentContainerModel = exports.LoyaltyCustomersList = exports.LoyaltyCustomersDTO = exports.LoyaltyCustomersContactDTO = exports.LoyaltyCardsProductModel = exports.LoyaltyCardsList = exports.LoyaltyCardsDTOAccount = exports.LoyaltyCardgroupsProductModel = exports.LoyaltyCardgroupsList = exports.LoyaltyCardgroupsDTOMerchant = exports.LoyaltyCardgroupsDTOCheckPasscodeEnabled = exports.LoyaltyCardgroupsDTO = exports.ItemGroup = exports.InvitedBy = exports.GeoAddressGeometry = exports.GeoAddress = exports.GeneralStoresProductModel = exports.GeneralStoresList = exports.GeneralStoresDTOType = exports.GeneralStoresDTOReason = exports.GeneralStoresDTO = exports.GeneralMerchantsUser = exports.GeneralMerchantsUrls = exports.GeneralMerchantsProductModel = exports.GeneralMerchantsList = exports.GeneralMerchantsLegalDetails = exports.GeneralMerchantsDTO = exports.GeneralMerchantsCheckoutOptionsShipping = exports.GeneralMerchantsCheckoutOptionsCollectionSmartDevices = exports.GeneralMerchantsCheckoutOptionsCollection = exports.GeneralMerchantsCheckoutOptions = exports.DocumentUploadsDTOContent = exports.DocumentUploadsBaseProductModel = exports.DayTime = exports.Contact = exports.BankAccountDescriptor = exports.AssignedBy = exports.AddressComponents = exports.Address = exports.FileCache = exports.SDKCache = exports.OAuthDeviceCredentials = exports.OAuthClientCredentials = exports.OAuthApplicationUserCredentials = exports.Authenticator = exports.ApiClient = undefined;
+exports.SocketProvider = exports.NodeSocket = exports.BrowserSocket = exports.Stomp = exports.Frame = exports.FrameCommands = undefined;
+exports.Environments = exports.StompSmartTransactionsApi = exports.StompClient = exports.SmartTransactionsApi = exports.SmartRoutingsApi = exports.SmartDevicesApi = exports.PrepaidSalesProductApi = exports.PrepaidItemsApi = exports.PrepaidContractsProductApi = exports.PaymentTransactionsApi = exports.PaymentSecupaySofortApi = exports.PaymentSecupayPrepaysApi = exports.PaymentSecupayPayoutApi = exports.PaymentSecupayInvoicesApi = exports.PaymentSecupayDebitsApi = exports.PaymentSecupayCreditcardsApi = exports.PaymentCustomersApi = exports.PaymentContractsApi = exports.PaymentContainersApi = exports.LoyaltyStoregroupsApi = exports.LoyaltySalesApi = exports.LoyaltyMerchantcardsApi = exports.LoyaltyCustomersApi = exports.LoyaltyCardsApi = exports.LoyaltyCardgroupsApi = exports.GeneralStoresApi = exports.GeneralMerchantsApi = exports.DocumentUploadsApi = exports.ReceiptTypeValue = exports.LoyaltyMerchantcardsProductWithReceiptModel = exports.LoyaltyMerchantcardsDTONewPasscode = exports.DocumentUploadsProductModel = exports.VirtualTerminalData = exports.Store = exports.SmartTransactionsSubBasketProduct = exports.SmartTransactionsShipmentDetails = exports.SmartTransactionsReceiptValue = exports.SmartTransactionsReceipt = exports.SmartTransactionsProductModel = exports.SmartTransactionsPrepare = exports.SmartTransactionsPreTransactionModel = exports.SmartTransactionsPickupOptions = exports.SmartTransactionsMerchant = exports.SmartTransactionsList = exports.SmartTransactionsIdent = exports.SmartTransactionsDTO = exports.SmartTransactionsCheckoutLinks = exports.SmartTransactionsCheckin = exports.SmartTransactionsBonusProducts = exports.SmartTransactionsBasketText = exports.SmartTransactionsBasketProductGroup = exports.SmartTransactionsBasketProduct = exports.SmartTransactionsBasketInfo = exports.SmartTransactionsBasket = exports.SmartRoutingsProductModel = exports.SmartRoutingsList = exports.SmartRoutingsDTO = exports.SmartRoutingsAssign = exports.SmartRoutingPriority = exports.SmartDevicesSecubaseConfigLoggingFileNet = exports.SmartDevicesSecubaseConfigLogging = exports.SmartDevicesSecubaseConfig = exports.SmartDevicesProducts = exports.SmartDevicesProductModel = exports.SmartDevicesList1 = exports.SmartDevicesList = exports.SmartDevicesDevice = exports.SmartDevicesDTOSecubaseConfig = exports.SmartDevicesDTOPrepaidTid = exports.SmartDevicesDTO = exports.SmartDeviceUserPin = exports.SmartDeviceProductsPrepaid = exports.SmartDeviceProductsEnabled = exports.SecupayTransactionUpdateBasketDTO = exports.SecupayTransactionSetShippingInformationDTO = exports.SecupayTransactionReverseAccrualDTO = exports.SecupayTransactionProductModelUsedPaymentInstrument = exports.SecupayTransactionProductModel = exports.SecupayTransactionProductDTOSubscription = exports.SecupayTransactionProductDTOOptData = exports.SecupayTransactionProductDTOExperience = exports.SecupayTransactionProductDTO = exports.SecupayTransactionListItem = exports.SecupayTransactionExternalInvoicePdfDocument = exports.SecupayTransactionExternalInvoicePdf = exports.SecupayTransactionDTOExternalInvoicePdf = exports.SecupayTransactionCaptureDTO = exports.SecupayTransactionCancelDTO = exports.SecupaySubTransactionProductModel = exports.SecupayRedirectUrl = exports.SecupayPayoutProductModel = exports.SecupayPayoutDTOOptData = exports.SecupayPayoutDTO = exports.SecupayBasketItem = exports.ReceiptValue = exports.ReceiptType = exports.ProductInstanceUID = exports.ProductInstanceID = exports.ProductExceptionPayload = exports.PrepaidZvtDTO = undefined;
+exports.PrepaidSalesSmartDevice = exports.PrepaidSalesProductModel = exports.PrepaidSalesProductDTO = exports.PrepaidSalesItem = exports.PrepaidMappingZvtItem = exports.PrepaidMappingZvt = exports.PrepaidItemsProductModel = exports.PrepaidItemsList = exports.PaymentTransactionsShippingUrl = exports.PaymentTransactionsProductModelDetails = exports.PaymentTransactionsProductModelCustomer = exports.PaymentTransactionsProductModel = exports.PaymentTransactionsList = exports.PaymentTransactionsInstructions = exports.PaymentTransactionCancelDTO = exports.PaymentInformation = exports.PaymentCustomersProductModel = exports.PaymentCustomersList = exports.PaymentCustomersDTO = exports.PaymentContractsRequestIdResult = exports.PaymentContractsProductModel = exports.PaymentContractsList = exports.PaymentContractsDTORequestId = exports.PaymentContractsDTOIFrameOpts = exports.PaymentContractsDTOClone = exports.PaymentContractsDTO = exports.PaymentContainersProductModel = exports.PaymentContainersList = exports.PaymentContainersDTOPrivate = exports.PaymentContainersDTOCustomer = exports.PaymentContainersDTO = exports.PaymentContainerMandate = exports.ParentModel = exports.OpenHours = exports.LoyaltyStoregroupsProductModel = exports.LoyaltyStoregroupsList = exports.LoyaltyStoregroupsDTOStoresAddressComponents = exports.LoyaltyStoregroupsDTO = exports.LoyaltyMerchantcardsValidateMerchantCard = exports.LoyaltyMerchantcardsProductModel = exports.LoyaltyMerchantcardsList = exports.LoyaltyMerchantcardsDTOValidateMerchantCard = exports.LoyaltyMerchantcardsDTOTransaction = exports.LoyaltyMerchantcardsDTOResetPasscode = exports.LoyaltyMerchantcardsDTOPaymentContainer = exports.LoyaltyMerchantcardsDTOLock = exports.LoyaltyMerchantcardsDTOCsc = exports.LoyaltyMerchantcardsDTOCheckPasscode = exports.LoyaltyMerchantcardsDTOCardsAmount = exports.LoyaltyMerchantcardsDTO = exports.LoyaltyDTOStore = exports.LoyaltyDTOMerchant = exports.LoyaltyCustomersRemoved = exports.LoyaltyCustomersProductModel = exports.LoyaltyCustomersPaymentContainerModel = exports.LoyaltyCustomersList = exports.LoyaltyCustomersDTO = exports.LoyaltyCustomersContactDTO = exports.LoyaltyCardsProductModel = exports.LoyaltyCardsList = exports.LoyaltyCardsDTOAccount = exports.LoyaltyCardgroupsProductModel = exports.LoyaltyCardgroupsList = exports.LoyaltyCardgroupsDTOMerchant = exports.LoyaltyCardgroupsDTOCheckPasscodeEnabled = exports.LoyaltyCardgroupsDTO = exports.ItemGroup = exports.InvitedBy = exports.GeoAddressGeometry = exports.GeoAddress = exports.GeneralStoresProductModel = exports.GeneralStoresList = exports.GeneralStoresDTOType = exports.GeneralStoresDTOReason = exports.GeneralStoresDTO = exports.GeneralMerchantsUser = exports.GeneralMerchantsUrls = exports.GeneralMerchantsProductModel = exports.GeneralMerchantsList = exports.GeneralMerchantsLegalDetails = exports.GeneralMerchantsDTO = exports.GeneralMerchantsCheckoutOptionsShipping = exports.GeneralMerchantsCheckoutOptionsCollectionSmartDevices = exports.GeneralMerchantsCheckoutOptionsCollection = exports.GeneralMerchantsCheckoutOptions = exports.DocumentUploadsDTOContent = exports.DocumentUploadsBaseProductModel = exports.DayTime = exports.Contact = exports.BankAccountDescriptor = exports.AssignedBy = exports.AddressComponents = exports.Address = exports.FileCache = exports.SDKCache = exports.OAuthDeviceCredentials = exports.OAuthClientCredentials = exports.OAuthApplicationUserCredentials = exports.Authenticator = exports.ApiClient = undefined;
 
 var _ApiClient = require('./ApiClient');
 
@@ -346,9 +347,13 @@ var _PaymentInformation = require('./model/PaymentInformation');
 
 var _PaymentInformation2 = _interopRequireDefault(_PaymentInformation);
 
-var _PaymentTransactionsCancelList = require('./model/PaymentTransactionsCancelList');
+var _PaymentTransactionCancelDTO = require('./model/PaymentTransactionCancelDTO');
 
-var _PaymentTransactionsCancelList2 = _interopRequireDefault(_PaymentTransactionsCancelList);
+var _PaymentTransactionCancelDTO2 = _interopRequireDefault(_PaymentTransactionCancelDTO);
+
+var _PaymentTransactionsInstructions = require('./model/PaymentTransactionsInstructions');
+
+var _PaymentTransactionsInstructions2 = _interopRequireDefault(_PaymentTransactionsInstructions);
 
 var _PaymentTransactionsList = require('./model/PaymentTransactionsList');
 
@@ -366,10 +371,6 @@ var _PaymentTransactionsProductModelDetails = require('./model/PaymentTransactio
 
 var _PaymentTransactionsProductModelDetails2 = _interopRequireDefault(_PaymentTransactionsProductModelDetails);
 
-var _PaymentTransactionsProductModelMerchant = require('./model/PaymentTransactionsProductModelMerchant');
-
-var _PaymentTransactionsProductModelMerchant2 = _interopRequireDefault(_PaymentTransactionsProductModelMerchant);
-
 var _PaymentTransactionsShippingUrl = require('./model/PaymentTransactionsShippingUrl');
 
 var _PaymentTransactionsShippingUrl2 = _interopRequireDefault(_PaymentTransactionsShippingUrl);
@@ -382,9 +383,21 @@ var _PrepaidItemsProductModel = require('./model/PrepaidItemsProductModel');
 
 var _PrepaidItemsProductModel2 = _interopRequireDefault(_PrepaidItemsProductModel);
 
+var _PrepaidMappingZvt = require('./model/PrepaidMappingZvt');
+
+var _PrepaidMappingZvt2 = _interopRequireDefault(_PrepaidMappingZvt);
+
+var _PrepaidMappingZvtItem = require('./model/PrepaidMappingZvtItem');
+
+var _PrepaidMappingZvtItem2 = _interopRequireDefault(_PrepaidMappingZvtItem);
+
 var _PrepaidSalesItem = require('./model/PrepaidSalesItem');
 
 var _PrepaidSalesItem2 = _interopRequireDefault(_PrepaidSalesItem);
+
+var _PrepaidSalesProductDTO = require('./model/PrepaidSalesProductDTO');
+
+var _PrepaidSalesProductDTO2 = _interopRequireDefault(_PrepaidSalesProductDTO);
 
 var _PrepaidSalesProductModel = require('./model/PrepaidSalesProductModel');
 
@@ -393,6 +406,10 @@ var _PrepaidSalesProductModel2 = _interopRequireDefault(_PrepaidSalesProductMode
 var _PrepaidSalesSmartDevice = require('./model/PrepaidSalesSmartDevice');
 
 var _PrepaidSalesSmartDevice2 = _interopRequireDefault(_PrepaidSalesSmartDevice);
+
+var _PrepaidZvtDTO = require('./model/PrepaidZvtDTO');
+
+var _PrepaidZvtDTO2 = _interopRequireDefault(_PrepaidZvtDTO);
 
 var _ProductExceptionPayload = require('./model/ProductExceptionPayload');
 
@@ -418,6 +435,22 @@ var _SecupayBasketItem = require('./model/SecupayBasketItem');
 
 var _SecupayBasketItem2 = _interopRequireDefault(_SecupayBasketItem);
 
+var _SecupayPayoutDTO = require('./model/SecupayPayoutDTO');
+
+var _SecupayPayoutDTO2 = _interopRequireDefault(_SecupayPayoutDTO);
+
+var _SecupayPayoutDTOOptData = require('./model/SecupayPayoutDTOOptData');
+
+var _SecupayPayoutDTOOptData2 = _interopRequireDefault(_SecupayPayoutDTOOptData);
+
+var _SecupayPayoutProductModel = require('./model/SecupayPayoutProductModel');
+
+var _SecupayPayoutProductModel2 = _interopRequireDefault(_SecupayPayoutProductModel);
+
+var _SecupayRedirectUrl = require('./model/SecupayRedirectUrl');
+
+var _SecupayRedirectUrl2 = _interopRequireDefault(_SecupayRedirectUrl);
+
 var _SecupaySubTransactionProductModel = require('./model/SecupaySubTransactionProductModel');
 
 var _SecupaySubTransactionProductModel2 = _interopRequireDefault(_SecupaySubTransactionProductModel);
@@ -442,6 +475,10 @@ var _SecupayTransactionExternalInvoicePdfDocument = require('./model/SecupayTran
 
 var _SecupayTransactionExternalInvoicePdfDocument2 = _interopRequireDefault(_SecupayTransactionExternalInvoicePdfDocument);
 
+var _SecupayTransactionListItem = require('./model/SecupayTransactionListItem');
+
+var _SecupayTransactionListItem2 = _interopRequireDefault(_SecupayTransactionListItem);
+
 var _SecupayTransactionProductDTO = require('./model/SecupayTransactionProductDTO');
 
 var _SecupayTransactionProductDTO2 = _interopRequireDefault(_SecupayTransactionProductDTO);
@@ -454,10 +491,6 @@ var _SecupayTransactionProductDTOOptData = require('./model/SecupayTransactionPr
 
 var _SecupayTransactionProductDTOOptData2 = _interopRequireDefault(_SecupayTransactionProductDTOOptData);
 
-var _SecupayTransactionProductDTORedirectUrl = require('./model/SecupayTransactionProductDTORedirectUrl');
-
-var _SecupayTransactionProductDTORedirectUrl2 = _interopRequireDefault(_SecupayTransactionProductDTORedirectUrl);
-
 var _SecupayTransactionProductDTOSubscription = require('./model/SecupayTransactionProductDTOSubscription');
 
 var _SecupayTransactionProductDTOSubscription2 = _interopRequireDefault(_SecupayTransactionProductDTOSubscription);
@@ -465,14 +498,6 @@ var _SecupayTransactionProductDTOSubscription2 = _interopRequireDefault(_Secupay
 var _SecupayTransactionProductModel = require('./model/SecupayTransactionProductModel');
 
 var _SecupayTransactionProductModel2 = _interopRequireDefault(_SecupayTransactionProductModel);
-
-var _SecupayTransactionProductModelRedirectUrl = require('./model/SecupayTransactionProductModelRedirectUrl');
-
-var _SecupayTransactionProductModelRedirectUrl2 = _interopRequireDefault(_SecupayTransactionProductModelRedirectUrl);
-
-var _SecupayTransactionProductModelTransferAccount = require('./model/SecupayTransactionProductModelTransferAccount');
-
-var _SecupayTransactionProductModelTransferAccount2 = _interopRequireDefault(_SecupayTransactionProductModelTransferAccount);
 
 var _SecupayTransactionProductModelUsedPaymentInstrument = require('./model/SecupayTransactionProductModelUsedPaymentInstrument');
 
@@ -497,6 +522,10 @@ var _SmartDeviceProductsEnabled2 = _interopRequireDefault(_SmartDeviceProductsEn
 var _SmartDeviceProductsPrepaid = require('./model/SmartDeviceProductsPrepaid');
 
 var _SmartDeviceProductsPrepaid2 = _interopRequireDefault(_SmartDeviceProductsPrepaid);
+
+var _SmartDeviceUserPin = require('./model/SmartDeviceUserPin');
+
+var _SmartDeviceUserPin2 = _interopRequireDefault(_SmartDeviceUserPin);
 
 var _SmartDevicesDTO = require('./model/SmartDevicesDTO');
 
@@ -542,6 +571,26 @@ var _SmartDevicesSecubaseConfigLoggingFileNet = require('./model/SmartDevicesSec
 
 var _SmartDevicesSecubaseConfigLoggingFileNet2 = _interopRequireDefault(_SmartDevicesSecubaseConfigLoggingFileNet);
 
+var _SmartRoutingPriority = require('./model/SmartRoutingPriority');
+
+var _SmartRoutingPriority2 = _interopRequireDefault(_SmartRoutingPriority);
+
+var _SmartRoutingsAssign = require('./model/SmartRoutingsAssign');
+
+var _SmartRoutingsAssign2 = _interopRequireDefault(_SmartRoutingsAssign);
+
+var _SmartRoutingsDTO = require('./model/SmartRoutingsDTO');
+
+var _SmartRoutingsDTO2 = _interopRequireDefault(_SmartRoutingsDTO);
+
+var _SmartRoutingsList = require('./model/SmartRoutingsList');
+
+var _SmartRoutingsList2 = _interopRequireDefault(_SmartRoutingsList);
+
+var _SmartRoutingsProductModel = require('./model/SmartRoutingsProductModel');
+
+var _SmartRoutingsProductModel2 = _interopRequireDefault(_SmartRoutingsProductModel);
+
 var _SmartTransactionsBasket = require('./model/SmartTransactionsBasket');
 
 var _SmartTransactionsBasket2 = _interopRequireDefault(_SmartTransactionsBasket);
@@ -570,6 +619,10 @@ var _SmartTransactionsCheckin = require('./model/SmartTransactionsCheckin');
 
 var _SmartTransactionsCheckin2 = _interopRequireDefault(_SmartTransactionsCheckin);
 
+var _SmartTransactionsCheckoutLinks = require('./model/SmartTransactionsCheckoutLinks');
+
+var _SmartTransactionsCheckoutLinks2 = _interopRequireDefault(_SmartTransactionsCheckoutLinks);
+
 var _SmartTransactionsDTO = require('./model/SmartTransactionsDTO');
 
 var _SmartTransactionsDTO2 = _interopRequireDefault(_SmartTransactionsDTO);
@@ -582,6 +635,10 @@ var _SmartTransactionsList = require('./model/SmartTransactionsList');
 
 var _SmartTransactionsList2 = _interopRequireDefault(_SmartTransactionsList);
 
+var _SmartTransactionsMerchant = require('./model/SmartTransactionsMerchant');
+
+var _SmartTransactionsMerchant2 = _interopRequireDefault(_SmartTransactionsMerchant);
+
 var _SmartTransactionsPickupOptions = require('./model/SmartTransactionsPickupOptions');
 
 var _SmartTransactionsPickupOptions2 = _interopRequireDefault(_SmartTransactionsPickupOptions);
@@ -589,6 +646,10 @@ var _SmartTransactionsPickupOptions2 = _interopRequireDefault(_SmartTransactions
 var _SmartTransactionsPreTransactionModel = require('./model/SmartTransactionsPreTransactionModel');
 
 var _SmartTransactionsPreTransactionModel2 = _interopRequireDefault(_SmartTransactionsPreTransactionModel);
+
+var _SmartTransactionsPrepare = require('./model/SmartTransactionsPrepare');
+
+var _SmartTransactionsPrepare2 = _interopRequireDefault(_SmartTransactionsPrepare);
 
 var _SmartTransactionsProductModel = require('./model/SmartTransactionsProductModel');
 
@@ -601,6 +662,14 @@ var _SmartTransactionsReceipt2 = _interopRequireDefault(_SmartTransactionsReceip
 var _SmartTransactionsReceiptValue = require('./model/SmartTransactionsReceiptValue');
 
 var _SmartTransactionsReceiptValue2 = _interopRequireDefault(_SmartTransactionsReceiptValue);
+
+var _SmartTransactionsShipmentDetails = require('./model/SmartTransactionsShipmentDetails');
+
+var _SmartTransactionsShipmentDetails2 = _interopRequireDefault(_SmartTransactionsShipmentDetails);
+
+var _SmartTransactionsSubBasketProduct = require('./model/SmartTransactionsSubBasketProduct');
+
+var _SmartTransactionsSubBasketProduct2 = _interopRequireDefault(_SmartTransactionsSubBasketProduct);
 
 var _Store = require('./model/Store');
 
@@ -625,10 +694,6 @@ var _LoyaltyMerchantcardsProductWithReceiptModel2 = _interopRequireDefault(_Loya
 var _ReceiptTypeValue = require('./model/ReceiptTypeValue');
 
 var _ReceiptTypeValue2 = _interopRequireDefault(_ReceiptTypeValue);
-
-var _SmartTransactionsMerchant = require('./model/SmartTransactionsMerchant');
-
-var _SmartTransactionsMerchant2 = _interopRequireDefault(_SmartTransactionsMerchant);
 
 var _DocumentUploadsApi = require('./api/DocumentUploadsApi');
 
@@ -690,21 +755,41 @@ var _PaymentSecupayInvoicesApi = require('./api/PaymentSecupayInvoicesApi');
 
 var _PaymentSecupayInvoicesApi2 = _interopRequireDefault(_PaymentSecupayInvoicesApi);
 
+var _PaymentSecupayPayoutApi = require('./api/PaymentSecupayPayoutApi');
+
+var _PaymentSecupayPayoutApi2 = _interopRequireDefault(_PaymentSecupayPayoutApi);
+
 var _PaymentSecupayPrepaysApi = require('./api/PaymentSecupayPrepaysApi');
 
 var _PaymentSecupayPrepaysApi2 = _interopRequireDefault(_PaymentSecupayPrepaysApi);
+
+var _PaymentSecupaySofortApi = require('./api/PaymentSecupaySofortApi');
+
+var _PaymentSecupaySofortApi2 = _interopRequireDefault(_PaymentSecupaySofortApi);
 
 var _PaymentTransactionsApi = require('./api/PaymentTransactionsApi');
 
 var _PaymentTransactionsApi2 = _interopRequireDefault(_PaymentTransactionsApi);
 
+var _PrepaidContractsProductApi = require('./api/PrepaidContractsProductApi');
+
+var _PrepaidContractsProductApi2 = _interopRequireDefault(_PrepaidContractsProductApi);
+
 var _PrepaidItemsApi = require('./api/PrepaidItemsApi');
 
 var _PrepaidItemsApi2 = _interopRequireDefault(_PrepaidItemsApi);
 
+var _PrepaidSalesProductApi = require('./api/PrepaidSalesProductApi');
+
+var _PrepaidSalesProductApi2 = _interopRequireDefault(_PrepaidSalesProductApi);
+
 var _SmartDevicesApi = require('./api/SmartDevicesApi');
 
 var _SmartDevicesApi2 = _interopRequireDefault(_SmartDevicesApi);
+
+var _SmartRoutingsApi = require('./api/SmartRoutingsApi');
+
+var _SmartRoutingsApi2 = _interopRequireDefault(_SmartRoutingsApi);
 
 var _SmartTransactionsApi = require('./api/SmartTransactionsApi');
 
@@ -858,44 +943,51 @@ exports.PaymentCustomersDTO = _PaymentCustomersDTO2.default;
 exports.PaymentCustomersList = _PaymentCustomersList2.default;
 exports.PaymentCustomersProductModel = _PaymentCustomersProductModel2.default;
 exports.PaymentInformation = _PaymentInformation2.default;
-exports.PaymentTransactionsCancelList = _PaymentTransactionsCancelList2.default;
+exports.PaymentTransactionCancelDTO = _PaymentTransactionCancelDTO2.default;
+exports.PaymentTransactionsInstructions = _PaymentTransactionsInstructions2.default;
 exports.PaymentTransactionsList = _PaymentTransactionsList2.default;
 exports.PaymentTransactionsProductModel = _PaymentTransactionsProductModel2.default;
 exports.PaymentTransactionsProductModelCustomer = _PaymentTransactionsProductModelCustomer2.default;
 exports.PaymentTransactionsProductModelDetails = _PaymentTransactionsProductModelDetails2.default;
-exports.PaymentTransactionsProductModelMerchant = _PaymentTransactionsProductModelMerchant2.default;
 exports.PaymentTransactionsShippingUrl = _PaymentTransactionsShippingUrl2.default;
 exports.PrepaidItemsList = _PrepaidItemsList2.default;
 exports.PrepaidItemsProductModel = _PrepaidItemsProductModel2.default;
+exports.PrepaidMappingZvt = _PrepaidMappingZvt2.default;
+exports.PrepaidMappingZvtItem = _PrepaidMappingZvtItem2.default;
 exports.PrepaidSalesItem = _PrepaidSalesItem2.default;
+exports.PrepaidSalesProductDTO = _PrepaidSalesProductDTO2.default;
 exports.PrepaidSalesProductModel = _PrepaidSalesProductModel2.default;
 exports.PrepaidSalesSmartDevice = _PrepaidSalesSmartDevice2.default;
+exports.PrepaidZvtDTO = _PrepaidZvtDTO2.default;
 exports.ProductExceptionPayload = _ProductExceptionPayload2.default;
 exports.ProductInstanceID = _ProductInstanceID2.default;
 exports.ProductInstanceUID = _ProductInstanceUID2.default;
 exports.ReceiptType = _ReceiptType2.default;
 exports.ReceiptValue = _ReceiptValue2.default;
 exports.SecupayBasketItem = _SecupayBasketItem2.default;
+exports.SecupayPayoutDTO = _SecupayPayoutDTO2.default;
+exports.SecupayPayoutDTOOptData = _SecupayPayoutDTOOptData2.default;
+exports.SecupayPayoutProductModel = _SecupayPayoutProductModel2.default;
+exports.SecupayRedirectUrl = _SecupayRedirectUrl2.default;
 exports.SecupaySubTransactionProductModel = _SecupaySubTransactionProductModel2.default;
 exports.SecupayTransactionCancelDTO = _SecupayTransactionCancelDTO2.default;
 exports.SecupayTransactionCaptureDTO = _SecupayTransactionCaptureDTO2.default;
 exports.SecupayTransactionDTOExternalInvoicePdf = _SecupayTransactionDTOExternalInvoicePdf2.default;
 exports.SecupayTransactionExternalInvoicePdf = _SecupayTransactionExternalInvoicePdf2.default;
 exports.SecupayTransactionExternalInvoicePdfDocument = _SecupayTransactionExternalInvoicePdfDocument2.default;
+exports.SecupayTransactionListItem = _SecupayTransactionListItem2.default;
 exports.SecupayTransactionProductDTO = _SecupayTransactionProductDTO2.default;
 exports.SecupayTransactionProductDTOExperience = _SecupayTransactionProductDTOExperience2.default;
 exports.SecupayTransactionProductDTOOptData = _SecupayTransactionProductDTOOptData2.default;
-exports.SecupayTransactionProductDTORedirectUrl = _SecupayTransactionProductDTORedirectUrl2.default;
 exports.SecupayTransactionProductDTOSubscription = _SecupayTransactionProductDTOSubscription2.default;
 exports.SecupayTransactionProductModel = _SecupayTransactionProductModel2.default;
-exports.SecupayTransactionProductModelRedirectUrl = _SecupayTransactionProductModelRedirectUrl2.default;
-exports.SecupayTransactionProductModelTransferAccount = _SecupayTransactionProductModelTransferAccount2.default;
 exports.SecupayTransactionProductModelUsedPaymentInstrument = _SecupayTransactionProductModelUsedPaymentInstrument2.default;
 exports.SecupayTransactionReverseAccrualDTO = _SecupayTransactionReverseAccrualDTO2.default;
 exports.SecupayTransactionSetShippingInformationDTO = _SecupayTransactionSetShippingInformationDTO2.default;
 exports.SecupayTransactionUpdateBasketDTO = _SecupayTransactionUpdateBasketDTO2.default;
 exports.SmartDeviceProductsEnabled = _SmartDeviceProductsEnabled2.default;
 exports.SmartDeviceProductsPrepaid = _SmartDeviceProductsPrepaid2.default;
+exports.SmartDeviceUserPin = _SmartDeviceUserPin2.default;
 exports.SmartDevicesDTO = _SmartDevicesDTO2.default;
 exports.SmartDevicesDTOPrepaidTid = _SmartDevicesDTOPrepaidTid2.default;
 exports.SmartDevicesDTOSecubaseConfig = _SmartDevicesDTOSecubaseConfig2.default;
@@ -907,6 +999,11 @@ exports.SmartDevicesProducts = _SmartDevicesProducts2.default;
 exports.SmartDevicesSecubaseConfig = _SmartDevicesSecubaseConfig2.default;
 exports.SmartDevicesSecubaseConfigLogging = _SmartDevicesSecubaseConfigLogging2.default;
 exports.SmartDevicesSecubaseConfigLoggingFileNet = _SmartDevicesSecubaseConfigLoggingFileNet2.default;
+exports.SmartRoutingPriority = _SmartRoutingPriority2.default;
+exports.SmartRoutingsAssign = _SmartRoutingsAssign2.default;
+exports.SmartRoutingsDTO = _SmartRoutingsDTO2.default;
+exports.SmartRoutingsList = _SmartRoutingsList2.default;
+exports.SmartRoutingsProductModel = _SmartRoutingsProductModel2.default;
 exports.SmartTransactionsBasket = _SmartTransactionsBasket2.default;
 exports.SmartTransactionsBasketInfo = _SmartTransactionsBasketInfo2.default;
 exports.SmartTransactionsBasketProduct = _SmartTransactionsBasketProduct2.default;
@@ -914,15 +1011,19 @@ exports.SmartTransactionsBasketProductGroup = _SmartTransactionsBasketProductGro
 exports.SmartTransactionsBasketText = _SmartTransactionsBasketText2.default;
 exports.SmartTransactionsBonusProducts = _SmartTransactionsBonusProducts2.default;
 exports.SmartTransactionsCheckin = _SmartTransactionsCheckin2.default;
+exports.SmartTransactionsCheckoutLinks = _SmartTransactionsCheckoutLinks2.default;
 exports.SmartTransactionsDTO = _SmartTransactionsDTO2.default;
 exports.SmartTransactionsIdent = _SmartTransactionsIdent2.default;
 exports.SmartTransactionsList = _SmartTransactionsList2.default;
 exports.SmartTransactionsMerchant = _SmartTransactionsMerchant2.default;
 exports.SmartTransactionsPickupOptions = _SmartTransactionsPickupOptions2.default;
 exports.SmartTransactionsPreTransactionModel = _SmartTransactionsPreTransactionModel2.default;
+exports.SmartTransactionsPrepare = _SmartTransactionsPrepare2.default;
 exports.SmartTransactionsProductModel = _SmartTransactionsProductModel2.default;
 exports.SmartTransactionsReceipt = _SmartTransactionsReceipt2.default;
 exports.SmartTransactionsReceiptValue = _SmartTransactionsReceiptValue2.default;
+exports.SmartTransactionsShipmentDetails = _SmartTransactionsShipmentDetails2.default;
+exports.SmartTransactionsSubBasketProduct = _SmartTransactionsSubBasketProduct2.default;
 exports.Store = _Store2.default;
 exports.VirtualTerminalData = _VirtualTerminalData2.default;
 exports.DocumentUploadsProductModel = _DocumentUploadsProductModel2.default;
@@ -944,10 +1045,15 @@ exports.PaymentCustomersApi = _PaymentCustomersApi2.default;
 exports.PaymentSecupayCreditcardsApi = _PaymentSecupayCreditcardsApi2.default;
 exports.PaymentSecupayDebitsApi = _PaymentSecupayDebitsApi2.default;
 exports.PaymentSecupayInvoicesApi = _PaymentSecupayInvoicesApi2.default;
+exports.PaymentSecupayPayoutApi = _PaymentSecupayPayoutApi2.default;
 exports.PaymentSecupayPrepaysApi = _PaymentSecupayPrepaysApi2.default;
+exports.PaymentSecupaySofortApi = _PaymentSecupaySofortApi2.default;
 exports.PaymentTransactionsApi = _PaymentTransactionsApi2.default;
+exports.PrepaidContractsProductApi = _PrepaidContractsProductApi2.default;
 exports.PrepaidItemsApi = _PrepaidItemsApi2.default;
+exports.PrepaidSalesProductApi = _PrepaidSalesProductApi2.default;
 exports.SmartDevicesApi = _SmartDevicesApi2.default;
+exports.SmartRoutingsApi = _SmartRoutingsApi2.default;
 exports.SmartTransactionsApi = _SmartTransactionsApi2.default;
 exports.StompClient = _StompClient2.default;
 exports.StompSmartTransactionsApi = _StompSmartTransactionsApi2.default;

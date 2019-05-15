@@ -19,15 +19,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The GeneralMerchantsUser model module.
-* @module model/GeneralMerchantsUser
-*/
+ * The GeneralMerchantsUser model module.
+ * @module model/GeneralMerchantsUser
+ */
 var GeneralMerchantsUser = function () {
     /**
-    * Constructs a new <code>GeneralMerchantsUser</code>.
-    * @alias module:model/GeneralMerchantsUser
-    * @class
-    */
+     * Constructs a new <code>GeneralMerchantsUser</code>.
+     * @alias module:model/GeneralMerchantsUser
+     * @class
+     */
 
     function GeneralMerchantsUser() {
         _classCallCheck(this, GeneralMerchantsUser);
@@ -74,29 +74,33 @@ var GeneralMerchantsUser = function () {
         }
 
         /**
-        * Object of general merchant user
-        * @member {String} object
-        */
+         * Object of general merchant user
+         * @member {String} object
+         */
+
 
         /**
-        * Id of general merchant user
-        * @member {String} id
-        */
+         * Id of general merchant user
+         * @member {String} id
+         */
+
 
         /**
-        * Name of general merchant user
-        * @member {String} name
-        */
+         * Name of general merchant user
+         * @member {String} name
+         */
+
 
         /**
-        * Company name of general merchant user
-        * @member {String} companyname
-        */
+         * Company name of general merchant user
+         * @member {String} companyname
+         */
+
 
         /**
-        * Address of general merchant user
-        * @member {Array.<module:model/GeoAddress>} address
-        */
+         * Address of general merchant user
+         * @member {Array.<module:model/GeoAddress>} address
+         */
 
     }]);
 

@@ -23,15 +23,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The SmartDevicesProducts model module.
-* @module model/SmartDevicesProducts
-*/
+ * The SmartDevicesProducts model module.
+ * @module model/SmartDevicesProducts
+ */
 var SmartDevicesProducts = function () {
     /**
-    * Constructs a new <code>SmartDevicesProducts</code>.
-    * @alias module:model/SmartDevicesProducts
-    * @class
-    */
+     * Constructs a new <code>SmartDevicesProducts</code>.
+     * @alias module:model/SmartDevicesProducts
+     * @class
+     */
 
     function SmartDevicesProducts() {
         _classCallCheck(this, SmartDevicesProducts);
@@ -86,39 +86,45 @@ var SmartDevicesProducts = function () {
         }
 
         /**
-        * Loyalty
-        * @member {module:model/SmartDeviceProductsEnabled} loyalty
-        */
+         * Loyalty
+         * @member {module:model/SmartDeviceProductsEnabled} loyalty
+         */
+
 
         /**
-        * Smart
-        * @member {module:model/SmartDeviceProductsEnabled} smart
-        */
+         * Smart
+         * @member {module:model/SmartDeviceProductsEnabled} smart
+         */
+
 
         /**
-        * Cashreg
-        * @member {module:model/SmartDeviceProductsEnabled} cashreg
-        */
+         * Cashreg
+         * @member {module:model/SmartDeviceProductsEnabled} cashreg
+         */
+
 
         /**
-        * Collect
-        * @member {module:model/SmartDeviceProductsEnabled} collect
-        */
+         * Collect
+         * @member {module:model/SmartDeviceProductsEnabled} collect
+         */
+
 
         /**
-        * Showcase
-        * @member {module:model/SmartDeviceProductsEnabled} showcase
-        */
+         * Showcase
+         * @member {module:model/SmartDeviceProductsEnabled} showcase
+         */
+
 
         /**
-        * Vtm
-        * @member {module:model/SmartDeviceProductsEnabled} vtm
-        */
+         * Vtm
+         * @member {module:model/SmartDeviceProductsEnabled} vtm
+         */
+
 
         /**
-        * Prepaid
-        * @member {module:model/SmartDeviceProductsPrepaid} prepaid
-        */
+         * Prepaid
+         * @member {module:model/SmartDeviceProductsPrepaid} prepaid
+         */
 
     }]);
 

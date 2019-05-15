@@ -15,15 +15,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The PaymentContainerMandate model module.
-* @module model/PaymentContainerMandate
-*/
+ * The PaymentContainerMandate model module.
+ * @module model/PaymentContainerMandate
+ */
 var PaymentContainerMandate = function () {
     /**
-    * Constructs a new <code>PaymentContainerMandate</code>.
-    * @alias module:model/PaymentContainerMandate
-    * @class
-    */
+     * Constructs a new <code>PaymentContainerMandate</code>.
+     * @alias module:model/PaymentContainerMandate
+     * @class
+     */
 
     function PaymentContainerMandate() {
         _classCallCheck(this, PaymentContainerMandate);
@@ -74,34 +74,39 @@ var PaymentContainerMandate = function () {
         }
 
         /**
-        * Sepa mandate id
-        * @member {String} sepa_mandate_id
-        */
+         * Sepa mandate id
+         * @member {String} sepa_mandate_id
+         */
+
 
         /**
-        * IBAN
-        * @member {String} iban
-        */
+         * IBAN
+         * @member {String} iban
+         */
+
 
         /**
-        * BIC
-        * @member {String} bic
-        */
+         * BIC
+         * @member {String} bic
+         */
+
 
         /**
-        * Type
-        * @member {String} type
-        */
+         * Type
+         * @member {String} type
+         */
+
 
         /**
-        * Status
-        * @member {String} status
-        */
+         * Status
+         * @member {String} status
+         */
+
 
         /**
-        * Identification
-        * @member {String} identification
-        */
+         * Identification
+         * @member {String} identification
+         */
 
     }]);
 

@@ -19,15 +19,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The PrepaidItemsProductModel model module.
-* @module model/PrepaidItemsProductModel
-*/
+ * The PrepaidItemsProductModel model module.
+ * @module model/PrepaidItemsProductModel
+ */
 var PrepaidItemsProductModel = function () {
     /**
-    * Constructs a new <code>PrepaidItemsProductModel</code>.
-    * @alias module:model/PrepaidItemsProductModel
-    * @class
-    */
+     * Constructs a new <code>PrepaidItemsProductModel</code>.
+     * @alias module:model/PrepaidItemsProductModel
+     * @class
+     */
 
     function PrepaidItemsProductModel() {
         _classCallCheck(this, PrepaidItemsProductModel);
@@ -40,7 +40,6 @@ var PrepaidItemsProductModel = function () {
         this.logo = undefined;
         this.commission = undefined;
         this.vtc_id = undefined;
-        this.ean_intern = undefined;
         this.itemgroup = undefined;
         this.stock_limit_max = undefined;
         this.stock_limit_min = undefined;
@@ -87,9 +86,6 @@ var PrepaidItemsProductModel = function () {
                 if (data.hasOwnProperty('vtc_id')) {
                     obj['vtc_id'] = _ApiClient2.default.convertToType(data['vtc_id'], 'String');
                 }
-                if (data.hasOwnProperty('ean_intern')) {
-                    obj['ean_intern'] = _ApiClient2.default.convertToType(data['ean_intern'], 'String');
-                }
                 if (data.hasOwnProperty('itemgroup')) {
                     obj['itemgroup'] = _ItemGroup2.default.constructFromObject(data['itemgroup']);
                 }
@@ -110,74 +106,81 @@ var PrepaidItemsProductModel = function () {
         }
 
         /**
-        * Object of prepaid item
-        * @member {String} object
-        */
+         * Object of prepaid item
+         * @member {String} object
+         */
+
 
         /**
-        * Id of prepaid item
-        * @member {String} id
-        */
+         * Id of prepaid item
+         * @member {String} id
+         */
+
 
         /**
-        * Retail price
-        * @member {Number} retail_price
-        */
+         * Retail price
+         * @member {Number} retail_price
+         */
+
 
         /**
-        * Currency
-        * @member {String} currency
-        */
+         * Currency
+         * @member {String} currency
+         */
+
 
         /**
-        * Description
-        * @member {String} description
-        */
+         * Description
+         * @member {String} description
+         */
+
 
         /**
-        * Logo
-        * @member {String} logo
-        */
+         * Logo
+         * @member {String} logo
+         */
+
 
         /**
-        * Commission
-        * @member {Number} commission
-        */
+         * Commission
+         * @member {Number} commission
+         */
+
 
         /**
-        * Vtc id
-        * @member {String} vtc_id
-        */
+         * Vtc id
+         * @member {String} vtc_id
+         */
+
 
         /**
-        * Ean intern
-        * @member {String} ean_intern
-        */
+         * Item group
+         * @member {module:model/ItemGroup} itemgroup
+         */
+
 
         /**
-        * Item group
-        * @member {module:model/ItemGroup} itemgroup
-        */
+         * Stock limit max
+         * @member {Number} stock_limit_max
+         */
+
 
         /**
-        * Stock limit max
-        * @member {Number} stock_limit_max
-        */
+         * Stock limit min
+         * @member {Number} stock_limit_min
+         */
+
 
         /**
-        * Stock limit min
-        * @member {Number} stock_limit_min
-        */
+         * Taxable
+         * @member {Boolean} taxable
+         */
+
 
         /**
-        * Taxable
-        * @member {Boolean} taxable
-        */
-
-        /**
-        * Type
-        * @member {String} type
-        */
+         * Type
+         * @member {String} type
+         */
 
     }]);
 

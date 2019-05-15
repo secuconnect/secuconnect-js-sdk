@@ -15,16 +15,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* The ProductExceptionPayload model module.
-* @module model/ProductExceptionPayload
-*/
+ * The ProductExceptionPayload model module.
+ * @module model/ProductExceptionPayload
+ */
 var ProductExceptionPayload = function () {
     /**
-    * Constructs a new <code>ProductExceptionPayload</code>.
-    * Payload of exceptions returned by API
-    * @alias module:model/ProductExceptionPayload
-    * @class
-    */
+     * Constructs a new <code>ProductExceptionPayload</code>.
+     * Payload of exceptions returned by API
+     * @alias module:model/ProductExceptionPayload
+     * @class
+     */
 
     function ProductExceptionPayload() {
         _classCallCheck(this, ProductExceptionPayload);
@@ -75,34 +75,39 @@ var ProductExceptionPayload = function () {
         }
 
         /**
-        * Request status (always equals to 'error')
-        * @member {String} status
-        */
+         * Request status (always equals to 'error')
+         * @member {String} status
+         */
+
 
         /**
-        * Error type identifier
-        * @member {String} error
-        */
+         * Error type identifier
+         * @member {String} error
+         */
+
 
         /**
-        * Error details
-        * @member {String} error_details
-        */
+         * Error details
+         * @member {String} error_details
+         */
+
 
         /**
-        * Error details in German
-        * @member {String} error_user
-        */
+         * Error details in German
+         * @member {String} error_user
+         */
+
 
         /**
-        * HTTP code corresponding to error
-        * @member {String} code
-        */
+         * HTTP code corresponding to error
+         * @member {String} code
+         */
+
 
         /**
-        * ID by which support team can relate error with action(s) that caused it
-        * @member {String} supportId
-        */
+         * ID by which support team can relate error with action(s) that caused it
+         * @member {String} supportId
+         */
 
     }]);
 
