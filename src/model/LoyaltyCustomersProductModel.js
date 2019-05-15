@@ -4,29 +4,18 @@ import Contact from './Contact';
 import LoyaltyCustomersPaymentContainerModel from './LoyaltyCustomersPaymentContainerModel';
 import ProductInstanceUID from './ProductInstanceUID';
 
-
-
-
-
 /**
-* The LoyaltyCustomersProductModel model module.
-* @module model/LoyaltyCustomersProductModel
-*/
+ * The LoyaltyCustomersProductModel model module.
+ * @module model/LoyaltyCustomersProductModel
+ */
 export default class LoyaltyCustomersProductModel {
     /**
-    * Constructs a new <code>LoyaltyCustomersProductModel</code>.
-    * @alias module:model/LoyaltyCustomersProductModel
-    * @class
-    */
+     * Constructs a new <code>LoyaltyCustomersProductModel</code>.
+     * @alias module:model/LoyaltyCustomersProductModel
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -40,11 +29,9 @@ export default class LoyaltyCustomersProductModel {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyCustomersProductModel();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -66,12 +53,6 @@ export default class LoyaltyCustomersProductModel {
             if (data.hasOwnProperty('payment_container')) {
                 obj['payment_container'] = ApiClient.convertToType(data['payment_container'], [LoyaltyCustomersPaymentContainerModel]);
             }
-            if (data.hasOwnProperty('age')) {
-                obj['age'] = ApiClient.convertToType(data['age'], 'Number');
-            }
-            if (data.hasOwnProperty('days_until_birthday')) {
-                obj['days_until_birthday'] = ApiClient.convertToType(data['days_until_birthday'], 'Number');
-            }
             if (data.hasOwnProperty('customernumber')) {
                 obj['customernumber'] = ApiClient.convertToType(data['customernumber'], 'String');
             }
@@ -79,80 +60,70 @@ export default class LoyaltyCustomersProductModel {
                 obj['note'] = ApiClient.convertToType(data['note'], 'String');
             }
             if (data.hasOwnProperty('created')) {
-                obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+                obj['created'] = ApiClient.convertToType(data['created'], 'String');
             }
         }
         return obj;
     }
 
     /**
-    * Object of loyalty customer
-    * @member {String} object
-    */
+     * Object of loyalty customer
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of loyalty customer
-    * @member {String} id
-    */
+     * Id of loyalty customer
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * merchant
-    * @member {module:model/ProductInstanceUID} merchant
-    */
+     * merchant
+     * @member {module:model/ProductInstanceUID} merchant
+     */
     merchant = undefined;
+
     /**
-    * Contact
-    * @member {module:model/Contact} contact
-    */
+     * Contact
+     * @member {module:model/Contact} contact
+     */
     contact = undefined;
+
     /**
-    * merchant contact
-    * @member {module:model/Contact} merchant_contact
-    */
+     * merchant contact
+     * @member {module:model/Contact} merchant_contact
+     */
     merchant_contact = undefined;
+
     /**
-    * merchant contact
-    * @member {module:model/Contact} account_contact
-    */
+     * merchant contact
+     * @member {module:model/Contact} account_contact
+     */
     account_contact = undefined;
+
     /**
-    * payment container
-    * @member {Array.<module:model/LoyaltyCustomersPaymentContainerModel>} payment_container
-    */
+     * payment container
+     * @member {Array.<module:model/LoyaltyCustomersPaymentContainerModel>} payment_container
+     */
     payment_container = undefined;
+
     /**
-    * Age
-    * @member {Number} age
-    */
-    age = undefined;
-    /**
-    * Number of days until birthday
-    * @member {Number} days_until_birthday
-    */
-    days_until_birthday = undefined;
-    /**
-    * Customer number
-    * @member {String} customernumber
-    */
+     * Customer number
+     * @member {String} customernumber
+     */
     customernumber = undefined;
+
     /**
-    * Customer number
-    * @member {String} note
-    */
+     * Customer number
+     * @member {String} note
+     */
     note = undefined;
+
     /**
-    * Creation date
-    * @member {Date} created
-    */
+     * Creation date
+     * @member {String} created
+     */
     created = undefined;
 
-
-
-
-
-
-
-
 }
-
-

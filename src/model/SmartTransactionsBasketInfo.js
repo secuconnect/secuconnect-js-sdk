@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The SmartTransactionsBasketInfo model module.
-* @module model/SmartTransactionsBasketInfo
-*/
+ * The SmartTransactionsBasketInfo model module.
+ * @module model/SmartTransactionsBasketInfo
+ */
 export default class SmartTransactionsBasketInfo {
     /**
-    * Constructs a new <code>SmartTransactionsBasketInfo</code>.
-    * @alias module:model/SmartTransactionsBasketInfo
-    * @class
-    */
+     * Constructs a new <code>SmartTransactionsBasketInfo</code>.
+     * @alias module:model/SmartTransactionsBasketInfo
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class SmartTransactionsBasketInfo {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SmartTransactionsBasketInfo();
-
             
             
             
-
             if (data.hasOwnProperty('sum')) {
                 obj['sum'] = ApiClient.convertToType(data['sum'], 'Number');
             }
@@ -56,28 +43,21 @@ export default class SmartTransactionsBasketInfo {
     }
 
     /**
-    * Sum
-    * @member {Number} sum
-    */
+     * Sum
+     * @member {Number} sum
+     */
     sum = undefined;
+
     /**
-    * Gratuity
-    * @member {Number} gratuity
-    */
+     * Gratuity
+     * @member {Number} gratuity
+     */
     gratuity = undefined;
+
     /**
-    * Currency
-    * @member {String} currency
-    */
+     * Currency
+     * @member {String} currency
+     */
     currency = undefined;
 
-
-
-
-
-
-
-
 }
-
-

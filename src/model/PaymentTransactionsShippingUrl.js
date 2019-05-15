@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The PaymentTransactionsShippingUrl model module.
-* @module model/PaymentTransactionsShippingUrl
-*/
+ * The PaymentTransactionsShippingUrl model module.
+ * @module model/PaymentTransactionsShippingUrl
+ */
 export default class PaymentTransactionsShippingUrl {
     /**
-    * Constructs a new <code>PaymentTransactionsShippingUrl</code>.
-    * @alias module:model/PaymentTransactionsShippingUrl
-    * @class
-    */
+     * Constructs a new <code>PaymentTransactionsShippingUrl</code>.
+     * @alias module:model/PaymentTransactionsShippingUrl
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class PaymentTransactionsShippingUrl {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PaymentTransactionsShippingUrl();
-
             
             
             
-
             if (data.hasOwnProperty('url')) {
                 obj['url'] = ApiClient.convertToType(data['url'], 'String');
             }
@@ -50,18 +37,9 @@ export default class PaymentTransactionsShippingUrl {
     }
 
     /**
-    * The url of the shipping information form
-    * @member {String} url
-    */
+     * The url of the shipping information form
+     * @member {String} url
+     */
     url = undefined;
 
-
-
-
-
-
-
-
 }
-
-

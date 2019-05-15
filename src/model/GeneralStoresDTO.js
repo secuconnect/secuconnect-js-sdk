@@ -3,29 +3,18 @@ import ApiClient from '../ApiClient';
 import Address from './Address';
 import OpenHours from './OpenHours';
 
-
-
-
-
 /**
-* The GeneralStoresDTO model module.
-* @module model/GeneralStoresDTO
-*/
+ * The GeneralStoresDTO model module.
+ * @module model/GeneralStoresDTO
+ */
 export default class GeneralStoresDTO {
     /**
-    * Constructs a new <code>GeneralStoresDTO</code>.
-    * @alias module:model/GeneralStoresDTO
-    * @class
-    */
+     * Constructs a new <code>GeneralStoresDTO</code>.
+     * @alias module:model/GeneralStoresDTO
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -39,11 +28,9 @@ export default class GeneralStoresDTO {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new GeneralStoresDTO();
-
             
             
             
-
             if (data.hasOwnProperty('address')) {
                 obj['address'] = Address.constructFromObject(data['address']);
             }
@@ -70,48 +57,45 @@ export default class GeneralStoresDTO {
     }
 
     /**
-    * New address
-    * @member {module:model/Address} address
-    */
+     * New address
+     * @member {module:model/Address} address
+     */
     address = undefined;
+
     /**
-    * New facebook id
-    * @member {String} facebook_id
-    */
+     * New facebook id
+     * @member {String} facebook_id
+     */
     facebook_id = undefined;
+
     /**
-    * New phone number
-    * @member {String} phone
-    */
+     * New phone number
+     * @member {String} phone
+     */
     phone = undefined;
+
     /**
-    * New url to general store website
-    * @member {String} url_website
-    */
+     * New url to general store website
+     * @member {String} url_website
+     */
     url_website = undefined;
+
     /**
-    * New main photo
-    * @member {String} photo_main
-    */
+     * New main photo
+     * @member {String} photo_main
+     */
     photo_main = undefined;
+
     /**
-    * New photos
-    * @member {Array.<String>} photo
-    */
+     * New photos
+     * @member {Array.<String>} photo
+     */
     photo = undefined;
+
     /**
-    * Open hours in every day
-    * @member {Array.<module:model/OpenHours>} open_hours
-    */
+     * Open hours in every day
+     * @member {Array.<module:model/OpenHours>} open_hours
+     */
     open_hours = undefined;
 
-
-
-
-
-
-
-
 }
-
-

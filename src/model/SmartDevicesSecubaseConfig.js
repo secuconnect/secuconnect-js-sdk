@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import SmartDevicesSecubaseConfigLogging from './SmartDevicesSecubaseConfigLogging';
 
-
-
-
-
 /**
-* The SmartDevicesSecubaseConfig model module.
-* @module model/SmartDevicesSecubaseConfig
-*/
+ * The SmartDevicesSecubaseConfig model module.
+ * @module model/SmartDevicesSecubaseConfig
+ */
 export default class SmartDevicesSecubaseConfig {
     /**
-    * Constructs a new <code>SmartDevicesSecubaseConfig</code>.
-    * @alias module:model/SmartDevicesSecubaseConfig
-    * @class
-    */
+     * Constructs a new <code>SmartDevicesSecubaseConfig</code>.
+     * @alias module:model/SmartDevicesSecubaseConfig
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class SmartDevicesSecubaseConfig {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SmartDevicesSecubaseConfig();
-
             
             
             
-
             if (data.hasOwnProperty('apps')) {
                 obj['apps'] = ApiClient.convertToType(data['apps'], ['String']);
             }
@@ -54,23 +41,15 @@ export default class SmartDevicesSecubaseConfig {
     }
 
     /**
-    * Apps
-    * @member {Array.<String>} apps
-    */
+     * Apps
+     * @member {Array.<String>} apps
+     */
     apps = undefined;
+
     /**
-    * Logging
-    * @member {module:model/SmartDevicesSecubaseConfigLogging} logging
-    */
+     * Logging
+     * @member {module:model/SmartDevicesSecubaseConfigLogging} logging
+     */
     logging = undefined;
 
-
-
-
-
-
-
-
 }
-
-

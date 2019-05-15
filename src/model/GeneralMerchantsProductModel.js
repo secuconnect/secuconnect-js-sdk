@@ -8,29 +8,18 @@ import GeneralMerchantsUser from './GeneralMerchantsUser';
 import InvitedBy from './InvitedBy';
 import ParentModel from './ParentModel';
 
-
-
-
-
 /**
-* The GeneralMerchantsProductModel model module.
-* @module model/GeneralMerchantsProductModel
-*/
+ * The GeneralMerchantsProductModel model module.
+ * @module model/GeneralMerchantsProductModel
+ */
 export default class GeneralMerchantsProductModel {
     /**
-    * Constructs a new <code>GeneralMerchantsProductModel</code>.
-    * @alias module:model/GeneralMerchantsProductModel
-    * @class
-    */
+     * Constructs a new <code>GeneralMerchantsProductModel</code>.
+     * @alias module:model/GeneralMerchantsProductModel
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -44,11 +33,9 @@ export default class GeneralMerchantsProductModel {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new GeneralMerchantsProductModel();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -82,73 +69,83 @@ export default class GeneralMerchantsProductModel {
             if (data.hasOwnProperty('urls')) {
                 obj['urls'] = GeneralMerchantsUrls.constructFromObject(data['urls']);
             }
+            if (data.hasOwnProperty('store_name')) {
+                obj['store_name'] = ApiClient.convertToType(data['store_name'], 'String');
+            }
         }
         return obj;
     }
 
     /**
-    * Object of general merchant
-    * @member {String} object
-    */
+     * Object of general merchant
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of general merchant
-    * @member {String} id
-    */
+     * Id of general merchant
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Old id of general merchant
-    * @member {String} id_old
-    */
+     * Old id of general merchant
+     * @member {String} id_old
+     */
     id_old = undefined;
+
     /**
-    * Type of general merchant
-    * @member {String} type
-    */
+     * Type of general merchant
+     * @member {String} type
+     */
     type = undefined;
+
     /**
-    * General merchant user
-    * @member {module:model/GeneralMerchantsUser} user
-    */
+     * General merchant user
+     * @member {module:model/GeneralMerchantsUser} user
+     */
     user = undefined;
+
     /**
-    * Parent of general merchant user
-    * @member {module:model/ParentModel} parent
-    */
+     * Parent of general merchant user
+     * @member {module:model/ParentModel} parent
+     */
     parent = undefined;
+
     /**
-    * Assigned by
-    * @member {Array.<module:model/AssignedBy>} assigned_by
-    */
+     * Assigned by
+     * @member {Array.<module:model/AssignedBy>} assigned_by
+     */
     assigned_by = undefined;
+
     /**
-    * Invited by
-    * @member {Array.<module:model/InvitedBy>} invited_by
-    */
+     * Invited by
+     * @member {Array.<module:model/InvitedBy>} invited_by
+     */
     invited_by = undefined;
+
     /**
-    * Legal details
-    * @member {module:model/GeneralMerchantsLegalDetails} legal_details
-    */
+     * Legal details
+     * @member {module:model/GeneralMerchantsLegalDetails} legal_details
+     */
     legal_details = undefined;
+
     /**
-    * Checkout options
-    * @member {module:model/GeneralMerchantsCheckoutOptions} checkout_options
-    */
+     * Checkout options
+     * @member {module:model/GeneralMerchantsCheckoutOptions} checkout_options
+     */
     checkout_options = undefined;
+
     /**
-    * Urls
-    * @member {module:model/GeneralMerchantsUrls} urls
-    */
+     * Urls
+     * @member {module:model/GeneralMerchantsUrls} urls
+     */
     urls = undefined;
 
-
-
-
-
-
-
+    /**
+     * store name
+     * @member {String} store_name
+     */
+    store_name = undefined;
 
 }
-
-

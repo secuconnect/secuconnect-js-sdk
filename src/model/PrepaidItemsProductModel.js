@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import ItemGroup from './ItemGroup';
 
-
-
-
-
 /**
-* The PrepaidItemsProductModel model module.
-* @module model/PrepaidItemsProductModel
-*/
+ * The PrepaidItemsProductModel model module.
+ * @module model/PrepaidItemsProductModel
+ */
 export default class PrepaidItemsProductModel {
     /**
-    * Constructs a new <code>PrepaidItemsProductModel</code>.
-    * @alias module:model/PrepaidItemsProductModel
-    * @class
-    */
+     * Constructs a new <code>PrepaidItemsProductModel</code>.
+     * @alias module:model/PrepaidItemsProductModel
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class PrepaidItemsProductModel {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PrepaidItemsProductModel();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -67,9 +54,6 @@ export default class PrepaidItemsProductModel {
             if (data.hasOwnProperty('vtc_id')) {
                 obj['vtc_id'] = ApiClient.convertToType(data['vtc_id'], 'String');
             }
-            if (data.hasOwnProperty('ean_intern')) {
-                obj['ean_intern'] = ApiClient.convertToType(data['ean_intern'], 'String');
-            }
             if (data.hasOwnProperty('itemgroup')) {
                 obj['itemgroup'] = ItemGroup.constructFromObject(data['itemgroup']);
             }
@@ -90,83 +74,81 @@ export default class PrepaidItemsProductModel {
     }
 
     /**
-    * Object of prepaid item
-    * @member {String} object
-    */
+     * Object of prepaid item
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of prepaid item
-    * @member {String} id
-    */
+     * Id of prepaid item
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Retail price
-    * @member {Number} retail_price
-    */
+     * Retail price
+     * @member {Number} retail_price
+     */
     retail_price = undefined;
+
     /**
-    * Currency
-    * @member {String} currency
-    */
+     * Currency
+     * @member {String} currency
+     */
     currency = undefined;
+
     /**
-    * Description
-    * @member {String} description
-    */
+     * Description
+     * @member {String} description
+     */
     description = undefined;
+
     /**
-    * Logo
-    * @member {String} logo
-    */
+     * Logo
+     * @member {String} logo
+     */
     logo = undefined;
+
     /**
-    * Commission
-    * @member {Number} commission
-    */
+     * Commission
+     * @member {Number} commission
+     */
     commission = undefined;
+
     /**
-    * Vtc id
-    * @member {String} vtc_id
-    */
+     * Vtc id
+     * @member {String} vtc_id
+     */
     vtc_id = undefined;
+
     /**
-    * Ean intern
-    * @member {String} ean_intern
-    */
-    ean_intern = undefined;
-    /**
-    * Item group
-    * @member {module:model/ItemGroup} itemgroup
-    */
+     * Item group
+     * @member {module:model/ItemGroup} itemgroup
+     */
     itemgroup = undefined;
+
     /**
-    * Stock limit max
-    * @member {Number} stock_limit_max
-    */
+     * Stock limit max
+     * @member {Number} stock_limit_max
+     */
     stock_limit_max = undefined;
+
     /**
-    * Stock limit min
-    * @member {Number} stock_limit_min
-    */
+     * Stock limit min
+     * @member {Number} stock_limit_min
+     */
     stock_limit_min = undefined;
+
     /**
-    * Taxable
-    * @member {Boolean} taxable
-    */
+     * Taxable
+     * @member {Boolean} taxable
+     */
     taxable = undefined;
+
     /**
-    * Type
-    * @member {String} type
-    */
+     * Type
+     * @member {String} type
+     */
     type = undefined;
 
-
-
-
-
-
-
-
 }
-
-

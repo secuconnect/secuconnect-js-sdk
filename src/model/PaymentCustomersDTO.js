@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import Contact from './Contact';
 
-
-
-
-
 /**
-* The PaymentCustomersDTO model module.
-* @module model/PaymentCustomersDTO
-*/
+ * The PaymentCustomersDTO model module.
+ * @module model/PaymentCustomersDTO
+ */
 export default class PaymentCustomersDTO {
     /**
-    * Constructs a new <code>PaymentCustomersDTO</code>.
-    * @alias module:model/PaymentCustomersDTO
-    * @class
-    */
+     * Constructs a new <code>PaymentCustomersDTO</code>.
+     * @alias module:model/PaymentCustomersDTO
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class PaymentCustomersDTO {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PaymentCustomersDTO();
-
             
             
             
-
             if (data.hasOwnProperty('contact')) {
                 obj['contact'] = Contact.constructFromObject(data['contact']);
             }
@@ -51,18 +38,9 @@ export default class PaymentCustomersDTO {
     }
 
     /**
-    * PaymentCustomersDTO
-    * @member {module:model/Contact} contact
-    */
+     * PaymentCustomersDTO
+     * @member {module:model/Contact} contact
+     */
     contact = undefined;
 
-
-
-
-
-
-
-
 }
-
-

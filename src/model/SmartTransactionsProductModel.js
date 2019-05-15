@@ -1,38 +1,30 @@
 
 import ApiClient from '../ApiClient';
-import LoyaltyCustomersProductModel from './LoyaltyCustomersProductModel';
+import PaymentCustomersProductModel from './PaymentCustomersProductModel';
+import PaymentTransactionsProductModel from './PaymentTransactionsProductModel';
 import ProductInstanceUID from './ProductInstanceUID';
 import SmartTransactionsBasket from './SmartTransactionsBasket';
 import SmartTransactionsBasketInfo from './SmartTransactionsBasketInfo';
 import SmartTransactionsCheckin from './SmartTransactionsCheckin';
+import SmartTransactionsCheckoutLinks from './SmartTransactionsCheckoutLinks';
 import SmartTransactionsIdent from './SmartTransactionsIdent';
 import SmartTransactionsMerchant from './SmartTransactionsMerchant';
 import SmartTransactionsPickupOptions from './SmartTransactionsPickupOptions';
 import SmartTransactionsReceipt from './SmartTransactionsReceipt';
-
-
-
-
+import SmartTransactionsShipmentDetails from './SmartTransactionsShipmentDetails';
 
 /**
-* The SmartTransactionsProductModel model module.
-* @module model/SmartTransactionsProductModel
-*/
+ * The SmartTransactionsProductModel model module.
+ * @module model/SmartTransactionsProductModel
+ */
 export default class SmartTransactionsProductModel {
     /**
-    * Constructs a new <code>SmartTransactionsProductModel</code>.
-    * @alias module:model/SmartTransactionsProductModel
-    * @class
-    */
+     * Constructs a new <code>SmartTransactionsProductModel</code>.
+     * @alias module:model/SmartTransactionsProductModel
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -46,11 +38,9 @@ export default class SmartTransactionsProductModel {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SmartTransactionsProductModel();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -66,11 +56,17 @@ export default class SmartTransactionsProductModel {
             if (data.hasOwnProperty('contract')) {
                 obj['contract'] = ProductInstanceUID.constructFromObject(data['contract']);
             }
-            if (data.hasOwnProperty('marketplace_contract')) {
-                obj['marketplace_contract'] = ProductInstanceUID.constructFromObject(data['marketplace_contract']);
+            if (data.hasOwnProperty('provider_contract')) {
+                obj['provider_contract'] = ProductInstanceUID.constructFromObject(data['provider_contract']);
             }
             if (data.hasOwnProperty('customer')) {
-                obj['customer'] = LoyaltyCustomersProductModel.constructFromObject(data['customer']);
+                obj['customer'] = PaymentCustomersProductModel.constructFromObject(data['customer']);
+            }
+            if (data.hasOwnProperty('shipping_address')) {
+                obj['shipping_address'] = PaymentCustomersProductModel.constructFromObject(data['shipping_address']);
+            }
+            if (data.hasOwnProperty('container')) {
+                obj['container'] = ProductInstanceUID.constructFromObject(data['container']);
             }
             if (data.hasOwnProperty('checkin')) {
                 obj['checkin'] = SmartTransactionsCheckin.constructFromObject(data['checkin']);
@@ -91,10 +87,10 @@ export default class SmartTransactionsProductModel {
                 obj['device_destination'] = ProductInstanceUID.constructFromObject(data['device_destination']);
             }
             if (data.hasOwnProperty('created')) {
-                obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+                obj['created'] = ApiClient.convertToType(data['created'], 'String');
             }
             if (data.hasOwnProperty('updated')) {
-                obj['updated'] = ApiClient.convertToType(data['updated'], 'Date');
+                obj['updated'] = ApiClient.convertToType(data['updated'], 'String');
             }
             if (data.hasOwnProperty('receipt_number')) {
                 obj['receipt_number'] = ApiClient.convertToType(data['receipt_number'], 'Number');
@@ -103,7 +99,7 @@ export default class SmartTransactionsProductModel {
                 obj['receipt'] = ApiClient.convertToType(data['receipt'], [SmartTransactionsReceipt]);
             }
             if (data.hasOwnProperty('receipt_merchant')) {
-                obj['receipt_merchant'] = ApiClient.convertToType(data['receipt_merchant'], 'String');
+                obj['receipt_merchant'] = ApiClient.convertToType(data['receipt_merchant'], [SmartTransactionsReceipt]);
             }
             if (data.hasOwnProperty('receipt_merchant_print')) {
                 obj['receipt_merchant_print'] = ApiClient.convertToType(data['receipt_merchant_print'], 'Boolean');
@@ -135,6 +131,9 @@ export default class SmartTransactionsProductModel {
             if (data.hasOwnProperty('pickup_options')) {
                 obj['pickup_options'] = SmartTransactionsPickupOptions.constructFromObject(data['pickup_options']);
             }
+            if (data.hasOwnProperty('shipment_details')) {
+                obj['shipment_details'] = SmartTransactionsShipmentDetails.constructFromObject(data['shipment_details']);
+            }
             if (data.hasOwnProperty('product')) {
                 obj['product'] = ApiClient.convertToType(data['product'], 'String');
             }
@@ -145,188 +144,247 @@ export default class SmartTransactionsProductModel {
                 obj['payment_method'] = ApiClient.convertToType(data['payment_method'], 'String');
             }
             if (data.hasOwnProperty('transactions')) {
-                obj['transactions'] = ProductInstanceUID.constructFromObject(data['transactions']);
+                obj['transactions'] = ApiClient.convertToType(data['transactions'], [PaymentTransactionsProductModel]);
             }
             if (data.hasOwnProperty('last_visited_page')) {
                 obj['last_visited_page'] = ApiClient.convertToType(data['last_visited_page'], 'String');
+            }
+            if (data.hasOwnProperty('is_demo')) {
+                obj['is_demo'] = ApiClient.convertToType(data['is_demo'], 'Boolean');
+            }
+            if (data.hasOwnProperty('checkout_links')) {
+                obj['checkout_links'] = SmartTransactionsCheckoutLinks.constructFromObject(data['checkout_links']);
             }
         }
         return obj;
     }
 
     /**
-    * Object of smart transaction
-    * @member {String} object
-    */
+     * Object of smart transaction
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of smart transaction
-    * @member {String} id
-    */
+     * Id of smart transaction
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Status of smart transaction
-    * @member {String} status
-    */
+     * Status of smart transaction
+     * @member {String} status
+     */
     status = undefined;
+
     /**
-    * Merchant
-    * @member {module:model/SmartTransactionsMerchant} merchant
-    */
+     * Merchant
+     * @member {module:model/SmartTransactionsMerchant} merchant
+     */
     merchant = undefined;
+
     /**
-    * Contract
-    * @member {module:model/ProductInstanceUID} contract
-    */
+     * Contract
+     * @member {module:model/ProductInstanceUID} contract
+     */
     contract = undefined;
+
     /**
-    * Marketplace contract
-    * @member {module:model/ProductInstanceUID} marketplace_contract
-    */
-    marketplace_contract = undefined;
+     * Provider contract
+     * @member {module:model/ProductInstanceUID} provider_contract
+     */
+    provider_contract = undefined;
+
     /**
-    * Customer
-    * @member {module:model/LoyaltyCustomersProductModel} customer
-    */
+     * Customer
+     * @member {module:model/PaymentCustomersProductModel} customer
+     */
     customer = undefined;
+
     /**
-    * Check in
-    * @member {module:model/SmartTransactionsCheckin} checkin
-    */
+     * Customers delivery address
+     * @member {module:model/PaymentCustomersProductModel} shipping_address
+     */
+    shipping_address = undefined;
+
+    /**
+     * Payment Container
+     * @member {module:model/ProductInstanceUID} container
+     */
+    container = undefined;
+
+    /**
+     * Check in
+     * @member {module:model/SmartTransactionsCheckin} checkin
+     */
     checkin = undefined;
+
     /**
-    * Merchant ref
-    * @member {String} merchantRef
-    */
+     * Merchant reference
+     * @member {String} merchantRef
+     */
     merchantRef = undefined;
+
     /**
-    * Transaction ref
-    * @member {String} transactionRef
-    */
+     * Transaction reference
+     * @member {String} transactionRef
+     */
     transactionRef = undefined;
+
     /**
-    * Store
-    * @member {module:model/ProductInstanceUID} store
-    */
+     * Store
+     * @member {module:model/ProductInstanceUID} store
+     */
     store = undefined;
+
     /**
-    * Device source
-    * @member {module:model/ProductInstanceUID} device_source
-    */
+     * Device source
+     * @member {module:model/ProductInstanceUID} device_source
+     */
     device_source = undefined;
+
     /**
-    * Device destination
-    * @member {module:model/ProductInstanceUID} device_destination
-    */
+     * Device destination
+     * @member {module:model/ProductInstanceUID} device_destination
+     */
     device_destination = undefined;
+
     /**
-    * Created at date
-    * @member {Date} created
-    */
+     * Created at date
+     * @member {String} created
+     */
     created = undefined;
+
     /**
-    * Updated at date
-    * @member {Date} updated
-    */
+     * Updated at date
+     * @member {String} updated
+     */
     updated = undefined;
+
     /**
-    * Receipt number
-    * @member {Number} receipt_number
-    */
+     * Receipt number
+     * @member {Number} receipt_number
+     */
     receipt_number = undefined;
+
     /**
-    * Receipt
-    * @member {Array.<module:model/SmartTransactionsReceipt>} receipt
-    */
+     * Receipt
+     * @member {Array.<module:model/SmartTransactionsReceipt>} receipt
+     */
     receipt = undefined;
+
     /**
-    * Receipt merchant
-    * @member {String} receipt_merchant
-    */
+     * Receipt merchant
+     * @member {Array.<module:model/SmartTransactionsReceipt>} receipt_merchant
+     */
     receipt_merchant = undefined;
+
     /**
-    * Receipt merchant print
-    * @member {Boolean} receipt_merchant_print
-    */
+     * Receipt merchant print
+     * @member {Boolean} receipt_merchant_print
+     */
     receipt_merchant_print = undefined;
+
     /**
-    * Basket info
-    * @member {module:model/SmartTransactionsBasketInfo} basket_info
-    */
+     * Basket info
+     * @member {module:model/SmartTransactionsBasketInfo} basket_info
+     */
     basket_info = undefined;
+
     /**
-    * Basket
-    * @member {module:model/SmartTransactionsBasket} basket
-    */
+     * Basket
+     * @member {module:model/SmartTransactionsBasket} basket
+     */
     basket = undefined;
+
     /**
-    * Idents
-    * @member {Array.<module:model/SmartTransactionsIdent>} idents
-    */
+     * Idents
+     * @member {Array.<module:model/SmartTransactionsIdent>} idents
+     */
     idents = undefined;
+
     /**
-    * Tax rate
-    * @member {Number} tax_rate
-    */
+     * Tax rate
+     * @member {Number} tax_rate
+     */
     tax_rate = undefined;
+
     /**
-    * Tax amount
-    * @member {Number} tax_amount
-    */
+     * Tax amount
+     * @member {Number} tax_amount
+     */
     tax_amount = undefined;
+
     /**
-    * Cashier
-    * @member {String} cashier
-    */
+     * Cashier
+     * @member {String} cashier
+     */
     cashier = undefined;
+
     /**
-    * Market
-    * @member {String} market
-    */
+     * Market
+     * @member {String} market
+     */
     market = undefined;
+
     /**
-    * Order option
-    * @member {String} order_option
-    */
+     * Order option
+     * @member {String} order_option
+     */
     order_option = undefined;
+
     /**
-    * Pickup options
-    * @member {module:model/SmartTransactionsPickupOptions} pickup_options
-    */
+     * Pickup options
+     * @member {module:model/SmartTransactionsPickupOptions} pickup_options
+     */
     pickup_options = undefined;
+
     /**
-    * Product
-    * @member {String} product
-    */
+     * Shipment details
+     * @member {module:model/SmartTransactionsShipmentDetails} shipment_details
+     */
+    shipment_details = undefined;
+
+    /**
+     * Product
+     * @member {String} product
+     */
     product = undefined;
+
     /**
-    * Transaction id
-    * @member {Number} trans_id
-    */
+     * Transaction id
+     * @member {Number} trans_id
+     */
     trans_id = undefined;
+
     /**
-    * Payment method
-    * @member {String} payment_method
-    */
+     * Payment method
+     * @member {String} payment_method
+     */
     payment_method = undefined;
+
     /**
-    * Transactions
-    * @member {module:model/ProductInstanceUID} transactions
-    */
+     * Payment Transactions
+     * @member {Array.<module:model/PaymentTransactionsProductModel>} transactions
+     */
     transactions = undefined;
+
     /**
-    * Last visited page
-    * @member {String} last_visited_page
-    */
+     * Last visited page
+     * @member {String} last_visited_page
+     */
     last_visited_page = undefined;
 
+    /**
+     * Demo payment
+     * @member {Boolean} is_demo
+     */
+    is_demo = undefined;
 
-
-
-
-
-
+    /**
+     * Checkout Links
+     * @member {module:model/SmartTransactionsCheckoutLinks} checkout_links
+     */
+    checkout_links = undefined;
 
 }
-
-

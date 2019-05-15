@@ -2,30 +2,19 @@
 import ApiClient from '../ApiClient';
 import DayTime from './DayTime';
 
-
-
-
-
 /**
-* The OpenHours model module.
-* @module model/OpenHours
-*/
+ * The OpenHours model module.
+ * @module model/OpenHours
+ */
 export default class OpenHours {
     /**
-    * Constructs a new <code>OpenHours</code>.
-    * Open hours
-    * @alias module:model/OpenHours
-    * @class
-    */
+     * Constructs a new <code>OpenHours</code>.
+     * Open hours
+     * @alias module:model/OpenHours
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -39,11 +28,9 @@ export default class OpenHours {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new OpenHours();
-
             
             
             
-
             if (data.hasOwnProperty('open')) {
                 obj['open'] = DayTime.constructFromObject(data['open']);
             }
@@ -55,23 +42,15 @@ export default class OpenHours {
     }
 
     /**
-    * Open
-    * @member {module:model/DayTime} open
-    */
+     * Open
+     * @member {module:model/DayTime} open
+     */
     open = undefined;
+
     /**
-    * Close
-    * @member {module:model/DayTime} close
-    */
+     * Close
+     * @member {module:model/DayTime} close
+     */
     close = undefined;
 
-
-
-
-
-
-
-
 }
-
-

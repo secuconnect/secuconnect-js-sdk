@@ -1,30 +1,19 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The PaymentContainersDTOPrivate model module.
-* @module model/PaymentContainersDTOPrivate
-*/
+ * The PaymentContainersDTOPrivate model module.
+ * @module model/PaymentContainersDTOPrivate
+ */
 export default class PaymentContainersDTOPrivate {
     /**
-    * Constructs a new <code>PaymentContainersDTOPrivate</code>.
-    * 
-    * @alias module:model/PaymentContainersDTOPrivate
-    * @class
-    */
+     * Constructs a new <code>PaymentContainersDTOPrivate</code>.
+     * 
+     * @alias module:model/PaymentContainersDTOPrivate
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class PaymentContainersDTOPrivate {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PaymentContainersDTOPrivate();
-
             
             
             
-
             if (data.hasOwnProperty('owner')) {
                 obj['owner'] = ApiClient.convertToType(data['owner'], 'String');
             }
@@ -57,28 +44,21 @@ export default class PaymentContainersDTOPrivate {
     }
 
     /**
-    * PaymentContainersDTO
-    * @member {String} owner
-    */
+     * PaymentContainersDTO
+     * @member {String} owner
+     */
     owner = undefined;
+
     /**
-    * PaymentContainersDTO
-    * @member {String} iban
-    */
+     * PaymentContainersDTO
+     * @member {String} iban
+     */
     iban = undefined;
+
     /**
-    * PaymentContainersDTO
-    * @member {String} bic
-    */
+     * PaymentContainersDTO
+     * @member {String} bic
+     */
     bic = undefined;
 
-
-
-
-
-
-
-
 }
-
-

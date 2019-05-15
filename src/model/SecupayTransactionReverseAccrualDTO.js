@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The SecupayTransactionReverseAccrualDTO model module.
-* @module model/SecupayTransactionReverseAccrualDTO
-*/
+ * The SecupayTransactionReverseAccrualDTO model module.
+ * @module model/SecupayTransactionReverseAccrualDTO
+ */
 export default class SecupayTransactionReverseAccrualDTO {
     /**
-    * Constructs a new <code>SecupayTransactionReverseAccrualDTO</code>.
-    * @alias module:model/SecupayTransactionReverseAccrualDTO
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionReverseAccrualDTO</code>.
+     * @alias module:model/SecupayTransactionReverseAccrualDTO
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class SecupayTransactionReverseAccrualDTO {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SecupayTransactionReverseAccrualDTO();
-
             
             
             
-
             if (data.hasOwnProperty('accrual')) {
                 obj['accrual'] = ApiClient.convertToType(data['accrual'], 'Boolean');
             }
@@ -50,19 +37,10 @@ export default class SecupayTransactionReverseAccrualDTO {
     }
 
     /**
-    * Indicates whether the payment is locked for pay-out (TRUE) or not (FALSE).
-    * @member {Boolean} accrual
-    * @default false
-    */
+     * Indicates whether the payment is locked for pay-out (TRUE) or not (FALSE).
+     * @member {Boolean} accrual
+     * @default false
+     */
     accrual = false;
 
-
-
-
-
-
-
-
 }
-
-

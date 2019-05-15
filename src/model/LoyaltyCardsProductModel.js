@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import LoyaltyCardsDTOAccount from './LoyaltyCardsDTOAccount';
 
-
-
-
-
 /**
-* The LoyaltyCardsProductModel model module.
-* @module model/LoyaltyCardsProductModel
-*/
+ * The LoyaltyCardsProductModel model module.
+ * @module model/LoyaltyCardsProductModel
+ */
 export default class LoyaltyCardsProductModel {
     /**
-    * Constructs a new <code>LoyaltyCardsProductModel</code>.
-    * @alias module:model/LoyaltyCardsProductModel
-    * @class
-    */
+     * Constructs a new <code>LoyaltyCardsProductModel</code>.
+     * @alias module:model/LoyaltyCardsProductModel
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class LoyaltyCardsProductModel {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyCardsProductModel();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -56,45 +43,40 @@ export default class LoyaltyCardsProductModel {
                 obj['cardnumber'] = ApiClient.convertToType(data['cardnumber'], 'String');
             }
             if (data.hasOwnProperty('created')) {
-                obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+                obj['created'] = ApiClient.convertToType(data['created'], 'String');
             }
         }
         return obj;
     }
 
     /**
-    * Object of loyalty card
-    * @member {String} object
-    */
+     * Object of loyalty card
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of loyalty card
-    * @member {String} id
-    */
+     * Id of loyalty card
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Loyalty card account
-    * @member {module:model/LoyaltyCardsDTOAccount} account
-    */
+     * Loyalty card account
+     * @member {module:model/LoyaltyCardsDTOAccount} account
+     */
     account = undefined;
+
     /**
-    * Loyalty card number
-    * @member {String} cardnumber
-    */
+     * Loyalty card number
+     * @member {String} cardnumber
+     */
     cardnumber = undefined;
+
     /**
-    * Creation date
-    * @member {Date} created
-    */
+     * Creation date
+     * @member {String} created
+     */
     created = undefined;
 
-
-
-
-
-
-
-
 }
-
-

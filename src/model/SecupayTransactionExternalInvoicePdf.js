@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import SecupayTransactionExternalInvoicePdfDocument from './SecupayTransactionExternalInvoicePdfDocument';
 
-
-
-
-
 /**
-* The SecupayTransactionExternalInvoicePdf model module.
-* @module model/SecupayTransactionExternalInvoicePdf
-*/
+ * The SecupayTransactionExternalInvoicePdf model module.
+ * @module model/SecupayTransactionExternalInvoicePdf
+ */
 export default class SecupayTransactionExternalInvoicePdf {
     /**
-    * Constructs a new <code>SecupayTransactionExternalInvoicePdf</code>.
-    * @alias module:model/SecupayTransactionExternalInvoicePdf
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionExternalInvoicePdf</code>.
+     * @alias module:model/SecupayTransactionExternalInvoicePdf
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class SecupayTransactionExternalInvoicePdf {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SecupayTransactionExternalInvoicePdf();
-
             
             
             
-
             if (data.hasOwnProperty('document')) {
                 obj['document'] = SecupayTransactionExternalInvoicePdfDocument.constructFromObject(data['document']);
             }
@@ -51,17 +38,8 @@ export default class SecupayTransactionExternalInvoicePdf {
     }
 
     /**
-    * @member {module:model/SecupayTransactionExternalInvoicePdfDocument} document
-    */
+     * @member {module:model/SecupayTransactionExternalInvoicePdfDocument} document
+     */
     document = undefined;
 
-
-
-
-
-
-
-
 }
-
-

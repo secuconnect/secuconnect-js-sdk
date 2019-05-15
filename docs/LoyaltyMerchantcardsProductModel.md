@@ -18,8 +18,8 @@ Name | Type | Description | Notes
 **cashBalance** | **Number** | Loyalty merchant card cash balance | [optional] 
 **stockStatus** | **String** | Loyalty merchant card stock status | [optional] 
 **lockStatus** | **String** | Loyalty merchant card lock status | [optional] 
-**lastUsage** | **Date** | Loyalty merchant card last usage | [optional] 
-**lastCharge** | **Date** | Loyalty merchant card last charge | [optional] 
+**lastUsage** | **String** | Loyalty merchant card last usage | [optional] 
+**lastCharge** | **String** | Loyalty merchant card last charge | [optional] 
 **isBaseCard** | **Boolean** | Information whether loyalty merchant card is base card | [optional] 
 **passcode** | **Number** | Loyalty merchant card passcode | [optional] 
 

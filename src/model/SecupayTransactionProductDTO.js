@@ -2,34 +2,23 @@
 import ApiClient from '../ApiClient';
 import PaymentCustomersProductModel from './PaymentCustomersProductModel';
 import SecupayBasketItem from './SecupayBasketItem';
+import SecupayRedirectUrl from './SecupayRedirectUrl';
 import SecupayTransactionProductDTOExperience from './SecupayTransactionProductDTOExperience';
 import SecupayTransactionProductDTOOptData from './SecupayTransactionProductDTOOptData';
-import SecupayTransactionProductDTORedirectUrl from './SecupayTransactionProductDTORedirectUrl';
 import SecupayTransactionProductDTOSubscription from './SecupayTransactionProductDTOSubscription';
 
-
-
-
-
 /**
-* The SecupayTransactionProductDTO model module.
-* @module model/SecupayTransactionProductDTO
-*/
+ * The SecupayTransactionProductDTO model module.
+ * @module model/SecupayTransactionProductDTO
+ */
 export default class SecupayTransactionProductDTO {
     /**
-    * Constructs a new <code>SecupayTransactionProductDTO</code>.
-    * @alias module:model/SecupayTransactionProductDTO
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionProductDTO</code>.
+     * @alias module:model/SecupayTransactionProductDTO
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -43,11 +32,9 @@ export default class SecupayTransactionProductDTO {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SecupayTransactionProductDTO();
-
             
             
             
-
             if (data.hasOwnProperty('amount')) {
                 obj['amount'] = ApiClient.convertToType(data['amount'], 'Number');
             }
@@ -73,7 +60,7 @@ export default class SecupayTransactionProductDTO {
                 obj['customer'] = PaymentCustomersProductModel.constructFromObject(data['customer']);
             }
             if (data.hasOwnProperty('redirect_url')) {
-                obj['redirect_url'] = SecupayTransactionProductDTORedirectUrl.constructFromObject(data['redirect_url']);
+                obj['redirect_url'] = SecupayRedirectUrl.constructFromObject(data['redirect_url']);
             }
             if (data.hasOwnProperty('contract')) {
                 obj['contract'] = ApiClient.convertToType(data['contract'], 'String');
@@ -98,84 +85,90 @@ export default class SecupayTransactionProductDTO {
     }
 
     /**
-    * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
-    * @member {Number} amount
-    */
+     * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
+     * @member {Number} amount
+     */
     amount = undefined;
+
     /**
-    * ISO 4217 code of currency, eg EUR for Euro.
-    * @member {String} currency
-    */
+     * ISO 4217 code of currency, eg EUR for Euro.
+     * @member {String} currency
+     */
     currency = undefined;
+
     /**
-    * The purpose of the payment. This is the later assignment of the payment is for example on the account statement of the buyer.
-    * @member {String} purpose
-    */
+     * The purpose of the payment. This is the later assignment of the payment is for example on the account statement of the buyer.
+     * @member {String} purpose
+     */
     purpose = undefined;
+
     /**
-    * Specifying an order number. Depending on the contract setting, this must be unique for each payment.
-    * @member {String} order_id
-    */
+     * Specifying an order number. Depending on the contract setting, this must be unique for each payment.
+     * @member {String} order_id
+     */
     order_id = undefined;
+
     /**
-    * A list of items that are being purchased.
-    * @member {Array.<module:model/SecupayBasketItem>} basket
-    */
+     * A list of items that are being purchased.
+     * @member {Array.<module:model/SecupayBasketItem>} basket
+     */
     basket = undefined;
+
     /**
-    * Indicates whether the payment is locked for pay-out (TRUE) or not (FALSE). Standard value here is FALSE.
-    * @member {Boolean} accrual
-    */
+     * Indicates whether the payment is locked for pay-out (TRUE) or not (FALSE). Standard value here is FALSE.
+     * @member {Boolean} accrual
+     */
     accrual = undefined;
+
     /**
-    * Specifies whether a pre-authorization (\"authorization\") or instant payment (\"sale\") is to be performed. Standard value here is \"sale\". The collection of the pre-authorized payment is made with the \"capture\" command.
-    * @member {String} payment_action
-    */
+     * Specifies whether a pre-authorization (\"authorization\") or instant payment (\"sale\") is to be performed. Standard value here is \"sale\". The collection of the pre-authorized payment is made with the \"capture\" command.
+     * @member {String} payment_action
+     */
     payment_action = undefined;
+
     /**
-    * The customer object
-    * @member {module:model/PaymentCustomersProductModel} customer
-    */
+     * The customer object
+     * @member {module:model/PaymentCustomersProductModel} customer
+     */
     customer = undefined;
+
     /**
-    * @member {module:model/SecupayTransactionProductDTORedirectUrl} redirect_url
-    */
+     * A list of redirect urls used for the payment checkout page
+     * @member {module:model/SecupayRedirectUrl} redirect_url
+     */
     redirect_url = undefined;
+
     /**
-    * Contract id
-    * @member {String} contract
-    */
+     * Contract id
+     * @member {String} contract
+     */
     contract = undefined;
+
     /**
-    * Container id
-    * @member {String} container
-    */
+     * Container id
+     * @member {String} container
+     */
     container = undefined;
+
     /**
-    * @member {module:model/SecupayTransactionProductDTOOptData} opt_data
-    */
+     * @member {module:model/SecupayTransactionProductDTOOptData} opt_data
+     */
     opt_data = undefined;
+
     /**
-    * @member {module:model/SecupayTransactionProductDTOSubscription} subscription
-    */
+     * @member {module:model/SecupayTransactionProductDTOSubscription} subscription
+     */
     subscription = undefined;
+
     /**
-    * Demo
-    * @member {Boolean} demo
-    */
+     * Demo
+     * @member {Boolean} demo
+     */
     demo = undefined;
+
     /**
-    * @member {module:model/SecupayTransactionProductDTOExperience} experience
-    */
+     * @member {module:model/SecupayTransactionProductDTOExperience} experience
+     */
     experience = undefined;
 
-
-
-
-
-
-
-
 }
-
-

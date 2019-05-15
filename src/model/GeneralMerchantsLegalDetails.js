@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The GeneralMerchantsLegalDetails model module.
-* @module model/GeneralMerchantsLegalDetails
-*/
+ * The GeneralMerchantsLegalDetails model module.
+ * @module model/GeneralMerchantsLegalDetails
+ */
 export default class GeneralMerchantsLegalDetails {
     /**
-    * Constructs a new <code>GeneralMerchantsLegalDetails</code>.
-    * @alias module:model/GeneralMerchantsLegalDetails
-    * @class
-    */
+     * Constructs a new <code>GeneralMerchantsLegalDetails</code>.
+     * @alias module:model/GeneralMerchantsLegalDetails
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class GeneralMerchantsLegalDetails {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new GeneralMerchantsLegalDetails();
-
             
             
             
-
             if (data.hasOwnProperty('url')) {
                 obj['url'] = ApiClient.convertToType(data['url'], 'String');
             }
@@ -59,33 +46,27 @@ export default class GeneralMerchantsLegalDetails {
     }
 
     /**
-    * Url
-    * @member {String} url
-    */
+     * Url
+     * @member {String} url
+     */
     url = undefined;
+
     /**
-    * Type
-    * @member {String} type
-    */
+     * Type
+     * @member {String} type
+     */
     type = undefined;
+
     /**
-    * Content type
-    * @member {String} content_type
-    */
+     * Content type
+     * @member {String} content_type
+     */
     content_type = undefined;
+
     /**
-    * Language
-    * @member {String} language
-    */
+     * Language
+     * @member {String} language
+     */
     language = undefined;
 
-
-
-
-
-
-
-
 }
-
-

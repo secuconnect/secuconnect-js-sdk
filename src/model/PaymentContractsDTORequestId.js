@@ -4,29 +4,18 @@ import Contact from './Contact';
 import PaymentContractsDTOIFrameOpts from './PaymentContractsDTOIFrameOpts';
 import PaymentInformation from './PaymentInformation';
 
-
-
-
-
 /**
-* The PaymentContractsDTORequestId model module.
-* @module model/PaymentContractsDTORequestId
-*/
+ * The PaymentContractsDTORequestId model module.
+ * @module model/PaymentContractsDTORequestId
+ */
 export default class PaymentContractsDTORequestId {
     /**
-    * Constructs a new <code>PaymentContractsDTORequestId</code>.
-    * @alias module:model/PaymentContractsDTORequestId
-    * @class
-    */
+     * Constructs a new <code>PaymentContractsDTORequestId</code>.
+     * @alias module:model/PaymentContractsDTORequestId
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -40,11 +29,9 @@ export default class PaymentContractsDTORequestId {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PaymentContractsDTORequestId();
-
             
             
             
-
             if (data.hasOwnProperty('contact')) {
                 obj['contact'] = Contact.constructFromObject(data['contact']);
             }
@@ -65,39 +52,34 @@ export default class PaymentContractsDTORequestId {
     }
 
     /**
-    * Contact
-    * @member {module:model/Contact} contact
-    */
+     * Contact
+     * @member {module:model/Contact} contact
+     */
     contact = undefined;
+
     /**
-    * Name of the project (must be unique)
-    * @member {String} project
-    */
+     * Name of the project (must be unique)
+     * @member {String} project
+     */
     project = undefined;
+
     /**
-    * Merchants bank account for the payout
-    * @member {module:model/PaymentInformation} payout_account
-    */
+     * Merchants bank account for the payout
+     * @member {module:model/PaymentInformation} payout_account
+     */
     payout_account = undefined;
+
     /**
-    * IFrame opts
-    * @member {module:model/PaymentContractsDTOIFrameOpts} iframe_opts
-    */
+     * IFrame opts
+     * @member {module:model/PaymentContractsDTOIFrameOpts} iframe_opts
+     */
     iframe_opts = undefined;
+
     /**
-    * Pay in account
-    * @member {Boolean} payin_account
-    * @default false
-    */
+     * Pay in account
+     * @member {Boolean} payin_account
+     * @default false
+     */
     payin_account = false;
 
-
-
-
-
-
-
-
 }
-
-

@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import SecupayBasketItem from './SecupayBasketItem';
 
-
-
-
-
 /**
-* The SecupayTransactionUpdateBasketDTO model module.
-* @module model/SecupayTransactionUpdateBasketDTO
-*/
+ * The SecupayTransactionUpdateBasketDTO model module.
+ * @module model/SecupayTransactionUpdateBasketDTO
+ */
 export default class SecupayTransactionUpdateBasketDTO {
     /**
-    * Constructs a new <code>SecupayTransactionUpdateBasketDTO</code>.
-    * @alias module:model/SecupayTransactionUpdateBasketDTO
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionUpdateBasketDTO</code>.
+     * @alias module:model/SecupayTransactionUpdateBasketDTO
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class SecupayTransactionUpdateBasketDTO {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SecupayTransactionUpdateBasketDTO();
-
             
             
             
-
             if (data.hasOwnProperty('contract')) {
                 obj['contract'] = ApiClient.convertToType(data['contract'], Object);
             }
@@ -54,23 +41,15 @@ export default class SecupayTransactionUpdateBasketDTO {
     }
 
     /**
-    * The payment contract object
-    * @member {Object} contract
-    */
+     * The payment contract object
+     * @member {Object} contract
+     */
     contract = undefined;
+
     /**
-    * A list of items that are being purchased.
-    * @member {Array.<module:model/SecupayBasketItem>} basket
-    */
+     * A list of items that are being purchased.
+     * @member {Array.<module:model/SecupayBasketItem>} basket
+     */
     basket = undefined;
 
-
-
-
-
-
-
-
 }
-
-

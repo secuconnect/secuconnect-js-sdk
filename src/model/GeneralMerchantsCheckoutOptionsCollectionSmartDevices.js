@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import Store from './Store';
 
-
-
-
-
 /**
-* The GeneralMerchantsCheckoutOptionsCollectionSmartDevices model module.
-* @module model/GeneralMerchantsCheckoutOptionsCollectionSmartDevices
-*/
+ * The GeneralMerchantsCheckoutOptionsCollectionSmartDevices model module.
+ * @module model/GeneralMerchantsCheckoutOptionsCollectionSmartDevices
+ */
 export default class GeneralMerchantsCheckoutOptionsCollectionSmartDevices {
     /**
-    * Constructs a new <code>GeneralMerchantsCheckoutOptionsCollectionSmartDevices</code>.
-    * @alias module:model/GeneralMerchantsCheckoutOptionsCollectionSmartDevices
-    * @class
-    */
+     * Constructs a new <code>GeneralMerchantsCheckoutOptionsCollectionSmartDevices</code>.
+     * @alias module:model/GeneralMerchantsCheckoutOptionsCollectionSmartDevices
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class GeneralMerchantsCheckoutOptionsCollectionSmartDevices {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new GeneralMerchantsCheckoutOptionsCollectionSmartDevices();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -60,33 +47,27 @@ export default class GeneralMerchantsCheckoutOptionsCollectionSmartDevices {
     }
 
     /**
-    * Object of smart device
-    * @member {String} object
-    */
+     * Object of smart device
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of smart device
-    * @member {String} id
-    */
+     * Id of smart device
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Description of smart device
-    * @member {String} description
-    */
+     * Description of smart device
+     * @member {String} description
+     */
     description = undefined;
+
     /**
-    * Store
-    * @member {module:model/Store} store
-    */
+     * Store
+     * @member {module:model/Store} store
+     */
     store = undefined;
 
-
-
-
-
-
-
-
 }
-
-

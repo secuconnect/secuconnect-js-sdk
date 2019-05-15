@@ -2,35 +2,24 @@
 import ApiClient from '../ApiClient';
 import PaymentContainersProductModel from './PaymentContainersProductModel';
 import PaymentCustomersProductModel from './PaymentCustomersProductModel';
+import PaymentInformation from './PaymentInformation';
 import SecupayBasketItem from './SecupayBasketItem';
+import SecupayRedirectUrl from './SecupayRedirectUrl';
 import SecupaySubTransactionProductModel from './SecupaySubTransactionProductModel';
-import SecupayTransactionProductModelRedirectUrl from './SecupayTransactionProductModelRedirectUrl';
-import SecupayTransactionProductModelTransferAccount from './SecupayTransactionProductModelTransferAccount';
 import SecupayTransactionProductModelUsedPaymentInstrument from './SecupayTransactionProductModelUsedPaymentInstrument';
 
-
-
-
-
 /**
-* The SecupayTransactionProductModel model module.
-* @module model/SecupayTransactionProductModel
-*/
+ * The SecupayTransactionProductModel model module.
+ * @module model/SecupayTransactionProductModel
+ */
 export default class SecupayTransactionProductModel {
     /**
-    * Constructs a new <code>SecupayTransactionProductModel</code>.
-    * @alias module:model/SecupayTransactionProductModel
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionProductModel</code>.
+     * @alias module:model/SecupayTransactionProductModel
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -44,11 +33,9 @@ export default class SecupayTransactionProductModel {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SecupayTransactionProductModel();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -89,7 +76,7 @@ export default class SecupayTransactionProductModel {
                 obj['transfer_purpose'] = ApiClient.convertToType(data['transfer_purpose'], 'String');
             }
             if (data.hasOwnProperty('transfer_account')) {
-                obj['transfer_account'] = SecupayTransactionProductModelTransferAccount.constructFromObject(data['transfer_account']);
+                obj['transfer_account'] = PaymentInformation.constructFromObject(data['transfer_account']);
             }
             if (data.hasOwnProperty('customer')) {
                 obj['customer'] = PaymentCustomersProductModel.constructFromObject(data['customer']);
@@ -98,7 +85,7 @@ export default class SecupayTransactionProductModel {
                 obj['used_payment_instrument'] = SecupayTransactionProductModelUsedPaymentInstrument.constructFromObject(data['used_payment_instrument']);
             }
             if (data.hasOwnProperty('redirect_url')) {
-                obj['redirect_url'] = SecupayTransactionProductModelRedirectUrl.constructFromObject(data['redirect_url']);
+                obj['redirect_url'] = SecupayRedirectUrl.constructFromObject(data['redirect_url']);
             }
             if (data.hasOwnProperty('iframe_url')) {
                 obj['iframe_url'] = ApiClient.convertToType(data['iframe_url'], 'String');
@@ -114,110 +101,122 @@ export default class SecupayTransactionProductModel {
     }
 
     /**
-    * Product name
-    * @member {String} object
-    */
+     * Product name
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * ID of instance
-    * @member {String} id
-    */
+     * ID of instance
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Transaction identifier
-    * @member {Number} trans_id
-    */
+     * Transaction identifier
+     * @member {Number} trans_id
+     */
     trans_id = undefined;
+
     /**
-    * Transaction status
-    * @member {String} status
-    */
+     * Transaction status
+     * @member {String} status
+     */
     status = undefined;
+
     /**
-    * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
-    * @member {Number} amount
-    */
+     * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
+     * @member {Number} amount
+     */
     amount = undefined;
+
     /**
-    * ISO 4217 code of currency, eg EUR for Euro.
-    * @member {String} currency
-    */
+     * ISO 4217 code of currency, eg EUR for Euro.
+     * @member {String} currency
+     */
     currency = undefined;
+
     /**
-    * The purpose of the payment. This is the later assignment of the payment is for example on the account statement of the buyer.
-    * @member {String} purpose
-    */
+     * The purpose of the payment. This is the later assignment of the payment is for example on the account statement of the buyer.
+     * @member {String} purpose
+     */
     purpose = undefined;
+
     /**
-    * Specifying an order number. Depending on the contract setting, this must be unique for each payment.
-    * @member {String} order_id
-    */
+     * Specifying an order number. Depending on the contract setting, this must be unique for each payment.
+     * @member {String} order_id
+     */
     order_id = undefined;
+
     /**
-    * A list of items that are being purchased.
-    * @member {Array.<module:model/SecupayBasketItem>} basket
-    */
+     * A list of items that are being purchased.
+     * @member {Array.<module:model/SecupayBasketItem>} basket
+     */
     basket = undefined;
+
     /**
-    * Transaction status (number)
-    * @member {String} transaction_status
-    */
+     * Transaction status (number)
+     * @member {String} transaction_status
+     */
     transaction_status = undefined;
+
     /**
-    * Indicates whether the payment is locked for pay-out (TRUE) or not (FALSE). Standard value here is FALSE.
-    * @member {Boolean} accrual
-    */
+     * Indicates whether the payment is locked for pay-out (TRUE) or not (FALSE). Standard value here is FALSE.
+     * @member {Boolean} accrual
+     */
     accrual = undefined;
+
     /**
-    * Specifies whether a pre-authorization (\"authorization\") or instant payment ( \"sale\") is to be performed. Standard value here is \"sale\". The collection of the pre-authorized payment is made with the \"capture\" command.
-    * @member {String} payment_action
-    */
+     * Specifies whether a pre-authorization (\"authorization\") or instant payment ( \"sale\") is to be performed. Standard value here is \"sale\". The collection of the pre-authorized payment is made with the \"capture\" command.
+     * @member {String} payment_action
+     */
     payment_action = undefined;
+
     /**
-    * The purpose the payer needs to use for his transfer
-    * @member {String} transfer_purpose
-    */
+     * The purpose the payer needs to use for his transfer
+     * @member {String} transfer_purpose
+     */
     transfer_purpose = undefined;
+
     /**
-    * @member {module:model/SecupayTransactionProductModelTransferAccount} transfer_account
-    */
+     * The bank account the payer needs to use for his transfer
+     * @member {module:model/PaymentInformation} transfer_account
+     */
     transfer_account = undefined;
+
     /**
-    * The customer object
-    * @member {module:model/PaymentCustomersProductModel} customer
-    */
+     * The customer object
+     * @member {module:model/PaymentCustomersProductModel} customer
+     */
     customer = undefined;
+
     /**
-    * @member {module:model/SecupayTransactionProductModelUsedPaymentInstrument} used_payment_instrument
-    */
+     * @member {module:model/SecupayTransactionProductModelUsedPaymentInstrument} used_payment_instrument
+     */
     used_payment_instrument = undefined;
+
     /**
-    * @member {module:model/SecupayTransactionProductModelRedirectUrl} redirect_url
-    */
+     * A list of redirect urls used for the payment checkout page
+     * @member {module:model/SecupayRedirectUrl} redirect_url
+     */
     redirect_url = undefined;
+
     /**
-    * The url of the payment checkout iframe
-    * @member {String} iframe_url
-    */
+     * The url of the payment checkout iframe
+     * @member {String} iframe_url
+     */
     iframe_url = undefined;
+
     /**
-    * The container object
-    * @member {module:model/PaymentContainersProductModel} container
-    */
+     * The container object
+     * @member {module:model/PaymentContainersProductModel} container
+     */
     container = undefined;
+
     /**
-    * A list of sub-transactions (for mixed basket)
-    * @member {Array.<module:model/SecupaySubTransactionProductModel>} sub_transactions
-    */
+     * A list of sub-transactions (for mixed basket)
+     * @member {Array.<module:model/SecupaySubTransactionProductModel>} sub_transactions
+     */
     sub_transactions = undefined;
 
-
-
-
-
-
-
-
 }
-
-

@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The PaymentContainerMandate model module.
-* @module model/PaymentContainerMandate
-*/
+ * The PaymentContainerMandate model module.
+ * @module model/PaymentContainerMandate
+ */
 export default class PaymentContainerMandate {
     /**
-    * Constructs a new <code>PaymentContainerMandate</code>.
-    * @alias module:model/PaymentContainerMandate
-    * @class
-    */
+     * Constructs a new <code>PaymentContainerMandate</code>.
+     * @alias module:model/PaymentContainerMandate
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class PaymentContainerMandate {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PaymentContainerMandate();
-
             
             
             
-
             if (data.hasOwnProperty('sepa_mandate_id')) {
                 obj['sepa_mandate_id'] = ApiClient.convertToType(data['sepa_mandate_id'], 'String');
             }
@@ -65,43 +52,39 @@ export default class PaymentContainerMandate {
     }
 
     /**
-    * Sepa mandate id
-    * @member {String} sepa_mandate_id
-    */
+     * Sepa mandate id
+     * @member {String} sepa_mandate_id
+     */
     sepa_mandate_id = undefined;
+
     /**
-    * IBAN
-    * @member {String} iban
-    */
+     * IBAN
+     * @member {String} iban
+     */
     iban = undefined;
+
     /**
-    * BIC
-    * @member {String} bic
-    */
+     * BIC
+     * @member {String} bic
+     */
     bic = undefined;
+
     /**
-    * Type
-    * @member {String} type
-    */
+     * Type
+     * @member {String} type
+     */
     type = undefined;
+
     /**
-    * Status
-    * @member {String} status
-    */
+     * Status
+     * @member {String} status
+     */
     status = undefined;
+
     /**
-    * Identification
-    * @member {String} identification
-    */
+     * Identification
+     * @member {String} identification
+     */
     identification = undefined;
 
-
-
-
-
-
-
-
 }
-
-

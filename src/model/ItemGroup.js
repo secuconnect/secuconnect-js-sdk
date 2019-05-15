@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The ItemGroup model module.
-* @module model/ItemGroup
-*/
+ * The ItemGroup model module.
+ * @module model/ItemGroup
+ */
 export default class ItemGroup {
     /**
-    * Constructs a new <code>ItemGroup</code>.
-    * @alias module:model/ItemGroup
-    * @class
-    */
+     * Constructs a new <code>ItemGroup</code>.
+     * @alias module:model/ItemGroup
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class ItemGroup {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ItemGroup();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -62,38 +49,33 @@ export default class ItemGroup {
     }
 
     /**
-    * Object of item group
-    * @member {String} object
-    */
+     * Object of item group
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of item group
-    * @member {String} id
-    */
+     * Id of item group
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Description
-    * @member {String} description
-    */
+     * Description
+     * @member {String} description
+     */
     description = undefined;
+
     /**
-    * Logo
-    * @member {String} logo
-    */
+     * Logo
+     * @member {String} logo
+     */
     logo = undefined;
+
     /**
-    * Enabled
-    * @member {Boolean} enabled
-    */
+     * Enabled
+     * @member {Boolean} enabled
+     */
     enabled = undefined;
 
-
-
-
-
-
-
-
 }
-
-

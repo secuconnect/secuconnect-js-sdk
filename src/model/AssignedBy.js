@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The AssignedBy model module.
-* @module model/AssignedBy
-*/
+ * The AssignedBy model module.
+ * @module model/AssignedBy
+ */
 export default class AssignedBy {
     /**
-    * Constructs a new <code>AssignedBy</code>.
-    * @alias module:model/AssignedBy
-    * @class
-    */
+     * Constructs a new <code>AssignedBy</code>.
+     * @alias module:model/AssignedBy
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class AssignedBy {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new AssignedBy();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -56,28 +43,21 @@ export default class AssignedBy {
     }
 
     /**
-    * Object of assigned by
-    * @member {String} object
-    */
+     * Object of assigned by
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of assigned by
-    * @member {String} id
-    */
+     * Id of assigned by
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Owner
-    * @member {Boolean} owner
-    */
+     * Owner
+     * @member {Boolean} owner
+     */
     owner = undefined;
 
-
-
-
-
-
-
-
 }
-
-

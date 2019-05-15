@@ -6,29 +6,18 @@ import InvitedBy from './InvitedBy';
 import OpenHours from './OpenHours';
 import ProductInstanceUID from './ProductInstanceUID';
 
-
-
-
-
 /**
-* The GeneralStoresProductModel model module.
-* @module model/GeneralStoresProductModel
-*/
+ * The GeneralStoresProductModel model module.
+ * @module model/GeneralStoresProductModel
+ */
 export default class GeneralStoresProductModel {
     /**
-    * Constructs a new <code>GeneralStoresProductModel</code>.
-    * @alias module:model/GeneralStoresProductModel
-    * @class
-    */
+     * Constructs a new <code>GeneralStoresProductModel</code>.
+     * @alias module:model/GeneralStoresProductModel
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -42,11 +31,9 @@ export default class GeneralStoresProductModel {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new GeneralStoresProductModel();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -133,148 +120,165 @@ export default class GeneralStoresProductModel {
     }
 
     /**
-    * Object of general store
-    * @member {String} object
-    */
+     * Object of general store
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of general store
-    * @member {String} id
-    */
+     * Id of general store
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Old id of general store
-    * @member {String} id_old
-    */
+     * Old id of general store
+     * @member {String} id_old
+     */
     id_old = undefined;
+
     /**
-    * General merchant of general store
-    * @member {module:model/ProductInstanceUID} merchant
-    */
+     * General merchant of general store
+     * @member {module:model/ProductInstanceUID} merchant
+     */
     merchant = undefined;
+
     /**
-    * Facebook id
-    * @member {String} facebook_id
-    */
+     * Facebook id
+     * @member {String} facebook_id
+     */
     facebook_id = undefined;
+
     /**
-    * Source
-    * @member {String} source
-    */
+     * Source
+     * @member {String} source
+     */
     source = undefined;
+
     /**
-    * Key
-    * @member {String} key
-    */
+     * Key
+     * @member {String} key
+     */
     key = undefined;
+
     /**
-    * Hash
-    * @member {String} hash
-    */
+     * Hash
+     * @member {String} hash
+     */
     hash = undefined;
+
     /**
-    * Address components
-    * @member {Array.<module:model/AddressComponents>} address_components
-    */
+     * Address components
+     * @member {Array.<module:model/AddressComponents>} address_components
+     */
     address_components = undefined;
+
     /**
-    * General store formatted address
-    * @member {String} address_formatted
-    */
+     * General store formatted address
+     * @member {String} address_formatted
+     */
     address_formatted = undefined;
+
     /**
-    * General store formatted phone number
-    * @member {String} phone_number_formatted
-    */
+     * General store formatted phone number
+     * @member {String} phone_number_formatted
+     */
     phone_number_formatted = undefined;
+
     /**
-    * General store geometry
-    * @member {String} geometry
-    */
+     * General store geometry
+     * @member {String} geometry
+     */
     geometry = undefined;
+
     /**
-    * General store name
-    * @member {String} name
-    */
+     * General store name
+     * @member {String} name
+     */
     name = undefined;
+
     /**
-    * General store raw name
-    * @member {String} name_raw
-    */
+     * General store raw name
+     * @member {String} name_raw
+     */
     name_raw = undefined;
+
     /**
-    * General store main photo
-    * @member {String} photo_main
-    */
+     * General store main photo
+     * @member {String} photo_main
+     */
     photo_main = undefined;
+
     /**
-    * General store photos
-    * @member {Array.<String>} photo
-    */
+     * General store photos
+     * @member {Array.<String>} photo
+     */
     photo = undefined;
+
     /**
-    * General store main category
-    * @member {String} category_main
-    */
+     * General store main category
+     * @member {String} category_main
+     */
     category_main = undefined;
+
     /**
-    * General store category
-    * @member {String} category
-    */
+     * General store category
+     * @member {String} category
+     */
     category = undefined;
+
     /**
-    * Url to general store google plus
-    * @member {String} url_googleplus
-    */
+     * Url to general store google plus
+     * @member {String} url_googleplus
+     */
     url_googleplus = undefined;
+
     /**
-    * Url to general store website
-    * @member {String} url_website
-    */
+     * Url to general store website
+     * @member {String} url_website
+     */
     url_website = undefined;
+
     /**
-    * Open hours in every day
-    * @member {Array.<module:model/OpenHours>} open_hours
-    */
+     * Open hours in every day
+     * @member {Array.<module:model/OpenHours>} open_hours
+     */
     open_hours = undefined;
+
     /**
-    * Open now
-    * @member {Boolean} open_now
-    */
+     * Open now
+     * @member {Boolean} open_now
+     */
     open_now = undefined;
+
     /**
-    * Open time
-    * @member {String} open_time
-    */
+     * Open time
+     * @member {String} open_time
+     */
     open_time = undefined;
+
     /**
-    * Utc offset
-    * @member {String} utc_offset
-    */
+     * Utc offset
+     * @member {String} utc_offset
+     */
     utc_offset = undefined;
+
     /**
-    * Assigned by
-    * @member {Array.<module:model/AssignedBy>} assigned_by
-    */
+     * Assigned by
+     * @member {Array.<module:model/AssignedBy>} assigned_by
+     */
     assigned_by = undefined;
+
     /**
-    * Invited by
-    * @member {Array.<module:model/InvitedBy>} invited_by
-    */
+     * Invited by
+     * @member {Array.<module:model/InvitedBy>} invited_by
+     */
     invited_by = undefined;
+
     /**
-    * Has beacon
-    * @member {Boolean} has_beacon
-    */
+     * Has beacon
+     * @member {Boolean} has_beacon
+     */
     has_beacon = undefined;
 
-
-
-
-
-
-
-
 }
-
-

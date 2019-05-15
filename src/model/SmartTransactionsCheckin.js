@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The SmartTransactionsCheckin model module.
-* @module model/SmartTransactionsCheckin
-*/
+ * The SmartTransactionsCheckin model module.
+ * @module model/SmartTransactionsCheckin
+ */
 export default class SmartTransactionsCheckin {
     /**
-    * Constructs a new <code>SmartTransactionsCheckin</code>.
-    * @alias module:model/SmartTransactionsCheckin
-    * @class
-    */
+     * Constructs a new <code>SmartTransactionsCheckin</code>.
+     * @alias module:model/SmartTransactionsCheckin
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class SmartTransactionsCheckin {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SmartTransactionsCheckin();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -56,28 +43,21 @@ export default class SmartTransactionsCheckin {
     }
 
     /**
-    * Object of smart transaction check in
-    * @member {String} object
-    */
+     * Object of smart transaction check in
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of smart transaction check in
-    * @member {String} id
-    */
+     * Id of smart transaction check in
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Email
-    * @member {String} email
-    */
+     * Email
+     * @member {String} email
+     */
     email = undefined;
 
-
-
-
-
-
-
-
 }
-
-

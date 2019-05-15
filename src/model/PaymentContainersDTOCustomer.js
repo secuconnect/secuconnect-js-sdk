@@ -1,30 +1,19 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The PaymentContainersDTOCustomer model module.
-* @module model/PaymentContainersDTOCustomer
-*/
+ * The PaymentContainersDTOCustomer model module.
+ * @module model/PaymentContainersDTOCustomer
+ */
 export default class PaymentContainersDTOCustomer {
     /**
-    * Constructs a new <code>PaymentContainersDTOCustomer</code>.
-    * The customer of this payment container
-    * @alias module:model/PaymentContainersDTOCustomer
-    * @class
-    */
+     * Constructs a new <code>PaymentContainersDTOCustomer</code>.
+     * The customer of this payment container
+     * @alias module:model/PaymentContainersDTOCustomer
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class PaymentContainersDTOCustomer {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PaymentContainersDTOCustomer();
-
             
             
             
-
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
@@ -51,18 +38,9 @@ export default class PaymentContainersDTOCustomer {
     }
 
     /**
-    * Customer identifier
-    * @member {String} id
-    */
+     * Customer identifier
+     * @member {String} id
+     */
     id = undefined;
 
-
-
-
-
-
-
-
 }
-
-

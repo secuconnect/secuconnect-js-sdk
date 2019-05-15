@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **description** | **String** | Description | [optional] 
 **idleScreenRegister** | **String** | Idle screen register | [optional] 
 **idleScreenTerminal** | **String** | Idle screen terminal | [optional] 
-**created** | **Date** | Created at date | [optional] 
+**created** | **String** | Created at date | [optional] 
 **online** | **Boolean** | Online | [optional] 
 **terminalType** | **String** | Terminal type | [optional] 
 **baseVersion** | **String** | Base version | [optional] 

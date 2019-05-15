@@ -1,30 +1,19 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The Address model module.
-* @module model/Address
-*/
+ * The Address model module.
+ * @module model/Address
+ */
 export default class Address {
     /**
-    * Constructs a new <code>Address</code>.
-    * Address
-    * @alias module:model/Address
-    * @class
-    */
+     * Constructs a new <code>Address</code>.
+     * Address
+     * @alias module:model/Address
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class Address {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new Address();
-
             
             
             
-
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
@@ -66,43 +53,39 @@ export default class Address {
     }
 
     /**
-    * Type
-    * @member {String} type
-    */
+     * Type
+     * @member {String} type
+     */
     type = undefined;
+
     /**
-    * Street
-    * @member {String} street
-    */
+     * Street
+     * @member {String} street
+     */
     street = undefined;
+
     /**
-    * Street number
-    * @member {String} street_number
-    */
+     * Street number
+     * @member {String} street_number
+     */
     street_number = undefined;
+
     /**
-    * City
-    * @member {String} city
-    */
+     * City
+     * @member {String} city
+     */
     city = undefined;
+
     /**
-    * Postal code
-    * @member {String} postal_code
-    */
+     * Postal code
+     * @member {String} postal_code
+     */
     postal_code = undefined;
+
     /**
-    * Country
-    * @member {String} country
-    */
+     * Country
+     * @member {String} country
+     */
     country = undefined;
 
-
-
-
-
-
-
-
 }
-
-

@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The SmartDevicesDevice model module.
-* @module model/SmartDevicesDevice
-*/
+ * The SmartDevicesDevice model module.
+ * @module model/SmartDevicesDevice
+ */
 export default class SmartDevicesDevice {
     /**
-    * Constructs a new <code>SmartDevicesDevice</code>.
-    * @alias module:model/SmartDevicesDevice
-    * @class
-    */
+     * Constructs a new <code>SmartDevicesDevice</code>.
+     * @alias module:model/SmartDevicesDevice
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class SmartDevicesDevice {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SmartDevicesDevice();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -56,28 +43,21 @@ export default class SmartDevicesDevice {
     }
 
     /**
-    * Object of device
-    * @member {String} object
-    */
+     * Object of device
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of device
-    * @member {String} id
-    */
+     * Id of device
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Serial number
-    * @member {String} serial_number
-    */
+     * Serial number
+     * @member {String} serial_number
+     */
     serial_number = undefined;
 
-
-
-
-
-
-
-
 }
-
-

@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The LoyaltyStoregroupsDTO model module.
-* @module model/LoyaltyStoregroupsDTO
-*/
+ * The LoyaltyStoregroupsDTO model module.
+ * @module model/LoyaltyStoregroupsDTO
+ */
 export default class LoyaltyStoregroupsDTO {
     /**
-    * Constructs a new <code>LoyaltyStoregroupsDTO</code>.
-    * @alias module:model/LoyaltyStoregroupsDTO
-    * @class
-    */
+     * Constructs a new <code>LoyaltyStoregroupsDTO</code>.
+     * @alias module:model/LoyaltyStoregroupsDTO
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class LoyaltyStoregroupsDTO {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyStoregroupsDTO();
-
             
             
             
-
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -56,28 +43,21 @@ export default class LoyaltyStoregroupsDTO {
     }
 
     /**
-    * Loyalty store group name
-    * @member {String} name
-    */
+     * Loyalty store group name
+     * @member {String} name
+     */
     name = undefined;
+
     /**
-    * Loyalty store group merchant id
-    * @member {String} merchant
-    */
+     * Loyalty store group merchant id
+     * @member {String} merchant
+     */
     merchant = undefined;
+
     /**
-    * List of loyalty stores ids
-    * @member {Array.<String>} stores
-    */
+     * List of loyalty stores ids
+     * @member {Array.<String>} stores
+     */
     stores = undefined;
 
-
-
-
-
-
-
-
 }
-
-

@@ -25,6 +25,56 @@ export default class GeneralMerchantsApi {
 
 
     /**
+     * POST General/Merchants
+     * Add a new merchant
+     * @param {module:model/GeneralMerchantsDTO} body general Merchant container properties
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GeneralMerchantsProductModel} and HTTP response
+     */
+    addMerchantsWithHttpInfo(body) {
+      let postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling addMerchants");
+      }
+
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['oauth_token'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = GeneralMerchantsProductModel;
+
+      return this.apiClient.callApi(
+        '/General/Merchants', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * POST General/Merchants
+     * Add a new merchant
+     * @param {module:model/GeneralMerchantsDTO} body general Merchant container properties
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GeneralMerchantsProductModel}
+     */
+    addMerchants(body) {
+      return this.addMerchantsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * GET General/Merchants
      * Get a list of general merchants
      * @param {Object} opts Optional parameters

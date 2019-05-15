@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import LoyaltyCustomersProductModel from './LoyaltyCustomersProductModel';
 
-
-
-
-
 /**
-* The LoyaltyCustomersList model module.
-* @module model/LoyaltyCustomersList
-*/
+ * The LoyaltyCustomersList model module.
+ * @module model/LoyaltyCustomersList
+ */
 export default class LoyaltyCustomersList {
     /**
-    * Constructs a new <code>LoyaltyCustomersList</code>.
-    * @alias module:model/LoyaltyCustomersList
-    * @class
-    */
+     * Constructs a new <code>LoyaltyCustomersList</code>.
+     * @alias module:model/LoyaltyCustomersList
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class LoyaltyCustomersList {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyCustomersList();
-
             
             
             
-
             if (data.hasOwnProperty('count')) {
                 obj['count'] = ApiClient.convertToType(data['count'], 'Number');
             }
@@ -54,23 +41,15 @@ export default class LoyaltyCustomersList {
     }
 
     /**
-    * Number of existing loyalty customers
-    * @member {Number} count
-    */
+     * Number of existing loyalty customers
+     * @member {Number} count
+     */
     count = undefined;
+
     /**
-    * GET Loyalty/Customers
-    * @member {Array.<module:model/LoyaltyCustomersProductModel>} data
-    */
+     * GET Loyalty/Customers
+     * @member {Array.<module:model/LoyaltyCustomersProductModel>} data
+     */
     data = undefined;
 
-
-
-
-
-
-
-
 }
-
-

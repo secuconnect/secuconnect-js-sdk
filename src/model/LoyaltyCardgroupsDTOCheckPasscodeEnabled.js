@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The LoyaltyCardgroupsDTOCheckPasscodeEnabled model module.
-* @module model/LoyaltyCardgroupsDTOCheckPasscodeEnabled
-*/
+ * The LoyaltyCardgroupsDTOCheckPasscodeEnabled model module.
+ * @module model/LoyaltyCardgroupsDTOCheckPasscodeEnabled
+ */
 export default class LoyaltyCardgroupsDTOCheckPasscodeEnabled {
     /**
-    * Constructs a new <code>LoyaltyCardgroupsDTOCheckPasscodeEnabled</code>.
-    * @alias module:model/LoyaltyCardgroupsDTOCheckPasscodeEnabled
-    * @class
-    */
+     * Constructs a new <code>LoyaltyCardgroupsDTOCheckPasscodeEnabled</code>.
+     * @alias module:model/LoyaltyCardgroupsDTOCheckPasscodeEnabled
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class LoyaltyCardgroupsDTOCheckPasscodeEnabled {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyCardgroupsDTOCheckPasscodeEnabled();
-
             
             
             
-
             if (data.hasOwnProperty('action')) {
                 obj['action'] = ApiClient.convertToType(data['action'], 'String');
             }
@@ -53,23 +40,15 @@ export default class LoyaltyCardgroupsDTOCheckPasscodeEnabled {
     }
 
     /**
-    * Action type
-    * @member {String} action
-    */
+     * Action type
+     * @member {String} action
+     */
     action = undefined;
+
     /**
-    * Secucard number
-    * @member {String} cardnumber
-    */
+     * Secucard number
+     * @member {String} cardnumber
+     */
     cardnumber = undefined;
 
-
-
-
-
-
-
-
 }
-
-

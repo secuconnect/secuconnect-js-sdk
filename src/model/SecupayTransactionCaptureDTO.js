@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The SecupayTransactionCaptureDTO model module.
-* @module model/SecupayTransactionCaptureDTO
-*/
+ * The SecupayTransactionCaptureDTO model module.
+ * @module model/SecupayTransactionCaptureDTO
+ */
 export default class SecupayTransactionCaptureDTO {
     /**
-    * Constructs a new <code>SecupayTransactionCaptureDTO</code>.
-    * @alias module:model/SecupayTransactionCaptureDTO
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionCaptureDTO</code>.
+     * @alias module:model/SecupayTransactionCaptureDTO
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class SecupayTransactionCaptureDTO {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SecupayTransactionCaptureDTO();
-
             
             
             
-
             if (data.hasOwnProperty('contract')) {
                 obj['contract'] = ApiClient.convertToType(data['contract'], Object);
             }
@@ -50,18 +37,9 @@ export default class SecupayTransactionCaptureDTO {
     }
 
     /**
-    * The payment contract object
-    * @member {Object} contract
-    */
+     * The payment contract object
+     * @member {Object} contract
+     */
     contract = undefined;
 
-
-
-
-
-
-
-
 }
-
-

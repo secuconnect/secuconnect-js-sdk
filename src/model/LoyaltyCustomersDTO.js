@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import Contact from './Contact';
 
-
-
-
-
 /**
-* The LoyaltyCustomersDTO model module.
-* @module model/LoyaltyCustomersDTO
-*/
+ * The LoyaltyCustomersDTO model module.
+ * @module model/LoyaltyCustomersDTO
+ */
 export default class LoyaltyCustomersDTO {
     /**
-    * Constructs a new <code>LoyaltyCustomersDTO</code>.
-    * @alias module:model/LoyaltyCustomersDTO
-    * @class
-    */
+     * Constructs a new <code>LoyaltyCustomersDTO</code>.
+     * @alias module:model/LoyaltyCustomersDTO
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class LoyaltyCustomersDTO {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyCustomersDTO();
-
             
             
             
-
             if (data.hasOwnProperty('merchant')) {
                 obj['merchant'] = ApiClient.convertToType(data['merchant'], 'String');
             }
@@ -69,48 +56,45 @@ export default class LoyaltyCustomersDTO {
     }
 
     /**
-    * merchant
-    * @member {String} merchant
-    */
+     * merchant
+     * @member {String} merchant
+     */
     merchant = undefined;
+
     /**
-    * Contact
-    * @member {module:model/Contact} merchant_contact
-    */
+     * Contact
+     * @member {module:model/Contact} merchant_contact
+     */
     merchant_contact = undefined;
+
     /**
-    * Age
-    * @member {Number} age
-    */
+     * Age
+     * @member {Number} age
+     */
     age = undefined;
+
     /**
-    * Number of days until birthday
-    * @member {Number} days_until_birthday
-    */
+     * Number of days until birthday
+     * @member {Number} days_until_birthday
+     */
     days_until_birthday = undefined;
+
     /**
-    * Customer number
-    * @member {String} customernumber
-    */
+     * Customer number
+     * @member {String} customernumber
+     */
     customernumber = undefined;
+
     /**
-    * note
-    * @member {String} note
-    */
+     * note
+     * @member {String} note
+     */
     note = undefined;
+
     /**
-    * Consent for communication
-    * @member {Object} additional_data
-    */
+     * Consent for communication
+     * @member {Object} additional_data
+     */
     additional_data = undefined;
 
-
-
-
-
-
-
-
 }
-
-

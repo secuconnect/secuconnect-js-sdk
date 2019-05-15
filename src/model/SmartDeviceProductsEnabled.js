@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The SmartDeviceProductsEnabled model module.
-* @module model/SmartDeviceProductsEnabled
-*/
+ * The SmartDeviceProductsEnabled model module.
+ * @module model/SmartDeviceProductsEnabled
+ */
 export default class SmartDeviceProductsEnabled {
     /**
-    * Constructs a new <code>SmartDeviceProductsEnabled</code>.
-    * @alias module:model/SmartDeviceProductsEnabled
-    * @class
-    */
+     * Constructs a new <code>SmartDeviceProductsEnabled</code>.
+     * @alias module:model/SmartDeviceProductsEnabled
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class SmartDeviceProductsEnabled {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SmartDeviceProductsEnabled();
-
             
             
             
-
             if (data.hasOwnProperty('enabled')) {
                 obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
             }
@@ -50,18 +37,9 @@ export default class SmartDeviceProductsEnabled {
     }
 
     /**
-    * Enabled
-    * @member {Boolean} enabled
-    */
+     * Enabled
+     * @member {Boolean} enabled
+     */
     enabled = undefined;
 
-
-
-
-
-
-
-
 }
-
-

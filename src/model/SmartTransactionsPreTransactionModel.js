@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import SmartTransactionsBonusProducts from './SmartTransactionsBonusProducts';
 
-
-
-
-
 /**
-* The SmartTransactionsPreTransactionModel model module.
-* @module model/SmartTransactionsPreTransactionModel
-*/
+ * The SmartTransactionsPreTransactionModel model module.
+ * @module model/SmartTransactionsPreTransactionModel
+ */
 export default class SmartTransactionsPreTransactionModel {
     /**
-    * Constructs a new <code>SmartTransactionsPreTransactionModel</code>.
-    * @alias module:model/SmartTransactionsPreTransactionModel
-    * @class
-    */
+     * Constructs a new <code>SmartTransactionsPreTransactionModel</code>.
+     * @alias module:model/SmartTransactionsPreTransactionModel
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class SmartTransactionsPreTransactionModel {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SmartTransactionsPreTransactionModel();
-
             
             
             
-
             if (data.hasOwnProperty('missing_sum')) {
                 obj['missing_sum'] = ApiClient.convertToType(data['missing_sum'], 'Number');
             }
@@ -54,23 +41,15 @@ export default class SmartTransactionsPreTransactionModel {
     }
 
     /**
-    * missing sum
-    * @member {Number} missing_sum
-    */
+     * missing sum
+     * @member {Number} missing_sum
+     */
     missing_sum = undefined;
+
     /**
-    * SmartTransactionsPreTransactionModel
-    * @member {Array.<module:model/SmartTransactionsBonusProducts>} bonus_products
-    */
+     * SmartTransactionsPreTransactionModel
+     * @member {Array.<module:model/SmartTransactionsBonusProducts>} bonus_products
+     */
     bonus_products = undefined;
 
-
-
-
-
-
-
-
 }
-
-

@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The SmartDevicesSecubaseConfigLoggingFileNet model module.
-* @module model/SmartDevicesSecubaseConfigLoggingFileNet
-*/
+ * The SmartDevicesSecubaseConfigLoggingFileNet model module.
+ * @module model/SmartDevicesSecubaseConfigLoggingFileNet
+ */
 export default class SmartDevicesSecubaseConfigLoggingFileNet {
     /**
-    * Constructs a new <code>SmartDevicesSecubaseConfigLoggingFileNet</code>.
-    * @alias module:model/SmartDevicesSecubaseConfigLoggingFileNet
-    * @class
-    */
+     * Constructs a new <code>SmartDevicesSecubaseConfigLoggingFileNet</code>.
+     * @alias module:model/SmartDevicesSecubaseConfigLoggingFileNet
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class SmartDevicesSecubaseConfigLoggingFileNet {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SmartDevicesSecubaseConfigLoggingFileNet();
-
             
             
             
-
             if (data.hasOwnProperty('file')) {
                 obj['file'] = ApiClient.convertToType(data['file'], ['String']);
             }
@@ -53,23 +40,15 @@ export default class SmartDevicesSecubaseConfigLoggingFileNet {
     }
 
     /**
-    * File
-    * @member {Array.<String>} file
-    */
+     * File
+     * @member {Array.<String>} file
+     */
     file = undefined;
+
     /**
-    * Net
-    * @member {Array.<String>} net
-    */
+     * Net
+     * @member {Array.<String>} net
+     */
     net = undefined;
 
-
-
-
-
-
-
-
 }
-
-

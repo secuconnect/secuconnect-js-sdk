@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The ReceiptValue model module.
-* @module model/ReceiptValue
-*/
+ * The ReceiptValue model module.
+ * @module model/ReceiptValue
+ */
 export default class ReceiptValue {
     /**
-    * Constructs a new <code>ReceiptValue</code>.
-    * @alias module:model/ReceiptValue
-    * @class
-    */
+     * Constructs a new <code>ReceiptValue</code>.
+     * @alias module:model/ReceiptValue
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class ReceiptValue {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ReceiptValue();
-
             
             
             
-
             if (data.hasOwnProperty('caption')) {
                 obj['caption'] = ApiClient.convertToType(data['caption'], 'String');
             }
@@ -62,38 +49,33 @@ export default class ReceiptValue {
     }
 
     /**
-    * Caption
-    * @member {String} caption
-    */
+     * Caption
+     * @member {String} caption
+     */
     caption = undefined;
+
     /**
-    * Name
-    * @member {String} name
-    */
+     * Name
+     * @member {String} name
+     */
     name = undefined;
+
     /**
-    * Value
-    * @member {String} value
-    */
+     * Value
+     * @member {String} value
+     */
     value = undefined;
+
     /**
-    * Text
-    * @member {String} text
-    */
+     * Text
+     * @member {String} text
+     */
     text = undefined;
+
     /**
-    * Decoration
-    * @member {Array.<String>} decoration
-    */
+     * Decoration
+     * @member {Array.<String>} decoration
+     */
     decoration = undefined;
 
-
-
-
-
-
-
-
 }
-
-

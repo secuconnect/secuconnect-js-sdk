@@ -1,30 +1,19 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The PaymentTransactionsProductModelDetails model module.
-* @module model/PaymentTransactionsProductModelDetails
-*/
+ * The PaymentTransactionsProductModelDetails model module.
+ * @module model/PaymentTransactionsProductModelDetails
+ */
 export default class PaymentTransactionsProductModelDetails {
     /**
-    * Constructs a new <code>PaymentTransactionsProductModelDetails</code>.
-    * Transaction details
-    * @alias module:model/PaymentTransactionsProductModelDetails
-    * @class
-    */
+     * Constructs a new <code>PaymentTransactionsProductModelDetails</code>.
+     * Transaction details
+     * @alias module:model/PaymentTransactionsProductModelDetails
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class PaymentTransactionsProductModelDetails {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PaymentTransactionsProductModelDetails();
-
             
             
             
-
             if (data.hasOwnProperty('amount')) {
                 obj['amount'] = ApiClient.convertToType(data['amount'], 'Number');
             }
@@ -72,53 +59,51 @@ export default class PaymentTransactionsProductModelDetails {
     }
 
     /**
-    * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
-    * @member {Number} amount
-    */
+     * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
+     * @member {Number} amount
+     */
     amount = undefined;
+
     /**
-    * Clearing status
-    * @member {String} cleared
-    */
+     * Clearing status
+     * @member {String} cleared
+     */
     cleared = undefined;
+
     /**
-    * Transaction status ID
-    * @member {Number} status
-    */
+     * Transaction status ID
+     * @member {Number} status
+     */
     status = undefined;
+
     /**
-    * Transaction status description
-    * @member {String} status_text
-    */
+     * Transaction status description
+     * @member {String} status_text
+     */
     status_text = undefined;
+
     /**
-    * Transaction simple-status ID
-    * @member {Number} status_simple
-    */
+     * Transaction simple-status ID
+     * @member {Number} status_simple
+     */
     status_simple = undefined;
+
     /**
-    * Transaction simple-status description
-    * @member {String} status_text_simple
-    */
+     * Transaction simple-status description
+     * @member {String} status_text_simple
+     */
     status_text_simple = undefined;
+
     /**
-    * Transaction description
-    * @member {String} description
-    */
+     * Transaction description
+     * @member {String} description
+     */
     description = undefined;
+
     /**
-    * Transaction description (plain text)
-    * @member {String} description_raw
-    */
+     * Transaction description (plain text)
+     * @member {String} description_raw
+     */
     description_raw = undefined;
 
-
-
-
-
-
-
-
 }
-
-

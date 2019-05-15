@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import PrepaidItemsProductModel from './PrepaidItemsProductModel';
 
-
-
-
-
 /**
-* The PrepaidItemsList model module.
-* @module model/PrepaidItemsList
-*/
+ * The PrepaidItemsList model module.
+ * @module model/PrepaidItemsList
+ */
 export default class PrepaidItemsList {
     /**
-    * Constructs a new <code>PrepaidItemsList</code>.
-    * @alias module:model/PrepaidItemsList
-    * @class
-    */
+     * Constructs a new <code>PrepaidItemsList</code>.
+     * @alias module:model/PrepaidItemsList
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class PrepaidItemsList {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PrepaidItemsList();
-
             
             
             
-
             if (data.hasOwnProperty('count')) {
                 obj['count'] = ApiClient.convertToType(data['count'], 'Number');
             }
@@ -54,23 +41,15 @@ export default class PrepaidItemsList {
     }
 
     /**
-    * Number of existing prepaid items
-    * @member {Number} count
-    */
+     * Number of existing prepaid items
+     * @member {Number} count
+     */
     count = undefined;
+
     /**
-    * GET Prepaid/Items
-    * @member {Array.<module:model/PrepaidItemsProductModel>} data
-    */
+     * GET Prepaid/Items
+     * @member {Array.<module:model/PrepaidItemsProductModel>} data
+     */
     data = undefined;
 
-
-
-
-
-
-
-
 }
-
-

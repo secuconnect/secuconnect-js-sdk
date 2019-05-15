@@ -4,10 +4,59 @@ All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addMerchants**](GeneralMerchantsApi.md#addMerchants) | **POST** /General/Merchants | POST General/Merchants
 [**getAll**](GeneralMerchantsApi.md#getAll) | **GET** /General/Merchants | GET General/Merchants
 [**getOne**](GeneralMerchantsApi.md#getOne) | **GET** /General/Merchants/{generalMerchantId} | GET General/Merchants/{generalMerchantId}
 [**updateMerchant**](GeneralMerchantsApi.md#updateMerchant) | **PUT** /General/Merchants/{generalMerchantId} | PUT General/Merchants/{generalMerchantId}
 
+
+<a name="addMerchants"></a>
+# **addMerchants**
+> GeneralMerchantsProductModel addMerchants(body)
+
+POST General/Merchants
+
+Add a new merchant
+
+### Example
+```javascript
+import SecuconnectJsSdk from 'secuconnect-js-sdk';
+let defaultClient = SecuconnectJsSdk.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth_token
+let oauth_token = defaultClient.authentications['oauth_token'];
+oauth_token.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new SecuconnectJsSdk.GeneralMerchantsApi();
+
+let body = new SecuconnectJsSdk.GeneralMerchantsDTO(); // GeneralMerchantsDTO | general Merchant container properties
+
+apiInstance.addMerchants(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GeneralMerchantsDTO**](GeneralMerchantsDTO.md)| general Merchant container properties | 
+
+### Return type
+
+[**GeneralMerchantsProductModel**](GeneralMerchantsProductModel.md)
+
+### Authorization
+
+[oauth_token](../README.md#oauth_token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="getAll"></a>
 # **getAll**

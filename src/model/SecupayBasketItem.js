@@ -2,29 +2,19 @@
 import ApiClient from '../ApiClient';
 
 
-
-
-
 /**
-* The SecupayBasketItem model module.
-* @module model/SecupayBasketItem
-*/
+ * The SecupayBasketItem model module.
+ * @module model/SecupayBasketItem
+ */
 export default class SecupayBasketItem {
     /**
-    * Constructs a new <code>SecupayBasketItem</code>.
-    * Item describing single position in basket in transaction
-    * @alias module:model/SecupayBasketItem
-    * @class
-    */
+     * Constructs a new <code>SecupayBasketItem</code>.
+     * Item describing single position in basket in transaction
+     * @alias module:model/SecupayBasketItem
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +28,12 @@ export default class SecupayBasketItem {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SecupayBasketItem();
-
             
             
             
-
+            if (data.hasOwnProperty('item_type')) {
+                obj['item_type'] = ApiClient.convertToType(data['item_type'], 'String');
+            }
             if (data.hasOwnProperty('article_number')) {
                 obj['article_number'] = ApiClient.convertToType(data['article_number'], 'String');
             }
@@ -87,78 +78,88 @@ export default class SecupayBasketItem {
     }
 
     /**
-    * Article number of item
-    * @member {String} article_number
-    */
+     * Category of item
+     * @member {String} item_type
+     * @default 'article'
+     */
+    item_type = 'article';
+
+    /**
+     * Article number of item
+     * @member {String} article_number
+     */
     article_number = undefined;
+
     /**
-    * Quantity of articles in item
-    * @member {Number} quantity
-    */
+     * Quantity of articles in item
+     * @member {Number} quantity
+     */
     quantity = undefined;
+
     /**
-    * Descriptive name of item
-    * @member {String} name
-    */
+     * Descriptive name of item
+     * @member {String} name
+     */
     name = undefined;
+
     /**
-    * Model of item
-    * @member {String} model
-    */
+     * Model of item
+     * @member {String} model
+     */
     model = undefined;
+
     /**
-    * EAN, European Article Number
-    * @member {String} ean
-    */
+     * EAN, European Article Number
+     * @member {String} ean
+     */
     ean = undefined;
+
     /**
-    * Applicable tax in percentages
-    * @member {String} tax
-    */
+     * Applicable tax in percentages
+     * @member {String} tax
+     */
     tax = undefined;
+
     /**
-    * Total price
-    * @member {Number} total
-    */
+     * Total price
+     * @member {Number} total
+     */
     total = undefined;
+
     /**
-    * Price of single article, if item is of article category
-    * @member {Number} price
-    */
+     * Price of single article, if item is of article category
+     * @member {Number} price
+     */
     price = undefined;
+
     /**
-    * Special param for stakeholder payments
-    * @member {String} apikey
-    */
+     * Special param for stakeholder payments
+     * @member {String} apikey
+     */
     apikey = undefined;
+
     /**
-    * Special param for payout payments
-    * @member {String} transaction_hash
-    */
+     * Special param for payout payments
+     * @member {String} transaction_hash
+     */
     transaction_hash = undefined;
+
     /**
-    * Contract id - Special param for stakeholder payments
-    * @member {String} contract_id
-    */
+     * Contract id - Special param for stakeholder payments
+     * @member {String} contract_id
+     */
     contract_id = undefined;
+
     /**
-    * Reference id - must be unique for the entire basket
-    * @member {String} reference_id
-    */
+     * Reference id - must be unique for the entire basket
+     * @member {String} reference_id
+     */
     reference_id = undefined;
+
     /**
-    * Mixed-Basket: All basket items for one merchant.
-    * @member {Array.<module:model/SecupayBasketItem>} sub_basket
-    */
+     * Mixed-Basket: All basket items for one merchant.
+     * @member {Array.<module:model/SecupayBasketItem>} sub_basket
+     */
     sub_basket = undefined;
 
-
-
-
-
-
-
-
 }
-
-

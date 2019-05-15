@@ -12,7 +12,6 @@ Method | HTTP request | Description
 [**getAll**](LoyaltyMerchantcardsApi.md#getAll) | **GET** /Loyalty/MerchantCards | GET Loyalty/MerchantCards
 [**getLock**](LoyaltyMerchantcardsApi.md#getLock) | **GET** /Loyalty/MerchantCards/{loyaltyMerchantCardId}/lock | GET Loyalty/MerchantCards/{loyaltyMerchantCardId}/lock
 [**getOne**](LoyaltyMerchantcardsApi.md#getOne) | **GET** /Loyalty/MerchantCards/{loyaltyMerchantCardId} | GET Loyalty/MerchantCards/{loyaltyMerchantCardId}
-[**getRawMerchantCardId**](LoyaltyMerchantcardsApi.md#getRawMerchantCardId) | **GET** /Loyalty/MerchantCards/{generalMerchantId}/merchantcard/{loyaltyCardId} | GET Loyalty/MerchantCards/{generalMerchantId}/merchantcard/{loyaltyCardId}
 [**getVirtualTerminalData**](LoyaltyMerchantcardsApi.md#getVirtualTerminalData) | **GET** /Loyalty/MerchantCards/{loyaltyMerchantCardId}/virtualTerminalData/{loyaltyMerchantId} | GET Loyalty/MerchantCards/{loyaltyMerchantCardId}/virtualTerminalData/{loyaltyMerchantId}
 [**lock**](LoyaltyMerchantcardsApi.md#lock) | **POST** /Loyalty/MerchantCards/{loyaltyMerchantCardId}/lock | POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/lock
 [**newPassCode**](LoyaltyMerchantcardsApi.md#newPassCode) | **POST** /Loyalty/MerchantCards/{loyaltyMerchantCardId}/newPasscode | POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/newPasscode
@@ -424,57 +423,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**LoyaltyMerchantcardsProductModel**](LoyaltyMerchantcardsProductModel.md)
-
-### Authorization
-
-[oauth_token](../README.md#oauth_token)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="getRawMerchantCardId"></a>
-# **getRawMerchantCardId**
-> Object getRawMerchantCardId(generalMerchantId, loyaltyCardId)
-
-GET Loyalty/MerchantCards/{generalMerchantId}/merchantcard/{loyaltyCardId}
-
-Get raw merchant card id for merchant id and card id
-
-### Example
-```javascript
-import SecuconnectJsSdk from 'secuconnect-js-sdk';
-let defaultClient = SecuconnectJsSdk.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: oauth_token
-let oauth_token = defaultClient.authentications['oauth_token'];
-oauth_token.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new SecuconnectJsSdk.LoyaltyMerchantcardsApi();
-
-let generalMerchantId = "generalMerchantId_example"; // String | Merchant id
-
-let loyaltyCardId = "loyaltyCardId_example"; // String | Card id
-
-apiInstance.getRawMerchantCardId(generalMerchantId, loyaltyCardId).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **generalMerchantId** | **String**| Merchant id | 
- **loyaltyCardId** | **String**| Card id | 
-
-### Return type
-
-**Object**
 
 ### Authorization
 

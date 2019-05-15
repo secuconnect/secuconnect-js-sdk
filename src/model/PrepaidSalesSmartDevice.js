@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The PrepaidSalesSmartDevice model module.
-* @module model/PrepaidSalesSmartDevice
-*/
+ * The PrepaidSalesSmartDevice model module.
+ * @module model/PrepaidSalesSmartDevice
+ */
 export default class PrepaidSalesSmartDevice {
     /**
-    * Constructs a new <code>PrepaidSalesSmartDevice</code>.
-    * @alias module:model/PrepaidSalesSmartDevice
-    * @class
-    */
+     * Constructs a new <code>PrepaidSalesSmartDevice</code>.
+     * @alias module:model/PrepaidSalesSmartDevice
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class PrepaidSalesSmartDevice {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PrepaidSalesSmartDevice();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -59,33 +46,27 @@ export default class PrepaidSalesSmartDevice {
     }
 
     /**
-    * Object of smart device
-    * @member {String} object
-    */
+     * Object of smart device
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of smart device
-    * @member {String} id
-    */
+     * Id of smart device
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Smart device description
-    * @member {String} description
-    */
+     * Smart device description
+     * @member {String} description
+     */
     description = undefined;
+
     /**
-    * Smart device vendor uid
-    * @member {String} vendor_uid
-    */
+     * Smart device vendor uid
+     * @member {String} vendor_uid
+     */
     vendor_uid = undefined;
 
-
-
-
-
-
-
-
 }
-
-

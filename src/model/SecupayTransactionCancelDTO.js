@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The SecupayTransactionCancelDTO model module.
-* @module model/SecupayTransactionCancelDTO
-*/
+ * The SecupayTransactionCancelDTO model module.
+ * @module model/SecupayTransactionCancelDTO
+ */
 export default class SecupayTransactionCancelDTO {
     /**
-    * Constructs a new <code>SecupayTransactionCancelDTO</code>.
-    * @alias module:model/SecupayTransactionCancelDTO
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionCancelDTO</code>.
+     * @alias module:model/SecupayTransactionCancelDTO
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class SecupayTransactionCancelDTO {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SecupayTransactionCancelDTO();
-
             
             
             
-
             if (data.hasOwnProperty('contract')) {
                 obj['contract'] = ApiClient.convertToType(data['contract'], Object);
             }
@@ -56,29 +43,22 @@ export default class SecupayTransactionCancelDTO {
     }
 
     /**
-    * The payment contract object
-    * @member {Object} contract
-    */
+     * The payment contract object
+     * @member {Object} contract
+     */
     contract = undefined;
+
     /**
-    * partial or full refund amount, \"0\" means full refund
-    * @member {Number} amount
-    */
+     * partial or full refund amount, \"0\" means full refund
+     * @member {Number} amount
+     */
     amount = undefined;
+
     /**
-    * Mixed-Basket: (percentage) reduce the stakeholder amount too
-    * @member {Boolean} reduce_stakeholder_payment
-    * @default false
-    */
+     * Mixed-Basket: (percentage) reduce the stakeholder amount too
+     * @member {Boolean} reduce_stakeholder_payment
+     * @default false
+     */
     reduce_stakeholder_payment = false;
 
-
-
-
-
-
-
-
 }
-
-

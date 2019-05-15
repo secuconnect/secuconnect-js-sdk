@@ -3,29 +3,18 @@ import ApiClient from '../ApiClient';
 import LoyaltyDTOMerchant from './LoyaltyDTOMerchant';
 import LoyaltyDTOStore from './LoyaltyDTOStore';
 
-
-
-
-
 /**
-* The LoyaltyStoregroupsProductModel model module.
-* @module model/LoyaltyStoregroupsProductModel
-*/
+ * The LoyaltyStoregroupsProductModel model module.
+ * @module model/LoyaltyStoregroupsProductModel
+ */
 export default class LoyaltyStoregroupsProductModel {
     /**
-    * Constructs a new <code>LoyaltyStoregroupsProductModel</code>.
-    * @alias module:model/LoyaltyStoregroupsProductModel
-    * @class
-    */
+     * Constructs a new <code>LoyaltyStoregroupsProductModel</code>.
+     * @alias module:model/LoyaltyStoregroupsProductModel
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -39,11 +28,9 @@ export default class LoyaltyStoregroupsProductModel {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyStoregroupsProductModel();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -57,53 +44,49 @@ export default class LoyaltyStoregroupsProductModel {
                 obj['stores'] = ApiClient.convertToType(data['stores'], [LoyaltyDTOStore]);
             }
             if (data.hasOwnProperty('created')) {
-                obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+                obj['created'] = ApiClient.convertToType(data['created'], 'String');
             }
             if (data.hasOwnProperty('updated')) {
-                obj['updated'] = ApiClient.convertToType(data['updated'], 'Date');
+                obj['updated'] = ApiClient.convertToType(data['updated'], 'String');
             }
         }
         return obj;
     }
 
     /**
-    * Object of loyalty store group
-    * @member {String} object
-    */
+     * Object of loyalty store group
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of loyalty store group
-    * @member {String} id
-    */
+     * Id of loyalty store group
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Merchant data for loyalty
-    * @member {module:model/LoyaltyDTOMerchant} merchant
-    */
+     * Merchant data for loyalty
+     * @member {module:model/LoyaltyDTOMerchant} merchant
+     */
     merchant = undefined;
+
     /**
-    * LoyaltyStoregroupsProductModel
-    * @member {Array.<module:model/LoyaltyDTOStore>} stores
-    */
+     * LoyaltyStoregroupsProductModel
+     * @member {Array.<module:model/LoyaltyDTOStore>} stores
+     */
     stores = undefined;
+
     /**
-    * Creation date
-    * @member {Date} created
-    */
+     * Creation date
+     * @member {String} created
+     */
     created = undefined;
+
     /**
-    * Update date
-    * @member {Date} updated
-    */
+     * Update date
+     * @member {String} updated
+     */
     updated = undefined;
 
-
-
-
-
-
-
-
 }
-
-

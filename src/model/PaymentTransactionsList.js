@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import PaymentTransactionsProductModel from './PaymentTransactionsProductModel';
 
-
-
-
-
 /**
-* The PaymentTransactionsList model module.
-* @module model/PaymentTransactionsList
-*/
+ * The PaymentTransactionsList model module.
+ * @module model/PaymentTransactionsList
+ */
 export default class PaymentTransactionsList {
     /**
-    * Constructs a new <code>PaymentTransactionsList</code>.
-    * @alias module:model/PaymentTransactionsList
-    * @class
-    */
+     * Constructs a new <code>PaymentTransactionsList</code>.
+     * @alias module:model/PaymentTransactionsList
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class PaymentTransactionsList {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PaymentTransactionsList();
-
             
             
             
-
             if (data.hasOwnProperty('count')) {
                 obj['count'] = ApiClient.convertToType(data['count'], 'Number');
             }
@@ -54,23 +41,15 @@ export default class PaymentTransactionsList {
     }
 
     /**
-    * Number of existing payment transactions
-    * @member {Number} count
-    */
+     * Number of existing payment transactions
+     * @member {Number} count
+     */
     count = undefined;
+
     /**
-    * GET Payment/Transactions
-    * @member {Array.<module:model/PaymentTransactionsProductModel>} data
-    */
+     * GET Payment/Transactions
+     * @member {Array.<module:model/PaymentTransactionsProductModel>} data
+     */
     data = undefined;
 
-
-
-
-
-
-
-
 }
-
-

@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import BankAccountDescriptor from './BankAccountDescriptor';
 
-
-
-
-
 /**
-* The LoyaltyCustomersPaymentContainerModel model module.
-* @module model/LoyaltyCustomersPaymentContainerModel
-*/
+ * The LoyaltyCustomersPaymentContainerModel model module.
+ * @module model/LoyaltyCustomersPaymentContainerModel
+ */
 export default class LoyaltyCustomersPaymentContainerModel {
     /**
-    * Constructs a new <code>LoyaltyCustomersPaymentContainerModel</code>.
-    * @alias module:model/LoyaltyCustomersPaymentContainerModel
-    * @class
-    */
+     * Constructs a new <code>LoyaltyCustomersPaymentContainerModel</code>.
+     * @alias module:model/LoyaltyCustomersPaymentContainerModel
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class LoyaltyCustomersPaymentContainerModel {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyCustomersPaymentContainerModel();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -56,45 +43,40 @@ export default class LoyaltyCustomersPaymentContainerModel {
                 obj['payment_information'] = BankAccountDescriptor.constructFromObject(data['payment_information']);
             }
             if (data.hasOwnProperty('last_usage')) {
-                obj['last_usage'] = ApiClient.convertToType(data['last_usage'], 'Date');
+                obj['last_usage'] = ApiClient.convertToType(data['last_usage'], 'String');
             }
         }
         return obj;
     }
 
     /**
-    * LoyaltyCustomersPaymentContainerModel
-    * @member {String} object
-    */
+     * LoyaltyCustomersPaymentContainerModel
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * LoyaltyCustomersPaymentContainerModel
-    * @member {String} id
-    */
+     * LoyaltyCustomersPaymentContainerModel
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * LoyaltyCustomersPaymentContainerModel
-    * @member {String} type
-    */
+     * LoyaltyCustomersPaymentContainerModel
+     * @member {String} type
+     */
     type = undefined;
+
     /**
-    * Payment instrument data
-    * @member {module:model/BankAccountDescriptor} payment_information
-    */
+     * Payment instrument data
+     * @member {module:model/BankAccountDescriptor} payment_information
+     */
     payment_information = undefined;
+
     /**
-    * Last Usage date
-    * @member {Date} last_usage
-    */
+     * Last Usage date
+     * @member {String} last_usage
+     */
     last_usage = undefined;
 
-
-
-
-
-
-
-
 }
-
-

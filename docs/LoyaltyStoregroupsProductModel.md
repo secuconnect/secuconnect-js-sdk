@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **String** | Id of loyalty store group | [optional] 
 **merchant** | [**LoyaltyDTOMerchant**](LoyaltyDTOMerchant.md) | Merchant data for loyalty | [optional] 
 **stores** | [**[LoyaltyDTOStore]**](LoyaltyDTOStore.md) | LoyaltyStoregroupsProductModel | [optional] 
-**created** | **Date** | Creation date | [optional] 
-**updated** | **Date** | Update date | [optional] 
+**created** | **String** | Creation date | [optional] 
+**updated** | **String** | Update date | [optional] 
 
 

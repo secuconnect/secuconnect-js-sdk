@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import LoyaltyCardgroupsDTOMerchant from './LoyaltyCardgroupsDTOMerchant';
 
-
-
-
-
 /**
-* The LoyaltyCardgroupsProductModel model module.
-* @module model/LoyaltyCardgroupsProductModel
-*/
+ * The LoyaltyCardgroupsProductModel model module.
+ * @module model/LoyaltyCardgroupsProductModel
+ */
 export default class LoyaltyCardgroupsProductModel {
     /**
-    * Constructs a new <code>LoyaltyCardgroupsProductModel</code>.
-    * @alias module:model/LoyaltyCardgroupsProductModel
-    * @class
-    */
+     * Constructs a new <code>LoyaltyCardgroupsProductModel</code>.
+     * @alias module:model/LoyaltyCardgroupsProductModel
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class LoyaltyCardgroupsProductModel {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyCardgroupsProductModel();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -69,48 +56,45 @@ export default class LoyaltyCardgroupsProductModel {
     }
 
     /**
-    * Object of loyalty card group
-    * @member {String} object
-    */
+     * Object of loyalty card group
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of loyalty card group
-    * @member {String} id
-    */
+     * Id of loyalty card group
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Loyalty card group merchant
-    * @member {module:model/LoyaltyCardgroupsDTOMerchant} merchant
-    */
+     * Loyalty card group merchant
+     * @member {module:model/LoyaltyCardgroupsDTOMerchant} merchant
+     */
     merchant = undefined;
+
     /**
-    * Loyalty card group display name
-    * @member {String} display_name
-    */
+     * Loyalty card group display name
+     * @member {String} display_name
+     */
     display_name = undefined;
+
     /**
-    * Loyalty card group display name raw
-    * @member {String} display_name_raw
-    */
+     * Loyalty card group display name raw
+     * @member {String} display_name_raw
+     */
     display_name_raw = undefined;
+
     /**
-    * Loyalty card group stock warn limit
-    * @member {String} stock_warn_limit
-    */
+     * Loyalty card group stock warn limit
+     * @member {String} stock_warn_limit
+     */
     stock_warn_limit = undefined;
+
     /**
-    * Loyalty card group picture
-    * @member {String} picture
-    */
+     * Loyalty card group picture
+     * @member {String} picture
+     */
     picture = undefined;
 
-
-
-
-
-
-
-
 }
-
-

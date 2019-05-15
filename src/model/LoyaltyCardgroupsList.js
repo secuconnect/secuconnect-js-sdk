@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import LoyaltyCardgroupsProductModel from './LoyaltyCardgroupsProductModel';
 
-
-
-
-
 /**
-* The LoyaltyCardgroupsList model module.
-* @module model/LoyaltyCardgroupsList
-*/
+ * The LoyaltyCardgroupsList model module.
+ * @module model/LoyaltyCardgroupsList
+ */
 export default class LoyaltyCardgroupsList {
     /**
-    * Constructs a new <code>LoyaltyCardgroupsList</code>.
-    * @alias module:model/LoyaltyCardgroupsList
-    * @class
-    */
+     * Constructs a new <code>LoyaltyCardgroupsList</code>.
+     * @alias module:model/LoyaltyCardgroupsList
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class LoyaltyCardgroupsList {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyCardgroupsList();
-
             
             
             
-
             if (data.hasOwnProperty('count')) {
                 obj['count'] = ApiClient.convertToType(data['count'], 'Number');
             }
@@ -54,23 +41,15 @@ export default class LoyaltyCardgroupsList {
     }
 
     /**
-    * Number of existing loyalty card groups
-    * @member {Number} count
-    */
+     * Number of existing loyalty card groups
+     * @member {Number} count
+     */
     count = undefined;
+
     /**
-    * GET Loyalty/Cardgroups
-    * @member {Array.<module:model/LoyaltyCardgroupsProductModel>} data
-    */
+     * GET Loyalty/Cardgroups
+     * @member {Array.<module:model/LoyaltyCardgroupsProductModel>} data
+     */
     data = undefined;
 
-
-
-
-
-
-
-
 }
-
-

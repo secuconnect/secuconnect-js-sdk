@@ -3,29 +3,18 @@ import ApiClient from '../ApiClient';
 import Contact from './Contact';
 import ProductInstanceUID from './ProductInstanceUID';
 
-
-
-
-
 /**
-* The PaymentCustomersProductModel model module.
-* @module model/PaymentCustomersProductModel
-*/
+ * The PaymentCustomersProductModel model module.
+ * @module model/PaymentCustomersProductModel
+ */
 export default class PaymentCustomersProductModel {
     /**
-    * Constructs a new <code>PaymentCustomersProductModel</code>.
-    * @alias module:model/PaymentCustomersProductModel
-    * @class
-    */
+     * Constructs a new <code>PaymentCustomersProductModel</code>.
+     * @alias module:model/PaymentCustomersProductModel
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -39,11 +28,9 @@ export default class PaymentCustomersProductModel {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PaymentCustomersProductModel();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -57,53 +44,49 @@ export default class PaymentCustomersProductModel {
                 obj['contact'] = Contact.constructFromObject(data['contact']);
             }
             if (data.hasOwnProperty('created')) {
-                obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+                obj['created'] = ApiClient.convertToType(data['created'], 'String');
             }
             if (data.hasOwnProperty('updated')) {
-                obj['updated'] = ApiClient.convertToType(data['updated'], 'Date');
+                obj['updated'] = ApiClient.convertToType(data['updated'], 'String');
             }
         }
         return obj;
     }
 
     /**
-    * Object of payment customer
-    * @member {String} object
-    */
+     * Object of payment customer
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of payment customer
-    * @member {String} id
-    */
+     * Id of payment customer
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Payment contract
-    * @member {module:model/ProductInstanceUID} contract
-    */
+     * Payment contract
+     * @member {module:model/ProductInstanceUID} contract
+     */
     contract = undefined;
+
     /**
-    * Customer contact info
-    * @member {module:model/Contact} contact
-    */
+     * Customer contact info
+     * @member {module:model/Contact} contact
+     */
     contact = undefined;
+
     /**
-    * Created at date
-    * @member {Date} created
-    */
+     * Created at date
+     * @member {String} created
+     */
     created = undefined;
+
     /**
-    * Updated at date
-    * @member {Date} updated
-    */
+     * Updated at date
+     * @member {String} updated
+     */
     updated = undefined;
 
-
-
-
-
-
-
-
 }
-
-

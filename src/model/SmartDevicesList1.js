@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import SmartDevicesProductModel from './SmartDevicesProductModel';
 
-
-
-
-
 /**
-* The SmartDevicesList1 model module.
-* @module model/SmartDevicesList1
-*/
+ * The SmartDevicesList1 model module.
+ * @module model/SmartDevicesList1
+ */
 export default class SmartDevicesList1 {
     /**
-    * Constructs a new <code>SmartDevicesList1</code>.
-    * @alias module:model/SmartDevicesList1
-    * @class
-    */
+     * Constructs a new <code>SmartDevicesList1</code>.
+     * @alias module:model/SmartDevicesList1
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class SmartDevicesList1 {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SmartDevicesList1();
-
             
             
             
-
             if (data.hasOwnProperty('count')) {
                 obj['count'] = ApiClient.convertToType(data['count'], 'Number');
             }
@@ -54,23 +41,15 @@ export default class SmartDevicesList1 {
     }
 
     /**
-    * Number of existing smart devices
-    * @member {Number} count
-    */
+     * Number of existing smart devices
+     * @member {Number} count
+     */
     count = undefined;
+
     /**
-    * GET Smart/Devices/{smartDeviceId}/routing/type/{type}
-    * @member {Array.<module:model/SmartDevicesProductModel>} data
-    */
+     * GET Smart/Devices/{smartDeviceId}/routing/type/{type}
+     * @member {Array.<module:model/SmartDevicesProductModel>} data
+     */
     data = undefined;
 
-
-
-
-
-
-
-
 }
-
-

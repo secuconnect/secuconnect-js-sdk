@@ -2,30 +2,19 @@
 import ApiClient from '../ApiClient';
 import BankAccountDescriptor from './BankAccountDescriptor';
 
-
-
-
-
 /**
-* The SecupayTransactionProductModelUsedPaymentInstrument model module.
-* @module model/SecupayTransactionProductModelUsedPaymentInstrument
-*/
+ * The SecupayTransactionProductModelUsedPaymentInstrument model module.
+ * @module model/SecupayTransactionProductModelUsedPaymentInstrument
+ */
 export default class SecupayTransactionProductModelUsedPaymentInstrument {
     /**
-    * Constructs a new <code>SecupayTransactionProductModelUsedPaymentInstrument</code>.
-    * The payment data which has the payer used (like bank account, credit card, ...). This data is always masked.
-    * @alias module:model/SecupayTransactionProductModelUsedPaymentInstrument
-    * @class
-    */
+     * Constructs a new <code>SecupayTransactionProductModelUsedPaymentInstrument</code>.
+     * The payment data which has the payer used (like bank account, credit card, ...). This data is always masked.
+     * @alias module:model/SecupayTransactionProductModelUsedPaymentInstrument
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -39,11 +28,9 @@ export default class SecupayTransactionProductModelUsedPaymentInstrument {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SecupayTransactionProductModelUsedPaymentInstrument();
-
             
             
             
-
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
@@ -55,23 +42,15 @@ export default class SecupayTransactionProductModelUsedPaymentInstrument {
     }
 
     /**
-    * The type of the payment instrument data, like: 'bank_account' or 'credit_card'
-    * @member {String} type
-    */
+     * The type of the payment instrument data, like: 'bank_account' or 'credit_card'
+     * @member {String} type
+     */
     type = undefined;
+
     /**
-    * Holds the payment instrument data
-    * @member {module:model/BankAccountDescriptor} data
-    */
+     * Holds the payment instrument data
+     * @member {module:model/BankAccountDescriptor} data
+     */
     data = undefined;
 
-
-
-
-
-
-
-
 }
-
-

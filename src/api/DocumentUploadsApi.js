@@ -27,6 +27,57 @@ export default class DocumentUploadsApi {
     /**
      * POST Document/Uploads
      * Store uploaded file
+     * @param {File} fileToUpload File to upload
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DocumentUploadsProductModel} and HTTP response
+     */
+    documentUploadsMultipartPostWithHttpInfo(fileToUpload) {
+      let postBody = null;
+
+      // verify the required parameter 'fileToUpload' is set
+      if (fileToUpload === undefined || fileToUpload === null) {
+        throw new Error("Missing the required parameter 'fileToUpload' when calling documentUploadsMultipartPost");
+      }
+
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+        'fileToUpload': fileToUpload
+      };
+
+      let authNames = ['oauth_token'];
+      let contentTypes = ['multipart/form-data'];
+      let accepts = [];
+      let returnType = DocumentUploadsProductModel;
+
+      return this.apiClient.callApi(
+        '/Document/Uploads?multipart', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * POST Document/Uploads
+     * Store uploaded file
+     * @param {File} fileToUpload File to upload
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DocumentUploadsProductModel}
+     */
+    documentUploadsMultipartPost(fileToUpload) {
+      return this.documentUploadsMultipartPostWithHttpInfo(fileToUpload)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * POST Document/Uploads
+     * Store uploaded file
      * @param {module:model/DocumentUploadsDTOContent} content Content
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DocumentUploadsBaseProductModel} and HTTP response
      */
@@ -68,57 +119,6 @@ export default class DocumentUploadsApi {
      */
     documentUploadsPost(content) {
       return this.documentUploadsPostWithHttpInfo(content)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * POST Document/Uploads
-     * Store uploaded file
-     * @param {File} fileToUpload File to upload
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DocumentUploadsProductModel} and HTTP response
-     */
-    documentUploadsmultipartPostWithHttpInfo(fileToUpload) {
-      let postBody = null;
-
-      // verify the required parameter 'fileToUpload' is set
-      if (fileToUpload === undefined || fileToUpload === null) {
-        throw new Error("Missing the required parameter 'fileToUpload' when calling documentUploadsmultipartPost");
-      }
-
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-        'fileToUpload': fileToUpload
-      };
-
-      let authNames = ['oauth_token'];
-      let contentTypes = ['multipart/form-data'];
-      let accepts = [];
-      let returnType = DocumentUploadsProductModel;
-
-      return this.apiClient.callApi(
-        '/Document/Uploads?multipart', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * POST Document/Uploads
-     * Store uploaded file
-     * @param {File} fileToUpload File to upload
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DocumentUploadsProductModel}
-     */
-    documentUploadsmultipartPost(fileToUpload) {
-      return this.documentUploadsmultipartPostWithHttpInfo(fileToUpload)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

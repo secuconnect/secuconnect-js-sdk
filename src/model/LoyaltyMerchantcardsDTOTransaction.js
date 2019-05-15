@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The LoyaltyMerchantcardsDTOTransaction model module.
-* @module model/LoyaltyMerchantcardsDTOTransaction
-*/
+ * The LoyaltyMerchantcardsDTOTransaction model module.
+ * @module model/LoyaltyMerchantcardsDTOTransaction
+ */
 export default class LoyaltyMerchantcardsDTOTransaction {
     /**
-    * Constructs a new <code>LoyaltyMerchantcardsDTOTransaction</code>.
-    * @alias module:model/LoyaltyMerchantcardsDTOTransaction
-    * @class
-    */
+     * Constructs a new <code>LoyaltyMerchantcardsDTOTransaction</code>.
+     * @alias module:model/LoyaltyMerchantcardsDTOTransaction
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class LoyaltyMerchantcardsDTOTransaction {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyMerchantcardsDTOTransaction();
-
             
             
             
-
             if (data.hasOwnProperty('action')) {
                 obj['action'] = ApiClient.convertToType(data['action'], 'String');
             }
@@ -74,58 +61,57 @@ export default class LoyaltyMerchantcardsDTOTransaction {
     }
 
     /**
-    * Action
-    * @member {String} action
-    */
+     * Action
+     * @member {String} action
+     */
     action = undefined;
+
     /**
-    * Terminal id
-    * @member {String} terminal_id
-    */
+     * Terminal id
+     * @member {String} terminal_id
+     */
     terminal_id = undefined;
+
     /**
-    * Amount
-    * @member {Number} amount
-    */
+     * Amount
+     * @member {Number} amount
+     */
     amount = undefined;
+
     /**
-    * Tid
-    * @member {String} tid
-    */
+     * Tid
+     * @member {String} tid
+     */
     tid = undefined;
+
     /**
-    * Store id
-    * @member {String} store
-    */
+     * Store id
+     * @member {String} store
+     */
     store = undefined;
+
     /**
-    * Card number
-    * @member {Number} cardnumber
-    */
+     * Card number
+     * @member {Number} cardnumber
+     */
     cardnumber = undefined;
+
     /**
-    * Bonus amount
-    * @member {Number} bonus_amount
-    */
+     * Bonus amount
+     * @member {Number} bonus_amount
+     */
     bonus_amount = undefined;
+
     /**
-    * Amount split allowed
-    * @member {String} amount_split_allowed
-    */
+     * Amount split allowed
+     * @member {String} amount_split_allowed
+     */
     amount_split_allowed = undefined;
+
     /**
-    * Merchant id
-    * @member {String} merchant_id
-    */
+     * Merchant id
+     * @member {String} merchant_id
+     */
     merchant_id = undefined;
 
-
-
-
-
-
-
-
 }
-
-

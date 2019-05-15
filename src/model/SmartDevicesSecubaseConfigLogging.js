@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import SmartDevicesSecubaseConfigLoggingFileNet from './SmartDevicesSecubaseConfigLoggingFileNet';
 
-
-
-
-
 /**
-* The SmartDevicesSecubaseConfigLogging model module.
-* @module model/SmartDevicesSecubaseConfigLogging
-*/
+ * The SmartDevicesSecubaseConfigLogging model module.
+ * @module model/SmartDevicesSecubaseConfigLogging
+ */
 export default class SmartDevicesSecubaseConfigLogging {
     /**
-    * Constructs a new <code>SmartDevicesSecubaseConfigLogging</code>.
-    * @alias module:model/SmartDevicesSecubaseConfigLogging
-    * @class
-    */
+     * Constructs a new <code>SmartDevicesSecubaseConfigLogging</code>.
+     * @alias module:model/SmartDevicesSecubaseConfigLogging
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class SmartDevicesSecubaseConfigLogging {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SmartDevicesSecubaseConfigLogging();
-
             
             
             
-
             if (data.hasOwnProperty('secubase')) {
                 obj['secubase'] = SmartDevicesSecubaseConfigLoggingFileNet.constructFromObject(data['secubase']);
             }
@@ -54,23 +41,15 @@ export default class SmartDevicesSecubaseConfigLogging {
     }
 
     /**
-    * Secubase
-    * @member {module:model/SmartDevicesSecubaseConfigLoggingFileNet} secubase
-    */
+     * Secubase
+     * @member {module:model/SmartDevicesSecubaseConfigLoggingFileNet} secubase
+     */
     secubase = undefined;
+
     /**
-    * App
-    * @member {module:model/SmartDevicesSecubaseConfigLoggingFileNet} app
-    */
+     * App
+     * @member {module:model/SmartDevicesSecubaseConfigLoggingFileNet} app
+     */
     app = undefined;
 
-
-
-
-
-
-
-
 }
-
-

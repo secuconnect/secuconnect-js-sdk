@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The InvitedBy model module.
-* @module model/InvitedBy
-*/
+ * The InvitedBy model module.
+ * @module model/InvitedBy
+ */
 export default class InvitedBy {
     /**
-    * Constructs a new <code>InvitedBy</code>.
-    * @alias module:model/InvitedBy
-    * @class
-    */
+     * Constructs a new <code>InvitedBy</code>.
+     * @alias module:model/InvitedBy
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class InvitedBy {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new InvitedBy();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -56,28 +43,21 @@ export default class InvitedBy {
     }
 
     /**
-    * Object of invited by
-    * @member {String} object
-    */
+     * Object of invited by
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of invited by
-    * @member {String} id
-    */
+     * Id of invited by
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Invited
-    * @member {String} invited
-    */
+     * Invited
+     * @member {String} invited
+     */
     invited = undefined;
 
-
-
-
-
-
-
-
 }
-
-

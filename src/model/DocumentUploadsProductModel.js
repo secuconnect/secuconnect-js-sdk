@@ -2,31 +2,21 @@
 import ApiClient from '../ApiClient';
 import DocumentUploadsBaseProductModel from './DocumentUploadsBaseProductModel';
 
-
-
-
-
 /**
-* The DocumentUploadsProductModel model module.
-* @module model/DocumentUploadsProductModel
-*/
+ * The DocumentUploadsProductModel model module.
+ * @module model/DocumentUploadsProductModel
+ */
 export default class DocumentUploadsProductModel {
     /**
-    * Constructs a new <code>DocumentUploadsProductModel</code>.
-    * @alias module:model/DocumentUploadsProductModel
-    * @class
-    * @implements module:model/DocumentUploadsBaseProductModel
-    */
+     * Constructs a new <code>DocumentUploadsProductModel</code>.
+     * @alias module:model/DocumentUploadsProductModel
+     * @class
+     * @implements module:model/DocumentUploadsBaseProductModel
+     */
 
     constructor() {
         
-
-        
         DocumentUploadsBaseProductModel.call(this);
-
-        
-
-        
     }
 
     /**
@@ -39,11 +29,9 @@ export default class DocumentUploadsProductModel {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new DocumentUploadsProductModel();
-
             
             
             DocumentUploadsBaseProductModel.constructFromObject(data, obj);
-
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
@@ -58,45 +46,42 @@ export default class DocumentUploadsProductModel {
     }
 
     /**
-    * Type
-    * @member {String} type
-    */
+     * Type
+     * @member {String} type
+     */
     type = undefined;
+
     /**
-    * Name
-    * @member {String} name
-    */
+     * Name
+     * @member {String} name
+     */
     name = undefined;
+
     /**
-    * Size
-    * @member {Number} size
-    */
+     * Size
+     * @member {Number} size
+     */
     size = undefined;
 
 
     // Implement DocumentUploadsBaseProductModel interface:
+
     /**
-    * Object of document upload
-    * @member {String} object
-    */
+     * Object of document upload
+     * @member {String} object
+     */
     object = undefined;
-/**
-    * Id of document upload
-    * @member {String} id
-    */
+
+    /**
+     * Id of document upload
+     * @member {String} id
+     */
     id = undefined;
-/**
-    * Created at date
-    * @member {Date} created
-    */
+
+    /**
+     * Created at date
+     * @member {String} created
+     */
     created = undefined;
 
-
-
-
-
-
-
 }
-
-

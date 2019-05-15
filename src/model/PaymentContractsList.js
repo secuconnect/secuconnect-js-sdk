@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import PaymentContractsProductModel from './PaymentContractsProductModel';
 
-
-
-
-
 /**
-* The PaymentContractsList model module.
-* @module model/PaymentContractsList
-*/
+ * The PaymentContractsList model module.
+ * @module model/PaymentContractsList
+ */
 export default class PaymentContractsList {
     /**
-    * Constructs a new <code>PaymentContractsList</code>.
-    * @alias module:model/PaymentContractsList
-    * @class
-    */
+     * Constructs a new <code>PaymentContractsList</code>.
+     * @alias module:model/PaymentContractsList
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class PaymentContractsList {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PaymentContractsList();
-
             
             
             
-
             if (data.hasOwnProperty('count')) {
                 obj['count'] = ApiClient.convertToType(data['count'], 'Number');
             }
@@ -54,23 +41,15 @@ export default class PaymentContractsList {
     }
 
     /**
-    * Number of existing payment contracts
-    * @member {Number} count
-    */
+     * Number of existing payment contracts
+     * @member {Number} count
+     */
     count = undefined;
+
     /**
-    * GET Payment/Contracts
-    * @member {Array.<module:model/PaymentContractsProductModel>} data
-    */
+     * GET Payment/Contracts
+     * @member {Array.<module:model/PaymentContractsProductModel>} data
+     */
     data = undefined;
 
-
-
-
-
-
-
-
 }
-
-

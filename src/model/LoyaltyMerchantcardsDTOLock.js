@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The LoyaltyMerchantcardsDTOLock model module.
-* @module model/LoyaltyMerchantcardsDTOLock
-*/
+ * The LoyaltyMerchantcardsDTOLock model module.
+ * @module model/LoyaltyMerchantcardsDTOLock
+ */
 export default class LoyaltyMerchantcardsDTOLock {
     /**
-    * Constructs a new <code>LoyaltyMerchantcardsDTOLock</code>.
-    * @alias module:model/LoyaltyMerchantcardsDTOLock
-    * @class
-    */
+     * Constructs a new <code>LoyaltyMerchantcardsDTOLock</code>.
+     * @alias module:model/LoyaltyMerchantcardsDTOLock
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class LoyaltyMerchantcardsDTOLock {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyMerchantcardsDTOLock();
-
             
             
             
-
             if (data.hasOwnProperty('lock_status')) {
                 obj['lock_status'] = ApiClient.convertToType(data['lock_status'], 'String');
             }
@@ -56,28 +43,21 @@ export default class LoyaltyMerchantcardsDTOLock {
     }
 
     /**
-    * Lock status
-    * @member {String} lock_status
-    */
+     * Lock status
+     * @member {String} lock_status
+     */
     lock_status = undefined;
+
     /**
-    * Lock reason
-    * @member {String} reason
-    */
+     * Lock reason
+     * @member {String} reason
+     */
     reason = undefined;
+
     /**
-    * Lock note
-    * @member {String} note
-    */
+     * Lock note
+     * @member {String} note
+     */
     note = undefined;
 
-
-
-
-
-
-
-
 }
-
-

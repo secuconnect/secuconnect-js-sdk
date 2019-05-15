@@ -3,31 +3,21 @@ import ApiClient from '../ApiClient';
 import ReceiptType from './ReceiptType';
 import ReceiptValue from './ReceiptValue';
 
-
-
-
-
 /**
-* The ReceiptTypeValue model module.
-* @module model/ReceiptTypeValue
-*/
+ * The ReceiptTypeValue model module.
+ * @module model/ReceiptTypeValue
+ */
 export default class ReceiptTypeValue {
     /**
-    * Constructs a new <code>ReceiptTypeValue</code>.
-    * @alias module:model/ReceiptTypeValue
-    * @class
-    * @implements module:model/ReceiptType
-    */
+     * Constructs a new <code>ReceiptTypeValue</code>.
+     * @alias module:model/ReceiptTypeValue
+     * @class
+     * @implements module:model/ReceiptType
+     */
 
     constructor() {
         
-
-        
         ReceiptType.call(this);
-
-        
-
-        
     }
 
     /**
@@ -40,11 +30,9 @@ export default class ReceiptTypeValue {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ReceiptTypeValue();
-
             
             
             ReceiptType.constructFromObject(data, obj);
-
             if (data.hasOwnProperty('value')) {
                 obj['value'] = ReceiptValue.constructFromObject(data['value']);
             }
@@ -53,25 +41,18 @@ export default class ReceiptTypeValue {
     }
 
     /**
-    * Value object
-    * @member {module:model/ReceiptValue} value
-    */
+     * Value object
+     * @member {module:model/ReceiptValue} value
+     */
     value = undefined;
 
 
     // Implement ReceiptType interface:
+
     /**
-    * Type
-    * @member {String} type
-    */
+     * Type
+     * @member {String} type
+     */
     type = undefined;
 
-
-
-
-
-
-
 }
-
-

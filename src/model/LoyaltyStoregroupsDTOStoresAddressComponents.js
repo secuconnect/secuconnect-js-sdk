@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The LoyaltyStoregroupsDTOStoresAddressComponents model module.
-* @module model/LoyaltyStoregroupsDTOStoresAddressComponents
-*/
+ * The LoyaltyStoregroupsDTOStoresAddressComponents model module.
+ * @module model/LoyaltyStoregroupsDTOStoresAddressComponents
+ */
 export default class LoyaltyStoregroupsDTOStoresAddressComponents {
     /**
-    * Constructs a new <code>LoyaltyStoregroupsDTOStoresAddressComponents</code>.
-    * @alias module:model/LoyaltyStoregroupsDTOStoresAddressComponents
-    * @class
-    */
+     * Constructs a new <code>LoyaltyStoregroupsDTOStoresAddressComponents</code>.
+     * @alias module:model/LoyaltyStoregroupsDTOStoresAddressComponents
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class LoyaltyStoregroupsDTOStoresAddressComponents {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyStoregroupsDTOStoresAddressComponents();
-
             
             
             
-
             if (data.hasOwnProperty('long_name')) {
                 obj['long_name'] = ApiClient.convertToType(data['long_name'], 'String');
             }
@@ -56,28 +43,21 @@ export default class LoyaltyStoregroupsDTOStoresAddressComponents {
     }
 
     /**
-    * Long name
-    * @member {String} long_name
-    */
+     * Long name
+     * @member {String} long_name
+     */
     long_name = undefined;
+
     /**
-    * Short name
-    * @member {String} short_name
-    */
+     * Short name
+     * @member {String} short_name
+     */
     short_name = undefined;
+
     /**
-    * Types
-    * @member {String} types
-    */
+     * Types
+     * @member {String} types
+     */
     types = undefined;
 
-
-
-
-
-
-
-
 }
-
-

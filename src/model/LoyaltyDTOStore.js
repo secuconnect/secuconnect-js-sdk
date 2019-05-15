@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import LoyaltyStoregroupsDTOStoresAddressComponents from './LoyaltyStoregroupsDTOStoresAddressComponents';
 
-
-
-
-
 /**
-* The LoyaltyDTOStore model module.
-* @module model/LoyaltyDTOStore
-*/
+ * The LoyaltyDTOStore model module.
+ * @module model/LoyaltyDTOStore
+ */
 export default class LoyaltyDTOStore {
     /**
-    * Constructs a new <code>LoyaltyDTOStore</code>.
-    * @alias module:model/LoyaltyDTOStore
-    * @class
-    */
+     * Constructs a new <code>LoyaltyDTOStore</code>.
+     * @alias module:model/LoyaltyDTOStore
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class LoyaltyDTOStore {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyDTOStore();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -69,48 +56,45 @@ export default class LoyaltyDTOStore {
     }
 
     /**
-    * LoyaltyDTOStore
-    * @member {String} object
-    */
+     * LoyaltyDTOStore
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * LoyaltyDTOStore
-    * @member {String} id
-    */
+     * LoyaltyDTOStore
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * LoyaltyDTOStore
-    * @member {Array.<module:model/LoyaltyStoregroupsDTOStoresAddressComponents>} address_components
-    */
+     * LoyaltyDTOStore
+     * @member {Array.<module:model/LoyaltyStoregroupsDTOStoresAddressComponents>} address_components
+     */
     address_components = undefined;
+
     /**
-    * Address formatted
-    * @member {String} address_formatted
-    */
+     * Address formatted
+     * @member {String} address_formatted
+     */
     address_formatted = undefined;
+
     /**
-    * Geometry
-    * @member {String} geometry
-    */
+     * Geometry
+     * @member {String} geometry
+     */
     geometry = undefined;
+
     /**
-    * Name
-    * @member {String} name
-    */
+     * Name
+     * @member {String} name
+     */
     name = undefined;
+
     /**
-    * Raw name
-    * @member {String} name_raw
-    */
+     * Raw name
+     * @member {String} name_raw
+     */
     name_raw = undefined;
 
-
-
-
-
-
-
-
 }
-
-

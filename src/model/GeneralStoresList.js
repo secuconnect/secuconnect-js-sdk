@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import GeneralStoresProductModel from './GeneralStoresProductModel';
 
-
-
-
-
 /**
-* The GeneralStoresList model module.
-* @module model/GeneralStoresList
-*/
+ * The GeneralStoresList model module.
+ * @module model/GeneralStoresList
+ */
 export default class GeneralStoresList {
     /**
-    * Constructs a new <code>GeneralStoresList</code>.
-    * @alias module:model/GeneralStoresList
-    * @class
-    */
+     * Constructs a new <code>GeneralStoresList</code>.
+     * @alias module:model/GeneralStoresList
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class GeneralStoresList {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new GeneralStoresList();
-
             
             
             
-
             if (data.hasOwnProperty('count')) {
                 obj['count'] = ApiClient.convertToType(data['count'], 'Number');
             }
@@ -54,23 +41,15 @@ export default class GeneralStoresList {
     }
 
     /**
-    * Number of existing general stores
-    * @member {Number} count
-    */
+     * Number of existing general stores
+     * @member {Number} count
+     */
     count = undefined;
+
     /**
-    * GET General/Stores
-    * @member {Array.<module:model/GeneralStoresProductModel>} data
-    */
+     * GET General/Stores
+     * @member {Array.<module:model/GeneralStoresProductModel>} data
+     */
     data = undefined;
 
-
-
-
-
-
-
-
 }
-
-

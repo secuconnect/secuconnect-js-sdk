@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The LoyaltyCardsDTOAccount model module.
-* @module model/LoyaltyCardsDTOAccount
-*/
+ * The LoyaltyCardsDTOAccount model module.
+ * @module model/LoyaltyCardsDTOAccount
+ */
 export default class LoyaltyCardsDTOAccount {
     /**
-    * Constructs a new <code>LoyaltyCardsDTOAccount</code>.
-    * @alias module:model/LoyaltyCardsDTOAccount
-    * @class
-    */
+     * Constructs a new <code>LoyaltyCardsDTOAccount</code>.
+     * @alias module:model/LoyaltyCardsDTOAccount
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class LoyaltyCardsDTOAccount {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoyaltyCardsDTOAccount();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -53,23 +40,15 @@ export default class LoyaltyCardsDTOAccount {
     }
 
     /**
-    * LoyaltyCardsDTOAccount
-    * @member {String} object
-    */
+     * LoyaltyCardsDTOAccount
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * LoyaltyCardsDTOAccount
-    * @member {String} id
-    */
+     * LoyaltyCardsDTOAccount
+     * @member {String} id
+     */
     id = undefined;
 
-
-
-
-
-
-
-
 }
-
-

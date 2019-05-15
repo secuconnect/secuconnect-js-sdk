@@ -1,29 +1,18 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The PrepaidSalesItem model module.
-* @module model/PrepaidSalesItem
-*/
+ * The PrepaidSalesItem model module.
+ * @module model/PrepaidSalesItem
+ */
 export default class PrepaidSalesItem {
     /**
-    * Constructs a new <code>PrepaidSalesItem</code>.
-    * @alias module:model/PrepaidSalesItem
-    * @class
-    */
+     * Constructs a new <code>PrepaidSalesItem</code>.
+     * @alias module:model/PrepaidSalesItem
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -37,11 +26,9 @@ export default class PrepaidSalesItem {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PrepaidSalesItem();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -62,38 +49,33 @@ export default class PrepaidSalesItem {
     }
 
     /**
-    * Object of item
-    * @member {String} object
-    */
+     * Object of item
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of item
-    * @member {String} id
-    */
+     * Id of item
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Item description
-    * @member {String} description
-    */
+     * Item description
+     * @member {String} description
+     */
     description = undefined;
+
     /**
-    * Item logo
-    * @member {String} logo
-    */
+     * Item logo
+     * @member {String} logo
+     */
     logo = undefined;
+
     /**
-    * Item type
-    * @member {String} type
-    */
+     * Item type
+     * @member {String} type
+     */
     type = undefined;
 
-
-
-
-
-
-
-
 }
-
-

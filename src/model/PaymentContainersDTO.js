@@ -3,29 +3,18 @@ import ApiClient from '../ApiClient';
 import PaymentContainersDTOCustomer from './PaymentContainersDTOCustomer';
 import PaymentContainersDTOPrivate from './PaymentContainersDTOPrivate';
 
-
-
-
-
 /**
-* The PaymentContainersDTO model module.
-* @module model/PaymentContainersDTO
-*/
+ * The PaymentContainersDTO model module.
+ * @module model/PaymentContainersDTO
+ */
 export default class PaymentContainersDTO {
     /**
-    * Constructs a new <code>PaymentContainersDTO</code>.
-    * @alias module:model/PaymentContainersDTO
-    * @class
-    */
+     * Constructs a new <code>PaymentContainersDTO</code>.
+     * @alias module:model/PaymentContainersDTO
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -39,11 +28,9 @@ export default class PaymentContainersDTO {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PaymentContainersDTO();
-
             
             
             
-
             if (data.hasOwnProperty('customer')) {
                 obj['customer'] = PaymentContainersDTOCustomer.constructFromObject(data['customer']);
             }
@@ -58,26 +45,19 @@ export default class PaymentContainersDTO {
     }
 
     /**
-    * @member {module:model/PaymentContainersDTOCustomer} customer
-    */
+     * @member {module:model/PaymentContainersDTOCustomer} customer
+     */
     customer = undefined;
+
     /**
-    * Type of Payment Containers
-    * @member {String} type
-    */
+     * Type of Payment Containers
+     * @member {String} type
+     */
     type = undefined;
+
     /**
-    * @member {module:model/PaymentContainersDTOPrivate} private
-    */
+     * @member {module:model/PaymentContainersDTOPrivate} private
+     */
     private = undefined;
 
-
-
-
-
-
-
-
 }
-
-

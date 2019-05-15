@@ -4,6 +4,7 @@ import ProductExceptionPayload from '../model/ProductExceptionPayload';
 import SmartTransactionsDTO from '../model/SmartTransactionsDTO';
 import SmartTransactionsList from '../model/SmartTransactionsList';
 import SmartTransactionsPreTransactionModel from '../model/SmartTransactionsPreTransactionModel';
+import SmartTransactionsPrepare from '../model/SmartTransactionsPrepare';
 import SmartTransactionsProductModel from '../model/SmartTransactionsProductModel';
 
 /**
@@ -341,7 +342,7 @@ export default class SmartTransactionsApi {
 
 
     /**
-     * POST Smart/Transactions/{smartTransactionId}/PreTransaction
+     * POST Smart/Transactions/{smartTransactionId}/preTransaction
      * Function that checks balance of merchantcard from ident and if possible creates bonus product items for basket
      * @param {String} smartTransactionId Smart transaction id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SmartTransactionsPreTransactionModel} and HTTP response
@@ -371,20 +372,78 @@ export default class SmartTransactionsApi {
       let returnType = SmartTransactionsPreTransactionModel;
 
       return this.apiClient.callApi(
-        '/Smart/Transactions/{smartTransactionId}/PreTransaction', 'POST',
+        '/Smart/Transactions/{smartTransactionId}/preTransaction', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * POST Smart/Transactions/{smartTransactionId}/PreTransaction
+     * POST Smart/Transactions/{smartTransactionId}/preTransaction
      * Function that checks balance of merchantcard from ident and if possible creates bonus product items for basket
      * @param {String} smartTransactionId Smart transaction id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SmartTransactionsPreTransactionModel}
      */
     preTransaction(smartTransactionId) {
       return this.preTransactionWithHttpInfo(smartTransactionId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * POST Smart/Transactions/stx_xxx/prepare
+     * Create and score payment transaction assigned to given smart transaction
+     * @param {String} smartTransactionId Smart transaction id
+     * @param {module:model/SmartTransactionsPrepare} body Information which customer and container will be used to this operation
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SmartTransactionsProductModel} and HTTP response
+     */
+    prepareWithHttpInfo(smartTransactionId, body) {
+      let postBody = body;
+
+      // verify the required parameter 'smartTransactionId' is set
+      if (smartTransactionId === undefined || smartTransactionId === null) {
+        throw new Error("Missing the required parameter 'smartTransactionId' when calling prepare");
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling prepare");
+      }
+
+
+      let pathParams = {
+        'smartTransactionId': smartTransactionId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['oauth_token'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = SmartTransactionsProductModel;
+
+      return this.apiClient.callApi(
+        '/Smart/Transactions/{smartTransactionId}/prepare', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * POST Smart/Transactions/stx_xxx/prepare
+     * Create and score payment transaction assigned to given smart transaction
+     * @param {String} smartTransactionId Smart transaction id
+     * @param {module:model/SmartTransactionsPrepare} body Information which customer and container will be used to this operation
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SmartTransactionsProductModel}
+     */
+    prepare(smartTransactionId, body) {
+      return this.prepareWithHttpInfo(smartTransactionId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

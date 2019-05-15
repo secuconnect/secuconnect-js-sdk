@@ -1,30 +1,19 @@
 
 import ApiClient from '../ApiClient';
 
-
-
-
-
 /**
-* The DayTime model module.
-* @module model/DayTime
-*/
+ * The DayTime model module.
+ * @module model/DayTime
+ */
 export default class DayTime {
     /**
-    * Constructs a new <code>DayTime</code>.
-    * Day and time
-    * @alias module:model/DayTime
-    * @class
-    */
+     * Constructs a new <code>DayTime</code>.
+     * Day and time
+     * @alias module:model/DayTime
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class DayTime {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new DayTime();
-
             
             
             
-
             if (data.hasOwnProperty('day')) {
                 obj['day'] = ApiClient.convertToType(data['day'], 'Number');
             }
@@ -54,23 +41,15 @@ export default class DayTime {
     }
 
     /**
-    * Day
-    * @member {Number} day
-    */
+     * Day
+     * @member {Number} day
+     */
     day = undefined;
+
     /**
-    * Time
-    * @member {String} time
-    */
+     * Time
+     * @member {String} time
+     */
     time = undefined;
 
-
-
-
-
-
-
-
 }
-
-

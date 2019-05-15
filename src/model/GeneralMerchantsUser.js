@@ -2,29 +2,18 @@
 import ApiClient from '../ApiClient';
 import GeoAddress from './GeoAddress';
 
-
-
-
-
 /**
-* The GeneralMerchantsUser model module.
-* @module model/GeneralMerchantsUser
-*/
+ * The GeneralMerchantsUser model module.
+ * @module model/GeneralMerchantsUser
+ */
 export default class GeneralMerchantsUser {
     /**
-    * Constructs a new <code>GeneralMerchantsUser</code>.
-    * @alias module:model/GeneralMerchantsUser
-    * @class
-    */
+     * Constructs a new <code>GeneralMerchantsUser</code>.
+     * @alias module:model/GeneralMerchantsUser
+     * @class
+     */
 
     constructor() {
-        
-
-        
-        
-
-        
-
         
     }
 
@@ -38,11 +27,9 @@ export default class GeneralMerchantsUser {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new GeneralMerchantsUser();
-
             
             
             
-
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
@@ -63,38 +50,33 @@ export default class GeneralMerchantsUser {
     }
 
     /**
-    * Object of general merchant user
-    * @member {String} object
-    */
+     * Object of general merchant user
+     * @member {String} object
+     */
     object = undefined;
+
     /**
-    * Id of general merchant user
-    * @member {String} id
-    */
+     * Id of general merchant user
+     * @member {String} id
+     */
     id = undefined;
+
     /**
-    * Name of general merchant user
-    * @member {String} name
-    */
+     * Name of general merchant user
+     * @member {String} name
+     */
     name = undefined;
+
     /**
-    * Company name of general merchant user
-    * @member {String} companyname
-    */
+     * Company name of general merchant user
+     * @member {String} companyname
+     */
     companyname = undefined;
+
     /**
-    * Address of general merchant user
-    * @member {Array.<module:model/GeoAddress>} address
-    */
+     * Address of general merchant user
+     * @member {Array.<module:model/GeoAddress>} address
+     */
     address = undefined;
 
-
-
-
-
-
-
-
 }
-
-
