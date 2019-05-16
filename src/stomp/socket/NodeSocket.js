@@ -3,11 +3,12 @@ import tls from 'tls';
 
 export default class NodeSocket {
 
-    constructor(host, port, vhost) {
+    constructor(host, port, vhost, debugMode) {
         this.host = host;
         this.port = port;
         this.vhost = vhost;
         this.connected = false;
+        this.debugMode = debugMode;
     }
 
     connect() {
@@ -27,14 +28,14 @@ export default class NodeSocket {
     addOnOpenListener(onOpen) {
         this.onopen = () => {
             this.connected = true;
-            console.log('Connected to socket');
+            if (this.debugMode) console.log('Connected to socket');
             onOpen();
         };
     }
 
     addOnMessageListener(onMessage) {
         this.onmessage = (binaryData) => {
-            console.log('Received data on socket');
+            if (this.debugMode) console.log('Received data on socket');
             onMessage('' + binaryData);
         };
     }
@@ -48,7 +49,8 @@ export default class NodeSocket {
 
     addOnCloseListener(onClose) {
         this.onclose = (error) => {
-            console.log('Closing socket');
+            if (this.debugMode) console.log('Closing socket');
+            this.connected = false;
             onClose(error);
         };
     }

@@ -16,18 +16,15 @@ class StompClient {
         if (config.headers.ack === '' || config.headers.ack === undefined) throw 'invalid ack in stomp config';
 
         if (env === Environments.NODE) {
-            this.socketProvider = new SocketProvider(config.host, config.node_env.port, config.node_env.vhost);
+            this.socketProvider = new SocketProvider(config.host, config.node_env.port, config.node_env.vhost, debugMode);
         } else {
-            this.socketProvider = new SocketProvider(config.host, config.browser_env.port, config.browser_env.vhost);
+            this.socketProvider = new SocketProvider(config.host, config.browser_env.port, config.browser_env.vhost, debugMode);
         }
 
         this.socket = this.socketProvider.createSocket(env);
-        this.stomp = new Stomp(token, token, this.socket);
+        this.stomp = new Stomp(token, token, this.socket, debugMode);
         this.token = token;
-
-        if (!debugMode) {
-            console.log = () => {};
-        }
+        this.debugMode = debugMode;
     }
 
     getToken() {
@@ -47,7 +44,7 @@ class StompClient {
                 if (error) {
                     console.error('Disconnected from Stomp with error: ' + error);
                 } else {
-                    console.log('Disconnected from Stomp');
+                    if (this.debugMode) console.log('Disconnected from Stomp');
                 }
 
                 reject(error);
@@ -65,27 +62,27 @@ class StompClient {
 
                 // if successfully connected then set proper listeners for soceket and stomp
                 this.stomp.on('socket-error', (error) => {
-                    console.log('Unexpected socket error' + error);
+                    if (this.debugMode) console.log('Unexpected socket error' + error);
                 });
-    
+
                 this.stomp.on('disconnected', (error) => {
                     if (error) {
-                        console.log('Disconnected from Stomp with error: ' + error);
+                        if (this.debugMode) console.log('Disconnected from Stomp with error: ' + error);
                     } else {
-                        console.log('Disconnected from Stomp');
+                        if (this.debugMode) console.log('Disconnected from Stomp');
                     }
                 });
-    
+
                 this.stomp.on('error', (frame) => {
                     console.error('Error: ' + frame.body);
                 });
 
                 this.stomp.on('receipt', (frame) => {
-                    console.log('Received receipt: ' + frame.headers['receipt-id']);
+                    if (this.debugMode) console.log('Received receipt: ' + frame.headers['receipt-id']);
                 });
 
                 this.stomp.on('message', (frame) => {
-                    console.log('Received message: ' + frame.body);
+                    if (this.debugMode) console.log('Received message: ' + frame.body);
                 });
 
                 resolve(frame);
