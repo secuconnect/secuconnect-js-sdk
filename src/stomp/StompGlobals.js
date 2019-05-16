@@ -13,4 +13,4 @@ export const Environments = {
 export const ResponseStatus = {
     ok: 'ok',
     error: 'error'
-}
+};

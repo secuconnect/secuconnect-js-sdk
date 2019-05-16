@@ -90,7 +90,7 @@ class StompClient {
 
                 resolve(frame);
             });
-    
+
             // try connecting
             this.stomp.connect();
         });
@@ -99,9 +99,9 @@ class StompClient {
     refreshAuthSession() {
         let destination = '/exchange/connect.api/api:add:Auth.Sessions.refresh';
         let body = JSON.stringify({
-            "method":"Auth.Sessions.refresh",
-            "action":"exec",
-            "pid":"me",
+            "method": "Auth.Sessions.refresh",
+            "action": "exec",
+            "pid": "me",
             "data": {
                 "refresh_interval": this.SESSION_REFRESH_INTERVAL
             },
@@ -198,7 +198,7 @@ class StompClient {
         let startUniquePart = Math.random().toString(36).substr(2, 115);
         let endUniquePart = Math.random().toString(36).substr(2, 115);
 
-        return startUniquePart + '-' + date.toISOString().replace(/ /g,'') + '-' + endUniquePart;
+        return startUniquePart + '-' + date.toISOString().replace(/ /g, '') + '-' + endUniquePart;
     }
 
     prepareHeaders() {
@@ -223,4 +223,4 @@ export const StompFactory = {
             return StompFactory.instance;
         }
     }
-};
+}
