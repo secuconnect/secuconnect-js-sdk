@@ -16,7 +16,7 @@
   "dependencies": {
     "md5": "^2.2.1",
     "net": "^1.0.2",
-    "superagent": "^3.8.3",
+    "superagent": "^4.1.0",
     "tls": "^0.0.1"
   },
   "devDependencies": {

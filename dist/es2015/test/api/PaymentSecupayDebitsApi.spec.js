@@ -4,6 +4,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 var _Globals = require('../Globals');
 
+var _FileCache = require('../../src/cache/FileCache');
+
+var _FileCache2 = _interopRequireDefault(_FileCache);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
@@ -29,7 +35,7 @@ var _Globals = require('../Globals');
     instance = new SecuConnectApi.PaymentSecupayDebitsApi();
     authenticator = new SecuConnectApi.Authenticator(SecuConnectApi.OAuthClientCredentials.from(_Globals.OAuthClientCredentials.clientId, _Globals.OAuthClientCredentials.clientSecret));
 
-    var fileCache = new FileCache();
+    var fileCache = new _FileCache2.default();
     authenticator.getApiClient().setCachePool(fileCache);
 
     instance = new SecuConnectApi.PaymentSecupayDebitsApi();

@@ -1,4 +1,5 @@
 import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCredentials } from '../Globals';
+import FileCache from "../../src/cache/FileCache";
 
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
