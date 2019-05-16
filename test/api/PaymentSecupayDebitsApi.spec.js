@@ -21,12 +21,17 @@ import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCre
   var authenticator;
 
   beforeEach(function() {
+    jest.setTimeout(10000);
     instance = new SecuConnectApi.PaymentSecupayDebitsApi();
     authenticator = new SecuConnectApi.Authenticator(
         SecuConnectApi.OAuthClientCredentials.from(
             OAuthClientCredentials.clientId,
             OAuthClientCredentials.clientSecret
         ));
+
+    let fileCache = new FileCache();
+    authenticator.getApiClient().setCachePool(fileCache);
+
     instance = new SecuConnectApi.PaymentSecupayDebitsApi();
     instance.apiClient.authentications.oauth_token.accessToken = authenticator.getToken();
   });
@@ -144,15 +149,6 @@ import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCre
           expect(data.id).toBe(transaction.id);
           expect(typeof data.basket).toBe('object');
           expect(data.basket[0]).toBeInstanceOf(SecuConnectApi.SecupayBasketItem);
-        }, function (error) {
-          console.error(error);
-        });
-      });
-
-      it('should cancel transaction successfully', function () {
-        return instance.paymentSecupayDebitsCancelById(transaction.id).then(function(data) {
-          expect(typeof data).toBe('object');
-          expect(data.result).toBe(true);
         }, function (error) {
           console.error(error);
         });

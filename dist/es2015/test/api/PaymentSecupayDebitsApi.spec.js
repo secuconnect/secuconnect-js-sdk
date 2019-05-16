@@ -25,8 +25,13 @@ var _Globals = require('../Globals');
   var authenticator;
 
   beforeEach(function () {
+    jest.setTimeout(10000);
     instance = new SecuConnectApi.PaymentSecupayDebitsApi();
     authenticator = new SecuConnectApi.Authenticator(SecuConnectApi.OAuthClientCredentials.from(_Globals.OAuthClientCredentials.clientId, _Globals.OAuthClientCredentials.clientSecret));
+
+    var fileCache = new FileCache();
+    authenticator.getApiClient().setCachePool(fileCache);
+
     instance = new SecuConnectApi.PaymentSecupayDebitsApi();
     instance.apiClient.authentications.oauth_token.accessToken = authenticator.getToken();
   });
@@ -137,15 +142,6 @@ var _Globals = require('../Globals');
           expect(data.id).toBe(transaction.id);
           expect(_typeof(data.basket)).toBe('object');
           expect(data.basket[0]).toBeInstanceOf(SecuConnectApi.SecupayBasketItem);
-        }, function (error) {
-          console.error(error);
-        });
-      });
-
-      it('should cancel transaction successfully', function () {
-        return instance.paymentSecupayDebitsCancelById(transaction.id).then(function (data) {
-          expect(typeof data === 'undefined' ? 'undefined' : _typeof(data)).toBe('object');
-          expect(data.result).toBe(true);
         }, function (error) {
           console.error(error);
         });

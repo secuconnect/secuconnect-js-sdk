@@ -4,7 +4,7 @@ import { StompFrameCommands } from "../StompGlobals";
 
 export default class Stomp extends EventEmitter {
 
-    constructor(login, passcode, socket) {
+    constructor(login, passcode, socket, debugMode) {
         super();
         EventEmitter.call(this);
 
@@ -12,11 +12,12 @@ export default class Stomp extends EventEmitter {
         this.passcode = passcode; // broker's user passcode (password)
         this.socket = socket; // socket used to connect to broker
         this.session = null; // session id
+        this.debugMode = debugMode;
     }
 
     connect() {
         this.socket.addOnOpenListener(() => {
-            console.log('Connecting to Stomp');
+            if (this.debugMode) console.log('Connecting to Stomp');
             let headers = {};
             headers['login'] = this.login;
             headers['passcode'] = this.passcode;
@@ -55,10 +56,10 @@ export default class Stomp extends EventEmitter {
     send(command, headers, body, want_receipt) {
         let frame = new Frame(command, headers, body, want_receipt);
 
-        console.log('sending frame:\n' + frame.toString());
+        if (this.debugMode) console.log('sending frame:\n' + frame.toString());
 
         if (this.socket.write(frame.toString()) === false) {
-            console.log('Write buffered');
+            if (this.debugMode) console.log('Write buffered');
         }
     };
 
@@ -69,21 +70,21 @@ export default class Stomp extends EventEmitter {
             this.socket.destroy();
         }
 
-        console.log('disconnect called');
+        if (this.debugMode) console.log('disconnect called');
     }
 
     handleFrame(frame) {
         switch (frame.command) {
             case StompFrameCommands.MESSAGE:
-                console.log('Recived message from broker');
+                if (this.debugMode) console.log('Recived message from broker');
                 this.emit('message', frame);
                 break;
             case StompFrameCommands.RECEIPT:
-                console.log('Received receipt');
+                if (this.debugMode) console.log('Received receipt');
                 this.emit('receipt', frame);
                 break;
             case StompFrameCommands.CONNECTED:
-                console.log('Connected to Stomp broker');
+                if (this.debugMode) console.log('Connected to Stomp broker');
                 this.session = frame.headers['session'];
                 this.emit('connected', frame);
                 break;

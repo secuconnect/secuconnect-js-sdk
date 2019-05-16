@@ -25,7 +25,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Stomp = function (_EventEmitter) {
     _inherits(Stomp, _EventEmitter);
 
-    function Stomp(login, passcode, socket) {
+    function Stomp(login, passcode, socket, debugMode) {
         _classCallCheck(this, Stomp);
 
         var _this = _possibleConstructorReturn(this, (Stomp.__proto__ || Object.getPrototypeOf(Stomp)).call(this));
@@ -36,6 +36,7 @@ var Stomp = function (_EventEmitter) {
         _this.passcode = passcode; // broker's user passcode (password)
         _this.socket = socket; // socket used to connect to broker
         _this.session = null; // session id
+        _this.debugMode = debugMode;
         return _this;
     }
 
@@ -45,7 +46,7 @@ var Stomp = function (_EventEmitter) {
             var _this2 = this;
 
             this.socket.addOnOpenListener(function () {
-                console.log('Connecting to Stomp');
+                if (_this2.debugMode) console.log('Connecting to Stomp');
                 var headers = {};
                 headers['login'] = _this2.login;
                 headers['passcode'] = _this2.passcode;
@@ -85,10 +86,10 @@ var Stomp = function (_EventEmitter) {
         value: function send(command, headers, body, want_receipt) {
             var frame = new _Frame2.default(command, headers, body, want_receipt);
 
-            console.log('sending frame:\n' + frame.toString());
+            if (this.debugMode) console.log('sending frame:\n' + frame.toString());
 
             if (this.socket.write(frame.toString()) === false) {
-                console.log('Write buffered');
+                if (this.debugMode) console.log('Write buffered');
             }
         }
     }, {
@@ -100,22 +101,22 @@ var Stomp = function (_EventEmitter) {
                 this.socket.destroy();
             }
 
-            console.log('disconnect called');
+            if (this.debugMode) console.log('disconnect called');
         }
     }, {
         key: "handleFrame",
         value: function handleFrame(frame) {
             switch (frame.command) {
                 case _StompGlobals.StompFrameCommands.MESSAGE:
-                    console.log('Recived message from broker');
+                    if (this.debugMode) console.log('Recived message from broker');
                     this.emit('message', frame);
                     break;
                 case _StompGlobals.StompFrameCommands.RECEIPT:
-                    console.log('Received receipt');
+                    if (this.debugMode) console.log('Received receipt');
                     this.emit('receipt', frame);
                     break;
                 case _StompGlobals.StompFrameCommands.CONNECTED:
-                    console.log('Connected to Stomp broker');
+                    if (this.debugMode) console.log('Connected to Stomp broker');
                     this.session = frame.headers['session'];
                     this.emit('connected', frame);
                     break;

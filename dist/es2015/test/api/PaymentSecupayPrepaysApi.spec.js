@@ -14,11 +14,15 @@ var _PaymentCustomersDTO = require("../../src/model/PaymentCustomersDTO");
 
 var _PaymentCustomersDTO2 = _interopRequireDefault(_PaymentCustomersDTO);
 
-var _SecupayTransactionProductDTORedirectUrl = require("../../src/model/SecupayTransactionProductDTORedirectUrl");
+var _SecupayRedirectUrl = require("../../src/model/SecupayRedirectUrl");
 
-var _SecupayTransactionProductDTORedirectUrl2 = _interopRequireDefault(_SecupayTransactionProductDTORedirectUrl);
+var _SecupayRedirectUrl2 = _interopRequireDefault(_SecupayRedirectUrl);
 
 var _Globals = require("../Globals");
+
+var _FileCache = require("../../src/cache/FileCache");
+
+var _FileCache2 = _interopRequireDefault(_FileCache);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -48,6 +52,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
   beforeAll(function () {
     authenticator = new SecuConnectApi.Authenticator(SecuConnectApi.OAuthClientCredentials.from(_Globals.OAuthClientCredentials.clientId, _Globals.OAuthClientCredentials.clientSecret));
+
+    var fileCache = new _FileCache2.default();
+    authenticator.getApiClient().setCachePool(fileCache);
 
     prepayApi = new SecuConnectApi.PaymentSecupayPrepaysApi();
     customerApi = new SecuConnectApi.PaymentCustomersApi();
@@ -105,7 +112,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
     prepaysData.basket = basket;
 
-    prepaysData.redirect_url = new _SecupayTransactionProductDTORedirectUrl2.default();
+    prepaysData.redirect_url = new _SecupayRedirectUrl2.default();
     prepaysData.redirect_url.url_success = 'http://shop.example.com?success=true';
     prepaysData.redirect_url.url_failure = 'http://shop.example.com?success=false';
     prepaysData.redirect_url.url_push = 'https://requestb.in/14f6a1j1';
@@ -259,7 +266,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
         it('should cancel prepay transaction successfully', function () {
           return prepayApi.paymentSecupayPrepaysCancelById(prepayTransactionData.id).then(function (data) {
             expect(typeof data === "undefined" ? "undefined" : _typeof(data)).toBe('object');
-            expect(data.result).toBe(true);
           }).catch(function (reason) {
             console.log(reason);
           });

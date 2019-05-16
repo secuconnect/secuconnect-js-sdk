@@ -1,8 +1,9 @@
 import SecupayTransactionProductDTO from "../../src/model/SecupayTransactionProductDTO";
 import Contact from "../../src/model/Contact";
 import PaymentCustomersDTO from "../../src/model/PaymentCustomersDTO";
-import SecupayTransactionProductDTORedirectUrl from "../../src/model/SecupayTransactionProductDTORedirectUrl";
+import SecupayRedirectUrl from "../../src/model/SecupayRedirectUrl";
 import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCredentials } from '../Globals';
+import FileCache from "../../src/cache/FileCache";
 
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
@@ -34,6 +35,9 @@ import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCre
         OAuthClientCredentials.clientSecret
       )
     );
+
+    let fileCache = new FileCache();
+    authenticator.getApiClient().setCachePool(fileCache);
 
     prepayApi = new SecuConnectApi.PaymentSecupayPrepaysApi();
     customerApi = new SecuConnectApi.PaymentCustomersApi();
@@ -91,7 +95,7 @@ import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCre
 
     prepaysData.basket = basket;
 
-    prepaysData.redirect_url = new SecupayTransactionProductDTORedirectUrl();
+    prepaysData.redirect_url = new SecupayRedirectUrl();
     prepaysData.redirect_url.url_success = 'http://shop.example.com?success=true';
     prepaysData.redirect_url.url_failure = 'http://shop.example.com?success=false';
     prepaysData.redirect_url.url_push = 'https://requestb.in/14f6a1j1';
@@ -259,7 +263,6 @@ import { OAuthClientCredentials, OAuthApplicationUserCredentials, OAuthDeviceCre
           return prepayApi.paymentSecupayPrepaysCancelById(prepayTransactionData.id)
             .then((data) => {
               expect(typeof data).toBe('object');
-              expect(data.result).toBe(true);
             })
             .catch(reason => {
               console.log(reason);
