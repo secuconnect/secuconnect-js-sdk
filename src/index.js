@@ -4,6 +4,7 @@ import Authenticator from './authentication/Authenticator';
 import OAuthApplicationUserCredentials from './authentication/OAuthApplicationUserCredentials';
 import OAuthClientCredentials from './authentication/OAuthClientCredentials';
 import OAuthDeviceCredentials from './authentication/OAuthDeviceCredentials';
+import OAuthRefreshCredentials from './authentication/OAuthRefreshCredentials';
 import SDKCache from './cache/SDKCache';
 import FileCache from './cache/FileCache';
 import Address from './model/Address';
@@ -265,6 +266,12 @@ export {
      * @property {module:OAuthDeviceCredentials}
      */
     OAuthDeviceCredentials,
+
+    /**
+     * The OAuthDeviceCredentials constructor.
+     * @property {module:OAuthRefreshCredentials}
+     */
+    OAuthRefreshCredentials,
 
     /**
     * The SDKCache constructor.
