@@ -106,11 +106,7 @@ class StompClient {
         });
 
         this.sendMessage(destination, body);
-        setInterval(() => {
-            if (this.socket.connected) {
-                this.sendMessage(destination, body), this.SESSION_REFRESH_INTERVAL * 1000;
-            }
-        });
+        setInterval(() => this.sendMessage(destination, body), this.SESSION_REFRESH_INTERVAL * 1000);
     }
 
     sendMessage(destination, body, want_receipt) {

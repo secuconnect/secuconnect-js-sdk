@@ -40,7 +40,7 @@ export default class BrowserSocket {
     addOnCloseListener(onClose) {
         this.onclose = (error) => {
             if (this.debugMode) console.log('Closing socket');
-            this.connected = false; 
+            this.connected = false;
             onClose(error);
         };
     }

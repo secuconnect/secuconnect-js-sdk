@@ -4,4 +4,3 @@ node_modules/
 tmp/*
 package-lock.json
 coverage/
-test/tmp/

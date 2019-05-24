@@ -70,6 +70,7 @@ var PaymentTransactionsProductModel = function () {
         this.invoice_number = undefined;
         this.transaction_hash = undefined;
         this.reference_id = undefined;
+        this.accrual = undefined;
     }
 
     /**
@@ -164,6 +165,9 @@ var PaymentTransactionsProductModel = function () {
                 }
                 if (data.hasOwnProperty('reference_id')) {
                     obj['reference_id'] = _ApiClient2.default.convertToType(data['reference_id'], 'String');
+                }
+                if (data.hasOwnProperty('accrual')) {
+                    obj['accrual'] = _ApiClient2.default.convertToType(data['accrual'], 'Boolean');
                 }
             }
             return obj;
@@ -320,6 +324,12 @@ var PaymentTransactionsProductModel = function () {
         /**
          * Reference ID
          * @member {String} reference_id
+         */
+
+
+        /**
+         * Accrual Flag
+         * @member {Boolean} accrual
          */
 
     }]);

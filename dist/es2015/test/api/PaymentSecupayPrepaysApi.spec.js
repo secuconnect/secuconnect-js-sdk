@@ -84,11 +84,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     var basketItem2 = new SecuConnectApi.SecupayBasketItem();
     var basketItem3 = new SecuConnectApi.SecupayBasketItem();
 
+    basketItem1.item_type = 'shipping';
     basketItem1.name = 'standard delivery';
     basketItem1.tax = 19;
     basketItem1.total = 200;
     basket.push(basketItem1);
 
+    basketItem2.item_type = 'article';
     basketItem2.article_number = 3211;
     basketItem2.quantity = 2;
     basketItem2.name = 'Product 3211';
@@ -98,6 +100,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     basketItem2.price = 1000;
     basket.push(basketItem2);
 
+    basketItem3.item_type = 'article';
     basketItem3.article_number = 48875;
     basketItem3.quantity = 2;
     basketItem3.name = 'Product 48875';
@@ -154,8 +157,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
             expect(prepayTransaction.purpose).toBe('for what text');
             expect(prepayTransaction.order_id).toBe('ZZZZZZ');
             expect(prepayTransaction.basket).toHaveLength(3);
+            expect(prepayTransaction.basket[0].item_type).toBe(basket[0].item_type);
             expect(prepayTransaction.basket[0].name).toBe(basket[0].name);
             expect(prepayTransaction.basket[0].total).toBe(basket[0].total);
+            expect(prepayTransaction.basket[1].item_type).toBe(basket[1].item_type);
             expect(prepayTransaction.basket[1].article_number).toBe(basket[1].article_number.toString());
             expect(prepayTransaction.basket[1].quantity).toBe(basket[1].quantity);
             expect(prepayTransaction.basket[1].name).toBe(basket[1].name);
@@ -163,6 +168,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
             expect(prepayTransaction.basket[1].tax).toBe(basket[1].tax.toString());
             expect(prepayTransaction.basket[1].total).toBe(basket[1].total);
             expect(prepayTransaction.basket[1].price).toBe(basket[1].price);
+            expect(prepayTransaction.basket[2].item_type).toBe(basket[2].item_type);
             expect(prepayTransaction.basket[2].article_number).toBe(basket[2].article_number.toString());
             expect(prepayTransaction.basket[2].quantity).toBe(basket[2].quantity);
             expect(prepayTransaction.basket[2].name).toBe(basket[2].name);

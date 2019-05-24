@@ -4,6 +4,7 @@ import Authenticator from './authentication/Authenticator';
 import OAuthApplicationUserCredentials from './authentication/OAuthApplicationUserCredentials';
 import OAuthClientCredentials from './authentication/OAuthClientCredentials';
 import OAuthDeviceCredentials from './authentication/OAuthDeviceCredentials';
+import OAuthRefreshCredentials from './authentication/OAuthRefreshCredentials';
 import SDKCache from './cache/SDKCache';
 import FileCache from './cache/FileCache';
 import Address from './model/Address';
@@ -188,6 +189,7 @@ import PaymentSecupayDebitsApi from './api/PaymentSecupayDebitsApi';
 import PaymentSecupayInvoicesApi from './api/PaymentSecupayInvoicesApi';
 import PaymentSecupayPayoutApi from './api/PaymentSecupayPayoutApi';
 import PaymentSecupayPrepaysApi from './api/PaymentSecupayPrepaysApi';
+import PaymentSecupaySofortApi from './api/PaymentSecupaySofortApi';
 import PaymentTransactionsApi from './api/PaymentTransactionsApi';
 import PrepaidContractsProductApi from './api/PrepaidContractsProductApi';
 import PrepaidItemsApi from './api/PrepaidItemsApi';
@@ -243,37 +245,43 @@ export {
 
     /**
      * The Authenticator constructor.
-     * @property {Authenticator}
+     * @property {module:Authenticator}
      */
     Authenticator,
 
     /**
      * The OAuthApplicationUserCredentials constructor.
-     * @property {OAuthApplicationUserCredentials}
+     * @property {module:OAuthApplicationUserCredentials}
      */
     OAuthApplicationUserCredentials,
 
     /**
      * The OAuthClientCredentials constructor.
-     * @property {OAuthClientCredentials}
+     * @property {module:OAuthClientCredentials}
      */
     OAuthClientCredentials,
 
     /**
      * The OAuthDeviceCredentials constructor.
-     * @property {OAuthDeviceCredentials}
+     * @property {module:OAuthDeviceCredentials}
      */
     OAuthDeviceCredentials,
 
     /**
+     * The OAuthDeviceCredentials constructor.
+     * @property {module:OAuthRefreshCredentials}
+     */
+    OAuthRefreshCredentials,
+
+    /**
     * The SDKCache constructor.
-    * @property {SDKCache}
+    * @property {module:cache/SDKCache}
     */
     SDKCache,
 
     /**
     * The FileCache constructor.
-    * @property {FileCache}
+    * @property {module:cache/FileCache}
     */
     FileCache,
 
@@ -1368,6 +1376,12 @@ export {
     * @property {module:api/PaymentSecupayPrepaysApi}
     */
     PaymentSecupayPrepaysApi,
+
+    /**
+    * The PaymentSecupaySofortApi service constructor.
+    * @property {module:api/PaymentSecupaySofortApi}
+    */
+    PaymentSecupaySofortApi,
 
     /**
     * The PaymentTransactionsApi service constructor.

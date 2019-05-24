@@ -142,10 +142,8 @@ var StompClient = function () {
 
             this.sendMessage(destination, body);
             setInterval(function () {
-                if (_this2.socket.connected) {
-                    _this2.sendMessage(destination, body), _this2.SESSION_REFRESH_INTERVAL * 1000;
-                }
-            });
+                return _this2.sendMessage(destination, body);
+            }, this.SESSION_REFRESH_INTERVAL * 1000);
         }
     }, {
         key: 'sendMessage',

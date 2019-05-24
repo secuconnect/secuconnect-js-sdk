@@ -29,5 +29,6 @@ Name | Type | Description | Notes
 **invoiceNumber** | **String** | Invoice number (from merchant) | [optional] 
 **transactionHash** | **String** | Payment-ID | [optional] 
 **referenceId** | **String** | Reference ID | [optional] 
+**accrual** | **Boolean** | Accrual Flag | [optional] 
 
 

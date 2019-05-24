@@ -111,6 +111,9 @@ export default class PaymentTransactionsProductModel {
             if (data.hasOwnProperty('reference_id')) {
                 obj['reference_id'] = ApiClient.convertToType(data['reference_id'], 'String');
             }
+            if (data.hasOwnProperty('accrual')) {
+                obj['accrual'] = ApiClient.convertToType(data['accrual'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -268,5 +271,11 @@ export default class PaymentTransactionsProductModel {
      * @member {String} reference_id
      */
     reference_id = undefined;
+
+    /**
+     * Accrual Flag
+     * @member {Boolean} accrual
+     */
+    accrual = undefined;
 
 }
